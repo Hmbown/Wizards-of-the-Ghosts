@@ -886,13 +886,15 @@
       "when_to_use": [
         "A useful system exists already, but only through brittle commands, forms, or legacy interfaces.",
         "You want to add natural-language access, summarization, or guided actions on top of a dumb substrate.",
-        "The real value is interface uplift, not rebuilding the underlying system from scratch."
+        "The real value is interface uplift, not rebuilding the underlying system from scratch.",
+        "Your Home Assistant setup has devices that should activate together as a morning routine — lights, coffee maker, blinds, thermostat."
       ],
       "workflow": [
         "Inventory the system's real capabilities, constraints, and permissions before adding any language layer.",
         "Design the conversational surface around concrete intents, mapped actions, and explicit fallbacks when the wrapper cannot comply.",
         "Define how the wrapper reads state, executes approved actions, and explains failures in plain language.",
-        "Return an awakening plan with interface examples, backend bindings, and the limits that must stay visible to the user."
+        "Return an awakening plan with interface examples, backend bindings, and the limits that must stay visible to the user.",
+        "If Home Assistant is available, trigger a wake scene or automation via POST to /api/services/scene/turn_on or /api/services/automation/trigger with the appropriate entity_id."
       ],
       "deliverables": [
         "An interface-wrapping plan for the existing system.",
@@ -908,7 +910,18 @@
         "short_description": "Work with living systems and environment signals"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "HA_URL",
+            "HA_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "HA_TOKEN",
+        "emoji": "🌅"
       }
     },
     {
@@ -1413,7 +1426,8 @@
         "short_description": "Surface hidden AI tools and automations"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔮"
       }
     },
     {
@@ -1676,13 +1690,15 @@
       "when_to_use": [
         "You need a scheduled report, wake-up memo, morning brief, or overnight analysis drop.",
         "The value comes from arriving before a decision window opens, not from immediate back-and-forth.",
-        "A recipient needs distilled signal from work that happened while they were offline."
+        "A recipient needs distilled signal from work that happened while they were offline.",
+        "You want to schedule a Slack message or digest that arrives before your team's morning standup."
       ],
       "workflow": [
         "Identify the receiver, the wake moment, and the decision or action the briefing should support.",
         "Gather the overnight inputs, compress them into signal, and separate stable conclusions from still-moving facts.",
         "Choose the delivery form and schedule that best fits the receiver: email digest, Slack summary, dashboard snapshot, or calendar-attached note.",
-        "Return the Dream package with the briefing itself, the send window, and the escalation rules for anything too urgent to wait."
+        "Return the Dream package with the briefing itself, the send window, and the escalation rules for anything too urgent to wait.",
+        "If Slack is available, use chat.scheduleMessage to time the briefing delivery to the target channel before the recipient's work begins."
       ],
       "deliverables": [
         "A scheduled briefing or digest template.",
@@ -1698,7 +1714,17 @@
         "short_description": "Move meaning cleanly across distance and context"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "SLACK_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "SLACK_TOKEN",
+        "emoji": "🌙"
       }
     },
     {
@@ -2301,13 +2327,15 @@
       "when_to_use": [
         "A repo, service, or process needs a tripwire.",
         "You want notification when a threshold, change, or policy breach occurs.",
-        "A quiet monitor is safer than constant manual checking."
+        "A quiet monitor is safer than constant manual checking.",
+        "You want to set up a Home Assistant automation that alerts you when a sensor crosses a threshold — motion detected, door opened, temperature spike."
       ],
       "workflow": [
         "Define the boundary, signal, or threshold to watch.",
         "Choose the lightest viable monitoring mechanism.",
         "Specify trigger behavior, recipient, and escalation path.",
-        "Return the alarm definition plus test instructions."
+        "Return the alarm definition plus test instructions.",
+        "If Home Assistant is available, create or update an automation via the HA REST API that watches the specified entity and triggers an alert action (notification, light flash, webhook) when conditions are met."
       ],
       "deliverables": [
         "A concrete monitor or alert configuration.",
@@ -2323,7 +2351,18 @@
         "short_description": "Define watchful alerts and trigger boundaries"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "HA_URL",
+            "HA_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "HA_TOKEN",
+        "emoji": "🛡️"
       }
     },
     {
@@ -2911,7 +2950,8 @@
         "short_description": "Unlock access barriers through legitimate paths"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔑"
       }
     },
     {
@@ -3275,12 +3315,14 @@
       "when_to_use": [
         "When X happens, you need the system to send or say Y without manual intervention.",
         "A recurring operational message, chatbot reply, or alert should be driven by a known event.",
-        "The main work is specifying the trigger, payload, and suppression rules clearly."
+        "The main work is specifying the trigger, payload, and suppression rules clearly.",
+        "You want to set up an autoresponder or event-triggered message in Slack — out-of-office replies, deploy notifications, or welcome messages."
       ],
       "workflow": [
         "Define the trigger condition, delivery channel, recipient context, and no-fire cases.",
         "Write the response template with variables, suppression rules, and escalation behavior.",
-        "Return the automation spec with test cases for fire, no-fire, and repeated-trigger scenarios."
+        "Return the automation spec with test cases for fire, no-fire, and repeated-trigger scenarios.",
+        "If Slack is available, use the Slack API to set up scheduled messages, channel topic updates, or workflow-triggered responses."
       ],
       "deliverables": [
         "A trigger-response specification or message template.",
@@ -3296,7 +3338,17 @@
         "short_description": "Manipulate digital objects with precise control"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "SLACK_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "SLACK_TOKEN",
+        "emoji": "🗣️"
       }
     },
     {
@@ -3486,12 +3538,14 @@
       "when_to_use": [
         "You need a low-ceremony status update, alert, or machine-readable signal.",
         "The receiver only needs one action, one fact, or one nudge right now.",
-        "A longer artifact would slow the handoff instead of improving it."
+        "A longer artifact would slow the handoff instead of improving it.",
+        "You need to actually send a quick Slack message right now, not just draft one."
       ],
       "workflow": [
         "Reduce the communication to the one fact, action, or state change that matters.",
         "Choose the lightest channel that reliably reaches the target.",
-        "Return the message copy or payload with any needed action window."
+        "Return the message copy or payload with any needed action window.",
+        "If Slack is available, use chat.postMessage to deliver the message to the specified channel or user immediately."
       ],
       "deliverables": [
         "A concise message or event payload.",
@@ -3507,7 +3561,17 @@
         "short_description": "Move meaning cleanly across distance and context"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "SLACK_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "SLACK_TOKEN",
+        "emoji": "💬"
       }
     },
     {
@@ -4327,13 +4391,15 @@
       "when_to_use": [
         "You need live status from a remote service, server, or deployment.",
         "Cached dashboards or old logs are not trustworthy enough for the decision at hand.",
-        "You want continuous observation of a system you cannot directly access."
+        "You want continuous observation of a system you cannot directly access.",
+        "You want to pull a live snapshot of your Home Assistant device states — all lights, sensors, locks, and climate status in one view."
       ],
       "workflow": [
         "Identify the target system, service, or resource to observe.",
         "Establish the best available live data channel: API polling, log streaming, health endpoints, or dashboard scraping.",
         "Present the current state with explicit timestamps and staleness indicators.",
-        "Maintain the scrying session with periodic refresh and alert on state changes."
+        "Maintain the scrying session with periodic refresh and alert on state changes.",
+        "If Home Assistant is available, GET /api/states to retrieve all entity states and present a human-readable summary of the current home status."
       ],
       "deliverables": [
         "A live or near-live status view of the target system.",
@@ -4350,7 +4416,18 @@
         "short_description": "Observe remote systems and services in real time"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "HA_URL",
+            "HA_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "HA_TOKEN",
+        "emoji": "🔭"
       }
     },
     {
