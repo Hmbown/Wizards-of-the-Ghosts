@@ -39,7 +39,8 @@
         "short_description": "Perform precise actions under real constraints"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🤸"
       }
     },
     {
@@ -80,7 +81,8 @@
         "short_description": "Operate effectively in messy real-world contexts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🐴"
       }
     },
     {
@@ -122,7 +124,8 @@
         "short_description": "Explain deep technical mechanisms clearly"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📚"
       }
     },
     {
@@ -163,7 +166,8 @@
         "short_description": "Perform precise actions under real constraints"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏋️"
       }
     },
     {
@@ -203,7 +207,9 @@
       "openai": {
         "short_description": "Move people with audience-aware language and tone"
       },
-      "openclaw": {}
+      "openclaw": {
+        "emoji": "🎭"
+      }
     },
     {
       "slug": "history",
@@ -244,7 +250,8 @@
         "short_description": "Reconstruct how systems reached current state"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📜"
       }
     },
     {
@@ -287,7 +294,8 @@
         "short_description": "Read subtext and unstated concerns in messages"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💡"
       }
     },
     {
@@ -327,7 +335,9 @@
       "openai": {
         "short_description": "Move people with audience-aware language and tone"
       },
-      "openclaw": {}
+      "openclaw": {
+        "emoji": "⚠️"
+      }
     },
     {
       "slug": "investigation",
@@ -368,7 +378,8 @@
         "short_description": "Trace clues into a defensible root cause"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🕵️"
       }
     },
     {
@@ -409,7 +420,8 @@
         "short_description": "Operate effectively in messy real-world contexts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🩺"
       }
     },
     {
@@ -451,7 +463,8 @@
         "short_description": "Analyze emergent systems and ecosystems"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌍"
       }
     },
     {
@@ -492,7 +505,8 @@
         "short_description": "Catch overlooked details and spot anomalies"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "👀"
       }
     },
     {
@@ -533,7 +547,8 @@
         "short_description": "Move people with audience-aware language and tone"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🎭"
       }
     },
     {
@@ -575,7 +590,8 @@
         "short_description": "Write audience-aware cases that move decisions"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🤝"
       }
     },
     {
@@ -617,7 +633,8 @@
         "short_description": "Map belief systems and cultural logic"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⛪"
       }
     },
     {
@@ -700,7 +717,8 @@
         "short_description": "Gather context quietly with minimal footprint"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🥷"
       }
     },
     {
@@ -741,7 +759,8 @@
         "short_description": "Operate effectively in messy real-world contexts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏕️"
       }
     },
     {
@@ -782,7 +801,8 @@
         "short_description": "Work with living systems and environment signals"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🤝"
       }
     },
     {
@@ -823,7 +843,8 @@
         "short_description": "Move meaning cleanly across distance and context"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🐦"
       }
     },
     {
@@ -866,7 +887,8 @@
         "short_description": "Give passive data autonomous update behavior"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⚡"
       }
     },
     {
@@ -962,7 +984,8 @@
         "short_description": "Map every weakness in a plan or system"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💀"
       }
     },
     {
@@ -1002,7 +1025,8 @@
         "short_description": "Design constraint injection resilience tests"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🪬"
       }
     },
     {
@@ -1044,7 +1068,9 @@
       "openai": {
         "short_description": "Mute specific inputs, signals, or telemetry"
       },
-      "openclaw": {}
+      "openclaw": {
+        "emoji": "🙈"
+      }
     },
     {
       "slug": "calm-emotions",
@@ -1085,7 +1111,8 @@
         "short_description": "De-escalate heated situations productively"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🕊️"
       }
     },
     {
@@ -1127,7 +1154,8 @@
         "short_description": "Draft trust-building, ethical communication"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💝"
       }
     },
     {
@@ -1170,7 +1198,8 @@
         "short_description": "Snapshot remote system state through legitimate channels"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "👁️"
       }
     },
     {
@@ -1212,7 +1241,8 @@
         "short_description": "Translate jargon, code, and protocols clearly"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🗺️"
       }
     },
     {
@@ -1289,7 +1319,8 @@
         "short_description": "Generate chaos tests and adversarial inputs"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌀"
       }
     },
     {
@@ -1330,7 +1361,8 @@
         "short_description": "Apply targeted hotfixes to active problems"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🩹"
       }
     },
     {
@@ -1469,7 +1501,8 @@
         "short_description": "Extract real intent behind communications"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🧠"
       }
     },
     {
@@ -1510,7 +1543,8 @@
         "short_description": "Route work across boundaries with low friction"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🚪"
       }
     },
     {
@@ -1552,7 +1586,8 @@
         "short_description": "Adapt tone and presentation for audiences"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🥸"
       }
     },
     {
@@ -1595,7 +1630,8 @@
         "short_description": "Safely shut down active automations and agents"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🧹"
       }
     },
     {
@@ -1765,7 +1801,8 @@
         "short_description": "Increase capability, confidence, or precision"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⬆️"
       }
     },
     {
@@ -1806,7 +1843,8 @@
         "short_description": "Structure content for sustained engagement"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🎪"
       }
     },
     {
@@ -1847,7 +1885,8 @@
         "short_description": "Route work across boundaries with low friction"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "👻"
       }
     },
     {
@@ -1891,7 +1930,8 @@
         "short_description": "Selectively degrade a specific system capability"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "👁️‍🗨️"
       }
     },
     {
@@ -1932,7 +1972,8 @@
         "short_description": "Highlight and annotate hidden findings"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "✨"
       }
     },
     {
@@ -1974,7 +2015,8 @@
         "short_description": "Run pre-mortems that surface hidden risks"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "😱"
       }
     },
     {
@@ -2016,7 +2058,8 @@
         "short_description": "Route work across boundaries with low friction"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🪂"
       }
     },
     {
@@ -2060,7 +2103,8 @@
         "short_description": "Reduce a system to safe-mode minimal capability"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🧊"
       }
     },
     {
@@ -2103,7 +2147,8 @@
         "short_description": "Map the shortest route through complex systems"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🧭"
       }
     },
     {
@@ -2146,7 +2191,8 @@
         "short_description": "Sandbox untrusted code in strict isolation"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔒"
       }
     },
     {
@@ -2188,7 +2234,8 @@
         "short_description": "Forecast likely outcomes with explicit uncertainty"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔮"
       }
     },
     {
@@ -2229,7 +2276,8 @@
         "short_description": "Route work across boundaries with low friction"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔓"
       }
     },
     {
@@ -2307,7 +2355,8 @@
         "short_description": "Polish arguments for maximum credibility"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🎤"
       }
     },
     {
@@ -2403,7 +2452,8 @@
         "short_description": "Reduce visibility while respecting audit boundaries"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🫥"
       }
     },
     {
@@ -2446,7 +2496,8 @@
         "short_description": "Restore systems from deep accumulated damage"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏗️"
       }
     },
     {
@@ -2489,7 +2540,8 @@
         "short_description": "Audit and harden full system security posture"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏰"
       }
     },
     {
@@ -2533,7 +2585,8 @@
         "short_description": "Stage realistic test environments over real infra"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏜️"
       }
     },
     {
@@ -2574,7 +2627,8 @@
         "short_description": "Send quick remote fixes and instructions"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💊"
       }
     },
     {
@@ -2618,7 +2672,8 @@
         "short_description": "Inject progressive friction to drive migration"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔥"
       }
     },
     {
@@ -2662,7 +2717,8 @@
         "short_description": "Build structured courage for hard situations"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🦸"
       }
     },
     {
@@ -2702,7 +2758,8 @@
         "short_description": "Design emergency circuit breakers for systems"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⏸️"
       }
     },
     {
@@ -2742,7 +2799,8 @@
         "short_description": "Design authorized administrative freezes"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🚫"
       }
     },
     {
@@ -2782,7 +2840,8 @@
         "short_description": "Design bounded attention-capture patterns"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌀"
       }
     },
     {
@@ -2824,7 +2883,8 @@
         "short_description": "Explain what a mysterious artifact really does"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔍"
       }
     },
     {
@@ -2866,7 +2926,8 @@
       },
       "openclaw": {
         "user_invocable": false,
-        "disable_model_invocation": true
+        "disable_model_invocation": true,
+        "emoji": "📝"
       }
     },
     {
@@ -2907,7 +2968,8 @@
         "short_description": "Reduce visibility while respecting audit boundaries"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🫣"
       }
     },
     {
@@ -2993,7 +3055,8 @@
         "short_description": "Build deep research dossiers on any subject"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📖"
       }
     },
     {
@@ -3034,7 +3097,8 @@
         "short_description": "Clear stuck states blocking normal operation"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔧"
       }
     },
     {
@@ -3130,7 +3194,8 @@
         "short_description": "Work with living systems and environment signals"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌿"
       }
     },
     {
@@ -3171,7 +3236,8 @@
         "short_description": "Find specific entities in large systems"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📍"
       }
     },
     {
@@ -3212,7 +3278,8 @@
         "short_description": "Track down specific files and artifacts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🗂️"
       }
     },
     {
@@ -3253,7 +3320,8 @@
         "short_description": "Route work across boundaries with low friction"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏃"
       }
     },
     {
@@ -3295,7 +3363,8 @@
         "short_description": "Make small, precise changes with low blast radius"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🖐️"
       }
     },
     {
@@ -3392,7 +3461,8 @@
         "short_description": "Build a convincing interactive prototype or sim"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🎬"
       }
     },
     {
@@ -3434,7 +3504,8 @@
         "short_description": "Batch-apply fixes across many instances"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🏥"
       }
     },
     {
@@ -3476,7 +3547,8 @@
         "short_description": "Draft broadcast messages that move groups"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📢"
       }
     },
     {
@@ -3518,7 +3590,8 @@
         "short_description": "Repair broken files, configs, and artifacts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🪡"
       }
     },
     {
@@ -3613,7 +3686,8 @@
         "short_description": "Prevent context leakage across trust boundaries"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🤐"
       }
     },
     {
@@ -3656,7 +3730,8 @@
         "short_description": "Quick-sketch an idea into a disposable mockup"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "✏️"
       }
     },
     {
@@ -3699,7 +3774,9 @@
       "openai": {
         "short_description": "Build a deep sim indistinguishable from reality"
       },
-      "openclaw": {}
+      "openclaw": {
+        "emoji": "🌃"
+      }
     },
     {
       "slug": "mislead",
@@ -3742,7 +3819,8 @@
       },
       "openclaw": {
         "user_invocable": false,
-        "disable_model_invocation": true
+        "disable_model_invocation": true,
+        "emoji": "🪤"
       }
     },
     {
@@ -3820,7 +3898,8 @@
         "short_description": "Manipulate digital objects with precise control"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⚔️"
       }
     },
     {
@@ -3862,7 +3941,8 @@
         "short_description": "Strip metadata and harden privacy surfaces"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🛡️"
       }
     },
     {
@@ -3902,7 +3982,8 @@
         "short_description": "Analyze compulsive engagement mechanics"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💃"
       }
     },
     {
@@ -3945,7 +4026,8 @@
         "short_description": "Bind external services under explicit contracts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📜"
       }
     },
     {
@@ -3986,7 +4068,8 @@
         "short_description": "Work with living systems and environment signals"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌱"
       }
     },
     {
@@ -4028,7 +4111,8 @@
         "short_description": "Transform data between formats and schemas"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🦋"
       }
     },
     {
@@ -4073,7 +4157,8 @@
         "short_description": "Instantly terminate a process with no negotiation"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "☠️"
       }
     },
     {
@@ -4117,7 +4202,8 @@
         "short_description": "Hard-freeze a process while preserving state"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⚡"
       }
     },
     {
@@ -4159,7 +4245,8 @@
         "short_description": "Handle quick utility tasks without fuss"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🪄"
       }
     },
     {
@@ -4203,7 +4290,8 @@
         "short_description": "Create automated demos that trigger on conditions"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "📽️"
       }
     },
     {
@@ -4246,7 +4334,9 @@
       "openai": {
         "short_description": "Project remote presence via avatar or stand-in"
       },
-      "openclaw": {}
+      "openclaw": {
+        "emoji": "📡"
+      }
     },
     {
       "slug": "raise-dead",
@@ -4286,7 +4376,8 @@
         "short_description": "Recover dead systems in degraded mode fast"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🧟"
       }
     },
     {
@@ -4328,7 +4419,8 @@
         "short_description": "Rebuild lost components from surviving context"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "♻️"
       }
     },
     {
@@ -4371,7 +4463,8 @@
         "short_description": "Restore dead systems from backups and artifacts"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔄"
       }
     },
     {
@@ -4468,7 +4561,8 @@
         "short_description": "Reveal deliberately hidden information"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔦"
       }
     },
     {
@@ -4509,7 +4603,8 @@
         "short_description": "Reduce visibility while respecting audit boundaries"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "👥"
       }
     },
     {
@@ -4608,7 +4703,8 @@
         "short_description": "Chaos-engineer a system to find brittleness"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💥"
       }
     },
     {
@@ -4703,7 +4799,8 @@
         "short_description": "Create a static visual mockup or design comp"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🖼️"
       }
     },
     {
@@ -4799,7 +4896,8 @@
         "short_description": "Work with living systems and environment signals"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🐾"
       }
     },
     {
@@ -4841,7 +4939,8 @@
         "short_description": "Query legacy systems and dead codebases"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💀"
       }
     },
     {
@@ -4882,7 +4981,8 @@
         "short_description": "Work with living systems and environment signals"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌳"
       }
     },
     {
@@ -4926,7 +5026,8 @@
         "short_description": "Set up area-denial defenses and deterrent zones"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "☁️"
       }
     },
     {
@@ -4970,7 +5071,8 @@
         "short_description": "Craft nudges and CTAs that drive action honestly"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "💭"
       }
     },
     {
@@ -5014,7 +5116,8 @@
         "short_description": "Attach semantic policy sigils to resources"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⚜️"
       }
     },
     {
@@ -5057,7 +5160,8 @@
       },
       "openclaw": {
         "user_invocable": false,
-        "disable_model_invocation": true
+        "disable_model_invocation": true,
+        "emoji": "🌀"
       }
     },
     {
@@ -5099,7 +5203,8 @@
         "short_description": "Build reusable deployment and sync pipelines"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⭕"
       }
     },
     {
@@ -5141,7 +5246,8 @@
         "short_description": "Trigger dramatic effects behind hard safety gates"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⚡"
       }
     },
     {
@@ -5183,7 +5289,8 @@
         "short_description": "Move meaning cleanly across distance and context"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🌐"
       }
     },
     {
@@ -5226,7 +5333,9 @@
       "openai": {
         "short_description": "Plan irreversible system transformation"
       },
-      "openclaw": {}
+      "openclaw": {
+        "emoji": "🔀"
+      }
     },
     {
       "slug": "true-seeing",
@@ -5267,7 +5376,8 @@
         "short_description": "Verify ground truth behind claims and abstractions"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🔎"
       }
     },
     {
@@ -5308,7 +5418,8 @@
         "short_description": "Increase capability, confidence, or precision"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🎯"
       }
     },
     {
@@ -5351,7 +5462,8 @@
         "short_description": "Run persistent background agents for routine tasks"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "🫥"
       }
     },
     {
@@ -5395,7 +5507,8 @@
         "short_description": "Deliver adversarial critiques that land and stick"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "😈"
       }
     },
     {
@@ -5437,7 +5550,8 @@
         "short_description": "Enforce sourced claims and labeled uncertainty"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "emoji": "⚖️"
       }
     }
   ]
