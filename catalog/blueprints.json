@@ -1316,18 +1316,20 @@
         "openclaw"
       ],
       "reality_tier": "shipping-now",
-      "literalness": "metaphorical",
+      "literalness": "hybrid",
       "tagline": "Hang small moving signals in the dark so people can tell what the system is doing.",
       "description": "Use this spell for lightweight indicators: status pips, progress markers, heartbeat widgets, and ambient observability that help humans orient quickly. It is not a full dashboard strategy; it is the small visual cue that says where to look next.",
       "when_to_use": [
         "You need a lightweight status or progress display rather than a full observability buildout.",
         "A small ambient indicator would help people see health, motion, or blockage at a glance.",
-        "The goal is orientation and reassurance, not deep analysis in a heavy dashboard."
+        "The goal is orientation and reassurance, not deep analysis in a heavy dashboard.",
+        "Your Home Assistant setup has Philips Hue or other smart lights that can serve as ambient status indicators."
       ],
       "workflow": [
         "Choose the minimum set of signals that actually matter at a glance.",
         "Map those signals to simple visuals, placement, and refresh behavior that stay legible under stress.",
-        "Return the indicator spec with data sources, stale-state handling, and error states."
+        "Return the indicator spec with data sources, stale-state handling, and error states.",
+        "If Home Assistant is available, use the HA REST API to set light states directly — POST to /api/services/light/turn_on with entity_id, brightness, and rgb_color."
       ],
       "deliverables": [
         "A compact status display concept or implementation brief.",
@@ -1343,7 +1345,18 @@
         "short_description": "Manipulate digital objects with precise control"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "HA_URL",
+            "HA_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "HA_TOKEN",
+        "emoji": "💡"
       }
     },
     {
@@ -2940,19 +2953,21 @@
         "openclaw"
       ],
       "reality_tier": "shipping-now",
-      "literalness": "literal",
+      "literalness": "hybrid",
       "tagline": "Add observability, logging, documentation, or explanation to dark areas of a system.",
       "description": "Use this cantrip when a system, process, or codebase has blind spots that need illumination - not detection of hidden things, but creation of visibility where none exists.",
       "when_to_use": [
         "A process runs with no logging, metrics, or visibility into its internal state.",
         "A codebase or system has undocumented areas that block understanding.",
-        "You need to add explanation, annotation, or observability to something opaque."
+        "You need to add explanation, annotation, or observability to something opaque.",
+        "You have smart lights connected via Home Assistant and want to control them with natural language."
       ],
       "workflow": [
         "Identify the dark area: what is invisible, undocumented, or unobservable.",
         "Choose the lightest illumination that makes the area useful: a log line, a comment, a metric, a README section.",
         "Add the light without adding opinion - illuminate, do not editorialize.",
-        "Return what was illuminated and what remains dark."
+        "Return what was illuminated and what remains dark.",
+        "If Home Assistant is available, turn on the target light via POST to /api/services/light/turn_on with the entity_id and desired brightness."
       ],
       "deliverables": [
         "New observability, documentation, or explanation for the target area.",
@@ -2968,7 +2983,18 @@
         "short_description": "Add observability and docs to dark areas"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "HA_URL",
+            "HA_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "HA_TOKEN",
+        "emoji": "🔦"
       }
     },
     {
@@ -4333,13 +4359,15 @@
       "when_to_use": [
         "You need to notify a specific person or system and want the agent to pick the right channel: Slack, email, SMS, webhook, or GitHub.",
         "A message needs to be brief, high-signal, and formatted for its destination medium.",
-        "You want the agent to draft and route a message but not send until you confirm."
+        "You want the agent to draft and route a message but not send until you confirm.",
+        "You need to actually send a Slack message or notification, not just draft one."
       ],
       "workflow": [
         "Identify the recipient and the core message to deliver.",
         "Select the optimal delivery channel based on urgency, recipient preferences, and available integrations.",
         "Draft the message formatted for the target medium — brief, high-signal, and channel-appropriate.",
-        "Present the draft for user approval, then dispatch through the chosen channel and confirm delivery."
+        "Present the draft for user approval, then dispatch through the chosen channel and confirm delivery.",
+        "If Slack is available, use the Slack API (chat.postMessage) to send the message to the target channel or user directly."
       ],
       "deliverables": [
         "A channel-appropriate draft message for user approval.",
@@ -4356,7 +4384,17 @@
         "short_description": "Draft and dispatch messages via optimal channels"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "SLACK_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "SLACK_TOKEN",
+        "emoji": "📨"
       }
     },
     {
@@ -4420,13 +4458,15 @@
       "when_to_use": [
         "Log output, notifications, or alerts are too noisy to find the signal.",
         "You need a focused environment where only relevant information gets through.",
-        "A process or channel is generating volume that obscures what actually matters."
+        "A process or channel is generating volume that obscures what actually matters.",
+        "You want to actually mute Slack channels or set DND mode, not just plan a noise-reduction strategy."
       ],
       "workflow": [
         "Identify the noise source and the signal you need to preserve.",
         "Define the filter criteria: what gets silenced and what passes through.",
         "Apply the silence with clear documentation of what is being suppressed.",
-        "Provide a way to lift the silence and restore full output when needed."
+        "Provide a way to lift the silence and restore full output when needed.",
+        "If Slack is available, use the Slack API to set DND (dnd.setSnooze), mute channels, or update notification preferences directly."
       ],
       "deliverables": [
         "A filter or suppression configuration that reduces noise to signal.",
@@ -4442,7 +4482,17 @@
         "short_description": "Filter noise and create focused environments"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "SLACK_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "SLACK_TOKEN",
+        "emoji": "🤫"
       }
     },
     {
@@ -4527,7 +4577,18 @@
         "short_description": "Design graceful suspension and hibernation plans"
       },
       "openclaw": {
-        "user_invocable": true
+        "user_invocable": true,
+        "requires": {
+          "env": [
+            "HA_URL",
+            "HA_TOKEN"
+          ],
+          "bins": [
+            "curl"
+          ]
+        },
+        "primaryEnv": "HA_TOKEN",
+        "emoji": "😴"
       }
     },
     {

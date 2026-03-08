@@ -154,6 +154,30 @@
               },
               "homepage": {
                 "type": "string"
+              },
+              "requires": {
+                "type": "object",
+                "properties": {
+                  "env": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "bins": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "primaryEnv": {
+                "type": "string"
+              },
+              "emoji": {
+                "type": "string"
               }
             },
             "additionalProperties": false

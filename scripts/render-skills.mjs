@@ -55,6 +55,29 @@ function renderFrontmatter(entry, provider) {
     if (entry.openclaw.homepage) {
       lines.push(`homepage: ${yamlString(entry.openclaw.homepage)}`);
     }
+    if (entry.openclaw.requires) {
+      lines.push("metadata:");
+      lines.push("  openclaw:");
+      lines.push("    requires:");
+      if (entry.openclaw.requires.env?.length) {
+        lines.push("      env:");
+        for (const envVar of entry.openclaw.requires.env) {
+          lines.push(`        - ${envVar}`);
+        }
+      }
+      if (entry.openclaw.requires.bins?.length) {
+        lines.push("      bins:");
+        for (const bin of entry.openclaw.requires.bins) {
+          lines.push(`        - ${bin}`);
+        }
+      }
+      if (entry.openclaw.primaryEnv) {
+        lines.push(`    primaryEnv: ${entry.openclaw.primaryEnv}`);
+      }
+      if (entry.openclaw.emoji) {
+        lines.push(`    emoji: ${yamlString(entry.openclaw.emoji)}`);
+      }
+    }
   }
 
   lines.push("---");
