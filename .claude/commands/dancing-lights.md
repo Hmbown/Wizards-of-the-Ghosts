@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/dancing-lights/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/dancing-lights/SKILL.md

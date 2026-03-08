@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/charm-person/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/charm-person/SKILL.md

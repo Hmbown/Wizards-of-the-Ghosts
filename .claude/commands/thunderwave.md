@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/thunderwave/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/thunderwave/SKILL.md

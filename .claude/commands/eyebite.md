@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/eyebite/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/eyebite/SKILL.md

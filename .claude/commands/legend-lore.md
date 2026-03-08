@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/legend-lore/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/legend-lore/SKILL.md

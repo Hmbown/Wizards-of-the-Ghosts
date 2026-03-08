@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/blindness-deafness/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/blindness-deafness/SKILL.md

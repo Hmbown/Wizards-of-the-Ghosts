@@ -9,11 +9,7 @@ const generatedDir = path.join(rootDir, "generated");
 const blueprintPath = path.join(catalogDir, "blueprints.json");
 const canonPath = path.join(catalogDir, "canon.json");
 
-const providerDisplayNames = {
-  openai: "Codex / OpenAI",
-  claude: "Claude",
-  openclaw: "OpenClaw"
-};
+const providerDir = path.join(generatedDir, "openclaw");
 
 function yamlString(value) {
   return JSON.stringify(value);
@@ -26,23 +22,14 @@ function titleCase(slug) {
     .join(" ");
 }
 
-function assertShortDescription(entry) {
-  const value = entry.openai.short_description;
-  if (value.length < 25 || value.length > 64) {
-    throw new Error(
-      `${entry.slug}: openai.short_description must be 25-64 characters; got ${value.length}`
-    );
-  }
-}
-
-function renderFrontmatter(entry, provider) {
+function renderFrontmatter(entry) {
   const lines = [
     "---",
     `name: ${entry.slug}`,
     `description: ${yamlString(entry.description)}`
   ];
 
-  if (provider === "openclaw" && entry.openclaw) {
+  if (entry.openclaw) {
     if (typeof entry.openclaw.always === "boolean") {
       lines.push(`always: ${entry.openclaw.always}`);
     }
@@ -90,7 +77,7 @@ function renderSection(title, items, ordered = false) {
 }
 
 function renderSkillMd(entry, canon, provider) {
-  const header = renderFrontmatter(entry, provider);
+  const header = renderFrontmatter(entry);
 
   return [
     header,
@@ -105,7 +92,7 @@ function renderSkillMd(entry, canon, provider) {
     "",
     `Canonical source: ${canon.name} (${canon.kind})`,
     "",
-    `Provider target: ${providerDisplayNames[provider]}`,
+    "Provider target: OpenClaw",
     "",
     renderSection("When To Use", entry.when_to_use),
     renderSection("Workflow", entry.workflow, true),
@@ -118,26 +105,10 @@ function renderSkillMd(entry, canon, provider) {
   ].join("\n");
 }
 
-function renderOpenAiYaml(entry) {
-  return [
-    "interface:",
-    `  display_name: ${yamlString(entry.name)}`,
-    `  short_description: ${yamlString(entry.openai.short_description)}`,
-    `  default_prompt: ${yamlString(entry.default_prompt)}`,
-    ""
-  ].join("\n");
-}
-
-async function writeProviderEntry(provider, entry, canon) {
-  const skillDir = path.join(generatedDir, provider, entry.slug);
+async function writeOpenClawEntry(entry, canon) {
+  const skillDir = path.join(providerDir, entry.slug);
   await mkdir(skillDir, { recursive: true });
-  await writeFile(path.join(skillDir, "SKILL.md"), `${renderSkillMd(entry, canon, provider)}\n`);
-
-  if (provider === "openai") {
-    const agentsDir = path.join(skillDir, "agents");
-    await mkdir(agentsDir, { recursive: true });
-    await writeFile(path.join(agentsDir, "openai.yaml"), renderOpenAiYaml(entry));
-  }
+  await writeFile(path.join(skillDir, "SKILL.md"), `${renderSkillMd(entry, canon, "openclaw")}\n`);
 }
 
 async function main() {
@@ -147,6 +118,7 @@ async function main() {
 
   await rm(generatedDir, { recursive: true, force: true });
   await mkdir(generatedDir, { recursive: true });
+  await mkdir(providerDir, { recursive: true });
 
   let renderedCount = 0;
 
@@ -155,16 +127,15 @@ async function main() {
       throw new Error(`${entry.slug}: canonical_id ${entry.canonical_id} not found in catalog/canon.json`);
     }
 
-    assertShortDescription(entry);
     const canonicalEntry = canonById.get(entry.canonical_id);
 
-    for (const provider of entry.provider_targets) {
-      await writeProviderEntry(provider, entry, canonicalEntry);
+    if (entry.provider_targets.includes("openclaw")) {
+      await writeOpenClawEntry(entry, canonicalEntry);
       renderedCount += 1;
     }
   }
 
-  console.log(`Rendered ${renderedCount} provider-specific skill folders into ${generatedDir}`);
+  console.log(`Rendered ${renderedCount} OpenClaw skills into ${providerDir}`);
 }
 
 await main();

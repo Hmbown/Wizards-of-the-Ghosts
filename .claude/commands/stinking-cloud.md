@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/stinking-cloud/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/stinking-cloud/SKILL.md

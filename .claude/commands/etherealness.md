@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/etherealness/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/etherealness/SKILL.md

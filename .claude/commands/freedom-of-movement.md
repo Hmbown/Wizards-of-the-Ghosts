@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/freedom-of-movement/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/freedom-of-movement/SKILL.md

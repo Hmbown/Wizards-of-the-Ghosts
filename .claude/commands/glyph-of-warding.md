@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/glyph-of-warding/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/glyph-of-warding/SKILL.md

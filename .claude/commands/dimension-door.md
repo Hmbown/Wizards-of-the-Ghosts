@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/dimension-door/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/dimension-door/SKILL.md

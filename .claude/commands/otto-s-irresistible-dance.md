@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/otto-s-irresistible-dance/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/otto-s-irresistible-dance/SKILL.md

@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/bestow-curse/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/bestow-curse/SKILL.md

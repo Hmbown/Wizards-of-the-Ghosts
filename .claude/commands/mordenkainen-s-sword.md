@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/mordenkainen-s-sword/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/mordenkainen-s-sword/SKILL.md

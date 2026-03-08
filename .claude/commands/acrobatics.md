@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/acrobatics/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/acrobatics/SKILL.md

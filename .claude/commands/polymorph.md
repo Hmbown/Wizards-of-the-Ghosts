@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/polymorph/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/polymorph/SKILL.md

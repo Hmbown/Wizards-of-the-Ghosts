@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/guards-and-wards/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/guards-and-wards/SKILL.md

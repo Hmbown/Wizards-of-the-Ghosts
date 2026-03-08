@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/teleportation-circle/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/teleportation-circle/SKILL.md

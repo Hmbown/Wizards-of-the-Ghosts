@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/minor-illusion/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/minor-illusion/SKILL.md

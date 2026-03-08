@@ -1,1 +1,0 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/compulsion/SKILL.md

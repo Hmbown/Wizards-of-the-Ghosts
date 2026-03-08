@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/healing-word/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/healing-word/SKILL.md

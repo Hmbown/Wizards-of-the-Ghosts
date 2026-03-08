@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/hypnotic-pattern/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/hypnotic-pattern/SKILL.md

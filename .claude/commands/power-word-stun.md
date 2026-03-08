@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/power-word-stun/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/power-word-stun/SKILL.md

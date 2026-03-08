@@ -173,7 +173,8 @@
       "canonical_id": "skill-deception",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -296,7 +297,8 @@
       "canonical_id": "skill-intimidation",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -831,7 +833,8 @@
       "canonical_id": "spell-animate-objects",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -861,6 +864,9 @@
       "default_prompt": "Use $animate-objects to make this artifact self-updating, with clear agency boundaries and a kill switch.",
       "openai": {
         "short_description": "Give passive data autonomous update behavior"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -953,7 +959,8 @@
       "canonical_id": "spell-bestow-curse",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "metaphorical",
@@ -980,6 +987,9 @@
       "default_prompt": "Use $bestow-curse to design a constraint injection test for this [system/process]. What happens when we deliberately degrade it?",
       "openai": {
         "short_description": "Design constraint injection resilience tests"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -989,7 +999,8 @@
       "canonical_id": "spell-blindness-deafness",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "literal",
@@ -1071,7 +1082,8 @@
       "canonical_id": "spell-charm-person",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "hybrid",
@@ -1100,6 +1112,9 @@
       "default_prompt": "Use $charm-person to draft this message with warmth and care, and flag anything that crosses from persuasion into manipulation.",
       "openai": {
         "short_description": "Draft trust-building, ethical communication"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -1816,7 +1831,8 @@
       "canonical_id": "spell-eyebite",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "metaphorical",
@@ -1847,6 +1863,9 @@
       "default_prompt": "Use $eyebite to selectively degrade a specific capability of a system or service while keeping the rest operational.",
       "openai": {
         "short_description": "Selectively degrade a specific system capability"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -1981,7 +2000,8 @@
       "canonical_id": "spell-feeblemind",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "metaphorical",
@@ -2012,6 +2032,9 @@
       "default_prompt": "Use $feeblemind to reduce a system to minimal capability — stripping non-essential features to limit risk while preserving core function.",
       "openai": {
         "short_description": "Reduce a system to safe-mode minimal capability"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2064,7 +2087,8 @@
       "canonical_id": "spell-forcecage",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -2094,6 +2118,9 @@
       "default_prompt": "Use $forcecage to run this in a contained sandbox and tell me whether it behaved safely before I trust it outside.",
       "openai": {
         "short_description": "Sandbox untrusted code in strict isolation"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2103,7 +2130,8 @@
       "canonical_id": "spell-foresight",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -2132,6 +2160,9 @@
       "default_prompt": "Use $foresight to evaluate this decision, give me the likely upside and downside, and tell me what would change your call.",
       "openai": {
         "short_description": "Forecast likely outcomes with explicit uncertainty"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2386,7 +2417,8 @@
       "canonical_id": "spell-guards-and-wards",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",
@@ -2416,6 +2448,9 @@
       "default_prompt": "Use $guards-and-wards to perform a full security audit of this system and prioritize what needs hardening first.",
       "openai": {
         "short_description": "Audit and harden full system security posture"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2510,7 +2545,8 @@
       "canonical_id": "spell-heat-metal",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",
@@ -2541,6 +2577,9 @@
       "default_prompt": "Use $heat-metal to design a progressive friction strategy that makes a deprecated tool, abusive pattern, or unwanted behavior increasingly uncomfortable until users migrate to the better alternative.",
       "openai": {
         "short_description": "Inject progressive friction to drive migration"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2594,7 +2633,8 @@
       "canonical_id": "spell-hold-monster",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",
@@ -2621,6 +2661,9 @@
       "default_prompt": "Use $hold-monster to design an emergency circuit breaker for this [system/service/pipeline] with freeze scope and recovery plan.",
       "openai": {
         "short_description": "Design emergency circuit breakers for systems"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2630,7 +2673,8 @@
       "canonical_id": "spell-hold-person",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",
@@ -2657,6 +2701,9 @@
       "default_prompt": "Use $hold-person to design an administrative hold for this [account/process/workflow] with proper authorization and release conditions.",
       "openai": {
         "short_description": "Design authorized administrative freezes"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2666,7 +2713,8 @@
       "canonical_id": "spell-hypnotic-pattern",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -2693,6 +2741,9 @@
       "default_prompt": "Use $hypnotic-pattern to design attention-holding mechanics for this [flow/onboarding/presentation], with clear boundaries on when to let go.",
       "openai": {
         "short_description": "Design bounded attention-capture patterns"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -2827,7 +2878,8 @@
       "canonical_id": "spell-knock",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -2857,6 +2909,9 @@
       "default_prompt": "Use $knock to find the legitimate way through this access barrier and open it cleanly, with a full audit trail.",
       "openai": {
         "short_description": "Unlock access barriers through legitimate paths"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3337,7 +3392,8 @@
       "canonical_id": "spell-mass-suggestion",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -3366,6 +3422,9 @@
       "default_prompt": "Use $mass-suggestion to draft a broadcast message that moves this audience toward this action, with extra scrutiny for scale-amplified manipulation.",
       "openai": {
         "short_description": "Draft broadcast messages that move groups"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3458,7 +3517,8 @@
       "canonical_id": "spell-mind-blank",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -3487,6 +3547,9 @@
       "default_prompt": "Use $mind-blank to isolate this context so nothing from it leaks into other sessions or tasks.",
       "openai": {
         "short_description": "Prevent context leakage across trust boundaries"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3581,7 +3644,8 @@
       "canonical_id": "spell-mislead",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",
@@ -3702,7 +3766,8 @@
       "canonical_id": "spell-nondetection",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -3731,6 +3796,9 @@
       "default_prompt": "Use $nondetection to strip unnecessary metadata and tracking from this and tell me what exposure remains.",
       "openai": {
         "short_description": "Strip metadata and harden privacy surfaces"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3740,7 +3808,8 @@
       "canonical_id": "spell-otto-s-irresistible-dance",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "metaphorical",
@@ -3767,6 +3836,9 @@
       "default_prompt": "Use $otto-s-irresistible-dance to analyze what would make this [product/content/experience] irresistibly engaging, and draw the line where engagement becomes addiction.",
       "openai": {
         "short_description": "Analyze compulsive engagement mechanics"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3776,7 +3848,8 @@
       "canonical_id": "spell-planar-binding",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",
@@ -3806,6 +3879,9 @@
       "default_prompt": "Use $planar-binding to integrate this external service with an explicit contract covering scope, cost, duration, and termination.",
       "openai": {
         "short_description": "Bind external services under explicit contracts"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3898,7 +3974,8 @@
       "canonical_id": "spell-power-word-kill",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "hybrid",
@@ -3930,6 +4007,9 @@
       "default_prompt": "Use $power-word-kill to immediately terminate a process or system that cannot be shut down gracefully. Confirm the target, verify alternatives are exhausted, execute, and assess blast radius.",
       "openai": {
         "short_description": "Instantly terminate a process with no negotiation"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -3939,7 +4019,8 @@
       "canonical_id": "spell-power-word-stun",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "hybrid",
@@ -3970,6 +4051,9 @@
       "default_prompt": "Use $power-word-stun to immediately freeze a process, account, or system in place — preserving its state for investigation or later resumption.",
       "openai": {
         "short_description": "Hard-freeze a process while preserving state"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -4190,7 +4274,8 @@
       "canonical_id": "spell-resurrection",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -4220,6 +4305,9 @@
       "default_prompt": "Use $resurrection to bring this dead system back from whatever backups and artifacts remain, verifying each step.",
       "openai": {
         "short_description": "Restore dead systems from backups and artifacts"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -4229,7 +4317,8 @@
       "canonical_id": "spell-scrying",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -4259,6 +4348,9 @@
       "default_prompt": "Use $scrying to show me the live state of this system right now, with timestamps and staleness clearly labeled.",
       "openai": {
         "short_description": "Observe remote systems and services in real time"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -4309,7 +4401,8 @@
       "canonical_id": "spell-seeming",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -4722,7 +4815,8 @@
       "canonical_id": "spell-stinking-cloud",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
@@ -4753,6 +4847,9 @@
       "default_prompt": "Use $stinking-cloud to set up area-denial defenses — rate limits, tarpits, honeypots, or deterrent zones that make an area inhospitable to unwanted traffic without destroying the underlying infrastructure.",
       "openai": {
         "short_description": "Set up area-denial defenses and deterrent zones"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -4893,7 +4990,8 @@
       "canonical_id": "spell-teleportation-circle",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -4922,6 +5020,9 @@
       "default_prompt": "Use $teleportation-circle to establish a reusable pipeline between these environments, with testing and monitoring built in.",
       "openai": {
         "short_description": "Build reusable deployment and sync pipelines"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -4931,7 +5032,8 @@
       "canonical_id": "spell-thunderwave",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "literal",
@@ -4960,6 +5062,9 @@
       "default_prompt": "Use $thunderwave to design or trigger a tightly scoped dramatic effect, but stop for confirmation before any irreversible action.",
       "openai": {
         "short_description": "Trigger dramatic effects behind hard safety gates"
+      },
+      "openclaw": {
+        "user_invocable": true
       }
     },
     {
@@ -5011,7 +5116,8 @@
       "canonical_id": "spell-true-polymorph",
       "provider_targets": [
         "openai",
-        "claude"
+        "claude",
+        "openclaw"
       ],
       "reality_tier": "prototype",
       "literalness": "hybrid",

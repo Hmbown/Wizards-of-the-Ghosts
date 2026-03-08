@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/hallucinatory-terrain/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/hallucinatory-terrain/SKILL.md

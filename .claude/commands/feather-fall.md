@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/feather-fall/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/feather-fall/SKILL.md

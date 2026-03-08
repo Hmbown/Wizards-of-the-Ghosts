@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/speak-with-dead/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/speak-with-dead/SKILL.md

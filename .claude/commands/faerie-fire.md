@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/faerie-fire/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/faerie-fire/SKILL.md

@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/planar-binding/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/planar-binding/SKILL.md

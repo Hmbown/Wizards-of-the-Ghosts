@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/heat-metal/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/heat-metal/SKILL.md

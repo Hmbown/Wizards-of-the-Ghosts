@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/calm-emotions/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/calm-emotions/SKILL.md

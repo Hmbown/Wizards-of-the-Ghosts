@@ -1,1 +1,1 @@
-/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/comprehend-languages/SKILL.md
+/volumes/vixinssd/wizardsoftheghosts/generated/openclaw/comprehend-languages/SKILL.md
