@@ -1,0 +1,1 @@
+/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/hold-monster/SKILL.md

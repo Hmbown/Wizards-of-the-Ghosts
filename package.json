@@ -1,0 +1,13 @@
+{
+  "name": "wizardsoftheghosts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:canon": "node scripts/sync-canon.mjs",
+    "expand:blueprints": "node scripts/expand-blueprints.mjs",
+    "build:skills": "node scripts/render-skills.mjs",
+    "export:linear": "node scripts/export-linear-seed.mjs",
+    "install:codex-skills": "node scripts/install-codex-skills.mjs",
+    "bootstrap": "node scripts/sync-canon.mjs && node scripts/expand-blueprints.mjs && node scripts/render-skills.mjs && node scripts/export-linear-seed.mjs"
+  }
+}

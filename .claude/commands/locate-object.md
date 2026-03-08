@@ -1,0 +1,1 @@
+/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/locate-object/SKILL.md

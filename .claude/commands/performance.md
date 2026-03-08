@@ -1,0 +1,1 @@
+/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/performance/SKILL.md

@@ -1,0 +1,1 @@
+/Volumes/VIXinSSD/wizardsoftheghosts/generated/claude/shatter/SKILL.md

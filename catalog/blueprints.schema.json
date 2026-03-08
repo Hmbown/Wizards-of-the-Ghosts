@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wizardsoftheghosts.local/catalog/blueprints.schema.json",
+  "title": "Wizards of the Ghosts Blueprints",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "slug",
+          "name",
+          "kind",
+          "canonical_id",
+          "provider_targets",
+          "reality_tier",
+          "literalness",
+          "tagline",
+          "description",
+          "when_to_use",
+          "workflow",
+          "deliverables",
+          "guardrails",
+          "default_prompt",
+          "openai"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "spell",
+              "skill"
+            ]
+          },
+          "canonical_id": {
+            "type": "string",
+            "pattern": "^(spell|skill)-[a-z0-9-]+$"
+          },
+          "provider_targets": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "openai",
+                "claude",
+                "openclaw"
+              ]
+            }
+          },
+          "reality_tier": {
+            "type": "string",
+            "enum": [
+              "shipping-now",
+              "prototype",
+              "speculative"
+            ]
+          },
+          "literalness": {
+            "type": "string",
+            "enum": [
+              "metaphorical",
+              "hybrid",
+              "literal"
+            ]
+          },
+          "tagline": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "when_to_use": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "workflow": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "deliverables": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "guardrails": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "default_prompt": {
+            "type": "string",
+            "pattern": "\\$[a-z0-9-]+"
+          },
+          "openai": {
+            "type": "object",
+            "required": [
+              "short_description"
+            ],
+            "properties": {
+              "short_description": {
+                "type": "string",
+                "minLength": 25,
+                "maxLength": 64
+              }
+            },
+            "additionalProperties": false
+          },
+          "openclaw": {
+            "type": "object",
+            "properties": {
+              "always": {
+                "type": "boolean"
+              },
+              "user_invocable": {
+                "type": "boolean"
+              },
+              "disable_model_invocation": {
+                "type": "boolean"
+              },
+              "homepage": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

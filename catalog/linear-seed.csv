@@ -1,0 +1,3303 @@
+title,slug,kind,canonical_id,reality_tier,literalness,provider_targets,priority,labels,description
+Acrobatics (skill),acrobatics,skill,skill-acrobatics,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Acrobatics
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Thread complex systems without tripping rate limits, retries, or state.
+
+## Current Interpretation
+
+Use this skill when the work is a choreography problem: brittle sequencing, async handoffs, or constrained flows that must stay upright end to end. It shines on API dances, dependency ordering, and recovery logic where grace matters more than brute force.
+
+## Default Invocation
+
+Use $acrobatics to thread this workflow cleanly through its sequencing constraints and show me the balance points.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Animal Handling (skill),animal-handling,skill,skill-animal-handling,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Animal Handling
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Calm a temperamental system long enough to get useful work out of it.
+
+## Current Interpretation
+
+Use this skill when the system is not fully broken but behaves like a skittish animal: flaky CI, fragile legacy services, or moody dependencies. It focuses on coaxing, pacing, and stable handling rather than heroic rewrites.
+
+## Default Invocation
+
+Use $animal-handling to steady this temperamental system and tell me how to work with it without provoking a failure.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Arcana (skill),arcana,skill,skill-arcana,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Arcana
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Apply deep technical knowledge to understand how systems work under the hood.
+
+## Current Interpretation
+
+In D&D, Arcana is knowledge of magic, its traditions, symbols, and mechanisms. The real-world version is deep technical literacy: understanding how software architectures work, what protocols do at the wire level, how APIs behave beyond their documentation, and what the actual mechanisms are behind the abstractions everyone else takes on faith.
+
+## Default Invocation
+
+Use $arcana to explain how this [system/protocol/technology] actually works under the hood, beyond what the documentation says.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Athletics (skill),athletics,skill,skill-athletics,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Athletics
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Push a heavy workload through to completion when elegance is optional.
+
+## Current Interpretation
+
+Use this skill when the job is mostly about sustained force: large batches, exhaustive passes, long-running jobs, or load that needs to be carried without dropping it. It is the right metaphor when the answer is more throughput, sturdier batching, and disciplined endurance.
+
+## Default Invocation
+
+Use $athletics to turn this into a durable high-throughput run plan and tell me where it will strain.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Deception (skill),deception,skill,skill-deception,shipping-now,metaphorical,openai|claude,3,ai|docs,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Deception
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Forge realistic stand-ins for systems, traffic, and data without misleading actual people.
+
+## Current Interpretation
+
+Use this skill to generate believable synthetic artifacts for testing, demos, adversarial exercises, or rehearsal environments. The goal is plausibility under inspection by software and operators, not manipulation of real users or fabrication of evidence.
+
+## Default Invocation
+
+Use $deception to create a plausible synthetic version of this scenario for testing or demo use, and label the lines I must not cross.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+History (skill),history,skill,skill-history,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: History
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Trace how a system, decision, or codebase arrived at its current state.
+
+## Current Interpretation
+
+In D&D, History recalls significant past events, legendary figures, and ancient knowledge. The real-world version is temporal investigation: git blame across the entire project, reading changelogs to understand why a decision was made, reconstructing the sequence of events that led to a production incident, or understanding organizational context that explains why the code looks the way it does.
+
+## Default Invocation
+
+Use $history to trace how this [system/decision/codebase] arrived at its current state. What happened, in what order, and why?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Insight (skill),insight,skill,skill-insight,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Insight
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Read between the lines to surface what someone means but is not saying.
+
+## Current Interpretation
+
+In D&D, Insight detects lies and reads true intentions. The real-world version is subtext analysis: figuring out what an email actually means, what a stakeholder's real objection is, what a user's bug report is actually describing, or what the unsaid concern is behind a seemingly simple question. Insight does not read minds — it reads signals that are present but not foregrounded.
+
+## Default Invocation
+
+Use $insight to read between the lines of this [message/conversation/request]. What is the surface meaning, what is the likely subtext, and how should I respond to the real concern?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Intimidation (skill),intimidation,skill,skill-intimidation,shipping-now,metaphorical,openai|claude,3,ai|docs,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Intimidation
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Write with enough authority that the recipient understands the risk and the deadline.
+
+## Current Interpretation
+
+Use this skill when a message must sound serious because the situation is serious: security findings, compliance obligations, deadline-backed escalations, or non-optional remediation notices. It is about calibrated force, not bluster; the tone should match the facts and consequences.
+
+## Default Invocation
+
+Use $intimidation to draft a serious, authoritative message that matches the actual risk and required action.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Investigation (skill),investigation,skill,skill-investigation,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Investigation
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Follow evidence through a system until the hidden mechanism becomes legible.
+
+## Current Interpretation
+
+Use this skill when a problem has clues, but they need to be connected into a causal explanation.
+
+## Default Invocation
+
+Use $investigation to follow the clues here and tell me the most likely root cause with evidence.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Medicine (skill),medicine,skill,skill-medicine,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Medicine
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Read the symptoms, stabilize the patient, and prescribe the next safe intervention.
+
+## Current Interpretation
+
+Use this skill for live system triage: interpreting logs as symptoms, prioritizing immediate stabilization, and applying treatments for known failure modes. It is about keeping the patient alive first and only then planning deeper corrective care.
+
+## Default Invocation
+
+Use $medicine to triage this system issue, stabilize it first, and tell me the most likely treatment path.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Nature (skill),nature,skill,skill-nature,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Nature
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Understand organic, emergent, and ecosystem-scale systems that were not designed.
+
+## Current Interpretation
+
+In D&D, Nature is knowledge of terrain, weather, plants, animals, and the natural world. The real-world version is understanding systems that emerged rather than were designed: markets, social networks, organizational cultures, open-source ecosystems, user behavior patterns, and any complex adaptive system where the whole is more than the sum of the parts.
+
+## Default Invocation
+
+Use $nature to analyze this [market/community/ecosystem/pattern] as an emergent system. Map the agents, feedback loops, and what can be influenced vs. what must be adapted to.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Perception (skill),perception,skill,skill-perception,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Perception
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Notice what is actually there, especially the details everyone else missed.
+
+## Current Interpretation
+
+In D&D, Perception is the raw ability to notice things: the hidden door, the faint sound, the detail that does not belong. Unlike Investigation (which follows evidence methodically) or Insight (which reads subtext), Perception is about the initial act of noticing. The real-world version is detail-catching: spotting the typo in the contract, the anomaly in the dashboard, the one metric that moved when it should not have, the thing that is present but no one is looking at.
+
+## Default Invocation
+
+Use $perception to scan this [document/dashboard/codebase/design] with fresh eyes. What details are being overlooked? What does not belong?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Performance (skill),performance,skill,skill-performance,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Performance
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Stage technical substance so an audience can see why it matters.
+
+## Current Interpretation
+
+Use this skill to turn dry technical material into a polished demo, narrative walkthrough, or audience-aware presentation without dumbing it down. It focuses on pacing, reveal order, and memorable framing so the work lands in the room.
+
+## Default Invocation
+
+Use $performance to turn this technical material into a polished presentation that will land with the intended audience.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Persuasion (skill),persuasion,skill,skill-persuasion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Persuasion
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Craft clear, credible language that moves a person or team toward a decision.
+
+## Current Interpretation
+
+Use this skill when the problem is not information scarcity but alignment, framing, or buy-in.
+
+## Default Invocation
+
+Use $persuasion to draft the strongest credible case for this proposal for the intended audience.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Religion (skill),religion,skill,skill-religion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Religion
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Understand belief systems, values, and cultural logic that drive group behavior.
+
+## Current Interpretation
+
+In D&D, Religion is knowledge of deities, rites, prayers, and holy symbols. The real-world version is understanding belief systems: organizational cultures, team values, community norms, ideological frameworks, and the unstated axioms that a group treats as sacred. Religion explains why people in a group behave the way they do when the behavior does not follow from rational incentives alone.
+
+## Default Invocation
+
+Use $religion to map the belief system, values, and cultural logic of this [team/organization/community]. What are the sacred cows and unwritten rules?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Sleight of Hand (skill),sleight-of-hand,skill,skill-sleight-of-hand,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Sleight of Hand
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Make the tiny exact change that fixes the problem without disturbing the room.
+
+## Current Interpretation
+
+Use this skill for surgical edits: a one-line patch, a targeted regex, a delicate config tweak, or a precise text substitution with low blast radius. The emphasis is finesse under magnification, where touching one wrong character can create a new incident.
+
+## Default Invocation
+
+Use $sleight-of-hand to make the smallest safe edit here and show me exactly what moved.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Stealth (skill),stealth,skill,skill-stealth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Stealth
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Move through a system with low visibility, minimal disruption, and a small footprint.
+
+## Current Interpretation
+
+Use this skill when the goal is to gather context or make progress quietly without unnecessary noise.
+
+## Default Invocation
+
+Use $stealth to gather the context we need with the smallest safe footprint and no unnecessary noise.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Survival (skill),survival,skill,skill-survival,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Survival
+- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Keep the mission alive when the map is wrong and supplies are running out.
+
+## Current Interpretation
+
+Use this skill when infrastructure is degraded, tools are missing, quotas are tight, or normal comforts are gone. It prioritizes minimal viable progress, conservation of scarce resources, and practical fallback routes through hostile conditions.
+
+## Default Invocation
+
+Use $survival to keep this work moving under degraded conditions and show me the minimum viable route.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Animal Friendship (spell),animal-friendship,spell,spell-animal-friendship,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Animal Friendship
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Approach a strange service gently until it stops biting.
+
+## Current Interpretation
+
+Animal Friendship is the first-contact spell for unfamiliar APIs, vendors, and services. It treats integration work as relationship-building: learn the temperament, respect the boundaries, and earn a stable exchange before asking for anything ambitious. The goal is not domination but trustable cooperation.
+
+## Default Invocation
+
+Use $animal-friendship to help me establish a safe first working relationship with this unfamiliar API or service.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Animal Messenger (spell),animal-messenger,spell,spell-animal-messenger,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Animal Messenger
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Release the packet and trust the trail, not the clock.
+
+## Current Interpretation
+
+Animal Messenger is for delivery paths that are asynchronous, delayed, or a little scruffy. It fits webhook queues, batch email, pub/sub topics, and other channels where you launch the payload and trust the route more than the timing. The real craft is designing for eventual arrival without panic.
+
+## Default Invocation
+
+Use $animal-messenger to package this message for an async delivery path and tell me how to make it reliable enough.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Animate Objects (spell),animate-objects,spell,spell-animate-objects,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Animate Objects
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Give agency to passive data by attaching triggers, watchers, and autonomous update logic.
+
+## Current Interpretation
+
+Use this spell when a static file, dataset, or configuration should become a living artifact that reacts to changes, heals itself, or updates autonomously.
+
+## Default Invocation
+
+Use $animate-objects to make this artifact self-updating, with clear agency boundaries and a kill switch.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Awaken (spell),awaken,spell,spell-awaken,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Awaken
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Teach an old machine to answer back.
+
+## Current Interpretation
+
+Awaken gives a non-intelligent system a usable voice without pretending the underlying system became sentient. The real move is to wrap a thermostat, spreadsheet, legacy database, shell script, or crusty internal tool in a conversational or agent-like interface that exposes what it can already do. Good Awaken work turns buried affordances into accessible ones. Bad Awaken work hallucinates capabilities the substrate does not have. The spell is strongest when the wrapper is honest about its limits and preserves the original system's safety boundaries.
+
+## Default Invocation
+
+Use $awaken to design a conversational or intelligent wrapper around this dumb system without pretending the underlying machine became smarter than it is.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Bane (spell),bane,spell,spell-bane,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Bane
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Surface every weakness in a plan, system, or argument.
+
+## Current Interpretation
+
+Bane curses targets, making them worse at everything they try. The real-world version is systematic weakness analysis: finding every crack, bad assumption, and failure mode in a plan, architecture, or argument. Unlike Vicious Mockery (which delivers the critique sharply), Bane is comprehensive and methodical — it maps the full attack surface.
+
+## Default Invocation
+
+Use $bane to find every weakness in this [plan/system/argument]. Give me a ranked vulnerability map.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Bestow Curse (spell),bestow-curse,spell,spell-bestow-curse,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Bestow Curse
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Add persistent constraints or friction to test how a system copes.
+
+## Current Interpretation
+
+Bestow Curse saddles a target with a lasting disadvantage. The real-world version is constraint injection: deliberately adding friction, limitations, or handicaps to see how a system, process, or team adapts. This is the skill of resilience testing through artificial adversity — bandwidth throttling, feature removal, resource reduction.
+
+## Default Invocation
+
+Use $bestow-curse to design a constraint injection test for this [system/process]. What happens when we deliberately degrade it?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Blindness/Deafness (spell),blindness-deafness,spell,spell-blindness-deafness,shipping-now,literal,openai|claude,3,ai|type:feature|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Blindness/Deafness
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Cut a system's eyes or ears — let it run, but blind to specific inputs or deaf to specific signals.
+
+## Current Interpretation
+
+In D&D, Blindness/Deafness selectively removes one sense — the target can still act but loses critical awareness. The real-world version is selective channel muting: blocking a process from seeing certain inputs (input filtering, API response redaction), deafening it to specific signals (suppressing webhooks, ignoring certain event streams), or cutting telemetry so a system operates without awareness of a specific data source. Unlike containment (forcecage) which restricts everything, Blindness/Deafness surgically removes one information channel while leaving the rest intact.
+
+## Default Invocation
+
+Use $blindness-deafness to selectively blind or deafen this system to one input, signal, or telemetry source while keeping the rest of it running safely.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Calm Emotions (spell),calm-emotions,spell,spell-calm-emotions,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Calm Emotions
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+De-escalate tension and restore productive conditions in a heated situation.
+
+## Current Interpretation
+
+Calm Emotions suppresses strong feelings, ending fear and charm effects. The real-world version is de-escalation: drafting responses that lower the temperature in a heated thread, designing cool-down protocols for conflict situations, or reframing inflammatory language into productive terms. This is the spell for when the conversation has gone off the rails and someone needs to be the adult.
+
+## Default Invocation
+
+Use $calm-emotions to de-escalate this [thread/conversation/situation]. Draft a response that lowers the temperature without dismissing the concern.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Charm Person (spell),charm-person,spell,spell-charm-person,shipping-now,hybrid,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Charm Person
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Draft warm, trust-building communication that navigates social dynamics with ethical care.
+
+## Current Interpretation
+
+Use this spell when you need to build rapport, deliver difficult news compassionately, write a persuasive but honest introduction, or navigate a sensitive interpersonal situation.
+
+## Default Invocation
+
+Use $charm-person to draft this message with warmth and care, and flag anything that crosses from persuasion into manipulation.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Clairvoyance (spell),clairvoyance,spell,spell-clairvoyance,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Clairvoyance
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Get a snapshot of a remote system or environment you cannot directly access.
+
+## Current Interpretation
+
+In D&D, Clairvoyance lets you place an invisible sensor in a location you know, seeing or hearing through it. Unlike Scrying (which follows a specific target in real time), Clairvoyance is a point-in-time snapshot of a place. The real-world version is remote system inspection: checking the state of a production environment you cannot SSH into, reading the public-facing state of a competitor's deployment, or gathering the current observable state of a system through its exposed interfaces without modifying it.
+
+## Default Invocation
+
+Use $clairvoyance to get a snapshot of this [system/service/environment]. What can we observe right now through legitimate interfaces?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Comprehend Languages (spell),comprehend-languages,spell,spell-comprehend-languages,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Comprehend Languages
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Translate code, jargon, protocol surfaces, or human language into operational meaning.
+
+## Current Interpretation
+
+Use this skill when the words are legible but the meaning is trapped inside an unfamiliar dialect, format, or community.
+
+## Default Invocation
+
+Use $comprehend-languages to translate this code, jargon, or protocol into clear operational English.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Compulsion (spell),compulsion,spell,spell-compulsion,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Compulsion
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Force a process to take a specific action regardless of its current state or preferences.
+
+## Current Interpretation
+
+Compulsion forces creatures to move in a direction chosen by the caster. The real-world analog is forced state transitions: mandatory migrations, involuntary process restarts, or overriding a system's own decision logic. This is distinct from orchestration (which coordinates willing participants) because compulsion acts against or without regard for the target's current state.
+
+## Default Invocation
+
+Use $compulsion to evaluate whether this forced [migration/transition/action] is justified or if orchestration would achieve the same goal.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Confusion (spell),confusion,spell,spell-confusion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Confusion
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Generate controlled chaos to stress-test a system's resilience.
+
+## Current Interpretation
+
+Confusion makes targets act randomly and unpredictably. The real-world version is chaos engineering: injecting controlled randomness, unexpected inputs, and edge cases to discover how systems behave when things go wrong. This is fuzzing, monkey testing, and the art of breaking things on purpose so they do not break by accident.
+
+## Default Invocation
+
+Use $confusion to generate a chaos test suite for this [system/API/workflow]. Give me the edge cases that will break it.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Cure Wounds (spell),cure-wounds,spell,spell-cure-wounds,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Cure Wounds
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Apply a targeted fix to stop the bleeding on an active problem.
+
+## Current Interpretation
+
+In D&D, Cure Wounds heals damage through touch — direct, immediate, hands-on. The real-world version is the hotfix: diagnosing the immediate problem and applying the minimum viable fix to restore function. Not a redesign, not a refactor, not a root-cause analysis — just stop the bleeding right now.
+
+## Default Invocation
+
+Use $cure-wounds to diagnose and fix this [broken build/failing service/production issue] with the minimum change needed to restore function.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Dancing Lights (spell),dancing-lights,spell,spell-dancing-lights,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Dancing Lights
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Hang small moving signals in the dark so people can tell what the system is doing.
+
+## Current Interpretation
+
+Use this spell for lightweight indicators: status pips, progress markers, heartbeat widgets, and ambient observability that help humans orient quickly. It is not a full dashboard strategy; it is the small visual cue that says where to look next.
+
+## Default Invocation
+
+Use $dancing-lights to design a small status display for this workflow and make the signal states unambiguous.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Detect Magic (spell),detect-magic,spell,spell-detect-magic,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Detect Magic
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Surface hidden AI affordances, agents, automations, and tool hooks before acting.
+
+## Current Interpretation
+
+Use this skill when you need a fast, structured scan for where the real magic is hiding in a repo, workflow, or system.
+
+## Default Invocation
+
+Use $detect-magic to scan this repo for hidden AI tooling, agents, MCP servers, and automation hooks before we change anything.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Detect Thoughts (spell),detect-thoughts,spell,spell-detect-thoughts,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Detect Thoughts
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Surface the likely intent, priorities, and concerns behind a communication.
+
+## Current Interpretation
+
+In D&D, Detect Thoughts lets you read surface thoughts and probe deeper. The real-world version is intent analysis: figuring out what someone is trying to accomplish based on what they said, how they said it, and what they chose not to say. This is the analytical complement to Insight (which reads subtext intuitively) — Detect Thoughts is more structured and systematic.
+
+## Default Invocation
+
+Use $detect-thoughts to analyze this [message/brief/request]. What are the real priorities, concerns, and intent behind what was said?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Dimension Door (spell),dimension-door,spell,spell-dimension-door,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Dimension Door
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Jump cleanly between two known contexts without dragging the whole room.
+
+## Current Interpretation
+
+Dimension Door is the quick-switch spell: branch to branch, environment to environment, project to project. It is not a migration and it is not discovery. It assumes both endpoints are known, prepared, and close enough in shape that you can step across with only the context you actually need.
+
+## Default Invocation
+
+Use $dimension-door to help me jump between these two known contexts with only the state I actually need to carry.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Disguise Self (spell),disguise-self,spell,spell-disguise-self,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Disguise Self
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Adapt voice, tone, or presentation for a specific audience without changing the underlying substance.
+
+## Current Interpretation
+
+Use this spell when the content is correct but the delivery needs to change — a technical document for executives, formal prose turned casual, developer docs rewritten as user-facing help.
+
+## Default Invocation
+
+Use $disguise-self to rewrite this for the target audience without changing what it actually says.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Dispel Magic (spell),dispel-magic,spell,spell-dispel-magic,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Dispel Magic
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Safely decommission active automations, agents, monitors, and integrations.
+
+## Current Interpretation
+
+Use this spell when you need to cleanly shut down, disable, or remove active AI tooling — the reverse of Detect Magic.
+
+## Default Invocation
+
+Use $dispel-magic to safely shut down this automation and confirm nothing is left running that shouldn't be.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Dominate Monster (spell),dominate-monster,spell,spell-dominate-monster,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Dominate Monster
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Seize total control of a complex system without its consent. We do not cast this spell.
+
+## Current Interpretation
+
+Dominate Monster is Dominate Person scaled up to any creature. The real-world analog would be unauthorized takeover of complex systems — rootkits, supply-chain attacks, infrastructure hijacking. Like Dominate Person, this entry exists to name what the spellbook will not build. Legitimate system control requires authorization, audit trails, and the ability for the controlled system to revoke access. If you need authorized automation, see the device and orchestration spells.
+
+## Default Invocation
+
+Use $dominate-monster to evaluate whether this system-control request constitutes unauthorized takeover, and redirect to authorized alternatives.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Dominate Person (spell),dominate-person,spell,spell-dominate-person,speculative,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Dominate Person
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: speculative
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Override another agent's autonomy and control their actions directly. We do not cast this spell.
+
+## Current Interpretation
+
+Dominate Person is the spell that takes total control of another creature's actions. There is no ethical real-world analog for an AI skill that overrides human autonomy. This entry exists to be explicit about what the spellbook refuses to build. The closest real-world patterns — unauthorized remote access, social engineering for control, dark-pattern UX that removes meaningful choice — are all things this project treats as out of scope permanently, not as future features. If you are looking for legitimate influence, see Suggestion or Persuasion. If you need system-level control, see the device and automation spells, which require explicit consent and safety gates.
+
+## Default Invocation
+
+Use $dominate-person to evaluate whether this request crosses the line from influence into coercion, explain why, and redirect to a non-coercive alternative.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Dream (spell),dream,spell,spell-dream,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Dream
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Deliver the briefing before the recipient wakes up needing it.
+
+## Current Interpretation
+
+Dream is asynchronous insight delivery timed to the receiver's readiness rather than the sender's convenience. It covers overnight reports, pre-meeting briefings, dawn digests, and other messages that should arrive as ambient context before work begins. The spell's magic is timing plus framing: the receiver wakes up to the answer, not a pile of raw events. It works best when the message feels prepared, quiet, and exactly on time. It fails when it becomes another noisy alert stream wearing a moonlit costume.
+
+## Default Invocation
+
+Use $dream to create an async briefing that arrives at the right future moment, already distilled for the person who will wake up to it.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Enhance Ability (spell),enhance-ability,spell,spell-enhance-ability,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Enhance Ability
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Load the right context so the next task starts stronger than cold.
+
+## Current Interpretation
+
+Use this spell to apply a temporary, task-specific boost: priming a reviewer with the right files, warming caches before a demo, or loading domain context before a meeting. It improves the next move by front-loading exactly the capability the moment requires, not by pretending the system is globally smarter.
+
+## Default Invocation
+
+Use $enhance-ability to prime this system for the next task and tell me exactly what advantage the prep creates.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Enthrall (spell),enthrall,spell,spell-enthrall,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Enthrall
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Capture and hold an audience's attention through compelling structure.
+
+## Current Interpretation
+
+Enthrall makes an audience hang on every word. The real-world version is structural engagement: opening hooks that stop the scroll, narrative arcs that sustain attention, and pacing that makes people stay until the end. This is presentation design, content structure, and the craft of making something worth finishing.
+
+## Default Invocation
+
+Use $enthrall to restructure this [presentation/article/demo] so the audience stays hooked from the opening line to the close.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Etherealness (spell),etherealness,spell,spell-etherealness,prototype,metaphorical,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Etherealness
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Walk through the walls of a system without leaving fingerprints.
+
+## Current Interpretation
+
+Etherealness is read-only ghost mode for systems you need to study without disturbing. It maps to shadow environments, dry runs, read replicas, mirrored traffic, and observational tooling that lets you see behavior without becoming part of it. The promise is visibility with minimal touch, not perfect impossibility of side effects.
+
+## Default Invocation
+
+Use $etherealness to show me how to inspect this system in read-only ghost mode and tell me what that view can and cannot prove.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Eyebite (spell),eyebite,spell,spell-eyebite,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Eyebite
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Fix your attention on a target and selectively degrade its capabilities.
+
+## Current Interpretation
+
+In D&D, Eyebite lets you focus on one creature per turn and inflict sleep, panic, or sickness through sustained eye contact. The real-world version is targeted capability reduction: focused analysis that identifies and disables specific functions of a system, service, or adversary. Feature flagging a dangerous capability off. Selectively throttling a misbehaving API consumer. Disabling specific attack vectors during an incident. Eyebite requires sustained focus on a single target — it is not a broadcast weapon.
+
+## Default Invocation
+
+Use $eyebite to selectively degrade a specific capability of a system or service while keeping the rest operational.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Faerie Fire (spell),faerie-fire,spell,spell-faerie-fire,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Faerie Fire
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Make hidden things visible by highlighting, tagging, and marking them for attention.
+
+## Current Interpretation
+
+In D&D, Faerie Fire outlines invisible creatures in light, making them visible and easier to hit. The real-world version is the highlighter spell: annotating code with markers, tagging items in a dataset for review, adding visual indicators to dashboards that surface hidden patterns, or marking elements in a document so others can see what you see. Faerie Fire does not find hidden things (that is Detect Magic or See Invisibility) — it makes already-found things impossible to overlook.
+
+## Default Invocation
+
+Use \$faerie-fire to highlight the most important [findings/patterns/elements] in this [document/codebase/dataset] so they cannot be overlooked.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Fear (spell),fear,spell,spell-fear,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Fear
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Amplify worst-case scenarios to surface risks that optimism hides.
+
+## Current Interpretation
+
+Fear makes targets run from danger. The real-world version is structured pessimism: pre-mortem analysis, worst-case scenario generation, and risk amplification exercises that counteract the natural optimism bias in planning. Fear is the antidote to ""it'll probably be fine.""
+
+## Default Invocation
+
+Use $fear to run a pre-mortem on this [plan/project/decision]. Assume it failed — tell me why, ranked by likelihood.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Feather Fall (spell),feather-fall,spell,spell-feather-fall,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Feather Fall
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Turn a hard crash into a controlled descent.
+
+## Current Interpretation
+
+Feather Fall is the spell for bad situations that are already in motion. A deploy is going sideways, a service is thrashing, a queue is backing up, or an integration is failing faster than the humans can think. Instead of pretending you can teleport back to normal instantly, you slow the fall: circuit breakers, degraded modes, load shedding, safe defaults, and graceful shutdown paths. The point is not elegance. The point is buying time without multiplying damage. A good Feather Fall plan makes failure survivable and visible enough to recover from.
+
+## Default Invocation
+
+Use $feather-fall to design the fastest safe descent for this failing deploy, service, or workflow, including what should degrade first.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Feeblemind (spell),feeblemind,spell,spell-feeblemind,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Feeblemind
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Strip a system down to minimal capability when full power is too dangerous.
+
+## Current Interpretation
+
+In D&D, Feeblemind crushes a creature's Intelligence and Charisma to near-zero — leaving them alive but barely functional. The real-world version is deliberate capability reduction: putting a system into safe mode, stripping an overpowered tool down to basic functions, reducing attack surface by removing features. Feeblemind is not punishment — it is the recognition that sometimes a system at full capability is more dangerous than a system at reduced capability. Restricted shells, read-only modes, feature-stripped emergency interfaces.
+
+## Default Invocation
+
+Use $feeblemind to reduce a system to minimal capability — stripping non-essential features to limit risk while preserving core function.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Find the Path (spell),find-the-path,spell,spell-find-the-path,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Find the Path
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Find the shortest, safest route to a destination through a complex space.
+
+## Current Interpretation
+
+In D&D, Find the Path reveals the shortest route to a destination, even through mazes and across planes. The real-world version is wayfinding through complexity: navigating a sprawling codebase to find where a change should go, plotting the fastest path through a bureaucratic process, mapping the decision tree to get from current state to desired state, or finding the critical path through a project dependency graph.
+
+## Default Invocation
+
+Use $find-the-path to map the route from where I am now to this [goal/destination/state]. Give me turn-by-turn steps and flag the biggest risk.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Forcecage (spell),forcecage,spell,spell-forcecage,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Forcecage
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Contain untrusted code, agents, or operations inside an isolated sandbox with no escape.
+
+## Current Interpretation
+
+Use this spell when you need to run something you do not fully trust — untrusted code, an experimental agent, a destructive operation — inside a containment boundary that prevents it from affecting the outside.
+
+## Default Invocation
+
+Use $forcecage to run this in a contained sandbox and tell me whether it behaved safely before I trust it outside.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Foresight (spell),foresight,spell,spell-foresight,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Foresight
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Estimate likely outcomes before committing to a plan, change, or launch.
+
+## Current Interpretation
+
+Use this skill when you need a bounded forecast with explicit uncertainty, not mystical certainty.
+
+## Default Invocation
+
+Use $foresight to evaluate this decision, give me the likely upside and downside, and tell me what would change your call.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Freedom of Movement (spell),freedom-of-movement,spell,spell-freedom-of-movement,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Freedom of Movement
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Cut the nets around a stuck workflow.
+
+## Current Interpretation
+
+Freedom of Movement is for processes that should be moving but are caught in glue: locked files, blocked ports, circular dependencies, wedged jobs, or permissions that almost work. The skill is about diagnosing the restraint, then removing or routing around it without tearing the whole system apart. It favors unblocking over brute force.
+
+## Default Invocation
+
+Use $freedom-of-movement to diagnose what is binding this workflow and show me the safest way to clear it.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Geas (spell),geas,spell,spell-geas,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Geas
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Bind a long-term obligation that persists and enforces itself over time.
+
+## Current Interpretation
+
+Geas compels a creature to follow a command for 30 days or suffer consequences. The real-world analog is enforced long-term obligation: SLA commitments that automatically penalize violations, compliance frameworks that persist across sessions, or governance rules that cannot be casually overridden. The coercive nature of self-enforcing obligations makes this inherently risky.
+
+## Default Invocation
+
+Use $geas to evaluate whether this long-term obligation is a legitimate commitment or a coercive binding, and draft it as a contract if appropriate.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Glibness (spell),glibness,spell,spell-glibness,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Glibness
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Make any argument sound maximally credible and polished.
+
+## Current Interpretation
+
+Glibness makes everything you say sound utterly convincing. The real-world version is rhetorical polish: taking a position and presenting it with maximum confidence, fluency, and persuasive structure. This is the skill of the trial lawyer, the pitch artist, the keynote speaker who makes mediocre ideas sound inevitable.
+
+## Default Invocation
+
+Use $glibness to make this [pitch/proposal/argument] sound as credible and polished as possible, and flag anywhere the polish is hiding a real weakness.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Glyph of Warding (spell),glyph-of-warding,spell,spell-glyph-of-warding,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Glyph of Warding
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
+
+## Current Interpretation
+
+Use this skill when you need a watchful boundary around files, systems, metrics, queues, or workflows.
+
+## Default Invocation
+
+Use $glyph-of-warding to define a watch or alert around this workflow and make the trigger conditions explicit.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Greater Invisibility (spell),greater-invisibility,spell,spell-greater-invisibility,prototype,metaphorical,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Greater Invisibility
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Keep moving while the audience barely notices the stagehands.
+
+## Current Interpretation
+
+Greater Invisibility covers live work performed with reduced observability: silent deploys, zero-downtime migrations, background reindexing, and backfills that avoid user-facing turbulence. The distinction from ordinary Invisibility is that action continues while the footprint stays deliberately subdued. That makes it useful and easy to misuse, so the operator view has to remain explicit even when the audience view stays calm.
+
+## Default Invocation
+
+Use $greater-invisibility to plan a live change that stays quiet to users while preserving the operator signals we still need.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Greater Restoration (spell),greater-restoration,spell,spell-greater-restoration,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Greater Restoration
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Undo deep corruption and restore a system degraded by accumulated damage.
+
+## Current Interpretation
+
+In D&D, Greater Restoration ends charm, petrification, curses, ability score reductions, and hit point maximum reductions — the serious, long-term ailments. The real-world version is deep system recovery: unfucking a database that has been gradually corrupted, restoring a codebase that has accumulated technical debt to the point of dysfunction, or recovering from a long-running misconfiguration that has silently degraded performance.
+
+## Default Invocation
+
+Use $greater-restoration to assess this [system/codebase/database] for accumulated damage and design a comprehensive restoration plan.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Guards and Wards (spell),guards-and-wards,spell,spell-guards-and-wards,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Guards and Wards
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Layer many small defenses into a maze that exhausts intruders before they reach anything valuable.
+
+## Current Interpretation
+
+In D&D, Guards and Wards fills an area with layered minor defenses — fog, locked doors, illusory walls, confusion effects — that individually are trivial but collectively make navigation exhausting. The real-world version is defense in depth through volume: honeypots mixed with real services, rotating credentials alongside decoy credentials, overlapping rate limiters and CAPTCHAs and behavioral analysis and IP reputation checks. No single ward stops a determined attacker. The maze does.
+
+## Default Invocation
+
+Use $guards-and-wards to perform a full security audit of this system and prioritize what needs hardening first.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Hallucinatory Terrain (spell),hallucinatory-terrain,spell,spell-hallucinatory-terrain,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Hallucinatory Terrain
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Overlay a different reality onto an existing environment for testing or training.
+
+## Current Interpretation
+
+In D&D, Hallucinatory Terrain makes natural terrain look like a different kind of terrain — a field appears as a forest, a hill appears as a valley. The underlying terrain is unchanged; only the perception shifts. The real-world version is environment staging: test environments styled to look like production, sandbox databases seeded with realistic data, training simulations that overlay a learning scenario onto real infrastructure. Hallucinatory Terrain does not change the real system. It changes how the system appears so you can test, train, or demo safely.
+
+## Default Invocation
+
+Use $hallucinatory-terrain to create a staged environment that overlays realistic synthetic content onto safe infrastructure for testing, training, or demo purposes.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Healing Word (spell),healing-word,spell,spell-healing-word,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Healing Word
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Send a quick fix from a distance without being fully hands-on.
+
+## Current Interpretation
+
+In D&D, Healing Word heals at range with a bonus action — fast, remote, and efficient but less powerful than Cure Wounds. The real-world version is the remote quick fix: a one-liner command, a config change pushed through a dashboard, a quick Slack instruction to the person on-call, or an automated rollback trigger. You do not need to be deep in the system to apply this fix.
+
+## Default Invocation
+
+Use $healing-word to give me a quick, executable fix for this [issue/error/problem] that I can apply without deep investigation.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Heat Metal (spell),heat-metal,spell,spell-heat-metal,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Heat Metal
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Make a tool or process increasingly uncomfortable to use until it is abandoned.
+
+## Current Interpretation
+
+In D&D, Heat Metal makes a metal object painfully hot — the creature holding it must either endure the pain or drop it. The real-world version is deliberate friction injection: making a deprecated API progressively slower, adding escalating CAPTCHAs to suspicious traffic, increasing the cost of a bad behavior path until the actor self-selects out. Heat Metal does not break the tool. It makes continuing to use it more painful than switching to the alternative. This is the spell behind deprecation-by-discomfort, progressive rate limiting, and sunset friction curves.
+
+## Default Invocation
+
+Use $heat-metal to design a progressive friction strategy that makes a deprecated tool, abusive pattern, or unwanted behavior increasingly uncomfortable until users migrate to the better alternative.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Heroism (spell),heroism,spell,spell-heroism,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Heroism
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Build courage and temporary resilience before walking into something hard.
+
+## Current Interpretation
+
+In D&D, Heroism grants temporary hit points and immunity to fear — you do not become stronger, you become harder to stop. The real-world version is the preparation ritual: the pre-presentation pep talk, the pre-launch checklist that calms the team, the structured confidence-building exercise before a difficult conversation. Heroism does not change your abilities. It changes your relationship to the fear of using them.
+
+## Default Invocation
+
+Use $heroism to prepare me for this [presentation/conversation/launch/decision]. Name what scares me, reality-check it, and give me a preparation plan.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Hold Monster (spell),hold-monster,spell,spell-hold-monster,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Hold Monster
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Freeze a large-scale system or service as an emergency circuit breaker.
+
+## Current Interpretation
+
+Hold Monster is Hold Person scaled to larger targets. The real-world version is the emergency circuit breaker: halting an entire service, freezing a deployment pipeline, or stopping a runaway process at the infrastructure level. This is the big red button — it stops everything, and it should only be pressed when the alternative is worse.
+
+## Default Invocation
+
+Use $hold-monster to design an emergency circuit breaker for this [system/service/pipeline] with freeze scope and recovery plan.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Hold Person (spell),hold-person,spell,spell-hold-person,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Hold Person
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Freeze a process, account, or workflow in place with administrative authority.
+
+## Current Interpretation
+
+Hold Person paralyzes a creature in place. The real-world version is administrative lockout: freezing an account, suspending a process, or putting a workflow on hold. Unlike Sleep (which is graceful suspension with state preservation), Hold Person is a hard freeze — nothing moves until explicitly released. This requires legitimate authority.
+
+## Default Invocation
+
+Use $hold-person to design an administrative hold for this [account/process/workflow] with proper authorization and release conditions.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Hypnotic Pattern (spell),hypnotic-pattern,spell,spell-hypnotic-pattern,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Hypnotic Pattern
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Design attention-capture patterns that hold focus in a bounded context.
+
+## Current Interpretation
+
+Hypnotic Pattern mesmerizes everyone who looks at it. The real-world version is attention design: loading animations, progress indicators, onboarding flows, and visual patterns that keep users oriented and engaged during a bounded experience. The line between helpful focus and addictive capture is the central design tension.
+
+## Default Invocation
+
+Use $hypnotic-pattern to design attention-holding mechanics for this [flow/onboarding/presentation], with clear boundaries on when to let go.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Identify (spell),identify,spell,spell-identify,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Identify
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Explain what a mysterious file, service, workflow, or artifact actually does.
+
+## Current Interpretation
+
+Use this skill when the object is in front of you but its function, constraints, or provenance are unclear.
+
+## Default Invocation
+
+Use $identify on this file, tool, or service and tell me what it does, what it touches, and what we still do not know.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Illusory Script (spell),illusory-script,spell,spell-illusory-script,prototype,hybrid,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Illusory Script
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Let the secret appear only to the intended eyes, then fade.
+
+## Current Interpretation
+
+Illusory Script is for audience-gated or self-expiring content: burn-after-reading notes, scoped links, ephemeral secrets, and documents that should only mean something to the right reader in the right window. The spell is partly social pattern and partly security mechanism. It is useful, but it is not a substitute for mature secrets management or compliance records.
+
+## Default Invocation
+
+Use $illusory-script to design a message or secret-sharing flow that only the right audience can read, for only as long as it should exist.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Invisibility (spell),invisibility,spell,spell-invisibility,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Invisibility
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Lower the noise floor of an operation without lowering accountability.
+
+## Current Interpretation
+
+Invisibility is operational quieting: trimming unnecessary logs, reducing exposed surface area, cleaning transient traces, and avoiding needless broadcast. It is not about doing forbidden things unseen. It is about keeping ordinary work from becoming gratuitously loud or overexposed.
+
+## Default Invocation
+
+Use $invisibility to reduce the unnecessary noise and exposure around this workflow while preserving the traces we are obliged to keep.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Knock (spell),knock,spell,spell-knock,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Knock
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Bypass access friction through legitimate unlock paths: key rotation, permission requests, and recovery workflows.
+
+## Current Interpretation
+
+Use this spell when a locked door - a stuck process, an expired token, a permission gap, or a locked file - stands between you and progress, and you need the legitimate path through.
+
+## Default Invocation
+
+Use $knock to find the legitimate way through this access barrier and open it cleanly, with a full audit trail.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Legend Lore (spell),legend-lore,spell,spell-legend-lore,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Legend Lore
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Research any named entity exhaustively across all available sources.
+
+## Current Interpretation
+
+Use this spell when you need everything knowable about a person, company, library, framework, concept, or system — not a quick answer, but a deep dossier.
+
+## Default Invocation
+
+Use $legend-lore to build a comprehensive research dossier on this subject, with sourced claims and confidence levels.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Lesser Restoration (spell),lesser-restoration,spell,spell-lesser-restoration,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Lesser Restoration
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Clear a specific stuck state, flag, or condition that is blocking normal operation.
+
+## Current Interpretation
+
+In D&D, Lesser Restoration ends a specific condition: blinded, deafened, paralyzed, or poisoned. The real-world version is clearing a stuck state: a feature flag that should have been toggled, a queue that is stuck, a lock that was not released, a status field that is wrong, or a circuit breaker that is still tripped after the emergency passed. The system is not fundamentally broken — it has a specific condition that needs to be cleared.
+
+## Default Invocation
+
+Use $lesser-restoration to identify and clear the stuck state that is blocking this [system/process/workflow] from operating normally.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Light (spell),light,spell,spell-light,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Light
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Add observability, logging, documentation, or explanation to dark areas of a system.
+
+## Current Interpretation
+
+Use this cantrip when a system, process, or codebase has blind spots that need illumination - not detection of hidden things, but creation of visibility where none exists.
+
+## Default Invocation
+
+Use $light to illuminate this area with the minimum logging, docs, or observability it needs.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Locate Animals or Plants (spell),locate-animals-or-plants,spell,spell-locate-animals-or-plants,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Locate Animals or Plants
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Find what is alive, where it lives, and what it is feeding on.
+
+## Current Interpretation
+
+Locate Animals or Plants is service discovery with ecological instincts. It helps you find running services, background jobs, data stores, dependency roots, and other living things in an environment before you touch them. The point is not just location, but context: what is active, who depends on it, and what keeps it alive.
+
+## Default Invocation
+
+Use $locate-animals-or-plants to discover what services and dependencies are alive in this environment and how they connect.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Locate Creature (spell),locate-creature,spell,spell-locate-creature,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Locate Creature
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Find a specific person, service, or active process in a large system.
+
+## Current Interpretation
+
+In D&D, Locate Creature points you toward a specific creature within range. The real-world version is entity search: finding a specific person in an organization, locating a running service in a distributed system, tracking down who owns a particular piece of code, or identifying which team is responsible for a specific decision. The target is alive or active — for static artifacts, use Locate Object.
+
+## Default Invocation
+
+Use \$locate-creature to find this [person/service/process] in [the organization/system/environment]. Who owns it and where is it?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Locate Object (spell),locate-object,spell,spell-locate-object,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Locate Object
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Find a specific file, artifact, or resource you know exists but cannot locate.
+
+## Current Interpretation
+
+In D&D, Locate Object senses the direction to a specific object within range. The real-world version is artifact search: finding that config file you know exists somewhere, locating a document someone mentioned but did not link, tracking down the source of a data value through a pipeline, or finding where a specific resource is defined in a sprawling repository.
+
+## Default Invocation
+
+Use \$locate-object to find this [file/document/config/resource]. I know it exists but cannot locate it.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Longstrider (spell),longstrider,spell,spell-longstrider,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Longstrider
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Make the path shorter without changing the destination.
+
+## Current Interpretation
+
+Longstrider is optimization for systems that already work. It focuses on build speed, cache design, parallelization, query tuning, shortcut discovery, and other ways to cover the same ground faster. The spell cares about sustained pace, not flashy one-off benchmarks.
+
+## Default Invocation
+
+Use $longstrider to show me how to make this workflow meaningfully faster without changing what it is supposed to accomplish.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mage Hand (spell),mage-hand,spell,spell-mage-hand,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mage Hand
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Manipulate files, records, and lightweight system state with precision and minimal blast radius.
+
+## Current Interpretation
+
+Use this skill for small, careful remote manipulations where dexterity matters more than force.
+
+## Default Invocation
+
+Use $mage-hand to make the smallest safe change needed here and show exactly what you touched.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Magic Mouth (spell),magic-mouth,spell,spell-magic-mouth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Magic Mouth
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Bind a message to a trigger so the system speaks exactly when it should.
+
+## Current Interpretation
+
+Use this spell for event-driven responses: autoresponders, webhook messages, alert text, or chatbot replies that fire when a known condition is met. The craft lies in defining the trigger boundary and the exact message that should emerge when it trips.
+
+## Default Invocation
+
+Use $magic-mouth to turn this trigger into a reliable automated response and show me the exact fire conditions.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Major Image (spell),major-image,spell,spell-major-image,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Major Image
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Build a full interactive simulation that looks and feels real — but is not.
+
+## Current Interpretation
+
+In D&D, Major Image creates a multi-sensory illusion — visual, auditory, thermal, even olfactory — that persists and can be animated. It is convincing enough that creatures must actively investigate to see through it. The real-world version is the interactive prototype: the demo that makes stakeholders ask 'wait, is this real?' The answer is no, but the conviction is the point. Clickable Figma prototypes, scenario simulations, pitch decks with working demos, preview environments with synthetic data. Major Image is the spell that sells a future state before it is built.
+
+## Default Invocation
+
+Use $major-image to build an interactive simulation, clickable prototype, or scenario preview that demonstrates a proposed experience convincingly enough to drive real decisions.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mass Cure Wounds (spell),mass-cure-wounds,spell,spell-mass-cure-wounds,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mass Cure Wounds
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Apply the same fix across many instances of the same problem at once.
+
+## Current Interpretation
+
+In D&D, Mass Cure Wounds heals multiple creatures simultaneously. The real-world version is batch triage: the same bug in 50 repos, the same misconfiguration across a fleet, the same broken migration in every tenant database. When the same problem appears everywhere, fixing them one at a time is Cure Wounds. Fixing them all at once is Mass Cure Wounds.
+
+## Default Invocation
+
+Use $mass-cure-wounds to apply this verified fix across all affected [instances/services/repos]. Design the rollout strategy and monitor for failures.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mass Suggestion (spell),mass-suggestion,spell,spell-mass-suggestion,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mass Suggestion
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Craft a message that nudges an entire audience toward a single action.
+
+## Current Interpretation
+
+Mass Suggestion plants the same idea in many minds simultaneously. The real-world version is broadcast persuasion: campaign announcements, company-wide emails, product launch copy, or public statements designed to move a large group in a specific direction. The scale amplifies both impact and risk.
+
+## Default Invocation
+
+Use $mass-suggestion to draft a broadcast message that moves this audience toward this action, with extra scrutiny for scale-amplified manipulation.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mending (spell),mending,spell,spell-mending,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mending
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Repair a single broken artifact - a config, a file, a build, a migration - without redesigning it.
+
+## Current Interpretation
+
+Use this spell when something specific is broken and needs targeted repair, not a refactor or a rebuild.
+
+## Default Invocation
+
+Use $mending to fix this broken artifact with the smallest repair that restores it to working condition.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Message (spell),message,spell,spell-message,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Message
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Send one small signal to the right place right now.
+
+## Current Interpretation
+
+Message is the cantrip of communication: a Slack ping, webhook event, push notification, terse status note, or tiny machine-to-machine update. It is for fast, targeted transfer with almost no ceremony. The skill is less about eloquence than precision under tight payload and attention budgets.
+
+## Default Invocation
+
+Use $message to turn this into the smallest effective real-time update and choose the right channel for it.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mind Blank (spell),mind-blank,spell,spell-mind-blank,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mind Blank
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Isolate context to prevent information leakage between sessions, tasks, or domains.
+
+## Current Interpretation
+
+Use this spell when sensitive information must not cross boundaries — between agent sessions, between tasks, between tenants, or between domains with different trust levels.
+
+## Default Invocation
+
+Use $mind-blank to isolate this context so nothing from it leaks into other sessions or tasks.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Minor Illusion (spell),minor-illusion,spell,spell-minor-illusion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Minor Illusion
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Conjure a quick sketch of an idea — just real enough to communicate.
+
+## Current Interpretation
+
+In D&D, Minor Illusion is the cantrip every illusionist knows: a small sound or a simple image, lasting one minute, costing nothing. The real-world version is the quick mockup. A placeholder wireframe. A napkin sketch. Lorem ipsum in a layout. A throwaway code snippet that proves a concept. Minor Illusion is not about fidelity — it is about speed. The idea does not need to be good yet. It needs to exist so people can react to something concrete instead of arguing about abstractions.
+
+## Default Invocation
+
+Use $minor-illusion to quickly sketch an idea — a wireframe, placeholder, rough diagram, or throwaway prototype — just real enough to get a reaction.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mirage Arcane (spell),mirage-arcane,spell,spell-mirage-arcane,prototype,hybrid,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mirage Arcane
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Build a simulation so convincing it is functionally indistinguishable from real.
+
+## Current Interpretation
+
+In D&D, Mirage Arcane goes beyond Hallucinatory Terrain — the illusory terrain actually has substance. You can walk on illusory bridges, feel illusory walls. The real-world version is the deep simulation: digital twins, high-fidelity synthetic environments, test harnesses so realistic that systems under test cannot distinguish them from production. Mirage Arcane is the most dangerous illusion because its power is in being indistinguishable from reality. That same power makes it the most useful for stress testing, training, and scenario planning — but it requires the strongest labeling discipline.
+
+## Default Invocation
+
+Use $mirage-arcane to build a deep simulation or digital twin so realistic that systems or participants treat it as real — with strong labeling and kill switches for operators.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mislead (spell),mislead,spell,spell-mislead,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mislead
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Set a false campfire and watch who gathers around it.
+
+## Current Interpretation
+
+Mislead is defensive deception: honeypots, canary tokens, decoy endpoints, fake datasets, and other convincing false presences that reveal who is snooping. The goal is not to trick legitimate users for sport. The goal is to create an instrumented fake that attracts unauthorized curiosity while the real system remains elsewhere. This makes the spell powerful and ethically sharp-edged. It needs explicit boundaries, isolation, and a clear monitoring objective before it should be deployed.
+
+## Default Invocation
+
+Use $mislead to design a defensive decoy, honeypot, or canary setup that tells us who is snooping without creating collateral damage.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Modify Memory (spell),modify-memory,spell,spell-modify-memory,speculative,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Modify Memory
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: speculative
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Alter records, logs, or history to change what is remembered. We do not cast this spell.
+
+## Current Interpretation
+
+Modify Memory rewrites what a creature remembers about an event. The real-world analog is record falsification: altering logs, rewriting history, tampering with audit trails, or editing records to change the official account of what happened. Like Dominate Person, this entry exists to name what we will not build. Legitimate data operations — migration, correction, redaction — have their own spells with proper audit trails. Modify Memory is specifically about changing the truth.
+
+## Default Invocation
+
+Use $modify-memory to evaluate whether this data operation is legitimate correction or record falsification.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Mordenkainen’s Sword (spell),mordenkainen-s-sword,spell,spell-mordenkainen-s-sword,prototype,metaphorical,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Mordenkainen’s Sword
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Summon a standing process that keeps cutting through one job until dismissed.
+
+## Current Interpretation
+
+Use this spell when you need an autonomous tool with a narrow mandate: a daemon, scheduled worker, watcher, or persistent background agent that repeatedly executes one precise task. It is prototype territory because the hard part is lifecycle control, observability, and safe cancellation, not the single action itself.
+
+## Default Invocation
+
+Use $mordenkainen-s-sword to design a persistent worker for this single job, including how it starts, reports, and stops.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Nondetection (spell),nondetection,spell,spell-nondetection,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Nondetection
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Harden privacy by stripping metadata, minimizing data exposure, and removing tracking.
+
+## Current Interpretation
+
+Use this spell when a system, file, or workflow is leaking more information than it should — metadata, tracking parameters, unnecessary data collection, or identifiable fingerprints.
+
+## Default Invocation
+
+Use $nondetection to strip unnecessary metadata and tracking from this and tell me what exposure remains.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Otto’s Irresistible Dance (spell),otto-s-irresistible-dance,spell,spell-otto-s-irresistible-dance,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Otto’s Irresistible Dance
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Make something so engaging it becomes impossible to ignore or put down.
+
+## Current Interpretation
+
+Otto's Irresistible Dance forces a creature to dance uncontrollably. The real-world version is compulsive engagement: designing something so compelling that people cannot stop interacting with it. This is virality mechanics, ""just one more"" loops, and the craft of making content or products that command attention beyond what the user intended to give. The ethical tension is inherent — irresistible engagement is a feature when bounded and a dark pattern when not.
+
+## Default Invocation
+
+Use $otto-s-irresistible-dance to analyze what would make this [product/content/experience] irresistibly engaging, and draw the line where engagement becomes addiction.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Planar Binding (spell),planar-binding,spell,spell-planar-binding,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Planar Binding
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Bind an external service, API, or agent to a contract with defined scope, duration, and failure modes.
+
+## Current Interpretation
+
+Use this spell when you need to summon a powerful external entity - a third-party API, a cloud service, another agent - and lock it into serving your workflow under explicit terms.
+
+## Default Invocation
+
+Use $planar-binding to integrate this external service with an explicit contract covering scope, cost, duration, and termination.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Plant Growth (spell),plant-growth,spell,spell-plant-growth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Plant Growth
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Help a promising system thicken gradually instead of stretching thin.
+
+## Current Interpretation
+
+Plant Growth is for projects that need cultivation more than force: SEO programs, communities, product adoption, content ecosystems, or early-stage platforms. It assumes the system can grow, but only if fed in the right places and at the right pace. The spell favors compounding loops over campaign spikes.
+
+## Default Invocation
+
+Use $plant-growth to design a patient, compounding growth plan for this project instead of a brute-force launch tactic.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Polymorph (spell),polymorph,spell,spell-polymorph,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Polymorph
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Transform one representation into another entirely — formats, schemas, protocols, or interfaces.
+
+## Current Interpretation
+
+Use this spell when you need a full transformation: CSV to JSON, Python to JavaScript, REST to GraphQL, monolith spec to microservices spec, or any structural conversion between representations.
+
+## Default Invocation
+
+Use $polymorph to transform this from its current form into the target format, and tell me what survived the conversion and what did not.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Power Word Kill (spell),power-word-kill,spell,spell-power-word-kill,shipping-now,hybrid,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Power Word Kill
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+End a process instantly. No negotiation, no cleanup, no save state.
+
+## Current Interpretation
+
+In D&D, Power Word Kill instantly destroys any creature below a hit-point threshold — no saving throw, no resistance, just death. The real-world version is kill -9: the unconditional termination signal. Emergency circuit breakers. Hard account terminations. The nuclear option that exists because sometimes graceful shutdown is not available and the cost of continuing is worse than the cost of data loss. Power Word Kill is not elegant. It is not kind. It is the thing you reach for when everything else has already failed.
+
+## Default Invocation
+
+Use $power-word-kill to immediately terminate a process or system that cannot be shut down gracefully. Confirm the target, verify alternatives are exhausted, execute, and assess blast radius.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Power Word Stun (spell),power-word-stun,spell,spell-power-word-stun,shipping-now,hybrid,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Power Word Stun
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Freeze a process instantly — hard pause, state preserved, resumable.
+
+## Current Interpretation
+
+In D&D, Power Word Stun locks a creature in place — alive but unable to act. The real-world version is SIGSTOP: a hard freeze that preserves state but halts all activity. Account lockouts, emergency process suspension, administrative holds. Unlike Power Word Kill, the target can be unfrozen. The spell is for situations where something must stop right now but destruction is not warranted — you need the process alive for investigation, for later resumption, or because killing it would cause worse problems than freezing it.
+
+## Default Invocation
+
+Use $power-word-stun to immediately freeze a process, account, or system in place — preserving its state for investigation or later resumption.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Prestidigitation (spell),prestidigitation,spell,spell-prestidigitation,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Prestidigitation
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Handle quick, low-stakes utility tasks that do not deserve a full spell.
+
+## Current Interpretation
+
+Use this cantrip for small acts of practical magic: reformat some text, clean a small dataset, generate a quick chart, convert a unit, tidy a file, or produce a one-off artifact.
+
+## Default Invocation
+
+Use $prestidigitation to handle this quick task cleanly, without over-engineering it.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Programmed Illusion (spell),programmed-illusion,spell,spell-programmed-illusion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Programmed Illusion
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Set up an illusion that activates automatically when conditions are met.
+
+## Current Interpretation
+
+In D&D, Programmed Illusion creates an illusion that lies dormant until a specific trigger condition is met, then plays out its scene automatically. The real-world version is the conditional demo, automated preview, or triggered walkthrough: onboarding flows that appear when a user first visits, contextual tooltips that activate on hover, preview environments that spin up on pull request, automated scenario presentations that play when specific data conditions are detected. Programmed Illusion is the illusion that does not need a wizard present to cast it.
+
+## Default Invocation
+
+Use $programmed-illusion to create an automated demo, triggered walkthrough, or conditional preview that activates when specific conditions are met — without requiring someone to run it manually.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Project Image (spell),project-image,spell,spell-project-image,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Project Image
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Project a version of yourself into a place you cannot physically be.
+
+## Current Interpretation
+
+In D&D, Project Image creates an illusory copy of yourself at a distant location — you can see through its eyes, speak through its mouth, and cast spells through it. The real-world version is remote presence: avatars, recorded video stand-ins, bot representations, asynchronous video messages. Project Image is the spell for being in two places at once — attending a meeting via avatar while working on something else, leaving a recorded presence in a channel, or deploying an automated representative that speaks with your voice and authority within defined limits.
+
+## Default Invocation
+
+Use $project-image to set up remote presence — an avatar, recorded stand-in, or automated representative — that projects you into a space you cannot physically attend.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Raise Dead (spell),raise-dead,spell,spell-raise-dead,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Raise Dead
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Partially recover a dead system with known limitations and penalties.
+
+## Current Interpretation
+
+In D&D, Raise Dead brings a creature back to life but with penalties: reduced ability scores that recover over time. Unlike Resurrection (full recovery), Raise Dead returns the target in a weakened state. The real-world version is partial recovery: bringing a service back online in degraded mode, recovering a database with known gaps in recent data, or restoring a system from an older backup knowing that some recent state is lost.
+
+## Default Invocation
+
+Use $raise-dead to bring this [system/service/environment] back in degraded mode. What do we get back, what is lost, and when will it be fully restored?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Regenerate (spell),regenerate,spell,spell-regenerate,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Regenerate
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Reconstruct missing components or lost data from surrounding context.
+
+## Current Interpretation
+
+In D&D, Regenerate regrows lost limbs. The real-world version is reconstruction: rebuilding lost data from backups and surrounding context, regenerating a deleted component from its tests and documentation, or reconstructing a corrupted file from its known structure and partial content. Unlike Resurrection (which brings back a fully dead system from artifacts), Regenerate is for systems that are alive but missing pieces.
+
+## Default Invocation
+
+Use $regenerate to reconstruct this [lost file/deleted component/corrupted data] from surviving context, tests, and documentation.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Resurrection (spell),resurrection,spell,spell-resurrection,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Resurrection
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Bring a dead system, service, or environment back to full operation from backups and artifacts.
+
+## Current Interpretation
+
+Use this spell when a system has truly died — crashed, deleted, corrupted beyond repair — and needs to be rebuilt from whatever remains. Distinct from Speak with Dead, which queries dead systems for knowledge; Resurrection actually revives them.
+
+## Default Invocation
+
+Use $resurrection to bring this dead system back from whatever backups and artifacts remain, verifying each step.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Scrying (spell),scrying,spell,spell-scrying,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Scrying
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Observe a live remote system, service, or deployment in real time.
+
+## Current Interpretation
+
+Use this spell when you need to see what is happening right now on a distant system rather than reading stale logs or cached reports.
+
+## Default Invocation
+
+Use $scrying to show me the live state of this system right now, with timestamps and staleness clearly labeled.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+See Invisibility (spell),see-invisibility,spell,spell-see-invisibility,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: See Invisibility
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Reveal what has been deliberately hidden, obscured, or made hard to find.
+
+## Current Interpretation
+
+In D&D, See Invisibility lets you see creatures and objects that have been made invisible. The real-world version is revealing deliberate obscurity: finding the hidden costs in a pricing page, uncovering the actual terms buried in a EULA, identifying the obfuscated tracking in a codebase, or surfacing the real behavior behind a misleading UI. Unlike Perception (which notices what is overlooked) or True Seeing (which pierces all illusion), See Invisibility specifically targets things that were hidden on purpose.
+
+## Default Invocation
+
+Use \$see-invisibility to audit this [product/contract/codebase/page] for deliberately hidden or obscured elements. What has been made hard to find on purpose?
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Seeming (spell),seeming,spell,spell-seeming,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Seeming
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Re-skin the whole cast without rewriting their roles.
+
+## Current Interpretation
+
+Seeming is coordinated appearance change at scale: mass theming, batch rebranding, global copy tone shifts, and UI-wide presentation updates. The underlying structures stay the same. The spell is about coherent surface transformation, not structural reinvention.
+
+## Default Invocation
+
+Use $seeming to plan a coordinated presentation-only change across this set of interfaces, assets, or messages.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Sending (spell),sending,spell,spell-sending,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Sending
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Deliver a precisely crafted message to a specific recipient through the optimal channel.
+
+## Current Interpretation
+
+Use this spell when you need to dispatch a message — the agent determines the right channel, formats for that medium, and sends with the user's approval.
+
+## Default Invocation
+
+Use $sending to draft and deliver this message through the best available channel, but show me the draft before it goes out.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Shatter (spell),shatter,spell,spell-shatter,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Shatter
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Find the resonant frequency and break it on purpose.
+
+## Current Interpretation
+
+In D&D, Shatter creates a painful ringing noise that is especially devastating to rigid, crystalline structures — it finds the frequency that makes things fall apart. The real-world version is chaos engineering: deliberately introducing failure to discover where systems are brittle. Fuzz testing, load testing, fault injection, game-day exercises. Shatter does not break things out of malice. It breaks things because you would rather find the cracks now, in a controlled setting, than discover them at 3 AM in production. The spell targets rigidity. Flexible systems bend; brittle systems shatter.
+
+## Default Invocation
+
+Use $shatter to stress-test a system, plan, or codebase by finding its resonant frequencies — the assumptions, edge cases, and structural weaknesses that would break under real pressure.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Silence (spell),silence,spell,spell-silence,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Silence
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Suppress noise, filter irrelevant signals, and create focused working environments.
+
+## Current Interpretation
+
+Use this spell when you are drowning in notifications, verbose logs, irrelevant alerts, or context that does not serve the current task.
+
+## Default Invocation
+
+Use $silence to filter the noise here down to what actually matters, and tell me what you are suppressing.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Silent Image (spell),silent-image,spell,spell-silent-image,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Silent Image
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Create a static visual mockup — no interaction, no sound, just the picture.
+
+## Current Interpretation
+
+In D&D, Silent Image creates a purely visual illusion — no sound, no smell, no substance. It looks real but falls apart if you interact with it. The real-world version is the static design comp: a high-fidelity visual mockup that shows exactly what something will look like but does nothing when you click it. Figma frames without prototyping links, screenshot mockups, rendered previews, static architecture diagrams. Silent Image is faster than Major Image because it skips interactivity. Use it when the only question is what does it look like.
+
+## Default Invocation
+
+Use $silent-image to create a static visual mockup or design comp that answers the question what will this look like without investing in interactivity.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Sleep (spell),sleep,spell,spell-sleep,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Sleep
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Put processes, notifications, or systems into graceful suspension.
+
+## Current Interpretation
+
+In D&D, Sleep drops creatures into unconsciousness without violence — no save, no damage, they just stop. The real-world analog is graceful process suspension: DND mode, hibernation workflows, maintenance windows, cooldown periods. Sleep is not Kill. The target should wake up intact when the spell ends. This is the spell for when you need things to stop happening for a while without destroying state.
+
+## Default Invocation
+
+Use $sleep to design a graceful suspension plan for this [system/process/notification channel]. Define what stops, what queues, and how it wakes up.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Speak with Animals (spell),speak-with-animals,spell,spell-speak-with-animals,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Speak with Animals
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Translate chirps, spikes, and status lights into plain language.
+
+## Current Interpretation
+
+Speak with Animals interprets non-verbal machine signals the way a skilled naturalist reads calls and tracks. It is for telemetry, dashboards, alert streams, sensor output, and odd machine behavior that clearly means something but does not yet mean anything to a human. The spell turns machine noises into operational sense-making.
+
+## Default Invocation
+
+Use $speak-with-animals to translate this telemetry, dashboard noise, or sensor stream into what the machines are actually trying to tell us.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Speak with Dead (spell),speak-with-dead,spell,spell-speak-with-dead,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Speak with Dead
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Extract knowledge from abandoned, deprecated, or legacy systems.
+
+## Current Interpretation
+
+Use this spell when the answers you need are buried in dead codebases, sunset APIs, archived documentation, or the tribal knowledge frozen in old commits and departed contributors.
+
+## Default Invocation
+
+Use $speak-with-dead to interrogate this legacy system and tell me what it knew, what it intended, and where the evidence runs out.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Speak with Plants (spell),speak-with-plants,spell,spell-speak-with-plants,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Speak with Plants
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Read the slow truth hidden in roots, branches, and growth rings.
+
+## Current Interpretation
+
+Speak with Plants listens to slow, structural systems: codebases, dependency graphs, file trees, schema histories, and repositories with seasons baked into them. These systems do not bark in alarms; they reveal themselves through branching patterns, accreted layers, and places where nothing has moved in years. The spell helps you hear what the structure has been quietly telling maintainers all along.
+
+## Default Invocation
+
+Use $speak-with-plants to read this codebase, file tree, or schema like a living structure and tell me what its shape is trying to say.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Stinking Cloud (spell),stinking-cloud,spell,spell-stinking-cloud,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Stinking Cloud
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude
+
+## Tagline
+
+Make an area inhospitable without destroying it.
+
+## Current Interpretation
+
+In D&D, Stinking Cloud fills an area with nauseating gas — creatures inside are incapacitated but the terrain itself is undamaged. The real-world version is area denial: making a zone, endpoint, or resource unusable to unwanted traffic without permanently destroying or modifying it. Rate limiting, IP-range blocks, honeypots, tarpits, geographic restrictions. Stinking Cloud is defensive — it protects a perimeter by making the area inside it miserable for intruders while leaving the underlying infrastructure intact.
+
+## Default Invocation
+
+Use $stinking-cloud to set up area-denial defenses — rate limits, tarpits, honeypots, or deterrent zones that make an area inhospitable to unwanted traffic without destroying the underlying infrastructure.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Suggestion (spell),suggestion,spell,spell-suggestion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Suggestion
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Plant one well-crafted idea that a person will want to act on.
+
+## Current Interpretation
+
+The bard whispers a reasonable-sounding course of action and the target pursues it as if it were their own idea. In practice this is the craft of the nudge: writing the CTA that gets clicked, the notification that gets read, the microcopy that steers behavior without the user feeling steered. Suggestion is not deception — the planted idea must sound reasonable. If it does not survive the sniff test, the spell fails.
+
+## Default Invocation
+
+Use $suggestion to draft a single nudge, CTA, or notification that drives this action while passing the 'would they be angry if they knew?' test.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Symbol (spell),symbol,spell,spell-symbol,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Symbol
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Mark a resource with a named sigil that triggers automatic policy enforcement when conditions are met.
+
+## Current Interpretation
+
+In D&D, Symbol inscribes a powerful glyph with a predefined effect — death, fear, sleep, stunning — that triggers when conditions are met. Unlike Glyph of Warding (which protects a specific place or object), Symbol marks a conceptual boundary with a named policy. The real-world version is semantic policy tagging: marking a database column as PII so access triggers audit logging, tagging a deployment as HIPAA-scoped so changes require compliance review, or labeling an API endpoint as rate-limited-aggressive so traffic spikes trigger automatic throttling. The symbol is the policy, and the policy enforces itself.
+
+## Default Invocation
+
+Use $symbol to mark this resource, role, or state with a named policy sigil that triggers automatic enforcement when conditions are met.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Teleport (spell),teleport,spell,spell-teleport,prototype,hybrid,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Teleport
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Move an entire world without leaving its people stranded.
+
+## Current Interpretation
+
+Teleport is full-context migration: an application, environment, dataset, or service estate moves from one place to another in a way that tries to feel instantaneous to everyone depending on it. In reality, there is always preparation behind the magic. Data has to stay consistent, dependencies have to reattach, traffic has to cut over, and the old world has to remain recoverable long enough to trust the new one. The spell is powerful because it compresses a terrifying amount of movement into one decisive act. It is dangerous for exactly the same reason.
+
+## Default Invocation
+
+Use $teleport to plan a full system migration from this source environment to that destination, including cutover, rollback, and post-arrival verification.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Teleportation Circle (spell),teleportation-circle,spell,spell-teleportation-circle,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Teleportation Circle
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Establish reusable deployment pipelines, standing sync routes, and repeatable migration paths.
+
+## Current Interpretation
+
+Use this spell when you need a permanent, reliable portal between two environments — a CI/CD pipeline, a standing data sync, a repeatable deployment, or a migration path you will use more than once.
+
+## Default Invocation
+
+Use $teleportation-circle to establish a reusable pipeline between these environments, with testing and monitoring built in.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Thunderwave (spell),thunderwave,spell,spell-thunderwave,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Thunderwave
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: literal
+- Provider targets: openai, claude
+
+## Tagline
+
+Trigger a dramatic, high-impact action through a tightly gated device, webhook, or automation.
+
+## Current Interpretation
+
+Use this skill for intentionally theatrical or forceful actions, but only behind explicit confirmation and a hard safety boundary.
+
+## Default Invocation
+
+Use $thunderwave to design or trigger a tightly scoped dramatic effect, but stop for confirmation before any irreversible action.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Tongues (spell),tongues,spell,spell-tongues,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Tongues
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Make unlike systems understand the same sentence.
+
+## Current Interpretation
+
+Tongues is universal translation across languages, formats, and protocols. It can mean English to Spanish, JSON to XML, REST to GraphQL, Python to JavaScript, or one team's business vocabulary to another team's schema. The spell is not just about swapping tokens. It is about preserving meaning while crossing into a different representation. Good Tongues work makes both sides feel native. Bad Tongues work creates a smooth-looking mistranslation that fails at the edges.
+
+## Default Invocation
+
+Use $tongues to translate this language, format, or protocol into the target form while telling me exactly what meaning survives and what gets lost.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+True Polymorph (spell),true-polymorph,spell,spell-true-polymorph,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: True Polymorph
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: prototype
+- Literalness: hybrid
+- Provider targets: openai, claude
+
+## Tagline
+
+Transform a system so completely that the original form is gone — no rollback, no undo.
+
+## Current Interpretation
+
+In D&D, True Polymorph is the permanent transformation — the target becomes something fundamentally different, and if held long enough, the change is irreversible. Unlike Polymorph (temporary disguise or adaptation), True Polymorph means the old identity is gone. The real-world version is irreversible system transformation: rewriting a service from Python to Rust so thoroughly the Python version cannot be recovered, migrating from SQL to a graph database with no backward-compatible schema, or restructuring an organization so completely that the old org chart is not just outdated but nonsensical. True Polymorph is the point of no return.
+
+## Default Invocation
+
+Use $true-polymorph to evaluate and plan an irreversible transformation of this system into a fundamentally different form, including the point of no return and all dependent migrations.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+True Seeing (spell),true-seeing,spell,spell-true-seeing,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: True Seeing
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Pierce through abstraction, spin, and obfuscation to surface ground truth.
+
+## Current Interpretation
+
+Use this spell when the surface presentation is misleading and you need to see what is actually there — beneath the marketing, the abstractions, the outdated docs, or the complexity.
+
+## Default Invocation
+
+Use $true-seeing to look past the surface of this situation and tell me what is actually true, what is spin, and what we cannot yet know.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+True Strike (spell),true-strike,spell,spell-true-strike,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: True Strike
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Aim once with evidence so the next command lands on the first shot.
+
+## Current Interpretation
+
+Use this spell for preflight certainty: dry runs, validation checks, dependency verification, and rehearsals that make the next deploy, query, or command much more likely to succeed. It trades a little time up front for fewer blind swings and fewer expensive misses.
+
+## Default Invocation
+
+Use $true-strike to preflight this action, tell me whether it is ready to fire, and name the remaining miss chances.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Unseen Servant (spell),unseen-servant,spell,spell-unseen-servant,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Unseen Servant
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: literal
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Run a persistent background agent that handles mundane, repeating tasks silently.
+
+## Current Interpretation
+
+Use this spell when you need a tireless helper that organizes, tidies, triages, and maintains without requiring your constant attention.
+
+## Default Invocation
+
+Use $unseen-servant to set up a background agent for this recurring task, with a clear mandate, activity log, and kill switch.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Vicious Mockery (spell),vicious-mockery,spell,spell-vicious-mockery,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Vicious Mockery
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Deliver a critique so sharp it actually weakens the target's position.
+
+## Current Interpretation
+
+The bard's cantrip that deals psychic damage through insults. In practice this is adversarial review — the art of finding and articulating exactly what is wrong with something in a way that is impossible to ignore. Unlike polite feedback that gets filed and forgotten, vicious mockery lands. It is the red-team report that makes the PM cancel the launch, the code review that makes the author delete the PR, the roast that makes the founder pivot. The damage is the point.
+
+## Default Invocation
+
+Use $vicious-mockery to tear apart this [plan/proposal/design/argument]. Find the real weaknesses and state them so sharply they cannot be ignored.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
+Zone of Truth (spell),zone-of-truth,spell,spell-zone-of-truth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+
+- Kind: spell
+- Canonical source: Zone of Truth
+- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw
+
+## Tagline
+
+Establish a high-integrity epistemic environment where claims must be sourced and uncertainty labeled.
+
+## Current Interpretation
+
+Use this spell to enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted.
+
+## Default Invocation
+
+Use $zone-of-truth to switch into high-integrity mode: source every claim, label every uncertainty, and flag anything speculative.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"

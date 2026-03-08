@@ -1,0 +1,1167 @@
+{
+  "generated_at": "2026-03-08T17:51:33.627Z",
+  "counts": {
+    "skills": 18,
+    "spells": 109,
+    "total": 127
+  },
+  "sources": [
+    {
+      "id": "skills-2024-free-rules",
+      "kind": "skill",
+      "source_version": "2024-free-rules",
+      "url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "spells-basic-rules-public-index",
+      "kind": "spell",
+      "source_version": "basic-rules-public-index",
+      "url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    }
+  ],
+  "entries": [
+    {
+      "id": "skill-acrobatics",
+      "kind": "skill",
+      "name": "Acrobatics",
+      "slug": "acrobatics",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-animal-handling",
+      "kind": "skill",
+      "name": "Animal Handling",
+      "slug": "animal-handling",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-arcana",
+      "kind": "skill",
+      "name": "Arcana",
+      "slug": "arcana",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-athletics",
+      "kind": "skill",
+      "name": "Athletics",
+      "slug": "athletics",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-deception",
+      "kind": "skill",
+      "name": "Deception",
+      "slug": "deception",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-history",
+      "kind": "skill",
+      "name": "History",
+      "slug": "history",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-insight",
+      "kind": "skill",
+      "name": "Insight",
+      "slug": "insight",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-intimidation",
+      "kind": "skill",
+      "name": "Intimidation",
+      "slug": "intimidation",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-investigation",
+      "kind": "skill",
+      "name": "Investigation",
+      "slug": "investigation",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-medicine",
+      "kind": "skill",
+      "name": "Medicine",
+      "slug": "medicine",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-nature",
+      "kind": "skill",
+      "name": "Nature",
+      "slug": "nature",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-perception",
+      "kind": "skill",
+      "name": "Perception",
+      "slug": "perception",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-performance",
+      "kind": "skill",
+      "name": "Performance",
+      "slug": "performance",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-persuasion",
+      "kind": "skill",
+      "name": "Persuasion",
+      "slug": "persuasion",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-religion",
+      "kind": "skill",
+      "name": "Religion",
+      "slug": "religion",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-sleight-of-hand",
+      "kind": "skill",
+      "name": "Sleight of Hand",
+      "slug": "sleight-of-hand",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-stealth",
+      "kind": "skill",
+      "name": "Stealth",
+      "slug": "stealth",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-survival",
+      "kind": "skill",
+      "name": "Survival",
+      "slug": "survival",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "spell-animal-friendship",
+      "kind": "spell",
+      "name": "Animal Friendship",
+      "slug": "animal-friendship",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-animal-messenger",
+      "kind": "spell",
+      "name": "Animal Messenger",
+      "slug": "animal-messenger",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-animate-objects",
+      "kind": "spell",
+      "name": "Animate Objects",
+      "slug": "animate-objects",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-awaken",
+      "kind": "spell",
+      "name": "Awaken",
+      "slug": "awaken",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-bane",
+      "kind": "spell",
+      "name": "Bane",
+      "slug": "bane",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-bestow-curse",
+      "kind": "spell",
+      "name": "Bestow Curse",
+      "slug": "bestow-curse",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-blindness-deafness",
+      "kind": "spell",
+      "name": "Blindness/Deafness",
+      "slug": "blindness-deafness",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-calm-emotions",
+      "kind": "spell",
+      "name": "Calm Emotions",
+      "slug": "calm-emotions",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-charm-person",
+      "kind": "spell",
+      "name": "Charm Person",
+      "slug": "charm-person",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-clairvoyance",
+      "kind": "spell",
+      "name": "Clairvoyance",
+      "slug": "clairvoyance",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-comprehend-languages",
+      "kind": "spell",
+      "name": "Comprehend Languages",
+      "slug": "comprehend-languages",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-compulsion",
+      "kind": "spell",
+      "name": "Compulsion",
+      "slug": "compulsion",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-confusion",
+      "kind": "spell",
+      "name": "Confusion",
+      "slug": "confusion",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-cure-wounds",
+      "kind": "spell",
+      "name": "Cure Wounds",
+      "slug": "cure-wounds",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-dancing-lights",
+      "kind": "spell",
+      "name": "Dancing Lights",
+      "slug": "dancing-lights",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-detect-magic",
+      "kind": "spell",
+      "name": "Detect Magic",
+      "slug": "detect-magic",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-detect-thoughts",
+      "kind": "spell",
+      "name": "Detect Thoughts",
+      "slug": "detect-thoughts",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-dimension-door",
+      "kind": "spell",
+      "name": "Dimension Door",
+      "slug": "dimension-door",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-disguise-self",
+      "kind": "spell",
+      "name": "Disguise Self",
+      "slug": "disguise-self",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-dispel-magic",
+      "kind": "spell",
+      "name": "Dispel Magic",
+      "slug": "dispel-magic",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-dominate-monster",
+      "kind": "spell",
+      "name": "Dominate Monster",
+      "slug": "dominate-monster",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-dominate-person",
+      "kind": "spell",
+      "name": "Dominate Person",
+      "slug": "dominate-person",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-dream",
+      "kind": "spell",
+      "name": "Dream",
+      "slug": "dream",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-enhance-ability",
+      "kind": "spell",
+      "name": "Enhance Ability",
+      "slug": "enhance-ability",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-enthrall",
+      "kind": "spell",
+      "name": "Enthrall",
+      "slug": "enthrall",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-etherealness",
+      "kind": "spell",
+      "name": "Etherealness",
+      "slug": "etherealness",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-eyebite",
+      "kind": "spell",
+      "name": "Eyebite",
+      "slug": "eyebite",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-faerie-fire",
+      "kind": "spell",
+      "name": "Faerie Fire",
+      "slug": "faerie-fire",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-fear",
+      "kind": "spell",
+      "name": "Fear",
+      "slug": "fear",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-feather-fall",
+      "kind": "spell",
+      "name": "Feather Fall",
+      "slug": "feather-fall",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-feeblemind",
+      "kind": "spell",
+      "name": "Feeblemind",
+      "slug": "feeblemind",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-find-the-path",
+      "kind": "spell",
+      "name": "Find the Path",
+      "slug": "find-the-path",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-forcecage",
+      "kind": "spell",
+      "name": "Forcecage",
+      "slug": "forcecage",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-foresight",
+      "kind": "spell",
+      "name": "Foresight",
+      "slug": "foresight",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-freedom-of-movement",
+      "kind": "spell",
+      "name": "Freedom of Movement",
+      "slug": "freedom-of-movement",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-geas",
+      "kind": "spell",
+      "name": "Geas",
+      "slug": "geas",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-glibness",
+      "kind": "spell",
+      "name": "Glibness",
+      "slug": "glibness",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-glyph-of-warding",
+      "kind": "spell",
+      "name": "Glyph of Warding",
+      "slug": "glyph-of-warding",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-greater-invisibility",
+      "kind": "spell",
+      "name": "Greater Invisibility",
+      "slug": "greater-invisibility",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-greater-restoration",
+      "kind": "spell",
+      "name": "Greater Restoration",
+      "slug": "greater-restoration",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-guards-and-wards",
+      "kind": "spell",
+      "name": "Guards and Wards",
+      "slug": "guards-and-wards",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-hallucinatory-terrain",
+      "kind": "spell",
+      "name": "Hallucinatory Terrain",
+      "slug": "hallucinatory-terrain",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-healing-word",
+      "kind": "spell",
+      "name": "Healing Word",
+      "slug": "healing-word",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-heat-metal",
+      "kind": "spell",
+      "name": "Heat Metal",
+      "slug": "heat-metal",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-heroism",
+      "kind": "spell",
+      "name": "Heroism",
+      "slug": "heroism",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-hold-monster",
+      "kind": "spell",
+      "name": "Hold Monster",
+      "slug": "hold-monster",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-hold-person",
+      "kind": "spell",
+      "name": "Hold Person",
+      "slug": "hold-person",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-hypnotic-pattern",
+      "kind": "spell",
+      "name": "Hypnotic Pattern",
+      "slug": "hypnotic-pattern",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-identify",
+      "kind": "spell",
+      "name": "Identify",
+      "slug": "identify",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-illusory-script",
+      "kind": "spell",
+      "name": "Illusory Script",
+      "slug": "illusory-script",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-invisibility",
+      "kind": "spell",
+      "name": "Invisibility",
+      "slug": "invisibility",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-knock",
+      "kind": "spell",
+      "name": "Knock",
+      "slug": "knock",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-legend-lore",
+      "kind": "spell",
+      "name": "Legend Lore",
+      "slug": "legend-lore",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-lesser-restoration",
+      "kind": "spell",
+      "name": "Lesser Restoration",
+      "slug": "lesser-restoration",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-light",
+      "kind": "spell",
+      "name": "Light",
+      "slug": "light",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-locate-animals-or-plants",
+      "kind": "spell",
+      "name": "Locate Animals or Plants",
+      "slug": "locate-animals-or-plants",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-locate-creature",
+      "kind": "spell",
+      "name": "Locate Creature",
+      "slug": "locate-creature",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-locate-object",
+      "kind": "spell",
+      "name": "Locate Object",
+      "slug": "locate-object",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-longstrider",
+      "kind": "spell",
+      "name": "Longstrider",
+      "slug": "longstrider",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mage-hand",
+      "kind": "spell",
+      "name": "Mage Hand",
+      "slug": "mage-hand",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-magic-mouth",
+      "kind": "spell",
+      "name": "Magic Mouth",
+      "slug": "magic-mouth",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-major-image",
+      "kind": "spell",
+      "name": "Major Image",
+      "slug": "major-image",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mass-cure-wounds",
+      "kind": "spell",
+      "name": "Mass Cure Wounds",
+      "slug": "mass-cure-wounds",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mass-suggestion",
+      "kind": "spell",
+      "name": "Mass Suggestion",
+      "slug": "mass-suggestion",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mending",
+      "kind": "spell",
+      "name": "Mending",
+      "slug": "mending",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-message",
+      "kind": "spell",
+      "name": "Message",
+      "slug": "message",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mind-blank",
+      "kind": "spell",
+      "name": "Mind Blank",
+      "slug": "mind-blank",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-minor-illusion",
+      "kind": "spell",
+      "name": "Minor Illusion",
+      "slug": "minor-illusion",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mirage-arcane",
+      "kind": "spell",
+      "name": "Mirage Arcane",
+      "slug": "mirage-arcane",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mislead",
+      "kind": "spell",
+      "name": "Mislead",
+      "slug": "mislead",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-modify-memory",
+      "kind": "spell",
+      "name": "Modify Memory",
+      "slug": "modify-memory",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-mordenkainen-s-sword",
+      "kind": "spell",
+      "name": "Mordenkainen’s Sword",
+      "slug": "mordenkainen-s-sword",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-nondetection",
+      "kind": "spell",
+      "name": "Nondetection",
+      "slug": "nondetection",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-otto-s-irresistible-dance",
+      "kind": "spell",
+      "name": "Otto’s Irresistible Dance",
+      "slug": "otto-s-irresistible-dance",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-planar-binding",
+      "kind": "spell",
+      "name": "Planar Binding",
+      "slug": "planar-binding",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-plant-growth",
+      "kind": "spell",
+      "name": "Plant Growth",
+      "slug": "plant-growth",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-polymorph",
+      "kind": "spell",
+      "name": "Polymorph",
+      "slug": "polymorph",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-power-word-kill",
+      "kind": "spell",
+      "name": "Power Word Kill",
+      "slug": "power-word-kill",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-power-word-stun",
+      "kind": "spell",
+      "name": "Power Word Stun",
+      "slug": "power-word-stun",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-prestidigitation",
+      "kind": "spell",
+      "name": "Prestidigitation",
+      "slug": "prestidigitation",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-programmed-illusion",
+      "kind": "spell",
+      "name": "Programmed Illusion",
+      "slug": "programmed-illusion",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-project-image",
+      "kind": "spell",
+      "name": "Project Image",
+      "slug": "project-image",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-raise-dead",
+      "kind": "spell",
+      "name": "Raise Dead",
+      "slug": "raise-dead",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-regenerate",
+      "kind": "spell",
+      "name": "Regenerate",
+      "slug": "regenerate",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-resurrection",
+      "kind": "spell",
+      "name": "Resurrection",
+      "slug": "resurrection",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-scrying",
+      "kind": "spell",
+      "name": "Scrying",
+      "slug": "scrying",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-see-invisibility",
+      "kind": "spell",
+      "name": "See Invisibility",
+      "slug": "see-invisibility",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-seeming",
+      "kind": "spell",
+      "name": "Seeming",
+      "slug": "seeming",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-sending",
+      "kind": "spell",
+      "name": "Sending",
+      "slug": "sending",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-shatter",
+      "kind": "spell",
+      "name": "Shatter",
+      "slug": "shatter",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-silence",
+      "kind": "spell",
+      "name": "Silence",
+      "slug": "silence",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-silent-image",
+      "kind": "spell",
+      "name": "Silent Image",
+      "slug": "silent-image",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-sleep",
+      "kind": "spell",
+      "name": "Sleep",
+      "slug": "sleep",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-speak-with-animals",
+      "kind": "spell",
+      "name": "Speak with Animals",
+      "slug": "speak-with-animals",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-speak-with-dead",
+      "kind": "spell",
+      "name": "Speak with Dead",
+      "slug": "speak-with-dead",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-speak-with-plants",
+      "kind": "spell",
+      "name": "Speak with Plants",
+      "slug": "speak-with-plants",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-stinking-cloud",
+      "kind": "spell",
+      "name": "Stinking Cloud",
+      "slug": "stinking-cloud",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-suggestion",
+      "kind": "spell",
+      "name": "Suggestion",
+      "slug": "suggestion",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-symbol",
+      "kind": "spell",
+      "name": "Symbol",
+      "slug": "symbol",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-teleport",
+      "kind": "spell",
+      "name": "Teleport",
+      "slug": "teleport",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-teleportation-circle",
+      "kind": "spell",
+      "name": "Teleportation Circle",
+      "slug": "teleportation-circle",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-thunderwave",
+      "kind": "spell",
+      "name": "Thunderwave",
+      "slug": "thunderwave",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-tongues",
+      "kind": "spell",
+      "name": "Tongues",
+      "slug": "tongues",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-true-polymorph",
+      "kind": "spell",
+      "name": "True Polymorph",
+      "slug": "true-polymorph",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-true-seeing",
+      "kind": "spell",
+      "name": "True Seeing",
+      "slug": "true-seeing",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-true-strike",
+      "kind": "spell",
+      "name": "True Strike",
+      "slug": "true-strike",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-unseen-servant",
+      "kind": "spell",
+      "name": "Unseen Servant",
+      "slug": "unseen-servant",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-vicious-mockery",
+      "kind": "spell",
+      "name": "Vicious Mockery",
+      "slug": "vicious-mockery",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    },
+    {
+      "id": "spell-zone-of-truth",
+      "kind": "spell",
+      "name": "Zone of Truth",
+      "slug": "zone-of-truth",
+      "source_id": "spells-basic-rules-public-index",
+      "source_version": "basic-rules-public-index",
+      "source_url": "https://www.dndbeyond.com/sources/basic-rules/spells"
+    }
+  ]
+}
