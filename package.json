@@ -1,7 +1,7 @@
 {
   "name": "wizardsoftheghosts",
   "private": true,
-  "description": "A whimsical grimoire that reinterprets public fantasy spell and skill names as practical AI and automation skills.",
+  "description": "An unofficial fan grimoire of Hermes Agent skills built from fantasy spell and skill names.",
   "license": "CC0-1.0",
   "type": "module",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "keywords": [
     "hermes-agent",
-    "openclaw",
     "ai-skills",
+    "hermes-skills",
     "agents",
     "automation",
     "fantasy-rpg",
