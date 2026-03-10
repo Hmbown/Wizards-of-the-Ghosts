@@ -512,21 +512,17 @@ function renderSpellCircle(categories) {
   const sim = catMap.get("simulation-and-staging");
   const inf = catMap.get("influence-and-behavior");
   const con = catMap.get("containment-and-intervention");
+  const columnWidth = 20;
+  const columns = (left, center, right) =>
+    `    │ ${left.padEnd(columnWidth)} ${center.padEnd(columnWidth)} ${right.padEnd(columnWidth)} │`;
 
   return [
     "```",
-    `                  Investigation (${inv.entry_slugs.length})`,
-    "                       ╱    ╲",
-    `          Simulation  ╱      ╲  Actions`,
-    `              (${sim.entry_slugs.length})   ╱        ╲   (${act.entry_slugs.length})`,
-    "                    ╱          ╲",
-    `       Influence ──<    GHOST    >── Monitoring`,
-    `           (${inf.entry_slugs.length})    ╲   IN THE  ╱      (${mon.entry_slugs.length})`,
-    `                    ╲ MACHINE  ╱`,
-    `        Containment  ╲        ╱  Messaging`,
-    `              (${con.entry_slugs.length})   ╲      ╱    (${msg.entry_slugs.length})`,
-    "                       ╲    ╱",
-    `                     Repair (${rep.entry_slugs.length})`,
+    "    ┌────────────────────────────────────────────────────────────────────┐",
+    columns(`Simulation (${sim.entry_slugs.length})`, `Investigation (${inv.entry_slugs.length})`, `Actions (${act.entry_slugs.length})`),
+    columns(`Influence (${inf.entry_slugs.length})`, "GHOST IN THE MACHINE", `Monitoring (${mon.entry_slugs.length})`),
+    columns(`Containment (${con.entry_slugs.length})`, `Repair (${rep.entry_slugs.length})`, `Messaging (${msg.entry_slugs.length})`),
+    "    └────────────────────────────────────────────────────────────────────┘",
     "```"
   ].join("\n");
 }

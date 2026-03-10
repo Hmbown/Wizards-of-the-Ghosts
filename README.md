@@ -15,18 +15,11 @@ Unofficial Hermes Agent skill pack built from fantasy spell and skill names.
 Not affiliated with or endorsed by Wizards of the Coast.
 
 ```
-                  Investigation (28)
-                       ╱    ╲
-          Simulation  ╱      ╲  Actions
-              (8)   ╱        ╲   (19)
-                    ╱          ╲
-       Influence ──<    GHOST    >── Monitoring
-           (18)    ╲   IN THE  ╱      (17)
-                    ╲ MACHINE  ╱
-        Containment  ╲        ╱  Messaging
-              (10)   ╲      ╱    (9)
-                       ╲    ╱
-                     Repair (13)
+    ┌────────────────────────────────────────────────────────────────────┐
+    │ Simulation (8)       Investigation (28)   Actions (19)         │
+    │ Influence (18)       GHOST IN THE MACHINE Monitoring (17)      │
+    │ Containment (10)     Repair (13)          Messaging (9)        │
+    └────────────────────────────────────────────────────────────────────┘
 ```
 
 `wizardsoftheghosts` turns public fifth-edition spell and skill names into a product-shaped Hermes skill pack for investigation, automation, monitoring, messaging, repair, staging, and tightly scoped intervention.
