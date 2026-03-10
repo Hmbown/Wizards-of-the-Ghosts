@@ -1,12 +1,12 @@
 title,slug,kind,canonical_id,reality_tier,literalness,provider_targets,priority,labels,description
-Acrobatics (skill),acrobatics,skill,skill-acrobatics,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Acrobatics (skill),acrobatics,skill,skill-acrobatics,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Acrobatics
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -25,14 +25,14 @@ Use $acrobatics to thread this workflow cleanly through its sequencing constrain
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Animal Handling (skill),animal-handling,skill,skill-animal-handling,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Animal Handling (skill),animal-handling,skill,skill-animal-handling,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Animal Handling
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -51,14 +51,14 @@ Use $animal-handling to steady this temperamental system and tell me how to work
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Arcana (skill),arcana,skill,skill-arcana,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Arcana (skill),arcana,skill,skill-arcana,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Arcana
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -77,14 +77,14 @@ Use $arcana to explain how this [system/protocol/technology] actually works unde
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Athletics (skill),athletics,skill,skill-athletics,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Athletics (skill),athletics,skill,skill-athletics,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Athletics
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -103,14 +103,14 @@ Use $athletics to turn this into a durable high-throughput run plan and tell me 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Deception (skill),deception,skill,skill-deception,shipping-now,metaphorical,openai|claude,3,ai|docs,"## Spellbook Entry
+Deception (skill),deception,skill,skill-deception,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Deception
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -129,14 +129,14 @@ Use $deception to create a plausible synthetic version of this scenario for test
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-History (skill),history,skill,skill-history,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+History (skill),history,skill,skill-history,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: History
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -155,14 +155,14 @@ Use $history to trace how this [system/decision/codebase] arrived at its current
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Insight (skill),insight,skill,skill-insight,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Insight (skill),insight,skill,skill-insight,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Insight
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -181,14 +181,14 @@ Use $insight to read between the lines of this [message/conversation/request]. W
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Intimidation (skill),intimidation,skill,skill-intimidation,shipping-now,metaphorical,openai|claude,3,ai|docs,"## Spellbook Entry
+Intimidation (skill),intimidation,skill,skill-intimidation,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Intimidation
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -207,14 +207,14 @@ Use $intimidation to draft a serious, authoritative message that matches the act
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Investigation (skill),investigation,skill,skill-investigation,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Investigation (skill),investigation,skill,skill-investigation,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Investigation
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -233,14 +233,14 @@ Use $investigation to follow the clues here and tell me the most likely root cau
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Medicine (skill),medicine,skill,skill-medicine,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Medicine (skill),medicine,skill,skill-medicine,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Medicine
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -259,14 +259,14 @@ Use $medicine to triage this system issue, stabilize it first, and tell me the m
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Nature (skill),nature,skill,skill-nature,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Nature (skill),nature,skill,skill-nature,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Nature
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -285,14 +285,14 @@ Use $nature to analyze this [market/community/ecosystem/pattern] as an emergent 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Perception (skill),perception,skill,skill-perception,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Perception (skill),perception,skill,skill-perception,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Perception
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -311,14 +311,14 @@ Use $perception to scan this [document/dashboard/codebase/design] with fresh eye
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Performance (skill),performance,skill,skill-performance,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Performance (skill),performance,skill,skill-performance,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Performance
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -337,14 +337,14 @@ Use $performance to turn this technical material into a polished presentation th
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Persuasion (skill),persuasion,skill,skill-persuasion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Persuasion (skill),persuasion,skill,skill-persuasion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Persuasion
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -363,14 +363,14 @@ Use $persuasion to draft the strongest credible case for this proposal for the i
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Religion (skill),religion,skill,skill-religion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Religion (skill),religion,skill,skill-religion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Religion
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -389,14 +389,14 @@ Use $religion to map the belief system, values, and cultural logic of this [team
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Sleight of Hand (skill),sleight-of-hand,skill,skill-sleight-of-hand,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Sleight of Hand (skill),sleight-of-hand,skill,skill-sleight-of-hand,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Sleight of Hand
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -415,14 +415,14 @@ Use $sleight-of-hand to make the smallest safe edit here and show me exactly wha
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Stealth (skill),stealth,skill,skill-stealth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Stealth (skill),stealth,skill,skill-stealth,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Stealth
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -441,14 +441,14 @@ Use $stealth to gather the context we need with the smallest safe footprint and 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Survival (skill),survival,skill,skill-survival,shipping-now,metaphorical,openai|claude|openclaw,2,ai|docs|automation,"## Spellbook Entry
+Survival (skill),survival,skill,skill-survival,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
 - Canonical source: Survival
 - Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -467,14 +467,14 @@ Use $survival to keep this work moving under degraded conditions and show me the
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Animal Friendship (spell),animal-friendship,spell,spell-animal-friendship,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Animal Friendship (spell),animal-friendship,spell,spell-animal-friendship,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Animal Friendship
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -493,14 +493,14 @@ Use $animal-friendship to help me establish a safe first working relationship wi
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Animal Messenger (spell),animal-messenger,spell,spell-animal-messenger,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Animal Messenger (spell),animal-messenger,spell,spell-animal-messenger,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Animal Messenger
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -519,14 +519,14 @@ Use $animal-messenger to package this message for an async delivery path and tel
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Animate Objects (spell),animate-objects,spell,spell-animate-objects,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Animate Objects (spell),animate-objects,spell,spell-animate-objects,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Animate Objects
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -545,14 +545,14 @@ Use $animate-objects to make this artifact self-updating, with clear agency boun
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Awaken (spell),awaken,spell,spell-awaken,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Awaken (spell),awaken,spell,spell-awaken,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Awaken
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -571,14 +571,14 @@ Use $awaken to design a conversational or intelligent wrapper around this dumb s
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Bane (spell),bane,spell,spell-bane,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Bane (spell),bane,spell,spell-bane,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Bane
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -597,14 +597,14 @@ Use $bane to find every weakness in this [plan/system/argument]. Give me a ranke
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Bestow Curse (spell),bestow-curse,spell,spell-bestow-curse,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Bestow Curse (spell),bestow-curse,spell,spell-bestow-curse,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Bestow Curse
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -623,14 +623,14 @@ Use $bestow-curse to design a constraint injection test for this [system/process
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Blindness/Deafness (spell),blindness-deafness,spell,spell-blindness-deafness,shipping-now,literal,openai|claude,3,ai|type:feature|security,"## Spellbook Entry
+Blindness/Deafness (spell),blindness-deafness,spell,spell-blindness-deafness,shipping-now,literal,openai|claude|openclaw|hermes,2,ai|type:feature|automation|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Blindness/Deafness
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -649,14 +649,14 @@ Use $blindness-deafness to selectively blind or deafen this system to one input,
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Calm Emotions (spell),calm-emotions,spell,spell-calm-emotions,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Calm Emotions (spell),calm-emotions,spell,spell-calm-emotions,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Calm Emotions
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -675,14 +675,14 @@ Use $calm-emotions to de-escalate this [thread/conversation/situation]. Draft a 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Charm Person (spell),charm-person,spell,spell-charm-person,shipping-now,hybrid,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Charm Person (spell),charm-person,spell,spell-charm-person,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Charm Person
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -701,14 +701,14 @@ Use $charm-person to draft this message with warmth and care, and flag anything 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Clairvoyance (spell),clairvoyance,spell,spell-clairvoyance,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Clairvoyance (spell),clairvoyance,spell,spell-clairvoyance,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Clairvoyance
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -727,14 +727,14 @@ Use $clairvoyance to get a snapshot of this [system/service/environment]. What c
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Comprehend Languages (spell),comprehend-languages,spell,spell-comprehend-languages,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Comprehend Languages (spell),comprehend-languages,spell,spell-comprehend-languages,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Comprehend Languages
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -779,14 +779,14 @@ Use $compulsion to evaluate whether this forced [migration/transition/action] is
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Confusion (spell),confusion,spell,spell-confusion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Confusion (spell),confusion,spell,spell-confusion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Confusion
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -805,14 +805,14 @@ Use $confusion to generate a chaos test suite for this [system/API/workflow]. Gi
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Cure Wounds (spell),cure-wounds,spell,spell-cure-wounds,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Cure Wounds (spell),cure-wounds,spell,spell-cure-wounds,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Cure Wounds
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -831,14 +831,14 @@ Use $cure-wounds to diagnose and fix this [broken build/failing service/producti
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Dancing Lights (spell),dancing-lights,spell,spell-dancing-lights,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Dancing Lights (spell),dancing-lights,spell,spell-dancing-lights,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Dancing Lights
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
-- Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -857,14 +857,14 @@ Use $dancing-lights to design a small status display for this workflow and make 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Detect Magic (spell),detect-magic,spell,spell-detect-magic,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Detect Magic (spell),detect-magic,spell,spell-detect-magic,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Detect Magic
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -883,14 +883,14 @@ Use $detect-magic to scan this repo for hidden AI tooling, agents, MCP servers, 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Detect Thoughts (spell),detect-thoughts,spell,spell-detect-thoughts,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Detect Thoughts (spell),detect-thoughts,spell,spell-detect-thoughts,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Detect Thoughts
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -909,14 +909,14 @@ Use $detect-thoughts to analyze this [message/brief/request]. What are the real 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Dimension Door (spell),dimension-door,spell,spell-dimension-door,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Dimension Door (spell),dimension-door,spell,spell-dimension-door,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Dimension Door
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -935,14 +935,14 @@ Use $dimension-door to help me jump between these two known contexts with only t
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Disguise Self (spell),disguise-self,spell,spell-disguise-self,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Disguise Self (spell),disguise-self,spell,spell-disguise-self,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Disguise Self
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -961,14 +961,14 @@ Use $disguise-self to rewrite this for the target audience without changing what
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Dispel Magic (spell),dispel-magic,spell,spell-dispel-magic,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+Dispel Magic (spell),dispel-magic,spell,spell-dispel-magic,shipping-now,literal,openai|claude|openclaw|hermes,2,ai|type:feature|automation|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Dispel Magic
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: literal
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1039,14 +1039,14 @@ Use $dominate-person to evaluate whether this request crosses the line from infl
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Dream (spell),dream,spell,spell-dream,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Dream (spell),dream,spell,spell-dream,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Dream
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1065,14 +1065,14 @@ Use $dream to create an async briefing that arrives at the right future moment, 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Enhance Ability (spell),enhance-ability,spell,spell-enhance-ability,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Enhance Ability (spell),enhance-ability,spell,spell-enhance-ability,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Enhance Ability
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1091,14 +1091,14 @@ Use $enhance-ability to prime this system for the next task and tell me exactly 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Enthrall (spell),enthrall,spell,spell-enthrall,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Enthrall (spell),enthrall,spell,spell-enthrall,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Enthrall
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1117,14 +1117,14 @@ Use $enthrall to restructure this [presentation/article/demo] so the audience st
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Etherealness (spell),etherealness,spell,spell-etherealness,prototype,metaphorical,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+Etherealness (spell),etherealness,spell,spell-etherealness,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Etherealness
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1143,14 +1143,14 @@ Use $etherealness to show me how to inspect this system in read-only ghost mode 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Eyebite (spell),eyebite,spell,spell-eyebite,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Eyebite (spell),eyebite,spell,spell-eyebite,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Eyebite
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1169,14 +1169,14 @@ Use $eyebite to selectively degrade a specific capability of a system or service
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Faerie Fire (spell),faerie-fire,spell,spell-faerie-fire,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Faerie Fire (spell),faerie-fire,spell,spell-faerie-fire,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Faerie Fire
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1195,14 +1195,14 @@ Use \$faerie-fire to highlight the most important [findings/patterns/elements] i
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Fear (spell),fear,spell,spell-fear,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Fear (spell),fear,spell,spell-fear,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Fear
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1221,14 +1221,14 @@ Use $fear to run a pre-mortem on this [plan/project/decision]. Assume it failed 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Feather Fall (spell),feather-fall,spell,spell-feather-fall,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Feather Fall (spell),feather-fall,spell,spell-feather-fall,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Feather Fall
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1247,14 +1247,14 @@ Use $feather-fall to design the fastest safe descent for this failing deploy, se
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Feeblemind (spell),feeblemind,spell,spell-feeblemind,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Feeblemind (spell),feeblemind,spell,spell-feeblemind,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Feeblemind
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1273,14 +1273,14 @@ Use $feeblemind to reduce a system to minimal capability — stripping non-essen
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Find the Path (spell),find-the-path,spell,spell-find-the-path,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Find the Path (spell),find-the-path,spell,spell-find-the-path,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Find the Path
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1299,14 +1299,14 @@ Use $find-the-path to map the route from where I am now to this [goal/destinatio
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Forcecage (spell),forcecage,spell,spell-forcecage,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Forcecage (spell),forcecage,spell,spell-forcecage,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Forcecage
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1325,14 +1325,14 @@ Use $forcecage to run this in a contained sandbox and tell me whether it behaved
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Foresight (spell),foresight,spell,spell-foresight,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Foresight (spell),foresight,spell,spell-foresight,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Foresight
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1351,14 +1351,14 @@ Use $foresight to evaluate this decision, give me the likely upside and downside
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Freedom of Movement (spell),freedom-of-movement,spell,spell-freedom-of-movement,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Freedom of Movement (spell),freedom-of-movement,spell,spell-freedom-of-movement,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Freedom of Movement
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1403,14 +1403,14 @@ Use $geas to evaluate whether this long-term obligation is a legitimate commitme
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Glibness (spell),glibness,spell,spell-glibness,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Glibness (spell),glibness,spell,spell-glibness,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Glibness
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1429,14 +1429,14 @@ Use $glibness to make this [pitch/proposal/argument] sound as credible and polis
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Glyph of Warding (spell),glyph-of-warding,spell,spell-glyph-of-warding,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+Glyph of Warding (spell),glyph-of-warding,spell,spell-glyph-of-warding,shipping-now,literal,openai|claude|openclaw|hermes,2,ai|type:feature|automation|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Glyph of Warding
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: literal
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1455,14 +1455,14 @@ Use $glyph-of-warding to define a watch or alert around this workflow and make t
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Greater Invisibility (spell),greater-invisibility,spell,spell-greater-invisibility,prototype,metaphorical,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+Greater Invisibility (spell),greater-invisibility,spell,spell-greater-invisibility,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Greater Invisibility
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1481,14 +1481,14 @@ Use $greater-invisibility to plan a live change that stays quiet to users while 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Greater Restoration (spell),greater-restoration,spell,spell-greater-restoration,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Greater Restoration (spell),greater-restoration,spell,spell-greater-restoration,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Greater Restoration
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1507,14 +1507,14 @@ Use $greater-restoration to assess this [system/codebase/database] for accumulat
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Guards and Wards (spell),guards-and-wards,spell,spell-guards-and-wards,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Guards and Wards (spell),guards-and-wards,spell,spell-guards-and-wards,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Guards and Wards
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1533,14 +1533,14 @@ Use $guards-and-wards to perform a full security audit of this system and priori
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Hallucinatory Terrain (spell),hallucinatory-terrain,spell,spell-hallucinatory-terrain,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Hallucinatory Terrain (spell),hallucinatory-terrain,spell,spell-hallucinatory-terrain,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Hallucinatory Terrain
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1559,14 +1559,14 @@ Use $hallucinatory-terrain to create a staged environment that overlays realisti
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Healing Word (spell),healing-word,spell,spell-healing-word,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Healing Word (spell),healing-word,spell,spell-healing-word,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Healing Word
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1585,14 +1585,14 @@ Use $healing-word to give me a quick, executable fix for this [issue/error/probl
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Heat Metal (spell),heat-metal,spell,spell-heat-metal,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Heat Metal (spell),heat-metal,spell,spell-heat-metal,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Heat Metal
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1611,14 +1611,14 @@ Use $heat-metal to design a progressive friction strategy that makes a deprecate
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Heroism (spell),heroism,spell,spell-heroism,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Heroism (spell),heroism,spell,spell-heroism,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Heroism
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1637,14 +1637,14 @@ Use $heroism to prepare me for this [presentation/conversation/launch/decision].
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Hold Monster (spell),hold-monster,spell,spell-hold-monster,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Hold Monster (spell),hold-monster,spell,spell-hold-monster,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Hold Monster
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1663,14 +1663,14 @@ Use $hold-monster to design an emergency circuit breaker for this [system/servic
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Hold Person (spell),hold-person,spell,spell-hold-person,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Hold Person (spell),hold-person,spell,spell-hold-person,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Hold Person
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1689,14 +1689,14 @@ Use $hold-person to design an administrative hold for this [account/process/work
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Hypnotic Pattern (spell),hypnotic-pattern,spell,spell-hypnotic-pattern,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Hypnotic Pattern (spell),hypnotic-pattern,spell,spell-hypnotic-pattern,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Hypnotic Pattern
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1715,14 +1715,14 @@ Use $hypnotic-pattern to design attention-holding mechanics for this [flow/onboa
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Identify (spell),identify,spell,spell-identify,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Identify (spell),identify,spell,spell-identify,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Identify
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1741,14 +1741,14 @@ Use $identify on this file, tool, or service and tell me what it does, what it t
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Illusory Script (spell),illusory-script,spell,spell-illusory-script,prototype,hybrid,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+Illusory Script (spell),illusory-script,spell,spell-illusory-script,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Illusory Script
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1767,14 +1767,14 @@ Use $illusory-script to design a message or secret-sharing flow that only the ri
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Invisibility (spell),invisibility,spell,spell-invisibility,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Invisibility (spell),invisibility,spell,spell-invisibility,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Invisibility
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1793,14 +1793,14 @@ Use $invisibility to reduce the unnecessary noise and exposure around this workf
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Knock (spell),knock,spell,spell-knock,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Knock (spell),knock,spell,spell-knock,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Knock
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1819,14 +1819,14 @@ Use $knock to find the legitimate way through this access barrier and open it cl
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Legend Lore (spell),legend-lore,spell,spell-legend-lore,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Legend Lore (spell),legend-lore,spell,spell-legend-lore,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Legend Lore
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1845,14 +1845,14 @@ Use $legend-lore to build a comprehensive research dossier on this subject, with
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Lesser Restoration (spell),lesser-restoration,spell,spell-lesser-restoration,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Lesser Restoration (spell),lesser-restoration,spell,spell-lesser-restoration,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Lesser Restoration
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1871,14 +1871,14 @@ Use $lesser-restoration to identify and clear the stuck state that is blocking t
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Light (spell),light,spell,spell-light,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+Light (spell),light,spell,spell-light,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Light
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
-- Literalness: literal
-- Provider targets: openai, claude, openclaw
+- Literalness: hybrid
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1897,14 +1897,14 @@ Use $light to illuminate this area with the minimum logging, docs, or observabil
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Locate Animals or Plants (spell),locate-animals-or-plants,spell,spell-locate-animals-or-plants,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Locate Animals or Plants (spell),locate-animals-or-plants,spell,spell-locate-animals-or-plants,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Locate Animals or Plants
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1923,14 +1923,14 @@ Use $locate-animals-or-plants to discover what services and dependencies are ali
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Locate Creature (spell),locate-creature,spell,spell-locate-creature,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Locate Creature (spell),locate-creature,spell,spell-locate-creature,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Locate Creature
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1949,14 +1949,14 @@ Use \$locate-creature to find this [person/service/process] in [the organization
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Locate Object (spell),locate-object,spell,spell-locate-object,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Locate Object (spell),locate-object,spell,spell-locate-object,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Locate Object
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -1975,14 +1975,14 @@ Use \$locate-object to find this [file/document/config/resource]. I know it exis
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Longstrider (spell),longstrider,spell,spell-longstrider,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Longstrider (spell),longstrider,spell,spell-longstrider,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Longstrider
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2001,14 +2001,14 @@ Use $longstrider to show me how to make this workflow meaningfully faster withou
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mage Hand (spell),mage-hand,spell,spell-mage-hand,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Mage Hand (spell),mage-hand,spell,spell-mage-hand,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mage Hand
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2027,14 +2027,14 @@ Use $mage-hand to make the smallest safe change needed here and show exactly wha
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Magic Mouth (spell),magic-mouth,spell,spell-magic-mouth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Magic Mouth (spell),magic-mouth,spell,spell-magic-mouth,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Magic Mouth
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2053,14 +2053,14 @@ Use $magic-mouth to turn this trigger into a reliable automated response and sho
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Major Image (spell),major-image,spell,spell-major-image,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Major Image (spell),major-image,spell,spell-major-image,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Major Image
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2079,14 +2079,14 @@ Use $major-image to build an interactive simulation, clickable prototype, or sce
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mass Cure Wounds (spell),mass-cure-wounds,spell,spell-mass-cure-wounds,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Mass Cure Wounds (spell),mass-cure-wounds,spell,spell-mass-cure-wounds,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mass Cure Wounds
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2105,14 +2105,14 @@ Use $mass-cure-wounds to apply this verified fix across all affected [instances/
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mass Suggestion (spell),mass-suggestion,spell,spell-mass-suggestion,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Mass Suggestion (spell),mass-suggestion,spell,spell-mass-suggestion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mass Suggestion
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2131,14 +2131,14 @@ Use $mass-suggestion to draft a broadcast message that moves this audience towar
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mending (spell),mending,spell,spell-mending,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Mending (spell),mending,spell,spell-mending,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mending
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2157,14 +2157,14 @@ Use $mending to fix this broken artifact with the smallest repair that restores 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Message (spell),message,spell,spell-message,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Message (spell),message,spell,spell-message,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Message
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2183,14 +2183,14 @@ Use $message to turn this into the smallest effective real-time update and choos
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mind Blank (spell),mind-blank,spell,spell-mind-blank,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Mind Blank (spell),mind-blank,spell,spell-mind-blank,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mind Blank
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2209,14 +2209,14 @@ Use $mind-blank to isolate this context so nothing from it leaks into other sess
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Minor Illusion (spell),minor-illusion,spell,spell-minor-illusion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Minor Illusion (spell),minor-illusion,spell,spell-minor-illusion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Minor Illusion
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2235,14 +2235,14 @@ Use $minor-illusion to quickly sketch an idea — a wireframe, placeholder, roug
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mirage Arcane (spell),mirage-arcane,spell,spell-mirage-arcane,prototype,hybrid,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+Mirage Arcane (spell),mirage-arcane,spell,spell-mirage-arcane,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mirage Arcane
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2261,14 +2261,14 @@ Use $mirage-arcane to build a deep simulation or digital twin so realistic that 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mislead (spell),mislead,spell,spell-mislead,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Mislead (spell),mislead,spell,spell-mislead,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mislead
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2313,14 +2313,14 @@ Use $modify-memory to evaluate whether this data operation is legitimate correct
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Mordenkainen’s Sword (spell),mordenkainen-s-sword,spell,spell-mordenkainen-s-sword,prototype,metaphorical,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+Mordenkainen’s Sword (spell),mordenkainen-s-sword,spell,spell-mordenkainen-s-sword,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Mordenkainen’s Sword
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2339,14 +2339,14 @@ Use $mordenkainen-s-sword to design a persistent worker for this single job, inc
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Nondetection (spell),nondetection,spell,spell-nondetection,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Nondetection (spell),nondetection,spell,spell-nondetection,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Nondetection
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2365,14 +2365,14 @@ Use $nondetection to strip unnecessary metadata and tracking from this and tell 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Otto’s Irresistible Dance (spell),otto-s-irresistible-dance,spell,spell-otto-s-irresistible-dance,prototype,metaphorical,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Otto’s Irresistible Dance (spell),otto-s-irresistible-dance,spell,spell-otto-s-irresistible-dance,prototype,metaphorical,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Otto’s Irresistible Dance
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2391,14 +2391,14 @@ Use $otto-s-irresistible-dance to analyze what would make this [product/content/
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Planar Binding (spell),planar-binding,spell,spell-planar-binding,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+Planar Binding (spell),planar-binding,spell,spell-planar-binding,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Planar Binding
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2417,14 +2417,14 @@ Use $planar-binding to integrate this external service with an explicit contract
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Plant Growth (spell),plant-growth,spell,spell-plant-growth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Plant Growth (spell),plant-growth,spell,spell-plant-growth,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Plant Growth
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2443,14 +2443,14 @@ Use $plant-growth to design a patient, compounding growth plan for this project 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Polymorph (spell),polymorph,spell,spell-polymorph,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Polymorph (spell),polymorph,spell,spell-polymorph,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Polymorph
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2469,14 +2469,14 @@ Use $polymorph to transform this from its current form into the target format, a
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Power Word Kill (spell),power-word-kill,spell,spell-power-word-kill,shipping-now,hybrid,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Power Word Kill (spell),power-word-kill,spell,spell-power-word-kill,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Power Word Kill
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2495,14 +2495,14 @@ Use $power-word-kill to immediately terminate a process or system that cannot be
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Power Word Stun (spell),power-word-stun,spell,spell-power-word-stun,shipping-now,hybrid,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Power Word Stun (spell),power-word-stun,spell,spell-power-word-stun,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Power Word Stun
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2521,14 +2521,14 @@ Use $power-word-stun to immediately freeze a process, account, or system in plac
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Prestidigitation (spell),prestidigitation,spell,spell-prestidigitation,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Prestidigitation (spell),prestidigitation,spell,spell-prestidigitation,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Prestidigitation
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2547,14 +2547,14 @@ Use $prestidigitation to handle this quick task cleanly, without over-engineerin
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Programmed Illusion (spell),programmed-illusion,spell,spell-programmed-illusion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Programmed Illusion (spell),programmed-illusion,spell,spell-programmed-illusion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Programmed Illusion
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2573,14 +2573,14 @@ Use $programmed-illusion to create an automated demo, triggered walkthrough, or 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Project Image (spell),project-image,spell,spell-project-image,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Project Image (spell),project-image,spell,spell-project-image,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Project Image
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2599,14 +2599,14 @@ Use $project-image to set up remote presence — an avatar, recorded stand-in, o
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Raise Dead (spell),raise-dead,spell,spell-raise-dead,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Raise Dead (spell),raise-dead,spell,spell-raise-dead,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Raise Dead
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2625,14 +2625,14 @@ Use $raise-dead to bring this [system/service/environment] back in degraded mode
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Regenerate (spell),regenerate,spell,spell-regenerate,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Regenerate (spell),regenerate,spell,spell-regenerate,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Regenerate
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2651,14 +2651,14 @@ Use $regenerate to reconstruct this [lost file/deleted component/corrupted data]
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Resurrection (spell),resurrection,spell,spell-resurrection,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Resurrection (spell),resurrection,spell,spell-resurrection,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Resurrection
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2677,14 +2677,14 @@ Use $resurrection to bring this dead system back from whatever backups and artif
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Scrying (spell),scrying,spell,spell-scrying,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Scrying (spell),scrying,spell,spell-scrying,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Scrying
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2703,14 +2703,14 @@ Use $scrying to show me the live state of this system right now, with timestamps
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-See Invisibility (spell),see-invisibility,spell,spell-see-invisibility,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+See Invisibility (spell),see-invisibility,spell,spell-see-invisibility,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: See Invisibility
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2729,14 +2729,14 @@ Use \$see-invisibility to audit this [product/contract/codebase/page] for delibe
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Seeming (spell),seeming,spell,spell-seeming,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Seeming (spell),seeming,spell,spell-seeming,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Seeming
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2755,14 +2755,14 @@ Use $seeming to plan a coordinated presentation-only change across this set of i
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Sending (spell),sending,spell,spell-sending,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+Sending (spell),sending,spell,spell-sending,shipping-now,literal,openai|claude|openclaw|hermes,2,ai|type:feature|automation|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Sending
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: literal
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2781,14 +2781,14 @@ Use $sending to draft and deliver this message through the best available channe
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Shatter (spell),shatter,spell,spell-shatter,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Shatter (spell),shatter,spell,spell-shatter,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Shatter
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2807,14 +2807,14 @@ Use $shatter to stress-test a system, plan, or codebase by finding its resonant 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Silence (spell),silence,spell,spell-silence,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Silence (spell),silence,spell,spell-silence,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Silence
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2833,14 +2833,14 @@ Use $silence to filter the noise here down to what actually matters, and tell me
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Silent Image (spell),silent-image,spell,spell-silent-image,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Silent Image (spell),silent-image,spell,spell-silent-image,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Silent Image
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2859,14 +2859,14 @@ Use $silent-image to create a static visual mockup or design comp that answers t
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Sleep (spell),sleep,spell,spell-sleep,shipping-now,hybrid,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Sleep (spell),sleep,spell,spell-sleep,shipping-now,hybrid,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Sleep
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2885,14 +2885,14 @@ Use $sleep to design a graceful suspension plan for this [system/process/notific
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Speak with Animals (spell),speak-with-animals,spell,spell-speak-with-animals,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Speak with Animals (spell),speak-with-animals,spell,spell-speak-with-animals,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Speak with Animals
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2911,14 +2911,14 @@ Use $speak-with-animals to translate this telemetry, dashboard noise, or sensor 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Speak with Dead (spell),speak-with-dead,spell,spell-speak-with-dead,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Speak with Dead (spell),speak-with-dead,spell,spell-speak-with-dead,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Speak with Dead
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2937,14 +2937,14 @@ Use $speak-with-dead to interrogate this legacy system and tell me what it knew,
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Speak with Plants (spell),speak-with-plants,spell,spell-speak-with-plants,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Speak with Plants (spell),speak-with-plants,spell,spell-speak-with-plants,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Speak with Plants
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2963,14 +2963,14 @@ Use $speak-with-plants to read this codebase, file tree, or schema like a living
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Stinking Cloud (spell),stinking-cloud,spell,spell-stinking-cloud,shipping-now,metaphorical,openai|claude,3,ai|type:feature,"## Spellbook Entry
+Stinking Cloud (spell),stinking-cloud,spell,spell-stinking-cloud,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Stinking Cloud
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -2989,14 +2989,14 @@ Use $stinking-cloud to set up area-denial defenses — rate limits, tarpits, hon
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Suggestion (spell),suggestion,spell,spell-suggestion,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Suggestion (spell),suggestion,spell,spell-suggestion,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Suggestion
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3015,14 +3015,14 @@ Use $suggestion to draft a single nudge, CTA, or notification that drives this a
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Symbol (spell),symbol,spell,spell-symbol,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+Symbol (spell),symbol,spell,spell-symbol,shipping-now,literal,openai|claude|openclaw|hermes,2,ai|type:feature|automation|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Symbol
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: literal
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3041,14 +3041,14 @@ Use $symbol to mark this resource, role, or state with a named policy sigil that
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Teleport (spell),teleport,spell,spell-teleport,prototype,hybrid,openai|claude|openclaw,4,ai|type:feature|automation|architecture,"## Spellbook Entry
+Teleport (spell),teleport,spell,spell-teleport,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Teleport
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3067,14 +3067,14 @@ Use $teleport to plan a full system migration from this source environment to th
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Teleportation Circle (spell),teleportation-circle,spell,spell-teleportation-circle,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Teleportation Circle (spell),teleportation-circle,spell,spell-teleportation-circle,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Teleportation Circle
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3093,14 +3093,14 @@ Use $teleportation-circle to establish a reusable pipeline between these environ
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Thunderwave (spell),thunderwave,spell,spell-thunderwave,prototype,literal,openai|claude,4,ai|type:feature|architecture|security,"## Spellbook Entry
+Thunderwave (spell),thunderwave,spell,spell-thunderwave,prototype,literal,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Thunderwave
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: literal
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3119,14 +3119,14 @@ Use $thunderwave to design or trigger a tightly scoped dramatic effect, but stop
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Tongues (spell),tongues,spell,spell-tongues,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Tongues (spell),tongues,spell,spell-tongues,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Tongues
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3145,14 +3145,14 @@ Use $tongues to translate this language, format, or protocol into the target for
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-True Polymorph (spell),true-polymorph,spell,spell-true-polymorph,prototype,hybrid,openai|claude,4,ai|type:feature|architecture,"## Spellbook Entry
+True Polymorph (spell),true-polymorph,spell,spell-true-polymorph,prototype,hybrid,openai|claude|openclaw|hermes,4,ai|type:feature|automation|architecture,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: True Polymorph
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: prototype
 - Literalness: hybrid
-- Provider targets: openai, claude
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3171,14 +3171,14 @@ Use $true-polymorph to evaluate and plan an irreversible transformation of this 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-True Seeing (spell),true-seeing,spell,spell-true-seeing,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+True Seeing (spell),true-seeing,spell,spell-true-seeing,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: True Seeing
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3197,14 +3197,14 @@ Use $true-seeing to look past the surface of this situation and tell me what is 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-True Strike (spell),true-strike,spell,spell-true-strike,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+True Strike (spell),true-strike,spell,spell-true-strike,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: True Strike
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3223,14 +3223,14 @@ Use $true-strike to preflight this action, tell me whether it is ready to fire, 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Unseen Servant (spell),unseen-servant,spell,spell-unseen-servant,shipping-now,literal,openai|claude|openclaw,2,ai|type:feature|automation|security,"## Spellbook Entry
+Unseen Servant (spell),unseen-servant,spell,spell-unseen-servant,shipping-now,literal,openai|claude|openclaw|hermes,2,ai|type:feature|automation|security,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Unseen Servant
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: literal
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3249,14 +3249,14 @@ Use $unseen-servant to set up a background agent for this recurring task, with a
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Vicious Mockery (spell),vicious-mockery,spell,spell-vicious-mockery,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Vicious Mockery (spell),vicious-mockery,spell,spell-vicious-mockery,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Vicious Mockery
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 
@@ -3275,14 +3275,14 @@ Use $vicious-mockery to tear apart this [plan/proposal/design/argument]. Find th
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
-Zone of Truth (spell),zone-of-truth,spell,spell-zone-of-truth,shipping-now,metaphorical,openai|claude|openclaw,2,ai|type:feature|automation,"## Spellbook Entry
+Zone of Truth (spell),zone-of-truth,spell,spell-zone-of-truth,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|type:feature|automation,"## Spellbook Entry
 
 - Kind: spell
 - Canonical source: Zone of Truth
 - Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells
 - Reality tier: shipping-now
 - Literalness: metaphorical
-- Provider targets: openai, claude, openclaw
+- Provider targets: openai, claude, openclaw, hermes
 
 ## Tagline
 

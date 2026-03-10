@@ -166,7 +166,9 @@ function renderHermesFrontmatter(entry, category, repoMeta) {
     lines.push(`      - ${tag}`);
   }
 
-  lines.push(`    homepage: ${yamlString(repoMeta.homepage)}`);
+  if (repoMeta.homepage) {
+    lines.push(`    homepage: ${yamlString(repoMeta.homepage)}`);
+  }
   lines.push("---");
 
   return lines.join("\n");
@@ -467,19 +469,19 @@ function buildDiscoveryContext(blueprints, canon) {
   };
 }
 
-function renderHermesEntryLink(entry, categoryByEntrySlug) {
+function renderHermesEntryReference(entry, categoryByEntrySlug) {
   const categorySlug = categoryByEntrySlug.get(entry.slug);
   if (!categorySlug) {
     throw new Error(`Missing Hermes category for ${entry.slug}`);
   }
 
-  return markdownLink(entry.name, hermesSkillDocPath(categorySlug, entry.slug));
+  return `\`${entry.name}\``;
 }
 
 function renderFeaturedShelf(entries, categoryByEntrySlug) {
   return entries.map(
     (entry, index) =>
-      `${index + 1}. ${renderHermesEntryLink(entry, categoryByEntrySlug)} ${renderBadges(
+      `${index + 1}. ${renderHermesEntryReference(entry, categoryByEntrySlug)} ${renderBadges(
         entry.reality_tier,
         entry.literalness
       )} - ${entry.tagline}`
@@ -498,7 +500,7 @@ function renderReadmeBrowseTable(browsePaths) {
 
         return (
         `| ${browsePath.title} | ${browsePath.entries
-          .map((entry) => renderHermesEntryLink(entry, categoryByEntrySlug))
+          .map((entry) => renderHermesEntryReference(entry, categoryByEntrySlug))
           .join(", ")} | ${markdownLink(
           `${browsePath.category.title} (${browsePath.category.entry_slugs.length})`,
           `GRIMOIRE.md#${browsePath.category.slug}`
@@ -520,14 +522,14 @@ function renderGrimoireBrowsePaths(browsePaths, categoryByEntrySlug) {
       `#${browsePath.category.slug}`
     )}`,
     `- Start with: ${browsePath.entries
-      .map((entry) => renderHermesEntryLink(entry, categoryByEntrySlug))
+      .map((entry) => renderHermesEntryReference(entry, categoryByEntrySlug))
       .join(", ")}`,
     ""
   ]);
 }
 
 function renderCategoryIndexEntry(entry, categoryByEntrySlug) {
-  return `- ${renderHermesEntryLink(entry, categoryByEntrySlug)} ${renderBadges(
+  return `- ${renderHermesEntryReference(entry, categoryByEntrySlug)} ${renderBadges(
     entry.kind,
     entry.reality_tier,
     entry.literalness
@@ -551,7 +553,7 @@ function renderGrimoireCategory(category, browsePath, entryBySlug, categoryByEnt
     "",
     `- Best for: ${browsePath.description}`,
     `- Start with: ${browsePath.entries
-      .map((entry) => renderHermesEntryLink(entry, categoryByEntrySlug))
+      .map((entry) => renderHermesEntryReference(entry, categoryByEntrySlug))
       .join(", ")}`,
     "",
     "<details>",
@@ -603,7 +605,7 @@ function renderReadme(blueprints, canon) {
     "",
     ...renderFeaturedShelf(discovery.featuredEntries, discovery.categoryByEntrySlug),
     "",
-    "Need the bigger picture? Open the generated [GRIMOIRE.md](GRIMOIRE.md) for the full browse layer.",
+    "Need the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse layer.",
     "",
     "## Find Your Shelf",
     "",
@@ -612,7 +614,7 @@ function renderReadme(blueprints, canon) {
     "## Browse Deeper",
     "",
     `- [GRIMOIRE.md](GRIMOIRE.md) for the featured shelf, browse paths, and full linked category index`,
-    "- `generated/hermes/<category>/<skill>/SKILL.md` for the exact skill docs Hermes installs",
+    "- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact skill docs Hermes installs",
     "- `catalog/blueprints.json` plus `scripts/render-skills.mjs` for the source-of-truth and renderer",
     "",
     "## Build From Source",
@@ -666,12 +668,14 @@ function renderGrimoire(blueprints, canon) {
     "",
     `- \`${discovery.hermesCount}\` Hermes skills from \`${discovery.canonCount}\` public canon names`,
     `- \`${discovery.spellCount}\` spell names and \`${discovery.skillCount}\` skill names reinterpreted as software-facing agent skills`,
-    `- \`${discovery.hermesSurface.categories.length}\` Hermes shelves with direct links into generated skill docs`,
+    `- \`${discovery.hermesSurface.categories.length}\` Hermes shelves with repo-facing browse docs and locally generated install docs`,
     `- \`${discovery.refusedCount}\` coercion and memory spells intentionally kept off the public Hermes surface`,
     "",
     "If you're new, start with the featured shelf. If you already know the kind of job you have, use the browse paths. Open the category details only when you want the full spellbook.",
     "",
     "The sigils mean two things: `shipping-now` / `prototype` / `speculative` tell you how honest the runtime claim is, while `metaphorical` / `hybrid` / `literal` tell you how closely the software behavior matches the fantasy effect.",
+    "",
+    "Need the exact install docs? Run `npm run build:skills` locally and open `generated/hermes/<category>/<skill>/SKILL.md`.",
     "",
     '<a id="featured-shelf"></a>',
     "## Featured Shelf",

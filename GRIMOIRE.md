@@ -8,24 +8,26 @@
 
 - `122` Hermes skills from `127` public canon names
 - `109` spell names and `18` skill names reinterpreted as software-facing agent skills
-- `8` Hermes shelves with direct links into generated skill docs
+- `8` Hermes shelves with repo-facing browse docs and locally generated install docs
 - `5` coercion and memory spells intentionally kept off the public Hermes surface
 
 If you're new, start with the featured shelf. If you already know the kind of job you have, use the browse paths. Open the category details only when you want the full spellbook.
 
 The sigils mean two things: `shipping-now` / `prototype` / `speculative` tell you how honest the runtime claim is, while `metaphorical` / `hybrid` / `literal` tell you how closely the software behavior matches the fantasy effect.
 
+Need the exact install docs? Run `npm run build:skills` locally and open `generated/hermes/<category>/<skill>/SKILL.md`.
+
 <a id="featured-shelf"></a>
 ## Featured Shelf
 
-1. [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md) `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
-2. [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md) `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
-3. [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
-4. [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md) `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
-5. [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md) `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
-6. [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
-7. [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
-8. [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
+1. `Detect Magic` `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
+2. `Identify` `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
+3. `Comprehend Languages` `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
+4. `Investigation` `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
+5. `Mage Hand` `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
+6. `Glyph of Warding` `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
+7. `Dream` `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
+8. `Feather Fall` `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
 
 <a id="browse-paths"></a>
 ## Browse Paths
@@ -35,56 +37,56 @@ The sigils mean two things: `shipping-now` / `prototype` / `speculative` tell yo
 Start here when the repo, workflow, or system is unfamiliar and you need the real shape before you touch it.
 
 - Shelf: [Investigation and Preparation (28)](#investigation-and-preparation)
-- Start with: [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)
+- Start with: `Detect Magic`, `Identify`, `Investigation`, `Comprehend Languages`
 
 ### Change the system without a battleaxe
 
 Use this shelf when dexterity, careful edits, and bounded automation matter more than force.
 
 - Shelf: [Actions, Access, and Automation (19)](#actions-access-and-automation)
-- Start with: [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md), [Sleight of Hand](generated/hermes/actions-access-and-automation/sleight-of-hand/SKILL.md), [Unseen Servant](generated/hermes/actions-access-and-automation/unseen-servant/SKILL.md), [Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md)
+- Start with: `Mage Hand`, `Sleight of Hand`, `Unseen Servant`, `Awaken`
 
 ### Light up the black box
 
 Reach for these when you need lightweight observability, tripwires, or clearer signals before the room gets loud.
 
 - Shelf: [Monitoring and Protection (17)](#monitoring-and-protection)
-- Start with: [Dancing Lights](generated/hermes/monitoring-and-protection/dancing-lights/SKILL.md), [Light](generated/hermes/monitoring-and-protection/light/SKILL.md), [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md), [Scrying](generated/hermes/monitoring-and-protection/scrying/SKILL.md)
+- Start with: `Dancing Lights`, `Light`, `Glyph of Warding`, `Scrying`
 
 ### Get the right message to the right place
 
 These are the comms and coordination spells for briefings, triggers, routing, and asynchronous delivery.
 
 - Shelf: [Messaging and Coordination (9)](#messaging-and-coordination)
-- Start with: [Message](generated/hermes/messaging-and-coordination/message/SKILL.md), [Sending](generated/hermes/messaging-and-coordination/sending/SKILL.md), [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md), [Magic Mouth](generated/hermes/messaging-and-coordination/magic-mouth/SKILL.md)
+- Start with: `Message`, `Sending`, `Dream`, `Magic Mouth`
 
 ### Stop the bleeding
 
 Open this shelf when something is already degraded and the next move is triage, repair, or graceful descent.
 
 - Shelf: [Repair and Recovery (13)](#repair-and-recovery)
-- Start with: [Cure Wounds](generated/hermes/repair-and-recovery/cure-wounds/SKILL.md), [Mending](generated/hermes/repair-and-recovery/mending/SKILL.md), [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md), [Animal Handling](generated/hermes/repair-and-recovery/animal-handling/SKILL.md)
+- Start with: `Cure Wounds`, `Mending`, `Feather Fall`, `Animal Handling`
 
 ### Mock it before you ship it
 
 Use the staging shelf when the fastest path to clarity is a demo, rehearsal, simulation, or synthetic artifact.
 
 - Shelf: [Simulation and Staging (8)](#simulation-and-staging)
-- Start with: [Minor Illusion](generated/hermes/simulation-and-staging/minor-illusion/SKILL.md), [Major Image](generated/hermes/simulation-and-staging/major-image/SKILL.md), [Deception](generated/hermes/simulation-and-staging/deception/SKILL.md), [Programmed Illusion](generated/hermes/simulation-and-staging/programmed-illusion/SKILL.md)
+- Start with: `Minor Illusion`, `Major Image`, `Deception`, `Programmed Illusion`
 
 ### Handle people with care
 
 These are the ethically sharp spells for de-escalation, morale, attention, and behavior with guardrails on.
 
 - Shelf: [Influence and Behavior (18)](#influence-and-behavior)
-- Start with: [Calm Emotions](generated/hermes/influence-and-behavior/calm-emotions/SKILL.md), [Heroism](generated/hermes/influence-and-behavior/heroism/SKILL.md), [Fear](generated/hermes/influence-and-behavior/fear/SKILL.md), [Plant Growth](generated/hermes/influence-and-behavior/plant-growth/SKILL.md)
+- Start with: `Calm Emotions`, `Heroism`, `Fear`, `Plant Growth`
 
 ### Box in blast radius
 
 Reach here when the job is containment, capability reduction, or an emergency stop under narrow control.
 
 - Shelf: [Containment and Intervention (10)](#containment-and-intervention)
-- Start with: [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md), [Blindness/Deafness](generated/hermes/containment-and-intervention/blindness-deafness/SKILL.md), [Feeblemind](generated/hermes/containment-and-intervention/feeblemind/SKILL.md), [Power Word Stun](generated/hermes/containment-and-intervention/power-word-stun/SKILL.md)
+- Start with: `Forcecage`, `Blindness/Deafness`, `Feeblemind`, `Power Word Stun`
 
 <a id="full-category-index"></a>
 ## Browse by Category
@@ -97,39 +99,39 @@ Each shelf below starts with a few strong entry points. Open the details block o
 Inspection, translation, verification, preflight, and context-loading skills for understanding a situation and setting up the next move before acting.
 
 - Best for: Start here when the repo, workflow, or system is unfamiliar and you need the real shape before you touch it.
-- Start with: [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)
+- Start with: `Detect Magic`, `Identify`, `Investigation`, `Comprehend Languages`
 
 <details>
 <summary>See all 28 skills in this shelf</summary>
 
-- [Arcana](generated/hermes/investigation-and-preparation/arcana/SKILL.md) `skill` `shipping-now` `metaphorical` - Apply deep technical knowledge to understand how systems work under the hood.
-- [Clairvoyance](generated/hermes/investigation-and-preparation/clairvoyance/SKILL.md) `spell` `shipping-now` `hybrid` - Get a snapshot of a remote system or environment you cannot directly access.
-- [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `spell` `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
-- [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md) `spell` `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
-- [Detect Thoughts](generated/hermes/investigation-and-preparation/detect-thoughts/SKILL.md) `spell` `shipping-now` `metaphorical` - Surface the likely intent, priorities, and concerns behind a communication.
-- [Enhance Ability](generated/hermes/investigation-and-preparation/enhance-ability/SKILL.md) `spell` `shipping-now` `metaphorical` - Load the right context so the next task starts stronger than cold.
-- [Etherealness](generated/hermes/investigation-and-preparation/etherealness/SKILL.md) `spell` `prototype` `metaphorical` - Walk through the walls of a system without leaving fingerprints.
-- [Faerie Fire](generated/hermes/investigation-and-preparation/faerie-fire/SKILL.md) `spell` `shipping-now` `metaphorical` - Make hidden things visible by highlighting, tagging, and marking them for attention.
-- [Find the Path](generated/hermes/investigation-and-preparation/find-the-path/SKILL.md) `spell` `shipping-now` `metaphorical` - Find the shortest, safest route to a destination through a complex space.
-- [Foresight](generated/hermes/investigation-and-preparation/foresight/SKILL.md) `spell` `shipping-now` `metaphorical` - Estimate likely outcomes before committing to a plan, change, or launch.
-- [History](generated/hermes/investigation-and-preparation/history/SKILL.md) `skill` `shipping-now` `metaphorical` - Trace how a system, decision, or codebase arrived at its current state.
-- [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md) `spell` `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
-- [Insight](generated/hermes/investigation-and-preparation/insight/SKILL.md) `skill` `shipping-now` `metaphorical` - Read between the lines to surface what someone means but is not saying.
-- [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md) `skill` `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
-- [Legend Lore](generated/hermes/investigation-and-preparation/legend-lore/SKILL.md) `spell` `shipping-now` `metaphorical` - Research any named entity exhaustively across all available sources.
-- [Locate Animals or Plants](generated/hermes/investigation-and-preparation/locate-animals-or-plants/SKILL.md) `spell` `shipping-now` `metaphorical` - Find what is alive, where it lives, and what it is feeding on.
-- [Locate Creature](generated/hermes/investigation-and-preparation/locate-creature/SKILL.md) `spell` `shipping-now` `metaphorical` - Find a specific person, service, or active process in a large system.
-- [Locate Object](generated/hermes/investigation-and-preparation/locate-object/SKILL.md) `spell` `shipping-now` `metaphorical` - Find a specific file, artifact, or resource you know exists but cannot locate.
-- [Nature](generated/hermes/investigation-and-preparation/nature/SKILL.md) `skill` `shipping-now` `metaphorical` - Understand organic, emergent, and ecosystem-scale systems that were not designed.
-- [Perception](generated/hermes/investigation-and-preparation/perception/SKILL.md) `skill` `shipping-now` `metaphorical` - Notice what is actually there, especially the details everyone else missed.
-- [Religion](generated/hermes/investigation-and-preparation/religion/SKILL.md) `skill` `shipping-now` `metaphorical` - Understand belief systems, values, and cultural logic that drive group behavior.
-- [See Invisibility](generated/hermes/investigation-and-preparation/see-invisibility/SKILL.md) `spell` `shipping-now` `metaphorical` - Reveal what has been deliberately hidden, obscured, or made hard to find.
-- [Speak with Dead](generated/hermes/investigation-and-preparation/speak-with-dead/SKILL.md) `spell` `shipping-now` `metaphorical` - Extract knowledge from abandoned, deprecated, or legacy systems.
-- [Speak with Plants](generated/hermes/investigation-and-preparation/speak-with-plants/SKILL.md) `spell` `shipping-now` `metaphorical` - Read the slow truth hidden in roots, branches, and growth rings.
-- [Tongues](generated/hermes/investigation-and-preparation/tongues/SKILL.md) `spell` `shipping-now` `metaphorical` - Make unlike systems understand the same sentence.
-- [True Seeing](generated/hermes/investigation-and-preparation/true-seeing/SKILL.md) `spell` `shipping-now` `metaphorical` - Pierce through abstraction, spin, and obfuscation to surface ground truth.
-- [True Strike](generated/hermes/investigation-and-preparation/true-strike/SKILL.md) `spell` `shipping-now` `metaphorical` - Aim once with evidence so the next command lands on the first shot.
-- [Zone of Truth](generated/hermes/investigation-and-preparation/zone-of-truth/SKILL.md) `spell` `shipping-now` `metaphorical` - Establish a high-integrity epistemic environment where claims must be sourced and uncertainty labeled.
+- `Arcana` `skill` `shipping-now` `metaphorical` - Apply deep technical knowledge to understand how systems work under the hood.
+- `Clairvoyance` `spell` `shipping-now` `hybrid` - Get a snapshot of a remote system or environment you cannot directly access.
+- `Comprehend Languages` `spell` `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
+- `Detect Magic` `spell` `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
+- `Detect Thoughts` `spell` `shipping-now` `metaphorical` - Surface the likely intent, priorities, and concerns behind a communication.
+- `Enhance Ability` `spell` `shipping-now` `metaphorical` - Load the right context so the next task starts stronger than cold.
+- `Etherealness` `spell` `prototype` `metaphorical` - Walk through the walls of a system without leaving fingerprints.
+- `Faerie Fire` `spell` `shipping-now` `metaphorical` - Make hidden things visible by highlighting, tagging, and marking them for attention.
+- `Find the Path` `spell` `shipping-now` `metaphorical` - Find the shortest, safest route to a destination through a complex space.
+- `Foresight` `spell` `shipping-now` `metaphorical` - Estimate likely outcomes before committing to a plan, change, or launch.
+- `History` `skill` `shipping-now` `metaphorical` - Trace how a system, decision, or codebase arrived at its current state.
+- `Identify` `spell` `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
+- `Insight` `skill` `shipping-now` `metaphorical` - Read between the lines to surface what someone means but is not saying.
+- `Investigation` `skill` `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
+- `Legend Lore` `spell` `shipping-now` `metaphorical` - Research any named entity exhaustively across all available sources.
+- `Locate Animals or Plants` `spell` `shipping-now` `metaphorical` - Find what is alive, where it lives, and what it is feeding on.
+- `Locate Creature` `spell` `shipping-now` `metaphorical` - Find a specific person, service, or active process in a large system.
+- `Locate Object` `spell` `shipping-now` `metaphorical` - Find a specific file, artifact, or resource you know exists but cannot locate.
+- `Nature` `skill` `shipping-now` `metaphorical` - Understand organic, emergent, and ecosystem-scale systems that were not designed.
+- `Perception` `skill` `shipping-now` `metaphorical` - Notice what is actually there, especially the details everyone else missed.
+- `Religion` `skill` `shipping-now` `metaphorical` - Understand belief systems, values, and cultural logic that drive group behavior.
+- `See Invisibility` `spell` `shipping-now` `metaphorical` - Reveal what has been deliberately hidden, obscured, or made hard to find.
+- `Speak with Dead` `spell` `shipping-now` `metaphorical` - Extract knowledge from abandoned, deprecated, or legacy systems.
+- `Speak with Plants` `spell` `shipping-now` `metaphorical` - Read the slow truth hidden in roots, branches, and growth rings.
+- `Tongues` `spell` `shipping-now` `metaphorical` - Make unlike systems understand the same sentence.
+- `True Seeing` `spell` `shipping-now` `metaphorical` - Pierce through abstraction, spin, and obfuscation to surface ground truth.
+- `True Strike` `spell` `shipping-now` `metaphorical` - Aim once with evidence so the next command lands on the first shot.
+- `Zone of Truth` `spell` `shipping-now` `metaphorical` - Establish a high-integrity epistemic environment where claims must be sourced and uncertainty labeled.
 
 </details>
 
@@ -139,30 +141,30 @@ Inspection, translation, verification, preflight, and context-loading skills for
 Precise manipulation, access resolution, automation, migration, and interface-lift skills for changing systems with minimal blast radius.
 
 - Best for: Use this shelf when dexterity, careful edits, and bounded automation matter more than force.
-- Start with: [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md), [Sleight of Hand](generated/hermes/actions-access-and-automation/sleight-of-hand/SKILL.md), [Unseen Servant](generated/hermes/actions-access-and-automation/unseen-servant/SKILL.md), [Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md)
+- Start with: `Mage Hand`, `Sleight of Hand`, `Unseen Servant`, `Awaken`
 
 <details>
 <summary>See all 19 skills in this shelf</summary>
 
-- [Acrobatics](generated/hermes/actions-access-and-automation/acrobatics/SKILL.md) `skill` `shipping-now` `metaphorical` - Thread complex systems without tripping rate limits, retries, or state.
-- [Animal Friendship](generated/hermes/actions-access-and-automation/animal-friendship/SKILL.md) `spell` `shipping-now` `metaphorical` - Approach a strange service gently until it stops biting.
-- [Animate Objects](generated/hermes/actions-access-and-automation/animate-objects/SKILL.md) `spell` `prototype` `literal` - Give agency to passive data by attaching triggers, watchers, and autonomous update logic.
-- [Athletics](generated/hermes/actions-access-and-automation/athletics/SKILL.md) `skill` `shipping-now` `metaphorical` - Push a heavy workload through to completion when elegance is optional.
-- [Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md) `spell` `shipping-now` `metaphorical` - Teach an old machine to answer back.
-- [Dimension Door](generated/hermes/actions-access-and-automation/dimension-door/SKILL.md) `spell` `shipping-now` `metaphorical` - Jump cleanly between two known contexts without dragging the whole room.
-- [Freedom of Movement](generated/hermes/actions-access-and-automation/freedom-of-movement/SKILL.md) `spell` `shipping-now` `metaphorical` - Cut the nets around a stuck workflow.
-- [Knock](generated/hermes/actions-access-and-automation/knock/SKILL.md) `spell` `prototype` `literal` - Bypass access friction through legitimate unlock paths: key rotation, permission requests, and recovery workflows.
-- [Longstrider](generated/hermes/actions-access-and-automation/longstrider/SKILL.md) `spell` `shipping-now` `metaphorical` - Make the path shorter without changing the destination.
-- [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md) `spell` `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
-- [Mordenkainen’s Sword](generated/hermes/actions-access-and-automation/mordenkainen-s-sword/SKILL.md) `spell` `prototype` `metaphorical` - Summon a standing process that keeps cutting through one job until dismissed.
-- [Planar Binding](generated/hermes/actions-access-and-automation/planar-binding/SKILL.md) `spell` `prototype` `hybrid` - Bind an external service, API, or agent to a contract with defined scope, duration, and failure modes.
-- [Polymorph](generated/hermes/actions-access-and-automation/polymorph/SKILL.md) `spell` `shipping-now` `metaphorical` - Transform one representation into another entirely — formats, schemas, protocols, or interfaces.
-- [Prestidigitation](generated/hermes/actions-access-and-automation/prestidigitation/SKILL.md) `spell` `shipping-now` `hybrid` - Handle quick, low-stakes utility tasks that do not deserve a full spell.
-- [Sleight of Hand](generated/hermes/actions-access-and-automation/sleight-of-hand/SKILL.md) `skill` `shipping-now` `metaphorical` - Make the tiny exact change that fixes the problem without disturbing the room.
-- [Teleport](generated/hermes/actions-access-and-automation/teleport/SKILL.md) `spell` `prototype` `hybrid` - Move an entire world without leaving its people stranded.
-- [Teleportation Circle](generated/hermes/actions-access-and-automation/teleportation-circle/SKILL.md) `spell` `prototype` `literal` - Establish reusable deployment pipelines, standing sync routes, and repeatable migration paths.
-- [True Polymorph](generated/hermes/actions-access-and-automation/true-polymorph/SKILL.md) `spell` `prototype` `hybrid` - Transform a system so completely that the original form is gone — no rollback, no undo.
-- [Unseen Servant](generated/hermes/actions-access-and-automation/unseen-servant/SKILL.md) `spell` `shipping-now` `literal` - Run a persistent background agent that handles mundane, repeating tasks silently.
+- `Acrobatics` `skill` `shipping-now` `metaphorical` - Thread complex systems without tripping rate limits, retries, or state.
+- `Animal Friendship` `spell` `shipping-now` `metaphorical` - Approach a strange service gently until it stops biting.
+- `Animate Objects` `spell` `prototype` `literal` - Give agency to passive data by attaching triggers, watchers, and autonomous update logic.
+- `Athletics` `skill` `shipping-now` `metaphorical` - Push a heavy workload through to completion when elegance is optional.
+- `Awaken` `spell` `shipping-now` `metaphorical` - Teach an old machine to answer back.
+- `Dimension Door` `spell` `shipping-now` `metaphorical` - Jump cleanly between two known contexts without dragging the whole room.
+- `Freedom of Movement` `spell` `shipping-now` `metaphorical` - Cut the nets around a stuck workflow.
+- `Knock` `spell` `prototype` `literal` - Bypass access friction through legitimate unlock paths: key rotation, permission requests, and recovery workflows.
+- `Longstrider` `spell` `shipping-now` `metaphorical` - Make the path shorter without changing the destination.
+- `Mage Hand` `spell` `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
+- `Mordenkainen’s Sword` `spell` `prototype` `metaphorical` - Summon a standing process that keeps cutting through one job until dismissed.
+- `Planar Binding` `spell` `prototype` `hybrid` - Bind an external service, API, or agent to a contract with defined scope, duration, and failure modes.
+- `Polymorph` `spell` `shipping-now` `metaphorical` - Transform one representation into another entirely — formats, schemas, protocols, or interfaces.
+- `Prestidigitation` `spell` `shipping-now` `hybrid` - Handle quick, low-stakes utility tasks that do not deserve a full spell.
+- `Sleight of Hand` `skill` `shipping-now` `metaphorical` - Make the tiny exact change that fixes the problem without disturbing the room.
+- `Teleport` `spell` `prototype` `hybrid` - Move an entire world without leaving its people stranded.
+- `Teleportation Circle` `spell` `prototype` `literal` - Establish reusable deployment pipelines, standing sync routes, and repeatable migration paths.
+- `True Polymorph` `spell` `prototype` `hybrid` - Transform a system so completely that the original form is gone — no rollback, no undo.
+- `Unseen Servant` `spell` `shipping-now` `literal` - Run a persistent background agent that handles mundane, repeating tasks silently.
 
 </details>
 
@@ -172,28 +174,28 @@ Precise manipulation, access resolution, automation, migration, and interface-li
 Observability, alerting, guards, and privacy controls that keep systems watchful without excess noise.
 
 - Best for: Reach for these when you need lightweight observability, tripwires, or clearer signals before the room gets loud.
-- Start with: [Dancing Lights](generated/hermes/monitoring-and-protection/dancing-lights/SKILL.md), [Light](generated/hermes/monitoring-and-protection/light/SKILL.md), [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md), [Scrying](generated/hermes/monitoring-and-protection/scrying/SKILL.md)
+- Start with: `Dancing Lights`, `Light`, `Glyph of Warding`, `Scrying`
 
 <details>
 <summary>See all 17 skills in this shelf</summary>
 
-- [Dancing Lights](generated/hermes/monitoring-and-protection/dancing-lights/SKILL.md) `spell` `shipping-now` `hybrid` - Hang small moving signals in the dark so people can tell what the system is doing.
-- [Disguise Self](generated/hermes/monitoring-and-protection/disguise-self/SKILL.md) `spell` `shipping-now` `metaphorical` - Adapt voice, tone, or presentation for a specific audience without changing the underlying substance.
-- [Dispel Magic](generated/hermes/monitoring-and-protection/dispel-magic/SKILL.md) `spell` `shipping-now` `literal` - Safely decommission active automations, agents, monitors, and integrations.
-- [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `spell` `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
-- [Greater Invisibility](generated/hermes/monitoring-and-protection/greater-invisibility/SKILL.md) `spell` `prototype` `metaphorical` - Keep moving while the audience barely notices the stagehands.
-- [Guards and Wards](generated/hermes/monitoring-and-protection/guards-and-wards/SKILL.md) `spell` `prototype` `hybrid` - Layer many small defenses into a maze that exhausts intruders before they reach anything valuable.
-- [Invisibility](generated/hermes/monitoring-and-protection/invisibility/SKILL.md) `spell` `shipping-now` `metaphorical` - Lower the noise floor of an operation without lowering accountability.
-- [Light](generated/hermes/monitoring-and-protection/light/SKILL.md) `spell` `shipping-now` `hybrid` - Add observability, logging, documentation, or explanation to dark areas of a system.
-- [Mind Blank](generated/hermes/monitoring-and-protection/mind-blank/SKILL.md) `spell` `prototype` `literal` - Isolate context to prevent information leakage between sessions, tasks, or domains.
-- [Mislead](generated/hermes/monitoring-and-protection/mislead/SKILL.md) `spell` `prototype` `hybrid` - Set a false campfire and watch who gathers around it.
-- [Nondetection](generated/hermes/monitoring-and-protection/nondetection/SKILL.md) `spell` `prototype` `literal` - Harden privacy by stripping metadata, minimizing data exposure, and removing tracking.
-- [Scrying](generated/hermes/monitoring-and-protection/scrying/SKILL.md) `spell` `prototype` `literal` - Observe a live remote system, service, or deployment in real time.
-- [Seeming](generated/hermes/monitoring-and-protection/seeming/SKILL.md) `spell` `shipping-now` `metaphorical` - Re-skin the whole cast without rewriting their roles.
-- [Silence](generated/hermes/monitoring-and-protection/silence/SKILL.md) `spell` `shipping-now` `metaphorical` - Suppress noise, filter irrelevant signals, and create focused working environments.
-- [Speak with Animals](generated/hermes/monitoring-and-protection/speak-with-animals/SKILL.md) `spell` `shipping-now` `metaphorical` - Translate chirps, spikes, and status lights into plain language.
-- [Stealth](generated/hermes/monitoring-and-protection/stealth/SKILL.md) `skill` `shipping-now` `metaphorical` - Move through a system with low visibility, minimal disruption, and a small footprint.
-- [Symbol](generated/hermes/monitoring-and-protection/symbol/SKILL.md) `spell` `shipping-now` `literal` - Mark a resource with a named sigil that triggers automatic policy enforcement when conditions are met.
+- `Dancing Lights` `spell` `shipping-now` `hybrid` - Hang small moving signals in the dark so people can tell what the system is doing.
+- `Disguise Self` `spell` `shipping-now` `metaphorical` - Adapt voice, tone, or presentation for a specific audience without changing the underlying substance.
+- `Dispel Magic` `spell` `shipping-now` `literal` - Safely decommission active automations, agents, monitors, and integrations.
+- `Glyph of Warding` `spell` `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
+- `Greater Invisibility` `spell` `prototype` `metaphorical` - Keep moving while the audience barely notices the stagehands.
+- `Guards and Wards` `spell` `prototype` `hybrid` - Layer many small defenses into a maze that exhausts intruders before they reach anything valuable.
+- `Invisibility` `spell` `shipping-now` `metaphorical` - Lower the noise floor of an operation without lowering accountability.
+- `Light` `spell` `shipping-now` `hybrid` - Add observability, logging, documentation, or explanation to dark areas of a system.
+- `Mind Blank` `spell` `prototype` `literal` - Isolate context to prevent information leakage between sessions, tasks, or domains.
+- `Mislead` `spell` `prototype` `hybrid` - Set a false campfire and watch who gathers around it.
+- `Nondetection` `spell` `prototype` `literal` - Harden privacy by stripping metadata, minimizing data exposure, and removing tracking.
+- `Scrying` `spell` `prototype` `literal` - Observe a live remote system, service, or deployment in real time.
+- `Seeming` `spell` `shipping-now` `metaphorical` - Re-skin the whole cast without rewriting their roles.
+- `Silence` `spell` `shipping-now` `metaphorical` - Suppress noise, filter irrelevant signals, and create focused working environments.
+- `Speak with Animals` `spell` `shipping-now` `metaphorical` - Translate chirps, spikes, and status lights into plain language.
+- `Stealth` `skill` `shipping-now` `metaphorical` - Move through a system with low visibility, minimal disruption, and a small footprint.
+- `Symbol` `spell` `shipping-now` `literal` - Mark a resource with a named sigil that triggers automatic policy enforcement when conditions are met.
 
 </details>
 
@@ -203,20 +205,20 @@ Observability, alerting, guards, and privacy controls that keep systems watchful
 Communication, briefings, scheduling, rhetoric, and audience-aware coordination across people, agents, and systems.
 
 - Best for: These are the comms and coordination spells for briefings, triggers, routing, and asynchronous delivery.
-- Start with: [Message](generated/hermes/messaging-and-coordination/message/SKILL.md), [Sending](generated/hermes/messaging-and-coordination/sending/SKILL.md), [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md), [Magic Mouth](generated/hermes/messaging-and-coordination/magic-mouth/SKILL.md)
+- Start with: `Message`, `Sending`, `Dream`, `Magic Mouth`
 
 <details>
 <summary>See all 9 skills in this shelf</summary>
 
-- [Animal Messenger](generated/hermes/messaging-and-coordination/animal-messenger/SKILL.md) `spell` `shipping-now` `metaphorical` - Release the packet and trust the trail, not the clock.
-- [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `spell` `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
-- [Illusory Script](generated/hermes/messaging-and-coordination/illusory-script/SKILL.md) `spell` `prototype` `hybrid` - Let the secret appear only to the intended eyes, then fade.
-- [Intimidation](generated/hermes/messaging-and-coordination/intimidation/SKILL.md) `skill` `shipping-now` `metaphorical` - Write with enough authority that the recipient understands the risk and the deadline.
-- [Magic Mouth](generated/hermes/messaging-and-coordination/magic-mouth/SKILL.md) `spell` `shipping-now` `metaphorical` - Bind a message to a trigger so the system speaks exactly when it should.
-- [Message](generated/hermes/messaging-and-coordination/message/SKILL.md) `spell` `shipping-now` `metaphorical` - Send one small signal to the right place right now.
-- [Performance](generated/hermes/messaging-and-coordination/performance/SKILL.md) `skill` `shipping-now` `metaphorical` - Stage technical substance so an audience can see why it matters.
-- [Persuasion](generated/hermes/messaging-and-coordination/persuasion/SKILL.md) `skill` `shipping-now` `metaphorical` - Craft clear, credible language that moves a person or team toward a decision.
-- [Sending](generated/hermes/messaging-and-coordination/sending/SKILL.md) `spell` `shipping-now` `literal` - Deliver a precisely crafted message to a specific recipient through the optimal channel.
+- `Animal Messenger` `spell` `shipping-now` `metaphorical` - Release the packet and trust the trail, not the clock.
+- `Dream` `spell` `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
+- `Illusory Script` `spell` `prototype` `hybrid` - Let the secret appear only to the intended eyes, then fade.
+- `Intimidation` `skill` `shipping-now` `metaphorical` - Write with enough authority that the recipient understands the risk and the deadline.
+- `Magic Mouth` `spell` `shipping-now` `metaphorical` - Bind a message to a trigger so the system speaks exactly when it should.
+- `Message` `spell` `shipping-now` `metaphorical` - Send one small signal to the right place right now.
+- `Performance` `skill` `shipping-now` `metaphorical` - Stage technical substance so an audience can see why it matters.
+- `Persuasion` `skill` `shipping-now` `metaphorical` - Craft clear, credible language that moves a person or team toward a decision.
+- `Sending` `spell` `shipping-now` `literal` - Deliver a precisely crafted message to a specific recipient through the optimal channel.
 
 </details>
 
@@ -226,24 +228,24 @@ Communication, briefings, scheduling, rhetoric, and audience-aware coordination 
 Triage, repair, recovery, and stabilization for broken state, degraded systems, and fragile operating conditions.
 
 - Best for: Open this shelf when something is already degraded and the next move is triage, repair, or graceful descent.
-- Start with: [Cure Wounds](generated/hermes/repair-and-recovery/cure-wounds/SKILL.md), [Mending](generated/hermes/repair-and-recovery/mending/SKILL.md), [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md), [Animal Handling](generated/hermes/repair-and-recovery/animal-handling/SKILL.md)
+- Start with: `Cure Wounds`, `Mending`, `Feather Fall`, `Animal Handling`
 
 <details>
 <summary>See all 13 skills in this shelf</summary>
 
-- [Animal Handling](generated/hermes/repair-and-recovery/animal-handling/SKILL.md) `skill` `shipping-now` `metaphorical` - Calm a temperamental system long enough to get useful work out of it.
-- [Cure Wounds](generated/hermes/repair-and-recovery/cure-wounds/SKILL.md) `spell` `shipping-now` `metaphorical` - Apply a targeted fix to stop the bleeding on an active problem.
-- [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `spell` `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
-- [Greater Restoration](generated/hermes/repair-and-recovery/greater-restoration/SKILL.md) `spell` `shipping-now` `metaphorical` - Undo deep corruption and restore a system degraded by accumulated damage.
-- [Healing Word](generated/hermes/repair-and-recovery/healing-word/SKILL.md) `spell` `shipping-now` `metaphorical` - Send a quick fix from a distance without being fully hands-on.
-- [Lesser Restoration](generated/hermes/repair-and-recovery/lesser-restoration/SKILL.md) `spell` `shipping-now` `metaphorical` - Clear a specific stuck state, flag, or condition that is blocking normal operation.
-- [Mass Cure Wounds](generated/hermes/repair-and-recovery/mass-cure-wounds/SKILL.md) `spell` `shipping-now` `metaphorical` - Apply the same fix across many instances of the same problem at once.
-- [Medicine](generated/hermes/repair-and-recovery/medicine/SKILL.md) `skill` `shipping-now` `metaphorical` - Read the symptoms, stabilize the patient, and prescribe the next safe intervention.
-- [Mending](generated/hermes/repair-and-recovery/mending/SKILL.md) `spell` `shipping-now` `metaphorical` - Repair a single broken artifact - a config, a file, a build, a migration - without redesigning it.
-- [Raise Dead](generated/hermes/repair-and-recovery/raise-dead/SKILL.md) `spell` `shipping-now` `metaphorical` - Partially recover a dead system with known limitations and penalties.
-- [Regenerate](generated/hermes/repair-and-recovery/regenerate/SKILL.md) `spell` `shipping-now` `metaphorical` - Reconstruct missing components or lost data from surrounding context.
-- [Resurrection](generated/hermes/repair-and-recovery/resurrection/SKILL.md) `spell` `prototype` `literal` - Bring a dead system, service, or environment back to full operation from backups and artifacts.
-- [Survival](generated/hermes/repair-and-recovery/survival/SKILL.md) `skill` `shipping-now` `metaphorical` - Keep the mission alive when the map is wrong and supplies are running out.
+- `Animal Handling` `skill` `shipping-now` `metaphorical` - Calm a temperamental system long enough to get useful work out of it.
+- `Cure Wounds` `spell` `shipping-now` `metaphorical` - Apply a targeted fix to stop the bleeding on an active problem.
+- `Feather Fall` `spell` `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
+- `Greater Restoration` `spell` `shipping-now` `metaphorical` - Undo deep corruption and restore a system degraded by accumulated damage.
+- `Healing Word` `spell` `shipping-now` `metaphorical` - Send a quick fix from a distance without being fully hands-on.
+- `Lesser Restoration` `spell` `shipping-now` `metaphorical` - Clear a specific stuck state, flag, or condition that is blocking normal operation.
+- `Mass Cure Wounds` `spell` `shipping-now` `metaphorical` - Apply the same fix across many instances of the same problem at once.
+- `Medicine` `skill` `shipping-now` `metaphorical` - Read the symptoms, stabilize the patient, and prescribe the next safe intervention.
+- `Mending` `spell` `shipping-now` `metaphorical` - Repair a single broken artifact - a config, a file, a build, a migration - without redesigning it.
+- `Raise Dead` `spell` `shipping-now` `metaphorical` - Partially recover a dead system with known limitations and penalties.
+- `Regenerate` `spell` `shipping-now` `metaphorical` - Reconstruct missing components or lost data from surrounding context.
+- `Resurrection` `spell` `prototype` `literal` - Bring a dead system, service, or environment back to full operation from backups and artifacts.
+- `Survival` `skill` `shipping-now` `metaphorical` - Keep the mission alive when the map is wrong and supplies are running out.
 
 </details>
 
@@ -253,19 +255,19 @@ Triage, repair, recovery, and stabilization for broken state, degraded systems, 
 Mockups, staged environments, synthetic artifacts, and demo-ready representations for reasoning, testing, and rehearsal.
 
 - Best for: Use the staging shelf when the fastest path to clarity is a demo, rehearsal, simulation, or synthetic artifact.
-- Start with: [Minor Illusion](generated/hermes/simulation-and-staging/minor-illusion/SKILL.md), [Major Image](generated/hermes/simulation-and-staging/major-image/SKILL.md), [Deception](generated/hermes/simulation-and-staging/deception/SKILL.md), [Programmed Illusion](generated/hermes/simulation-and-staging/programmed-illusion/SKILL.md)
+- Start with: `Minor Illusion`, `Major Image`, `Deception`, `Programmed Illusion`
 
 <details>
 <summary>See all 8 skills in this shelf</summary>
 
-- [Deception](generated/hermes/simulation-and-staging/deception/SKILL.md) `skill` `shipping-now` `metaphorical` - Forge realistic stand-ins for systems, traffic, and data without misleading actual people.
-- [Hallucinatory Terrain](generated/hermes/simulation-and-staging/hallucinatory-terrain/SKILL.md) `spell` `shipping-now` `metaphorical` - Overlay a different reality onto an existing environment for testing or training.
-- [Major Image](generated/hermes/simulation-and-staging/major-image/SKILL.md) `spell` `shipping-now` `metaphorical` - Build a full interactive simulation that looks and feels real — but is not.
-- [Minor Illusion](generated/hermes/simulation-and-staging/minor-illusion/SKILL.md) `spell` `shipping-now` `metaphorical` - Conjure a quick sketch of an idea — just real enough to communicate.
-- [Mirage Arcane](generated/hermes/simulation-and-staging/mirage-arcane/SKILL.md) `spell` `prototype` `hybrid` - Build a simulation so convincing it is functionally indistinguishable from real.
-- [Programmed Illusion](generated/hermes/simulation-and-staging/programmed-illusion/SKILL.md) `spell` `shipping-now` `metaphorical` - Set up an illusion that activates automatically when conditions are met.
-- [Project Image](generated/hermes/simulation-and-staging/project-image/SKILL.md) `spell` `shipping-now` `hybrid` - Project a version of yourself into a place you cannot physically be.
-- [Silent Image](generated/hermes/simulation-and-staging/silent-image/SKILL.md) `spell` `shipping-now` `metaphorical` - Create a static visual mockup — no interaction, no sound, just the picture.
+- `Deception` `skill` `shipping-now` `metaphorical` - Forge realistic stand-ins for systems, traffic, and data without misleading actual people.
+- `Hallucinatory Terrain` `spell` `shipping-now` `metaphorical` - Overlay a different reality onto an existing environment for testing or training.
+- `Major Image` `spell` `shipping-now` `metaphorical` - Build a full interactive simulation that looks and feels real — but is not.
+- `Minor Illusion` `spell` `shipping-now` `metaphorical` - Conjure a quick sketch of an idea — just real enough to communicate.
+- `Mirage Arcane` `spell` `prototype` `hybrid` - Build a simulation so convincing it is functionally indistinguishable from real.
+- `Programmed Illusion` `spell` `shipping-now` `metaphorical` - Set up an illusion that activates automatically when conditions are met.
+- `Project Image` `spell` `shipping-now` `hybrid` - Project a version of yourself into a place you cannot physically be.
+- `Silent Image` `spell` `shipping-now` `metaphorical` - Create a static visual mockup — no interaction, no sound, just the picture.
 
 </details>
 
@@ -275,29 +277,29 @@ Mockups, staged environments, synthetic artifacts, and demo-ready representation
 Attention design, behavior shaping, and social intervention skills with strict ethical guardrails and consent requirements.
 
 - Best for: These are the ethically sharp spells for de-escalation, morale, attention, and behavior with guardrails on.
-- Start with: [Calm Emotions](generated/hermes/influence-and-behavior/calm-emotions/SKILL.md), [Heroism](generated/hermes/influence-and-behavior/heroism/SKILL.md), [Fear](generated/hermes/influence-and-behavior/fear/SKILL.md), [Plant Growth](generated/hermes/influence-and-behavior/plant-growth/SKILL.md)
+- Start with: `Calm Emotions`, `Heroism`, `Fear`, `Plant Growth`
 
 <details>
 <summary>See all 18 skills in this shelf</summary>
 
-- [Bane](generated/hermes/influence-and-behavior/bane/SKILL.md) `spell` `shipping-now` `metaphorical` - Surface every weakness in a plan, system, or argument.
-- [Bestow Curse](generated/hermes/influence-and-behavior/bestow-curse/SKILL.md) `spell` `prototype` `metaphorical` - Add persistent constraints or friction to test how a system copes.
-- [Calm Emotions](generated/hermes/influence-and-behavior/calm-emotions/SKILL.md) `spell` `shipping-now` `metaphorical` - De-escalate tension and restore productive conditions in a heated situation.
-- [Charm Person](generated/hermes/influence-and-behavior/charm-person/SKILL.md) `spell` `shipping-now` `hybrid` - Draft warm, trust-building communication that navigates social dynamics with ethical care.
-- [Confusion](generated/hermes/influence-and-behavior/confusion/SKILL.md) `spell` `shipping-now` `metaphorical` - Generate controlled chaos to stress-test a system's resilience.
-- [Enthrall](generated/hermes/influence-and-behavior/enthrall/SKILL.md) `spell` `shipping-now` `metaphorical` - Capture and hold an audience's attention through compelling structure.
-- [Fear](generated/hermes/influence-and-behavior/fear/SKILL.md) `spell` `shipping-now` `metaphorical` - Amplify worst-case scenarios to surface risks that optimism hides.
-- [Glibness](generated/hermes/influence-and-behavior/glibness/SKILL.md) `spell` `shipping-now` `metaphorical` - Make any argument sound maximally credible and polished.
-- [Heroism](generated/hermes/influence-and-behavior/heroism/SKILL.md) `spell` `shipping-now` `metaphorical` - Build courage and temporary resilience before walking into something hard.
-- [Hold Monster](generated/hermes/influence-and-behavior/hold-monster/SKILL.md) `spell` `prototype` `hybrid` - Freeze a large-scale system or service as an emergency circuit breaker.
-- [Hold Person](generated/hermes/influence-and-behavior/hold-person/SKILL.md) `spell` `prototype` `hybrid` - Freeze a process, account, or workflow in place with administrative authority.
-- [Hypnotic Pattern](generated/hermes/influence-and-behavior/hypnotic-pattern/SKILL.md) `spell` `shipping-now` `metaphorical` - Design attention-capture patterns that hold focus in a bounded context.
-- [Mass Suggestion](generated/hermes/influence-and-behavior/mass-suggestion/SKILL.md) `spell` `shipping-now` `metaphorical` - Craft a message that nudges an entire audience toward a single action.
-- [Otto’s Irresistible Dance](generated/hermes/influence-and-behavior/otto-s-irresistible-dance/SKILL.md) `spell` `prototype` `metaphorical` - Make something so engaging it becomes impossible to ignore or put down.
-- [Plant Growth](generated/hermes/influence-and-behavior/plant-growth/SKILL.md) `spell` `shipping-now` `metaphorical` - Help a promising system thicken gradually instead of stretching thin.
-- [Sleep](generated/hermes/influence-and-behavior/sleep/SKILL.md) `spell` `shipping-now` `hybrid` - Put processes, notifications, or systems into graceful suspension.
-- [Suggestion](generated/hermes/influence-and-behavior/suggestion/SKILL.md) `spell` `shipping-now` `metaphorical` - Plant one well-crafted idea that a person will want to act on.
-- [Vicious Mockery](generated/hermes/influence-and-behavior/vicious-mockery/SKILL.md) `spell` `shipping-now` `metaphorical` - Deliver a critique so sharp it actually weakens the target's position.
+- `Bane` `spell` `shipping-now` `metaphorical` - Surface every weakness in a plan, system, or argument.
+- `Bestow Curse` `spell` `prototype` `metaphorical` - Add persistent constraints or friction to test how a system copes.
+- `Calm Emotions` `spell` `shipping-now` `metaphorical` - De-escalate tension and restore productive conditions in a heated situation.
+- `Charm Person` `spell` `shipping-now` `hybrid` - Draft warm, trust-building communication that navigates social dynamics with ethical care.
+- `Confusion` `spell` `shipping-now` `metaphorical` - Generate controlled chaos to stress-test a system's resilience.
+- `Enthrall` `spell` `shipping-now` `metaphorical` - Capture and hold an audience's attention through compelling structure.
+- `Fear` `spell` `shipping-now` `metaphorical` - Amplify worst-case scenarios to surface risks that optimism hides.
+- `Glibness` `spell` `shipping-now` `metaphorical` - Make any argument sound maximally credible and polished.
+- `Heroism` `spell` `shipping-now` `metaphorical` - Build courage and temporary resilience before walking into something hard.
+- `Hold Monster` `spell` `prototype` `hybrid` - Freeze a large-scale system or service as an emergency circuit breaker.
+- `Hold Person` `spell` `prototype` `hybrid` - Freeze a process, account, or workflow in place with administrative authority.
+- `Hypnotic Pattern` `spell` `shipping-now` `metaphorical` - Design attention-capture patterns that hold focus in a bounded context.
+- `Mass Suggestion` `spell` `shipping-now` `metaphorical` - Craft a message that nudges an entire audience toward a single action.
+- `Otto’s Irresistible Dance` `spell` `prototype` `metaphorical` - Make something so engaging it becomes impossible to ignore or put down.
+- `Plant Growth` `spell` `shipping-now` `metaphorical` - Help a promising system thicken gradually instead of stretching thin.
+- `Sleep` `spell` `shipping-now` `hybrid` - Put processes, notifications, or systems into graceful suspension.
+- `Suggestion` `spell` `shipping-now` `metaphorical` - Plant one well-crafted idea that a person will want to act on.
+- `Vicious Mockery` `spell` `shipping-now` `metaphorical` - Deliver a critique so sharp it actually weakens the target's position.
 
 </details>
 
@@ -307,21 +309,21 @@ Attention design, behavior shaping, and social intervention skills with strict e
 Containment, capability reduction, throttling, and high-impact interventions that need explicit approval, narrow scope, and clear rollback.
 
 - Best for: Reach here when the job is containment, capability reduction, or an emergency stop under narrow control.
-- Start with: [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md), [Blindness/Deafness](generated/hermes/containment-and-intervention/blindness-deafness/SKILL.md), [Feeblemind](generated/hermes/containment-and-intervention/feeblemind/SKILL.md), [Power Word Stun](generated/hermes/containment-and-intervention/power-word-stun/SKILL.md)
+- Start with: `Forcecage`, `Blindness/Deafness`, `Feeblemind`, `Power Word Stun`
 
 <details>
 <summary>See all 10 skills in this shelf</summary>
 
-- [Blindness/Deafness](generated/hermes/containment-and-intervention/blindness-deafness/SKILL.md) `spell` `shipping-now` `literal` - Cut a system's eyes or ears — let it run, but blind to specific inputs or deaf to specific signals.
-- [Eyebite](generated/hermes/containment-and-intervention/eyebite/SKILL.md) `spell` `prototype` `metaphorical` - Fix your attention on a target and selectively degrade its capabilities.
-- [Feeblemind](generated/hermes/containment-and-intervention/feeblemind/SKILL.md) `spell` `prototype` `metaphorical` - Strip a system down to minimal capability when full power is too dangerous.
-- [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) `spell` `prototype` `literal` - Contain untrusted code, agents, or operations inside an isolated sandbox with no escape.
-- [Heat Metal](generated/hermes/containment-and-intervention/heat-metal/SKILL.md) `spell` `prototype` `hybrid` - Make a tool or process increasingly uncomfortable to use until it is abandoned.
-- [Power Word Kill](generated/hermes/containment-and-intervention/power-word-kill/SKILL.md) `spell` `shipping-now` `hybrid` - End a process instantly. No negotiation, no cleanup, no save state.
-- [Power Word Stun](generated/hermes/containment-and-intervention/power-word-stun/SKILL.md) `spell` `shipping-now` `hybrid` - Freeze a process instantly — hard pause, state preserved, resumable.
-- [Shatter](generated/hermes/containment-and-intervention/shatter/SKILL.md) `spell` `shipping-now` `metaphorical` - Find the resonant frequency and break it on purpose.
-- [Stinking Cloud](generated/hermes/containment-and-intervention/stinking-cloud/SKILL.md) `spell` `shipping-now` `metaphorical` - Make an area inhospitable without destroying it.
-- [Thunderwave](generated/hermes/containment-and-intervention/thunderwave/SKILL.md) `spell` `prototype` `literal` - Trigger a dramatic, high-impact action through a tightly gated device, webhook, or automation.
+- `Blindness/Deafness` `spell` `shipping-now` `literal` - Cut a system's eyes or ears — let it run, but blind to specific inputs or deaf to specific signals.
+- `Eyebite` `spell` `prototype` `metaphorical` - Fix your attention on a target and selectively degrade its capabilities.
+- `Feeblemind` `spell` `prototype` `metaphorical` - Strip a system down to minimal capability when full power is too dangerous.
+- `Forcecage` `spell` `prototype` `literal` - Contain untrusted code, agents, or operations inside an isolated sandbox with no escape.
+- `Heat Metal` `spell` `prototype` `hybrid` - Make a tool or process increasingly uncomfortable to use until it is abandoned.
+- `Power Word Kill` `spell` `shipping-now` `hybrid` - End a process instantly. No negotiation, no cleanup, no save state.
+- `Power Word Stun` `spell` `shipping-now` `hybrid` - Freeze a process instantly — hard pause, state preserved, resumable.
+- `Shatter` `spell` `shipping-now` `metaphorical` - Find the resonant frequency and break it on purpose.
+- `Stinking Cloud` `spell` `shipping-now` `metaphorical` - Make an area inhospitable without destroying it.
+- `Thunderwave` `spell` `prototype` `literal` - Trigger a dramatic, high-impact action through a tightly gated device, webhook, or automation.
 
 </details>
 

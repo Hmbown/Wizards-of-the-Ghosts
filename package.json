@@ -6,11 +6,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hmbown/WizardsoftheGhosts.git"
+    "url": "git+https://github.com/Hmbown/Wizards-of-the-Ghosts.git"
   },
-  "homepage": "https://github.com/Hmbown/WizardsoftheGhosts#readme",
   "bugs": {
-    "url": "https://github.com/Hmbown/WizardsoftheGhosts/issues"
+    "url": "https://github.com/Hmbown/Wizards-of-the-Ghosts/issues"
   },
   "keywords": [
     "hermes-agent",
