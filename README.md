@@ -62,16 +62,7 @@ npm run install:hermes-skills
 | 🖐️ **[Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md)** — Manipulate files, records, and lightweight system state with precision and minimal blast radius. | 🛡️ **[Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md)** — Set monitors, watches, or trigger conditions that alert when a boundary is crossed. |
 | 🌙 **[Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md)** — Deliver the briefing before the recipient wakes up needing it. | 🪂 **[Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md)** — Turn a hard crash into a controlled descent. |
 
-1. [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md) `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
-2. [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md) `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
-3. [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
-4. [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md) `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
-5. [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md) `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
-6. [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
-7. [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
-8. [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
-
-Need the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse layer.
+Need badges, browse paths, or the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse layer.
 
 ## Find Your Shelf
 
