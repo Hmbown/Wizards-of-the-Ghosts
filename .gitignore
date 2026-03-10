@@ -16,8 +16,8 @@
 .ralph/docs/generated/*
 !.ralph/docs/generated/.gitkeep
 
-# Generated build output
-generated/
+# Generated build output (tracked — needed for GitHub links)
+# generated/
 
 # General logs
 *.log
