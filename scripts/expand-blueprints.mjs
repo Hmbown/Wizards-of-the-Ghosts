@@ -748,13 +748,13 @@ const restrictedOpenClawNames = new Set([
   "Zone of Truth"
 ]);
 
-const refusedHermesSlugs = new Set([
+const defaultRefusedHermesSlugs = [
   "compulsion",
   "dominate-monster",
   "dominate-person",
   "geas",
   "modify-memory"
-]);
+];
 
 const hermesCategoryDefinitions = [
   {
@@ -845,6 +845,85 @@ const hermesCategoryOverrides = new Map([
   ["zone-of-truth", "investigation-and-preparation"]
 ]);
 
+const defaultHermesDiscovery = {
+  featured_entry_slugs: [
+    "detect-magic",
+    "identify",
+    "comprehend-languages",
+    "investigation",
+    "mage-hand",
+    "glyph-of-warding",
+    "dream",
+    "feather-fall"
+  ],
+  browse_paths: [
+    {
+      slug: "figure-out-what-youre-looking-at",
+      title: "Figure out what you're looking at",
+      description:
+        "Start here when the repo, workflow, or system is unfamiliar and you need the real shape before you touch it.",
+      category_slug: "investigation-and-preparation",
+      entry_slugs: ["detect-magic", "identify", "investigation", "comprehend-languages"]
+    },
+    {
+      slug: "change-the-system-without-a-battleaxe",
+      title: "Change the system without a battleaxe",
+      description:
+        "Use this shelf when dexterity, careful edits, and bounded automation matter more than force.",
+      category_slug: "actions-access-and-automation",
+      entry_slugs: ["mage-hand", "sleight-of-hand", "unseen-servant", "awaken"]
+    },
+    {
+      slug: "light-up-the-black-box",
+      title: "Light up the black box",
+      description:
+        "Reach for these when you need lightweight observability, tripwires, or clearer signals before the room gets loud.",
+      category_slug: "monitoring-and-protection",
+      entry_slugs: ["dancing-lights", "light", "glyph-of-warding", "scrying"]
+    },
+    {
+      slug: "get-the-right-message-to-the-right-place",
+      title: "Get the right message to the right place",
+      description:
+        "These are the comms and coordination spells for briefings, triggers, routing, and asynchronous delivery.",
+      category_slug: "messaging-and-coordination",
+      entry_slugs: ["message", "sending", "dream", "magic-mouth"]
+    },
+    {
+      slug: "stop-the-bleeding",
+      title: "Stop the bleeding",
+      description:
+        "Open this shelf when something is already degraded and the next move is triage, repair, or graceful descent.",
+      category_slug: "repair-and-recovery",
+      entry_slugs: ["cure-wounds", "mending", "feather-fall", "animal-handling"]
+    },
+    {
+      slug: "mock-it-before-you-ship-it",
+      title: "Mock it before you ship it",
+      description:
+        "Use the staging shelf when the fastest path to clarity is a demo, rehearsal, simulation, or synthetic artifact.",
+      category_slug: "simulation-and-staging",
+      entry_slugs: ["minor-illusion", "major-image", "deception", "programmed-illusion"]
+    },
+    {
+      slug: "handle-people-with-care",
+      title: "Handle people with care",
+      description:
+        "These are the ethically sharp spells for de-escalation, morale, attention, and behavior with guardrails on.",
+      category_slug: "influence-and-behavior",
+      entry_slugs: ["calm-emotions", "heroism", "fear", "plant-growth"]
+    },
+    {
+      slug: "box-in-blast-radius",
+      title: "Box in blast radius",
+      description:
+        "Reach here when the job is containment, capability reduction, or an emergency stop under narrow control.",
+      category_slug: "containment-and-intervention",
+      entry_slugs: ["forcecage", "blindness-deafness", "feeblemind", "power-word-stun"]
+    }
+  ]
+};
+
 const providerOrder = ["openai", "claude", "openclaw", "hermes"];
 
 function providerTargetsFor(entry, archetypeKey) {
@@ -863,7 +942,7 @@ function providerTargetsFor(entry, archetypeKey) {
   return providers;
 }
 
-function normalizeProviderTargets(entry) {
+function normalizeProviderTargets(entry, refusedHermesSlugs) {
   const providers = new Set(entry.provider_targets);
 
   if (refusedHermesSlugs.has(entry.slug)) {
@@ -891,7 +970,74 @@ function hermesCategoryForEntry(entry, nameMap) {
   return category;
 }
 
-function buildHermesSurface(entries, nameMap) {
+function normalizeHermesDiscovery(discovery, hermesEntries, categoryEntrySetBySlug) {
+  const resolved = structuredClone(discovery ?? defaultHermesDiscovery);
+  const hermesEntrySlugs = new Set(hermesEntries.map((entry) => entry.slug));
+
+  if (!Array.isArray(resolved.featured_entry_slugs) || resolved.featured_entry_slugs.length === 0) {
+    throw new Error("Hermes discovery must define featured_entry_slugs");
+  }
+
+  for (const slug of resolved.featured_entry_slugs) {
+    if (!hermesEntrySlugs.has(slug)) {
+      throw new Error(`Hermes discovery featured entry is not on the Hermes surface: ${slug}`);
+    }
+  }
+
+  if (!Array.isArray(resolved.browse_paths) || resolved.browse_paths.length === 0) {
+    throw new Error("Hermes discovery must define browse_paths");
+  }
+
+  const seenBrowsePathSlugs = new Set();
+  const seenCategorySlugs = new Set();
+
+  for (const browsePath of resolved.browse_paths) {
+    if (seenBrowsePathSlugs.has(browsePath.slug)) {
+      throw new Error(`Duplicate Hermes browse path slug: ${browsePath.slug}`);
+    }
+    seenBrowsePathSlugs.add(browsePath.slug);
+
+    if (seenCategorySlugs.has(browsePath.category_slug)) {
+      throw new Error(
+        `Hermes browse paths must map one path per category; duplicate category ${browsePath.category_slug}`
+      );
+    }
+    seenCategorySlugs.add(browsePath.category_slug);
+
+    const categoryEntries = categoryEntrySetBySlug.get(browsePath.category_slug);
+    if (!categoryEntries) {
+      throw new Error(`Hermes browse path references unknown category: ${browsePath.category_slug}`);
+    }
+
+    if (!Array.isArray(browsePath.entry_slugs) || browsePath.entry_slugs.length === 0) {
+      throw new Error(`Hermes browse path ${browsePath.slug} must define entry_slugs`);
+    }
+
+    for (const slug of browsePath.entry_slugs) {
+      if (!hermesEntrySlugs.has(slug)) {
+        throw new Error(`Hermes browse path entry is not on the Hermes surface: ${slug}`);
+      }
+      if (!categoryEntries.has(slug)) {
+        throw new Error(
+          `Hermes browse path ${browsePath.slug} includes ${slug}, which is not in ${browsePath.category_slug}`
+        );
+      }
+    }
+  }
+
+  const missingCategoryCoverage = [...categoryEntrySetBySlug.keys()].filter(
+    (categorySlug) => !seenCategorySlugs.has(categorySlug)
+  );
+  if (missingCategoryCoverage.length > 0) {
+    throw new Error(
+      `Hermes browse paths are missing categories: ${missingCategoryCoverage.join(", ")}`
+    );
+  }
+
+  return resolved;
+}
+
+function buildHermesSurface(entries, nameMap, surfaceConfig = {}) {
   const hermesEntries = entries.filter((entry) => entry.provider_targets.includes("hermes"));
   const assigned = new Set();
 
@@ -918,6 +1064,9 @@ function buildHermesSurface(entries, nameMap) {
     })
     .filter(Boolean);
 
+  const categoryEntrySetBySlug = new Map(
+    categories.map((category) => [category.slug, new Set(category.entry_slugs)])
+  );
   const unassigned = hermesEntries.filter((entry) => !assigned.has(entry.slug));
   if (unassigned.length > 0) {
     throw new Error(
@@ -927,7 +1076,12 @@ function buildHermesSurface(entries, nameMap) {
 
   return {
     release_surface: "public-low-risk",
-    refused_entry_slugs: [...refusedHermesSlugs].sort(),
+    refused_entry_slugs: [...new Set(surfaceConfig.refused_entry_slugs ?? defaultRefusedHermesSlugs)].sort(),
+    discovery: normalizeHermesDiscovery(
+      surfaceConfig.discovery,
+      hermesEntries,
+      categoryEntrySetBySlug
+    ),
     categories
   };
 }
@@ -978,6 +1132,9 @@ async function main() {
   const blueprints = JSON.parse(await readFile(blueprintPath, "utf8"));
   const curatedById = new Map(blueprints.entries.map((entry) => [entry.canonical_id, entry]));
   const nameMap = buildNameMap();
+  const refusedHermesSlugs = new Set(
+    blueprints.surfaces?.hermes?.refused_entry_slugs ?? defaultRefusedHermesSlugs
+  );
 
   const missingCanon = canon.entries.filter((entry) => !curatedById.has(entry.id));
   const unmapped = missingCanon.filter((entry) => !nameMap.has(entry.name));
@@ -992,7 +1149,7 @@ async function main() {
   const merged = [...blueprints.entries, ...generated]
     .map((entry) => ({
       ...entry,
-      provider_targets: normalizeProviderTargets(entry)
+      provider_targets: normalizeProviderTargets(entry, refusedHermesSlugs)
     }))
     .sort((left, right) => {
     if (left.kind !== right.kind) {
@@ -1002,9 +1159,9 @@ async function main() {
   });
 
   const nextPayload = {
-    schema_version: Math.max(blueprints.schema_version ?? 1, 2),
+    schema_version: Math.max(blueprints.schema_version ?? 1, 3),
     surfaces: {
-      hermes: buildHermesSurface(merged, nameMap)
+      hermes: buildHermesSurface(merged, nameMap, blueprints.surfaces?.hermes)
     },
     entries: merged
   };

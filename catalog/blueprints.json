@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "surfaces": {
     "hermes": {
       "release_surface": "public-low-risk",
@@ -10,6 +10,116 @@
         "geas",
         "modify-memory"
       ],
+      "discovery": {
+        "featured_entry_slugs": [
+          "detect-magic",
+          "identify",
+          "comprehend-languages",
+          "investigation",
+          "mage-hand",
+          "glyph-of-warding",
+          "dream",
+          "feather-fall"
+        ],
+        "browse_paths": [
+          {
+            "slug": "figure-out-what-youre-looking-at",
+            "title": "Figure out what you're looking at",
+            "description": "Start here when the repo, workflow, or system is unfamiliar and you need the real shape before you touch it.",
+            "category_slug": "investigation-and-preparation",
+            "entry_slugs": [
+              "detect-magic",
+              "identify",
+              "investigation",
+              "comprehend-languages"
+            ]
+          },
+          {
+            "slug": "change-the-system-without-a-battleaxe",
+            "title": "Change the system without a battleaxe",
+            "description": "Use this shelf when dexterity, careful edits, and bounded automation matter more than force.",
+            "category_slug": "actions-access-and-automation",
+            "entry_slugs": [
+              "mage-hand",
+              "sleight-of-hand",
+              "unseen-servant",
+              "awaken"
+            ]
+          },
+          {
+            "slug": "light-up-the-black-box",
+            "title": "Light up the black box",
+            "description": "Reach for these when you need lightweight observability, tripwires, or clearer signals before the room gets loud.",
+            "category_slug": "monitoring-and-protection",
+            "entry_slugs": [
+              "dancing-lights",
+              "light",
+              "glyph-of-warding",
+              "scrying"
+            ]
+          },
+          {
+            "slug": "get-the-right-message-to-the-right-place",
+            "title": "Get the right message to the right place",
+            "description": "These are the comms and coordination spells for briefings, triggers, routing, and asynchronous delivery.",
+            "category_slug": "messaging-and-coordination",
+            "entry_slugs": [
+              "message",
+              "sending",
+              "dream",
+              "magic-mouth"
+            ]
+          },
+          {
+            "slug": "stop-the-bleeding",
+            "title": "Stop the bleeding",
+            "description": "Open this shelf when something is already degraded and the next move is triage, repair, or graceful descent.",
+            "category_slug": "repair-and-recovery",
+            "entry_slugs": [
+              "cure-wounds",
+              "mending",
+              "feather-fall",
+              "animal-handling"
+            ]
+          },
+          {
+            "slug": "mock-it-before-you-ship-it",
+            "title": "Mock it before you ship it",
+            "description": "Use the staging shelf when the fastest path to clarity is a demo, rehearsal, simulation, or synthetic artifact.",
+            "category_slug": "simulation-and-staging",
+            "entry_slugs": [
+              "minor-illusion",
+              "major-image",
+              "deception",
+              "programmed-illusion"
+            ]
+          },
+          {
+            "slug": "handle-people-with-care",
+            "title": "Handle people with care",
+            "description": "These are the ethically sharp spells for de-escalation, morale, attention, and behavior with guardrails on.",
+            "category_slug": "influence-and-behavior",
+            "entry_slugs": [
+              "calm-emotions",
+              "heroism",
+              "fear",
+              "plant-growth"
+            ]
+          },
+          {
+            "slug": "box-in-blast-radius",
+            "title": "Box in blast radius",
+            "description": "Reach here when the job is containment, capability reduction, or an emergency stop under narrow control.",
+            "category_slug": "containment-and-intervention",
+            "entry_slugs": [
+              "forcecage",
+              "blindness-deafness",
+              "feeblemind",
+              "power-word-stun"
+            ]
+          }
+        ]
+      },
       "categories": [
         {
           "slug": "investigation-and-preparation",
