@@ -15,6 +15,8 @@ If you're new, start with the featured shelf. If you already know the kind of jo
 
 The sigils mean two things: `shipping-now` / `prototype` / `speculative` tell you how honest the runtime claim is, while `metaphorical` / `hybrid` / `literal` tell you how closely the software behavior matches the fantasy effect.
 
+For Hermes users, read these as installable procedures, not bundled executables. Many of the strongest entries are reasoning modes or operator checklists; any skill that touches a real external system still depends on whatever tools, permissions, and integrations your Hermes session already has.
+
 Need the exact install docs? Run `npm run build:skills` locally and open `generated/hermes/<category>/<skill>/SKILL.md`.
 
 <a id="featured-shelf"></a>
@@ -338,4 +340,3 @@ The public Hermes surface intentionally does not ship:
 - `Modify Memory`
 
 This remains a free unofficial fan project built from original reinterpretations, not an official Wizards release. See [LEGAL.md](LEGAL.md) for the repo's current IP posture.
-

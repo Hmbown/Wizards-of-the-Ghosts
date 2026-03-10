@@ -22,6 +22,14 @@ Or install into your default Hermes home:
 npm run install:hermes-skills
 ```
 
+## Hermes Expectations
+
+- Hermes discovers installed skills from `~/.hermes/skills` or `$HERMES_HOME/skills`; `npm run install:hermes-skills` copies the generated docs there.
+- The installable Hermes surface lives in `generated/hermes/`. Those files are procedural markdown with YAML frontmatter, not executable plugins by themselves.
+- Most of this pack is best used as reasoning, investigation, planning, triage, or operating-mode scaffolding inside a normal Hermes session.
+- In practice, skills like `detect-magic`, `mage-hand`, `zone-of-truth`, `feather-fall`, and `unseen-servant` work especially well as direct Hermes prompts.
+- Some skills mention env vars, APIs, or external systems, but this repo does not currently ship a dedicated Hermes integration layer for Home Assistant, Slack, or other services. Those procedures become real only if your Hermes environment already has the matching tools, credentials, and permissions.
+
 ## What Ships
 
 - `122` Hermes skills drawn from `127` public canon names (`109` spells, `18` skills)
@@ -58,7 +66,8 @@ Need the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse lay
 ## Browse Deeper
 
 - [GRIMOIRE.md](GRIMOIRE.md) for the featured shelf, browse paths, and full linked category index
-- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact skill docs Hermes installs
+- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact procedural skill docs Hermes installs
+- `generated/openclaw/` for the separate OpenClaw-oriented output surface generated from the same source material
 - `catalog/blueprints.json` plus `scripts/render-skills.mjs` for the source-of-truth and renderer
 
 ## Build From Source
@@ -92,4 +101,3 @@ The public Hermes surface intentionally refuses `Compulsion`, `Dominate Monster`
 Original code and writing in this repo are released under `CC0-1.0`. That does not grant rights in Wizards of the Coast IP, trademarks, logos, artwork, or official rules text. This repo stays free, unofficial, and clearly separate from any official Wizards product line.
 
 See [LEGAL.md](LEGAL.md) for the current fan-content and IP posture.
-

@@ -1,8 +1,17 @@
 # Handoff — Session 2026-03-08 (exploration pass)
 
-## Product Pivot: OpenClaw-Only
+## Maintainer note — 2026-03-10
+This handoff captures an earlier exploration pass and overstates the repo as "OpenClaw-only."
 
-The spellbook is now **OpenClaw-only**. The multi-provider strategy (Claude, OpenAI, OpenClaw) has been replaced with a single target: distributable OpenClaw skills that people install and configure for their setup.
+Current reality from the Hermes maintainer/user perspective:
+- the repo still generates and installs a Hermes skill surface in `generated/hermes/`
+- Hermes skills here are procedural markdown with YAML frontmatter, not executable plugins by themselves
+- several skills are strong as Hermes reasoning-mode prompts (`detect-magic`, `mage-hand`, `zone-of-truth`, `feather-fall`, `unseen-servant`)
+- references to Home Assistant, Slack, env vars, or other live systems should be read as grounding hints or prerequisites, not as proof that this repo ships a dedicated Hermes integration layer for those systems
+
+## Product Pivot: OpenClaw-Only
+The spellbook was explored as **OpenClaw-only** in this session. That framing should now be read as a session-specific product direction, not the complete current repo story.
+
 
 ### Why
 - Claude slash commands and Codex skills were internal tooling, not a distributable product
@@ -12,10 +21,10 @@ The spellbook is now **OpenClaw-only**. The multi-provider strategy (Claude, Ope
 
 ### Architecture
 - **122 OpenClaw skills** generated (5 refusal spells excluded: dominate-person, dominate-monster, modify-memory, geas, compulsion)
-- **13 grounded skills** with real integration requirements (Home Assistant, Slack)
+- **13 OpenClaw entries** include explicit integration-oriented requirements or env var references (Home Assistant, Slack)
 - **109 cognitive skills** with no hard requirements (always available)
 - `.claude/commands/` symlink to `generated/openclaw/` for internal dev use
-- Renderer produces OpenClaw output only
+- This session focused on OpenClaw output, but the repo also continues to generate Hermes output
 
 ## What Was Done This Session
 
@@ -42,11 +51,11 @@ The key mechanism: Real Magic spells either (1) impose a mode change, (2) apply 
 
 ### The spellbook
 - **122 OpenClaw skills** with emojis, ready for ClawHub
-- **13 grounded** with real integration requirements
+- **13 integration-oriented entries** with env var references or explicit requirement blocks
 - **5 excluded** (deliberate refusals)
 - Git initialized with 4 commits on master
 
-### Grounded skills
+### Integration-oriented skills
 
 | Integration | Skills | Env Vars |
 |---|---|---|
@@ -83,9 +92,9 @@ Update README.md to describe the OpenClaw skill pack product, not the multi-prov
 
 ## Files Changed (This Session)
 
-- `catalog/blueprints.json` — 31 entries added to OpenClaw, 13 grounded with integrations, all 122 got emojis
+- `catalog/blueprints.json` — 31 entries added to OpenClaw, including 13 integration-oriented entries with requirement metadata, and all 122 got emojis
 - `catalog/blueprints.schema.json` — added requires, primaryEnv, emoji to openclaw schema
-- `scripts/render-skills.mjs` — simplified to OpenClaw-only output
+- `scripts/render-skills.mjs` — session focused on OpenClaw output; repo now also renders Hermes discovery docs and `generated/hermes/`
 - `generated/openclaw/` — 122 skill folders with SKILL.md files
 - `.claude/commands/` — relinked to OpenClaw output, removed 5 refusal spell symlinks
 - `.gitignore` — added generated/ to ignore list
@@ -100,6 +109,6 @@ npm run build:skills
 # After editing blueprints.json
 npm run build:skills
 
-# Check a grounded skill
+# Check an integration-oriented OpenClaw skill
 cat generated/openclaw/dancing-lights/SKILL.md
 ```
