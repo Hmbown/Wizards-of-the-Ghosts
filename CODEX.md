@@ -2,7 +2,7 @@
 
 ## Local Skills
 
-This project keeps Codex skill definitions in `generated/openai/` and mirrors them into `.codex/skills/`.
+This project mirrors generated spell skills from `generated/openclaw/` into `.codex/skills/` for local Codex use.
 
 - Install or refresh them with `CODEX_HOME=$PWD/.codex npm run install:codex-skills`.
 - When a user invokes `$skill-name` and `.codex/skills/<skill-name>/SKILL.md` exists, load that file and follow it as a project-local skill.

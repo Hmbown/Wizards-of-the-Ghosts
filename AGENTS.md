@@ -2,10 +2,9 @@
 
 ## Mission
 
-`wizardsoftheghosts` turns D&D spells and skills into practical AI skills across three targets:
+`wizardsoftheghosts` turns D&D spells and skills into practical AI skills for two first-class release surfaces:
 
-- Codex / OpenAI
-- Claude
+- Hermes Agent (primary)
 - OpenClaw
 
 The point is not parody for its own sake. The point is to treat fantasy magic as a design language for real AI capabilities: workflow orchestration, translation, monitoring, reasoning, simulation, device control, and careful acts of software manipulation.
@@ -59,14 +58,22 @@ Or just:
 npm run bootstrap
 ```
 
-## Project Codex Skills
+## Hermes Skills
 
-This repo ships project-local Codex skills under `generated/openai/`.
+This repo ships Hermes Agent skills under `generated/hermes/`.
 
-- The workspace-local install target is `.codex/skills/`.
-- Run `CODEX_HOME=$PWD/.codex npm run install:codex-skills` to mirror every generated OpenAI skill into that local Codex skill directory.
-- If a user invokes `$skill-name` and `.codex/skills/<skill-name>/SKILL.md` exists, treat it as a local project skill and follow it.
+- The runtime install target is `~/.hermes/skills/` or `$HERMES_HOME/skills/`.
+- Run `npm run install:hermes-skills` to copy generated skills into the Hermes runtime directory.
+- Run `HERMES_HOME=$PWD/.hermes npm run install:hermes-skills` for workspace-local testing.
+- Skills are organized in 8 categories for agent discovery via Hermes's progressive disclosure system.
 - The generated skill folders are build artifacts. Do not hand-edit them; update the renderer or blueprints instead, then rebuild and reinstall.
+
+## OpenClaw Skills
+
+This repo also ships OpenClaw skills under `generated/openclaw/`.
+
+- Run `CODEX_HOME=$PWD/.codex npm run install:codex-skills` to mirror skills into a local Codex/OpenClaw directory.
+- The generated skill folders are build artifacts. Do not hand-edit them.
 
 ## Quality Bar
 

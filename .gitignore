@@ -30,6 +30,7 @@ Thumbs.db
 *.tmp
 .temp/
 .codex/
+.hermes/
 
 # Node modules (if using Node.js projects)
 node_modules/

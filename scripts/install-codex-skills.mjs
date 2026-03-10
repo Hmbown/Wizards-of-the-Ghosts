@@ -1,11 +1,15 @@
-import { mkdir, readdir, readlink, symlink, lstat } from 'node:fs/promises';
+import { mkdir, readdir, readlink, symlink, lstat, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
-const sourceRoot = path.join(repoRoot, 'generated', 'openai');
+const sourceRoot = path.join(repoRoot, 'generated', 'openclaw');
+const legacyGeneratedRoots = [
+  path.join(repoRoot, 'generated', 'openai'),
+  path.join(repoRoot, 'generated', 'openclaw')
+];
 const codexHome = process.env.CODEX_HOME ?? path.join(process.env.HOME ?? '', '.codex');
 const destinationRoot = path.join(codexHome, 'skills');
 
@@ -22,6 +26,7 @@ const skillDirs = entries
 await mkdir(destinationRoot, { recursive: true });
 
 const created = [];
+const relinked = [];
 const unchanged = [];
 const conflicts = [];
 
@@ -50,6 +55,17 @@ for (const skillName of skillDirs) {
       continue;
     }
 
+    if (
+      legacyGeneratedRoots.some(
+        (root) => resolvedTarget === root || resolvedTarget.startsWith(`${root}${path.sep}`)
+      )
+    ) {
+      await unlink(destinationDir);
+      await symlink(sourceDir, destinationDir, 'dir');
+      relinked.push(skillName);
+      continue;
+    }
+
     conflicts.push(`${skillName}: symlink points to ${resolvedTarget}`);
     continue;
   } catch (error) {
@@ -64,13 +80,18 @@ for (const skillName of skillDirs) {
 
 console.log(`Codex skill source: ${sourceRoot}`);
 console.log(`Codex skill destination: ${destinationRoot}`);
-console.log(`Generated OpenAI skills detected: ${skillDirs.length}`);
+console.log(`Generated spell skills detected: ${skillDirs.length}`);
 console.log(`Created links: ${created.length}`);
+console.log(`Repointed legacy links: ${relinked.length}`);
 console.log(`Already linked: ${unchanged.length}`);
 console.log(`Conflicts: ${conflicts.length}`);
 
 if (created.length > 0) {
   console.log(`First created: ${created.slice(0, 10).join(', ')}`);
+}
+
+if (relinked.length > 0) {
+  console.log(`First repointed: ${relinked.slice(0, 10).join(', ')}`);
 }
 
 if (conflicts.length > 0) {

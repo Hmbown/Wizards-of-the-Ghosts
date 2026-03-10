@@ -571,8 +571,20 @@ function buildNameMap() {
 
   addGroup(map, "execution", ["Acrobatics", "Athletics", "Sleight of Hand"]);
   addGroup(map, "fieldwork", ["Animal Handling", "Medicine", "Survival"]);
-  addGroup(map, "analysis", ["Arcana", "History", "Insight", "Nature", "Perception", "Religion"]);
-  addGroup(map, "rhetoric", ["Deception", "Intimidation", "Performance"]);
+  addGroup(map, "analysis", [
+    "Arcana",
+    "Detect Magic",
+    "Foresight",
+    "History",
+    "Identify",
+    "Insight",
+    "Investigation",
+    "Nature",
+    "Perception",
+    "Religion"
+  ]);
+  addGroup(map, "rhetoric", ["Deception", "Intimidation", "Performance", "Persuasion"]);
+  addGroup(map, "translation", ["Comprehend Languages", "Tongues"]);
 
   addGroup(map, "nature", [
     "Animal Friendship",
@@ -589,7 +601,6 @@ function buildNameMap() {
     "Message",
     "Sending",
     "Speak with Dead",
-    "Tongues",
     "Zone of Truth"
   ]);
   addGroup(map, "manipulation", [
@@ -598,6 +609,7 @@ function buildNameMap() {
     "Knock",
     "Light",
     "Magic Mouth",
+    "Mage Hand",
     "Mending",
     "Mordenkainen’s Sword",
     "Planar Binding",
@@ -667,7 +679,8 @@ function buildNameMap() {
     "Mislead",
     "Nondetection",
     "Seeming",
-    "Silence"
+    "Silence",
+    "Stealth"
   ]);
   addGroup(map, "simulation", [
     "Hallucinatory Terrain",
@@ -679,7 +692,7 @@ function buildNameMap() {
     "Silent Image"
   ]);
   addGroup(map, "amplification", ["Enhance Ability", "True Strike"]);
-  addGroup(map, "warding", ["Dispel Magic", "Guards and Wards", "Symbol"]);
+  addGroup(map, "warding", ["Dispel Magic", "Glyph of Warding", "Guards and Wards", "Symbol"]);
   addGroup(map, "containment", ["Blindness/Deafness", "Forcecage"]);
   addGroup(map, "disruption", [
     "Eyebite",
@@ -688,7 +701,8 @@ function buildNameMap() {
     "Power Word Kill",
     "Power Word Stun",
     "Shatter",
-    "Stinking Cloud"
+    "Stinking Cloud",
+    "Thunderwave"
   ]);
   addGroup(map, "transformation", ["Polymorph", "True Polymorph"]);
 
@@ -734,6 +748,105 @@ const restrictedOpenClawNames = new Set([
   "Zone of Truth"
 ]);
 
+const refusedHermesSlugs = new Set([
+  "compulsion",
+  "dominate-monster",
+  "dominate-person",
+  "geas",
+  "modify-memory"
+]);
+
+const hermesCategoryDefinitions = [
+  {
+    slug: "investigation-and-preparation",
+    title: "Investigation and Preparation",
+    description:
+      "Inspection, translation, verification, preflight, and context-loading skills for understanding a situation and setting up the next move before acting."
+  },
+  {
+    slug: "actions-access-and-automation",
+    title: "Actions, Access, and Automation",
+    description:
+      "Precise manipulation, access resolution, automation, migration, and interface-lift skills for changing systems with minimal blast radius."
+  },
+  {
+    slug: "monitoring-and-protection",
+    title: "Monitoring and Protection",
+    description:
+      "Observability, alerting, guards, and privacy controls that keep systems watchful without excess noise."
+  },
+  {
+    slug: "messaging-and-coordination",
+    title: "Messaging and Coordination",
+    description:
+      "Communication, briefings, scheduling, rhetoric, and audience-aware coordination across people, agents, and systems."
+  },
+  {
+    slug: "repair-and-recovery",
+    title: "Repair and Recovery",
+    description:
+      "Triage, repair, recovery, and stabilization for broken state, degraded systems, and fragile operating conditions."
+  },
+  {
+    slug: "simulation-and-staging",
+    title: "Simulation and Staging",
+    description:
+      "Mockups, staged environments, synthetic artifacts, and demo-ready representations for reasoning, testing, and rehearsal."
+  },
+  {
+    slug: "influence-and-behavior",
+    title: "Influence and Behavior",
+    description:
+      "Attention design, behavior shaping, and social intervention skills with strict ethical guardrails and consent requirements."
+  },
+  {
+    slug: "containment-and-intervention",
+    title: "Containment and Intervention",
+    description:
+      "Containment, capability reduction, throttling, and high-impact interventions that need explicit approval, narrow scope, and clear rollback."
+  }
+];
+
+const hermesCategoryByArchetype = new Map([
+  ["analysis", "investigation-and-preparation"],
+  ["translation", "investigation-and-preparation"],
+  ["amplification", "investigation-and-preparation"],
+  ["execution", "actions-access-and-automation"],
+  ["manipulation", "actions-access-and-automation"],
+  ["mobility", "actions-access-and-automation"],
+  ["transformation", "actions-access-and-automation"],
+  ["warding", "monitoring-and-protection"],
+  ["privacy", "monitoring-and-protection"],
+  ["communication", "messaging-and-coordination"],
+  ["rhetoric", "messaging-and-coordination"],
+  ["restoration", "repair-and-recovery"],
+  ["fieldwork", "repair-and-recovery"],
+  ["simulation", "simulation-and-staging"],
+  ["nature", "investigation-and-preparation"],
+  ["containment", "containment-and-intervention"],
+  ["disruption", "containment-and-intervention"],
+  ["influence", "influence-and-behavior"]
+]);
+
+const hermesCategoryOverrides = new Map([
+  ["dancing-lights", "monitoring-and-protection"],
+  ["deception", "simulation-and-staging"],
+  ["animal-friendship", "actions-access-and-automation"],
+  ["awaken", "actions-access-and-automation"],
+  ["etherealness", "investigation-and-preparation"],
+  ["feather-fall", "repair-and-recovery"],
+  ["plant-growth", "influence-and-behavior"],
+  ["light", "monitoring-and-protection"],
+  ["magic-mouth", "messaging-and-coordination"],
+  ["mending", "repair-and-recovery"],
+  ["scrying", "monitoring-and-protection"],
+  ["speak-with-animals", "monitoring-and-protection"],
+  ["speak-with-dead", "investigation-and-preparation"],
+  ["zone-of-truth", "investigation-and-preparation"]
+]);
+
+const providerOrder = ["openai", "claude", "openclaw", "hermes"];
+
 function providerTargetsFor(entry, archetypeKey) {
   const archetype = archetypes[archetypeKey];
   const providers = ["openai", "claude"];
@@ -744,9 +857,79 @@ function providerTargetsFor(entry, archetypeKey) {
     !restrictedOpenClawNames.has(entry.name)
   ) {
     providers.push("openclaw");
+    providers.push("hermes");
   }
 
   return providers;
+}
+
+function normalizeProviderTargets(entry) {
+  const providers = new Set(entry.provider_targets);
+
+  if (refusedHermesSlugs.has(entry.slug)) {
+    providers.delete("hermes");
+  } else if (providers.has("openclaw") || providers.has("hermes")) {
+    providers.add("hermes");
+  }
+
+  return providerOrder.filter((provider) => providers.has(provider));
+}
+
+function hermesCategoryForEntry(entry, nameMap) {
+  const override = hermesCategoryOverrides.get(entry.slug);
+  if (override) {
+    return override;
+  }
+
+  const archetype = nameMap.get(entry.name);
+  const category = hermesCategoryByArchetype.get(archetype);
+
+  if (!category) {
+    throw new Error(`No Hermes category mapping for ${entry.name} (${entry.slug})`);
+  }
+
+  return category;
+}
+
+function buildHermesSurface(entries, nameMap) {
+  const hermesEntries = entries.filter((entry) => entry.provider_targets.includes("hermes"));
+  const assigned = new Set();
+
+  const categories = hermesCategoryDefinitions
+    .map((definition) => {
+      const entrySlugs = hermesEntries
+        .filter((entry) => hermesCategoryForEntry(entry, nameMap) === definition.slug)
+        .sort((left, right) => left.name.localeCompare(right.name))
+        .map((entry) => {
+          assigned.add(entry.slug);
+          return entry.slug;
+        });
+
+      if (entrySlugs.length === 0) {
+        return null;
+      }
+
+      return {
+        slug: definition.slug,
+        title: definition.title,
+        description: definition.description,
+        entry_slugs: entrySlugs
+      };
+    })
+    .filter(Boolean);
+
+  const unassigned = hermesEntries.filter((entry) => !assigned.has(entry.slug));
+  if (unassigned.length > 0) {
+    throw new Error(
+      `Hermes categories missing entries: ${unassigned.map((entry) => entry.slug).join(", ")}`
+    );
+  }
+
+  return {
+    release_surface: "public-low-risk",
+    refused_entry_slugs: [...refusedHermesSlugs].sort(),
+    categories
+  };
 }
 
 function openclawConfigFor(entry, providers) {
@@ -806,7 +989,12 @@ async function main() {
   }
 
   const generated = missingCanon.map((entry) => buildStub(entry, nameMap.get(entry.name)));
-  const merged = [...blueprints.entries, ...generated].sort((left, right) => {
+  const merged = [...blueprints.entries, ...generated]
+    .map((entry) => ({
+      ...entry,
+      provider_targets: normalizeProviderTargets(entry)
+    }))
+    .sort((left, right) => {
     if (left.kind !== right.kind) {
       return left.kind.localeCompare(right.kind);
     }
@@ -814,7 +1002,10 @@ async function main() {
   });
 
   const nextPayload = {
-    schema_version: blueprints.schema_version,
+    schema_version: Math.max(blueprints.schema_version ?? 1, 2),
+    surfaces: {
+      hermes: buildHermesSurface(merged, nameMap)
+    },
     entries: merged
   };
 

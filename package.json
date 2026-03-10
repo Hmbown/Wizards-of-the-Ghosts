@@ -1,13 +1,38 @@
 {
   "name": "wizardsoftheghosts",
   "private": true,
+  "description": "A whimsical grimoire that reinterprets public fantasy spell and skill names as practical AI and automation skills.",
+  "license": "CC0-1.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hmbown/WizardsoftheGhosts.git"
+  },
+  "homepage": "https://github.com/Hmbown/WizardsoftheGhosts#readme",
+  "bugs": {
+    "url": "https://github.com/Hmbown/WizardsoftheGhosts/issues"
+  },
+  "keywords": [
+    "hermes-agent",
+    "openclaw",
+    "ai-skills",
+    "agents",
+    "automation",
+    "fantasy-rpg",
+    "spells",
+    "grimoire",
+    "workflows"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "sync:canon": "node scripts/sync-canon.mjs",
     "expand:blueprints": "node scripts/expand-blueprints.mjs",
     "build:skills": "node scripts/render-skills.mjs",
     "export:linear": "node scripts/export-linear-seed.mjs",
     "install:codex-skills": "node scripts/install-codex-skills.mjs",
+    "install:hermes-skills": "node scripts/install-hermes-skills.mjs",
     "bootstrap": "node scripts/sync-canon.mjs && node scripts/expand-blueprints.mjs && node scripts/render-skills.mjs && node scripts/export-linear-seed.mjs"
   }
 }

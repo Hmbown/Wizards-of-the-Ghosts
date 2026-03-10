@@ -12,6 +12,73 @@
       "type": "integer",
       "minimum": 1
     },
+    "surfaces": {
+      "type": "object",
+      "properties": {
+        "hermes": {
+          "type": "object",
+          "required": [
+            "release_surface",
+            "refused_entry_slugs",
+            "categories"
+          ],
+          "properties": {
+            "release_surface": {
+              "type": "string",
+              "enum": [
+                "public-low-risk"
+              ]
+            },
+            "refused_entry_slugs": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              }
+            },
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "slug",
+                  "title",
+                  "description",
+                  "entry_slugs"
+                ],
+                "properties": {
+                  "slug": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+$"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "entry_slugs": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9-]+$"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
     "entries": {
       "type": "array",
       "items": {
@@ -62,7 +129,8 @@
               "enum": [
                 "openai",
                 "claude",
-                "openclaw"
+                "openclaw",
+                "hermes"
               ]
             }
           },
