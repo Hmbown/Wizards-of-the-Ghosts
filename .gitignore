@@ -28,6 +28,8 @@ Thumbs.db
 
 # Temporary files
 *.tmp
+*.copilot.db
+counterpoint.copilot.db
 .temp/
 .codex/
 .hermes/

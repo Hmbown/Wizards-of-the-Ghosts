@@ -17,11 +17,31 @@ if (!process.env.HOME && !process.env.CODEX_HOME) {
   throw new Error('HOME or CODEX_HOME must be set to install Codex skills.');
 }
 
+async function pathExists(targetPath) {
+  try {
+    await lstat(targetPath);
+    return true;
+  } catch (error) {
+    if (error?.code === 'ENOENT') {
+      return false;
+    }
+    throw error;
+  }
+}
+
+if (!(await pathExists(sourceRoot))) {
+  throw new Error(`Codex skill source not found at ${sourceRoot}. Run npm run build:skills first.`);
+}
+
 const entries = await readdir(sourceRoot, { withFileTypes: true });
 const skillDirs = entries
   .filter((entry) => entry.isDirectory())
   .map((entry) => entry.name)
   .sort();
+
+if (skillDirs.length === 0) {
+  throw new Error(`No Codex/OpenClaw skill directories were found in ${sourceRoot}. Run npm run build:skills first.`);
+}
 
 await mkdir(destinationRoot, { recursive: true });
 

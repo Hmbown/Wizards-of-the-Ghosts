@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Render generated artifacts
+        run: npm run expand:blueprints && npm run build:skills && npm run export:linear
+      - name: Verify release readiness
+        run: npm run verify

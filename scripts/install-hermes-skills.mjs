@@ -88,6 +88,9 @@ await mkdir(destinationRoot, { recursive: true });
 
 const previousManifest = await loadManifest();
 const currentItems = await collectInstallItems();
+if (currentItems.length === 0) {
+  throw new Error(`No Hermes install items were found in ${sourceRoot}. Run npm run build:skills first.`);
+}
 const currentPaths = new Set(currentItems.map((item) => item.relativePath));
 const previousManagedCategories = new Set(
   (previousManifest.paths ?? []).map((relativePath) => relativePath.split(path.sep)[0]).filter(Boolean)
@@ -164,6 +167,7 @@ await writeFile(
 
 console.log(`Hermes skill source: ${sourceRoot}`);
 console.log(`Hermes skill destination: ${destinationRoot}`);
+console.log(`Hermes manifest path: ${manifestPath}`);
 console.log(`Generated Hermes install items detected: ${currentItems.length}`);
 console.log(`Created items: ${created.length}`);
 console.log(`Refreshed items: ${refreshed.length}`);

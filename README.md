@@ -94,6 +94,14 @@ Or:
 npm run bootstrap
 ```
 
+## Verification
+
+```bash
+npm run verify
+```
+
+`npm run verify` checks the generated Hermes and OpenClaw surfaces, then performs sandbox installs into temporary Hermes and Codex homes so you can catch packaging drift before release.
+
 ## Safety and IP
 
 The public Hermes surface intentionally refuses `Compulsion`, `Dominate Monster`, `Dominate Person`, `Geas`, and `Modify Memory`.

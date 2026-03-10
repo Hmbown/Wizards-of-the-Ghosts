@@ -1,5 +1,6 @@
 {
   "name": "wizardsoftheghosts",
+  "version": "0.1.0",
   "private": true,
   "description": "An unofficial fan grimoire of Hermes Agent skills built from fantasy spell and skill names.",
   "license": "CC0-1.0",
@@ -30,6 +31,8 @@
     "expand:blueprints": "node scripts/expand-blueprints.mjs",
     "build:skills": "node scripts/render-skills.mjs",
     "export:linear": "node scripts/export-linear-seed.mjs",
+    "verify": "node scripts/verify-release.mjs",
+    "release:check": "npm run expand:blueprints && npm run build:skills && npm run export:linear && npm run verify",
     "install:codex-skills": "node scripts/install-codex-skills.mjs",
     "install:hermes-skills": "node scripts/install-hermes-skills.mjs",
     "bootstrap": "node scripts/sync-canon.mjs && node scripts/expand-blueprints.mjs && node scripts/render-skills.mjs && node scripts/export-linear-seed.mjs"
