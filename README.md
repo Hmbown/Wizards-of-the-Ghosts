@@ -84,14 +84,14 @@ Need the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse lay
 
 | If you want to... | Start here | Hermes shelf |
 | --- | --- | --- |
-| Figure out what you're looking at | `Detect Magic`, `Identify`, `Investigation`, `Comprehend Languages` | [Investigation and Preparation (28)](GRIMOIRE.md#investigation-and-preparation) |
-| Change the system without a battleaxe | `Mage Hand`, `Sleight of Hand`, `Unseen Servant`, `Awaken` | [Actions, Access, and Automation (19)](GRIMOIRE.md#actions-access-and-automation) |
-| Light up the black box | `Dancing Lights`, `Light`, `Glyph of Warding`, `Scrying` | [Monitoring and Protection (17)](GRIMOIRE.md#monitoring-and-protection) |
-| Get the right message to the right place | `Message`, `Sending`, `Dream`, `Magic Mouth` | [Messaging and Coordination (9)](GRIMOIRE.md#messaging-and-coordination) |
-| Stop the bleeding | `Cure Wounds`, `Mending`, `Feather Fall`, `Animal Handling` | [Repair and Recovery (13)](GRIMOIRE.md#repair-and-recovery) |
-| Mock it before you ship it | `Minor Illusion`, `Major Image`, `Deception`, `Programmed Illusion` | [Simulation and Staging (8)](GRIMOIRE.md#simulation-and-staging) |
-| Handle people with care | `Calm Emotions`, `Heroism`, `Fear`, `Plant Growth` | [Influence and Behavior (18)](GRIMOIRE.md#influence-and-behavior) |
-| Box in blast radius | `Forcecage`, `Blindness/Deafness`, `Feeblemind`, `Power Word Stun` | [Containment and Intervention (10)](GRIMOIRE.md#containment-and-intervention) |
+| Figure out what you're looking at | [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) | [Investigation and Preparation (28)](GRIMOIRE.md#investigation-and-preparation) |
+| Change the system without a battleaxe | [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md), [Sleight of Hand](generated/hermes/actions-access-and-automation/sleight-of-hand/SKILL.md), [Unseen Servant](generated/hermes/actions-access-and-automation/unseen-servant/SKILL.md), [Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md) | [Actions, Access, and Automation (19)](GRIMOIRE.md#actions-access-and-automation) |
+| Light up the black box | [Dancing Lights](generated/hermes/monitoring-and-protection/dancing-lights/SKILL.md), [Light](generated/hermes/monitoring-and-protection/light/SKILL.md), [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md), [Scrying](generated/hermes/monitoring-and-protection/scrying/SKILL.md) | [Monitoring and Protection (17)](GRIMOIRE.md#monitoring-and-protection) |
+| Get the right message to the right place | [Message](generated/hermes/messaging-and-coordination/message/SKILL.md), [Sending](generated/hermes/messaging-and-coordination/sending/SKILL.md), [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md), [Magic Mouth](generated/hermes/messaging-and-coordination/magic-mouth/SKILL.md) | [Messaging and Coordination (9)](GRIMOIRE.md#messaging-and-coordination) |
+| Stop the bleeding | [Cure Wounds](generated/hermes/repair-and-recovery/cure-wounds/SKILL.md), [Mending](generated/hermes/repair-and-recovery/mending/SKILL.md), [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md), [Animal Handling](generated/hermes/repair-and-recovery/animal-handling/SKILL.md) | [Repair and Recovery (13)](GRIMOIRE.md#repair-and-recovery) |
+| Mock it before you ship it | [Minor Illusion](generated/hermes/simulation-and-staging/minor-illusion/SKILL.md), [Major Image](generated/hermes/simulation-and-staging/major-image/SKILL.md), [Deception](generated/hermes/simulation-and-staging/deception/SKILL.md), [Programmed Illusion](generated/hermes/simulation-and-staging/programmed-illusion/SKILL.md) | [Simulation and Staging (8)](GRIMOIRE.md#simulation-and-staging) |
+| Handle people with care | [Calm Emotions](generated/hermes/influence-and-behavior/calm-emotions/SKILL.md), [Heroism](generated/hermes/influence-and-behavior/heroism/SKILL.md), [Fear](generated/hermes/influence-and-behavior/fear/SKILL.md), [Plant Growth](generated/hermes/influence-and-behavior/plant-growth/SKILL.md) | [Influence and Behavior (18)](GRIMOIRE.md#influence-and-behavior) |
+| Box in blast radius | [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md), [Blindness/Deafness](generated/hermes/containment-and-intervention/blindness-deafness/SKILL.md), [Feeblemind](generated/hermes/containment-and-intervention/feeblemind/SKILL.md), [Power Word Stun](generated/hermes/containment-and-intervention/power-word-stun/SKILL.md) | [Containment and Intervention (10)](GRIMOIRE.md#containment-and-intervention) |
 
 ## Browse Deeper
 
@@ -139,3 +139,4 @@ The public Hermes surface intentionally refuses `Compulsion`, `Dominate Monster`
 Original code and writing in this repo are released under `CC0-1.0`. That does not grant rights in Wizards of the Coast IP, trademarks, logos, artwork, or official rules text. This repo stays free, unofficial, and clearly separate from any official Wizards product line.
 
 See [LEGAL.md](LEGAL.md) for the current fan-content and IP posture.
+

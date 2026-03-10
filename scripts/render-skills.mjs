@@ -475,7 +475,7 @@ function renderHermesEntryReference(entry, categoryByEntrySlug) {
     throw new Error(`Missing Hermes category for ${entry.slug}`);
   }
 
-  return `\`${entry.name}\``;
+  return markdownLink(entry.name, hermesSkillDocPath(categorySlug, entry.slug));
 }
 
 function renderFeaturedShelf(entries, categoryByEntrySlug) {
