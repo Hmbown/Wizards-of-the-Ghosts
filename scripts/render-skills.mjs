@@ -488,6 +488,75 @@ function renderFeaturedShelf(entries, categoryByEntrySlug) {
   );
 }
 
+function renderAsciiBanner(hermesCount) {
+  return [
+    "```",
+    "    ╔═══════════════════════════════════════════════════╗",
+    "    ║                                                   ║",
+    "    ║    W I Z A R D S   O F   T H E   G H O S T S     ║",
+    "    ║                                                   ║",
+    `    ║      ${String(hermesCount).padStart(3)} spells for the ghost in the machine      ║`,
+    "    ║                                                   ║",
+    "    ╚═══════════════════════════════════════════════════╝",
+    "```"
+  ].join("\n");
+}
+
+function renderSpellCircle(categories) {
+  const catMap = new Map(categories.map((c) => [c.slug, c]));
+  const inv = catMap.get("investigation-and-preparation");
+  const act = catMap.get("actions-access-and-automation");
+  const mon = catMap.get("monitoring-and-protection");
+  const msg = catMap.get("messaging-and-coordination");
+  const rep = catMap.get("repair-and-recovery");
+  const sim = catMap.get("simulation-and-staging");
+  const inf = catMap.get("influence-and-behavior");
+  const con = catMap.get("containment-and-intervention");
+
+  return [
+    "```",
+    `                  Investigation (${inv.entry_slugs.length})`,
+    "                       ╱    ╲",
+    `          Simulation  ╱      ╲  Actions`,
+    `              (${sim.entry_slugs.length})   ╱        ╲   (${act.entry_slugs.length})`,
+    "                    ╱          ╲",
+    `       Influence ──<    GHOST    >── Monitoring`,
+    `           (${inf.entry_slugs.length})    ╲   IN THE  ╱      (${mon.entry_slugs.length})`,
+    `                    ╲ MACHINE  ╱`,
+    `        Containment  ╲        ╱  Messaging`,
+    `              (${con.entry_slugs.length})   ╲      ╱    (${msg.entry_slugs.length})`,
+    "                       ╲    ╱",
+    `                     Repair (${rep.entry_slugs.length})`,
+    "```"
+  ].join("\n");
+}
+
+function renderSpellCards(entries, categoryByEntrySlug) {
+  const rows = [];
+  for (let i = 0; i < entries.length; i += 2) {
+    const left = entries[i];
+    const right = entries[i + 1];
+
+    const card = (entry) => {
+      const emoji = entry.openclaw?.emoji || "";
+      const catSlug = categoryByEntrySlug.get(entry.slug);
+      const link = markdownLink(entry.name, hermesSkillDocPath(catSlug, entry.slug));
+      return `${emoji} **${link}** — ${entry.tagline}`;
+    };
+
+    if (right) {
+      rows.push(`| ${card(left)} | ${card(right)} |`);
+    } else {
+      rows.push(`| ${card(left)} | |`);
+    }
+  }
+  return [
+    "| | |",
+    "|---|---|",
+    ...rows
+  ].join("\n");
+}
+
 function renderReadmeBrowseTable(browsePaths) {
   return [
     "| If you want to... | Start here | Hermes shelf |",
@@ -572,11 +641,13 @@ function renderReadme(blueprints, canon) {
   return [
     renderRootDocPreamble(),
     "",
-    "# Wizards of the Ghosts",
+    renderAsciiBanner(discovery.hermesCount),
     "",
     "Unofficial Hermes Agent skill pack built from fantasy spell and skill names.",
     "",
     "Not affiliated with or endorsed by Wizards of the Coast.",
+    "",
+    renderSpellCircle(discovery.hermesSurface.categories),
     "",
     "`wizardsoftheghosts` turns public fifth-edition spell and skill names into a product-shaped Hermes skill pack for investigation, automation, monitoring, messaging, repair, staging, and tightly scoped intervention.",
     "",
@@ -610,6 +681,8 @@ function renderReadme(blueprints, canon) {
     `- public low-risk Hermes surface with \`${discovery.refusedCount}\` refused coercion and memory spells kept off release`,
     "",
     "## Best First Skills",
+    "",
+    renderSpellCards(discovery.featuredEntries, discovery.categoryByEntrySlug),
     "",
     ...renderFeaturedShelf(discovery.featuredEntries, discovery.categoryByEntrySlug),
     "",
