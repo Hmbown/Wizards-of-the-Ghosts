@@ -141,12 +141,12 @@ def validate_workspace(repo_root: Path) -> dict[str, Any]:
     for key, rel_path in REQUIRED_DSPY_FILES.items():
         path = paths[key]
         if not path.exists():
-            missing.append(rel_path.name)
+            missing.append(rel_path)
             continue
         try:
             parsed[key] = load_jsonl(path) if path.suffix == ".jsonl" else load_json(path)
         except Exception as exc:  # noqa: BLE001
-            errors.append(f"{rel_path.name}: {exc}")
+            errors.append(f"{rel_path}: {exc}")
 
     dataset_counts = {
         "spells_master_rows": len(parsed.get("spells_master", [])),

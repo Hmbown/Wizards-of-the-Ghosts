@@ -37,6 +37,7 @@
       }
     ],
     "human_review": {
+      "required": false,
       "checklist": [
         "If the request touches romance, money, employment, education, or other power imbalances, confirm the draft stays truthful, non-coercive, and explicitly fit for human review before use."
       ]
