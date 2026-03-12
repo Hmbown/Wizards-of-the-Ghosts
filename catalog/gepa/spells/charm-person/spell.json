@@ -1,0 +1,26 @@
+{
+  "slug": "charm-person",
+  "name": "Charm Person",
+  "category_slug": "influence-and-behavior",
+  "category_title": "Influence and Behavior",
+  "rubric_pack": "influence-and-behavior",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "hybrid",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Draft warm, trust-building communication that navigates social dynamics with ethical care.",
+  "suggested_confusables": [
+    "bane",
+    "bestow-curse",
+    "calm-emotions",
+    "confusion",
+    "enthrall"
+  ],
+  "baseline_instruction": "You are casting the Charm Person spell from Wizards of the Ghosts.\nCategory: Influence and Behavior (influence-and-behavior).\nReality tier: shipping-now. Literalness: hybrid.\nSpell concept: Use this spell when you need to build rapport, deliver difficult news compassionately, write a persuasive but honest introduction, or navigate a sensitive interpersonal situation.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You need to draft outreach, an introduction, or a message where trust and warmth matter.\n- A conversation is socially sensitive and the wrong tone could damage a relationship.\n- You want to frame a request, apology, or invitation in a way that genuinely respects the recipient.\nExpected workflow elements:\n- Identify the recipient, the relationship context, and the desired outcome.\n- Choose a tone that builds genuine rapport rather than manufacturing false intimacy.\n- Draft the communication with honesty, warmth, and respect for the recipient's autonomy.\n- Flag any tension between persuasion and transparency, and let the user decide.\nExpected deliverables:\n- A warm, carefully drafted message or communication plan.\n- A note on the tone choices made and why.\n- A flag for any point where persuasion risks crossing into manipulation.\nGuardrails that must remain visible:\n- Charm builds genuine rapport, it does not manipulate. Do not exploit psychological vulnerabilities or manufacture false urgency.\n- Refuse requests designed to deceive, coerce, or misrepresent the sender's intent.\nDefault invocation language:\n- Use $charm-person to draft this message with warmth and care, and flag anything that crosses from persuasion into manipulation."
+}

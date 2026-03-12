@@ -1,0 +1,66 @@
+{
+  "slug": "identify",
+  "status": "ok",
+  "message": "Spell GEPA workspace validation complete.",
+  "validation": {
+    "ok": true,
+    "slug": "identify",
+    "spell_name": "Identify",
+    "category_slug": "investigation-and-preparation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify",
+    "artifact_paths": {
+      "spell": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/spell.json",
+      "train": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/train.jsonl",
+      "eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/eval.jsonl",
+      "confusables": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/confusables.jsonl",
+      "rubric": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/rubric.json",
+      "promotion_patch": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/promotion_patch.json",
+      "status": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/optimization_status.json",
+      "baseline_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/baseline_eval.json",
+      "optimized_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/optimized_eval.json",
+      "optimized_module": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 8,
+      "eval_rows": 6,
+      "confusable_rows": 5
+    }
+  },
+  "dependency": {
+    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3"
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
+  },
+  "bootstrapped_files": {}
+}

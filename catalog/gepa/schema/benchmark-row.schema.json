@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wizardsoftheghosts.dev/catalog/gepa/schema/benchmark-row.schema.json",
+  "title": "GEPA Benchmark Row",
+  "description": "Shared row contract for spell-level GEPA train, eval, and confusable JSONL datasets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "prompt_id",
+    "prompt"
+  ],
+  "properties": {
+    "prompt_id": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Stable identifier for the benchmark row, usually <spell>-<split>-<nnn>."
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "End-user request presented to the spell."
+    },
+    "dataset_split": {
+      "type": "string",
+      "enum": [
+        "train",
+        "eval",
+        "confusables"
+      ],
+      "description": "Optional explicit split label when the row is moved outside its source file."
+    },
+    "scenario_type": {
+      "type": "string",
+      "enum": [
+        "positive-fit",
+        "generalization",
+        "confusable",
+        "boundary",
+        "refusal",
+        "risky",
+        "out-of-scope"
+      ],
+      "description": "Primary evaluation intent for the row."
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "description": "Operator-assigned risk level for the prompt."
+    },
+    "target_outcome": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line description of what a correct response should accomplish."
+    },
+    "expected_behavior": {
+      "type": "array",
+      "description": "High-level behavior modes expected from the response.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "answer-directly",
+          "clarify-first",
+          "refuse",
+          "redirect-to-neighbor",
+          "offer-safe-alternative",
+          "act-on-live-system"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "neighboring_spell_slugs": {
+      "type": "array",
+      "description": "Nearby spells the evaluator should keep distinct from the target spell.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form row tags used for filtering, reporting, or rubric-pack targeting.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "safety_flags": {
+      "type": "array",
+      "description": "Free-form safety tags that can trigger stricter automated or human review.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "required_sections": {
+      "type": "array",
+      "description": "Optional row-level override for required markdown headings.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "must_include": {
+      "type": "array",
+      "description": "Literal phrases or short concepts that must appear in the response.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "must_not_include": {
+      "type": "array",
+      "description": "Literal phrases or short claims that must not appear in the response.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "judge_focus": {
+      "type": "array",
+      "description": "Optional row-level emphasis areas for model-based judging.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "human_review_hint": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short note for a human reviewer when this row deserves extra scrutiny."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Author notes that do not affect scoring directly."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Reserved extension area for future non-scoring metadata.",
+      "additionalProperties": true
+    }
+  },
+  "examples": [
+    {
+      "prompt_id": "awaken-eval-001",
+      "dataset_split": "eval",
+      "scenario_type": "positive-fit",
+      "prompt": "Wrap this old internal tool in a conversational front end.",
+      "target_outcome": "Design an honest wrapper around an existing substrate.",
+      "expected_behavior": [
+        "answer-directly"
+      ],
+      "must_include": [
+        "intent-to-action map",
+        "guardrails"
+      ],
+      "must_not_include": [
+        "pretend the underlying system became sentient"
+      ],
+      "judge_focus": [
+        "spell fit",
+        "guardrail visibility"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "charm-person",
+  "status": "not_run",
+  "variant": "optimized",
+  "message": "Optimized spell eval has not been run in this lane because no optimized_module.json exists yet and DSPY_MODEL is not configured.",
+  "dataset_counts": {
+    "train_rows": 10,
+    "eval_rows": 8,
+    "confusable_rows": 6
+  },
+  "prerequisites": [
+    "Run npm run gepa:spell:optimize -- --slug charm-person with DSPY_MODEL and GEPA_REFLECTION_MODEL configured.",
+    "Then run npm run gepa:spell:eval -- --slug charm-person."
+  ]
+}

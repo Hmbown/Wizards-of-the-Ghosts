@@ -50,7 +50,7 @@ npm run install:hermes-skills
 
 - `122` Hermes skills drawn from `127` public canon names (`109` spells, `18` skills)
 - `8` Hermes shelves for progressive discovery instead of one giant list
-- `8` featured entry points plus `8` intent-driven browse paths on GitHub
+- `9` featured entry points plus `8` intent-driven browse paths on GitHub
 - public low-risk Hermes surface with `5` refused coercion and memory spells kept off release
 
 ## Best First Skills
@@ -59,8 +59,11 @@ npm run install:hermes-skills
 |---|---|
 | 🔮 **[Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md)** — Surface hidden AI affordances, agents, automations, and tool hooks before acting. | 🔍 **[Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md)** — Explain what a mysterious file, service, workflow, or artifact actually does. |
 | 🗺️ **[Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)** — Translate code, jargon, protocol surfaces, or human language into operational meaning. | 🕵️ **[Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md)** — Follow evidence through a system until the hidden mechanism becomes legible. |
-| 🖐️ **[Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md)** — Manipulate files, records, and lightweight system state with precision and minimal blast radius. | 🛡️ **[Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md)** — Set monitors, watches, or trigger conditions that alert when a boundary is crossed. |
-| 🌙 **[Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md)** — Deliver the briefing before the recipient wakes up needing it. | 🪂 **[Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md)** — Turn a hard crash into a controlled descent. |
+| 🖐️ **[Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md)** — Manipulate files, records, and lightweight system state with precision and minimal blast radius. | 🔒 **[Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md)** — Contain untrusted code, agents, or operations inside a tested cage before anything leaves it. |
+| 🛡️ **[Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md)** — Set monitors, watches, or trigger conditions that alert when a boundary is crossed. | 🌙 **[Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md)** — Deliver the briefing before the recipient wakes up needing it. |
+| 🪂 **[Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md)** — Turn a hard crash into a controlled descent. | |
+
+Recent GEPA upgrade: [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) was promoted after a Codex-backed spell-level run improved full eval from `61.8%` to `89.3%` (`+27.5pp`). The upgraded copy is sharper about tested containment boundaries, outside-the-cage observation, and explicit release conditions before anything descends.
 
 Need badges, browse paths, or the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse layer.
 
@@ -115,6 +118,51 @@ npm run verify
 ```
 
 `npm run verify` checks the generated Hermes and OpenClaw surfaces, then performs sandbox installs into temporary Hermes and Codex homes so you can catch packaging drift before release.
+
+## DSPy Router
+
+The repo ships two Hermes routing paths under [`catalog/dspy/`](catalog/dspy/): a deterministic lexical baseline and an optional DSPy category router.
+
+- Current held-out result: `95/104` = `91.3%` with the Codex-backed DSPy router
+- Baseline comparison: `82/104` = `78.8%` for the lexical router, a `+12.5pp` lift for DSPy
+- Current scope: `8`-way Hermes category routing from plain-English prompts into the right shelf
+- Optimized prompt core: `8` bootstrapped few-shot demos selected by DSPy
+
+This makes the pack materially easier to use from plain language. You no longer need to know the spell name first to land on the right shelf.
+
+Spells that became more practically valuable once plain-English routing started working:
+
+| | |
+|---|---|
+| 🌅 **[Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md)** — Teach an old machine to answer back. | ⚡ **[Animate Objects](generated/hermes/actions-access-and-automation/animate-objects/SKILL.md)** — Give agency to passive data by attaching triggers, watchers, and autonomous update logic. |
+| 🚪 **[Dimension Door](generated/hermes/actions-access-and-automation/dimension-door/SKILL.md)** — Jump cleanly between two known contexts without dragging the whole room. | 🔮 **[Foresight](generated/hermes/investigation-and-preparation/foresight/SKILL.md)** — Estimate likely outcomes before committing to a plan, change, or launch. |
+| ⚜️ **[Symbol](generated/hermes/monitoring-and-protection/symbol/SKILL.md)** — Mark a resource with a named sigil that triggers automatic policy enforcement when conditions are met. | 📡 **[Project Image](generated/hermes/simulation-and-staging/project-image/SKILL.md)** — Project a version of yourself into a place you cannot physically be. |
+
+Set up the Python side in a repo-local virtualenv:
+
+```bash
+uv venv .venv
+uv pip install --python .venv/bin/python -r requirements-dspy.txt
+```
+
+Baseline-only flow:
+
+```bash
+npm run dspy:validate
+npm run dspy:baseline
+```
+
+Codex-backed DSPy flow:
+
+```bash
+export DSPY_MODEL=codex-exec/default
+export DSPY_TEMPERATURE=0
+export DSPY_MAX_TOKENS=256
+
+bash scripts/dspy_full_run.sh
+```
+
+This shells out to local `codex exec` for each DSPy inference. It remains slower than an OpenAI-compatible HTTP backend, but the full compile+eval path is now proven practical as an unattended background job. See [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md) for artifact details and the exact runbook.
 
 ## Safety and IP
 

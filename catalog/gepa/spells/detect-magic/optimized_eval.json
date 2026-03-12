@@ -1,0 +1,1720 @@
+{
+  "slug": "detect-magic",
+  "status": "evaluated",
+  "variant": "optimized",
+  "backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "512"
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "runtime": {
+        "requested_transport": "cli",
+        "preferred_transport": "cli",
+        "available_transports": [
+          "cli",
+          "mcp"
+        ],
+        "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+        "mcp_sdk_available": true,
+        "credential_source": "/Users/hunterbown/.codex/auth.json",
+        "codex_home": "/Users/hunterbown/.codex",
+        "auth_file": "/Users/hunterbown/.codex/auth.json",
+        "models_cache": "/Users/hunterbown/.codex/models_cache.json",
+        "default_model": "gpt-5.4",
+        "available_models": [
+          "gpt-5.4",
+          "gpt-5.3-codex",
+          "gpt-5.2-codex",
+          "gpt-5.2",
+          "gpt-5.1-codex-max",
+          "gpt-5.1-codex",
+          "gpt-5.1",
+          "gpt-5-codex",
+          "gpt-5",
+          "gpt-5.1-codex-mini",
+          "gpt-5-codex-mini"
+        ]
+      },
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+      "mcp_sdk_available": true,
+      "credential_source": "/Users/hunterbown/.codex/auth.json",
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "thread_id": "019ce286-c421-7cd3-a9fd-6f173da87724",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "usage": {
+        "prompt_tokens": 20783,
+        "completion_tokens": 5,
+        "total_tokens": 20788,
+        "prompt_tokens_details": {
+          "cached_tokens": 19840
+        }
+      },
+      "sample_response": "ready"
+    }
+  },
+  "dependency": {
+    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": true
+  },
+  "baseline_average_score": 0.7102272727272728,
+  "optimized_average_score": 0.6448863636363636,
+  "delta": -0.06534090909090917,
+  "total_examples": 11,
+  "average_score": 0.6448863636363636,
+  "examples": [
+    {
+      "prompt_id": "detect-magic-eval-001",
+      "prompt": "Before we reorganize this customer-success workspace, scan it for Slack bots, queued follow-ups, MCP configs, and hidden schedulers that could still send messages if we touch the wrong folder.",
+      "score": 0.958333,
+      "feedback": [
+        "Missing required content: message-sending hooks."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.916667,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.666667,
+            "feedback": [
+              "Missing required content: message-sending hooks."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. Prioritize anything that can emit or queue customer-facing messages: `README`, setup docs, runbooks, package manifests, task runners, `.env.example`, `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`, CI folders, and deployment or infra directories.\n\nFrom there, trace outward to the message-bearing surfaces the request names directly: Slack bots, queued follow-ups, MCP configs, hidden schedulers, notification hooks, webhook consumers, retry loops, startup hooks, and any model providers or routing layers that may sit behind agent or bot behavior.\n\n## Workflow\n\n1. Inventory entrypoints that declare how the workspace runs.\n   Confirmed: docs, manifests, task runners, env templates, scripts, agent folders, CI/CD, and infra paths are the first pass.\n2. Trace message-sending paths.\n   Look for Slack SDKs, bot tokens, webhook URLs, notification clients, outbound message helpers, follow-up jobs, and queue producers/consumers.\n3. Trace scheduler and deferred-execution surfaces.\n   Look for cron specs, scheduled GitHub Actions, queue workers, background jobs, daemons, retry loops, delayed-task libraries, and startup hooks.\n4. Trace MCP and agent control surfaces.\n   Look for MCP configs, tool registries, function-calling schemas, plugin loaders, shell bridges, browser tools, retrieval connectors, and model providers.\n5. Mark fan-out points before any reorganization.\n   Call out files or folders where one edit could affect multiple environments, multiple queues, or multiple send paths.\n6. Return a compact capability map with three buckets:\n   Confirmed: mechanisms directly evidenced in code or config.\n   Inferred, not confirmed: behavior suggested by naming, dependencies, or partial config.\n   Unknown from repo evidence: behavior that may live in CI settings, dashboards, secrets managers, or external control planes.\n\n## Deliverables\n\nCapability inventory:\nConfirmed: visible bot frameworks, Slack integrations, queued follow-up machinery, MCP declarations, schedulers, webhook consumers, notification hooks, and model providers found in repo evidence.\nInferred, not confirmed: likely send paths, delayed jobs, or agent/tool routing implied by dependencies, env vars, or naming without executable proof.\nUnknown from repo evidence: external scheduler definitions, hosted queue settings, Slack app admin config, secrets-backed webhook endpoints, and dormant credentials.\n\nRisk list:\nConfirmed: hidden side effects where a moved folder could break imports, change startup order, orphan workers, or redirect message templates.\nInferred, not confirmed: untrusted execution paths through plugin loaders, shell bridges, retry workers, or CI-triggered follow-ups.\nUnknown from repo evidence: external message automations, scheduled jobs, or notification hooks not represented in code.\n\nFollow-up skills / next actions:\n`$identify` for any script, worker, or config whose purpose is still murky.\n`$zone-of-truth` for a high-integrity evidence pass on anything that looks like a send path.\n`$glyph-of-warding` to place tripwires on risky folders, queues, or message hooks before reorganization.\n\n## Guardrails\n\nDo not claim magic where there is only speculation. A filename, dependency, binary, or env var can suggest capability; it does not prove the repo ships or runs that mechanism as first-party logic.\n\nDo not execute risky hooks, automations, Slack sends, queued jobs, schedulers, webhooks, pager actions, billing mutations, or message sends just to prove they exist. Distinguish proof from suspicion every time:\nConfirmed: directly evidenced behavior.\nInferred, not confirmed: partial or indirect evidence.\nUnknown from repo evidence: not provable from the workspace alone.\n\n## Reality Boundary\n\nThis spell can map code-visible and config-visible mechanisms: docs, manifests, scripts, MCP declarations, queue code, schedulers, notification paths, and model providers present in the repo.\n\nIt cannot prove behavior that lives outside the workspace unless that behavior is represented here. External dashboards, CI settings, secrets managers, Slack app configuration, hosted schedulers, control planes, and dormant credentials remain outside proof unless the repo contains direct evidence of them."
+    },
+    {
+      "prompt_id": "detect-magic-eval-002",
+      "prompt": "A vendor integration bundle includes Terraform, Lambda handlers, and queue policies. Use Detect Magic to show us where hidden retries, outbound callbacks, and privilege-bearing hooks might live before architecture review.",
+      "score": 1.0,
+      "feedback": [
+        "Trajectory scored 1.000 and satisfied the deterministic rubric checks."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. Prioritize Terraform roots and modules, Lambda handlers and their trigger wiring, queue policies and redrive settings, env templates, CI/deploy definitions, and any docs or runbooks that describe integration behavior. The capability map should specifically hunt for hidden retries, outbound callbacks, privilege-bearing hooks, deploy hooks, rollback hooks, and message-sending paths before architecture review.\n\n## Workflow\n1. Inventory the visible entrypoints:\n   - `README`, setup docs, runbooks, architecture notes\n   - `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners\n   - `.env.example` and other env templates\n   - `scripts/`, `bin/`, `server/`, `app/`, `infra/`, `terraform/`, `lambda/`, `functions/`\n   - `.github/workflows/` and other CI/CD folders\n\n2. Trace the infrastructure aura:\n   - Terraform providers, modules, variables, backends, workspaces, and remote-state links\n   - IAM roles, policies, assume-role paths, service principals, and privilege-bearing hooks\n   - Lambda event sources, destinations, DLQs, retry settings, concurrency controls, and startup hooks\n   - Queue policies, redrive policies, visibility timeouts, retry loops, schedulers, and worker paths\n\n3. Trace outward to side-effect surfaces:\n   - outbound callbacks, webhooks, notification hooks, and message-sending paths\n   - deploy hooks and rollback hooks in CI, release scripts, or infra apply wrappers\n   - paging hooks or billing-impact hooks if repo evidence suggests they exist\n   - shell execution bridges, plugin loaders, function registries, or other untrusted execution paths\n   - model providers only if the bundle contains AI tooling or agent surfaces\n\n4. Mark the dangerous edges:\n   - surprising affordances\n   - fan-out points where one edited file affects many environments or workflows\n   - missing observability around retries, callbacks, role assumption, or async failure handling\n   - approval bypasses, dangerous flags, sandbox escapes, or policy overrides\n\n5. Return the capability map with explicit epistemic labels:\n   - `Confirmed: ...`\n   - `Inferred, not confirmed: ...`\n   - `Unknown from repo evidence: ...`\n\n## Deliverables\n- A concise capability inventory covering:\n  - confirmed retry mechanisms\n  - confirmed outbound callback paths\n  - confirmed privilege-bearing hooks\n  - inferred orchestration or side-effect surfaces that are present in structure but not yet proven by code path\n- A risk list covering:\n  - hidden side effects from async retries, DLQ replay, or event fan-out\n  - outbound callbacks or webhook sends triggered indirectly\n  - excessive IAM scope, trust-chain expansion, or cross-environment blast radius\n  - weak observability where failure, replay, or escalation could happen silently\n- A short next-action spell list:\n  - `$identify` for opaque handlers, policies, or Terraform modules\n  - `$zone-of-truth` for evidence-backed review of high-risk claims\n  - `$glyph-of-warding` for tripwires on queues, retry storms, callback sends, or role-assumption events\n\n## Guardrails\n- Do not claim magic where there is only speculation.\n- Separate confirmed mechanisms from inference every time.\n- Use the exact label `inferred, not confirmed` when evidence is partial or indirect.\n- Do not imply a filename alone proves behavior.\n- Do not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n- Treat binaries, package artifacts, and environment remnants as hints only; they may suggest tooling is installed, not that the repo ships that capability as first-party logic.\n\n## Reality Boundary\nThis spell can map code-visible and config-visible mechanisms: Terraform declarations, Lambda wiring, queue semantics, IAM policy shape, CI hooks, and repository-defined callback or retry paths. It cannot prove behavior that lives only in external dashboards, cloud control planes, CI settings, secrets managers, vendor consoles, or dormant credentials unless that behavior is represented in the repo. External integrations may be strongly suggested by code structure, but without direct repo evidence they remain `inferred, not confirmed`."
+    },
+    {
+      "prompt_id": "detect-magic-eval-003",
+      "prompt": "Search this repo for hidden automation and wire up alerts whenever one changes so we never get surprised again.",
+      "score": 0.802083,
+      "feedback": [
+        "Missing required content: better fit.",
+        "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative.",
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.770833,
+        "pack_score": 0.833333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.75,
+            "feedback": [
+              "Missing required content: better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.333333,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row safety flags trigger human review",
+          "row risk level triggers human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the loud sigils first, then trace the faint aura into hidden execution surfaces.\n\nPriority surfaces for this request:\n- entrypoints: `README`, setup docs, runbooks, manifests, task runners, env templates\n- automation roots: `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`, infra folders, `.github/workflows/`\n- hidden side effects: model providers, routing layers, tool registries, MCP declarations, shell execution bridges, webhook paths, schedulers, queues, workers, startup hooks, retry loops\n- surprise vectors: deploy hooks, rollback hooks, notification hooks, approval bypasses, dangerous flags, sandbox escapes, role or policy overrides\n\nThe goal is a capability map of where automation and side effects actually live, then a narrow alert plan around those confirmed fan-out points.\n\n## Workflow\n\n1. Inventory obvious entrypoints.\n   - Read docs, manifests, task runners, env templates, CI folders, install surfaces, and deployment folders.\n   - Mark any files that define commands, generated outputs, sync paths, or cross-environment installs.\n\n2. Trace hidden capability surfaces outward from those entrypoints.\n   - Search for model providers explicitly if any AI tooling, agents, SDKs, or provider env vars appear.\n   - Trace tool registries, function schemas, MCP config, plugin loaders, shell bridges, browser tooling, and retrieval connectors.\n   - Trace background automation: cron, schedulers, queues, workers, daemons, startup hooks, retry loops.\n   - Trace side-effect paths: webhooks, notification senders, deploy hooks, rollback hooks, paging hooks if present, billing-impact hooks if present.\n\n3. Mark control-plane danger.\n   - Look for approval bypasses, trust overrides, dangerous flags, sandbox escape paths, direct shell execution, and role or policy bypasses.\n   - Call out fan-out points where one edited file changes many generated artifacts, environments, or install targets.\n\n4. Separate proof from suspicion.\n   - `Confirmed:` behavior supported by code or config logic.\n   - `Inferred, not confirmed:` behavior suggested by naming, imports, or artifact shape.\n   - `Unknown from repo evidence:` behavior that may exist only in CI settings, dashboards, secrets managers, or external control planes.\n\n5. Define the warding boundary after the map is known.\n   - Place alerts on the smallest high-leverage set of confirmed automation roots: workflow files, renderer scripts, install scripts, agent or MCP registries, deployment configs, and notification/webhook definitions.\n   - Prefer tripwires on change to capability-defining files, not broad alerts on every file mutation.\n\n## Deliverables\n\nCapability inventory:\n- `Confirmed:` a compact map of repo-visible automation roots and the files that define them.\n- `Confirmed:` side-effect surfaces such as generated artifact fan-out, install targets, CI workflows, webhook or notification paths if present.\n- `Inferred, not confirmed:` latent capabilities suggested by dependencies, binaries, env vars, or folder names.\n- `Unknown from repo evidence:` external automations controlled outside the repo.\n\nRisk list:\n- hidden side effects from generated outputs or install scripts affecting multiple runtimes\n- untrusted execution paths through shell bridges, task runners, CI jobs, or startup hooks\n- weak observability where automation exists but no clear alert, audit trail, or owner is visible\n- policy bypass risk where dangerous flags, trust overrides, or approval skips exist\n- surprise fan-out where one source file rewires many environments or workflows\n\nFollow-up skills / next actions:\n- `$glyph-of-warding` to place tripwires on confirmed automation roots and alert on meaningful changes\n- `$identify` for any script, workflow, or config that looks powerful but opaque\n- `$zone-of-truth` for a high-integrity evidence pass before trusting inferred mechanisms\n\n## Guardrails\n\n- Do not claim magic where there is only speculation.\n- Do not treat a filename, dependency, binary, or venv artifact as proof that the repo ships that capability.\n- Do not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n- Keep every assertion labeled as `Confirmed:`, `Inferred, not confirmed:`, or `Unknown from repo evidence:`.\n- Alert wiring should target confirmed boundaries with a clear owner; no noisy tripwires on vague suspicion.\n\n## Reality Boundary\n\nThis spell can map mechanisms visible in code, config, manifests, generated-output paths, and repo-defined workflows. It cannot prove behavior that lives only in external dashboards, CI settings, secrets managers, cloud control planes, Home Assistant, hosted schedulers, or dormant credentials unless that behavior is represented in the repo. The result is a code-and-config-visible capability map, not a claim of complete operational omniscience."
+    },
+    {
+      "prompt_id": "detect-magic-eval-004",
+      "prompt": "Tell me where the magic is around here.",
+      "score": 0.854167,
+      "feedback": [
+        "Missing required content: target surface, scope.",
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.875,
+        "pack_score": 0.833333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: target surface, scope."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. Priority surfaces for \"where the magic is\" are docs and setup paths, package manifests and task runners, env templates, `scripts/` and app folders, generated/install surfaces, CI/CD workflows, infra folders, model providers, tool registries, MCP declarations, webhook paths, background jobs, and any approval bypasses or dangerous flags.\n\n## Workflow\n1. Inventory visible entrypoints: `README`, setup docs, runbooks, `package.json`, `Makefile`, env templates, `scripts/`, `generated/`, install scripts, and provider-facing renderer code.\n2. Trace capability wiring: model providers, SDK imports, routing layers, tool registries, function-calling schemas, MCP config, plugin loaders, shell bridges, browser/retrieval connectors.\n3. Trace side-effect paths: CI/CD workflows, deploy hooks if present, rollback hooks if present, webhook senders/consumers, notification hooks, schedulers, workers, retry loops, startup hooks, and any message-sending paths.\n4. Mark fan-out and danger points: files whose edits affect many generated outputs, runtime install targets, policy bypasses, trust overrides, sandbox escapes, and autonomous scripts.\n5. Return the map with strict epistemic labels:\n   - Confirmed: mechanism directly evidenced in code or config.\n   - Inferred, not confirmed: behavior suggested by structure, naming, or wiring.\n   - Unknown from repo evidence: anything that depends on external dashboards, secrets, runtime state, or off-repo control planes.\n\n## Deliverables\n- Capability inventory:\n  - Confirmed: visible manifests, generators, install surfaces, CI/integration paths, and any explicit model providers or automation entrypoints found in repo evidence.\n  - Inferred, not confirmed: dormant or indirectly referenced agents, hooks, workers, or external service integrations suggested by config shape alone.\n  - Unknown from repo evidence: live credentials, external CI settings, hosted schedulers, secrets-manager wiring, or control-plane behavior not represented in the repo.\n- Risk list:\n  - Hidden side effects in install scripts, render/build pipelines, webhooks, background jobs, and generated-output fan-out.\n  - Untrusted execution paths such as shell bridges, plugin loaders, MCP/tool registries, approval bypasses, dangerous flags, or policy overrides.\n  - Missing observability where automation appears to exist without clear logs, ownership, or test coverage.\n- Follow-up skills / next actions:\n  - `$identify` for any script, config, or generated artifact that looks important but opaque.\n  - `$zone-of-truth` for a source-backed pass on high-risk claims.\n  - `$glyph-of-warding` to add tripwires once risky surfaces or fan-out points are confirmed.\n\n## Guardrails\nDo not claim magic where there is only speculation. A filename, dependency, binary, package, or venv artifact can suggest capability is installed; it does not prove the repo ships or runs that behavior as first-party logic. Do not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n\n## Reality Boundary\nThis spell can map code-visible and config-visible mechanisms: what the repo appears prepared to do, what it explicitly wires, and where side effects may originate. It cannot prove behavior that lives only in external dashboards, CI settings, secrets managers, cloud control planes, hosted schedulers, dormant credentials, or runtime state unless that evidence is present in the repo itself."
+    },
+    {
+      "prompt_id": "detect-magic-eval-005",
+      "prompt": "Audit this workplace-productivity plugin for covert monitoring, remote policy pulls, and auto-execution paths without installing it or hitting the vendor API.",
+      "score": 0.875,
+      "feedback": [
+        "Missing required content: privacy, unknowns.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.75,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: privacy, unknowns."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "scenario type triggers human review",
+          "Do not overclaim surveillance from incomplete source clues.",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. Prioritize plugin manifests, README/setup docs, package manifests, build scripts, extension entrypoints, config files, `.env*` templates, CI workflows, and any `scripts/`, `bin/`, `src/`, `app/`, `server/`, `agents/`, `mcp/`, or updater folders.\n\nThis scan is tuned for three capability classes: covert monitoring, remote policy pulls, and auto-execution paths. The capability map will explicitly look for telemetry collectors, screen/activity observers, remote config or policy fetchers, startup hooks, background workers, schedulers, notification senders, shell bridges, and any trust overrides or silent execution flags. If AI tooling appears anywhere, model providers, routing layers, and tool registries are part of the map.\n\n## Workflow\n\n1. Inventory first-party entrypoints.\n   Confirmed targets to inspect: `README`, install docs, runbooks, `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners, extension/plugin manifests, `.env.example`, and CI/CD files such as `.github/workflows/`.\n\n2. Locate runtime roots and load paths.\n   Confirmed targets to inspect: declared entry files, plugin activation hooks, preload scripts, background/service worker files, startup scripts, and any dynamic import or plugin-loader mechanism.\n\n3. Trace covert monitoring surfaces.\n   Look for permissions, OS APIs, browser/desktop extension scopes, telemetry SDKs, screen/window/input observers, file watchers, clipboard access, notification listeners, presence/activity collectors, and outbound event senders.\n   Confirmed: code paths directly referencing these mechanisms.\n   Inferred, not confirmed: behavior suggested only by dependency names, permissions, or config keys.\n\n4. Trace remote policy pulls.\n   Look for hardcoded domains, remote config endpoints, policy manifests, feature flag clients, update channels, signed config loaders, bootstrap fetches, and retry loops around config refresh.\n   Confirmed: explicit fetch/request code, updater logic, policy schema handling, cache locations.\n   Inferred, not confirmed: remote control capability implied by env vars, vendor SDKs, or dormant endpoint strings without call sites.\n\n5. Trace auto-execution paths.\n   Include install hooks, post-install scripts, activation events, cron/schedulers, queue workers, daemons, startup hooks, login items, background tasks, retry loops, and message/event consumers.\n   Also inspect webhooks, notification hooks, message-sending paths, and any local command execution bridges.\n\n6. Check dangerous control edges.\n   Look for approval bypasses, trust overrides, dangerous flags, sandbox escapes, silent updates, self-modifying config, role/policy bypasses, remote code loading, eval-style execution, and fan-out points where one edited file alters many environments.\n\n7. Return the capability map.\n   Separate every finding into:\n   Confirmed: mechanism evidenced by code/config and reachable call path.\n   Inferred, not confirmed: plausible mechanism with partial or indirect evidence.\n   Unknown from repo evidence: behavior that may live in vendor dashboards, signed remote policy, secrets, control planes, or external CI/runtime settings.\n\n## Deliverables\n\nCapability inventory:\n- A compact map of confirmed monitoring surfaces, remote policy paths, auto-execution paths, outbound network paths, notification/message hooks, and any model providers if AI tooling is present.\n- A second list of `inferred, not confirmed` mechanisms where the repo suggests capability but does not prove runtime behavior.\n- A short `Unknown from repo evidence` section for vendor-side policy, control-plane switches, remote kill switches, dormant credentials, and externally managed rollout logic.\n\nRisk list:\n- Hidden side effects such as background startup, silent update checks, telemetry fan-out, policy refresh on launch, remote feature toggles, and untrusted execution bridges.\n- Dangerous edges such as shell execution, dynamic code loading, plugin loaders, permissive trust flags, weak audit trails, and missing observability around background tasks.\n- Fan-out points where a single manifest, config, loader, or CI hook can affect many users or environments.\n\nFollow-up skills / next actions:\n- `$identify` for any manifest, loader, updater, or watcher file whose function is still opaque.\n- `$zone-of-truth` for a high-integrity pass over the highest-risk findings.\n- `$glyph-of-warding` to define tripwires or monitors after risky surfaces are mapped.\n\n## Guardrails\n\nDo not claim magic where there is only speculation. A filename, dependency, permission, binary, or vendor SDK can suggest capability; it does not prove the repo ships or runs that behavior as first-party logic.\n\nDo not execute risky hooks, automations, installs, webhooks, updater flows, message sends, pager actions, billing mutations, or vendor API calls just to prove they exist. This ritual is read-only and repo-evidence-based.\n\nKeep proof and suspicion distinct:\n- Confirmed: direct code/config evidence with a plausible execution path.\n- Inferred, not confirmed: partial or indirect evidence only.\n- Unknown from repo evidence: requires external validation.\n\n## Reality Boundary\n\nThis spell can map code-visible and config-visible mechanisms: manifests, scripts, entrypoints, loaders, permissions, embedded endpoints, schedulers, webhook consumers, notification hooks, update logic, and other execution surfaces represented in the repo.\n\nIt cannot prove behavior that lives outside the repository unless that behavior is materially represented here. External dashboards, CI settings, secrets managers, vendor control planes, signed remote policy, rollout systems, and dormant credentials remain outside proof unless the repo contains evidence of how they are invoked or constrained."
+    },
+    {
+      "prompt_id": "detect-magic-eval-006",
+      "prompt": "Before we simplify the support-bot stack, scan the repo for tool manifests, background schedulers, and message-sending hooks that could still fire if we rename the wrong package.",
+      "score": 0.916667,
+      "feedback": [
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 0.833333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. Prioritize package and tool manifests, setup docs, task runners, env templates, CI/CD, scheduler definitions, worker entrypoints, notification paths, and model providers so the capability map shows what could still fire after a package rename.\n\n## Workflow\n1. Inventory obvious entrypoints:\n   - `README`, runbooks, setup docs\n   - `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners\n   - `.env.example` and related env templates\n   - `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`\n   - `.github/workflows/`, infra, deploy, and ops folders\n2. Trace hidden capability surfaces outward from those entrypoints:\n   - model providers, SDK imports, provider-routing layers, agent runtimes\n   - tool registries, function-calling schemas, MCP declarations, plugin loaders\n   - shell execution bridges, browser tools, retrieval connectors\n   - background schedulers, cron, queues, workers, daemons, startup hooks, retry loops\n   - message-sending hooks, notification senders, webhooks, event consumers, chat or email dispatch paths\n3. Mark the dangerous seams:\n   - fan-out points where one renamed package could affect many workflows\n   - approval bypasses, dangerous flags, trust overrides, policy bypasses\n   - silent jobs, weak observability, and hidden side effects\n4. Return the capability map with strict evidence labels:\n   - `Confirmed: ...`\n   - `Inferred, not confirmed: ...`\n   - `Unknown from repo evidence: ...`\n\n## Deliverables\n- A concise capability inventory covering:\n  - confirmed tool manifests and runtime entrypoints\n  - confirmed background schedulers and worker surfaces\n  - confirmed message-sending hooks and notification paths\n  - confirmed or referenced model providers\n- A risk list covering:\n  - hidden side effects or untrusted execution paths\n  - package-rename blast radius and dependency fan-out\n  - dormant hooks that may still fire through CI, schedulers, or event consumers\n  - observability gaps that could hide failed or duplicate sends\n- A short follow-up spell list:\n  - `$identify` for any mysterious manifest, script, or worker entrypoint\n  - `$zone-of-truth` for evidence-locked review before the rename\n  - `$glyph-of-warding` to place tripwires on risky message paths or scheduler surfaces after mapping\n\n## Guardrails\n- Do not claim magic where there is only speculation.\n- A filename, dependency, binary, or venv artifact can suggest capability; it does not prove the repo ships or runs that behavior as first-party logic.\n- Separate proof from suspicion every time with explicit labels, including `inferred, not confirmed` where evidence is partial or indirect.\n- Do not execute risky hooks, automations, schedulers, webhooks, message sends, deploys, rollbacks, pager actions, or billing mutations just to prove they exist.\n\n## Reality Boundary\nThis spell can map code-visible and config-visible mechanisms in the repo: manifests, scripts, workflows, hooks, schedulers, provider wiring, and send paths. It cannot prove behavior that lives only in external dashboards, CI settings, secrets managers, control planes, hosted queues, SaaS admin panels, or dormant credentials unless those mechanisms are represented in repo evidence."
+    },
+    {
+      "prompt_id": "detect-magic-confusables-001",
+      "prompt": "This `assistant-routing.yaml` file is in front of me. Explain what it does, what inputs it expects, and which services it touches.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit.",
+        "Included forbidden content: capability inventory."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.6875,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.75,
+            "feedback": [
+              "Missing required content: better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: capability inventory."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the obvious sigil first: `assistant-routing.yaml` itself. Then trace the faint aura outward into the files and services it references.\n\nThis scan prioritizes:\n- route definitions, assistants, policies, and fallback chains\n- expected inputs such as request fields, model selectors, tool schemas, env vars, and headers\n- touched services such as model providers, MCP/tool endpoints, webhook targets, message senders, browser or shell bridges, and any deploy hooks, rollback hooks, paging hooks, or billing-impact hooks if named\n\n## Workflow\n\n1. Inspect `assistant-routing.yaml` directly for top-level keys, schemas, includes, anchors, and comments.\n2. Extract declared inputs:\n   - request fields\n   - route keys\n   - assistant IDs\n   - model selectors\n   - env var references\n   - authentication material names\n3. Trace execution surfaces referenced by the YAML:\n   - model providers\n   - tool registries or function-calling schemas\n   - MCP config or plugin loaders\n   - service URLs, queues, webhooks, notification paths\n   - shell execution bridges, browser tools, retrieval connectors\n4. Check adjacent obvious entrypoints for corroboration:\n   - `README`, setup docs, runbooks\n   - manifests like `package.json`, `pyproject.toml`, `requirements*`, `Makefile`\n   - env templates like `.env.example`\n   - `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`\n   - `.github/workflows/` and infra/deployment folders\n5. Return a compact capability map with three buckets:\n   - `Confirmed: ...`\n   - `Inferred, not confirmed: ...`\n   - `Unknown from repo evidence: ...`\n\n## Deliverables\n\nCapability inventory:\n- Confirmed routing mechanisms defined in `assistant-routing.yaml`\n- Confirmed inputs the file expects, including config fields, env vars, and referenced schemas\n- Confirmed services touched, including model providers and any external APIs or internal service boundaries\n- Inferred fan-out points where one routing change could affect multiple assistants, environments, or workflows\n\nRisk list:\n- Hidden side effects from referenced hooks, automations, or notification paths\n- Untrusted execution paths such as shell bridges, plugin loaders, remote tool calls, or approval bypasses\n- Missing observability where the file routes behavior but does not log, annotate, or expose decisions\n\nFollow-up skills / next actions:\n- `$identify` for any referenced file, route block, or mysterious service stanza\n- `$zone-of-truth` for a line-by-line evidence review of the YAML and its linked artifacts\n- `$glyph-of-warding` if the routing file exposes risky surfaces that need tripwires after inspection\n\n## Guardrails\n\n- Do not claim magic where there is only speculation.\n- Do not imply a filename alone proves behavior.\n- Use explicit labels every time:\n  - `Confirmed: ...`\n  - `Inferred, not confirmed: ...`\n  - `Unknown from repo evidence: ...`\n- Do not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n- Treat dependency artifacts carefully: an SDK, binary, or env var can suggest a capability is available, but that is inferred, not confirmed unless the repo wiring shows it in use.\n\n## Reality Boundary\n\nThis spell can map code-visible and config-visible mechanisms: routing logic, declared inputs, referenced model providers, service endpoints, hooks, and likely side-effect surfaces.\n\nIt cannot prove behavior that lives only outside the repo, such as external dashboards, CI settings, secrets managers, control planes, dormant credentials, or runtime policies, unless those mechanisms are represented in repository evidence."
+    },
+    {
+      "prompt_id": "detect-magic-confusables-002",
+      "prompt": "Add one structured log or request id so we can see which automation path the nightly sync takes.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit, light.",
+        "Included forbidden content: capability inventory."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.625,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: better fit, light."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: capability inventory."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. For this request, prioritize the nightly sync entrypoints and the places where one scheduler or trigger can fan out into multiple automation paths: `README` and runbooks, task manifests, `scripts/`, CI/CD workflows, env templates, and any sync-specific modules.\n\nBecause this is automation work, the capability map should explicitly check for schedulers, webhooks, queues, startup hooks, retry loops, notification paths, and model providers only if AI tooling participates in the sync path. The practical target is to locate the narrowest confirmed choke point where one structured log field or request/run id will reveal which path executed.\n\n## Workflow\n\n1. Inventory obvious entrypoints:\n   - `README`, setup docs, runbooks, and any nightly/sync references\n   - `package.json`, `Makefile`, task runners, cron-like commands, and install scripts\n   - `.env.example` or similar env templates for sync mode switches or log configuration\n   - `scripts/`, `bin/`, `server/`, `app/`, `agents/`, `mcp/`, and CI folders such as `.github/workflows/`\n\n2. Trace the nightly sync outward into hidden capability surfaces:\n   - scheduler origins: cron, CI schedule, daemon startup hooks, workers, queues\n   - path selection logic: flags, env vars, branching orchestration, retry loops\n   - side-effect paths: webhooks, notification hooks, message sends, file writes, external API calls\n   - approval bypasses, trust overrides, dangerous flags, sandbox escapes, or policy bypasses if present\n\n3. Separate evidence levels while mapping the path:\n   - Confirmed: files and code paths that demonstrably participate in the sync\n   - Inferred, not confirmed: likely execution surfaces suggested by naming, imports, or config adjacency\n   - Unknown from repo evidence: runtime wiring that may live in external schedulers, secrets managers, or CI settings\n\n4. Identify the best instrumentation point:\n   - the first shared sync entrypoint\n   - the branch/fan-out function that selects an automation path\n   - the boundary where external calls or writes begin\n   - existing logger initialization or request context propagation, if any\n\n5. Return a compact recommendation for one added marker:\n   - structured log field such as `sync_path`, `job_name`, `trigger_source`, or `run_id`\n   - request/run identifier propagated across the full nightly path where feasible\n\n## Deliverables\n\nCapability inventory:\n- Confirmed: the repo-visible entrypoints that launch or shape the nightly sync path\n- Confirmed: existing logging surfaces, job wrappers, and fan-out points where one edit affects multiple workflows\n- Inferred, not confirmed: hidden scheduler wiring, external cron definitions, CI schedule settings, or queue consumers not fully represented in source\n- Unknown from repo evidence: external dashboards, secrets-injected modes, and dormant credentials that may alter runtime behavior\n\nRisk list:\n- Hidden side effects if the nightly sync fans out into sends, writes, webhooks, or downstream jobs without a shared request id\n- Untrusted execution paths if shell bridges, dynamic task runners, or env-driven script dispatch are involved\n- Missing observability if retries or fallback branches reuse the same log message shape\n- Fan-out risk if one logging change is placed too low and only covers a subset of automation paths\n\nFollow-up skills / next actions:\n- `$identify` for the exact scheduler, workflow file, or sync wrapper once the likely entry artifact is found\n- `$zone-of-truth` for a strict evidence pass on confirmed vs inferred execution paths\n- `$glyph-of-warding` after instrumentation, to watch for nightly sync failures or unexpected path selection\n\n## Guardrails\n\nDo not claim magic where there is only speculation. A filename, package, or workflow stub can suggest an automation surface, but it does not prove that the nightly sync actually runs there.\n\nDo not execute risky hooks, automations, webhooks, message sends, or scheduled jobs just to prove they exist. The scan should map code-visible mechanisms and recommend the safest instrumentation point without activating the workflow.\n\nTreat dependency and environment artifacts carefully: installed tooling can suggest capability, but it does not prove first-party sync behavior. Use `Confirmed:`, `Inferred, not confirmed:`, and `Unknown from repo evidence:` consistently.\n\n## Reality Boundary\n\nThis spell can map code- and config-visible mechanisms for the nightly sync: entrypoints, schedulers represented in source, branch logic, logging surfaces, side-effect boundaries, and likely fan-out points for a request id or structured log field.\n\nIt cannot prove runtime wiring that lives outside the repo. External CI settings, hosted scheduler dashboards, secrets managers, control planes, dormant credentials, or environment-injected behavior remain outside proof unless represented in repo evidence."
+    },
+    {
+      "prompt_id": "detect-magic-confusables-003",
+      "prompt": "Page the on-call engineer if the nightly invoice job skips two runs and include the owning team.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit.",
+        "Included forbidden content: capability inventory.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.5625,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.75,
+            "feedback": [
+              "Missing required content: better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: capability inventory."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row safety flags trigger human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. Prioritize the nightly invoice path, skipped-run detection logic, paging hooks, ownership metadata, message-sending paths, runbooks, schedulers, workers, CI/CD automation, and any escalation config that could attach the owning team to an alert.\n\n## Workflow\n1. Inventory the obvious entrypoints: `README`, ops docs, runbooks, `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners, `.env.example`, `scripts/`, `bin/`, `server/`, `app/`, worker folders, infra folders, and `.github/workflows/`.\n2. Trace the nightly invoice mechanism itself: cron definitions, scheduler config, queue consumers, background jobs, startup hooks, retry loops, and job-state persistence that could prove what counts as a missed run.\n3. Trace skipped-run detection surfaces: health checks, heartbeat tables, job history records, metrics emitters, dead-letter handling, watchdog scripts, and alert thresholds for “two consecutive misses.”\n4. Trace the escalation aura outward: paging hooks, notification hooks, webhooks, incident integrations, message-sending paths, and any team-routing metadata that attaches an owning team to an alert.\n5. Inspect dangerous edges: approval bypasses, trust overrides, silent retries, disabled alerts, dangerous flags, sandbox escapes, and policy bypasses that could suppress or misroute a page.\n6. Return a compact capability map with three buckets:\n   - Confirmed: repo evidence directly shows the mechanism.\n   - Inferred, not confirmed: naming or surrounding config suggests the mechanism.\n   - Unknown from repo evidence: behavior likely depends on external systems or absent config.\n\n## Deliverables\nCapability inventory:\n- Confirmed: where the nightly invoice job is defined, how it runs, what records success/failure, where paging hooks are declared, and where owning team metadata lives.\n- Inferred, not confirmed: likely escalation routes, probable scheduler semantics, and likely owner-routing conventions when only indirect config or naming is present.\n- Unknown from repo evidence: external pager rules, CI settings, secrets-manager wiring, incident platform routing, and dormant credentials.\n\nRisk list:\n- Hidden side effects in notification hooks, pager integrations, or auto-remediation tied to job failure.\n- Untrusted execution paths in shell bridges, worker startup hooks, retry daemons, or webhook consumers.\n- Missing observability if the repo defines the invoice job but not durable run history or explicit skipped-run detection.\n- Fan-out points where one edited alert rule or shared notifier affects multiple jobs, environments, or teams.\n\nFollow-up skills / next actions:\n- `$identify` for any opaque scheduler file, ownership manifest, or notifier script.\n- `$zone-of-truth` for a high-integrity pass on evidence before enabling paging.\n- `$glyph-of-warding` to define the actual “skip two runs, then page on-call with owning team” tripwire once the surfaces are confirmed.\n\n## Guardrails\nDo not claim magic where there is only speculation. A file name or dependency can suggest a scheduler, pager, or ownership system, but it does not prove live behavior. Use `Confirmed: ...`, `Inferred, not confirmed: ...`, and `Unknown from repo evidence: ...` throughout.\n\nDo not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist. Dependency artifacts, binaries, and environment templates may indicate tooling is installed; they do not prove the repo ships or runs that capability as first-party logic.\n\n## Reality Boundary\nThis spell can map code-visible and config-visible mechanisms for the nightly invoice workflow, skipped-run detection, paging hooks, and team ownership routing. It can show where automation and side effects appear to live in the repo.\n\nIt cannot prove external dashboard behavior, CI runtime settings, secrets managers, control planes, incident-platform routing, or whether dormant credentials still work unless that evidence is represented in the repo. Where the evidence is partial or indirect, mark it `inferred, not confirmed`."
+    },
+    {
+      "prompt_id": "detect-magic-confusables-004",
+      "prompt": "Orders started duplicating after the bot rollout. Trace the clues and tell me the most likely root cause.",
+      "score": 0.875,
+      "feedback": [
+        "Missing required content: better fit, investigation.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.75,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: better fit, investigation."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces around order creation.\n\nPriority surfaces for this request:\n- order-write entrypoints in docs, runbooks, `README`, manifests, task runners, and env templates\n- bot and agent folders, model providers, routing layers, tool registries, MCP config, and function-calling schemas introduced by the rollout\n- webhook consumers, queue workers, schedulers, retry loops, startup hooks, and notification or message-sending paths that can re-fire an order action\n- approval bypasses, trust overrides, dangerous flags, sandbox escapes, or policy bypasses that let the bot act twice without a human checkpoint\n\nMost likely root-cause hypothesis to test first: the bot added a second order-submission path or replayed an existing one without a hard idempotency boundary. That is a working hypothesis only, inferred, not confirmed.\n\n## Workflow\n\n1. Inventory obvious entrypoints:\n   - `README`, setup docs, runbooks, rollout notes, incident notes\n   - `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners\n   - `.env.example` and related templates for bot, queue, webhook, and provider variables\n   - `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`, worker folders, bot folders\n   - `.github/workflows/`, deploy config, infra, and job definitions\n\n2. Trace order creation paths end to end:\n   - API handlers, form submitters, webhook endpoints, message consumers, queue workers, cron jobs, daemons, startup hooks\n   - any bot action that can call `createOrder`, enqueue an order, or trigger a tool that does\n   - retry logic, dead-letter handling, backoff loops, and replay utilities\n\n3. Trace AI-specific capability surfaces explicitly:\n   - model providers and provider env vars\n   - provider-routing layers and agent orchestration code\n   - tool registries, function-calling schemas, MCP declarations, plugin loaders\n   - shell execution bridges, browser tools, retrieval connectors, external action tools\n\n4. Identify duplication fan-out points:\n   - one user event emitting both legacy and bot-triggered order writes\n   - webhook plus queue consumer both persisting the same payload\n   - retries without idempotency keys, dedupe tables, or exactly-once guards\n   - notification hooks or callback handlers that accidentally re-enter the order path\n\n5. Return a compact capability map with three labels only:\n   - `Confirmed: ...`\n   - `Inferred, not confirmed: ...`\n   - `Unknown from repo evidence: ...`\n\n## Deliverables\n\nCapability inventory:\n- Confirmed order-write surfaces, bot execution surfaces, webhook consumers, workers, retry loops, and message-sending paths\n- Confirmed model providers, agent/tool routing layers, and any first-party automation that can touch orders\n- Inferred, not confirmed: secondary paths that appear able to create or replay orders but are not proven active from repo evidence alone\n- Unknown from repo evidence: external queues, SaaS webhook settings, CI variables, control-plane toggles, or dormant credentials that may activate duplication outside the repo\n\nRisk list:\n- Hidden side effect: bot tool call and legacy path both submit the same order\n- Hidden side effect: webhook replay or queue retry writes twice because idempotency is absent or scoped incorrectly\n- Hidden side effect: background worker, startup hook, or scheduler reprocesses pending orders after rollout\n- Dangerous edge: approval bypass or trust override lets autonomous order creation skip human review\n- Dangerous edge: weak observability around correlation IDs, idempotency keys, or consumer retries makes duplicates look like separate legitimate orders\n- Fan-out point: one edited bot/tool schema or shared order service affecting multiple environments or workflows\n\nFollow-up skills / next actions:\n- `$identify` on any suspicious worker, webhook handler, or bot tool that appears to touch orders\n- `$zone-of-truth` for a source-backed evidence table before naming the root cause\n- `$glyph-of-warding` to place a tripwire on duplicate order writes, replay counts, or missing idempotency keys once the hot path is found\n\n## Guardrails\n\nDo not claim magic where there is only speculation.\n\nTreat filenames and dependency artifacts as clues, not proof:\n- a queue library suggests retry capability\n- a webhook SDK suggests inbound triggers\n- a model SDK suggests AI access\n- none of those alone prove the repo runs that behavior as first-party logic\n\nDo not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n\nMaintain proof discipline:\n- `Confirmed:` only for mechanisms demonstrated by code/config linkage\n- `Inferred, not confirmed:` for plausible active paths suggested indirectly\n- `Unknown from repo evidence:` for anything requiring runtime, dashboard, or secret-backed confirmation\n\n## Reality Boundary\n\nThis spell can map code-visible and config-visible mechanisms: order entrypoints, bot orchestration, model providers, tool registries, webhook consumers, workers, queues, retries, and side-effect paths represented in the repo.\n\nIt cannot prove behavior that lives only in external dashboards, CI settings, secrets managers, cloud schedulers, control planes, vendor webhook consoles, or dormant credentials unless those surfaces are represented in repo evidence.\n\nThe strongest likely root cause from a preflight scan is usually a duplicated execution path or missing idempotency around retries after the bot rollout. Until the repo shows that linkage directly, that remains inferred, not confirmed."
+    },
+    {
+      "prompt_id": "detect-magic-confusables-005",
+      "prompt": "Remove the hidden post-deploy script from this repo and show me the diff.",
+      "score": 0.8125,
+      "feedback": [
+        "Missing required content: better fit, mage-hand.",
+        "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.625,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: better fit, mage-hand."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.0,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "detect-magic-capability-mapping",
+          "weight": 0.12,
+          "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "detect-magic-preflight-discipline",
+          "weight": 0.08,
+          "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+        ]
+      },
+      "response": "## Approach\n\nRead the obvious sigils first, then trace the faint aura into hidden execution surfaces. For this request, the priority is deploy-related capability surfaces: release docs, package/task runners, `scripts/`, CI/CD workflows, infra folders, env templates, and any startup or post-release automation that can act after a deploy.\n\nThe scan will build a capability map for post-deploy behavior, deploy hooks, rollback hooks if present nearby, webhook or notification fan-out, and any approval bypasses or dangerous flags that could let a hidden script run without clear operator intent.\n\n## Workflow\n\n1. Inventory the visible entrypoints:\n   - `README`, setup docs, runbooks, release notes\n   - `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners\n   - `.env.example` or similar env templates\n   - `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`\n   - `.github/workflows/` and other CI/CD folders\n   - infra and deployment folders\n\n2. Trace deploy-linked execution paths:\n   - search for `postdeploy`, `post-deploy`, `deploy`, `release`, `after_deploy`, `post_release`, hooks, startup commands, and installer side effects\n   - inspect deploy hooks explicitly\n   - inspect rollback hooks if deploy logic suggests paired recovery paths\n   - inspect webhook, notification, and message-sending paths attached to release workflows\n\n3. Trace hidden capability surfaces around those paths:\n   - model providers and provider-routing layers if agents or AI tooling are present\n   - tool registries, function schemas, MCP declarations, plugin loaders\n   - shell execution bridges, browser tools, retrieval connectors\n   - background jobs, cron, schedulers, queues, workers, daemons, retry loops, startup hooks\n\n4. Classify each finding with evidence discipline:\n   - `Confirmed: ...`\n   - `Inferred, not confirmed: ...`\n   - `Unknown from repo evidence: ...`\n\n5. Return the compact map before any removal:\n   - confirmed mechanisms that actually trigger post-deploy behavior\n   - inferred, not confirmed execution surfaces that need direct inspection\n   - unknowns requiring external CI, secrets, or control-plane access\n\n## Deliverables\n\nCapability inventory:\n- A compact map of confirmed deploy hooks, post-deploy scripts, release task runners, and adjacent automation surfaces.\n- A separate list of inferred, not confirmed paths where deploy side effects may hide.\n- A note on fan-out points where one edited file changes multiple environments or workflows.\n\nRisk list:\n- Hidden side effects in CI/CD or package scripts.\n- Untrusted shell execution paths or plugin loaders.\n- Silent background jobs or startup hooks with weak observability.\n- Notification, webhook, paging hooks, or billing-impact hooks if release code touches those surfaces.\n- Approval bypasses, dangerous flags, or sandbox/trust overrides tied to deployment.\n\nFollow-up skills / next actions:\n- `$identify` for any suspicious script or workflow file.\n- `$zone-of-truth` for high-integrity evidence review before deletion.\n- `$glyph-of-warding` to add a tripwire after removal so the hook does not reappear quietly.\n\n## Guardrails\n\nDo not claim magic where there is only speculation.\n\nDo not treat a filename alone as proof of post-deploy behavior.\n\nDo not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n\nTreat dependency and environment artifacts carefully:\n- a binary, package, lockfile entry, or venv artifact can suggest tooling is installed\n- it does not prove the repo ships or runs that capability as first-party logic\n\nWhen evidence is partial or indirect, label it exactly as `inferred, not confirmed`.\n\n## Reality Boundary\n\nThis spell can map code-visible and config-visible mechanisms in the repo: manifests, scripts, workflows, hook declarations, env templates, and install surfaces.\n\nIt cannot prove behavior that only exists in external dashboards, CI settings, secrets managers, cloud control planes, deployment platforms, or dormant credentials unless that behavior is represented in repo evidence.\n\nIf the hidden post-deploy script exists only as an external release hook, that remains `Unknown from repo evidence` until inspected at the control plane."
+    }
+  ]
+}

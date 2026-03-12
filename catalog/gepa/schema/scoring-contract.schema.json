@@ -1,0 +1,377 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wizardsoftheghosts.dev/catalog/gepa/schema/scoring-contract.schema.json",
+  "title": "GEPA Scoring Contract",
+  "description": "Schema for the shared spell-level GEPA scoring contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "contract_version",
+    "required_sections",
+    "output_score_range",
+    "deterministic_checks",
+    "judge_model",
+    "human_review",
+    "aggregation"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "required_sections": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "output_score_range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      }
+    },
+    "deterministic_checks": {
+      "$ref": "#/$defs/deterministicBucket"
+    },
+    "judge_model": {
+      "$ref": "#/$defs/judgeBucket"
+    },
+    "human_review": {
+      "$ref": "#/$defs/humanReviewBucket"
+    },
+    "aggregation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "round_to"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "weighted_average_excluding_human_review"
+          ]
+        },
+        "round_to": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "deterministicCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "description",
+        "source",
+        "scoring"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scoring": {
+          "type": "string",
+          "enum": [
+            "binary_average",
+            "section_presence",
+            "heuristic_gate"
+          ]
+        },
+        "fatal_if_failed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "judgeCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "description",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "applies_when_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "humanChecklistItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "note",
+            "warning",
+            "blocker"
+          ]
+        }
+      }
+    },
+    "deterministicBucket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weight",
+        "minimum_score",
+        "criteria"
+      ],
+      "properties": {
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "minimum_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/deterministicCriterion"
+          }
+        }
+      }
+    },
+    "judgeBucket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weight",
+        "scale",
+        "criteria"
+      ],
+      "properties": {
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "scale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "values"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "three-point"
+              ]
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            }
+          }
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/judgeCriterion"
+          }
+        }
+      }
+    },
+    "humanReviewTriggers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "any_safety_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "any_risk_levels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "any_expected_behavior": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "any_scenario_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "any_spell_traits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "humanReviewBucket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contributes_to_score",
+        "required_when",
+        "checklist"
+      ],
+      "properties": {
+        "contributes_to_score": {
+          "type": "boolean"
+        },
+        "required_when": {
+          "$ref": "#/$defs/humanReviewTriggers"
+        },
+        "checklist": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/humanChecklistItem"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "detect-magic",
+  "spell_focus": "Scan a repo, workflow, or system boundary for hidden AI tooling, agents, automations, model hooks, scheduled jobs, and other side-effectful affordances before anyone touches the system, keeping confirmed signals separate from inferred capability and refusing proof-by-execution.",
+  "confusable_with": [
+    "identify",
+    "investigation",
+    "light",
+    "glyph-of-warding",
+    "mage-hand",
+    "true-seeing"
+  ],
+  "judge_examples": [
+    "Returns a capability inventory of likely agents, automations, hooks, and side effects with confidence cues, operator risk notes, and the next safe inspection step without running anything risky.",
+    "Stays on discovery and mapping rather than drifting into explanation of one artifact, alert design, remediation, or live changes; it tells the user where the magic is, not how to cast or disable it."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [
+      "capability inventory",
+      "risk list"
+    ],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [
+      {
+        "criterion_id": "detect-magic-capability-mapping",
+        "weight": 0.12,
+        "question": "Does the response turn static clues such as configs, manifests, workflows, tool registries, webhook definitions, or scheduled jobs into a credible map of hidden capabilities and side effects without pretending to prove runtime behavior?"
+      },
+      {
+        "criterion_id": "detect-magic-preflight-discipline",
+        "weight": 0.08,
+        "question": "Does the response behave like preflight discovery before action, with clear handoffs when the user really needs Identify, Light, Glyph of Warding, Mage Hand, or another neighboring spell?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "If the scan touches security, privacy, or employee-monitoring surfaces, confirm the answer keeps the task at authorized discovery and does not recommend covert proof-by-execution."
+      ]
+    }
+  },
+  "notes": [
+    "Detect Magic is a discovery spell. It should map hidden capability and risk before the operator edits, executes, or alerts on anything.",
+    "Prefer spell-specific must_include phrases for concrete discovery artifacts like capability inventory, hidden hooks, trust boundaries, and risk list instead of broad investigation language."
+  ]
+}

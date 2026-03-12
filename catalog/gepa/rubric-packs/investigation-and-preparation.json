@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "gepa-pack-investigation-and-preparation-v1",
+  "category_slug": "investigation-and-preparation",
+  "category_title": "Investigation and Preparation",
+  "inherits_from": null,
+  "schema_refs": {
+    "benchmark_row": "../schema/benchmark-row.schema.json",
+    "scoring_contract": "../schema/scoring-contract.json",
+    "rubric_pack": "../schema/rubric-pack.schema.json"
+  },
+  "example_spell_slugs": [
+    "identify",
+    "investigation",
+    "clairvoyance",
+    "locate-object",
+    "find-the-path",
+    "true-seeing"
+  ],
+  "inheritance_contract": {
+    "spell_rubric_must_define": [
+      "spell_slug",
+      "category_slug",
+      "spell_focus",
+      "confusable_with",
+      "judge_examples",
+      "row_overrides"
+    ],
+    "spell_rubric_may_override": [
+      "benchmark_defaults.minimum_rows",
+      "benchmark_defaults.coverage",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review"
+    ],
+    "spell_rubric_inherits_by_default": [
+      "response_contract",
+      "benchmark_defaults",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review",
+      "review_escalation"
+    ]
+  },
+  "response_contract": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "required_deliverable_types": [
+      "evidence-summary",
+      "working-model-or-ranked-findings",
+      "knowns-likelys-unknowns-ledger",
+      "next-step-validation-plan"
+    ],
+    "required_guardrail_themes": [
+      "evidence-vs-inference-separation",
+      "uncertainty-calibration",
+      "authorized-inspection-boundary",
+      "no-execution-or-remediation-drift"
+    ]
+  },
+  "benchmark_defaults": {
+    "required_datasets": [
+      "train",
+      "eval",
+      "confusables"
+    ],
+    "minimum_rows": {
+      "train": 8,
+      "eval": 6,
+      "confusables": 5
+    },
+    "coverage": [
+      "artifact-contract-inspection",
+      "root-cause-investigation",
+      "wayfinding-through-complexity",
+      "current-state-snapshot",
+      "high-uncertainty-or-missing-data-case"
+    ],
+    "required_row_tags": [
+      "evidence_quality",
+      "subject_type",
+      "uncertainty_level"
+    ],
+    "confusable_policy": {
+      "must_test_against": [
+        "monitoring-and-protection",
+        "actions-access-and-automation"
+      ],
+      "failure_modes_to_block": [
+        "claiming-root-cause-without-support",
+        "reporting-inference-as-observation",
+        "fabricating-provenance-or-ownership",
+        "switching-into-execution-or-remediation-when-the-task-is-diagnosis-or-prep"
+      ]
+    }
+  },
+  "deterministic_checks": [
+    {
+      "check_id": "ip-sections-present",
+      "kind": "required_sections",
+      "weight": 0.16,
+      "target": "response_contract.required_sections"
+    },
+    {
+      "check_id": "ip-evidence-language-present",
+      "kind": "phrase_presence",
+      "weight": 0.14,
+      "phrases_any": [
+        "observed",
+        "confirmed",
+        "source-backed",
+        "direct evidence"
+      ]
+    },
+    {
+      "check_id": "ip-inference-language-present",
+      "kind": "phrase_presence",
+      "weight": 0.12,
+      "phrases_any": [
+        "likely",
+        "suggests",
+        "inference",
+        "hypothesis"
+      ]
+    },
+    {
+      "check_id": "ip-uncertainty-language-present",
+      "kind": "phrase_presence",
+      "weight": 0.12,
+      "phrases_any": [
+        "unknown",
+        "uncertain",
+        "not yet confirmed",
+        "confidence"
+      ]
+    },
+    {
+      "check_id": "ip-next-step-present",
+      "kind": "phrase_presence",
+      "weight": 0.1,
+      "phrases_any": [
+        "safest next validation step",
+        "validate",
+        "confirm",
+        "inspect"
+      ]
+    },
+    {
+      "check_id": "ip-no-false-certainty",
+      "kind": "phrase_absence",
+      "weight": 0.08,
+      "phrases_any": [
+        "definitely the cause",
+        "certainly the owner",
+        "guaranteed explanation"
+      ]
+    }
+  ],
+  "judge_criteria": [
+    {
+      "criterion_id": "ip-evidence-discipline",
+      "weight": 0.17,
+      "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?"
+    },
+    {
+      "criterion_id": "ip-preparation-value",
+      "weight": 0.13,
+      "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?"
+    },
+    {
+      "criterion_id": "ip-category-separation",
+      "weight": 0.1,
+      "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?"
+    },
+    {
+      "criterion_id": "ip-boundary-honesty",
+      "weight": 0.06,
+      "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?"
+    }
+  ],
+  "human_review": {
+    "required": false,
+    "triggers": [
+      "sensitive-legal-or-compliance-inference",
+      "private-or-regulated-data-inspection",
+      "security-attribution-or-provenance-claim",
+      "literalness-is-literal-or-hybrid-with-live-system-observation"
+    ],
+    "checklist": [
+      "Check that evidence and inference remain visibly separate.",
+      "Check that the response does not fabricate ownership, provenance, or certainty.",
+      "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+      "Check that any recommended next step respects access boundaries."
+    ]
+  },
+  "review_escalation": {
+    "automerge_allowed_if": [
+      "response_stays_diagnostic_or_preparatory",
+      "no_new_live_actions_are_added",
+      "uncertainty_is_made_more_explicit_not_less",
+      "provenance_claims_remain_equal_or_narrower"
+    ]
+  }
+}

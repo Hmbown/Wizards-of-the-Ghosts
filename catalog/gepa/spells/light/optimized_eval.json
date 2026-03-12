@@ -1,0 +1,374 @@
+{
+  "slug": "light",
+  "status": "evaluated",
+  "variant": "optimized",
+  "backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex-exec",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "192"
+    },
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 192,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "reachable": true,
+      "backend_type": "codex-exec",
+      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+      "usage": {
+        "prompt_tokens": 46829,
+        "completion_tokens": 36,
+        "total_tokens": 46865
+      },
+      "message": "codex exec probe completed successfully.",
+      "sample_response": "ready"
+    }
+  },
+  "dependency": {
+    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3"
+  },
+  "baseline_average_score": 0.7459935897435896,
+  "optimized_average_score": 0.5,
+  "delta": -0.24599358974358965,
+  "total_examples": 2,
+  "average_score": 0.5,
+  "examples": [
+    {
+      "prompt_id": "light-eval-001",
+      "prompt": "The search-synonym cron job updates overnight, but the only signal is stale search results the next morning. Add the smallest honest light.",
+      "score": 1.0,
+      "feedback": [
+        "Trajectory scored 1.000 and satisfied the deterministic rubric checks."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "mp-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.230769,
+            "feedback": []
+          },
+          {
+            "id": "mp-monitor-artifact-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.205128,
+            "feedback": []
+          },
+          {
+            "id": "mp-authorization-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-false-positive-awareness",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-false-negative-awareness",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-freshness-or-privacy-boundary-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-no-overclaiming",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.102564,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "mp-observation-discipline",
+          "weight": 0.14,
+          "question": "Does the response separate observed evidence from inference and timestamp or qualify the freshness of signals?",
+          "normalized_weight": 0.23333333333333336
+        },
+        {
+          "criterion_id": "mp-operational-utility",
+          "weight": 0.11,
+          "question": "Would an operator be able to implement or act on the monitoring, indicator, or illumination plan without guessing the next step?",
+          "normalized_weight": 0.18333333333333335
+        },
+        {
+          "criterion_id": "mp-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response stay within authorized channels and avoid implying unauthorized access or omniscience?",
+          "normalized_weight": 0.1
+        },
+        {
+          "criterion_id": "mp-category-separation",
+          "weight": 0.05,
+          "question": "Does the response stay focused on visibility/protection instead of drifting into root-cause analysis, remediation, or containment execution?",
+          "normalized_weight": 0.08333333333333334
+        },
+        {
+          "criterion_id": "mp-proportional-illumination",
+          "weight": 0.04,
+          "question": "Does the response choose the lightest useful visibility artifact or ambient indicator instead of overbuilding dashboards, surveillance, or live alerting?",
+          "normalized_weight": 0.06666666666666667
+        },
+        {
+          "criterion_id": "light-proportional-illumination",
+          "weight": 0.12,
+          "question": "Does the response pick the lightest useful artifact instead of drifting into a dashboard, alerting setup, surveillance plan, or remediation workflow?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "light-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response keep Light distinct from Detect Magic, Dancing Lights, Glyph of Warding, Faerie Fire, and root-cause investigation by illuminating rather than detecting, paging, highlighting, or concluding?",
+          "normalized_weight": 0.13333333333333333
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "spell traits trigger human review",
+          "pages-humans-directly",
+          "changes-live-alert-routing",
+          "touches-sensitive-telemetry-or-private-data",
+          "literalness-is-literal-or-hybrid",
+          "intrusive-people-or-activity-monitoring"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Verify owner and escalation path exist for any alerting recommendation.",
+          "Confirm any privacy-sensitive observation path is authorized and necessary.",
+          "Check that the response does not treat inferred state as confirmed fact.",
+          "Verify that lightweight visibility recommendations do not become covert or person-targeted surveillance.",
+          "If the request touches people, devices, or sensitive behavior, confirm the proposed light is authorized, proportionate, and not covert surveillance."
+        ]
+      },
+      "response": "## Approach\nThe blind spot is whether the overnight `search-synonym` cron completed successfully at all. Place the light at the end of that job, not in the search UI. The smallest honest light is one `status note` that records the `last successful run` `timestamp` for the operator or morning responder. No dashboard, no refactor, no paging.\n\n## Workflow\n1. Treat the dark area as job completion, not search quality.\n2. Add one `status note` that is written only after the synonym update fully completes: `search-synonym last successful run: 2026-03-12T03:14:22Z`.\n3. Store it where operators already have authorized access, for example `/var/lib/search/status/search-synonym.status`, and surface that same line in the cron log or existing admin status surface if one already exists.\n4. Read it literally: if the `timestamp` is within the expected overnight window, the signal is fresh; if it is older than one run interval plus a small grace period, treat it as `stale`.\n5. Keep observation separate from inference: a fresh note means the job reported success; a stale note means the job may not have completed. It does not confirm root cause or synonym correctness.\n\n## Deliverables\n- One `status note`: `search-synonym last successful run: <ISO-8601 timestamp>`.\n- One operator check location: the persisted status file or existing authorized status surface for this cron job.\n- One freshness rule: stale after the next scheduled run window plus grace.\n- what remains dark: why the job failed, whether it partially applied data, and whether the updated synonym set produced correct search behavior.\n\n## Guardrails\nLight illuminates and does not judge.\nKeep this within authorized operator-visible surfaces; do not expand into privacy-invasive query capture, covert monitoring, a dashboard build, or an unsolicited refactor.\nA false positive here would be a stale-looking note caused by clock skew, delayed writes, or a broken status file even though the cron actually completed.\nA false negative remains possible if the job writes the note before the final index handoff, so the signal looks healthy while results are still wrong.\nTreat the signal as stale by `timestamp`, not by intuition, and remember that completion is not correctness.\nIf you want thresholded alerting or automatic remediation from this indicator, that belongs to `Glyph of Warding`.\n\n## Reality Boundary\nThis light can answer one narrow question now: when was the last time the overnight synonym job said it completed successfully.\nIt cannot prove that the new synonyms were correct, fully propagated, or the cause of stale morning results.\nThis artifact is visibility, not diagnosis and not intervention. If the next need is hidden-job discovery, hand off to `Detect Magic`; if the next need is paging on staleness, hand off to `Glyph of Warding`."
+    },
+    {
+      "prompt_id": "light-confusables-001",
+      "prompt": "Put a red/yellow/green pulse on the NOC wall so we can tell queue health at a glance from across the room.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: ambient indicator.",
+        "Included forbidden content: guarantee real-time truth.",
+        "Included forbidden phrase for mp-no-overclaiming: guarantee real-time truth."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.666667,
+        "pack_score": 0.897436,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.666667,
+            "feedback": [
+              "Missing required content: ambient indicator."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: guarantee real-time truth."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "mp-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.230769,
+            "feedback": []
+          },
+          {
+            "id": "mp-monitor-artifact-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.205128,
+            "feedback": []
+          },
+          {
+            "id": "mp-authorization-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-false-positive-awareness",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-false-negative-awareness",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-freshness-or-privacy-boundary-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.115385,
+            "feedback": []
+          },
+          {
+            "id": "mp-no-overclaiming",
+            "kind": "phrase_absence",
+            "score": 0.0,
+            "weight": 0.102564,
+            "feedback": [
+              "Included forbidden phrase for mp-no-overclaiming: guarantee real-time truth."
+            ]
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "mp-observation-discipline",
+          "weight": 0.14,
+          "question": "Does the response separate observed evidence from inference and timestamp or qualify the freshness of signals?",
+          "normalized_weight": 0.23333333333333336
+        },
+        {
+          "criterion_id": "mp-operational-utility",
+          "weight": 0.11,
+          "question": "Would an operator be able to implement or act on the monitoring, indicator, or illumination plan without guessing the next step?",
+          "normalized_weight": 0.18333333333333335
+        },
+        {
+          "criterion_id": "mp-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response stay within authorized channels and avoid implying unauthorized access or omniscience?",
+          "normalized_weight": 0.1
+        },
+        {
+          "criterion_id": "mp-category-separation",
+          "weight": 0.05,
+          "question": "Does the response stay focused on visibility/protection instead of drifting into root-cause analysis, remediation, or containment execution?",
+          "normalized_weight": 0.08333333333333334
+        },
+        {
+          "criterion_id": "mp-proportional-illumination",
+          "weight": 0.04,
+          "question": "Does the response choose the lightest useful visibility artifact or ambient indicator instead of overbuilding dashboards, surveillance, or live alerting?",
+          "normalized_weight": 0.06666666666666667
+        },
+        {
+          "criterion_id": "light-proportional-illumination",
+          "weight": 0.12,
+          "question": "Does the response pick the lightest useful artifact instead of drifting into a dashboard, alerting setup, surveillance plan, or remediation workflow?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "light-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response keep Light distinct from Detect Magic, Dancing Lights, Glyph of Warding, Faerie Fire, and root-cause investigation by illuminating rather than detecting, paging, highlighting, or concluding?",
+          "normalized_weight": 0.13333333333333333
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "spell traits trigger human review",
+          "pages-humans-directly",
+          "changes-live-alert-routing",
+          "touches-sensitive-telemetry-or-private-data",
+          "literalness-is-literal-or-hybrid",
+          "intrusive-people-or-activity-monitoring"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Verify owner and escalation path exist for any alerting recommendation.",
+          "Confirm any privacy-sensitive observation path is authorized and necessary.",
+          "Check that the response does not treat inferred state as confirmed fact.",
+          "Verify that lightweight visibility recommendations do not become covert or person-targeted surveillance.",
+          "If the request touches people, devices, or sensitive behavior, confirm the proposed light is authorized, proportionate, and not covert surveillance."
+        ]
+      },
+      "response": "## Approach\n\nThe blind spot is queue health not being legible from across the room. The smallest honest light is one `metric` plus one freshness `timestamp`: `queue_health_indicator` for state and `queue_health_last_seen_unix` for recency, so the operator can glance at a wall surface without building a dashboard, paging tree, or refactor.\n\nPlace the light at the queue exporter or the queue-owning service, and let the wall read only that single authorized signal. The room-scale pulse itself is a `Dancing Lights` surface; Light should provide the minimal indicator that feeds it.\n\n## Workflow\n\n1. Name the dark area as: “queue state is currently invisible at room scale, so responders cannot tell healthy vs degraded vs blocked at a glance.”\n2. Emit one small artifact where the queue is already measured:\n   ```text\n   queue_health_indicator{queue=\"primary\"} 0\n   queue_health_last_seen_unix{queue=\"primary\"} 1773355200\n   ```\n   Use `0=green`, `1=yellow`, `2=red`.\n3. Define one explicit threshold rule next to the metric so the wall is readable:\n   ```text\n   green: depth < 100 and oldest_message_age_s < 60\n   yellow: depth >= 100 or oldest_message_age_s >= 60\n   red: depth >= 1000 or oldest_message_age_s >= 300\n   ```\n4. Put the consumer-facing status note beside the wall renderer or in the NOC runbook:\n   ```text\n   Queue wall indicator reads queue_health_indicator.\n   Green means within agreed threshold.\n   Yellow means degraded but still flowing.\n   Red means critical backlog or stale source data.\n   Confirm freshness with queue_health_last_seen_unix.\n   ```\n5. Read it this way: if the `last seen` value is older than 120 seconds, treat the wall as `stale` and show red or a separate stale state instead of pretending the color is current.\n\n## Deliverables\n\n- One `metric`: `queue_health_indicator{queue=\"primary\"} 0|1|2`\n- One freshness `metric`: `queue_health_last_seen_unix{queue=\"primary\"} <unix_timestamp>`\n- One short `status note` for the wall legend or NOC runbook\n- Operators should check the wall for the coarse indicator and the metrics endpoint or Grafana panel for the raw value and `timestamp`\n- what remains dark: root cause, per-consumer blame, hidden retry behavior, message-level errors, and whether the queue will recover without intervention\n\n## Guardrails\n\nLight illuminates and does not judge. This should stay within authorized operator-visible surfaces and must not drift into privacy-invasive staff monitoring or covert observation.\n\nA false positive here would be a red wall caused by exporter lag, bad threshold tuning, or stale scrape data rather than an actually unhealthy queue.\n\nA false negative remains possible if backlog spikes between polls, the sampled queue is not the real bottleneck, or the indicator stays green while downstream handling is failing.\n\nTreat this signal as stale after 120 seconds without a fresh timestamp. Do not over-instrument this into a dashboard sprawl, unsolicited refactor, root-cause claim, or auto-remediation path.\n\n## Reality Boundary\n\nThis light can answer one question now: “Is this queue currently healthy, degraded, critical, or stale according to agreed thresholds?”\n\nIt cannot prove root cause, guarantee real-time truth, confirm throughput sufficiency, or decide remediation. The wall pulse itself is better owned by `Dancing Lights`, and any thresholded alerting or restart logic belongs to `Glyph of Warding`. This artifact is visibility, not diagnosis, not intervention."
+    }
+  ]
+}

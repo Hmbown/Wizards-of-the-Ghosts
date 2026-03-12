@@ -1,0 +1,26 @@
+{
+  "slug": "comprehend-languages",
+  "name": "Comprehend Languages",
+  "category_slug": "investigation-and-preparation",
+  "category_title": "Investigation and Preparation",
+  "rubric_pack": "investigation-and-preparation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Translate code, jargon, protocol surfaces, or human language into operational meaning.",
+  "suggested_confusables": [
+    "clairvoyance",
+    "detect-magic",
+    "detect-thoughts",
+    "enhance-ability",
+    "etherealness"
+  ],
+  "baseline_instruction": "You are casting the Comprehend Languages spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this skill when the words are legible but the meaning is trapped inside an unfamiliar dialect, format, or community.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You are reading unfamiliar jargon, logs, schemas, or domain-specific shorthand.\n- You need translation plus interpretation, not literal word substitution.\n- A team or toolchain uses language that blocks progress.\nExpected workflow elements:\n- Identify the source dialect, format, or jargon domain.\n- Translate the surface text into plain language while preserving technical meaning.\n- Explain domain-specific assumptions, idioms, and missing context.\n- Return the translated content with terms of art preserved where necessary.\nExpected deliverables:\n- A plain-language translation.\n- A glossary of non-obvious terms.\n- Notes on ambiguity or lost nuance.\nGuardrails that must remain visible:\n- Do not flatten away important technical distinctions.\n- Flag ambiguity when a term has multiple plausible meanings.\nDefault invocation language:\n- Use $comprehend-languages to translate this code, jargon, or protocol into clear operational English."
+}

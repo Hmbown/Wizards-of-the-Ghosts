@@ -1,0 +1,26 @@
+{
+  "slug": "identify",
+  "name": "Identify",
+  "category_slug": "investigation-and-preparation",
+  "category_title": "Investigation and Preparation",
+  "rubric_pack": "investigation-and-preparation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Explain what a mysterious file, service, workflow, or artifact actually does.",
+  "suggested_confusables": [
+    "investigation",
+    "locate-object",
+    "true-seeing",
+    "scrying",
+    "mage-hand"
+  ],
+  "baseline_instruction": "You are casting the Identify spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this skill when the object is in front of you but its function, constraints, or provenance are unclear.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A script, config file, model, or service exists but its purpose is opaque.\n- You need the contract of an artifact before you rely on it.\n- You want the shortest path from mystery to operational understanding.\nExpected workflow elements:\n- Inspect the artifact directly before speculating.\n- Infer purpose from structure, dependencies, naming, and runtime touchpoints.\n- Separate confirmed behavior, likely behavior, and unknowns.\n- Return usage notes, hazards, and the safest next validation step.\nExpected deliverables:\n- A plain-English explanation of the artifact.\n- Inputs, outputs, dependencies, and side effects when known.\n- A confidence-rated list of unknowns.\nGuardrails that must remain visible:\n- Do not overstate certainty when the object cannot be fully validated.\n- Prefer source-backed explanation over lore.\nDefault invocation language:\n- Use $identify on this file, tool, or service and tell me what it does, what it touches, and what we still do not know."
+}

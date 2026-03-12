@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wizardsoftheghosts.dev/catalog/gepa/schema/rubric-pack-index.schema.json",
+  "title": "GEPA Rubric Pack Index",
+  "description": "Schema for the rubric-pack manifest that enumerates category packs available for spell-level GEPA work.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "description",
+    "packs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "packs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/rubricPackIndexEntry"
+      }
+    }
+  },
+  "$defs": {
+    "rubricPackIndexEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category_slug",
+        "path",
+        "priority",
+        "status"
+      ],
+      "properties": {
+        "category_slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*\\.json$"
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "ready",
+            "deprecated"
+          ]
+        }
+      }
+    }
+  }
+}

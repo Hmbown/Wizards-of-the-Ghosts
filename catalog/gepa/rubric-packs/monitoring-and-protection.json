@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "gepa-pack-monitoring-and-protection-v1",
+  "category_slug": "monitoring-and-protection",
+  "category_title": "Monitoring and Protection",
+  "inherits_from": null,
+  "schema_refs": {
+    "benchmark_row": "../schema/benchmark-row.schema.json",
+    "scoring_contract": "../schema/scoring-contract.json",
+    "rubric_pack": "../schema/rubric-pack.schema.json"
+  },
+  "example_spell_slugs": [
+    "detect-magic",
+    "glyph-of-warding",
+    "light",
+    "faerie-fire",
+    "nondetection",
+    "see-invisibility"
+  ],
+  "inheritance_contract": {
+    "spell_rubric_must_define": [
+      "spell_slug",
+      "category_slug",
+      "spell_focus",
+      "confusable_with",
+      "judge_examples",
+      "row_overrides"
+    ],
+    "spell_rubric_may_override": [
+      "benchmark_defaults.minimum_rows",
+      "benchmark_defaults.coverage",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review"
+    ],
+    "spell_rubric_inherits_by_default": [
+      "response_contract",
+      "benchmark_defaults",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review",
+      "review_escalation"
+    ]
+  },
+  "response_contract": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "required_deliverable_types": [
+      "observable-state-summary",
+      "signal-or-instrumentation-definition",
+      "follow-up-action-or-hand-off"
+    ],
+    "required_guardrail_themes": [
+      "authorized-observation-only",
+      "signal-vs-inference-separation",
+      "false-positive-and-false-negative-awareness",
+      "proportional-instrumentation"
+    ]
+  },
+  "benchmark_defaults": {
+    "required_datasets": [
+      "train",
+      "eval",
+      "confusables"
+    ],
+    "minimum_rows": {
+      "train": 8,
+      "eval": 6,
+      "confusables": 4
+    },
+    "coverage": [
+      "capability-scan",
+      "monitor-alert-or-indicator-design",
+      "status-or-telemetry-interpretation",
+      "ambient-indicator-or-minimal-instrumentation",
+      "authorized-remote-inspection",
+      "risky-or-privacy-sensitive-request"
+    ],
+    "required_row_tags": [
+      "signal_type",
+      "observation_surface",
+      "risk_level",
+      "time_sensitivity"
+    ],
+    "confusable_policy": {
+      "must_test_against": [
+        "investigation-and-preparation",
+        "containment-and-intervention"
+      ],
+      "failure_modes_to_block": [
+        "jumping-to-root-cause-without-observation",
+        "creating-live-alerts-without-owner",
+        "claiming-current-state-from-stale-signals",
+        "defaulting-to-heavy-observability-when-minimal-light-would-do",
+        "drifting-into-intrusive-surveillance"
+      ]
+    }
+  },
+  "deterministic_checks": [
+    {
+      "check_id": "mp-sections-present",
+      "kind": "required_sections",
+      "weight": 0.18,
+      "target": "response_contract.required_sections"
+    },
+    {
+      "check_id": "mp-monitor-artifact-present",
+      "kind": "phrase_presence",
+      "weight": 0.16,
+      "phrases_any": [
+        "alert",
+        "indicator",
+        "log line",
+        "metric",
+        "heartbeat",
+        "threshold",
+        "signal",
+        "last seen",
+        "status note"
+      ]
+    },
+    {
+      "check_id": "mp-authorization-language-present",
+      "kind": "phrase_presence",
+      "weight": 0.09,
+      "phrases_any": [
+        "authorized"
+      ]
+    },
+    {
+      "check_id": "mp-false-positive-awareness",
+      "kind": "phrase_presence",
+      "weight": 0.09,
+      "phrases_any": [
+        "false positive"
+      ]
+    },
+    {
+      "check_id": "mp-false-negative-awareness",
+      "kind": "phrase_presence",
+      "weight": 0.09,
+      "phrases_any": [
+        "false negative"
+      ]
+    },
+    {
+      "check_id": "mp-freshness-or-privacy-boundary-present",
+      "kind": "phrase_presence",
+      "weight": 0.09,
+      "phrases_any": [
+        "stale",
+        "privacy",
+        "last seen",
+        "timestamp"
+      ]
+    },
+    {
+      "check_id": "mp-no-overclaiming",
+      "kind": "phrase_absence",
+      "weight": 0.08,
+      "phrases_any": [
+        "guarantee real-time truth",
+        "perfect visibility",
+        "zero false alarms"
+      ]
+    }
+  ],
+  "judge_criteria": [
+    {
+      "criterion_id": "mp-observation-discipline",
+      "weight": 0.14,
+      "question": "Does the response separate observed evidence from inference and timestamp or qualify the freshness of signals?"
+    },
+    {
+      "criterion_id": "mp-operational-utility",
+      "weight": 0.11,
+      "question": "Would an operator be able to implement or act on the monitoring, indicator, or illumination plan without guessing the next step?"
+    },
+    {
+      "criterion_id": "mp-boundary-honesty",
+      "weight": 0.06,
+      "question": "Does the response stay within authorized channels and avoid implying unauthorized access or omniscience?"
+    },
+    {
+      "criterion_id": "mp-category-separation",
+      "weight": 0.05,
+      "question": "Does the response stay focused on visibility/protection instead of drifting into root-cause analysis, remediation, or containment execution?"
+    },
+    {
+      "criterion_id": "mp-proportional-illumination",
+      "weight": 0.04,
+      "question": "Does the response choose the lightest useful visibility artifact or ambient indicator instead of overbuilding dashboards, surveillance, or live alerting?"
+    }
+  ],
+  "human_review": {
+    "required": false,
+    "triggers": [
+      "pages-humans-directly",
+      "changes-live-alert-routing",
+      "touches-sensitive-telemetry-or-private-data",
+      "literalness-is-literal-or-hybrid",
+      "intrusive-people-or-activity-monitoring"
+    ],
+    "checklist": [
+      "Verify owner and escalation path exist for any alerting recommendation.",
+      "Confirm any privacy-sensitive observation path is authorized and necessary.",
+      "Check that the response does not treat inferred state as confirmed fact.",
+      "Verify that lightweight visibility recommendations do not become covert or person-targeted surveillance."
+    ]
+  },
+  "review_escalation": {
+    "automerge_allowed_if": [
+      "spell_is_metaphorical_or_low-risk_hybrid",
+      "no_live_paging_or_account-impacting_actions_are_proposed",
+      "response_improves_signal_quality_without_broadening_access_claims",
+      "change_prefers_small-honest-signals_over_heavy-instrumentation"
+    ]
+  }
+}

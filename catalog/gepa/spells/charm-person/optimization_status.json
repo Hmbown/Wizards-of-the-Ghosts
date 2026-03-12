@@ -1,0 +1,66 @@
+{
+  "slug": "charm-person",
+  "status": "ok",
+  "message": "Spell GEPA workspace validation complete.",
+  "validation": {
+    "ok": true,
+    "slug": "charm-person",
+    "spell_name": "Charm Person",
+    "category_slug": "influence-and-behavior",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person",
+    "artifact_paths": {
+      "spell": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/spell.json",
+      "train": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/train.jsonl",
+      "eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/eval.jsonl",
+      "confusables": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/confusables.jsonl",
+      "rubric": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/rubric.json",
+      "promotion_patch": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/promotion_patch.json",
+      "status": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/optimization_status.json",
+      "baseline_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/baseline_eval.json",
+      "optimized_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/optimized_eval.json",
+      "optimized_module": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 10,
+      "eval_rows": 8,
+      "confusable_rows": 6
+    }
+  },
+  "dependency": {
+    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3"
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
+  },
+  "bootstrapped_files": {}
+}

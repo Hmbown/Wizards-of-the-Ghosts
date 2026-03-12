@@ -1,0 +1,53 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "comprehend-languages",
+  "spell_focus": "Translate jargon, schemas, logs, protocol surfaces, abbreviations, or multilingual text into operational English while preserving nuance, ambiguity, and domain distinctions, without drifting into format conversion, artifact forensics, audience retargeting, or live edits.",
+  "confusable_with": [
+    "tongues",
+    "identify",
+    "disguise-self",
+    "investigation",
+    "arcana",
+    "mage-hand",
+    "detect-magic"
+  ],
+  "judge_examples": [
+    "Turns opaque technical or community-specific language into plain English plus a working glossary, then names what remains ambiguous instead of pretending every term has one stable meaning.",
+    "Keeps translation and interpretation distinct from transformation or rewriting: it explains what the source language means, but hands off cleanly when the user actually wants format conversion, artifact analysis, audience adaptation, repo scanning, or file edits."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [
+      {
+        "criterion_id": "comprehend-languages-nuance-preservation",
+        "weight": 0.12,
+        "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?"
+      },
+      {
+        "criterion_id": "comprehend-languages-neighbor-separation",
+        "weight": 0.08,
+        "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+      ]
+    }
+  },
+  "notes": [
+    "Comprehend Languages makes unfamiliar language legible. It should not pretend that translation alone proves system behavior, compliance status, or root cause.",
+    "Prefer row-level must_include phrases for glossary, ambiguity, operational meaning, or unresolved nuance when the benchmark needs them explicitly."
+  ]
+}
