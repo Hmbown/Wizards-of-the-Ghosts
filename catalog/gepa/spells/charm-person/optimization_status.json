@@ -10,18 +10,18 @@
     "missing_files": [],
     "errors": [],
     "warnings": [],
-    "artifact_dir": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person",
+    "artifact_dir": "catalog/gepa/spells/charm-person",
     "artifact_paths": {
-      "spell": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/spell.json",
-      "train": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/train.jsonl",
-      "eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/eval.jsonl",
-      "confusables": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/confusables.jsonl",
-      "rubric": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/rubric.json",
-      "promotion_patch": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/promotion_patch.json",
-      "status": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/optimization_status.json",
-      "baseline_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/baseline_eval.json",
-      "optimized_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/optimized_eval.json",
-      "optimized_module": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/charm-person/optimized_module.json"
+      "spell": "catalog/gepa/spells/charm-person/spell.json",
+      "train": "catalog/gepa/spells/charm-person/train.jsonl",
+      "eval": "catalog/gepa/spells/charm-person/eval.jsonl",
+      "confusables": "catalog/gepa/spells/charm-person/confusables.jsonl",
+      "rubric": "catalog/gepa/spells/charm-person/rubric.json",
+      "promotion_patch": "catalog/gepa/spells/charm-person/promotion_patch.json",
+      "status": "catalog/gepa/spells/charm-person/optimization_status.json",
+      "baseline_eval": "catalog/gepa/spells/charm-person/baseline_eval.json",
+      "optimized_eval": "catalog/gepa/spells/charm-person/optimized_eval.json",
+      "optimized_module": "catalog/gepa/spells/charm-person/optimized_module.json"
     },
     "dataset_counts": {
       "train_rows": 10,
@@ -30,7 +30,7 @@
     }
   },
   "dependency": {
-    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_executable": ".venv/bin/python",
     "python_version": "3.14.2",
     "python_implementation": "CPython",
     "dspy_installed": true,

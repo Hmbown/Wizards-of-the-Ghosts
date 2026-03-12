@@ -86,6 +86,31 @@ def artifact_paths(repo_root: Path) -> dict[str, Path]:
     return {name: base / rel_path for name, rel_path in {**REQUIRED_DSPY_FILES, **STATUS_PATHS}.items()}
 
 
+def _relativize(path: str | Path, repo_root: Path | None = None) -> str:
+    """Convert an absolute path to a repo-relative string when possible."""
+    p = Path(path) if isinstance(path, str) else path
+    if repo_root is not None:
+        try:
+            return str(p.relative_to(repo_root.resolve()))
+        except ValueError:
+            pass
+    return str(p)
+
+
+def _sanitize_probe(probe: dict[str, Any]) -> dict[str, Any]:
+    """Strip local-machine paths from probe output before persisting."""
+    sensitive_keys = {"cli_path", "credential_source", "codex_home", "auth_file", "models_cache"}
+    cleaned: dict[str, Any] = {}
+    for key, value in probe.items():
+        if key in sensitive_keys:
+            continue
+        if key == "runtime" and isinstance(value, dict):
+            cleaned[key] = {k: v for k, v in value.items() if k not in sensitive_keys}
+        else:
+            cleaned[key] = value
+    return cleaned
+
+
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -115,9 +140,9 @@ def category_context(categories: list[dict[str, Any]]) -> str:
     return "\n".join(f"- {cat['slug']}: {cat['description']}" for cat in categories)
 
 
-def dependency_info() -> tuple[Any | None, dict[str, Any]]:
+def dependency_info(repo_root: Path | None = None) -> tuple[Any | None, dict[str, Any]]:
     info: dict[str, Any] = {
-        "python_executable": sys.executable,
+        "python_executable": _relativize(sys.executable, repo_root),
         "python_version": platform.python_version(),
         "python_implementation": platform.python_implementation(),
         "dspy_installed": False,
@@ -182,7 +207,7 @@ def validate_workspace(repo_root: Path) -> dict[str, Any]:
         "missing_files": missing,
         "errors": errors,
         "dataset_counts": dataset_counts,
-        "artifact_paths": {key: str(path) for key, path in paths.items()},
+        "artifact_paths": {key: _relativize(path, repo_root) for key, path in paths.items()},
         "notes": ROUTER_NOTES,
     }
 
@@ -307,16 +332,15 @@ def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None
             }
 
         runtime = codex_client.inspect_codex_runtime(model=config.model)
+        raw_runtime = runtime.as_dict()
         probe: dict[str, Any] = {
             "checked": True,
             "backend_type": "codex",
-            "runtime": runtime.as_dict(),
+            "runtime": {k: v for k, v in raw_runtime.items() if k not in {"cli_path", "credential_source", "codex_home", "auth_file", "models_cache"}},
             "requested_transport": runtime.requested_transport,
             "preferred_transport": runtime.preferred_transport,
             "available_transports": list(runtime.available_transports),
-            "cli_path": runtime.cli_path,
             "mcp_sdk_available": runtime.mcp_sdk_available,
-            "credential_source": runtime.credential_source,
         }
         if runtime.preferred_transport is None:
             probe["reachable"] = False
@@ -451,8 +475,8 @@ def build_router_status(
     payload: dict[str, Any] = {
         "status": status,
         "message": message,
-        "artifact_dir": str(dspy_dir(repo_root)),
-        "artifact_paths": {key: str(path) for key, path in paths.items()},
+        "artifact_dir": _relativize(dspy_dir(repo_root), repo_root),
+        "artifact_paths": {key: _relativize(path, repo_root) for key, path in paths.items()},
         "dataset_counts": validation["dataset_counts"],
         "validation": {
             "ok": validation["ok"],

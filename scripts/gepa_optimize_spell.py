@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from dspy_common import _relativize
 from gepa_common import (
     build_gepa_status,
     build_spell_instruction,
@@ -46,7 +47,7 @@ def optimize_spell(repo_root: Path, args: argparse.Namespace) -> tuple[dict[str,
     slug = args.slug
     created = bootstrap_spell_workspace(repo_root, slug, force=args.force_bootstrap)
     validation = validate_spell_workspace(repo_root, slug)
-    dspy, dependency = dependency_info()
+    dspy, dependency = dependency_info(repo_root)
     task_config, task_backend = resolve_lm_config(args)
     reflection_config, reflection_backend = resolve_reflection_lm_config(args, task_config)
 
@@ -254,7 +255,7 @@ def optimize_spell(repo_root: Path, args: argparse.Namespace) -> tuple[dict[str,
                     **status_extra,
                     "train_rows_used": len(train_rows),
                     "val_rows_used": len(val_rows),
-                    "optimized_module": str(paths["optimized_module"]),
+                    "optimized_module": _relativize(paths["optimized_module"], repo_root),
                     "optimized_instruction": optimized_instruction,
                 },
             ),

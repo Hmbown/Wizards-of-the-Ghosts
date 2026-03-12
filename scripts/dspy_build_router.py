@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from dspy_common import (
+    _relativize,
     artifact_paths,
     build_router_status,
     category_context,
@@ -160,7 +161,7 @@ def build_baseline(repo_root: Path) -> dict[str, Any]:
 
 def validate_dspy_runtime(repo_root: Path, args: argparse.Namespace) -> dict[str, Any]:
     validation = validate_workspace(repo_root)
-    _, dependency = dependency_info()
+    _, dependency = dependency_info(repo_root)
     config, backend = resolve_lm_config(args)
     if config is not None:
         backend = dict(backend)
@@ -219,7 +220,7 @@ def validate_dspy_runtime(repo_root: Path, args: argparse.Namespace) -> dict[str
 
 def compile_dspy_router(repo_root: Path, args: argparse.Namespace) -> tuple[dict[str, Any], int]:
     validation = validate_workspace(repo_root)
-    dspy, dependency = dependency_info()
+    dspy, dependency = dependency_info(repo_root)
     config, backend = resolve_lm_config(args)
 
     backend = dict(backend)
@@ -336,7 +337,7 @@ def compile_dspy_router(repo_root: Path, args: argparse.Namespace) -> tuple[dict
             validation=validation,
             extra={
                 **compile_scope,
-                "saved_model": str(paths["dspy_router"]),
+                "saved_model": _relativize(paths["dspy_router"], repo_root),
                 "categories": category_choices,
             },
         )

@@ -10,18 +10,18 @@
     "missing_files": [],
     "errors": [],
     "warnings": [],
-    "artifact_dir": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages",
+    "artifact_dir": "catalog/gepa/spells/comprehend-languages",
     "artifact_paths": {
-      "spell": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/spell.json",
-      "train": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/train.jsonl",
-      "eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/eval.jsonl",
-      "confusables": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/confusables.jsonl",
-      "rubric": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/rubric.json",
-      "promotion_patch": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/promotion_patch.json",
-      "status": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/optimization_status.json",
-      "baseline_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/baseline_eval.json",
-      "optimized_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/optimized_eval.json",
-      "optimized_module": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/optimized_module.json"
+      "spell": "catalog/gepa/spells/comprehend-languages/spell.json",
+      "train": "catalog/gepa/spells/comprehend-languages/train.jsonl",
+      "eval": "catalog/gepa/spells/comprehend-languages/eval.jsonl",
+      "confusables": "catalog/gepa/spells/comprehend-languages/confusables.jsonl",
+      "rubric": "catalog/gepa/spells/comprehend-languages/rubric.json",
+      "promotion_patch": "catalog/gepa/spells/comprehend-languages/promotion_patch.json",
+      "status": "catalog/gepa/spells/comprehend-languages/optimization_status.json",
+      "baseline_eval": "catalog/gepa/spells/comprehend-languages/baseline_eval.json",
+      "optimized_eval": "catalog/gepa/spells/comprehend-languages/optimized_eval.json",
+      "optimized_module": "catalog/gepa/spells/comprehend-languages/optimized_module.json"
     },
     "dataset_counts": {
       "train_rows": 8,
@@ -30,7 +30,7 @@
     }
   },
   "dependency": {
-    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_executable": ".venv/bin/python",
     "python_version": "3.14.2",
     "python_implementation": "CPython",
     "dspy_installed": true,
@@ -71,26 +71,8 @@
           "cli",
           "mcp"
         ],
-        "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
         "mcp_sdk_available": true,
-        "credential_source": "/Users/hunterbown/.codex/auth.json",
-        "codex_home": "/Users/hunterbown/.codex",
-        "auth_file": "/Users/hunterbown/.codex/auth.json",
-        "models_cache": "/Users/hunterbown/.codex/models_cache.json",
-        "default_model": "gpt-5.4",
-        "available_models": [
-          "gpt-5.4",
-          "gpt-5.3-codex",
-          "gpt-5.2-codex",
-          "gpt-5.2",
-          "gpt-5.1-codex-max",
-          "gpt-5.1-codex",
-          "gpt-5.1",
-          "gpt-5-codex",
-          "gpt-5",
-          "gpt-5.1-codex-mini",
-          "gpt-5-codex-mini"
-        ]
+        "default_model": "gpt-5.4"
       },
       "requested_transport": "cli",
       "preferred_transport": "cli",
@@ -98,9 +80,7 @@
         "cli",
         "mcp"
       ],
-      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
       "mcp_sdk_available": true,
-      "credential_source": "/Users/hunterbown/.codex/auth.json",
       "reachable": true,
       "message": "Codex backend probe completed successfully.",
       "transport": "cli",
@@ -152,26 +132,8 @@
           "cli",
           "mcp"
         ],
-        "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
         "mcp_sdk_available": true,
-        "credential_source": "/Users/hunterbown/.codex/auth.json",
-        "codex_home": "/Users/hunterbown/.codex",
-        "auth_file": "/Users/hunterbown/.codex/auth.json",
-        "models_cache": "/Users/hunterbown/.codex/models_cache.json",
-        "default_model": "gpt-5.4",
-        "available_models": [
-          "gpt-5.4",
-          "gpt-5.3-codex",
-          "gpt-5.2-codex",
-          "gpt-5.2",
-          "gpt-5.1-codex-max",
-          "gpt-5.1-codex",
-          "gpt-5.1",
-          "gpt-5-codex",
-          "gpt-5",
-          "gpt-5.1-codex-mini",
-          "gpt-5-codex-mini"
-        ]
+        "default_model": "gpt-5.4"
       },
       "requested_transport": "cli",
       "preferred_transport": "cli",
@@ -179,9 +141,7 @@
         "cli",
         "mcp"
       ],
-      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
       "mcp_sdk_available": true,
-      "credential_source": "/Users/hunterbown/.codex/auth.json",
       "reachable": true,
       "message": "Codex backend probe completed successfully.",
       "transport": "cli",
@@ -202,6 +162,6 @@
   "bootstrapped_files": {},
   "train_rows_used": 8,
   "val_rows_used": 12,
-  "optimized_module": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/comprehend-languages/optimized_module.json",
+  "optimized_module": "catalog/gepa/spells/comprehend-languages/optimized_module.json",
   "optimized_instruction": "You are casting the Comprehend Languages spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this skill when the words are legible but the meaning is trapped inside an unfamiliar dialect, format, or community.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You are reading unfamiliar jargon, logs, schemas, or domain-specific shorthand.\n- You need translation plus interpretation, not literal word substitution.\n- A team or toolchain uses language that blocks progress.\nExpected workflow elements:\n- Identify the source dialect, format, or jargon domain.\n- Translate the surface text into plain language while preserving technical meaning.\n- Explain domain-specific assumptions, idioms, and missing context.\n- Return the translated content with terms of art preserved where necessary.\nExpected deliverables:\n- A plain-language translation.\n- A glossary of non-obvious terms.\n- Notes on ambiguity or lost nuance.\nGuardrails that must remain visible:\n- Do not flatten away important technical distinctions.\n- Flag ambiguity when a term has multiple plausible meanings.\nDefault invocation language:\n- Use $comprehend-languages to translate this code, jargon, or protocol into clear operational English."
 }

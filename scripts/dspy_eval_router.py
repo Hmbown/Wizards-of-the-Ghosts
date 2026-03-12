@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from dspy_common import (
+    _relativize,
     artifact_paths,
     category_context,
     classify_runtime_failure,
@@ -148,7 +149,7 @@ def evaluate_baseline(repo_root: Path, splits: list[str], eval_limit: int | None
         "correct": correct,
         "accuracy": (correct / total) if total else 0.0,
         "sample_predictions": samples,
-        "predictions_path": str(paths["baseline_eval_predictions"]),
+        "predictions_path": _relativize(paths["baseline_eval_predictions"], repo_root),
         "confusion": {gold: dict(counter) for gold, counter in confusion.items()},
     }
     write_json(paths["baseline_eval_summary"], summary)
@@ -158,7 +159,7 @@ def evaluate_baseline(repo_root: Path, splits: list[str], eval_limit: int | None
 def evaluate_dspy(repo_root: Path, splits: list[str], args: argparse.Namespace) -> tuple[dict[str, Any], int]:
     validation = validate_workspace(repo_root)
     paths = artifact_paths(repo_root)
-    dspy, dependency = dependency_info()
+    dspy, dependency = dependency_info(repo_root)
     config, backend = resolve_lm_config(args)
     all_rows = collect_eval_rows(repo_root, splits) if validation["ok"] else []
     rows = limit_rows(all_rows, args.eval_limit)
@@ -187,7 +188,7 @@ def evaluate_dspy(repo_root: Path, splits: list[str], args: argparse.Namespace) 
             "status": "compile_failed",
             "message": "Compiled DSPy router artifact is missing. Run the compile step first.",
             "splits_evaluated": splits,
-            "artifact_path": str(paths["dspy_router"]),
+            "artifact_path": _relativize(paths["dspy_router"], repo_root),
             "dependency": dependency,
             "backend": backend,
             **eval_scope,
@@ -278,7 +279,7 @@ def evaluate_dspy(repo_root: Path, splits: list[str], args: argparse.Namespace) 
             **eval_scope,
             "correct": correct,
             "accuracy": (correct / total) if total else 0.0,
-            "predictions_path": str(paths["dspy_eval_predictions"]),
+            "predictions_path": _relativize(paths["dspy_eval_predictions"], repo_root),
             "dependency": dependency,
             "backend": backend,
         }

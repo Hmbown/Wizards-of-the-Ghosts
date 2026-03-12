@@ -96,7 +96,7 @@ def main() -> int:
     repo_root = Path(args.repo_root).resolve()
     slug = args.slug
     validation = validate_spell_workspace(repo_root, slug)
-    dspy, dependency = dependency_info()
+    dspy, dependency = dependency_info(repo_root)
     config, backend = resolve_lm_config(args)
 
     if config is not None:

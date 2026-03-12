@@ -2,8 +2,8 @@
 
 You are working in:
 
-- repo: `/Volumes/VIXinSSD/wizardsoftheghosts`
-- related Codex backend fork: `/Volumes/VIXinSSD/dspy-codex`
+- repo: `<repo-root>` (e.g. the local clone of `wizardsoftheghosts`)
+- related Codex backend fork: `<dspy-codex-root>` (e.g. a sibling clone of `dspy-codex`)
 
 Your job is to make `wizardsoftheghosts` use the local Codex-backed DSPy path for GEPA work, then use that backend to continue the spell optimization lane.
 
@@ -24,7 +24,7 @@ Your job is to make `wizardsoftheghosts` use the local Codex-backed DSPy path fo
 - Current validation/test status in this repo was:
   - `pytest tests/test_gepa_rubric_contracts.py tests/test_gepa_workflow.py tests/test_dspy_workflow.py -q`
   - result: `41 passed`
-- `.venv` already exists at `/Volumes/VIXinSSD/wizardsoftheghosts/.venv`
+- `.venv` already exists at `<repo-root>/.venv`
 - Do not use bare system `python3` for DSPy/GEPA runs unless you first prove it has the right environment. The repo has a `.venv` and the previous mismatch came from using the wrong interpreter.
 
 ## The Actual Problem
@@ -33,7 +33,7 @@ Your job is to make `wizardsoftheghosts` use the local Codex-backed DSPy path fo
 
 - `scripts/dspy_codex_lm.py`
 
-but `/Volumes/VIXinSSD/dspy-codex` is the newer fork that ships:
+but `<dspy-codex-root>` is the newer fork that ships:
 
 - `dspy.CodexLM`
 - `scripts/dspy_codex_doctor.py`
@@ -47,19 +47,19 @@ The goal is to use the real `dspy-codex` backend, not keep growing the ad hoc lo
 
 Open these before changing code:
 
-- `/Volumes/VIXinSSD/dspy-codex/README.md`
-- `/Volumes/VIXinSSD/dspy-codex/skills/dspy-codex/SKILL.md`
-- `/Volumes/VIXinSSD/dspy-codex/skills/dspy-codex/references/runtime-selection.md`
-- `/Volumes/VIXinSSD/wizardsoftheghosts/scripts/dspy_common.py`
-- `/Volumes/VIXinSSD/wizardsoftheghosts/scripts/gepa_common.py`
-- `/Volumes/VIXinSSD/wizardsoftheghosts/scripts/gepa_optimize_spell.py`
-- `/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/README.md`
+- `<dspy-codex-root>/README.md`
+- `<dspy-codex-root>/skills/dspy-codex/SKILL.md`
+- `<dspy-codex-root>/skills/dspy-codex/references/runtime-selection.md`
+- `<repo-root>/scripts/dspy_common.py`
+- `<repo-root>/scripts/gepa_common.py`
+- `<repo-root>/scripts/gepa_optimize_spell.py`
+- `<repo-root>/catalog/gepa/README.md`
 
 ## What To Do
 
 1. Verify the local `dspy-codex` fork is healthy.
 
-From `/Volumes/VIXinSSD/dspy-codex`, run the repo’s own checks first:
+From `<dspy-codex-root>`, run the repo’s own checks first:
 
 ```bash
 uv sync --extra mcp --extra dev
@@ -81,7 +81,7 @@ uv run python scripts/dspy_codex_smoke.py --transport cli --json
 Prefer a clean, explicit path such as installing the local fork into the repo venv rather than relying on global Python state. A likely path is:
 
 ```bash
-uv pip install --python /Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python -e /Volumes/VIXinSSD/dspy-codex
+uv pip install --python <repo-root>/.venv/bin/python -e <dspy-codex-root>
 ```
 
 If you choose a different installation route, keep it explicit and reproducible.
@@ -107,7 +107,7 @@ Prefer using the fork’s `dspy.CodexLM` client instead of maintaining `scripts/
 Use the repo venv or the repo’s own wrappers, not the wrong interpreter. Run:
 
 ```bash
-cd /Volumes/VIXinSSD/wizardsoftheghosts
+cd <repo-root>
 DSPY_MODEL=codex/default npm run dspy:validate
 DSPY_MODEL=codex/default npm run dspy:baseline
 ```
@@ -126,7 +126,7 @@ Keep the sandbox conservative. The `dspy-codex` repo defaults matter here.
 Run optimize/eval for the already-authored spell workspaces first:
 
 ```bash
-cd /Volumes/VIXinSSD/wizardsoftheghosts
+cd <repo-root>
 export DSPY_MODEL=codex/default
 export GEPA_REFLECTION_MODEL=codex/default
 export DSPY_TEMPERATURE=0

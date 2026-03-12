@@ -12,6 +12,8 @@ from typing import Any
 
 from dspy_common import (
     LMConfig,
+    _relativize,
+    _sanitize_probe,
     classify_runtime_failure,
     config_as_dict,
     configure_dspy_lm,
@@ -501,7 +503,7 @@ def bootstrap_spell_workspace(repo_root: Path, slug: str, force: bool = False) -
     def _write_if_missing(path: Path, content: str, key: str) -> None:
         if force or not path.exists():
             path.write_text(content, encoding="utf-8")
-            created[key] = str(path)
+            created[key] = _relativize(path, repo_root)
 
     _write_if_missing(
         paths["spell"],
@@ -809,8 +811,8 @@ def validate_spell_workspace(repo_root: Path, slug: str) -> dict[str, Any]:
         "missing_files": missing,
         "errors": errors,
         "warnings": warnings,
-        "artifact_dir": str(paths["spell"].parent),
-        "artifact_paths": {key: str(path) for key, path in paths.items()},
+        "artifact_dir": _relativize(paths["spell"].parent, repo_root),
+        "artifact_paths": {key: _relativize(path, repo_root) for key, path in paths.items()},
         "dataset_counts": {
             "train_rows": len(parsed_rows.get("train", [])),
             "eval_rows": len(parsed_rows.get("eval", [])),
