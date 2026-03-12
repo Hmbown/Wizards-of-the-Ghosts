@@ -198,11 +198,18 @@ def main() -> int:
         )
 
         optimized_payload: dict[str, Any]
-        if not paths["optimized_module"].exists():
+        optimized_module_data: dict[str, Any] | None = None
+        if paths["optimized_module"].exists():
+            try:
+                optimized_module_data = json.loads(paths["optimized_module"].read_text(encoding="utf-8"))
+            except Exception:  # noqa: BLE001
+                optimized_module_data = None
+
+        if not paths["optimized_module"].exists() or not isinstance(optimized_module_data, dict) or "predict" not in optimized_module_data:
             optimized_payload = {
                 "slug": slug,
                 "status": "optimized_module_missing",
-                "message": "No optimized module artifact was found. Run gepa_optimize_spell.py first.",
+                "message": "No optimized module artifact was found (file missing or placeholder). Run gepa_optimize_spell.py first.",
                 "backend": backend,
                 "dependency": dependency,
                 "baseline_average_score": baseline_summary["average_score"],
