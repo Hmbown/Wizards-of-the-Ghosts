@@ -8,6 +8,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 .temp/
+.venv/
+.pytest_cache/
+__pycache__/
 .codex/
 .hermes/
 

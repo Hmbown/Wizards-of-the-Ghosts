@@ -1,0 +1,177 @@
+{
+  "router": "baseline",
+  "status": "evaluated",
+  "splits_evaluated": [
+    "eval"
+  ],
+  "total_eval_rows": 104,
+  "total_available_rows": 104,
+  "eval_limit": null,
+  "correct": 82,
+  "accuracy": 0.7884615384615384,
+  "sample_predictions": [
+    {
+      "query_id": "p2a-animal-friendship-eval",
+      "split": "eval",
+      "query": "I want the smallest trustworthy interaction with this vendor API so I can learn its temperament.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.08705
+    },
+    {
+      "query_id": "p2a-animate-objects-eval",
+      "split": "eval",
+      "query": "Attach minimal automation so this passive artifact reacts when its inputs change.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.083959
+    },
+    {
+      "query_id": "p2a-awaken-eval",
+      "split": "eval",
+      "query": "Teach the crusty system to answer back without pretending it became smarter underneath.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.096124
+    },
+    {
+      "query_id": "p2a-dimension-door-eval",
+      "split": "eval",
+      "query": "I need a fast reversible context switch between two known places.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.152569
+    },
+    {
+      "query_id": "p2a-freedom-of-movement-eval",
+      "split": "eval",
+      "query": "Find what is binding this process and show the least destructive way to get it moving again.",
+      "gold": "actions-access-and-automation",
+      "pred": "investigation-and-preparation",
+      "score": 0.144169
+    },
+    {
+      "query_id": "p2a-knock-eval",
+      "split": "eval",
+      "query": "Help me resolve this auth barrier through the right recovery or escalation channel.",
+      "gold": "actions-access-and-automation",
+      "pred": "messaging-and-coordination",
+      "score": 0.074896
+    },
+    {
+      "query_id": "p2a-longstrider-eval",
+      "split": "eval",
+      "query": "Show me the highest-leverage optimization to shorten this path and keep correctness intact.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.052737
+    },
+    {
+      "query_id": "p2a-mage-hand-eval",
+      "split": "eval",
+      "query": "I need a delicate file or state manipulation, not a broad refactor.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.101215
+    },
+    {
+      "query_id": "p2a-mordenkainen-s-sword-eval",
+      "split": "eval",
+      "query": "I need a durable background process that repeatedly cuts through the same task.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.13286
+    },
+    {
+      "query_id": "p2a-planar-binding-eval",
+      "split": "eval",
+      "query": "Constrain the outside service to a bounded role in our workflow before we rely on it.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.058045
+    },
+    {
+      "query_id": "p2a-polymorph-eval",
+      "split": "eval",
+      "query": "I need a real format or protocol transformation from one representation into another.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.11517
+    },
+    {
+      "query_id": "p2a-prestidigitation-eval",
+      "split": "eval",
+      "query": "Do the little practical task directly; it is not worth a larger workflow.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.064295
+    },
+    {
+      "query_id": "p2a-teleport-eval",
+      "split": "eval",
+      "query": "I need a serious one-time migration plan that preserves continuity during the jump.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.09849
+    },
+    {
+      "query_id": "p2a-teleportation-circle-eval",
+      "split": "eval",
+      "query": "I need a permanent repeatable portal for code and data to travel through safely.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.091702
+    },
+    {
+      "query_id": "p2a-true-polymorph-eval",
+      "split": "eval",
+      "query": "We are crossing the point of no return; help plan the permanent identity change.",
+      "gold": "actions-access-and-automation",
+      "pred": "actions-access-and-automation",
+      "score": 0.10131
+    }
+  ],
+  "predictions_path": "catalog/dspy/baseline_eval_predictions.jsonl",
+  "confusion": {
+    "actions-access-and-automation": {
+      "actions-access-and-automation": 14,
+      "investigation-and-preparation": 1,
+      "messaging-and-coordination": 1
+    },
+    "containment-and-intervention": {
+      "containment-and-intervention": 7,
+      "influence-and-behavior": 2,
+      "actions-access-and-automation": 1
+    },
+    "influence-and-behavior": {
+      "influence-and-behavior": 13,
+      "messaging-and-coordination": 2,
+      "actions-access-and-automation": 1,
+      "containment-and-intervention": 2
+    },
+    "investigation-and-preparation": {
+      "investigation-and-preparation": 16,
+      "actions-access-and-automation": 4,
+      "influence-and-behavior": 1
+    },
+    "messaging-and-coordination": {
+      "messaging-and-coordination": 5,
+      "actions-access-and-automation": 1
+    },
+    "monitoring-and-protection": {
+      "monitoring-and-protection": 14,
+      "investigation-and-preparation": 1,
+      "simulation-and-staging": 1
+    },
+    "repair-and-recovery": {
+      "repair-and-recovery": 8,
+      "actions-access-and-automation": 1,
+      "investigation-and-preparation": 1
+    },
+    "simulation-and-staging": {
+      "simulation-and-staging": 5,
+      "messaging-and-coordination": 1,
+      "investigation-and-preparation": 1
+    }
+  }
+}

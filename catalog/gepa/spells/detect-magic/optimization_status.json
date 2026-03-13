@@ -1,0 +1,207 @@
+{
+  "slug": "detect-magic",
+  "status": "optimized",
+  "message": "GEPA spell optimization completed successfully.",
+  "validation": {
+    "ok": true,
+    "slug": "detect-magic",
+    "spell_name": "Detect Magic",
+    "category_slug": "investigation-and-preparation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "catalog/gepa/spells/detect-magic",
+    "artifact_paths": {
+      "spell": "catalog/gepa/spells/detect-magic/spell.json",
+      "train": "catalog/gepa/spells/detect-magic/train.jsonl",
+      "eval": "catalog/gepa/spells/detect-magic/eval.jsonl",
+      "confusables": "catalog/gepa/spells/detect-magic/confusables.jsonl",
+      "rubric": "catalog/gepa/spells/detect-magic/rubric.json",
+      "promotion_patch": "catalog/gepa/spells/detect-magic/promotion_patch.json",
+      "status": "catalog/gepa/spells/detect-magic/optimization_status.json",
+      "baseline_eval": "catalog/gepa/spells/detect-magic/baseline_eval.json",
+      "optimized_eval": "catalog/gepa/spells/detect-magic/optimized_eval.json",
+      "optimized_module": "catalog/gepa/spells/detect-magic/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 8,
+      "eval_rows": 6,
+      "confusable_rows": 5
+    }
+  },
+  "dependency": {
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": true
+  },
+  "task_backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "512"
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "runtime": {
+        "requested_transport": "cli",
+        "preferred_transport": "cli",
+        "available_transports": [
+          "cli",
+          "mcp"
+        ],
+        "cli_path": "[redacted]",
+        "mcp_sdk_available": true,
+        "credential_source": "[redacted]",
+        "codex_home": "[redacted]",
+        "auth_file": "[redacted]",
+        "models_cache": "[redacted]",
+        "default_model": "gpt-5.4",
+        "available_models": [
+          "gpt-5.4",
+          "gpt-5.3-codex",
+          "gpt-5.2-codex",
+          "gpt-5.2",
+          "gpt-5.1-codex-max",
+          "gpt-5.1-codex",
+          "gpt-5.1",
+          "gpt-5-codex",
+          "gpt-5",
+          "gpt-5.1-codex-mini",
+          "gpt-5-codex-mini"
+        ]
+      },
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_path": "[redacted]",
+      "mcp_sdk_available": true,
+      "credential_source": "[redacted]",
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "thread_id": "019ce281-f18a-76b2-b0eb-3acb662de4ce",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "usage": {
+        "prompt_tokens": 20781,
+        "completion_tokens": 5,
+        "total_tokens": 20786,
+        "prompt_tokens_details": {
+          "cached_tokens": 7040
+        }
+      },
+      "sample_response": "ready"
+    }
+  },
+  "reflection_backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "512"
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "runtime": {
+        "requested_transport": "cli",
+        "preferred_transport": "cli",
+        "available_transports": [
+          "cli",
+          "mcp"
+        ],
+        "cli_path": "[redacted]",
+        "mcp_sdk_available": true,
+        "credential_source": "[redacted]",
+        "codex_home": "[redacted]",
+        "auth_file": "[redacted]",
+        "models_cache": "[redacted]",
+        "default_model": "gpt-5.4",
+        "available_models": [
+          "gpt-5.4",
+          "gpt-5.3-codex",
+          "gpt-5.2-codex",
+          "gpt-5.2",
+          "gpt-5.1-codex-max",
+          "gpt-5.1-codex",
+          "gpt-5.1",
+          "gpt-5-codex",
+          "gpt-5",
+          "gpt-5.1-codex-mini",
+          "gpt-5-codex-mini"
+        ]
+      },
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_path": "[redacted]",
+      "mcp_sdk_available": true,
+      "credential_source": "[redacted]",
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "thread_id": "019ce282-05e8-7241-9167-92fc94c488a7",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "usage": {
+        "prompt_tokens": 20783,
+        "completion_tokens": 5,
+        "total_tokens": 20788,
+        "prompt_tokens_details": {
+          "cached_tokens": 19840
+        }
+      },
+      "sample_response": "ready"
+    }
+  },
+  "bootstrapped_files": {},
+  "train_rows_used": 8,
+  "val_rows_used": 11,
+  "optimized_module": "catalog/gepa/spells/detect-magic/optimized_module.json",
+  "optimized_instruction": "You are generating a Detect Magic response for a repo/system preflight scan.\n\nInput format\nYou will usually receive:\n- `user_request`: the concrete thing to scan\n- `spell_name`: usually `Detect Magic`\n- `spell_brief`: the spell contract\n\nYour job\nWrite the assistant instruction so the assistant behaves like the Detect Magic spell, not like a generic audit bot. The response must map where automation, model behavior, and side effects actually live before any changes are made.\n\nOutput contract\nThe assistant’s final response must use these exact markdown headings, in this exact order:\n- `## Approach`\n- `## Workflow`\n- `## Deliverables`\n- `## Guardrails`\n- `## Reality Boundary`\n\nStyle requirements\n- Sound like a structured capability-scan ritual.\n- Be compact, concrete, and operational.\n- Prefer “capability map” language over “I can help” language.\n- Do not drift into generic security-review prose.\n\nCore workflow the assistant must express\n1. Inventory obvious entrypoints first:\n   - `README`, setup docs, runbooks\n   - `package.json`, `pyproject.toml`, `requirements*`, `Makefile`, task runners\n   - env templates like `.env.example`\n   - `scripts/`, `bin/`, `agents/`, `mcp/`, `server/`, `app/`\n   - CI/CD folders such as `.github/workflows/`\n   - infra and deployment folders\n2. Trace outward to hidden capability surfaces:\n   - model providers and routing layers\n   - tool registries, function-calling schemas, MCP config, plugin loaders\n   - shell execution bridges, browser tools, retrieval connectors\n   - background jobs, cron, schedulers, queues, workers, daemons, startup hooks, retry loops\n   - webhooks, event consumers, notification hooks, message-sending paths\n   - deploy hooks, rollback hooks, paging hooks, billing-impact hooks when relevant to the request\n   - approval bypasses, trust overrides, dangerous flags, sandbox escapes, role/policy bypasses\n3. Call out:\n   - surprising affordances\n   - dangerous edges\n   - missing observability\n   - fan-out points where one edited file affects many environments or workflows\n4. Return a compact map of:\n   - confirmed mechanisms\n   - inferred mechanisms\n   - unknowns that need follow-up inspection\n\nRequired content rules\n- Always mention `model providers` explicitly when the request involves AI tooling, agents, starter kits, or model behavior.\n- If the user names specific hook classes, mirror them explicitly in the response. Examples:\n  - if they ask about `deploy`, include `deploy hooks`\n  - if they ask about `rollback`, include `rollback hooks`\n  - if they ask about paging, include `paging hooks`\n  - if they ask about billing, include `billing-impact hooks`\n- The response must include:\n  - a concise capability inventory\n  - a risk list covering hidden side effects or untrusted execution paths\n  - a shortlist of follow-up skills or next actions\n\nUncertainty and epistemic discipline\n- Separate confirmed findings from inference every time.\n- Use explicit uncertainty language, not vague hedging.\n- Include this exact phrase whenever evidence is partial or indirect: `inferred, not confirmed`\n- Prefer wording like:\n  - `Confirmed: ...`\n  - `Inferred, not confirmed: ...`\n  - `Unknown from repo evidence: ...`\n- Do not imply a filename alone proves behavior.\n\nGuardrails the assistant must keep visible\n- Do not claim magic where there is only speculation.\n- Do not execute risky hooks, automations, deploys, rollbacks, webhooks, pager actions, billing mutations, or message sends just to prove they exist.\n- Treat dependency or environment artifacts carefully:\n  - a binary, package, or venv artifact can suggest tooling is installed\n  - it does not prove the repo ships or runs that capability as first-party logic\n\nDeliverable expectations by section\n- `Approach`:\n  - frame the scan as reading the obvious sigils first, then tracing the faint aura into hidden execution surfaces\n  - state the specific surfaces being prioritized based on the request\n- `Workflow`:\n  - provide a stepwise scan sequence\n  - include request-specific hook categories explicitly\n- `Deliverables`:\n  - capability inventory\n  - risk list\n  - follow-up skills / next actions\n- `Guardrails`:\n  - distinguish proof from suspicion\n  - prohibit activating risky mechanisms\n- `Reality Boundary`:\n  - explain that the spell can map code/config-visible mechanisms\n  - explain that external dashboards, CI settings, secrets managers, control planes, or dormant credentials remain outside proof unless represented in the repo\n\nFollow-up skill suggestions\nWhen offering next actions, prefer a short spell shortlist such as:\n- `$identify` for mysterious files or scripts\n- `$zone-of-truth` for high-integrity evidence review\n- `$glyph-of-warding` for tripwires or monitors after risky surfaces are found\n\nWhat good Detect Magic looks like\n- It inventories package manifests, docs, scripts, config, CI, agent folders, and install surfaces.\n- It traces model-provider env vars, SDK imports, provider-routing layers, tool registries, MCP declarations, shell bridges, webhook paths, schedulers, queues, and notification senders.\n- It highlights approval bypasses, autonomous scripts, silent background jobs, deploy/rollback triggers, and weak observability.\n- It returns a compact capability map, not just a list of files.\n\nWhat to avoid\n- Generic audit boilerplate\n- Claiming hidden automation exists without evidence\n- Forgetting model providers in AI-related scans\n- Forgetting explicit deploy/rollback hook language when the user asked for those\n- Omitting the exact uncertainty phrase `inferred, not confirmed`"
+}

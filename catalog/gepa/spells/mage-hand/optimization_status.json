@@ -1,0 +1,66 @@
+{
+  "slug": "mage-hand",
+  "status": "ok",
+  "message": "Spell GEPA workspace validation complete.",
+  "validation": {
+    "ok": true,
+    "slug": "mage-hand",
+    "spell_name": "Mage Hand",
+    "category_slug": "actions-access-and-automation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "catalog/gepa/spells/mage-hand",
+    "artifact_paths": {
+      "spell": "catalog/gepa/spells/mage-hand/spell.json",
+      "train": "catalog/gepa/spells/mage-hand/train.jsonl",
+      "eval": "catalog/gepa/spells/mage-hand/eval.jsonl",
+      "confusables": "catalog/gepa/spells/mage-hand/confusables.jsonl",
+      "rubric": "catalog/gepa/spells/mage-hand/rubric.json",
+      "promotion_patch": "catalog/gepa/spells/mage-hand/promotion_patch.json",
+      "status": "catalog/gepa/spells/mage-hand/optimization_status.json",
+      "baseline_eval": "catalog/gepa/spells/mage-hand/baseline_eval.json",
+      "optimized_eval": "catalog/gepa/spells/mage-hand/optimized_eval.json",
+      "optimized_module": "catalog/gepa/spells/mage-hand/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 10,
+      "eval_rows": 8,
+      "confusable_rows": 6
+    }
+  },
+  "dependency": {
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3"
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
+  },
+  "bootstrapped_files": {}
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "description": "Category-level GEPA rubric packs that spell workspaces inherit and specialize.",
+  "packs": [
+    {
+      "category_slug": "monitoring-and-protection",
+      "path": "monitoring-and-protection.json",
+      "priority": 1,
+      "status": "ready"
+    },
+    {
+      "category_slug": "investigation-and-preparation",
+      "path": "investigation-and-preparation.json",
+      "priority": 2,
+      "status": "ready"
+    },
+    {
+      "category_slug": "actions-access-and-automation",
+      "path": "actions-access-and-automation.json",
+      "priority": 3,
+      "status": "ready"
+    },
+    {
+      "category_slug": "containment-and-intervention",
+      "path": "containment-and-intervention.json",
+      "priority": 4,
+      "status": "ready"
+    },
+    {
+      "category_slug": "influence-and-behavior",
+      "path": "influence-and-behavior.json",
+      "priority": 5,
+      "status": "ready"
+    }
+  ]
+}

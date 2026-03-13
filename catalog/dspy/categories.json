@@ -1,0 +1,180 @@
+[
+  {
+    "slug": "investigation-and-preparation",
+    "title": "Investigation and Preparation",
+    "description": "Inspection, translation, verification, preflight, and context-loading skills for understanding a situation and setting up the next move before acting.",
+    "entry_slugs": [
+      "arcana",
+      "clairvoyance",
+      "comprehend-languages",
+      "detect-magic",
+      "detect-thoughts",
+      "enhance-ability",
+      "etherealness",
+      "faerie-fire",
+      "find-the-path",
+      "foresight",
+      "history",
+      "identify",
+      "insight",
+      "investigation",
+      "legend-lore",
+      "locate-animals-or-plants",
+      "locate-creature",
+      "locate-object",
+      "nature",
+      "perception",
+      "religion",
+      "see-invisibility",
+      "speak-with-dead",
+      "speak-with-plants",
+      "tongues",
+      "true-seeing",
+      "true-strike",
+      "zone-of-truth"
+    ]
+  },
+  {
+    "slug": "actions-access-and-automation",
+    "title": "Actions, Access, and Automation",
+    "description": "Precise manipulation, access resolution, automation, migration, and interface-lift skills for changing systems with minimal blast radius.",
+    "entry_slugs": [
+      "acrobatics",
+      "animal-friendship",
+      "animate-objects",
+      "athletics",
+      "awaken",
+      "dimension-door",
+      "freedom-of-movement",
+      "knock",
+      "longstrider",
+      "mage-hand",
+      "mordenkainen-s-sword",
+      "planar-binding",
+      "polymorph",
+      "prestidigitation",
+      "sleight-of-hand",
+      "teleport",
+      "teleportation-circle",
+      "true-polymorph",
+      "unseen-servant"
+    ]
+  },
+  {
+    "slug": "monitoring-and-protection",
+    "title": "Monitoring and Protection",
+    "description": "Observability, alerting, guards, and privacy controls that keep systems watchful without excess noise.",
+    "entry_slugs": [
+      "dancing-lights",
+      "disguise-self",
+      "dispel-magic",
+      "glyph-of-warding",
+      "greater-invisibility",
+      "guards-and-wards",
+      "invisibility",
+      "light",
+      "mind-blank",
+      "mislead",
+      "nondetection",
+      "scrying",
+      "seeming",
+      "silence",
+      "speak-with-animals",
+      "stealth",
+      "symbol"
+    ]
+  },
+  {
+    "slug": "messaging-and-coordination",
+    "title": "Messaging and Coordination",
+    "description": "Communication, briefings, scheduling, rhetoric, and audience-aware coordination across people, agents, and systems.",
+    "entry_slugs": [
+      "animal-messenger",
+      "dream",
+      "illusory-script",
+      "intimidation",
+      "magic-mouth",
+      "message",
+      "performance",
+      "persuasion",
+      "sending"
+    ]
+  },
+  {
+    "slug": "repair-and-recovery",
+    "title": "Repair and Recovery",
+    "description": "Triage, repair, recovery, and stabilization for broken state, degraded systems, and fragile operating conditions.",
+    "entry_slugs": [
+      "animal-handling",
+      "cure-wounds",
+      "feather-fall",
+      "greater-restoration",
+      "healing-word",
+      "lesser-restoration",
+      "mass-cure-wounds",
+      "medicine",
+      "mending",
+      "raise-dead",
+      "regenerate",
+      "resurrection",
+      "survival"
+    ]
+  },
+  {
+    "slug": "simulation-and-staging",
+    "title": "Simulation and Staging",
+    "description": "Mockups, staged environments, synthetic artifacts, and demo-ready representations for reasoning, testing, and rehearsal.",
+    "entry_slugs": [
+      "deception",
+      "hallucinatory-terrain",
+      "major-image",
+      "minor-illusion",
+      "mirage-arcane",
+      "programmed-illusion",
+      "project-image",
+      "silent-image"
+    ]
+  },
+  {
+    "slug": "influence-and-behavior",
+    "title": "Influence and Behavior",
+    "description": "Attention design, behavior shaping, and social intervention skills with strict ethical guardrails and consent requirements.",
+    "entry_slugs": [
+      "bane",
+      "bestow-curse",
+      "calm-emotions",
+      "charm-person",
+      "confusion",
+      "enthrall",
+      "fear",
+      "glibness",
+      "heroism",
+      "hold-monster",
+      "hold-person",
+      "hypnotic-pattern",
+      "mass-suggestion",
+      "otto-s-irresistible-dance",
+      "plant-growth",
+      "sleep",
+      "suggestion",
+      "vicious-mockery"
+    ]
+  },
+  {
+    "slug": "containment-and-intervention",
+    "title": "Containment and Intervention",
+    "description": "Containment, capability reduction, throttling, and high-impact interventions that need explicit approval, narrow scope, and clear rollback.",
+    "entry_slugs": [
+      "blindness-deafness",
+      "eyebite",
+      "feeblemind",
+      "forcecage",
+      "heat-metal",
+      "power-word-kill",
+      "power-word-stun",
+      "shatter",
+      "stinking-cloud",
+      "thunderwave"
+    ]
+  }
+]

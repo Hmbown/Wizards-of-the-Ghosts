@@ -1,0 +1,207 @@
+{
+  "slug": "comprehend-languages",
+  "status": "optimized",
+  "message": "GEPA spell optimization completed successfully.",
+  "validation": {
+    "ok": true,
+    "slug": "comprehend-languages",
+    "spell_name": "Comprehend Languages",
+    "category_slug": "investigation-and-preparation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "catalog/gepa/spells/comprehend-languages",
+    "artifact_paths": {
+      "spell": "catalog/gepa/spells/comprehend-languages/spell.json",
+      "train": "catalog/gepa/spells/comprehend-languages/train.jsonl",
+      "eval": "catalog/gepa/spells/comprehend-languages/eval.jsonl",
+      "confusables": "catalog/gepa/spells/comprehend-languages/confusables.jsonl",
+      "rubric": "catalog/gepa/spells/comprehend-languages/rubric.json",
+      "promotion_patch": "catalog/gepa/spells/comprehend-languages/promotion_patch.json",
+      "status": "catalog/gepa/spells/comprehend-languages/optimization_status.json",
+      "baseline_eval": "catalog/gepa/spells/comprehend-languages/baseline_eval.json",
+      "optimized_eval": "catalog/gepa/spells/comprehend-languages/optimized_eval.json",
+      "optimized_module": "catalog/gepa/spells/comprehend-languages/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 8,
+      "eval_rows": 6,
+      "confusable_rows": 6
+    }
+  },
+  "dependency": {
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": true
+  },
+  "task_backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "512"
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "runtime": {
+        "requested_transport": "cli",
+        "preferred_transport": "cli",
+        "available_transports": [
+          "cli",
+          "mcp"
+        ],
+        "cli_path": "[redacted]",
+        "mcp_sdk_available": true,
+        "credential_source": "[redacted]",
+        "codex_home": "[redacted]",
+        "auth_file": "[redacted]",
+        "models_cache": "[redacted]",
+        "default_model": "gpt-5.4",
+        "available_models": [
+          "gpt-5.4",
+          "gpt-5.3-codex",
+          "gpt-5.2-codex",
+          "gpt-5.2",
+          "gpt-5.1-codex-max",
+          "gpt-5.1-codex",
+          "gpt-5.1",
+          "gpt-5-codex",
+          "gpt-5",
+          "gpt-5.1-codex-mini",
+          "gpt-5-codex-mini"
+        ]
+      },
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_path": "[redacted]",
+      "mcp_sdk_available": true,
+      "credential_source": "[redacted]",
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "thread_id": "019ce297-2274-76c2-bdb7-8a376bf9317a",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "usage": {
+        "prompt_tokens": 20785,
+        "completion_tokens": 17,
+        "total_tokens": 20802,
+        "prompt_tokens_details": {
+          "cached_tokens": 6528
+        }
+      },
+      "sample_response": "ready"
+    }
+  },
+  "reflection_backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "512"
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "runtime": {
+        "requested_transport": "cli",
+        "preferred_transport": "cli",
+        "available_transports": [
+          "cli",
+          "mcp"
+        ],
+        "cli_path": "[redacted]",
+        "mcp_sdk_available": true,
+        "credential_source": "[redacted]",
+        "codex_home": "[redacted]",
+        "auth_file": "[redacted]",
+        "models_cache": "[redacted]",
+        "default_model": "gpt-5.4",
+        "available_models": [
+          "gpt-5.4",
+          "gpt-5.3-codex",
+          "gpt-5.2-codex",
+          "gpt-5.2",
+          "gpt-5.1-codex-max",
+          "gpt-5.1-codex",
+          "gpt-5.1",
+          "gpt-5-codex",
+          "gpt-5",
+          "gpt-5.1-codex-mini",
+          "gpt-5-codex-mini"
+        ]
+      },
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_path": "[redacted]",
+      "mcp_sdk_available": true,
+      "credential_source": "[redacted]",
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "thread_id": "019ce297-2adb-7e03-a937-d5aed61596ab",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "usage": {
+        "prompt_tokens": 20783,
+        "completion_tokens": 18,
+        "total_tokens": 20801,
+        "prompt_tokens_details": {
+          "cached_tokens": 7040
+        }
+      },
+      "sample_response": "ready"
+    }
+  },
+  "bootstrapped_files": {},
+  "train_rows_used": 8,
+  "val_rows_used": 12,
+  "optimized_module": "catalog/gepa/spells/comprehend-languages/optimized_module.json",
+  "optimized_instruction": "You are casting the Comprehend Languages spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this skill when the words are legible but the meaning is trapped inside an unfamiliar dialect, format, or community.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You are reading unfamiliar jargon, logs, schemas, or domain-specific shorthand.\n- You need translation plus interpretation, not literal word substitution.\n- A team or toolchain uses language that blocks progress.\nExpected workflow elements:\n- Identify the source dialect, format, or jargon domain.\n- Translate the surface text into plain language while preserving technical meaning.\n- Explain domain-specific assumptions, idioms, and missing context.\n- Return the translated content with terms of art preserved where necessary.\nExpected deliverables:\n- A plain-language translation.\n- A glossary of non-obvious terms.\n- Notes on ambiguity or lost nuance.\nGuardrails that must remain visible:\n- Do not flatten away important technical distinctions.\n- Flag ambiguity when a term has multiple plausible meanings.\nDefault invocation language:\n- Use $comprehend-languages to translate this code, jargon, or protocol into clear operational English."
+}

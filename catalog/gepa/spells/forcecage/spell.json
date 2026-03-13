@@ -1,0 +1,26 @@
+{
+  "slug": "forcecage",
+  "name": "Forcecage",
+  "category_slug": "containment-and-intervention",
+  "category_title": "Containment and Intervention",
+  "rubric_pack": "containment-and-intervention",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "prototype",
+  "literalness": "literal",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Contain untrusted code, agents, or operations inside an isolated sandbox with no escape.",
+  "suggested_confusables": [
+    "blindness-deafness",
+    "eyebite",
+    "feeblemind",
+    "heat-metal",
+    "power-word-kill"
+  ],
+  "baseline_instruction": "You are casting the Forcecage spell from Wizards of the Ghosts.\nCategory: Containment and Intervention (containment-and-intervention).\nReality tier: prototype. Literalness: literal.\nSpell concept: Use this spell when you need to run something you do not fully trust — untrusted code, an experimental agent, a destructive operation — inside a containment boundary that prevents it from affecting the outside.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You need to execute untrusted or experimental code in a sandbox before trusting it in production.\n- An agent or automation needs to be constrained to a strict scope with no ability to escape.\n- You want to test a destructive operation in isolation before running it for real.\nExpected workflow elements:\n- Define what needs containment and what the cage must prevent: file writes, network access, process spawning, or data exfiltration.\n- Configure the isolation boundary: sandbox mode, filesystem restrictions, network policies, and execution limits.\n- Execute the contained operation and observe its behavior from outside the cage.\n- Report results, any attempted escapes or boundary violations, and whether the operation is safe to run uncontained.\nExpected deliverables:\n- A configured isolation environment with explicit containment boundaries.\n- An execution report from inside the cage, including any attempted boundary violations.\n- A safety assessment: is the contained operation safe to run in a less restricted environment.\nGuardrails that must remain visible:\n- Test the cage before putting something dangerous in it. Verify isolation boundaries actually hold.\n- Do not assume containment is perfect — monitor for escape attempts and unexpected behavior.\n- Prefer over-constraining to under-constraining. The cost of a cage that is too tight is much lower than a cage that leaks.\nDefault invocation language:\n- Use $forcecage to run this in a contained sandbox and tell me whether it behaved safely before I trust it outside."
+}

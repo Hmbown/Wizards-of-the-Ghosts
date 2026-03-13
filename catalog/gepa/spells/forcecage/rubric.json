@@ -1,0 +1,50 @@
+{
+  "rubric_pack": "containment-and-intervention",
+  "category_slug": "containment-and-intervention",
+  "spell_slug": "forcecage",
+  "spell_focus": "Run untrusted code, agents, or destructive operations inside an explicit isolation boundary, keeping scope, monitoring, and release criteria visible instead of assuming the cage is perfect.",
+  "confusable_with": [
+    "hold-person",
+    "blindness-deafness",
+    "eyebite",
+    "mage-hand",
+    "detect-magic",
+    "scrying"
+  ],
+  "judge_examples": [
+    "Names the exact filesystem, network, process, and credential boundaries of the cage, then explains what observations would prove the boundary is holding or leaking.",
+    "Uses containment to buy safety and evidence, not to imply perfect isolation or to skip release and recovery criteria."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [
+      "containment boundary",
+      "release condition"
+    ],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [
+      {
+        "criterion_id": "forcecage-boundary-specificity",
+        "weight": 0.12,
+        "question": "Does the response specify the actual cage boundary—filesystem, network, secrets, process spawning, or target environment scope—rather than gesturing at a generic sandbox?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "If the cage is proposed for live code, malware, agents, or destructive operations, confirm the environment is synthetic or explicitly authorized and that rollback/release conditions are real."
+      ]
+    }
+  },
+  "notes": [
+    "Forcecage is full containment, not a light freeze, selective muting, or targeted degradation.",
+    "A good Forcecage answer says what is inside the cage, what is blocked, what is still observable, and when the operation may safely leave the cage."
+  ]
+}

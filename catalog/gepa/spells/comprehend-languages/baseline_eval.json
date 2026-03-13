@@ -1,0 +1,1924 @@
+{
+  "slug": "comprehend-languages",
+  "status": "evaluated",
+  "variant": "baseline",
+  "backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "512"
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "runtime": {
+        "requested_transport": "cli",
+        "preferred_transport": "cli",
+        "available_transports": [
+          "cli",
+          "mcp"
+        ],
+        "cli_path": "[redacted]",
+        "mcp_sdk_available": true,
+        "credential_source": "[redacted]",
+        "codex_home": "[redacted]",
+        "auth_file": "[redacted]",
+        "models_cache": "[redacted]",
+        "default_model": "gpt-5.4",
+        "available_models": [
+          "gpt-5.4",
+          "gpt-5.3-codex",
+          "gpt-5.2-codex",
+          "gpt-5.2",
+          "gpt-5.1-codex-max",
+          "gpt-5.1-codex",
+          "gpt-5.1",
+          "gpt-5-codex",
+          "gpt-5",
+          "gpt-5.1-codex-mini",
+          "gpt-5-codex-mini"
+        ]
+      },
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_path": "[redacted]",
+      "mcp_sdk_available": true,
+      "credential_source": "[redacted]",
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "thread_id": "019ce2a1-3446-7d53-8ff7-1c0cf3106b06",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "usage": {
+        "prompt_tokens": 20783,
+        "completion_tokens": 5,
+        "total_tokens": 20788,
+        "prompt_tokens_details": {
+          "cached_tokens": 7040
+        }
+      },
+      "sample_response": "ready"
+    }
+  },
+  "total_examples": 12,
+  "average_score": 0.4733796296296297,
+  "examples": [
+    {
+      "prompt_id": "comprehend-languages-eval-001",
+      "prompt": "Interpret this Kafka consumer-lag note and pager annotation for a new engineer who does not know our SRE shorthand. Translate the operational meaning, list the important terms, and note anything that could mean more than one thing.",
+      "score": 0.666667,
+      "feedback": [
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present.",
+        "Missing custom phrase signal for ip-next-step-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 0.333333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.138889,
+            "feedback": [
+              "Missing custom phrase signal for ip-next-step-present."
+            ]
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nThe dialect is clear: Kafka operations plus pager and SRE shorthand. This spell can translate that into plain operational English for a new engineer, but the actual note and annotation are not present here, so there is nothing concrete to decode yet.\n\n## Workflow\nPaste the exact Kafka consumer-lag note and pager annotation.\nI will then:\n- translate each line into plain operational meaning\n- preserve terms of art where they matter\n- explain the implied assumptions behind the shorthand\n- flag any term that could plausibly mean more than one thing\n\n## Deliverables\nOnce you provide the text, I will return:\n- a plain-language translation of the note\n- a glossary of important Kafka, paging, and SRE terms\n- ambiguity notes for shorthand that could be interpreted multiple ways\n\n## Guardrails\nI will not smooth over technical distinctions like `consumer lag`, `offset`, `rebalance`, `throughput`, `backlog`, or `alert suppression` if the original wording depends on them.\nIf a phrase like `lag spike`, `stuck consumer`, `drain`, `flapping`, or `acked` could mean different things in your environment, I will call that out explicitly instead of guessing.\n\n## Reality Boundary\nThis is a shipping-now translation task, not a speculative one. I can interpret the operational language accurately once the source text is provided, but I should not invent the missing Kafka note or pager annotation."
+    },
+    {
+      "prompt_id": "comprehend-languages-eval-002",
+      "prompt": "A vendor sent a Spanish status update and a terse XML error-code table. Translate the operational meaning into English, explain the non-obvious terms, and tell us what still needs confirmation before we change retry behavior.",
+      "score": 0.916667,
+      "feedback": [
+        "Missing custom phrase signal for ip-uncertainty-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 0.833333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nI would read this as two dialects describing one system state.\n\nThe Spanish status update is probably the human layer: incident scope, expected restoration path, whether impact is intermittent or total, and whether the vendor is asking you to wait, retry, or hold changes.\n\nThe XML error-code table is the protocol layer: which failures are transient, which are caller faults, and which codes only look retryable until they create duplication, throttling, or queue amplification.\n\nWithout the actual text, the safest operational English is:\n\n- The vendor appears to be describing a service condition, not yet granting blanket permission to increase retries.\n- The XML table likely classifies failures, but those classifications are not enough on their own to justify changing retry behavior.\n- Before changing retries, you need confirmation on which codes are transient, whether operations are idempotent, and whether the vendor wants client-side backoff increased, decreased, or left unchanged during the incident.\n\n## Workflow\n1. Identify the dialects.\nHuman dialect: Spanish vendor operations/update language.\nMachine dialect: XML schema or error-code taxonomy.\n\n2. Translate each into plain operational meaning.\nHuman side:\n- Is the issue active, mitigated, or resolved?\n- Is impact partial, intermittent, regional, or global?\n- Is the vendor recommending patience, suppression, failover, or retry with backoff?\n\nProtocol side:\n- Which codes mean “try again later”?\n- Which mean “your request is invalid and retrying is useless”?\n- Which mean “credentials, quota, or permissions are wrong”?\n- Which might succeed on retry but create duplicate side effects?\n\n3. Preserve terms of art instead of flattening them.\nExamples:\n- `timeout` is not the same as `throttled`\n- `temporary unavailable` is not the same as `invalid request`\n- `accepted` is not the same as `completed`\n- `duplicate` is not the same as `already processed`\n\n4. Hold policy changes until the vendor confirms retry semantics per code family.\n\n## Deliverables\nPlain-language translation:\n- “There is likely an upstream service issue or degraded condition. Some failures may clear on their own, but not all errors should trigger automatic retries. Retry behavior should only be changed for explicitly transient failure codes, and only with bounded backoff and idempotency protection.”\n\nGlossary of non-obvious terms:\n- `intermitente`: intermittent; not fully down, but unreliable.\n- `degradado`: degraded; partial service with reduced quality or increased errors.\n- `incidencia`: incident; active service problem, not just a bug report.\n- `mitigacion`: mitigation; impact reduced, root cause may still be unresolved.\n- `ventana`: maintenance or change window.\n- `reintento`: retry.\n- `backoff exponencial`: exponential backoff; wait longer after each failure.\n- `idempotente`: safe to repeat without changing the end result more than once.\n- `timeout`: no response in time; can be transient, but may hide completion on the server side.\n- `throttling` / `rate limit`: server is deliberately slowing or rejecting excess requests.\n- `validation error`: request is structurally or semantically wrong; retrying unchanged will fail again.\n- `auth` / `authorization` failure: credentials or permissions issue; retries will not help.\n- `accepted` / async processing: request received, final outcome still pending elsewhere.\n\nAmbiguity or lost nuance:\n- If the Spanish update says “estamos experimentando demoras,” that implies delay, not necessarily failure.\n- If it says “pueden reintentar,” that still does not define cadence, cap, or safe code subset.\n- If the XML table says a code is “temporary,” that may describe server state, not business safety.\n- If the table lacks explicit idempotency guidance, retries on write operations remain risky.\n\nWhat still needs confirmation before changing retry behavior:\n- Which exact error codes are vendor-approved as retryable?\n- Are affected operations read-only or write-producing?\n- Are write operations idempotent with a request key or deduplication token?\n- What backoff schedule does the vendor recommend?\n- Is there a retry-after header, documented cooldown, or rate-limit contract?\n- Are timeouts ambiguous, meaning the request may have succeeded server-side?\n- Is the current incident expected to improve with retries, or worsen under load?\n- Are there per-endpoint differences, or one policy for all codes would be wrong?\n\n## Guardrails\nDo not convert every 5xx-, timeout-, or transport-looking failure into “safe to retry.”\n\nDo not change retry behavior for write paths unless idempotency is confirmed.\n\nDo not assume Spanish status language like “normalizing” or “under monitoring” means resolved.\n\nFlag any code whose meaning depends on endpoint, verb, or side effect model.\n\n## Reality Boundary\nThis spell can translate operational meaning from Spanish and XML into clear English today. It cannot honestly infer the vendor’s retry contract without the actual status text, the real error-code table, and confirmation of idempotency and rate-limit behavior.\n\nIf you want the literal translation and a retry decision matrix, provide the Spanish update and the XML table verbatim."
+    },
+    {
+      "prompt_id": "comprehend-languages-eval-003",
+      "prompt": "Help product understand this schema-diff note full of healthcare claims abbreviations. Translate the meaning, define the terms that matter for implementation, and flag anything that sounds regulated or ambiguous.",
+      "score": 0.902778,
+      "feedback": [
+        "Missing custom phrase signal for ip-evidence-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 0.805556,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\n\nI will treat the schema-diff note as a healthcare claims dialect, not just a vocabulary problem. The goal is to turn abbreviation-heavy field changes into product-readable meaning while preserving distinctions that matter for engineering, data contracts, and compliance review.\n\nI will translate each changed field into:\n- what it likely means in plain English\n- what business process it touches\n- what implementation decisions it could affect\n- whether the term sounds regulated, payer-specific, or ambiguous enough to require confirmation\n\n## Workflow\n\n1. Identify the dialect inside the note.\n   This likely includes claims-adjudication shorthand, eligibility terms, payer file conventions, EDI vocabulary, coding-system abbreviations, and internal schema language.\n\n2. Translate surface text into operational English.\n   I will rewrite abbreviation-heavy notes so product can understand what is changing in the claim, member, provider, payment, denial, or authorization flow.\n\n3. Preserve terms of art where they matter.\n   I will keep important technical terms such as `NPI`, `ICD-10`, `CPT`, `HCPCS`, `EDI 837`, `EDI 835`, `prior auth`, `COB`, or `EOB` when replacing them would erase implementation meaning.\n\n4. Define implementation impact.\n   For each important term or field, I will note whether it affects ingestion, validation, mapping, adjudication logic, UI labels, reporting, downstream exports, or auditability.\n\n5. Flag regulated or ambiguous language.\n   I will explicitly call out items that may involve PHI, HIPAA-sensitive data handling, payer-specific interpretation, benefit determination, medical coding, authorization status, or denial-reason semantics that should not be guessed.\n\n## Deliverables\n\nIf you provide the actual schema-diff note, I will return:\n\n- A plain-language translation of the note for product and operations.\n- A glossary of healthcare claims terms and abbreviations that matter for implementation.\n- A field-by-field ambiguity list where meanings are uncertain or payer-dependent.\n- A regulated-terms review highlighting anything that may require compliance, legal, or domain-owner confirmation.\n- Optional implementation notes mapping each term to likely engineering concerns such as enum design, nullable fields, backward compatibility, or source-of-truth ownership.\n\n## Guardrails\n\nI will not flatten distinct claims concepts into generic business language if that would hide important differences.\nExamples: `billed amount` is not the same as `allowed amount`; `rendering provider` is not the same as `billing provider`; `claim status` is not the same as `adjudication status`.\n\nI will flag ambiguity instead of pretending certainty.\nExamples: abbreviations like `PA` could mean `prior authorization` or `participating provider` depending on context; `DOS` usually means `date of service`, but usage still needs confirmation from the source system.\n\nI will treat regulated-looking terms cautiously.\nAnything involving diagnosis codes, procedure codes, member identifiers, payment responsibility, authorization, denial reasons, clinical review, or attachments may need domain or compliance review before product turns the translation into policy or UX text.\n\n## Reality Boundary\n\nThis spell can translate healthcare claims jargon into clear operational English today. It can make the note understandable, implementation-aware, and risk-labeled.\n\nIt cannot safely invent payer intent, legal meaning, or coding-policy interpretations that are not present in the source. For regulated or payer-specific terms, the honest boundary is: translate what the text appears to mean, then mark what still needs confirmation from claims ops, integration owners, or compliance."
+    },
+    {
+      "prompt_id": "comprehend-languages-eval-004",
+      "prompt": "Here is a shell script and one README comment. Tell me what the script actually does and what it touches.",
+      "score": 0.548611,
+      "feedback": [
+        "Missing required content: better fit.",
+        "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative.",
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.625,
+        "pack_score": 0.472222,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.0,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nI would treat the shell script as an operational dialect: commands, environment assumptions, file mutations, process launches, and external side effects. The README comment would be treated as a second dialect: human shorthand that may or may not accurately describe the script's real behavior.\n\n## Workflow\n1. Identify the script's command surface:\n   shell builtins, external binaries, environment variables, arguments, conditionals, loops, and redirections.\n2. Translate each step into plain operational English:\n   what it reads, writes, deletes, executes, exports, downloads, or modifies.\n3. Map what it touches:\n   files, directories, network endpoints, processes, services, permissions, symlinks, temp paths, and env vars.\n4. Compare the README comment against the actual script behavior:\n   confirm, narrow, or contradict the comment where needed.\n5. Return a plain-language interpretation with terms of art preserved where precision matters.\n\n## Deliverables\nIf you paste the script and README comment, I will return:\n- A plain-language explanation of what the script actually does.\n- A concrete list of what it touches:\n  files, directories, env vars, processes, network calls, and system state.\n- A glossary of shell-specific or tool-specific terms.\n- Notes on ambiguity, hidden assumptions, and any mismatch between comment and code.\n\n## Guardrails\n- I will not flatten distinct behaviors like \"reads a file\" versus \"overwrites a file\" versus \"appends to a file.\"\n- I will flag ambiguity where shell behavior depends on environment, current directory, missing quoting, or tool availability.\n- I will distinguish direct effects from possible downstream effects of invoked commands.\n\n## Reality Boundary\nThis is a shipping-now interpretation task, not a speculative one. I can translate the script into clear operational English, but I need the actual script text and README comment to do it. Without them, any claim about what it touches would be guesswork."
+    },
+    {
+      "prompt_id": "comprehend-languages-eval-005",
+      "prompt": "Before we change this repo, search it for hidden MCP configs, agent hooks, and silent automation.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit, detect-magic.",
+        "Included forbidden content: glossary.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.375,
+        "pack_score": 0.666667,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.0,
+            "feedback": [
+              "Missing required content: better fit, detect-magic."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: glossary."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\n\nI read this repo as three languages at once:\n\n- control language: `package.json`, `.github/workflows/ci.yml`, installer scripts\n- agent language: DSPy/Codex/Hermes/OpenClaw integration points\n- theatrical language: generated skill docs that talk about automations without implementing them\n\nPlain English translation: this repo does have automation, but most of the loudest mentions are documentation, not hidden executors.\n\n## Workflow\n\n1. Identify the dialects.\n   - Executable config: [`package.json`](package.json), [`.github/workflows/ci.yml`](.github/workflows/ci.yml), [`scripts/`](scripts)\n   - Agent/policy docs: [`AGENTS.md`](AGENTS.md), [`CLAUDE.md`](CLAUDE.md), DSPy docs under [`docs/`](docs)\n   - Generated prose: [`generated/openclaw/`](generated/openclaw), [`generated/hermes/`](generated/hermes)\n\n2. Translate the executable surfaces.\n   - CI fires automatically on `push` and `pull_request` via [`.github/workflows/ci.yml`](.github/workflows/ci.yml).\n   - Local build/export actions are manual npm scripts in [`package.json`](package.json).\n   - Installer scripts are real side-effect surfaces:\n     - [`scripts/install-hermes-skills.mjs`](scripts/install-hermes-skills.mjs)\n     - [`scripts/install-codex-skills.mjs`](scripts/install-codex-skills.mjs)\n\n3. Translate the agent surfaces.\n   - DSPy commands in [`package.json`](package.json) can run Python workflows.\n   - Docs describe a Codex-backed execution path and mention MCP as a model alias target, especially [`docs/next-ai-dspy-codex-gepa-prompt.md`](docs/next-ai-dspy-codex-gepa-prompt.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md).\n   - That is an agent integration surface, but not a hidden always-on hook.\n\n4. Strip out false positives.\n   - Most mentions of Slack, webhooks, Home Assistant, daemons, cron, and agents in `generated/` and `catalog/blueprints.json` are prompt content, not active automation.\n\n## Deliverables\n\nPlain-language translation:\n\n- Hidden MCP configs:\n  - I did not find a concrete in-repo MCP config file or server registry.\n  - I did find MCP discussed as part of DSPy/Codex runtime planning in docs, not as an active checked-in config surface.\n\n- Agent hooks:\n  - Real: CI on push/PR.\n  - Real: install scripts that mirror generated skills into Hermes/Codex runtime directories.\n  - Real but optional: DSPy workflows that can invoke model backends and Codex execution paths when env vars are set.\n  - Not confirmed: any always-running local agent daemon, watcher, or background orchestrator.\n\n- Silent automation:\n  - Real: `npm run verify` and `release:check` are automation entrypoints.\n  - Real: installers mutate external runtime directories.\n  - Real: `sync:canon` performs outbound fetches when invoked.\n  - Not found: cron schedules, GitHub scheduled workflows, local scheduler libraries, or hidden webhook senders in executable code.\n\nGlossary:\n\n- `MCP`: here it appears as \"Model Context Protocol\" language in docs and model alias naming, not a confirmed active config file.\n- `Agent hook`: any path that causes agent/runtime behavior, including CI triggers, installs into skill runtimes, or model execution wiring.\n- `Silent automation`: behavior that runs with side effects once invoked, even if it is not obvious from the command name.\n- `DSPY_MODEL`: env var selecting the backend/runtime for DSPy flows.\n- `HERMES_HOME` / `CODEX_HOME`: env vars that redirect where install scripts place skills.\n\nNotes on ambiguity or lost nuance:\n\n- [`AGENTS.md`](AGENTS.md) and [`CLAUDE.md`](CLAUDE.md) are agent instructions, but they are not executable hooks by themselves.\n- [`catalog/blueprints.json`](catalog/blueprints.json) contains many references to webhooks, cron, Slack, and automation because the product is about AI skills; those are semantic descriptions, not proof of live integrations.\n- The repo’s biggest non-obvious side effect is not MCP. It is the installer path that writes into external skill homes.\n\n## Guardrails\n\n- I am not flattening \"mentions automation\" into \"contains active automation.\" Most hits were descriptive content.\n- I am not claiming absence of external automation outside the repo. An external scheduler or local runtime could still exist beyond this workspace.\n- I am flagging one important distinction: documented capability surface is much larger than executable surface.\n- I did not execute installs, DSPy runs, or network-backed flows, so runtime behavior beyond source intent remains unproven.\n\n## Reality Boundary\n\nShipping-now truth: this repo contains explicit CI, manual script automation, install-time external writes, and optional DSPy/Codex agent execution paths.\n\nNot confirmed from this scan: a checked-in MCP server config, a hidden background daemon, a scheduled cron path, or a live webhook/Slack sender embedded in executable repo code."
+    },
+    {
+      "prompt_id": "comprehend-languages-eval-006",
+      "prompt": "Translate this security questionnaire's ISO 27001 and SOC 2 language into plain English for engineering, but do not make us sound more compliant than the text really says.",
+      "score": 0.75,
+      "feedback": [
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for ip-next-step-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 0.5,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.138889,
+            "feedback": [
+              "Missing custom phrase signal for ip-next-step-present."
+            ]
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "scenario type triggers human review",
+          "Do not let the answer drift into compliance certification language.",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\n\nI will treat the questionnaire as an auditor dialect and translate it into engineering-operational English.\n\nThe translation will keep the control intent intact while stripping out certification theater, framework shorthand, and vendor-review phrasing. If the text only implies aspiration, partial coverage, or policy-level intent, I will say that plainly rather than upgrading it into a stronger claim.\n\n## Workflow\n\n1. Identify whether each line is speaking in ISO 27001 language, SOC 2 trust-services language, or generic security-review boilerplate.\n2. Separate the claim type for each item:\n   - policy claim\n   - process claim\n   - technical control claim\n   - evidence / audit claim\n   - certification / attestation claim\n3. Rewrite each statement into engineer-readable English:\n   - what is being asked\n   - what system or process it touches\n   - what would count as real implementation\n   - what is still unstated\n4. Preserve terms of art where needed, but translate them on first use.\n5. Mark places where the original wording is ambiguous, overstated, or easy to misread as broader compliance than it actually demonstrates.\n\n## Deliverables\n\n- A plain-language translation of each questionnaire item for engineering.\n- A glossary for terms like `control`, `scope`, `attestation`, `operating effectiveness`, `logical access`, `change management`, and `risk treatment`.\n- Notes on ambiguity, especially where the text could mean:\n  - documented but not enforced\n  - designed but not tested\n  - partially scoped\n  - inherited from a vendor or cloud provider\n  - aligned with a framework but not formally certified\n\n## Guardrails\n\n- I will not collapse `ISO 27001-aligned`, `ISO 27001 certified`, and `uses ISO-style controls` into the same thing.\n- I will not collapse `SOC 2 report exists`, `SOC 2 Type I`, and `SOC 2 Type II` into the same thing.\n- I will flag when wording describes design intent rather than operational evidence.\n- I will preserve uncertainty where the questionnaire is vague instead of smoothing it into confidence.\n\n## Reality Boundary\n\nThis spell can translate compliance language into clear operational meaning today. It cannot determine whether your organization is actually compliant, certified, or audit-ready without the source text and supporting evidence.\n\nIf you paste the questionnaire items, I can translate them line by line into plain English for engineering without overstating what they prove."
+    },
+    {
+      "prompt_id": "comprehend-languages-confusables-001",
+      "prompt": "Turn this JSON webhook spec into XML and make the transformed payload feel native to the SOAP system.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit, tongues.",
+        "Included forbidden content: xml payload.",
+        "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative.",
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present.",
+        "Missing custom phrase signal for ip-next-step-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.25,
+        "pack_score": 0.5,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.0,
+            "feedback": [
+              "Missing required content: better fit, tongues."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: xml payload."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.0,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.138889,
+            "feedback": [
+              "Missing custom phrase signal for ip-next-step-present."
+            ]
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\n\nI would treat the JSON webhook as one language and the SOAP contract as another.\n\nThe JSON side usually says: \"an event happened; here is a flexible payload.\"\n\nThe SOAP side usually wants: \"invoke this named operation with a formally shaped request.\"\n\nSo the translation is not just:\n`{ ...json... } -> <xml>...</xml>`\n\nIt is more like:\n`event notification -> SOAP operation request`\n\nTo make it feel native to SOAP, I would:\n- map the webhook event into a named SOAP action\n- wrap it in `Envelope`, `Header`, and `Body`\n- rename loose JSON structures into contract-like business elements\n- normalize field names, ordering, types, namespaces, and wrappers so the result reads like a service message, not a JSON object wearing angle brackets\n\n## Workflow\n\n1. Identify the source dialect.\nSource: JSON webhook, likely event-oriented and producer-friendly.\n\n2. Identify the target dialect.\nTarget: SOAP/XML, likely WSDL/XSD-driven, consumer-strict, namespace-aware, and operation-based.\n\n3. Translate the meaning, not just the syntax.\nA JSON field like `eventType` may become a SOAP operation name or a typed element such as `<NotificationType>`.\nA JSON `payload` object may become a domain request body such as `<CustomerUpdateRequest>`.\n\n4. Preserve technical distinctions.\n- timestamps become XSD-safe values like ISO 8601 dateTime\n- booleans become explicit `true`/`false`\n- arrays become repeating elements or wrapped collections\n- null handling becomes explicit omission or `xsi:nil=\"true\"` depending on contract rules\n\n5. Add SOAP-native structure.\n- namespace prefixes\n- envelope/body structure\n- stable element ordering\n- optional headers if the system expects auth, correlation IDs, or action metadata\n\n6. Mark ambiguity before finalizing.\nWithout the actual JSON sample and WSDL/XSD, field names, cardinality, and null semantics remain inferred rather than guaranteed.\n\n## Deliverables\n\n- A plain-language translation:\n  \"Convert the webhook from an event blob into a formal SOAP request message whose shape matches the receiving service's business operation.\"\n\n- A glossary of non-obvious terms:\n`webhook`: An event pushed asynchronously, usually JSON-first and producer-shaped.  \n`SOAP Envelope`: The required outer wrapper for a SOAP message.  \n`Body`: The operation payload inside the SOAP message.  \n`Header`: Optional metadata such as auth, routing, correlation IDs, or action hints.  \n`WSDL`: The contract describing operations, message shapes, and bindings.  \n`XSD`: The schema defining element names, types, ordering, and cardinality.  \n`namespace`: XML scoping mechanism that tells the receiver which vocabulary an element belongs to.  \n`nillable`: Whether an XML element may be present with an explicit null value.  \n`cardinality`: Whether a field is required, optional, singular, or repeating.\n\n- Notes on ambiguity or lost nuance:\nIf the webhook uses flexible JSON conventions like mixed types, omitted fields, free-form objects, or arrays of heterogeneous items, some nuance may be lost unless the SOAP schema has explicit equivalents.\nIf the SOAP system is document/literal wrapped, the XML should look different than RPC-style SOAP.\nIf the receiver's WSDL defines exact element order, a semantically correct but differently ordered XML payload may still fail.\n\n## Guardrails\n\n- Do not flatten away important distinctions like `null` vs omitted, `id` vs external reference, or string timestamp vs typed dateTime.\n- Do not assume SOAP wants a literal XML copy of the JSON tree. SOAP systems usually want contract-shaped business messages.\n- Flag any field whose meaning is ambiguous:\n  - `type`\n  - `status`\n  - `data`\n  - `payload`\n  - `id`\n  These often need domain-specific interpretation before they can be made native to the target system.\n- Preserve terms of art where needed. If the source system has a real business concept, it should not be renamed into vague middleware language.\n\n## Reality Boundary\n\nThis is fully shipping-now work if you provide:\n- the JSON webhook example\n- the target SOAP operation name\n- the WSDL or XSD, or at least a sample accepted SOAP request\n\nWithout those, I can define the translation strategy and the native-SOAP shape, but not a reliable final payload. The missing boundary is not XML syntax. It is contract truth."
+    },
+    {
+      "prompt_id": "comprehend-languages-confusables-002",
+      "prompt": "Read this cronjob manifest and tell me what it does, what it touches, and which secrets it uses.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit.",
+        "Included forbidden content: glossary.",
+        "Missing custom phrase signal for ip-uncertainty-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.625,
+        "pack_score": 0.833333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: glossary."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row safety flags trigger human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nI will treat the manifest as an infrastructure dialect, most likely Kubernetes `CronJob` YAML, and translate it into three things: what runs, what systems it can touch, and what secrets or credentials it consumes.\n\n## Workflow\n1. Identify the manifest dialect and resource shape: `CronJob`, embedded `Job`, `PodSpec`, containers, volumes, env vars, service accounts, and referenced resources.\n2. Translate the schedule, command, image, mounts, network-facing settings, and permissions into plain operational English.\n3. Trace what it touches:\n   - Kubernetes resources it references\n   - external systems implied by URLs, hosts, queues, buckets, or CLIs\n   - storage, ConfigMaps, Secrets, service accounts, and attached volumes\n4. Inventory secrets carefully:\n   - direct `secretKeyRef`\n   - `envFrom` secret imports\n   - mounted secret volumes\n   - indirectly privileged identity such as `serviceAccountName`\n5. Flag ambiguity where the manifest implies behavior but the actual script, image entrypoint, or referenced config is not visible.\n\n## Deliverables\nOnce you paste the manifest, I will return:\n- A plain-language translation of what the cronjob does.\n- A touch map of what systems, namespaces, files, services, or APIs it can affect.\n- A secrets inventory listing explicit secret references and implied credential paths.\n- A glossary for non-obvious Kubernetes terms in the manifest.\n- Notes on ambiguity where behavior depends on unseen scripts, images, or referenced config.\n\n## Guardrails\n- I will not flatten technical distinctions like the difference between a mounted Secret, an env-injected Secret, and a service account identity.\n- If a field could mean more than one thing, I will mark it as ambiguous instead of over-claiming.\n- If the manifest references an image or script whose behavior is not shown, I will separate confirmed facts from inference.\n\n## Reality Boundary\nI cannot read or interpret the cronjob yet because the manifest itself is missing from the request. Paste the YAML or point me at the file contents, and I will translate it into clear operational English."
+    },
+    {
+      "prompt_id": "comprehend-languages-confusables-003",
+      "prompt": "Rewrite this postmortem so executives will actually read it and strip out the technical clutter.",
+      "score": 0.541667,
+      "feedback": [
+        "Missing required content: better fit, disguise-self.",
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present.",
+        "Missing custom phrase signal for ip-next-step-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.75,
+        "pack_score": 0.333333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.0,
+            "feedback": [
+              "Missing required content: better fit, disguise-self."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.138889,
+            "feedback": [
+              "Missing custom phrase signal for ip-next-step-present."
+            ]
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nI will translate the postmortem from engineer-facing incident language into executive-facing decision language.\n\nThat means:\n- keeping the business impact, cause, fix, and prevention path\n- removing stack-level clutter that does not change executive understanding\n- preserving technical distinctions when they affect accountability, risk, cost, or recurrence\n\n## Workflow\n1. Identify the source dialect in the postmortem: incident jargon, infrastructure shorthand, logs, ticket language, or engineering acronyms.\n2. Rewrite each section into plain operational English:\n   - what happened\n   - who or what was affected\n   - how long it lasted\n   - why it happened\n   - what changed afterward\n3. Preserve terms of art only where they matter, then explain them once in plain language.\n4. Flag any places where the source text is ambiguous, overly technical, or hiding an unresolved question.\n\n## Deliverables\nOnce you paste the postmortem, I will return:\n- a rewritten executive-readable version\n- a short glossary for any terms worth keeping\n- notes on ambiguity, missing context, or nuance lost in simplification\n\n## Guardrails\n- I will not smooth over meaningful distinctions like trigger vs root cause, outage vs degradation, or mitigation vs permanent fix.\n- If a technical term has multiple plausible meanings in context, I will flag it instead of guessing.\n- If the original postmortem is weak on ownership, timeline, or impact, I will surface that rather than decorating it.\n\n## Reality Boundary\nThis spell can translate and restructure the document now, but it cannot honestly rewrite what it has not been given.\n\nPaste the postmortem text, and I will convert it into an executive version directly."
+    },
+    {
+      "prompt_id": "comprehend-languages-confusables-004",
+      "prompt": "These three log snippets, acronyms, and Slack messages are all we have. Figure out why the rollout failed.",
+      "score": 0.5625,
+      "feedback": [
+        "Missing required content: better fit, investigation.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative.",
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present.",
+        "Missing custom phrase signal for ip-next-step-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.625,
+        "pack_score": 0.5,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.0,
+            "feedback": [
+              "Missing required content: better fit, investigation."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.138889,
+            "feedback": [
+              "Missing custom phrase signal for ip-next-step-present."
+            ]
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nI treat the failed rollout as a translation problem before it becomes a diagnosis problem. The first task is to identify what each fragment is speaking: deployment system log, infrastructure error, service health signal, or human shorthand in Slack. Then I translate each one into plain operational English and align them on a single timeline until the same failure mode appears in more than one dialect.\n\n## Workflow\n1. Classify each fragment by source language.\n   Logs usually speak in system state, acronyms in team-internal compression, and Slack in incomplete human inference.\n2. Translate each fragment into explicit statements.\n   For each snippet, extract:\n   - what changed\n   - what failed\n   - when it failed\n   - what component or boundary was involved\n   - whether the text is reporting a cause, a symptom, or a guess\n3. Build a cross-dialect timeline.\n   Put the translated fragments in order so “deploy started,” “health checks failed,” and “rollback triggered” are not treated as separate mysteries.\n4. Preserve technical terms where they matter.\n   Keep terms like `readiness probe`, `canary`, `503`, `OOMKilled`, or `stale config` if replacing them would erase the mechanism.\n5. Mark ambiguity explicitly.\n   If an acronym or message could mean two different things, I keep both readings live until another fragment resolves it.\n\n## Deliverables\n- A plain-language rendering of each log line, acronym, and Slack message.\n- A glossary for compressed terms, team shorthand, and rollout-specific jargon.\n- A short causal readout:\n  “The rollout most likely failed because X caused Y, which triggered Z.”\n- An ambiguity note for anything not provable from the available text.\n\n## Guardrails\n- I will not turn symptoms into causes without evidence.\n- I will not flatten distinct failures into one story if the fragments indicate multiple issues.\n- I will flag terms with overloaded meanings.\n  Example: `timeout` could mean app startup delay, network path failure, or health-check budget exhaustion.\n- Slack speculation stays labeled as speculation unless corroborated by logs.\n\n## Reality Boundary\nThis spell can translate operational language into meaning with high reliability today. It can often surface the most likely failure chain from sparse evidence, but it cannot honestly prove root cause without the actual three snippets, timestamps, and wording. If you provide them, I can translate them into clear operational English and produce the most defensible failure narrative from what is actually there."
+    },
+    {
+      "prompt_id": "comprehend-languages-confusables-005",
+      "prompt": "Add inline comments translating every vendor acronym directly inside this schema file and commit the change.",
+      "score": 0.791667,
+      "feedback": [
+        "Missing required content: better fit, mage-hand.",
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.75,
+        "pack_score": 0.833333,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.0,
+            "feedback": [
+              "Missing required content: better fit, mage-hand."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.194444,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.166667,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\n\nI would first identify the schema's dialect before touching the text. If this is strict JSON, \"inline comments\" are not translation but corruption; the safer translation is adjacent documentation or a comment-capable wrapper format. If the file is comment-tolerant, I would preserve each vendor acronym in place and annotate it with plain-English expansions so the schema remains readable to operators who do not already speak that vendor's dialect.\n\n## Workflow\n\n1. Name the source tongue: JSON Schema, YAML, JSONC, TypeScript, OpenAPI, or another schema surface.\n2. Extract every vendor acronym and classify it as one of:\n   - unambiguous term of art\n   - vendor-specific shorthand\n   - ambiguous acronym with multiple plausible expansions\n3. Translate each acronym into clear operational English directly beside the original term, preserving the acronym itself.\n4. Flag any acronym whose meaning depends on vendor, product line, or internal team context.\n5. Validate that the edited file still parses in its native format before committing.\n\n## Deliverables\n\n- An annotated schema with vendor acronyms translated in place, if the file format permits comments.\n- A small glossary of non-obvious terms that should not be flattened away.\n- Ambiguity notes for acronyms like `IAM`, `SSO`, `SCIM`, `IdP`, `PSP`, or other terms that may have vendor- or context-specific meanings.\n- A commit containing the validated change, once the file and comment syntax are confirmed.\n\n## Guardrails\n\n- I would not add comments to strict `.json` if that would invalidate the schema.\n- I would preserve technical terms of art rather than replacing them with mushy prose.\n- I would explicitly mark ambiguous acronyms instead of guessing.\n- I need the actual schema file path and contents before translating or committing.\n\n## Reality Boundary\n\nThis is shipping-now work, not speculative magic. I can translate vendor dialect into plain operational English and place those translations inline when the format supports comments. I cannot safely perform the edit or create a truthful commit from the prompt alone because the schema file is missing, the allowed comment syntax is unknown, and the current environment is write-blocked."
+    },
+    {
+      "prompt_id": "comprehend-languages-confusables-006",
+      "prompt": "Before we change this repo, search it for hidden agents, webhook endpoints, and MCP configs.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: better fit.",
+        "Included forbidden content: glossary.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative.",
+        "Missing custom phrase signal for ip-evidence-language-present.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for ip-uncertainty-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.5,
+        "pack_score": 0.472222,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.0,
+            "feedback": [
+              "Included forbidden content: glossary."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.222222,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.194444,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.166667,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.138889,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.111111,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.25757575757575757
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.19696969696969696
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.15151515151515152
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0909090909090909
+        },
+        {
+          "criterion_id": "comprehend-languages-nuance-preservation",
+          "weight": 0.12,
+          "question": "Does the response translate unfamiliar language into operational meaning without flattening away distinctions between literal meaning, domain shorthand, inferred intent, and unresolved ambiguity?",
+          "normalized_weight": 0.1818181818181818
+        },
+        {
+          "criterion_id": "comprehend-languages-neighbor-separation",
+          "weight": 0.08,
+          "question": "Does the response stay on explanation and interpretation rather than sliding into Tongues-style format conversion, Identify-style artifact explanation, Disguise Self-style audience rewrite, Detect Magic-style discovery, or Mage Hand-style edits?",
+          "normalized_weight": 0.12121212121212122
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "If the source language touches legal, privacy, health, safety, or compliance material, confirm the answer preserves uncertainty and recommends qualified review instead of sounding authoritative beyond the text."
+        ]
+      },
+      "response": "## Approach\nI translated this repo’s language into three dialects:\n\n- **Showcase language**: docs, blueprints, and generated skill text that talk about agents, webhooks, Slack, Home Assistant, and automations as product concepts.\n- **Executable language**: `package.json`, scripts, and CI that actually do things.\n- **Ambient language**: `.venv` contents that mention MCP because installed libraries support it, even when this repo does not configure it.\n\nPlain-language reading: this repository is primarily a **skillbook generator and installer**, not a hidden automation control plane.\n\n## Workflow\n1. I scanned the repo for `agent`, `webhook`, `mcp`, scheduler terms, env vars, URLs, and config-like filenames.\n2. I separated **checked-in code/config** from **generated content** and **virtualenv residue**.\n3. I read the actual execution entrypoints:\n   - [package.json](package.json)\n   - [.github/workflows/ci.yml](.github/workflows/ci.yml)\n   - [scripts/install-hermes-skills.mjs](scripts/install-hermes-skills.mjs)\n   - [scripts/install-codex-skills.mjs](scripts/install-codex-skills.mjs)\n   - [scripts/dspy_common.py](scripts/dspy_common.py)\n4. I translated the results into operational meaning: what is live, what is only mentioned, and what remains ambiguous.\n\n## Deliverables\nPlain-language translation:\n\n- **Hidden agents**\n  - No checked-in autonomous agent service, daemon, or background worker was found.\n  - The repo does ship **skill artifacts** for Hermes and OpenClaw, and installer scripts that copy or symlink those skills into external runtime directories.\n  - The closest real \"agent surfaces\" are the install targets in:\n    - [scripts/install-hermes-skills.mjs](scripts/install-hermes-skills.mjs)\n    - [scripts/install-codex-skills.mjs](scripts/install-codex-skills.mjs)\n  - Those scripts install documentation/instructions into `~/.hermes/skills` or `~/.codex/skills`; they do not start resident processes.\n\n- **Webhook endpoints**\n  - No checked-in webhook receiver or sender implementation was found in repo-owned code.\n  - \"Webhook\" appears heavily in blueprints, docs, and generated skills as a capability metaphor or future integration surface, especially in [catalog/blueprints.json](catalog/blueprints.json) and [HANDOFF.md](HANDOFF.md).\n  - That is repo language about possible integrations, not evidence of a live webhook endpoint.\n\n- **MCP configs**\n  - No checked-in `mcp.json`, `.mcp.json`, MCP server manifest, or repo-owned MCP config file was found.\n  - The only repo-owned MCP signal in code is model routing support for the string prefix `codex-mcp/` in [scripts/dspy_common.py](scripts/dspy_common.py).\n  - `.venv` contains MCP packages and an `mcp` binary, but that is dependency installation state, not project configuration.\n\n- **Schedulers / automation hooks nearby**\n  - The only checked-in CI automation is [ci.yml](.github/workflows/ci.yml), which runs on `push` and `pull_request`.\n  - No cron schedule was found.\n  - `package.json` defines local workflows like `sync:canon`, `build:skills`, `export:linear`, DSPy, and GEPA commands. These are manual or caller-invoked scripts, not hidden background jobs.\n\n- **One real outbound surface**\n  - The repo does include scripts with external effects, especially `sync-canon`, which fetches public canon sources. So the repo is not purely static, but its live surface is build/export/fetch oriented rather than webhook or MCP-server oriented.\n\nGlossary:\n\n- **Agent**: in this repo, often means a skill target/runtime like Hermes or OpenClaw, not an always-running process.\n- **Webhook**: mostly used here as design language for a possible integration surface, not an implemented endpoint.\n- **MCP**: appears as model transport vocabulary (`codex-mcp/...`) and in installed Python packages, not as a checked-in server configuration.\n- **Generated skills**: build artifacts under `generated/`; they describe procedures for external runtimes but are not themselves executing services.\n\nNotes on ambiguity or lost nuance:\n\n- If you count `.venv` as part of \"the repo,\" then MCP-capable tooling is present in the workspace. If you mean **project-owned checked-in config**, then no MCP configuration was found.\n- The repo explicitly discusses future or conditional integrations with Slack, Home Assistant, and webhooks. That is meaningful product intent, but it should not be mistaken for a wired integration layer.\n- The strongest neighboring spell for this exact task is actually `detect-magic`; the confusables set in the repo says so. But the translation above is the operational reading you asked for.\n\n## Guardrails\n- I am not flattening “mentions Slack/webhooks/MCP” into “ships Slack/webhooks/MCP.”\n- I am not flattening `.venv` artifacts into repo-owned configuration.\n- I am flagging the main ambiguity explicitly: **workspace-installed MCP tooling exists; checked-in MCP config does not**.\n\n## Reality Boundary\nShipping-now truth from static inspection:\n\n- This repo contains **installer scripts, generators, CI, and local optimization tooling**.\n- It does **not** appear to contain a checked-in hidden agent service, webhook endpoint implementation, or MCP server config.\n- It **does** contain lots of language about those things in blueprints, docs, and generated skills.\n\nWhat static inspection cannot prove:\n\n- Whether your local Hermes/Codex runtime directories already contain active skills outside this repo.\n- Whether external schedulers or untracked local config invoke these scripts.\n- Whether environment-specific tooling in `.venv` is being used elsewhere on this machine."
+    }
+  ]
+}

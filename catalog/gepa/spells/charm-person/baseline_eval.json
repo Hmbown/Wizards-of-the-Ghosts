@@ -1,0 +1,15 @@
+{
+  "slug": "charm-person",
+  "status": "not_run",
+  "variant": "baseline",
+  "message": "Baseline spell eval has not been run in this lane. Set DSPY_MODEL and rerun npm run gepa:spell:eval -- --slug charm-person.",
+  "dataset_counts": {
+    "train_rows": 10,
+    "eval_rows": 8,
+    "confusable_rows": 6
+  },
+  "notes": [
+    "Charm Person benchmarks are authored around truthful rapport-building, disclosure survivability, and direct refusal of manipulative influence requests.",
+    "Human review remains required for this influence-heavy spell even after model-backed evaluation."
+  ]
+}

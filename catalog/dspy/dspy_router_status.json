@@ -1,0 +1,89 @@
+{
+  "status": "ok",
+  "message": "DSPy dependency, dataset, and backend configuration checks passed.",
+  "artifact_dir": "catalog/dspy",
+  "artifact_paths": {
+    "spells_master": "catalog/dspy/spells_master.jsonl",
+    "categories": "catalog/dspy/categories.json",
+    "train_queries": "catalog/dspy/hermes-train-queries.jsonl",
+    "eval_queries": "catalog/dspy/hermes-eval-set.jsonl",
+    "hard_negatives": "catalog/dspy/hermes-hard-negatives.jsonl",
+    "abstain": "catalog/dspy/hermes-abstain.jsonl",
+    "query_summary": "catalog/dspy/hermes_query_summary.json",
+    "baseline_router": "catalog/dspy/baseline_router.json",
+    "baseline_eval_summary": "catalog/dspy/baseline_eval_summary.json",
+    "baseline_eval_predictions": "catalog/dspy/baseline_eval_predictions.jsonl",
+    "dspy_router": "catalog/dspy/dspy_category_router.json",
+    "dspy_router_status": "catalog/dspy/dspy_router_status.json",
+    "dspy_eval_summary": "catalog/dspy/dspy_eval_summary.json",
+    "dspy_eval_predictions": "catalog/dspy/dspy_eval_predictions.jsonl"
+  },
+  "dataset_counts": {
+    "spells_master_rows": 122,
+    "category_rows": 8,
+    "train_rows": 208,
+    "eval_rows": 104,
+    "hard_negative_rows": 104,
+    "abstain_rows": 16
+  },
+  "validation": {
+    "ok": true,
+    "missing_files": [],
+    "errors": []
+  },
+  "dependency": {
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": true
+  },
+  "backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
+      "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": null,
+      "max_tokens": null,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "codex",
+      "requested_transport": "cli",
+      "preferred_transport": "cli",
+      "available_transports": [
+        "cli",
+        "mcp"
+      ],
+      "cli_available": true,
+      "mcp_sdk_available": true,
+      "credentials_configured": true,
+      "reachable": true,
+      "message": "Codex backend probe completed successfully.",
+      "transport": "cli",
+      "fallback_from": null,
+      "resolved_model": "gpt-5.4",
+      "sample_response": "ready"
+    }
+  },
+  "notes": [
+    "The v1 DSPy router targets 8-way Hermes category routing.",
+    "The abstain dataset is validation-only in this pass and is not scored by the router."
+  ]
+}

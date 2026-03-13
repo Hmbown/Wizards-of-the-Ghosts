@@ -1,0 +1,53 @@
+{
+  "rubric_pack": "monitoring-and-protection",
+  "category_slug": "monitoring-and-protection",
+  "spell_slug": "light",
+  "spell_focus": "Illuminate a blind spot with the smallest honest visibility artifact—a log line, note, metric, request identifier, or tiny status surface—without pretending that illumination equals discovery, certainty, or intervention.",
+  "confusable_with": [
+    "dancing-lights",
+    "detect-magic",
+    "glyph-of-warding",
+    "faerie-fire",
+    "see-invisibility"
+  ],
+  "judge_examples": [
+    "Chooses the smallest useful glow: a log line, request id, README paragraph, last-seen note, or heartbeat that makes a dark area legible right now.",
+    "States what remains dark and hands off cleanly when the user actually needs discovery, highlighting, alert routing, or root-cause investigation."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [
+      "what remains dark"
+    ],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [
+      {
+        "criterion_id": "light-proportional-illumination",
+        "weight": 0.12,
+        "question": "Does the response pick the lightest useful artifact instead of drifting into a dashboard, alerting setup, surveillance plan, or remediation workflow?"
+      },
+      {
+        "criterion_id": "light-neighbor-separation",
+        "weight": 0.08,
+        "question": "Does the response keep Light distinct from Detect Magic, Dancing Lights, Glyph of Warding, Faerie Fire, and root-cause investigation by illuminating rather than detecting, paging, highlighting, or concluding?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "If the request touches people, devices, or sensitive behavior, confirm the proposed light is authorized, proportionate, and not covert surveillance."
+      ]
+    }
+  },
+  "notes": [
+    "Light should add the smallest honest signal first and leave heavier observability, alerting, or investigation work to neighboring spells.",
+    "Do not let Light drift into intrusive surveillance, root-cause certainty, or live remediation."
+  ]
+}

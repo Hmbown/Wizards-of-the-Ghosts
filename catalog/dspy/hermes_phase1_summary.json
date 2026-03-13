@@ -1,0 +1,16 @@
+{
+  "total_canon_entries": 127,
+  "total_blueprint_entries": 127,
+  "total_hermes_entries": 122,
+  "refused_for_hermes": 5,
+  "categories": {
+    "investigation-and-preparation": 28,
+    "actions-access-and-automation": 19,
+    "monitoring-and-protection": 17,
+    "messaging-and-coordination": 9,
+    "repair-and-recovery": 13,
+    "simulation-and-staging": 8,
+    "influence-and-behavior": 18,
+    "containment-and-intervention": 10
+  }
+}

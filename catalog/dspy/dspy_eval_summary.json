@@ -1,0 +1,53 @@
+{
+  "router": "dspy",
+  "status": "evaluated",
+  "splits_evaluated": [
+    "eval"
+  ],
+  "total_eval_rows": 104,
+  "total_available_rows": 104,
+  "eval_limit": null,
+  "correct": 95,
+  "accuracy": 0.9134615384615384,
+  "predictions_path": "catalog/dspy/dspy_eval_predictions.jsonl",
+  "dependency": {
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3"
+  },
+  "backend": {
+    "configured": true,
+    "model": "codex-exec/default",
+    "backend_type": "codex-exec",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": "0",
+      "max_tokens": "256"
+    },
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "codex-exec/default",
+      "api_base": null,
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "reachable": true,
+      "backend_type": "codex-exec",
+      "cli_path": "[redacted]",
+      "usage": {
+        "prompt_tokens": 47755,
+        "completion_tokens": 27,
+        "total_tokens": 47782
+      },
+      "message": "codex exec probe completed successfully.",
+      "sample_response": "ready"
+    }
+  }
+}

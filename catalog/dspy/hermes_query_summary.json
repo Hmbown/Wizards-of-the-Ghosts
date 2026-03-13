@@ -1,0 +1,31 @@
+{
+  "total_rows": 432,
+  "train_rows": 208,
+  "eval_rows": 104,
+  "hard_negative_rows": 104,
+  "abstain_rows": 16,
+  "categories_covered": [
+    "actions-access-and-automation",
+    "containment-and-intervention",
+    "influence-and-behavior",
+    "investigation-and-preparation",
+    "messaging-and-coordination",
+    "monitoring-and-protection",
+    "repair-and-recovery",
+    "simulation-and-staging"
+  ],
+  "query_types": {
+    "category_abstain": 12,
+    "category_level": 4,
+    "confusable_neighbor": 76,
+    "hard_negative": 28,
+    "operator_shorthand": 104,
+    "plain_english": 104,
+    "plain_english_eval": 104
+  },
+  "shards_processed": [
+    "phase2-batch-a.jsonl",
+    "phase2-batch-b.jsonl",
+    "phase2-batch-c.jsonl"
+  ]
+}

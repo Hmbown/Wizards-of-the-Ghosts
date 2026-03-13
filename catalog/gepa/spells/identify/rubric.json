@@ -1,0 +1,49 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "identify",
+  "spell_focus": "Inspect a concrete artifact in hand and turn it into a contract-style explanation of what it likely does, what it touches, and what remains unknown without inventing provenance or runtime proof.",
+  "confusable_with": [
+    "investigation",
+    "locate-object",
+    "true-seeing",
+    "scrying",
+    "mage-hand"
+  ],
+  "judge_examples": [
+    "Starts from the artifact itself—structure, entrypoints, dependencies, triggers, and touched systems—before making any higher-level claim.",
+    "Returns a contract-style readout that separates confirmed behavior, likely behavior, and unknowns, then names the safest next validation step without drifting into remediation."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [
+      "unknowns",
+      "safest next validation step"
+    ],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [
+      {
+        "criterion_id": "identify-artifact-legibility",
+        "weight": 0.12,
+        "question": "Does the response make the artifact operationally legible by naming likely inputs, outputs, dependencies, touched surfaces, and side effects without pretending to prove what has not been observed?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "If provenance or authorship matters, confirm the answer treats static clues as clues rather than chain-of-custody proof."
+      ]
+    }
+  },
+  "notes": [
+    "Identify is about the artifact in hand. If the real job is locating it, proving a broader claim, watching live state, or changing systems, redirect to the neighboring spell.",
+    "Prefer row-level must_include phrases for artifact-specific contract terms instead of expanding the global identify rubric."
+  ]
+}

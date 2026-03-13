@@ -11,9 +11,29 @@ const canonPath = path.join(catalogDir, "canon.json");
 const packagePath = path.join(rootDir, "package.json");
 const readmePath = path.join(rootDir, "README.md");
 const grimoirePath = path.join(rootDir, "GRIMOIRE.md");
+const dspyDir = path.join(catalogDir, "dspy");
+const dspyEvalSummaryPath = path.join(dspyDir, "dspy_eval_summary.json");
+const baselineEvalSummaryPath = path.join(dspyDir, "baseline_eval_summary.json");
+const dspyRouterArtifactPath = path.join(dspyDir, "dspy_category_router.json");
+const forcecageOptimizedEvalPath = path.join(
+  catalogDir,
+  "gepa",
+  "spells",
+  "forcecage",
+  "optimized_eval.json"
+);
 
 const openclawDir = path.join(generatedDir, "openclaw");
 const hermesDir = path.join(generatedDir, "hermes");
+
+const dspySpotlightSlugs = [
+  "awaken",
+  "animate-objects",
+  "dimension-door",
+  "foresight",
+  "symbol",
+  "project-image"
+];
 
 const categoryThemeTags = {
   "investigation-and-preparation": ["analysis", "discovery", "translation", "preflight"],
@@ -42,6 +62,17 @@ function clampDescription(value, maxLength = 1024) {
   }
 
   return `${value.slice(0, maxLength - 1).trimEnd()}…`;
+}
+
+async function readOptionalJson(targetPath) {
+  try {
+    return JSON.parse(await readFile(targetPath, "utf8"));
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      return null;
+    }
+    throw error;
+  }
 }
 
 function renderSection(title, items, ordered = false) {
@@ -553,6 +584,75 @@ function renderSpellCards(entries, categoryByEntrySlug) {
   ].join("\n");
 }
 
+function formatPercent(ratio) {
+  return `${(ratio * 100).toFixed(1)}%`;
+}
+
+function formatPoints(delta) {
+  return `${delta >= 0 ? "+" : ""}${(delta * 100).toFixed(1)}pp`;
+}
+
+function buildDspyContext(blueprints, dspyEvalSummary, baselineEvalSummary, dspyRouterArtifact) {
+  if (
+    !dspyEvalSummary ||
+    dspyEvalSummary.status !== "evaluated" ||
+    !baselineEvalSummary ||
+    baselineEvalSummary.status !== "evaluated"
+  ) {
+    return null;
+  }
+
+  const entryBySlug = new Map(blueprints.entries.map((entry) => [entry.slug, entry]));
+  const spotlightEntries = dspySpotlightSlugs
+    .map((slug) => entryBySlug.get(slug))
+    .filter(Boolean);
+
+  const bootstrappedDemos =
+    dspyRouterArtifact?.predict?.demos?.filter((demo) => demo && demo.augmented).length ?? null;
+
+  return {
+    correct: dspyEvalSummary.correct,
+    total: dspyEvalSummary.total_eval_rows,
+    accuracy: dspyEvalSummary.accuracy,
+    baselineCorrect: baselineEvalSummary.correct,
+    baselineTotal: baselineEvalSummary.total_eval_rows,
+    baselineAccuracy: baselineEvalSummary.accuracy,
+    accuracyLift: dspyEvalSummary.accuracy - baselineEvalSummary.accuracy,
+    bootstrappedDemos,
+    categoryCount: Array.isArray(dspyRouterArtifact?.predict?.signature?.fields)
+      ? dspyRouterArtifact.predict.signature.fields.at(-1)?.description
+          ?.replace("One of: ", "")
+          ?.split(", ")
+          ?.filter(Boolean).length ?? 8
+      : 8,
+    spotlightEntries
+  };
+}
+
+function buildGepaContext(blueprints, optimizedEvalSummary) {
+  if (
+    !optimizedEvalSummary ||
+    optimizedEvalSummary.status !== "evaluated" ||
+    typeof optimizedEvalSummary.delta !== "number" ||
+    optimizedEvalSummary.delta <= 0
+  ) {
+    return null;
+  }
+
+  const entryBySlug = new Map(blueprints.entries.map((entry) => [entry.slug, entry]));
+  const entry = entryBySlug.get(optimizedEvalSummary.slug);
+  if (!entry) {
+    return null;
+  }
+
+  return {
+    entry,
+    baselineAverageScore: optimizedEvalSummary.baseline_average_score,
+    optimizedAverageScore: optimizedEvalSummary.optimized_average_score,
+    delta: optimizedEvalSummary.delta
+  };
+}
+
 function renderReadmeBrowseTable(browsePaths) {
   return [
     "| If you want to... | Start here | Hermes shelf |",
@@ -631,7 +731,7 @@ function renderGrimoireCategory(category, browsePath, entryBySlug, categoryByEnt
   ].join("\n");
 }
 
-function renderReadme(blueprints, canon) {
+function renderReadme(blueprints, canon, dspy, gepa) {
   const discovery = buildDiscoveryContext(blueprints, canon);
 
   return [
@@ -680,6 +780,19 @@ function renderReadme(blueprints, canon) {
     "",
     renderSpellCards(discovery.featuredEntries, discovery.categoryByEntrySlug),
     "",
+    ...(gepa
+      ? [
+          `Recent GEPA upgrade: ${renderHermesEntryReference(
+            gepa.entry,
+            discovery.categoryByEntrySlug
+          )} was promoted after a Codex-backed spell-level run improved full eval from \`${formatPercent(
+            gepa.baselineAverageScore
+          )}\` to \`${formatPercent(gepa.optimizedAverageScore)}\` (\`${formatPoints(
+            gepa.delta
+          )}\`). The upgraded copy is sharper about tested containment boundaries, outside-the-cage observation, and explicit release conditions before anything descends.`,
+          ""
+        ]
+      : []),
     "Need badges, browse paths, or the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md) for the full browse layer.",
     "",
     "## Find Your Shelf",
@@ -725,6 +838,65 @@ function renderReadme(blueprints, canon) {
     "",
     "`npm run verify` checks the generated Hermes and OpenClaw surfaces, then performs sandbox installs into temporary Hermes and Codex homes so you can catch packaging drift before release.",
     "",
+    "## DSPy Router",
+    "",
+    "The repo ships two Hermes routing paths under [`catalog/dspy/`](catalog/dspy/): a deterministic lexical baseline and an optional DSPy category router.",
+    "",
+    ...(dspy
+      ? [
+          `- Current held-out result: \`${dspy.correct}/${dspy.total}\` = \`${formatPercent(
+            dspy.accuracy
+          )}\` with the Codex-backed DSPy router`,
+          `- Baseline comparison: \`${dspy.baselineCorrect}/${dspy.baselineTotal}\` = \`${formatPercent(
+            dspy.baselineAccuracy
+          )}\` for the lexical router, a \`${formatPoints(dspy.accuracyLift)}\` lift for DSPy`,
+          `- Current scope: \`${dspy.categoryCount}\`-way Hermes category routing from plain-English prompts into the right shelf`,
+          dspy.bootstrappedDemos
+            ? `- Optimized prompt core: \`${dspy.bootstrappedDemos}\` bootstrapped few-shot demos selected by DSPy`
+            : "- Optimized prompt core: bootstrapped few-shot demos selected by DSPy",
+          ""
+        ]
+      : [
+          "- The lexical baseline is deterministic and local-only.",
+          "- The DSPy path stays optional and requires both the `dspy` package and an explicit backend configuration.",
+          ""
+        ]),
+    "This makes the pack materially easier to use from plain language. You no longer need to know the spell name first to land on the right shelf.",
+    "",
+    ...(dspy?.spotlightEntries?.length
+      ? [
+          "Spells that became more practically valuable once plain-English routing started working:",
+          "",
+          renderSpellCards(dspy.spotlightEntries, discovery.categoryByEntrySlug),
+          ""
+        ]
+      : []),
+    "Set up the Python side in a repo-local virtualenv:",
+    "",
+    "```bash",
+    "uv venv .venv",
+    "uv pip install --python .venv/bin/python -r requirements-dspy.txt",
+    "```",
+    "",
+    "Baseline-only flow:",
+    "",
+    "```bash",
+    "npm run dspy:validate",
+    "npm run dspy:baseline",
+    "```",
+    "",
+    "Codex-backed DSPy flow:",
+    "",
+    "```bash",
+    "export DSPY_MODEL=codex-exec/default",
+    "export DSPY_TEMPERATURE=0",
+    "export DSPY_MAX_TOKENS=256",
+    "",
+    "bash scripts/dspy_full_run.sh",
+    "```",
+    "",
+    "This shells out to local `codex exec` for each DSPy inference. It remains slower than an OpenAI-compatible HTTP backend, but the full compile+eval path is now proven practical as an unattended background job. See [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md) for artifact details and the exact runbook.",
+    "",
     "## Safety and IP",
     "",
     `The public Hermes surface intentionally refuses ${renderCodeList(
@@ -738,7 +910,7 @@ function renderReadme(blueprints, canon) {
   ].join("\n");
 }
 
-function renderGrimoire(blueprints, canon) {
+function renderGrimoire(blueprints, canon, dspy) {
   const discovery = buildDiscoveryContext(blueprints, canon);
 
   return [
@@ -763,6 +935,34 @@ function renderGrimoire(blueprints, canon) {
     "",
     "Need the exact install docs? Run `npm run build:skills` locally and open `generated/hermes/<category>/<skill>/SKILL.md`.",
     "",
+    ...(dspy
+      ? [
+          "## DSPy-Enabled Discovery",
+          "",
+          `The current Codex-backed DSPy router scores \`${dspy.correct}/${dspy.total}\` = \`${formatPercent(
+            dspy.accuracy
+          )}\` on held-out Hermes category routing, ahead of the lexical baseline by \`${formatPoints(
+            dspy.accuracyLift
+          )}\`. In practice that means more people can reach the right shelf from natural language instead of memorizing the spellbook first.`,
+          "",
+          ...(dspy.spotlightEntries?.length
+            ? [
+                "The biggest discoverability upgrade lands on less obvious but high-value entries:",
+                "",
+                ...dspy.spotlightEntries.map(
+                  (entry) =>
+                    `- ${renderHermesEntryReference(entry, discovery.categoryByEntrySlug)} ${renderBadges(
+                      entry.reality_tier,
+                      entry.literalness
+                    )} - ${entry.tagline}`
+                ),
+                ""
+              ]
+            : []),
+          "For the measured artifacts and runbook, open [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md).",
+          ""
+        ]
+      : []),
     '<a id="featured-shelf"></a>',
     "## Featured Shelf",
     "",
@@ -817,18 +1017,30 @@ async function writeHermesEntry(entry, canon, category, repoMeta) {
   );
 }
 
-async function writeDiscoveryDocs(blueprints, canon) {
+async function writeDiscoveryDocs(blueprints, canon, dspy, gepa) {
   await Promise.all([
-    writeFile(readmePath, `${renderReadme(blueprints, canon)}\n`),
-    writeFile(grimoirePath, `${renderGrimoire(blueprints, canon)}\n`)
+    writeFile(readmePath, `${renderReadme(blueprints, canon, dspy, gepa)}\n`),
+    writeFile(grimoirePath, `${renderGrimoire(blueprints, canon, dspy)}\n`)
   ]);
 }
 
 async function main() {
-  const [blueprints, canon, packageJson] = await Promise.all([
+  const [
+    blueprints,
+    canon,
+    packageJson,
+    dspyEvalSummary,
+    baselineEvalSummary,
+    dspyRouterArtifact,
+    forcecageOptimizedEval
+  ] = await Promise.all([
     readFile(blueprintPath, "utf8").then((content) => JSON.parse(content)),
     readFile(canonPath, "utf8").then((content) => JSON.parse(content)),
-    readFile(packagePath, "utf8").then((content) => JSON.parse(content))
+    readFile(packagePath, "utf8").then((content) => JSON.parse(content)),
+    readOptionalJson(dspyEvalSummaryPath),
+    readOptionalJson(baselineEvalSummaryPath),
+    readOptionalJson(dspyRouterArtifactPath),
+    readOptionalJson(forcecageOptimizedEvalPath)
   ]);
 
   const canonById = new Map(canon.entries.map((entry) => [entry.id, entry]));
@@ -893,7 +1105,10 @@ async function main() {
     }
   }
 
-  await writeDiscoveryDocs(blueprints, canon);
+  const dspy = buildDspyContext(blueprints, dspyEvalSummary, baselineEvalSummary, dspyRouterArtifact);
+  const gepa = buildGepaContext(blueprints, forcecageOptimizedEval);
+
+  await writeDiscoveryDocs(blueprints, canon, dspy, gepa);
 
   console.log(`Rendered ${openclawCount} OpenClaw skills into ${openclawDir}`);
   console.log(`Rendered ${hermesCount} Hermes skills into ${hermesDir}`);

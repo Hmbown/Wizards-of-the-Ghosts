@@ -19,6 +19,21 @@ For Hermes users, read these as installable procedures, not bundled executables.
 
 Need the exact install docs? Run `npm run build:skills` locally and open `generated/hermes/<category>/<skill>/SKILL.md`.
 
+## DSPy-Enabled Discovery
+
+The current Codex-backed DSPy router scores `95/104` = `91.3%` on held-out Hermes category routing, ahead of the lexical baseline by `+12.5pp`. In practice that means more people can reach the right shelf from natural language instead of memorizing the spellbook first.
+
+The biggest discoverability upgrade lands on less obvious but high-value entries:
+
+- [Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md) `shipping-now` `metaphorical` - Teach an old machine to answer back.
+- [Animate Objects](generated/hermes/actions-access-and-automation/animate-objects/SKILL.md) `prototype` `literal` - Give agency to passive data by attaching triggers, watchers, and autonomous update logic.
+- [Dimension Door](generated/hermes/actions-access-and-automation/dimension-door/SKILL.md) `shipping-now` `metaphorical` - Jump cleanly between two known contexts without dragging the whole room.
+- [Foresight](generated/hermes/investigation-and-preparation/foresight/SKILL.md) `shipping-now` `metaphorical` - Estimate likely outcomes before committing to a plan, change, or launch.
+- [Symbol](generated/hermes/monitoring-and-protection/symbol/SKILL.md) `shipping-now` `literal` - Mark a resource with a named sigil that triggers automatic policy enforcement when conditions are met.
+- [Project Image](generated/hermes/simulation-and-staging/project-image/SKILL.md) `shipping-now` `hybrid` - Project a version of yourself into a place you cannot physically be.
+
+For the measured artifacts and runbook, open [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md).
+
 <a id="featured-shelf"></a>
 ## Featured Shelf
 
@@ -27,9 +42,10 @@ Need the exact install docs? Run `npm run build:skills` locally and open `genera
 3. [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
 4. [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md) `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
 5. [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md) `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
-6. [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
-7. [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
-8. [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
+6. [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) `prototype` `literal` - Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.
+7. [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
+8. [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
+9. [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
 
 <a id="browse-paths"></a>
 ## Browse Paths
@@ -319,7 +335,7 @@ Containment, capability reduction, throttling, and high-impact interventions tha
 - [Blindness/Deafness](generated/hermes/containment-and-intervention/blindness-deafness/SKILL.md) `spell` `shipping-now` `literal` - Cut a system's eyes or ears — let it run, but blind to specific inputs or deaf to specific signals.
 - [Eyebite](generated/hermes/containment-and-intervention/eyebite/SKILL.md) `spell` `prototype` `metaphorical` - Fix your attention on a target and selectively degrade its capabilities.
 - [Feeblemind](generated/hermes/containment-and-intervention/feeblemind/SKILL.md) `spell` `prototype` `metaphorical` - Strip a system down to minimal capability when full power is too dangerous.
-- [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) `spell` `prototype` `literal` - Contain untrusted code, agents, or operations inside an isolated sandbox with no escape.
+- [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) `spell` `prototype` `literal` - Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.
 - [Heat Metal](generated/hermes/containment-and-intervention/heat-metal/SKILL.md) `spell` `prototype` `hybrid` - Make a tool or process increasingly uncomfortable to use until it is abandoned.
 - [Power Word Kill](generated/hermes/containment-and-intervention/power-word-kill/SKILL.md) `spell` `shipping-now` `hybrid` - End a process instantly. No negotiation, no cleanup, no save state.
 - [Power Word Stun](generated/hermes/containment-and-intervention/power-word-stun/SKILL.md) `spell` `shipping-now` `hybrid` - Freeze a process instantly — hard pause, state preserved, resumable.
