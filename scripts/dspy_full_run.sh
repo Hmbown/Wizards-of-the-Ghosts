@@ -17,7 +17,7 @@ echo ""
 
 echo "--- Phase 3a: Compile (baseline + DSPy router) ---"
 COMPILE_START=$(date +%s)
-.venv/bin/python scripts/dspy_build_router.py --repo-root .
+./scripts/run_dspy_python.sh scripts/dspy_build_router.py --repo-root .
 COMPILE_END=$(date +%s)
 echo ""
 echo "Compile finished in $((COMPILE_END - COMPILE_START)) seconds"
@@ -25,14 +25,14 @@ echo ""
 
 echo "--- Phase 3b: Evaluate DSPy router ---"
 EVAL_START=$(date +%s)
-.venv/bin/python scripts/dspy_eval_router.py --repo-root . --dspy-only
+./scripts/run_dspy_python.sh scripts/dspy_eval_router.py --repo-root . --dspy-only
 EVAL_END=$(date +%s)
 echo ""
 echo "Eval finished in $((EVAL_END - EVAL_START)) seconds"
 echo ""
 
 echo "--- Phase 3b: Evaluate baseline (for comparison) ---"
-.venv/bin/python scripts/dspy_eval_router.py --repo-root . --baseline-only
+./scripts/run_dspy_python.sh scripts/dspy_eval_router.py --repo-root . --baseline-only
 echo ""
 
 echo "=== Done ==="
