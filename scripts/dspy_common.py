@@ -454,7 +454,7 @@ def classify_runtime_failure(exc: Exception) -> str:
         "api base",
         "network",
         "temporary failure",
-        "codex exec",
+        "codex exec exited with",
     )
     if any(marker in text for marker in connectivity_markers):
         return "backend_unreachable"
