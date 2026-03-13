@@ -117,7 +117,6 @@ def category_context(categories: list[dict[str, Any]]) -> str:
 
 def dependency_info() -> tuple[Any | None, dict[str, Any]]:
     info: dict[str, Any] = {
-        "python_executable": sys.executable,
         "python_version": platform.python_version(),
         "python_implementation": platform.python_implementation(),
         "dspy_installed": False,
@@ -133,6 +132,14 @@ def dependency_info() -> tuple[Any | None, dict[str, Any]]:
     return dspy, info
 
 
+def _relative_path(path: Path, repo_root: Path) -> str:
+    """Return a repo-relative path string, avoiding absolute filesystem exposure."""
+    try:
+        return str(path.relative_to(repo_root))
+    except ValueError:
+        return str(path)
+
+
 def validate_workspace(repo_root: Path) -> dict[str, Any]:
     paths = artifact_paths(repo_root)
     parsed: dict[str, Any] = {}
@@ -141,12 +148,12 @@ def validate_workspace(repo_root: Path) -> dict[str, Any]:
     for key, rel_path in REQUIRED_DSPY_FILES.items():
         path = paths[key]
         if not path.exists():
-            missing.append(rel_path.name)
+            missing.append(rel_path)
             continue
         try:
             parsed[key] = load_jsonl(path) if path.suffix == ".jsonl" else load_json(path)
         except Exception as exc:  # noqa: BLE001
-            errors.append(f"{rel_path.name}: {exc}")
+            errors.append(f"{rel_path}: {exc}")
 
     dataset_counts = {
         "spells_master_rows": len(parsed.get("spells_master", [])),
@@ -182,7 +189,7 @@ def validate_workspace(repo_root: Path) -> dict[str, Any]:
         "missing_files": missing,
         "errors": errors,
         "dataset_counts": dataset_counts,
-        "artifact_paths": {key: str(path) for key, path in paths.items()},
+        "artifact_paths": {key: _relative_path(path, repo_root) for key, path in paths.items()},
         "notes": ROUTER_NOTES,
     }
 
@@ -310,13 +317,12 @@ def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None
         probe: dict[str, Any] = {
             "checked": True,
             "backend_type": "codex",
-            "runtime": runtime.as_dict(),
             "requested_transport": runtime.requested_transport,
             "preferred_transport": runtime.preferred_transport,
             "available_transports": list(runtime.available_transports),
-            "cli_path": runtime.cli_path,
+            "cli_available": runtime.cli_path is not None,
             "mcp_sdk_available": runtime.mcp_sdk_available,
-            "credential_source": runtime.credential_source,
+            "credentials_configured": runtime.credential_source is not None,
         }
         if runtime.preferred_transport is None:
             probe["reachable"] = False
@@ -430,7 +436,6 @@ def classify_runtime_failure(exc: Exception) -> str:
         "api base",
         "network",
         "temporary failure",
-        "codex exec",
     )
     if any(marker in text for marker in connectivity_markers):
         return "backend_unreachable"
@@ -451,8 +456,8 @@ def build_router_status(
     payload: dict[str, Any] = {
         "status": status,
         "message": message,
-        "artifact_dir": str(dspy_dir(repo_root)),
-        "artifact_paths": {key: str(path) for key, path in paths.items()},
+        "artifact_dir": _relative_path(dspy_dir(repo_root), repo_root),
+        "artifact_paths": {key: _relative_path(path, repo_root) for key, path in paths.items()},
         "dataset_counts": validation["dataset_counts"],
         "validation": {
             "ok": validation["ok"],

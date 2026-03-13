@@ -9,9 +9,9 @@
   "eval_limit": null,
   "correct": 95,
   "accuracy": 0.9134615384615384,
-  "predictions_path": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/dspy_eval_predictions.jsonl",
+  "predictions_path": "catalog/dspy/dspy_eval_predictions.jsonl",
   "dependency": {
-    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_executable": ".venv/bin/python",
     "python_version": "3.14.2",
     "python_implementation": "CPython",
     "dspy_installed": true,
@@ -40,7 +40,7 @@
       "checked": true,
       "reachable": true,
       "backend_type": "codex-exec",
-      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+      "cli_path": "[redacted]",
       "usage": {
         "prompt_tokens": 47755,
         "completion_tokens": 27,

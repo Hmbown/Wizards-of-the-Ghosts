@@ -25,7 +25,7 @@
       "checked": true,
       "reachable": true,
       "backend_type": "codex-exec",
-      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+      "cli_path": "[redacted]",
       "usage": {
         "prompt_tokens": 46829,
         "completion_tokens": 36,

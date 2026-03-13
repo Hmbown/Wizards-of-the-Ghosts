@@ -131,7 +131,7 @@
       "score": 0.10131
     }
   ],
-  "predictions_path": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/baseline_eval_predictions.jsonl",
+  "predictions_path": "catalog/dspy/baseline_eval_predictions.jsonl",
   "confusion": {
     "actions-access-and-automation": {
       "actions-access-and-automation": 14,

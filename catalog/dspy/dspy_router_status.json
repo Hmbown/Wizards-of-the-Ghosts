@@ -1,22 +1,22 @@
 {
   "status": "ok",
   "message": "DSPy dependency, dataset, and backend configuration checks passed.",
-  "artifact_dir": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy",
+  "artifact_dir": "catalog/dspy",
   "artifact_paths": {
-    "spells_master": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/spells_master.jsonl",
-    "categories": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/categories.json",
-    "train_queries": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/hermes-train-queries.jsonl",
-    "eval_queries": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/hermes-eval-set.jsonl",
-    "hard_negatives": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/hermes-hard-negatives.jsonl",
-    "abstain": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/hermes-abstain.jsonl",
-    "query_summary": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/hermes_query_summary.json",
-    "baseline_router": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/baseline_router.json",
-    "baseline_eval_summary": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/baseline_eval_summary.json",
-    "baseline_eval_predictions": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/baseline_eval_predictions.jsonl",
-    "dspy_router": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/dspy_category_router.json",
-    "dspy_router_status": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/dspy_router_status.json",
-    "dspy_eval_summary": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/dspy_eval_summary.json",
-    "dspy_eval_predictions": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/dspy/dspy_eval_predictions.jsonl"
+    "spells_master": "catalog/dspy/spells_master.jsonl",
+    "categories": "catalog/dspy/categories.json",
+    "train_queries": "catalog/dspy/hermes-train-queries.jsonl",
+    "eval_queries": "catalog/dspy/hermes-eval-set.jsonl",
+    "hard_negatives": "catalog/dspy/hermes-hard-negatives.jsonl",
+    "abstain": "catalog/dspy/hermes-abstain.jsonl",
+    "query_summary": "catalog/dspy/hermes_query_summary.json",
+    "baseline_router": "catalog/dspy/baseline_router.json",
+    "baseline_eval_summary": "catalog/dspy/baseline_eval_summary.json",
+    "baseline_eval_predictions": "catalog/dspy/baseline_eval_predictions.jsonl",
+    "dspy_router": "catalog/dspy/dspy_category_router.json",
+    "dspy_router_status": "catalog/dspy/dspy_router_status.json",
+    "dspy_eval_summary": "catalog/dspy/dspy_eval_summary.json",
+    "dspy_eval_predictions": "catalog/dspy/dspy_eval_predictions.jsonl"
   },
   "dataset_counts": {
     "spells_master_rows": 122,
@@ -32,7 +32,6 @@
     "errors": []
   },
   "dependency": {
-    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
     "python_version": "3.14.2",
     "python_implementation": "CPython",
     "dspy_installed": true,
@@ -66,57 +65,20 @@
     "probe": {
       "checked": true,
       "backend_type": "codex",
-      "runtime": {
-        "requested_transport": "cli",
-        "preferred_transport": "cli",
-        "available_transports": [
-          "cli",
-          "mcp"
-        ],
-        "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
-        "mcp_sdk_available": true,
-        "credential_source": "/Users/hunterbown/.codex/auth.json",
-        "codex_home": "/Users/hunterbown/.codex",
-        "auth_file": "/Users/hunterbown/.codex/auth.json",
-        "models_cache": "/Users/hunterbown/.codex/models_cache.json",
-        "default_model": "gpt-5.4",
-        "available_models": [
-          "gpt-5.4",
-          "gpt-5.3-codex",
-          "gpt-5.2-codex",
-          "gpt-5.2",
-          "gpt-5.1-codex-max",
-          "gpt-5.1-codex",
-          "gpt-5.1",
-          "gpt-5-codex",
-          "gpt-5",
-          "gpt-5.1-codex-mini",
-          "gpt-5-codex-mini"
-        ]
-      },
       "requested_transport": "cli",
       "preferred_transport": "cli",
       "available_transports": [
         "cli",
         "mcp"
       ],
-      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+      "cli_available": true,
       "mcp_sdk_available": true,
-      "credential_source": "/Users/hunterbown/.codex/auth.json",
+      "credentials_configured": true,
       "reachable": true,
       "message": "Codex backend probe completed successfully.",
       "transport": "cli",
-      "thread_id": "019ce27a-576b-7cf3-8f97-6a1f81c80a18",
       "fallback_from": null,
       "resolved_model": "gpt-5.4",
-      "usage": {
-        "prompt_tokens": 20783,
-        "completion_tokens": 20,
-        "total_tokens": 20803,
-        "prompt_tokens_details": {
-          "cached_tokens": 7040
-        }
-      },
       "sample_response": "ready"
     }
   },

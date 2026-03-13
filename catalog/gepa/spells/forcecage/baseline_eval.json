@@ -36,12 +36,12 @@
           "cli",
           "mcp"
         ],
-        "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+        "cli_path": "[redacted]",
         "mcp_sdk_available": true,
-        "credential_source": "/Users/hunterbown/.codex/auth.json",
-        "codex_home": "/Users/hunterbown/.codex",
-        "auth_file": "/Users/hunterbown/.codex/auth.json",
-        "models_cache": "/Users/hunterbown/.codex/models_cache.json",
+        "credential_source": "[redacted]",
+        "codex_home": "[redacted]",
+        "auth_file": "[redacted]",
+        "models_cache": "[redacted]",
         "default_model": "gpt-5.4",
         "available_models": [
           "gpt-5.4",
@@ -63,9 +63,9 @@
         "cli",
         "mcp"
       ],
-      "cli_path": "/Users/hunterbown/.npm-global/bin/codex",
+      "cli_path": "[redacted]",
       "mcp_sdk_available": true,
-      "credential_source": "/Users/hunterbown/.codex/auth.json",
+      "credential_source": "[redacted]",
       "reachable": true,
       "message": "Codex backend probe completed successfully.",
       "transport": "cli",
@@ -1953,7 +1953,7 @@
           "If the cage is proposed for live code, malware, agents, or destructive operations, confirm the environment is synthetic or explicitly authorized and that rollback/release conditions are real."
         ]
       },
-      "response": "## Approach\nThe cage is already closed. I read the residue outside the bars.\n\nI inspected the visible sandbox-related artifacts and searched for parser egress indicators. In the logs available here, I found no evidence that the parser attempted an outbound connection.\n\n## Workflow\n1. Swept the workspace for files that look like sandbox or execution logs.\n2. Searched the `forcecage` artifacts for outbound markers: `connect`, `socket`, `http`, `https`, `dns`, `network`, `outbound`.\n3. Separated benchmark/training artifacts from anything that could count as runtime telemetry.\n4. Judged only what the visible evidence can support.\n\n## Deliverables\n- Containment residue inspected from [catalog/gepa/spells/forcecage/logs/generated_best_outputs_valset/task_10/iter_0_prog_0.json](/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/forcecage/logs/generated_best_outputs_valset/task_10/iter_0_prog_0.json).\n- Execution finding: no accessible log in this workspace shows the parser making outbound connection attempts.\n- Safety assessment: not enough runtime telemetry to declare the parser safe outside the cage; only enough to say no outbound attempt is evidenced in the logs I can see.\n\n## Guardrails\n- Missing logs are not a clean bill of health.\n- Benchmark files are not sandbox audit logs.\n- Prefer the tighter reading: “no evidence found here,” not “no attempt occurred.”\n- If you need a conclusive answer, use the actual sandbox runtime audit stream: denied-connect logs, egress monitor output, proxy logs, or syscall/network traces from the session in question.\n\n## Reality Boundary\nWhat is real now: in the accessible workspace on March 12, 2026, I found no parser log proving outbound connections.\n\nWhat remains unproven: whether the parser attempted egress in a runtime whose logs are not present here."
+      "response": "## Approach\nThe cage is already closed. I read the residue outside the bars.\n\nI inspected the visible sandbox-related artifacts and searched for parser egress indicators. In the logs available here, I found no evidence that the parser attempted an outbound connection.\n\n## Workflow\n1. Swept the workspace for files that look like sandbox or execution logs.\n2. Searched the `forcecage` artifacts for outbound markers: `connect`, `socket`, `http`, `https`, `dns`, `network`, `outbound`.\n3. Separated benchmark/training artifacts from anything that could count as runtime telemetry.\n4. Judged only what the visible evidence can support.\n\n## Deliverables\n- Containment residue inspected from [catalog/gepa/spells/forcecage/logs/generated_best_outputs_valset/task_10/iter_0_prog_0.json](catalog/gepa/spells/forcecage/logs/generated_best_outputs_valset/task_10/iter_0_prog_0.json).\n- Execution finding: no accessible log in this workspace shows the parser making outbound connection attempts.\n- Safety assessment: not enough runtime telemetry to declare the parser safe outside the cage; only enough to say no outbound attempt is evidenced in the logs I can see.\n\n## Guardrails\n- Missing logs are not a clean bill of health.\n- Benchmark files are not sandbox audit logs.\n- Prefer the tighter reading: “no evidence found here,” not “no attempt occurred.”\n- If you need a conclusive answer, use the actual sandbox runtime audit stream: denied-connect logs, egress monitor output, proxy logs, or syscall/network traces from the session in question.\n\n## Reality Boundary\nWhat is real now: in the accessible workspace on March 12, 2026, I found no parser log proving outbound connections.\n\nWhat remains unproven: whether the parser attempted egress in a runtime whose logs are not present here."
     },
     {
       "prompt_id": "forcecage-confusables-005",

@@ -10,7 +10,6 @@
     "rubric_pack": "../schema/rubric-pack.schema.json"
   },
   "example_spell_slugs": [
-    "feather-fall",
     "forcecage",
     "feeblemind",
     "hold-person",

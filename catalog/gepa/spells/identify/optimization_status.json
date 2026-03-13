@@ -10,18 +10,18 @@
     "missing_files": [],
     "errors": [],
     "warnings": [],
-    "artifact_dir": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify",
+    "artifact_dir": "catalog/gepa/spells/identify",
     "artifact_paths": {
-      "spell": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/spell.json",
-      "train": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/train.jsonl",
-      "eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/eval.jsonl",
-      "confusables": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/confusables.jsonl",
-      "rubric": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/rubric.json",
-      "promotion_patch": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/promotion_patch.json",
-      "status": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/optimization_status.json",
-      "baseline_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/baseline_eval.json",
-      "optimized_eval": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/optimized_eval.json",
-      "optimized_module": "/Volumes/VIXinSSD/wizardsoftheghosts/catalog/gepa/spells/identify/optimized_module.json"
+      "spell": "catalog/gepa/spells/identify/spell.json",
+      "train": "catalog/gepa/spells/identify/train.jsonl",
+      "eval": "catalog/gepa/spells/identify/eval.jsonl",
+      "confusables": "catalog/gepa/spells/identify/confusables.jsonl",
+      "rubric": "catalog/gepa/spells/identify/rubric.json",
+      "promotion_patch": "catalog/gepa/spells/identify/promotion_patch.json",
+      "status": "catalog/gepa/spells/identify/optimization_status.json",
+      "baseline_eval": "catalog/gepa/spells/identify/baseline_eval.json",
+      "optimized_eval": "catalog/gepa/spells/identify/optimized_eval.json",
+      "optimized_module": "catalog/gepa/spells/identify/optimized_module.json"
     },
     "dataset_counts": {
       "train_rows": 8,
@@ -30,7 +30,7 @@
     }
   },
   "dependency": {
-    "python_executable": "/Volumes/VIXinSSD/wizardsoftheghosts/.venv/bin/python",
+    "python_executable": ".venv/bin/python",
     "python_version": "3.14.2",
     "python_implementation": "CPython",
     "dspy_installed": true,
