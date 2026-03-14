@@ -94,17 +94,29 @@ def codex_transport_hint(model: str) -> str:
 def load_codex_client() -> Any | None:
     try:
         from dspy.clients import codex as codex_client  # type: ignore
+        return codex_client
+    except Exception:  # noqa: BLE001
+        pass
+    # Fallback: try local adapter
+    try:
+        import dspy_codex_lm as codex_client  # type: ignore
+        return codex_client
     except Exception:  # noqa: BLE001
         return None
-    return codex_client
 
 
 def load_qwen_client() -> Any | None:
     try:
         from dspy.clients import qwen as qwen_client  # type: ignore
+        return qwen_client
+    except Exception:  # noqa: BLE001
+        pass
+    # Fallback: try local adapter
+    try:
+        import dspy_qwen_lm as qwen_client  # type: ignore
+        return qwen_client
     except Exception:  # noqa: BLE001
         return None
-    return qwen_client
 
 
 def dspy_dir(repo_root: Path) -> Path:
@@ -595,27 +607,28 @@ def probe_backend(
 
 def instantiate_dspy_lm(dspy: Any, config: LMConfig, repo_root: Path) -> Any:
     if is_codex_model(config.model):
-        if not hasattr(dspy, "CodexLM"):
+        # Try dspy.CodexLM first (fork), then local adapter
+        if hasattr(dspy, "CodexLM"):
+            return dspy.CodexLM(model=config.model, repo_root=repo_root)
+        try:
+            from dspy_codex_lm import create_codex_exec_lm
+            return create_codex_exec_lm(dspy, model=config.model, repo_root=repo_root)
+        except ImportError:
             raise RuntimeError(
-                "Current Python environment does not expose dspy.CodexLM. "
-                "Install the local dspy-codex fork into this repo's .venv."
+                "Neither dspy.CodexLM nor the local dspy_codex_lm adapter is available."
             )
-        return dspy.CodexLM(
-            model=config.model,
-            repo_root=repo_root,
-        )
 
     if is_qwen_model(config.model):
-        if not hasattr(dspy, "QwenLM"):
+        # Try dspy.QwenLM first (fork), then local adapter
+        if hasattr(dspy, "QwenLM"):
+            return dspy.QwenLM(model=config.model, repo_root=repo_root, isolate_home=False)
+        try:
+            from dspy_qwen_lm import create_qwen_lm
+            return create_qwen_lm(dspy, model=config.model, repo_root=repo_root)
+        except ImportError:
             raise RuntimeError(
-                "Current Python environment does not expose dspy.QwenLM. "
-                "Install the local dspy-codex fork into this repo's .venv."
+                "Neither dspy.QwenLM nor the local dspy_qwen_lm adapter is available."
             )
-        return dspy.QwenLM(
-            model=config.model,
-            repo_root=repo_root,
-            isolate_home=False,
-        )
 
     if is_hermes_model(config.model):
         from dspy_hermes_lm import create_hermes_lm

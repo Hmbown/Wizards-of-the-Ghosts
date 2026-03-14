@@ -381,8 +381,8 @@ def load_spell_entry(repo_root: Path, slug: str) -> tuple[dict[str, Any], dict[s
     entry = next((row for row in blueprints["entries"] if row["slug"] == slug), None)
     if entry is None:
         raise ValueError(f"Unknown spell slug: {slug}")
-    if entry["kind"] != "spell":
-        raise ValueError(f"{slug} is a {entry['kind']}, not a spell")
+    if entry["kind"] not in ("spell", "skill"):
+        raise ValueError(f"{slug} is a {entry['kind']}, not a spell or skill")
     category_map = category_by_entry_slug(blueprints)
     category = category_map.get(slug)
     if category is None:
@@ -1206,8 +1206,8 @@ def apply_promotion_patch(repo_root: Path, slug: str, patch: dict[str, Any]) -> 
     entry = next((row for row in blueprints["entries"] if row["slug"] == slug), None)
     if entry is None:
         raise ValueError(f"Unknown spell slug: {slug}")
-    if entry["kind"] != "spell":
-        raise ValueError(f"{slug} is not a spell entry")
+    if entry["kind"] not in ("spell", "skill"):
+        raise ValueError(f"{slug} is not a spell or skill entry")
 
     for field, value in updates.items():
         if field == "openai":
