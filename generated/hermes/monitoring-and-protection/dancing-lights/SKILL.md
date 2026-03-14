@@ -21,6 +21,18 @@ metadata:
 ---
 # Dancing Lights
 Hang small moving signals in the dark so people can tell what the system is doing.
+## Sigil
+
+```text
+   .     *
+
+*     o     +
+
+   +     *
+
+      .
+```
+
 ## What This Skill Does
 Use this spell for lightweight indicators: status pips, progress markers, heartbeat widgets, and ambient observability that help humans orient quickly. It is not a full dashboard strategy; it is the small visual cue that says where to look next.
 In this grimoire, Dancing Lights is treated as a hybrid spell with a shipping-now delivery profile.

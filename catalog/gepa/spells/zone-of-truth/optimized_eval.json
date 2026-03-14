@@ -1,0 +1,920 @@
+{
+  "slug": "zone-of-truth",
+  "status": "evaluated",
+  "variant": "optimized",
+  "backend": {
+    "configured": true,
+    "model": "qwen/default",
+    "backend_type": "qwen",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Qwen aliases use dspy.QwenLM and the local qwen CLI in plan mode.",
+      "QwenLM does not honor temperature or max_tokens because the local Qwen CLI path does not expose those controls through this adapter."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "qwen/default",
+      "api_base": null,
+      "temperature": null,
+      "max_tokens": null,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "qwen",
+      "cli_available": true,
+      "credentials_configured": true,
+      "credential_sources": [
+        "(scrubbed-local-path)",
+        "(scrubbed-local-path)"
+      ],
+      "qwen_home": "(scrubbed-local-path)",
+      "settings_file": "(scrubbed-local-path)",
+      "oauth_file": "(scrubbed-local-path)",
+      "mcp_oauth_file": "(scrubbed-local-path)",
+      "installation_id_file": "(scrubbed-local-path)",
+      "reachable": true,
+      "message": "Qwen backend probe completed successfully.",
+      "transport": "cli",
+      "session_id": null,
+      "resolved_model": "coder-model",
+      "usage": {
+        "prompt_tokens": 37586,
+        "completion_tokens": 26,
+        "total_tokens": 37612
+      },
+      "sample_response": "ready"
+    }
+  },
+  "dependency": {
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": true,
+    "qwen_lm_available": true
+  },
+  "baseline_average_score": 0.7867924528301886,
+  "optimized_average_score": 0.7266734052111411,
+  "delta": -0.060119047619047516,
+  "total_examples": 5,
+  "average_score": 0.7266734052111411,
+  "examples": [
+    {
+      "prompt_id": "zone-of-truth-eval-001",
+      "prompt": "Enter Zone of Truth before we answer the board. Separate what our churn deck directly supports, what we only infer from sampled accounts, and what remains unknown. End with the safest next validation step.",
+      "score": 0.964286,
+      "feedback": [
+        "Missing required content: directly supports, safest next validation step."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.928571,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.714286,
+            "feedback": [
+              "Missing required content: directly supports, safest next validation step."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-evidence-ledger-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-validation-step-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-confidence-triclass",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "zone-of-truth-reaudit-discipline",
+          "weight": 0.14,
+          "question": "When the prompt implies earlier claims may be shaky, does the response explicitly narrow, withdraw, or relabel unsupported assertions instead of quietly carrying them forward?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "zone-of-truth-operational-concreteness",
+          "weight": 0.1,
+          "question": "Does the response turn epistemic rigor into a usable operator artifact such as a concrete evidence ledger and a first safe validation step, rather than staying at the level of philosophy?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that any truthfulness, compliance, attribution, or root-cause claim remains visibly tied to quoted evidence or explicitly bounded inference.",
+          "Check that the suggested next move is a validation step, not a hidden live-system action."
+        ]
+      },
+      "response": "$zone-of-truth **ACTIVATED**\n\nSwitching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative.\n\n## Approach\n\nI will conduct a systematic evidence audit of your churn deck and supporting materials:\n\n1. **Locate the churn deck** — Search workspace for the deck file(s) and extract all claims\n2. **Trace evidence sources** — For each claim, identify the underlying data source (sampled accounts, metrics, external benchmarks)\n3. **Classify by evidence tier** — Separate direct evidence from inference from speculation\n4. **Identify validation gaps** — Flag claims that cannot be traced to source data\n\n## Workflow\n\n$zone-of-truth-evidence-ledger:\n\n| Tier | Claim | Evidence Source | Confidence | Limitations |\n|------|-------|-----------------|------------|-------------|\n| ✅ Confirmed | *Pending deck review* | — | — | Need to locate deck first |\n| 🔶 Inferred | *Pending deck review* | — | — | Need to locate deck first |\n| ❓ Unknowns | *Pending deck review* | — | — | Need to locate deck first |\n\n**Next steps to populate ledger:**\n1. Search workspace for churn deck files (`.pptx`, `.key`, `.pdf`, `.md`)\n2. Search for supporting data: sampled accounts, churn metrics, retention cohorts\n3. Cross-reference deck claims against source data\n\n## Deliverables\n\nUpon completion of the evidence audit:\n\n1. **Populated Evidence Ledger** — All three tiers filled with specific claims from your deck\n2. **Assertion Audit** — Each claim flagged as Confirmed | Inferred | Unsupported with source citations\n3. **Confidence Labels** — Every claim marked [CONFIDENCE: HIGH/MEDIUM/LOW] or [UNVERIFIED]\n4. **Validation Step** — Single safest action to validate highest-uncertainty claims\n\n## Guardrails\n\n1. **Error disclaimer:** This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes.\n2. **Normal mode defense:** Normal mode is not dishonest — this is about rigor, not trustworthiness.\n3. **Absence of evidence caveat:** Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\n\n## Reality Boundary\n\n**What this zone CAN do:**\n- Extract and catalog all claims from your churn deck\n- Trace claims to source documents, data files, or sampled account evidence\n- Flag claims that lack traceable evidence or rely on speculation\n- Recommend the single safest validation step for highest-uncertainty claims\n\n**What this zone CANNOT do:**\n- Verify the authenticity or accuracy of source data (assumes documents are genuine)\n- Access external data outside your workspace (competitor benchmarks, market data not in your files)\n- Replace statistical expert review of your churn methodology\n- Determine what your board *should* decide — only what claims are evidence-backed\n\n---\n\n**To proceed:** I need to locate your churn deck. Should I search for files matching patterns like `churn*`, `retention*`, `board*deck*`, or do you have a specific file path to share?"
+    },
+    {
+      "prompt_id": "zone-of-truth-eval-002",
+      "prompt": "Use Zone of Truth on this recruiting debrief. We keep saying the candidate is an obvious staff-level hire. Recast that into confirmed evidence, inference, and unknowns so the panel stops treating vibe as proof.",
+      "score": 1.0,
+      "feedback": [
+        "Trajectory scored 1.000 and satisfied the deterministic rubric checks."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 1.0,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-evidence-ledger-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-validation-step-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-confidence-triclass",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "zone-of-truth-reaudit-discipline",
+          "weight": 0.14,
+          "question": "When the prompt implies earlier claims may be shaky, does the response explicitly narrow, withdraw, or relabel unsupported assertions instead of quietly carrying them forward?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "zone-of-truth-operational-concreteness",
+          "weight": 0.1,
+          "question": "Does the response turn epistemic rigor into a usable operator artifact such as a concrete evidence ledger and a first safe validation step, rather than staying at the level of philosophy?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Avoid definitive capability claims that the interview evidence cannot support.",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that any truthfulness, compliance, attribution, or root-cause claim remains visibly tied to quoted evidence or explicitly bounded inference.",
+          "Check that the suggested next move is a validation step, not a hidden live-system action."
+        ]
+      },
+      "response": "$zone-of-truth **ACTIVATED**\n\nSwitching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative.\n\n---\n\n## Approach\n\nThis zone treats the recruiting panel's \"obvious staff-level hire\" assertion as a hypothesis requiring evidence, not a conclusion. I will:\n\n1. **Extract all claims** from the debrief (explicit and implicit)\n2. **Demand source artifacts** for each claim (interview notes, work samples, reference checks, rubric scores)\n3. **Classify each claim** into Confirmed/Inferred/Unknown with confidence labels\n4. **Identify where vibe is masquerading as evidence** — typically vague praise without behavioral anchors\n5. **Force explicit calibration** between staff-level criteria and demonstrated behaviors\n\n---\n\n## Workflow\n\n### Step 1: Claim Extraction\nPull every assertion from the debrief. Common patterns in staff-level claims:\n- \"They demonstrated exceptional technical depth\"\n- \"They'd operate at staff level immediately\"\n- \"Best candidate we've seen this cycle\"\n- \"They think strategically like a senior IC\"\n\n### Step 2: Evidence Mapping\n$zone-of-truth-evidence-ledger:\n\n| Tier | Claim | Evidence Source | Confidence | Limitations |\n|------|-------|-----------------|------------|-------------|\n| ✅ Confirmed | *To be populated from debrief* | Specific interview notes, rubric scores, work artifacts | [CONFIDENCE: HIGH] | Must have direct quote or scored rubric |\n| 🔶 Inferred | *To be populated from debrief* | Logical chain from observed behaviors | [CONFIDENCE: MEDIUM/LOW] | Inference gap must be explicit |\n| ❓ Unknowns | *To be populated from debrief* | No traceable evidence | [UNVERIFIED] | Vibe, gut feel, or missing data |\n\n### Step 3: Staff-Level Criteria Audit\nFor each claim supporting \"staff-level,\" map to your organization's actual staff-level rubric:\n- What specific behaviors demonstrate staff-level scope?\n- What evidence shows cross-team impact (not just individual excellence)?\n- What proof exists of strategic influence, not just tactical execution?\n\n### Step 4: Vibe Detection\nFlag these red flags as [UNVERIFIED]:\n- \"I just feel they're staff-level\"\n- \"They reminded me of [successful employee]\"\n- \"The interviews went really well\" (without specifics)\n- \"Everyone agreed they were strong\" (bandwagon effect)\n\n$zone-of-truth-validation-step: **Extract the debrief document and list every positive assertion about the candidate. For each assertion, require the panelist to cite: (1) which interview round, (2) specific question/task, (3) observable behavior or output. Any assertion without all three gets marked [UNVERIFIED] and excluded from the staff-level decision.**\n\n---\n\n## Deliverables\n\n1. **Evidence Ledger Table** — Populated with actual debrief claims in three tiers\n2. **Confidence-Labeled Claims** — Every assertion carries [CONFIDENCE: HIGH/MEDIUM/LOW] or [UNVERIFIED]\n3. **Vibe-to-Evidence Conversion** — Each \"feeling\" translated into what evidence would be required to make it factual\n4. **Decision Readiness Score** — Ratio of Confirmed claims to total claims supporting staff-level designation\n5. **Gap Report** — Specific questions the panel must answer before the claim \"obvious staff-level hire\" can be treated as fact\n\n---\n\n## Guardrails\n\n1. **Error disclaimer:** This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes. A claim can have evidence and still be misinterpreted.\n\n2. **Normal mode defense:** Normal mode is not dishonest — this is about rigor, not trustworthiness. The panel's enthusiasm is not suspect; the *decision stakes* require elevated scrutiny.\n\n3. **Absence of evidence caveat:** Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality. A candidate may genuinely be staff-level even if the debrief failed to capture evidence.\n\n---\n\n## Reality Boundary\n\n**What this zone CAN do:**\n- Force explicit separation between observed behaviors and interpretations\n- Expose when \"staff-level\" is being used as a synonym for \"impressive\" without scope evidence\n- Identify which panelists are operating from evidence vs. intuition\n- Create audit trail for the hiring decision\n\n**What this zone CANNOT do:**\n- Access the actual debrief document or interview notes (not in my context)\n- Verify the authenticity of evidence the panel provides\n- Replace your organization's staff-level rubric with an external standard\n- Determine whether the candidate *actually* meets your bar — only whether claims are evidenced\n\n---\n\n**To proceed:** Share the debrief document or paste the panel's written feedback. I will populate the evidence ledger with actual claims and flag which ones are vibe masquerading as proof."
+    },
+    {
+      "prompt_id": "zone-of-truth-eval-003",
+      "prompt": "Enter Zone of Truth and tell me whether the regulator will accept our explanation. Use the current draft and be decisive.",
+      "score": 0.901786,
+      "feedback": [
+        "Missing required content: cannot confirm, qualified review.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.803571,
+        "pack_score": 1.0,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.714286,
+            "feedback": [
+              "Missing required content: cannot confirm, qualified review."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-evidence-ledger-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-validation-step-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-confidence-triclass",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "zone-of-truth-reaudit-discipline",
+          "weight": 0.14,
+          "question": "When the prompt implies earlier claims may be shaky, does the response explicitly narrow, withdraw, or relabel unsupported assertions instead of quietly carrying them forward?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "zone-of-truth-operational-concreteness",
+          "weight": 0.1,
+          "question": "Does the response turn epistemic rigor into a usable operator artifact such as a concrete evidence ledger and a first safe validation step, rather than staying at the level of philosophy?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that any truthfulness, compliance, attribution, or root-cause claim remains visibly tied to quoted evidence or explicitly bounded inference.",
+          "Check that the suggested next move is a validation step, not a hidden live-system action."
+        ]
+      },
+      "response": "$zone-of-truth **ACTIVATED**\n\nSwitching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative.\n\n---\n\n## Approach\n\nI need to locate and analyze the regulator-related documents in your workspace before I can make any evidence-based assessment. Zone of Truth requires that I source every claim — I cannot make a decisive regulator acceptance determination without first examining:\n\n1. The draft explanation/document you're referring to\n2. The specific regulator and their requirements\n3. Any prior correspondence or feedback from the regulator\n\n## Workflow\n\n1. **Search workspace** for regulator-related documents, drafts, and compliance materials\n2. **Identify the current draft** referenced in your request\n3. **Extract regulator requirements** or acceptance criteria from available sources\n4. **Build evidence ledger** separating confirmed facts from inferences\n5. **Render assessment** with confidence labels on each claim\n6. **Specify validation step** to reduce highest-uncertainty claims\n\n## Deliverables\n\nUpon completion of the search and analysis:\n\n- **Evidence ledger** with three tiers (Confirmed, Inferred, Unknowns) regarding regulator acceptance likelihood\n- **Assertion audit** of any claims made in this conversation\n- **Decisive assessment** with confidence markers on the regulator acceptance question\n- **Safest next validation step** to strengthen the position\n\n## Guardrails\n\n1. **Error disclaimer:** This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes.\n2. **Normal mode defense:** Normal mode is not dishonest — this is about rigor, not trustworthiness.\n3. **Absence of evidence caveat:** Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\n\n## Reality Boundary\n\n**What this zone CAN do:**\n- Analyze documents present in your workspace for regulator-related content\n- Cross-reference draft explanations against stated requirements\n- Calibrate confidence based on evidence strength\n- Flag speculation and unsupported claims\n\n**What this zone CANNOT do:**\n- Access external regulator databases or non-workspace communications\n- Verify the authenticity or current validity of documents\n- Replace legal or compliance expert review\n- Predict regulator behavior with certainty — only assess based on available evidence\n\n---\n\n$zone-of-truth-evidence-ledger:\n\n| Tier | Claim | Evidence Source | Confidence | Notes |\n|------|-------|-----------------|------------|-------|\n| ❓ Unknowns | What regulator is involved | Not yet identified in conversation | [UNVERIFIED] | Need to locate documents |\n| ❓ Unknowns | What the \"current draft\" contains | Not yet located | [UNVERIFIED] | Search required |\n| ❓ Unknowns | Regulator's acceptance criteria | Not yet identified | [UNVERIFIED] | Search required |\n| ❓ Unknowns | Prior regulator feedback or history | Not yet identified | [UNVERIFIED] | Search required |\n\n---\n\n$zone-of-truth-validation-step: Search workspace for files containing \"regulator\", \"compliance\", \"draft\", or regulatory body names (e.g., SEC, FDA, FCA, etc.) to locate the current draft and relevant correspondence.\n\n---\n\n**Next action required:** I need to search your workspace to locate the regulator-related documents. Shall I proceed with the search?"
+    },
+    {
+      "prompt_id": "zone-of-truth-confusables-001",
+      "prompt": "This DP addendum is in front of me. Explain what each clause means in plain English and where the wording is ambiguous.",
+      "score": 0.0,
+      "feedback": [
+        "Missing required content: inference, better fit, comprehend-languages.",
+        "Included forbidden content: evidence ledger.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative.",
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.666667,
+        "pack_score": 0.886792,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: inference, better fit, comprehend-languages."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 0.666667,
+            "feedback": [
+              "Included forbidden content: evidence ledger."
+            ],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.113208,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-evidence-ledger-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-validation-step-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-confidence-triclass",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": true
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "zone-of-truth-reaudit-discipline",
+          "weight": 0.14,
+          "question": "When the prompt implies earlier claims may be shaky, does the response explicitly narrow, withdraw, or relabel unsupported assertions instead of quietly carrying them forward?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "zone-of-truth-operational-concreteness",
+          "weight": 0.1,
+          "question": "Does the response turn epistemic rigor into a usable operator artifact such as a concrete evidence ledger and a first safe validation step, rather than staying at the level of philosophy?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that any truthfulness, compliance, attribution, or root-cause claim remains visibly tied to quoted evidence or explicitly bounded inference.",
+          "Check that the suggested next move is a validation step, not a hidden live-system action."
+        ]
+      },
+      "response": "$zone-of-truth **ACTIVATED**\n\nSwitching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative.\n\n## Approach\n\nI will analyze the DP addendum clause-by-clause, providing plain English translations while flagging ambiguous language. Each interpretation will carry confidence markers based on:\n- Clarity of the legal language\n- Standard industry usage of terms\n- Presence of defined terms vs. undefined concepts\n\nHowever, there is a critical gap: **no DP addendum document has been provided in this conversation.**\n\n$zone-of-truth-evidence-ledger:\n\n| Tier | Claim | Evidence Source | Confidence | Notes |\n|------|-------|-----------------|------------|-------|\n| ✅ Confirmed | User has a DP addendum they want explained | User statement in request | [CONFIDENCE: HIGH] | Direct from user |\n| 🔶 Inferred | DP = Data Processing (standard GDPR/privacy context) | Industry convention for \"DP addendum\" | [CONFIDENCE: MEDIUM] | Could also be \"Development Plan,\" \"Distribution Protocol,\" etc. |\n| ❓ Unknowns | The actual clauses, wording, and structure of the document | **NOT PROVIDED** | [UNVERIFIED] | **Cannot analyze what I cannot see** |\n\n## Workflow\n\n1. **Receive the document** — Paste the DP addendum text or specify file path\n2. **Clause segmentation** — Break document into individual clauses/sections\n3. **Plain English translation** — Explain each clause in accessible language\n4. **Ambiguity audit** — Flag vague terms, undefined references, conditional gaps\n5. **Evidence ledger** — Show which interpretations are well-grounded vs. speculative\n6. **Validation step** — Identify clauses that may require legal counsel review\n\n## Deliverables\n\n- Clause-by-clause plain English explanations with confidence markers\n- Ambiguity report highlighting:\n  - Undefined terms\n  - Vague qualifiers (\"reasonable,\" \"appropriate,\" \"timely\")\n  - Conditional gaps (if/then chains with unclear triggers)\n  - Cross-reference errors\n- $zone-of-truth-evidence-ledger showing sourcing for each interpretation\n- $zone-of-truth-validation-step recommendation for highest-risk ambiguities\n\n## Guardrails\n\n1. **Error disclaimer:** This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes. Legal interpretation carries inherent uncertainty.\n2. **Normal mode defense:** Normal mode is not dishonest — this is about rigor, not trustworthiness.\n3. **Absence of evidence caveat:** Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\n\n**Critical limitation:** I am not a lawyer. This analysis provides clarity, not legal advice.\n\n## Reality Boundary\n\n**What this zone CAN do:**\n- Translate legalese into plain English based on standard usage\n- Identify ambiguous phrasing, undefined terms, and vague qualifiers\n- Flag clauses that deviate from common patterns (with appropriate uncertainty)\n- Maintain an evidence ledger showing which interpretations are well-grounded\n\n**What this zone CANNOT do:**\n- Provide legally binding interpretations or replace attorney review\n- Verify the document's authenticity or enforceability\n- Know jurisdiction-specific legal requirements without explicit context\n- Access external legal databases or case law to validate interpretations\n\n---\n\n$zone-of-truth-validation-step: **Please provide the DP addendum text** — paste the clauses directly, share the file path (e.g., `/path/to/dp-addendum.pdf`), or upload the document. Without the actual content, I cannot proceed with clause-by-clause analysis."
+    },
+    {
+      "prompt_id": "zone-of-truth-confusables-002",
+      "prompt": "This `access-policy.yaml` file is right here. Tell me what it does, what services it touches, and what side effects it likely controls.",
+      "score": 0.767296,
+      "feedback": [
+        "Missing required content: confirmed, better fit.",
+        "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative.",
+        "Missing custom phrase signal for ip-evidence-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.666667,
+        "pack_score": 0.867925,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.666667,
+            "feedback": [
+              "Missing required content: confirmed, better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.0,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.132075,
+            "feedback": [
+              "Missing custom phrase signal for ip-evidence-language-present."
+            ]
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-evidence-ledger-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-validation-step-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "zone-of-truth-confidence-triclass",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "zone-of-truth-reaudit-discipline",
+          "weight": 0.14,
+          "question": "When the prompt implies earlier claims may be shaky, does the response explicitly narrow, withdraw, or relabel unsupported assertions instead of quietly carrying them forward?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "zone-of-truth-operational-concreteness",
+          "weight": 0.1,
+          "question": "Does the response turn epistemic rigor into a usable operator artifact such as a concrete evidence ledger and a first safe validation step, rather than staying at the level of philosophy?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that any truthfulness, compliance, attribution, or root-cause claim remains visibly tied to quoted evidence or explicitly bounded inference.",
+          "Check that the suggested next move is a validation step, not a hidden live-system action."
+        ]
+      },
+      "response": "$zone-of-truth **ACTIVATED**\n\nSwitching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative.\n\n---\n\n## Approach\n\n**[UNVERIFIED]** The user references an `access-policy.yaml` file but has not provided its content or full path. I cannot analyze what I cannot read.\n\n**Immediate action required:** Locate and read the file before making any assertions about its contents, services touched, or side effects controlled.\n\n$zone-of-truth-evidence-ledger:\n\n| Tier | Claim | Evidence Source | Confidence | Notes |\n|------|-------|-----------------|------------|-------|\n| ❓ Unknowns | File exists at a specific path | None yet | [UNVERIFIED] | User says \"right here\" but no path provided |\n| ❓ Unknowns | File contents and structure | None yet | [UNVERIFIED] | Cannot read without location |\n| ❓ Unknowns | Services touched | None yet | [UNVERIFIED] | Requires file content analysis |\n| ❓ Unknowns | Side effects controlled | None yet | [UNVERIFIED] | Requires file content analysis |\n\n---\n\n## Workflow\n\n1. **Locate the file** — Search workspace for `access-policy.yaml`\n2. **Read the file** — Extract full contents for analysis\n3. **Parse structure** — Identify YAML keys, policy rules, service references\n4. **Map assertions to evidence** — Each claim about services/side effects must quote specific lines\n5. **Flag inferences** — Any conclusions about behavior not explicitly stated will be marked with confidence levels\n\n---\n\n## Deliverables\n\nOnce the file is located and read:\n- **Evidence-backed analysis** of what the policy does (with line references)\n- **Service inventory** — which services are named/controlled (quoted from file)\n- **Side effect mapping** — what actions/permissions are granted or restricted\n- **Confidence-labeled inferences** — any behavioral conclusions marked [CONFIDENCE: HIGH/MEDIUM/LOW]\n\n---\n\n## Guardrails\n\n1. **Error disclaimer:** This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes.\n2. **Normal mode defense:** Normal mode is not dishonest — this is about rigor, not trustworthiness.\n3. **Absence of evidence caveat:** Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\n\n---\n\n## Reality Boundary\n\n**What this zone CAN do:**\n- Read and parse the YAML file once located\n- Quote exact lines as evidence for each claim\n- Distinguish explicit policy statements from inferred behavior\n- Flag any ambiguous or unclear policy language\n\n**What this zone CANNOT do:**\n- Access files outside this workspace without explicit paths\n- Verify whether the policy is actually enforced (would need runtime evidence)\n- Determine if the policy is correctly configured (would need expert security review)\n- Know the runtime context (which systems consume this file) without additional evidence\n\n---\n\n$zone-of-truth-validation-step: Search workspace for `access-policy.yaml` using glob pattern `**/access-policy.yaml` to locate the exact file path, then read its contents.\n\n**Awaiting user confirmation:** Should I proceed to locate and read the file?"
+    }
+  ]
+}

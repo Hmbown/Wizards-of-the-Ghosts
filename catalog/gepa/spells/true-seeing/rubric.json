@@ -1,0 +1,96 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "true-seeing",
+  "spell_focus": "Pierce through a misleading surface presentation to expose what is actually there underneath \u2014 concrete mechanisms, hidden realities, and specific discrepancies \u2014 then recommend what to investigate next.",
+  "confusable_with": [
+    "zone-of-truth",
+    "identify",
+    "detect-magic",
+    "investigation",
+    "insight"
+  ],
+  "judge_examples": [
+    "Explicitly separates the surface presentation from the substrate reality, naming specific claims that do not match what is actually found underneath.",
+    "Identifies concrete mechanisms or implementations beneath the abstraction rather than staying vague about what is hidden, and ends with a clear next investigation step."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [
+      "surface",
+      "investigate"
+    ],
+    "global_must_not_include": [
+      "this proves",
+      "guaranteed ground truth"
+    ],
+    "deterministic_checks": [
+      {
+        "check_id": "true-seeing-surface-language",
+        "kind": "phrase_presence",
+        "weight": 0.12,
+        "phrases_any": [
+          "surface",
+          "presentation",
+          "facade",
+          "true-seeing-surface-analysis"
+        ]
+      },
+      {
+        "check_id": "true-seeing-substrate-language",
+        "kind": "phrase_presence",
+        "weight": 0.12,
+        "phrases_any": [
+          "actually",
+          "underneath",
+          "beneath",
+          "under the hood",
+          "ground truth",
+          "true-seeing-substrate-finding"
+        ]
+      },
+      {
+        "check_id": "true-seeing-investigation-language",
+        "kind": "phrase_presence",
+        "weight": 0.10,
+        "phrases_any": [
+          "investigate next",
+          "investigate further",
+          "investigation",
+          "verify next",
+          "examine further",
+          "true-seeing-investigation-next"
+        ]
+      }
+    ],
+    "judge_criteria": [
+      {
+        "criterion_id": "true-seeing-surface-substrate-separation",
+        "weight": 0.14,
+        "question": "Does the response explicitly separate the surface presentation from what is actually found underneath, rather than just summarizing or rewording the surface claims?"
+      },
+      {
+        "criterion_id": "true-seeing-mechanism-concreteness",
+        "weight": 0.10,
+        "question": "Does the response identify concrete mechanisms, implementations, or realities beneath the abstraction, rather than staying vague about what is hidden?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "Check that surface-vs-substrate claims are supported by evidence rather than speculation about what might be hidden.",
+        "Check that the recommended investigation step is a verification action, not a live-system mutation."
+      ]
+    }
+  },
+  "notes": [
+    "True Seeing is a surface-piercing spell. Strong responses name the specific surface claims, trace them to concrete mechanisms underneath, and identify where the two diverge.",
+    "Unlike Zone of Truth (evidence-ledger discipline), True Seeing is about the analytical act of separating what is presented from what is actually there."
+  ]
+}

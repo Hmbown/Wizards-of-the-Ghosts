@@ -21,6 +21,17 @@ metadata:
 ---
 # Glyph of Warding
 Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
+## Sigil
+
+```text
+    /\\
+ .-'_==_'-. 
+/  /####\\  \\
+| |######| |
+\\  \\####/  /
+ '-.____.-'
+```
+
 ## What This Skill Does
 Use this skill when you need a watchful boundary around files, systems, metrics, queues, or workflows.
 In this grimoire, Glyph of Warding is treated as a literal spell with a shipping-now delivery profile.

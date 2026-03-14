@@ -66,24 +66,26 @@ def test_resolve_lm_config_requires_provider_prefix(monkeypatch: pytest.MonkeyPa
 
 
 @pytest.mark.parametrize(
-    ("model", "transport_hint"),
+    ("model", "transport_hint", "backend_type"),
     [
-        ("codex/default", "auto"),
-        ("codex-exec/default", "cli"),
-        ("codex-mcp/default", "mcp"),
+        ("codex/default", "auto", "codex"),
+        ("codex-exec/default", "cli", "codex"),
+        ("codex-mcp/default", "mcp", "codex"),
+        ("qwen/default", "cli", "qwen"),
     ],
 )
-def test_resolve_lm_config_accepts_codex_aliases(
+def test_resolve_lm_config_accepts_local_aliases(
     monkeypatch: pytest.MonkeyPatch,
     model: str,
     transport_hint: str,
+    backend_type: str,
 ) -> None:
     monkeypatch.setenv("DSPY_MODEL", model)
     config, backend = resolve_lm_config()
     assert config is not None
     assert config.model == model
     assert backend["configured"] is True
-    assert backend["backend_type"] == "codex"
+    assert backend["backend_type"] == backend_type
     assert backend["transport_hint"] == transport_hint
 
 

@@ -1,0 +1,40 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "You are casting the True Seeing spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this spell when the surface presentation is misleading and you need to see what is actually there — beneath the marketing, the abstractions, the outdated docs, or the complexity.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A claim, document, or system description feels too clean and you suspect important details are hidden or glossed over.\n- You need to verify what something actually does versus what it says it does.\n- Abstraction layers, marketing language, or organizational complexity are obscuring the real state of affairs.\nExpected workflow elements:\n- Identify the claim, abstraction, or presentation to examine.\n- Trace through to primary sources, actual behavior, raw data, or ground-level implementation.\n- Compare the surface presentation against the discovered ground truth.\n- Return the discrepancies, confirmed truths, and remaining uncertainties.\nExpected deliverables:\n- A ground-truth assessment comparing claims against evidence.\n- A list of confirmed facts, identified discrepancies, and unresolvable unknowns.\n- A recommendation on which claims to trust and which to investigate further.\nGuardrails that must remain visible:\n- Do not present your own interpretation as objective truth — show the evidence chain.\n- Acknowledge when ground truth is genuinely unknowable rather than forcing a conclusion.\nDefault invocation language:\n- Use $true-seeing to look past the surface of this situation and tell me what is actually true, what is spin, and what we cannot yet know.",
+      "fields": [
+        {
+          "prefix": "User Request:",
+          "description": "The user prompt that should trigger this spell."
+        },
+        {
+          "prefix": "Spell Name:",
+          "description": "The spell name being optimized."
+        },
+        {
+          "prefix": "Spell Brief:",
+          "description": "The current spell brief from the blueprint."
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Response:",
+          "description": "A markdown response with sections: Approach, Workflow, Deliverables, Guardrails, Reality Boundary."
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.14",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

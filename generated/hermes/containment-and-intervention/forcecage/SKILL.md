@@ -19,6 +19,18 @@ metadata:
 ---
 # Forcecage
 Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.
+## Sigil
+
+```text
++-------------+
+|  x     x    |
+|    .-.      |
+|   (###)     |
+|    `-'      |
+|  x     x    |
++-------------+
+```
+
 ## What This Skill Does
 Use this spell when you need to run untrusted code, an experimental agent, or a destructive operation inside a tested containment boundary, observe it from outside, and define the release condition before anything descends into a looser environment.
 In this grimoire, Forcecage is treated as a literal spell with a prototype delivery profile.

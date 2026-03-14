@@ -100,6 +100,26 @@ export DSPY_MAX_TOKENS=256
 .venv/bin/python scripts/dspy_eval_router.py --repo-root . --dspy-only --eval-limit 8
 ```
 
+Experimental Qwen CLI-backed option:
+
+```bash
+export DSPY_MODEL=qwen/default
+```
+
+When `DSPY_MODEL` starts with `qwen/`, DSPy uses the local `qwen` CLI through
+`dspy.QwenLM` instead of LiteLLM/OpenAI-compatible HTTP transport. This is a
+local-agent path similar in spirit to `codex-exec/default`, but it is CLI-only
+in the current implementation and always runs Qwen in plan mode.
+
+Practical smoke test:
+
+```bash
+export DSPY_MODEL=qwen/default
+
+.venv/bin/python scripts/dspy_build_router.py --repo-root . --train-limit 4
+.venv/bin/python scripts/dspy_eval_router.py --repo-root . --dspy-only --eval-limit 8
+```
+
 Observed repo-local result on 2026-03-11:
 
 - Limited compile succeeded with `train_limit=4` and wrote `dspy_router_status.json` with the subset metadata (`train_limit`, `train_rows_used`, `train_rows_available`).

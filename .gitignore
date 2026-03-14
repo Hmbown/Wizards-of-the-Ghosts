@@ -22,3 +22,10 @@ node_modules/
 .idea/
 *.swp
 *.swo
+
+# Local tool artifacts
+counterpoint.copilot.db
+hermes-runtime-skills
+
+# GEPA optimization logs (transient, regenerated on each run)
+catalog/gepa/spells/*/logs/

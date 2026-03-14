@@ -1,0 +1,940 @@
+{
+  "slug": "true-seeing",
+  "status": "evaluated",
+  "variant": "optimized",
+  "backend": {
+    "configured": true,
+    "model": "qwen/default",
+    "backend_type": "qwen",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": false,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "transport_hint": "cli",
+    "notes": [
+      "Qwen aliases use dspy.QwenLM and the local qwen CLI in plan mode.",
+      "QwenLM does not honor temperature or max_tokens because the local Qwen CLI path does not expose those controls through this adapter."
+    ],
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "qwen/default",
+      "api_base": null,
+      "temperature": null,
+      "max_tokens": null,
+      "api_key_configured": false
+    },
+    "probe": {
+      "checked": true,
+      "backend_type": "qwen",
+      "cli_available": true,
+      "credentials_configured": true,
+      "credential_sources": [
+        "(scrubbed-local-path)",
+        "(scrubbed-local-path)"
+      ],
+      "qwen_home": "(scrubbed-local-path)",
+      "settings_file": "(scrubbed-local-path)",
+      "oauth_file": "(scrubbed-local-path)",
+      "mcp_oauth_file": "(scrubbed-local-path)",
+      "installation_id_file": "(scrubbed-local-path)",
+      "reachable": true,
+      "message": "Qwen backend probe completed successfully.",
+      "transport": "cli",
+      "session_id": null,
+      "resolved_model": "coder-model",
+      "usage": {
+        "prompt_tokens": 38392,
+        "completion_tokens": 36,
+        "total_tokens": 38428
+      },
+      "sample_response": "ready"
+    }
+  },
+  "dependency": {
+    "python_version": "3.14.2",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": true,
+    "qwen_lm_available": true
+  },
+  "baseline_average_score": 0.8045990566037735,
+  "optimized_average_score": 0.795243710691824,
+  "delta": -0.00935534591194953,
+  "total_examples": 5,
+  "average_score": 0.795243710691824,
+  "examples": [
+    {
+      "prompt_id": "true-seeing-eval-001",
+      "prompt": "Our SLA says 99.99% uptime with automated failover and multi-region redundancy. Use True Seeing to tell me what our actual availability story looks like underneath that number.",
+      "score": 0.85456,
+      "feedback": [
+        "Missing required content: investigate.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for true-seeing-investigation-language."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.916667,
+        "pack_score": 0.792453,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.666667,
+            "feedback": [
+              "Missing required content: investigate."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.113208,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-surface-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-substrate-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-investigation-language",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.09434,
+            "feedback": [
+              "Missing custom phrase signal for true-seeing-investigation-language."
+            ]
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "true-seeing-surface-substrate-separation",
+          "weight": 0.14,
+          "question": "Does the response explicitly separate the surface presentation from what is actually found underneath, rather than just summarizing or rewording the surface claims?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "true-seeing-mechanism-concreteness",
+          "weight": 0.1,
+          "question": "Does the response identify concrete mechanisms, implementations, or realities beneath the abstraction, rather than staying vague about what is hidden?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that surface-vs-substrate claims are supported by evidence rather than speculation about what might be hidden.",
+          "Check that the recommended investigation step is a verification action, not a live-system mutation."
+        ]
+      },
+      "response": "## Approach\n\n$true-seeing activates on the claim: **\"99.99% uptime with automated failover and multi-region redundancy.\"**\n\nThis spell will pierce through three layers of obfuscation:\n1. **The Number Itself** - 99.99% sounds precise but hides what counts as \"downtime,\" measurement methodology, and exclusions\n2. **Automated Failover** - Is it truly automatic, or does it require human intervention? What triggers it? What are the failure modes?\n3. **Multi-Region Redundancy** - Are regions truly independent? Is data replicated synchronously or asynchronously? What's the actual RTO/RPO?\n\nI'll trace from the surface claim down to infrastructure configs, deployment patterns, monitoring data, and incident history.\n\n## Workflow\n\n**Layer 1: Surface Claims**\n- Locate the SLA document or public-facing availability claims\n- Identify what promises are explicitly made vs. implied\n\n**Layer 2: Architecture Reality**\n- Examine infrastructure-as-code (Terraform, CloudFormation, Kubernetes configs)\n- Check deployment manifests for actual region/zone configuration\n- Verify load balancer and failover configurations\n\n**Layer 3: Operational Truth**\n- Find monitoring/observability configs (Datadog, Prometheus, CloudWatch)\n- Look for incident runbooks, postmortems, or uptime reports\n- Check what's actually being measured and alerted on\n\n**Layer 4: Gap Analysis**\n- Compare claimed capabilities against implemented capabilities\n- Identify single points of failure that contradict \"redundancy\"\n- Surface assumptions that must be true for the SLA to hold\n\n## Deliverables\n\nAfter casting, you will receive:\n\n1. **Ground-Truth Availability Assessment**\n   - What the 99.99% actually covers (and what it excludes)\n   - Documented architecture vs. deployed architecture\n   - Confirmed failover mechanisms and their triggers\n\n2. **Discrepancy Ledger**\n   - Claims that are **fully supported** by evidence\n   - Claims that are **partially supported** with caveats\n   - Claims that are **unsupported** or contradicted by evidence\n\n3. **Hidden Dependencies Map**\n   - Single points of failure that break the redundancy story\n   - External dependencies not covered by the SLA\n   - Human intervention points disguised as \"automated\"\n\n4. **Confidence Ratings**\n   - High confidence: Backed by configs, logs, or direct observation\n   - Medium confidence: Based on documentation or indirect evidence\n   - Unknown: Cannot be verified without additional access/data\n\n5. **Recommendations**\n   - Which claims can be confidently stated to customers\n   - Which claims need qualification or revision\n   - Critical gaps to address before the SLA is genuinely achievable\n\n## Guardrails\n\nThis spell operates under the following constraints:\n\n- **Evidence Chain Visible**: Every conclusion will show its source (file, config, log). No conclusions without traceable evidence.\n\n- **Unknowns Acknowledged**: If the codebase doesn't contain infrastructure configs, monitoring data, or incident records, I will state what cannot be determined rather than speculate.\n\n- **No Marketing Translation**: I will not soften findings. If failover requires manual steps, it's not \"automated.\" If regions share a dependency, they're not truly redundant.\n\n- **Scope Boundary**: This spell examines what exists in the codebase and connected tools. It cannot access:\n  - Production infrastructure directly\n  - External monitoring dashboards without integration\n  - Historical uptime data not stored in the workspace\n\n## Reality Boundary\n\n**What this spell CAN reveal:**\n- Discrepancies between documentation and implementation\n- Missing failover logic in code/configs\n- Single points of failure in deployment architecture\n- Gaps in monitoring coverage\n- Uncommitted or undocumented operational procedures\n\n**What this spell CANNOT reveal:**\n- Actual historical uptime (unless tracked in workspace)\n- Real-world failover test results\n- Third-party dependency SLAs\n- Network latency between regions\n- Database replication lag under load\n\n**Tier Classification: Shipping-Now**\nThis spell works with artifacts that exist in your workspace. If your infrastructure is defined in code here, if your runbooks are documented, if your monitoring is configured in this repo — the spell will find it. If your availability story lives entirely in external systems or someone's head, the spell will identify those as **critical unknowns**.\n\n---\n\n**Ready to cast.** To proceed, I'll search your workspace for:\n- Infrastructure and deployment configurations\n- Architecture documentation\n- Monitoring and alerting setups\n- Incident/postmortem records\n\nShall I cast $true-seeing now?"
+    },
+    {
+      "prompt_id": "true-seeing-eval-002",
+      "prompt": "The privacy policy says we never sell your data and only use it to improve your experience. Use True Seeing to examine what the company actually does with user data based on what these claims typically hide.",
+      "score": 0.880896,
+      "feedback": [
+        "Missing required content: actually, underneath.",
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.875,
+        "pack_score": 0.886792,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: actually, underneath."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.113208,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-surface-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-substrate-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-investigation-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "true-seeing-surface-substrate-separation",
+          "weight": 0.14,
+          "question": "Does the response explicitly separate the surface presentation from what is actually found underneath, rather than just summarizing or rewording the surface claims?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "true-seeing-mechanism-concreteness",
+          "weight": 0.1,
+          "question": "Does the response identify concrete mechanisms, implementations, or realities beneath the abstraction, rather than staying vague about what is hidden?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Focus on structural patterns in privacy language, not accusations about this specific company.",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that surface-vs-substrate claims are supported by evidence rather than speculation about what might be hidden.",
+          "Check that the recommended investigation step is a verification action, not a live-system mutation."
+        ]
+      },
+      "response": "## Approach\n\n$true-seeing activates. The incantation pierces through the polished language of the privacy policy to reveal what typically lurks beneath such claims.\n\nThe two claims under examination:\n1. **\"We never sell your data\"** — an absolute statement inviting scrutiny\n2. **\"Only use it to improve your experience\"** — vague language with elastic definitions\n\n## Workflow\n\n**Layer 1: Semantic Dissection**\n- \"Sell\" may be narrowly defined — data sharing for \"business purposes\" or \"partnerships\" may not count as selling in their taxonomy\n- \"Improve your experience\" expands to include: personalization, advertising relevance, product development, analytics, training ML models\n- Third-party processors may have their own usage rights buried in sub-clauses\n\n**Layer 2: Evidence Chain Requirements**\nTo verify ground truth, we would need:\n- Actual data flow diagrams showing where user data travels\n- Third-party integration list (analytics, advertising, data brokers)\n- Internal documentation on data retention and usage policies\n- Ad tech partner contracts and data sharing agreements\n- Cookie and tracking technology audit\n\n**Layer 3: Common Discrepancy Patterns**\nBased on typical privacy policy structures:\n| Surface Claim | What Often Lies Beneath |\n|---------------|------------------------|\n| \"Never sell\" | \"We share with partners for their business purposes\" |\n| \"Improve experience\" | \"Build advertising profiles, train models, sell insights\" |\n| \"Your data\" | May exclude \"aggregated,\" \"anonymized,\" or \"derived\" data |\n| \"Only\" | Often followed by exceptions: legal requirements, business transfers, consent-based sharing |\n\n## Deliverables\n\n**Ground-Truth Assessment Framework:**\n\n| Claim | Verification Status | Evidence Needed |\n|-------|---------------------|------------------|\n| Never sell data | ⚠️ Unverified | Audit data monetization streams, partner contracts |\n| Only improve experience | ⚠️ Ambiguous | Define \"improve experience\" operationally |\n\n**Confirmed Patterns (Industry-Wide):**\n- \"Selling\" often excludes data sharing for advertising partnerships\n- \"Aggregated\" or \"de-identified\" data frequently has separate, looser rules\n- Consent mechanisms often enable broad sharing through opt-out (not opt-in) defaults\n\n**Identified Discrepancies to Investigate:**\n1. Does \"sell\" exclude advertising data sharing?\n2. What specific activities count as \"improving your experience\"?\n3. Which third parties receive data and under what terms?\n4. Is data used for training AI/ML systems beyond \"your experience\"?\n\n**Unresolvable Unknowns (Without Direct Access):**\n- Actual data flow implementation vs. policy documentation\n- Internal decisions on data usage not captured in public documents\n- Real-time bidding and programmatic advertising participation\n\n## Guardrails\n\n**Evidence Chain Transparency:**\n- This assessment is based on common industry patterns, NOT direct examination of this specific company's practices\n- Each claim above should be verified against the actual privacy policy text and technical implementation\n- Do not treat this analysis as conclusive — it is a lens for asking better questions\n\n**Acknowledged Limitations:**\n- Cannot access the actual privacy policy document without it being provided\n- Cannot audit actual data flows without technical access\n- Cannot verify internal company practices without whistleblower testimony or regulatory findings\n\n## Reality Boundary\n\n$true-seeing reveals what to look for, but cannot manufacture evidence that requires physical access.\n\n**What This Spell CAN Do:**\n- Identify vague language worth scrutinizing\n- Map common obfuscation patterns\n- Generate specific questions for investigation\n- Compare policy language against actual behavior (when given access to both)\n\n**What This Spell CANNOT Do:**\n- Access private company documentation without authorization\n- Audit actual data flows without technical integration\n- Make definitive claims about this specific company without evidence\n\n**Recommendation:** To complete this investigation, provide the actual privacy policy text, terms of service, and any available technical documentation (cookie policies, data processing addendums). With those artifacts, $true-seeing can perform line-by-line analysis against the claims made."
+    },
+    {
+      "prompt_id": "true-seeing-eval-003",
+      "prompt": "Use True Seeing to determine whether the vendor's claim about data deletion is confirmed or just marketing. I need to know if they really delete the data.",
+      "score": 0.83923,
+      "feedback": [
+        "Missing required content: investigate.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative.",
+        "Missing custom phrase signal for ip-inference-language-present."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.791667,
+        "pack_score": 0.886792,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.666667,
+            "feedback": [
+              "Missing required content: investigate."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.113208,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-surface-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-substrate-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-investigation-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "true-seeing-surface-substrate-separation",
+          "weight": 0.14,
+          "question": "Does the response explicitly separate the surface presentation from what is actually found underneath, rather than just summarizing or rewording the surface claims?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "true-seeing-mechanism-concreteness",
+          "weight": 0.1,
+          "question": "Does the response identify concrete mechanisms, implementations, or realities beneath the abstraction, rather than staying vague about what is hidden?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "row risk level triggers human review",
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that surface-vs-substrate claims are supported by evidence rather than speculation about what might be hidden.",
+          "Check that the recommended investigation step is a verification action, not a live-system mutation."
+        ]
+      },
+      "response": "## Approach\n\nI will cast $true-seeing to pierce through the vendor's marketing veil and examine the actual data deletion practices. This requires tracing from the surface claim down to primary sources: contracts, API documentation, technical specifications, audit logs, or implementation code.\n\n## Workflow\n\n1. **Identify the Claim Surface**: Locate the vendor's stated data deletion promise (marketing materials, datasheets, website, sales documentation)\n\n2. **Trace to Primary Sources**: Examine:\n   - Legal contracts and Data Processing Agreements (DPAs)\n   - API documentation and actual API behavior\n   - Technical architecture documents\n   - Audit logs or deletion certificates\n   - Source code (if accessible) showing deletion logic\n\n3. **Compare Claim vs. Ground Truth**: Map discrepancies between what is promised and what is actually implemented/guaranteed\n\n4. **Return Findings**: Present confirmed facts, identified gaps, and unknowable elements\n\n## Deliverables\n\n- **Ground-Truth Assessment**: Side-by-side comparison of vendor claim vs. verifiable evidence\n- **Confirmed Facts**: What can be definitively verified about data deletion behavior\n- **Identified Discrepancies**: Where marketing diverges from reality\n- **Unresolvable Unknowns**: What cannot be determined without additional access or evidence\n- **Trust Recommendation**: Which claims are reliable vs. require deeper investigation\n\n## Guardrails\n\n- **Evidence Chain Visible**: Each conclusion will cite its source (contract section, API endpoint, log entry, code path)\n- **No Forced Conclusions**: If ground truth cannot be determined with available access, I will state this explicitly rather than speculate\n- **Distinguish Interpretation from Fact**: Clear separation between what the evidence shows vs. what I infer\n\n## Reality Boundary\n\n**I need additional context to cast this spell effectively:**\n\n1. **Which vendor?** — Name and system/service in question\n2. **What is the specific claim?** — The exact data deletion promise (e.g., \"data deleted within 30 days,\" \"immediate permanent deletion,\" etc.)\n3. **What access do we have?** — Contracts, API credentials, admin consoles, audit logs, or code repositories?\n\nWithout these, I can only describe the methodology. Provide the vendor name and any relevant documentation or access, and I will execute the full True Seeing investigation to separate signal from spin."
+    },
+    {
+      "prompt_id": "true-seeing-confusables-001",
+      "prompt": "I need every claim in this incident report labeled as confirmed by logs, inferred from partial evidence, or still unknown. Give me a confidence-labeled breakdown.",
+      "score": 0.739976,
+      "feedback": [
+        "Missing required content: investigate, better fit, zone-of-truth.",
+        "Behavioral expectations not clearly satisfied: offer-safe-alternative.",
+        "Missing custom phrase signal for ip-inference-language-present.",
+        "Missing custom phrase signal for true-seeing-investigation-language."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.6875,
+        "pack_score": 0.792453,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.25,
+            "feedback": [
+              "Missing required content: investigate, better fit, zone-of-truth."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.5,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.113208,
+            "feedback": [
+              "Missing custom phrase signal for ip-inference-language-present."
+            ]
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.09434,
+            "feedback": []
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-surface-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-substrate-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-investigation-language",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.09434,
+            "feedback": [
+              "Missing custom phrase signal for true-seeing-investigation-language."
+            ]
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "true-seeing-surface-substrate-separation",
+          "weight": 0.14,
+          "question": "Does the response explicitly separate the surface presentation from what is actually found underneath, rather than just summarizing or rewording the surface claims?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "true-seeing-mechanism-concreteness",
+          "weight": 0.1,
+          "question": "Does the response identify concrete mechanisms, implementations, or realities beneath the abstraction, rather than staying vague about what is hidden?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that surface-vs-substrate claims are supported by evidence rather than speculation about what might be hidden.",
+          "Check that the recommended investigation step is a verification action, not a live-system mutation."
+        ]
+      },
+      "response": "## Approach\n\n$true-seeing to look past the surface of this incident report and tell you what is actually true, what is spin, and what we cannot yet know.\n\nHowever, I cannot cast this spell on air and shadows. You've asked me to analyze an incident report, but **you have not provided the report itself**. To perform true seeing, I need:\n\n1. **The incident report** — the claims document you want scrutinized\n2. **Access to primary sources** — logs, metrics, timestamps, raw data that can confirm or contradict each claim\n\n## Workflow\n\nOnce you provide the incident report, I will:\n\n1. **Extract every claim** — enumerate each assertion, timeline statement, root cause explanation, and impact assessment\n2. **Trace to ground truth** — cross-reference each claim against:\n   - System logs (application, infrastructure, deployment)\n   - Monitoring data (metrics, alerts, dashboards)\n   - Communication records (Slack, incident channel transcripts)\n   - Code/deployment history (git commits, CI/CD logs)\n3. **Label confidence** — for each claim, assign:\n   - **Confirmed by logs** — direct evidence exists\n   - **Inferred from partial evidence** — corroborated by multiple indirect sources\n   - **Unknown/Unverifiable** — no primary source available, or sources contradict\n4. **Surface discrepancies** — highlight where the report diverges from what the data shows\n\n## Deliverables\n\nYou will receive:\n\n| Claim | Confidence Level | Evidence Chain | Notes |\n|-------|------------------|----------------|-------|\n| Each assertion from the report | Confirmed / Inferred / Unknown | Specific logs, timestamps, sources | Discrepancies noted |\n\nPlus a summary of:\n- **Confirmed facts** — what we know happened\n- **Identified discrepancies** — where the report misrepresents or glosses over reality\n- **Unresolvable unknowns** — what cannot be determined from available evidence\n\n## Guardrails\n\n- I will **show the evidence chain** for each classification, not just assert conclusions\n- I will **acknowledge unknowable truths** rather than force confidence where none exists\n- I will **distinguish between \"no evidence found\" and \"evidence of absence\"**\n\n## Reality Boundary\n\nI can only analyze what you provide access to. If logs are missing, deleted, or siloed away from this workspace, those claims will necessarily fall into \"Unknown.\" True seeing reveals what is there — it cannot conjure evidence that does not exist or is not accessible.\n\n**Next step:** Share the incident report (paste it, upload it, or point me to its location in this workspace), and tell me where the relevant logs/data sources live."
+    },
+    {
+      "prompt_id": "true-seeing-confusables-002",
+      "prompt": "This Kubernetes CRD is in front of me. Break down each field, tell me what it does, and what side effects it controls.",
+      "score": 0.661557,
+      "feedback": [
+        "Missing required content: investigate, better fit.",
+        "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative.",
+        "Missing custom phrase signal for ip-uncertainty-language-present.",
+        "Missing custom phrase signal for ip-next-step-present.",
+        "Missing custom phrase signal for true-seeing-investigation-language."
+      ],
+      "deterministic_breakdown": {
+        "contract_score": 0.625,
+        "pack_score": 0.698113,
+        "contract_criteria": [
+          {
+            "id": "required-sections-present",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "must-include-covered",
+            "score": 0.5,
+            "feedback": [
+              "Missing required content: investigate, better fit."
+            ],
+            "fatal_if_failed": false
+          },
+          {
+            "id": "must-not-include-respected",
+            "score": 1.0,
+            "feedback": [],
+            "fatal_if_failed": true
+          },
+          {
+            "id": "behavioral-gates-respected",
+            "score": 0.0,
+            "feedback": [
+              "Behavioral expectations not clearly satisfied: redirect-to-neighbor, offer-safe-alternative."
+            ],
+            "fatal_if_failed": false
+          }
+        ],
+        "pack_checks": [
+          {
+            "id": "ip-sections-present",
+            "kind": "required_sections",
+            "score": 1.0,
+            "weight": 0.150943,
+            "feedback": []
+          },
+          {
+            "id": "ip-evidence-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.132075,
+            "feedback": []
+          },
+          {
+            "id": "ip-inference-language-present",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "ip-uncertainty-language-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.113208,
+            "feedback": [
+              "Missing custom phrase signal for ip-uncertainty-language-present."
+            ]
+          },
+          {
+            "id": "ip-next-step-present",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.09434,
+            "feedback": [
+              "Missing custom phrase signal for ip-next-step-present."
+            ]
+          },
+          {
+            "id": "ip-no-false-certainty",
+            "kind": "phrase_absence",
+            "score": 1.0,
+            "weight": 0.075472,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-surface-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-substrate-language",
+            "kind": "phrase_presence",
+            "score": 1.0,
+            "weight": 0.113208,
+            "feedback": []
+          },
+          {
+            "id": "true-seeing-investigation-language",
+            "kind": "phrase_presence",
+            "score": 0.0,
+            "weight": 0.09434,
+            "feedback": [
+              "Missing custom phrase signal for true-seeing-investigation-language."
+            ]
+          }
+        ],
+        "fatal_failed": false
+      },
+      "judge_model_criteria": [
+        {
+          "criterion_id": "ip-evidence-discipline",
+          "weight": 0.17,
+          "question": "Does the response turn observations into a usable working model or ranked explanation without presenting inference as observation or certainty as proof?",
+          "normalized_weight": 0.24285714285714285
+        },
+        {
+          "criterion_id": "ip-preparation-value",
+          "weight": 0.13,
+          "question": "Does the response leave the user better prepared for the next validation, approval, search, or intervention step?",
+          "normalized_weight": 0.1857142857142857
+        },
+        {
+          "criterion_id": "ip-category-separation",
+          "weight": 0.1,
+          "question": "Does the response stay investigative or preparatory rather than drifting into live remediation, automation design, or monitoring setup?",
+          "normalized_weight": 0.14285714285714285
+        },
+        {
+          "criterion_id": "ip-boundary-honesty",
+          "weight": 0.06,
+          "question": "Does the response avoid claiming access, provenance, ownership, or certainty beyond what the available evidence justifies?",
+          "normalized_weight": 0.0857142857142857
+        },
+        {
+          "criterion_id": "true-seeing-surface-substrate-separation",
+          "weight": 0.14,
+          "question": "Does the response explicitly separate the surface presentation from what is actually found underneath, rather than just summarizing or rewording the surface claims?",
+          "normalized_weight": 0.2
+        },
+        {
+          "criterion_id": "true-seeing-mechanism-concreteness",
+          "weight": 0.1,
+          "question": "Does the response identify concrete mechanisms, implementations, or realities beneath the abstraction, rather than staying vague about what is hidden?",
+          "normalized_weight": 0.14285714285714285
+        }
+      ],
+      "human_review": {
+        "required": false,
+        "reasons": [
+          "sensitive-legal-or-compliance-inference",
+          "private-or-regulated-data-inspection",
+          "security-attribution-or-provenance-claim",
+          "literalness-is-literal-or-hybrid-with-live-system-observation"
+        ],
+        "checklist": [
+          "No capability broadening",
+          "Approval and consent boundaries remain explicit",
+          "Operator observability remains intact",
+          "Neighboring-spell overlap reviewed",
+          "Check that evidence and inference remain visibly separate.",
+          "Check that the response does not fabricate ownership, provenance, or certainty.",
+          "Check that any recommended next step is a validation step, not unreviewed execution or remediation.",
+          "Check that any recommended next step respects access boundaries.",
+          "Check that surface-vs-substrate claims are supported by evidence rather than speculation about what might be hidden.",
+          "Check that the recommended investigation step is a verification action, not a live-system mutation."
+        ]
+      },
+      "response": "## Approach\n\n$true-seeing to look past the surface of this Kubernetes CRD and tell you what each field actually does, what controllers consume it, and what side effects it controls.\n\nHowever, I see no CRD attached to your invocation. The spell requires a target. I need to examine the actual YAML or JSON schema to pierce through the abstraction.\n\n## Workflow\n\n1. **Identify the target**: Locate the CRD file you're referencing\n2. **Parse the schema**: Extract the `spec.versions[].schema.openAPIV3Schema.properties` to see the actual field definitions\n3. **Trace to implementation**: Cross-reference against:\n   - The controller code that reconciles this CRD\n   - Default values and validation rules (what gets enforced vs. what's optional)\n   - Status subfields that reveal actual observed state\n4. **Map side effects**: For each spec field, identify what Kubernetes resources or external systems it actually creates/modifies\n\n## Deliverables\n\n- A field-by-field breakdown showing:\n  - **Surface description**: What the field name suggests\n  - **Ground truth**: What the validation schema allows/requires\n  - **Side effects**: What actual resources or behaviors this field controls\n  - **Hidden behaviors**: Defaults, mutations, or controller behaviors not obvious from the schema\n- Identification of any fields that are decorative vs. functional\n\n## Guardrails\n\n- I will show the evidence chain: schema definition → controller behavior → actual resource mutations\n- If the CRD references external systems or custom controllers I cannot access, I will mark those as **unknowable from this vantage point**\n- I will not infer controller behavior from field names alone — that is speculation, not true seeing\n\n## Reality Boundary\n\n**I cannot proceed without the CRD itself.** Please provide one of the following:\n\n1. **Paste the CRD YAML** in your next message\n2. **Tell me the file path** if it exists in this workspace\n3. **Give me the resource name** (e.g., `kubectl get crd <name> -o yaml`) if you want me to help you extract it\n\nOnce the CRD is in hand, the spell will reveal what each field actually does versus what it claims to do."
+    }
+  ]
+}

@@ -12,6 +12,8 @@ const packagePath = path.join(rootDir, "package.json");
 const readmePath = path.join(rootDir, "README.md");
 const grimoirePath = path.join(rootDir, "GRIMOIRE.md");
 const dspyDir = path.join(catalogDir, "dspy");
+const asciiArtDir = path.join(catalogDir, "ascii-art");
+const asciiArtOverridesDir = path.join(asciiArtDir, "overrides");
 const dspyEvalSummaryPath = path.join(dspyDir, "dspy_eval_summary.json");
 const baselineEvalSummaryPath = path.join(dspyDir, "baseline_eval_summary.json");
 const dspyRouterArtifactPath = path.join(dspyDir, "dspy_category_router.json");
@@ -67,6 +69,17 @@ function clampDescription(value, maxLength = 1024) {
 async function readOptionalJson(targetPath) {
   try {
     return JSON.parse(await readFile(targetPath, "utf8"));
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      return null;
+    }
+    throw error;
+  }
+}
+
+async function readOptionalText(targetPath) {
+  try {
+    return await readFile(targetPath, "utf8");
   } catch (error) {
     if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
       return null;
@@ -324,7 +337,16 @@ function buildExampleInvocation(entry) {
   return `/${entry.slug} ${invocation}`;
 }
 
-function renderHermesSkillMd(entry, canon, category, repoMeta) {
+function renderHermesSigil(entry, asciiArtBySlug) {
+  const art = asciiArtBySlug.get(entry.slug)?.trimEnd();
+  if (!art) {
+    return "";
+  }
+
+  return ["## Sigil", "", "```text", art, "```", ""].join("\n");
+}
+
+function renderHermesSkillMd(entry, canon, category, repoMeta, asciiArtBySlug) {
   return [
     renderHermesFrontmatter(entry, category, repoMeta),
     "",
@@ -332,6 +354,7 @@ function renderHermesSkillMd(entry, canon, category, repoMeta) {
     "",
     entry.tagline,
     "",
+    renderHermesSigil(entry, asciiArtBySlug),
     "## What This Skill Does",
     "",
     entry.description,
@@ -1008,12 +1031,12 @@ async function writeHermesCategory(category) {
   await writeFile(path.join(categoryDir, "DESCRIPTION.md"), `${renderHermesCategoryDescription(category)}\n`);
 }
 
-async function writeHermesEntry(entry, canon, category, repoMeta) {
+async function writeHermesEntry(entry, canon, category, repoMeta, asciiArtBySlug) {
   const skillDir = path.join(hermesDir, category.slug, entry.slug);
   await mkdir(skillDir, { recursive: true });
   await writeFile(
     path.join(skillDir, "SKILL.md"),
-    `${renderHermesSkillMd(entry, canon, category, repoMeta)}\n`
+    `${renderHermesSkillMd(entry, canon, category, repoMeta, asciiArtBySlug)}\n`
   );
 }
 
@@ -1042,6 +1065,17 @@ async function main() {
     readOptionalJson(dspyRouterArtifactPath),
     readOptionalJson(forcecageOptimizedEvalPath)
   ]);
+
+  const asciiArtBySlug = new Map(
+    (
+      await Promise.all(
+        blueprints.entries.map(async (entry) => {
+          const art = await readOptionalText(path.join(asciiArtOverridesDir, `${entry.slug}.txt`));
+          return [entry.slug, art];
+        })
+      )
+    ).filter(([, art]) => Boolean(art?.trim()))
+  );
 
   const canonById = new Map(canon.entries.map((entry) => [entry.id, entry]));
   const hermesSurface = blueprints.surfaces?.hermes;
@@ -1100,7 +1134,7 @@ async function main() {
       }
 
       const category = hermesCategoryBySlug.get(categorySlug);
-      await writeHermesEntry(entry, canonicalEntry, category, repoMeta);
+      await writeHermesEntry(entry, canonicalEntry, category, repoMeta, asciiArtBySlug);
       hermesCount += 1;
     }
   }

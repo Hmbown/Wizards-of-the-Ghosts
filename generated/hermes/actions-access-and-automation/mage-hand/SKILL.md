@@ -19,6 +19,18 @@ metadata:
 ---
 # Mage Hand
 Manipulate files, records, and lightweight system state with precision and minimal blast radius.
+## Sigil
+
+```text
+     __
+  .-'  `-.
+ /  .--.  \\
+|  / /\\ \\ |
+|  | \\/ | |
+ \\  `--'  /
+  `-.__.-'
+```
+
 ## What This Skill Does
 Use this skill for small, careful remote manipulations where dexterity matters more than force.
 In this grimoire, Mage Hand is treated as a hybrid spell with a shipping-now delivery profile.

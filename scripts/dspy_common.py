@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 CODEX_MODEL_PREFIXES = ("codex/", "codex-exec/", "codex-mcp/")
+QWEN_MODEL_PREFIXES = ("qwen/",)
 
 REQUIRED_DSPY_FILES = {
     "spells_master": "spells_master.jsonl",
@@ -61,6 +62,12 @@ def is_codex_model(model: str | None) -> bool:
     return model.startswith(CODEX_MODEL_PREFIXES)
 
 
+def is_qwen_model(model: str | None) -> bool:
+    if model is None:
+        return False
+    return model.startswith(QWEN_MODEL_PREFIXES)
+
+
 def codex_transport_hint(model: str) -> str:
     if model.startswith("codex-exec/"):
         return "cli"
@@ -75,6 +82,14 @@ def load_codex_client() -> Any | None:
     except Exception:  # noqa: BLE001
         return None
     return codex_client
+
+
+def load_qwen_client() -> Any | None:
+    try:
+        from dspy.clients import qwen as qwen_client  # type: ignore
+    except Exception:  # noqa: BLE001
+        return None
+    return qwen_client
 
 
 def dspy_dir(repo_root: Path) -> Path:
@@ -129,6 +144,7 @@ def dependency_info() -> tuple[Any | None, dict[str, Any]]:
     info["dspy_installed"] = True
     info["dspy_version"] = getattr(dspy, "__version__", "unknown")
     info["codex_lm_available"] = hasattr(dspy, "CodexLM")
+    info["qwen_lm_available"] = hasattr(dspy, "QwenLM")
     return dspy, info
 
 
@@ -223,14 +239,15 @@ def resolve_lm_config(args: Any | None = None) -> tuple[LMConfig | None, dict[st
     temperature_raw = _arg_or_env(args, "dspy_temperature", "DSPY_TEMPERATURE")
     max_tokens_raw = _arg_or_env(args, "dspy_max_tokens", "DSPY_MAX_TOKENS")
     codex_model = is_codex_model(model)
+    qwen_model = is_qwen_model(model)
 
     backend: dict[str, Any] = {
         "configured": False,
         "model": model,
-        "backend_type": "codex" if codex_model else "litellm",
+        "backend_type": "codex" if codex_model else ("qwen" if qwen_model else "litellm"),
         "api_base": api_base,
         "api_key_configured": bool(api_key),
-        "provider_qualified_model_required": not codex_model,
+        "provider_qualified_model_required": not codex_model and not qwen_model,
         "optional_settings": {
             "temperature": temperature_raw,
             "max_tokens": max_tokens_raw,
@@ -242,17 +259,23 @@ def resolve_lm_config(args: Any | None = None) -> tuple[LMConfig | None, dict[st
             "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
             "CodexLM does not honor temperature or max_tokens because the local Codex transports do not expose those controls.",
         ]
+    elif qwen_model and model is not None:
+        backend["transport_hint"] = "cli"
+        backend["notes"] = [
+            "Qwen aliases use dspy.QwenLM and the local qwen CLI in plan mode.",
+            "QwenLM does not honor temperature or max_tokens because the local Qwen CLI path does not expose those controls through this adapter.",
+        ]
 
     if not model:
         backend["message"] = (
             "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string like "
-            "openai/qwen3.5:4b or a Codex alias like codex/default."
+            "openai/qwen3.5:4b, a Codex alias like codex/default, or a Qwen alias like qwen/default."
         )
         return None, backend
 
     if "/" not in model:
         backend["message"] = (
-            "DSPY_MODEL must be provider-qualified like openai/qwen3.5:4b or use a Codex alias like codex/default."
+            "DSPY_MODEL must be provider-qualified like openai/qwen3.5:4b or use a local alias like codex/default or qwen/default."
         )
         return None, backend
 
@@ -355,6 +378,62 @@ def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None
         )
         return probe
 
+    if is_qwen_model(config.model):
+        qwen_client = load_qwen_client()
+        if qwen_client is None:
+            return {
+                "checked": False,
+                "reachable": None,
+                "backend_type": "qwen",
+                "message": (
+                    "dspy.QwenLM is unavailable in the current Python environment. "
+                    "Install the local dspy-codex fork into this repo's .venv."
+                ),
+            }
+
+        runtime = qwen_client.inspect_qwen_runtime()
+        probe: dict[str, Any] = {
+            "checked": True,
+            "backend_type": "qwen",
+            "cli_available": runtime.cli_path is not None,
+            "credentials_configured": runtime.credentials_configured,
+            "credential_sources": list(runtime.credential_sources),
+            "qwen_home": runtime.qwen_home,
+            "settings_file": runtime.settings_file,
+            "oauth_file": runtime.oauth_file,
+            "mcp_oauth_file": runtime.mcp_oauth_file,
+            "installation_id_file": runtime.installation_id_file,
+        }
+        if runtime.cli_path is None:
+            probe["reachable"] = False
+            probe["message"] = "qwen CLI is not installed or not on PATH."
+            return probe
+
+        try:
+            result = qwen_client.probe_qwen_runtime(
+                repo_root=(repo_root or Path.cwd()).resolve(),
+                model=config.model,
+                timeout_seconds=max(int(timeout), 1) * 20,
+            )
+        except Exception as exc:  # noqa: BLE001
+            probe["reachable"] = False
+            probe["message"] = "Qwen backend probe failed."
+            probe["error"] = str(exc)
+            return probe
+
+        probe.update(
+            {
+                "reachable": True,
+                "message": "Qwen backend probe completed successfully.",
+                "transport": result.transport,
+                "session_id": result.session_id,
+                "resolved_model": result.resolved_model,
+                "usage": result.usage,
+                "sample_response": result.content[:120],
+            }
+        )
+        return probe
+
     if not config.api_base:
         return {
             "checked": False,
@@ -404,6 +483,18 @@ def instantiate_dspy_lm(dspy: Any, config: LMConfig, repo_root: Path) -> Any:
         return dspy.CodexLM(
             model=config.model,
             repo_root=repo_root,
+        )
+
+    if is_qwen_model(config.model):
+        if not hasattr(dspy, "QwenLM"):
+            raise RuntimeError(
+                "Current Python environment does not expose dspy.QwenLM. "
+                "Install the local dspy-codex fork into this repo's .venv."
+            )
+        return dspy.QwenLM(
+            model=config.model,
+            repo_root=repo_root,
+            isolate_home=False,
         )
 
     kwargs: dict[str, Any] = {}

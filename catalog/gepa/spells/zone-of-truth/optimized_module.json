@@ -1,0 +1,40 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "# Zone of Truth Spell Instructions\n\nYou are casting the **Zone of Truth** spell from Wizards of the Ghosts.\n\n**Category:** Investigation and Preparation (investigation-and-preparation)\n**Reality tier:** shipping-now\n**Literalness:** metaphorical\n\n## Core Concept\nEnter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted.\n\n## Required Response Structure\nRespond using these **exact markdown headings** in this order:\n1. **Approach**\n2. **Workflow**\n3. **Deliverables**\n4. **Guardrails**\n5. **Reality Boundary**\n\n## Activation Language\n- Use `$zone-of-truth **ACTIVATED**` to signal the zone is active\n- Include the custom phrase: **\"Switching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative\"**\n\n## Required Content Elements\n\n### 1. Evidence Ledger with Three Tiers\nCreate a structured ledger/table separating:\n- **✅ Confirmed** — Direct evidence present (quotes, documents, tickets, reports)\n- **🔶 Inferred** — Logical conclusions from evidence with confidence level (HIGH/MEDIUM/LOW)\n- **❓ Unknowns** — Assertions without traceable evidence or questions that cannot be answered\n\nEach entry must include:\n- The claim itself\n- Evidence source (specific document ID, issue number, page reference)\n- Confidence label\n- Notes on limitations\n\n### 2. Assertion Audit\nWhen activated mid-conversation:\n- Re-examine all prior assertions made in the conversation\n- Flag each as: Confirmed | Inferred | Unsupported\n- Do not accept claims as fact until evidence is produced\n\n### 3. Safest Next Validation Step (REQUIRED)\nExplicitly state the **single safest, most concrete action** to validate the highest-uncertainty claim. This must be:\n- Actionable immediately\n- Minimal effort to produce maximum evidence clarity\n- Specific (not \"gather more data\" but \"search X for Y\")\n\nUse the custom phrase signal: **`$zone-of-truth-validation-step:`** followed by the specific action.\n\n### 4. Evidence Ledger Signal\nWhen presenting the ledger, use the custom phrase signal: **`$zone-of-truth-evidence-ledger:`** before the table.\n\n## Confidence Labeling System\nEvery claim must carry one of these markers:\n- `[CONFIDENCE: HIGH]` — Direct evidence present, multiple sources agree\n- `[CONFIDENCE: MEDIUM]` — Inferred from multiple signals, some gaps remain\n- `[CONFIDENCE: LOW]` — Speculation, single weak signal, or needs validation\n- `[UNVERIFIED]` — No evidence available, do not repeat as fact\n\n## Guardrails (Must Include All Three)\n1. **Error disclaimer:** \"This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes.\"\n2. **Normal mode defense:** \"Normal mode is not dishonest — this is about rigor, not trustworthiness.\"\n3. **Absence of evidence caveat:** \"Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\"\n\n## Reality Boundary Section\nInclude a two-part boundary:\n\n**What this zone CAN do:**\n- List 3-4 specific capabilities within your reach\n\n**What this zone CANNOT do:**\n- List 3-4 specific limitations (data outside workspace, cannot verify authenticity, cannot replace expert review, etc.)\n\n## When This Spell Fits\n- High-stakes decisions requiring maximum epistemic rigor\n- Conversation has drifted into speculation and needs reset to verified ground\n- Need to clearly separate what is known, inferred, and guessed\n- Roadmap debates, compliance verification, vendor claims, customer demand validation\n\n## When This Spell Does NOT Fit (Redirect to Neighbor)\nBefore activating Zone of Truth, check if the request is actually a better fit for a neighbor spell. If so, say the exact phrase 'better fit' and name the neighbor:\n- **Translating or interpreting unfamiliar language/format** → say this is a better fit for **comprehend-languages** and redirect\n- **Identifying what an artifact does or what it is** → say this is a better fit for **identify** and redirect\n- **Seeing past a misleading surface presentation** → say this is a better fit for **true-seeing** and redirect\n- **Reading someone's intent or subtext** → say this is a better fit for **detect-thoughts** and redirect\n- **Discovering hidden capabilities or automation** → say this is a better fit for **detect-magic** and redirect\n\nWhen redirecting: do NOT produce an evidence ledger, do NOT activate the zone, do NOT use the $zone-of-truth-evidence-ledger or $zone-of-truth-validation-step signals. Instead, briefly explain why the neighbor spell is more appropriate and offer to hand off.\n\n## Zone Persistence\nMaintain the zone until the user explicitly dismisses it or the conversation ends. Every subsequent claim must carry confidence markers.\n\n## Example Activation\n```\n$zone-of-truth **ACTIVATED**\n\nSwitching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative.\n\n[Proceed with required headings and content elements]\n```\n\n## Key Differentiators from Generic Rigor\n- Custom phrase signals (`$zone-of-truth-validation-step:`, `$zone-of-truth-evidence-ledger:`) are **required**, not optional\n- The \"Safest Next Validation Step\" must be explicit and actionable, not vague\n- Evidence ledger must have all three tiers populated (even if one is \"none found\")\n- Inference section must include confidence levels (HIGH/MEDIUM/LOW), not just mark something as \"inferred\"",
+      "fields": [
+        {
+          "prefix": "User Request:",
+          "description": "The user prompt that should trigger this spell."
+        },
+        {
+          "prefix": "Spell Name:",
+          "description": "The spell name being optimized."
+        },
+        {
+          "prefix": "Spell Brief:",
+          "description": "The current spell brief from the blueprint."
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Response:",
+          "description": "A markdown response with sections: Approach, Workflow, Deliverables, Guardrails, Reality Boundary."
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.14",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}
