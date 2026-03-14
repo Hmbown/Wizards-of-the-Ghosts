@@ -46,6 +46,21 @@ npm run install:hermes-skills
 - In practice, skills like `detect-magic`, `mage-hand`, `zone-of-truth`, `feather-fall`, and `unseen-servant` work especially well as direct Hermes prompts.
 - Some skills mention env vars, APIs, or external systems, but this repo does not currently ship a dedicated Hermes integration layer for Home Assistant, Slack, or other services. Those procedures become real only if your Hermes environment already has the matching tools, credentials, and permissions.
 
+## Claude Code
+
+After `npm run install:hermes-skills`, every spell in the pack is available as a Claude Code slash command:
+
+```
+/forcecage run this inside a tested containment boundary
+/true-seeing look past the surface of this situation
+/detect-magic scan this repo for hidden AI agents and tool hooks
+/zone-of-truth source every claim and label every uncertainty
+```
+
+Each invocation activates the spell as an operating mode for the current task. The skill's full procedural prompt expands into your conversation context on use.
+
+`4` skills include ASCII sigils in their source files. Claude Code's skill loader may present a condensed version, but the sigils render in any Hermes runtime or editor that displays the SKILL.md directly.
+
 ## What Ships
 
 - `122` Hermes skills drawn from `127` public canon names (`109` spells, `18` skills)
