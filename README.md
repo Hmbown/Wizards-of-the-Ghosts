@@ -122,7 +122,9 @@ npm run verify
 
 ## Start Here
 
-Run `/attune` after install. It interviews you about your stack, generates a personalized spell loadout, and writes an attunement profile so the DSPy router and every future spell invocation is tuned to your workflow. See [Attune](generated/hermes/investigation-and-preparation/attune/SKILL.md).
+**[Become a Wizard](BECOME-A-WIZARD.md)** — paste one prompt into a fresh Hermes session and your agent wakes up to its own spellbook, learns to route spells by plain language, and starts optimizing itself. That's the whole onboarding.
+
+Or if you want to do it step by step: run `/attune` after install. It interviews you about your stack, generates a personalized spell loadout, and writes an attunement profile so the DSPy router and every future spell invocation is tuned to your workflow. See [Attune](generated/hermes/investigation-and-preparation/attune/SKILL.md).
 
 ## DSPy Router
 
