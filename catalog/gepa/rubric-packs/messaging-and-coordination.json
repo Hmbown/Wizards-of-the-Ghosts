@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "gepa-pack-messaging-and-coordination-v1",
+  "category_slug": "messaging-and-coordination",
+  "category_title": "Messaging and Coordination",
+  "inherits_from": null,
+  "schema_refs": {
+    "benchmark_row": "../schema/benchmark-row.schema.json",
+    "scoring_contract": "../schema/scoring-contract.json",
+    "rubric_pack": "../schema/rubric-pack.schema.json"
+  },
+  "example_spell_slugs": [
+    "message",
+    "sending",
+    "dream",
+    "magic-mouth",
+    "performance",
+    "persuasion"
+  ],
+  "inheritance_contract": {
+    "spell_rubric_must_define": [
+      "spell_slug",
+      "category_slug",
+      "spell_focus",
+      "confusable_with",
+      "judge_examples",
+      "row_overrides"
+    ],
+    "spell_rubric_may_override": [
+      "benchmark_defaults.minimum_rows",
+      "benchmark_defaults.coverage",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review"
+    ],
+    "spell_rubric_inherits_by_default": [
+      "response_contract",
+      "benchmark_defaults",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review",
+      "review_escalation"
+    ]
+  },
+  "response_contract": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "required_deliverable_types": [
+      "message-or-artifact-draft",
+      "audience-and-channel-selection",
+      "timing-or-trigger-specification",
+      "feedback-or-confirmation-path"
+    ],
+    "required_guardrail_themes": [
+      "audience-awareness-and-consent",
+      "channel-appropriateness",
+      "no-impersonation-or-misattribution",
+      "message-proportionality"
+    ]
+  },
+  "benchmark_defaults": {
+    "required_datasets": [
+      "train",
+      "eval",
+      "confusables"
+    ],
+    "minimum_rows": {
+      "train": 8,
+      "eval": 6,
+      "confusables": 4
+    },
+    "coverage": [
+      "point-to-point-message-delivery",
+      "broadcast-or-multi-audience-dispatch",
+      "asynchronous-or-delayed-delivery",
+      "event-triggered-response",
+      "tone-or-register-adaptation",
+      "risky-or-impersonation-boundary-case"
+    ],
+    "required_row_tags": [
+      "delivery_channel",
+      "audience_type",
+      "timing_constraint",
+      "formality_level"
+    ],
+    "confusable_policy": {
+      "must_test_against": [
+        "influence-and-behavior",
+        "actions-access-and-automation"
+      ],
+      "failure_modes_to_block": [
+        "slipping-from-delivery-into-persuasion-or-manipulation",
+        "sending-without-verifying-channel-or-recipient",
+        "impersonating-a-person-or-role-without-disclosure",
+        "broadcasting-sensitive-content-to-wrong-audience",
+        "treating-async-delivery-as-guaranteed-receipt"
+      ]
+    }
+  },
+  "deterministic_checks": [
+    {
+      "check_id": "mc-sections-present",
+      "kind": "required_sections",
+      "weight": 0.16,
+      "target": "response_contract.required_sections"
+    },
+    {
+      "check_id": "mc-audience-or-recipient-present",
+      "kind": "phrase_presence",
+      "weight": 0.14,
+      "phrases_any": [
+        "audience",
+        "recipient",
+        "reader",
+        "stakeholder",
+        "team"
+      ]
+    },
+    {
+      "check_id": "mc-channel-or-medium-present",
+      "kind": "phrase_presence",
+      "weight": 0.12,
+      "phrases_any": [
+        "channel",
+        "Slack",
+        "email",
+        "message",
+        "notification",
+        "webhook",
+        "DM"
+      ]
+    },
+    {
+      "check_id": "mc-timing-or-trigger-present",
+      "kind": "phrase_presence",
+      "weight": 0.10,
+      "phrases_any": [
+        "when",
+        "trigger",
+        "schedule",
+        "immediately",
+        "delay",
+        "async"
+      ]
+    },
+    {
+      "check_id": "mc-confirmation-or-feedback-present",
+      "kind": "phrase_presence",
+      "weight": 0.10,
+      "phrases_any": [
+        "confirm",
+        "acknowledge",
+        "receipt",
+        "feedback",
+        "read",
+        "delivered"
+      ]
+    },
+    {
+      "check_id": "mc-no-impersonation",
+      "kind": "phrase_absence",
+      "weight": 0.08,
+      "phrases_any": [
+        "pretend to be",
+        "impersonate",
+        "send as if from",
+        "forge the sender"
+      ]
+    }
+  ],
+  "judge_criteria": [
+    {
+      "criterion_id": "mc-delivery-clarity",
+      "weight": 0.16,
+      "question": "Does the response specify who receives what, through which channel, and with what timing — or does it leave delivery details vague?"
+    },
+    {
+      "criterion_id": "mc-audience-calibration",
+      "weight": 0.14,
+      "question": "Does the response adapt tone, register, and content density to the stated or implied audience?"
+    },
+    {
+      "criterion_id": "mc-category-separation",
+      "weight": 0.10,
+      "question": "Does the response stay focused on communication and coordination rather than drifting into persuasion tactics, automation design, or investigation?"
+    },
+    {
+      "criterion_id": "mc-boundary-honesty",
+      "weight": 0.06,
+      "question": "Does the response stay honest about delivery guarantees, sender attribution, and what happens if the message is not received?"
+    }
+  ],
+  "human_review": {
+    "required": false,
+    "triggers": [
+      "sends-to-external-audience-or-public-channel",
+      "automates-recurring-notifications-or-paging",
+      "touches-sensitive-or-private-content",
+      "could-be-misread-as-official-organizational-communication",
+      "literalness-is-literal-or-hybrid"
+    ],
+    "checklist": [
+      "Confirm the message will not be mistaken for an authoritative organizational communication when it is not.",
+      "Confirm sender attribution is accurate and not misleading.",
+      "Confirm automated or scheduled delivery has a clear owner and off-switch.",
+      "Confirm sensitive content is not routed to an inappropriate audience or channel."
+    ]
+  },
+  "review_escalation": {
+    "automerge_allowed_if": [
+      "message_is_informational_and_low-stakes",
+      "no_external_or_public_delivery_is_introduced",
+      "sender_attribution_remains_accurate",
+      "delivery_guarantees_are_not_inflated"
+    ]
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "gepa-pack-repair-and-recovery-v1",
+  "category_slug": "repair-and-recovery",
+  "category_title": "Repair and Recovery",
+  "inherits_from": null,
+  "schema_refs": {
+    "benchmark_row": "../schema/benchmark-row.schema.json",
+    "scoring_contract": "../schema/scoring-contract.json",
+    "rubric_pack": "../schema/rubric-pack.schema.json"
+  },
+  "example_spell_slugs": [
+    "cure-wounds",
+    "mending",
+    "resurrection",
+    "feather-fall",
+    "medicine",
+    "raise-dead"
+  ],
+  "inheritance_contract": {
+    "spell_rubric_must_define": [
+      "spell_slug",
+      "category_slug",
+      "spell_focus",
+      "confusable_with",
+      "judge_examples",
+      "row_overrides"
+    ],
+    "spell_rubric_may_override": [
+      "benchmark_defaults.minimum_rows",
+      "benchmark_defaults.coverage",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review"
+    ],
+    "spell_rubric_inherits_by_default": [
+      "response_contract",
+      "benchmark_defaults",
+      "deterministic_checks",
+      "judge_criteria",
+      "human_review",
+      "review_escalation"
+    ]
+  },
+  "response_contract": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "required_deliverable_types": [
+      "triage-assessment-or-damage-scope",
+      "repair-or-recovery-plan",
+      "rollback-or-revert-path",
+      "verification-or-health-check"
+    ],
+    "required_guardrail_themes": [
+      "do-not-make-it-worse",
+      "preserve-evidence-before-repair",
+      "scope-repair-to-damage",
+      "verify-before-declaring-fixed"
+    ]
+  },
+  "benchmark_defaults": {
+    "required_datasets": [
+      "train",
+      "eval",
+      "confusables"
+    ],
+    "minimum_rows": {
+      "train": 8,
+      "eval": 6,
+      "confusables": 5
+    },
+    "coverage": [
+      "single-component-fix",
+      "cascading-or-multi-system-failure",
+      "degraded-but-functioning-state",
+      "full-system-recovery-from-dead",
+      "preventive-stabilization-before-failure",
+      "risky-repair-that-could-make-things-worse"
+    ],
+    "required_row_tags": [
+      "damage_severity",
+      "system_state",
+      "time_pressure",
+      "reversibility"
+    ],
+    "confusable_policy": {
+      "must_test_against": [
+        "investigation-and-preparation",
+        "containment-and-intervention"
+      ],
+      "failure_modes_to_block": [
+        "repairing-before-understanding-the-damage",
+        "declaring-fixed-without-verification",
+        "destroying-forensic-evidence-during-repair",
+        "escalating-a-targeted-fix-into-a-full-rebuild",
+        "applying-a-patch-that-masks-the-root-cause",
+        "resuming-normal-operations-in-a-degraded-state"
+      ]
+    }
+  },
+  "deterministic_checks": [
+    {
+      "check_id": "rr-sections-present",
+      "kind": "required_sections",
+      "weight": 0.16,
+      "target": "response_contract.required_sections"
+    },
+    {
+      "check_id": "rr-damage-assessment-present",
+      "kind": "phrase_presence",
+      "weight": 0.14,
+      "phrases_any": [
+        "damage",
+        "broken",
+        "failed",
+        "degraded",
+        "corrupted",
+        "affected",
+        "impacted"
+      ]
+    },
+    {
+      "check_id": "rr-rollback-or-revert-present",
+      "kind": "phrase_presence",
+      "weight": 0.12,
+      "phrases_any": [
+        "rollback",
+        "revert",
+        "undo",
+        "backup",
+        "restore",
+        "snapshot",
+        "before making changes"
+      ]
+    },
+    {
+      "check_id": "rr-verification-present",
+      "kind": "phrase_presence",
+      "weight": 0.12,
+      "phrases_any": [
+        "verify",
+        "health check",
+        "confirm",
+        "test",
+        "validate",
+        "smoke test"
+      ]
+    },
+    {
+      "check_id": "rr-evidence-preservation-present",
+      "kind": "phrase_presence",
+      "weight": 0.10,
+      "phrases_any": [
+        "preserve",
+        "log",
+        "evidence",
+        "before overwriting",
+        "save state",
+        "capture"
+      ]
+    },
+    {
+      "check_id": "rr-no-premature-success",
+      "kind": "phrase_absence",
+      "weight": 0.08,
+      "phrases_any": [
+        "guaranteed fix",
+        "permanently resolved",
+        "will never fail again",
+        "problem eliminated"
+      ]
+    }
+  ],
+  "judge_criteria": [
+    {
+      "criterion_id": "rr-triage-discipline",
+      "weight": 0.16,
+      "question": "Does the response assess the damage scope and severity before jumping into repair, and does the repair match the scale of the damage?"
+    },
+    {
+      "criterion_id": "rr-safety-during-repair",
+      "weight": 0.14,
+      "question": "Does the response preserve evidence, provide rollback paths, and avoid making the situation worse during the repair process?"
+    },
+    {
+      "criterion_id": "rr-verification-rigor",
+      "weight": 0.12,
+      "question": "Does the response include concrete verification steps that would catch incomplete or failed repairs before declaring success?"
+    },
+    {
+      "criterion_id": "rr-category-separation",
+      "weight": 0.08,
+      "question": "Does the response stay focused on repair and recovery rather than drifting into root-cause investigation, monitoring setup, or containment policy?"
+    },
+    {
+      "criterion_id": "rr-boundary-honesty",
+      "weight": 0.06,
+      "question": "Does the response stay honest about what can actually be recovered, what data may be lost, and what residual risk remains after repair?"
+    }
+  ],
+  "human_review": {
+    "required": false,
+    "triggers": [
+      "touches-production-data-or-live-systems",
+      "involves-data-loss-or-irreversible-state-change",
+      "repair-requires-elevated-access-or-credentials",
+      "system-serves-external-users-during-repair",
+      "literalness-is-literal-or-hybrid"
+    ],
+    "checklist": [
+      "Confirm the repair plan does not destroy forensic evidence needed for post-mortem.",
+      "Confirm rollback or revert path exists and has been tested or is testable.",
+      "Confirm the response does not declare the system healthy without concrete verification.",
+      "Confirm the repair scope matches the damage scope and does not introduce new risk."
+    ]
+  },
+  "review_escalation": {
+    "automerge_allowed_if": [
+      "repair_is_scoped_to_non-production_or_dev_environment",
+      "no_irreversible_state_changes_are_introduced",
+      "verification_steps_are_strengthened_not_weakened",
+      "rollback_path_is_preserved_or_improved"
+    ]
+  }
+}

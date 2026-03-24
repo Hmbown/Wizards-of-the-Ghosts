@@ -31,6 +31,24 @@
       "path": "influence-and-behavior.json",
       "priority": 5,
       "status": "ready"
+    },
+    {
+      "category_slug": "messaging-and-coordination",
+      "path": "messaging-and-coordination.json",
+      "priority": 6,
+      "status": "ready"
+    },
+    {
+      "category_slug": "repair-and-recovery",
+      "path": "repair-and-recovery.json",
+      "priority": 7,
+      "status": "ready"
+    },
+    {
+      "category_slug": "simulation-and-staging",
+      "path": "simulation-and-staging.json",
+      "priority": 8,
+      "status": "ready"
     }
   ]
 }

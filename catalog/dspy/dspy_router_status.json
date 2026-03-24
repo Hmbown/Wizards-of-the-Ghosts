@@ -1,6 +1,6 @@
 {
-  "status": "backend_unreachable",
-  "message": "OpenCode backend probe failed.",
+  "status": "ok",
+  "message": "DSPy dependency, dataset, and backend configuration checks passed.",
   "artifact_dir": "catalog/dspy",
   "artifact_paths": {
     "spells_master": "catalog/dspy/spells_master.jsonl",
@@ -41,8 +41,8 @@
   },
   "backend": {
     "configured": true,
-    "model": "opencode/gpt-5-nano",
-    "backend_type": "opencode",
+    "model": "hermes/default",
+    "backend_type": "hermes",
     "api_base": null,
     "api_key_configured": false,
     "provider_qualified_model_required": false,
@@ -52,12 +52,13 @@
     },
     "transport_hint": "cli",
     "notes": [
-      "OpenCode aliases use the local opencode CLI in run mode with --format json.",
-      "OpenCode does not honor temperature or max_tokens through this adapter."
+      "Hermes is the default backend. The grimoire optimizes its own spells.",
+      "Supports CLI transport (hermes run) and HTTP transport (HERMES_API_BASE).",
+      "Temperature and max_tokens are passed through when using HTTP transport."
     ],
     "message": "DSPy LM configuration resolved.",
     "config": {
-      "model": "opencode/gpt-5-nano",
+      "model": "hermes/default",
       "api_base": null,
       "temperature": null,
       "max_tokens": null,
@@ -65,11 +66,18 @@
     },
     "probe": {
       "checked": true,
-      "backend_type": "opencode",
+      "backend_type": "hermes",
+      "transport": "cli",
       "cli_available": true,
-      "reachable": false,
-      "message": "OpenCode backend probe failed.",
-      "error": "Command '['/home/hmbown/.opencode/bin/opencode', 'run', '--format', 'json', '--dir', '/home/hmbown/Projects/wizards-of-the-ghosts', '--model', 'opencode/gpt-5-nano', 'Respond with exactly one word: ready']' timed out after 120 seconds"
+      "reachable": true,
+      "message": "Hermes backend probe completed successfully.",
+      "resolved_model": "hermes/default",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "sample_response": "ready"
     }
   },
   "notes": [

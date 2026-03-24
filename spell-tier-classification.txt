@@ -1,0 +1,203 @@
+SPELL TIER CLASSIFICATION — All 128 Entries (19 Skills + 109 Spells)
+=====================================================================
+Criteria:
+  Real Magic:        Mode change, specific technique, constrains defaults, novel deliverable shape, concrete tool choreography, strong first move.
+  Light Scaffolding: Useful framing but generic advice any LLM follows naturally. No distinctive deliverable shape.
+  No-Op:             Just labels something the agent already does naturally.
+
+Total: 128 entries = 91 Real Magic + 34 Light Scaffolding + 3 No-Op
+
+NOTE: HANDOFF.md predicted ~95 Real Magic, ~29 Light Scaffolding, ~3 No-Op
+(with investigation, persuasion, message as the original No-Op candidates).
+This analysis found investigation has genuine hypothesis-testing discipline
+and message has channel-routing choreography, so both stayed Real Magic.
+The 3 No-Ops here are: arcana, perception, persuasion (all skills).
+The Light Scaffolding count is higher (34 vs 29) because this audit applied
+stricter criteria for what counts as "imposing a specific technique."
+
+
+=====================================
+NO-OP (3)
+=====================================
+These just label what any good LLM already does by default.
+
+arcana | No-Op | "Explain how a system works under the hood" — this is just asking the LLM to explain something well, which it does naturally.
+perception | No-Op | "Notice details and flag anomalies" — scanning for inconsistencies is baseline LLM behavior when asked to review anything.
+persuasion | No-Op | "Write a convincing argument for an audience" — LLMs write persuasively by default; workflow is just "identify audience, build argument, use right tone."
+
+
+=====================================
+LIGHT SCAFFOLDING (34)
+=====================================
+Useful framing or metaphor, but the workflow steps are generic advice.
+No distinctive deliverable shape or novel technique imposed.
+
+--- Skills ---
+animal-handling | Light Scaffolding | "Observe failure patterns, choose gentle interventions" — good framing for flaky systems but the workflow is generic troubleshooting advice.
+athletics | Light Scaffolding | "Estimate volume, choose batching strategy" — labels throughput planning but no specific technique; any LLM suggests batching for large workloads.
+history | Light Scaffolding | "Reconstruct timeline, identify decision points" — useful framing but the workflow is generic research/investigation advice.
+insight | Light Scaffolding | "Read surface, identify signals, generate subtext" — structured but this is what LLMs do naturally when asked to analyze communication.
+intimidation | Light Scaffolding | "Identify authority chain, draft direct language" — the workflow is just "write a stern message that matches the severity."
+nature | Light Scaffolding | "Map ecosystem agents and feedback loops" — broad systems thinking frame but no specific analytical technique imposed.
+performance | Light Scaffolding | "Identify audience, structure arc, add polish" — generic presentation advice; no novel deliverable format.
+religion | Light Scaffolding | "Map belief system, identify sacred cows" — interesting metaphor but workflow is generic cultural analysis.
+stealth | Light Scaffolding | "Prefer passive observation, use least noisy tools" — just "be quiet and read-only first," which is general good practice.
+survival | Light Scaffolding | "Inventory resources, choose leanest route" — useful framing but generic constraint-based planning.
+
+--- Spells ---
+animal-friendship | Light Scaffolding | "Profile system, establish safe first interaction" — framing for API first-contact but workflow is generic integration advice.
+bane | Light Scaffolding | "Systematically probe for weaknesses, rank by severity" — structured weakness analysis but no specific technique beyond "find all the problems."
+calm-emotions | Light Scaffolding | "Assess temperature, identify grievance, draft de-escalation" — useful but generic de-escalation advice.
+charm-person | Light Scaffolding | "Choose tone that builds rapport, draft warmly" — generic communication advice with ethical flags.
+clairvoyance | Light Scaffolding | "Determine what's observable, collect snapshot, distinguish facts from inferences" — generic remote system inspection advice.
+detect-thoughts | Light Scaffolding | "Surface likely intent and concerns behind communication" — similar to insight; reads between lines, which LLMs do naturally.
+disguise-self | Light Scaffolding | "Map audience expectations, adapt voice/tone" — generic audience-adaptation advice any LLM follows.
+enhance-ability | Light Scaffolding | "Load context, prime the tools, set the target" — just says "prepare properly before a task."
+enthrall | Light Scaffolding | "Design opening hook, structure attention arc" — generic content structure advice.
+fear | Light Scaffolding | "List worst cases, rank by likelihood and severity" — useful pre-mortem framing but the workflow is generic risk listing.
+find-the-path | Light Scaffolding | "Map the space, identify candidate routes, evaluate tradeoffs" — generic pathfinding/planning advice.
+foresight | Light Scaffolding | "Model scenarios, assign probabilities, draft contingencies" — generic planning/forecasting advice.
+freedom-of-movement | Light Scaffolding | "Find the friction, identify the unlock, clear the jam" — generic unblocking advice.
+glibness | Light Scaffolding | "Polish the argument, handle objections, add confidence" — makes writing shinier but no specific technique.
+heroism | Light Scaffolding | "Assess what's scary, reframe as manageable, build courage" — motivational framing without specific technique.
+hypnotic-pattern | Light Scaffolding | "Design attention-capture patterns" — interesting concept but workflow is generic UX/engagement advice.
+legend-lore | Light Scaffolding | "Research exhaustively across all available sources" — just labels thorough research, which LLMs do when asked.
+locate-creature | Light Scaffolding | "Determine identifiers, search systematically" — generic search advice.
+locate-object | Light Scaffolding | "Determine identifiers, search by name/path/content" — generic file-finding advice.
+otto-s-irresistible-dance | Light Scaffolding | "Make something so engaging it's impossible to ignore" — interesting frame but workflow is generic engagement design.
+plant-growth | Light Scaffolding | "Audit what's already working, remove friction, add nutrients" — generic growth/improvement advice.
+see-invisibility | Light Scaffolding | "Look for signs of intentional obscurity, extract hidden elements" — interesting frame but generic investigation.
+speak-with-animals | Light Scaffolding | "Collect signals, interpret what they indicate" — telemetry interpretation framing but generic analysis advice.
+true-seeing | Light Scaffolding | "Trace to primary sources, compare surface vs. ground truth" — generic fact-checking/verification advice.
+
+
+=====================================
+REAL MAGIC (91)
+=====================================
+These impose mode changes, specific techniques, novel deliverable shapes,
+or constrain against defaults in ways that change agent behavior.
+
+--- Skills (7) ---
+acrobatics | Real Magic | Imposes choreography discipline: map sequence → reorder for minimal calls → return checkpoints + fallback moves. Specific to brittle API flows.
+attune | Real Magic | Concrete tool choreography: interview → score categories → write attunement.json → trigger GEPA. Novel deliverable (attunement profile on disk).
+deception | Real Magic | Constrains: must label synthetic artifacts, maintain isolation rules. Novel deliverable shape (synthetic dataset + realism notes + isolation guidance).
+investigation | Real Magic | Imposes hypothesis-testing discipline: collect clues → test causal hypotheses → eliminate weak explanations. Ranked causes with evidence chain.
+medicine | Real Magic | Mode change to triage protocol: take vitals → stabilize first → prescribe. Enforces "don't diagnose before stabilizing."
+sleight-of-hand | Real Magic | Constrains to minimal diff: isolate smallest surface → exact-match verification → before/after proof. Novel deliverable (minimal diff + rollback cue).
+comprehend-languages | Real Magic | Specific technique: translate + preserve terms of art + glossary + ambiguity notes. Novel deliverable shape (translation + glossary + lost nuance notes).
+
+--- Spells (84) ---
+animal-messenger | Real Magic | Specific async-delivery technique: idempotency, retry policy, dead-letter handling. Novel deliverable (async payload template + failure map).
+animate-objects | Real Magic | Mode change: takes inert artifact → attaches triggers/watchers → defines kill switch. Concrete deliverable (animated artifact + agency boundaries).
+awaken | Real Magic | Concrete tool choreography: inventory capabilities → design intent-to-action map → if HA available, POST to specific API. Novel deliverable (interface wrapper + intent map).
+bestow-curse | Real Magic | Specific technique: constraint injection testing. Novel deliverable (constraint injection plan + success/failure criteria).
+blindness-deafness | Real Magic | Specific technique: selective channel muting. Novel deliverable (channel-muting plan + dependency note + restoration triggers).
+compulsion | Real Magic | Mode change: forces assessment of whether force is justified. Constrains against default "just do it." Novel deliverable (orchestration-vs-force assessment).
+confusion | Real Magic | Specific technique: chaos engineering / fuzzing. Novel deliverable (chaos test plan + edge case map).
+cure-wounds | Real Magic | Constrains to targeted fix: scope the damage → apply minimal fix → verify bleeding stopped. Enforces "fix the symptom now, root-cause later."
+dancing-lights | Real Magic | Specific technique: ephemeral observability probes. Novel deliverable (lightweight indicators + placement plan + cleanup schedule).
+detect-magic | Real Magic | Strong first move: scan for hidden AI/agents/automations before acting. Novel deliverable (AI affordance map + risk assessment).
+dimension-door | Real Magic | Specific technique: context-switching with minimal baggage. Novel deliverable (jump plan: what travels, what stays, validation at destination).
+dispel-magic | Real Magic | Specific technique: safe decommissioning of automations. Novel deliverable (decommission plan + dependency audit + rollback).
+dominate-monster | Real Magic | Mode change: refuses to cast, redirects to safer alternatives. Strong constraint against defaults.
+dominate-person | Real Magic | Mode change: refuses to cast, redirects to safer alternatives. Strong constraint against defaults.
+dream | Real Magic | Specific technique: pre-arrival briefing. Novel deliverable (async briefing package timed for recipient's next session).
+etherealness | Real Magic | Mode change: walk through system walls without fingerprints. Read everything, touch nothing. Novel deliverable (deep-read report + boundary map).
+eyebite | Real Magic | Specific technique: selective capability degradation. Novel deliverable (targeted degradation plan with specific effects per target).
+faerie-fire | Real Magic | Specific technique: highlight/tag hidden elements for group visibility. Novel deliverable (marked-up artifact where hidden things glow).
+feather-fall | Real Magic | Mode change: converts crash into controlled descent. Novel deliverable (graceful degradation plan + circuit breakers + priority list).
+feeblemind | Real Magic | Specific technique: capability stripping to minimal mode. Novel deliverable (minimal-capability profile + what was stripped + restore plan).
+forcecage | Real Magic | Strong first move: sandbox untrusted code/agents before execution. Novel deliverable (containment spec + escape-path audit).
+geas | Real Magic | Specific technique: self-enforcing long-term obligation. Novel deliverable (obligation contract + enforcement mechanism + release conditions).
+glyph-of-warding | Real Magic | Concrete tool choreography: define boundary → choose response → bind to location → test. Novel deliverable (monitor/tripwire configuration).
+greater-invisibility | Real Magic | Specific technique: operate while invisible (background processes that don't interrupt). Novel deliverable (invisible operation plan + logging).
+greater-restoration | Real Magic | Specific technique: deep corruption repair. Novel deliverable (corruption audit + staged restoration plan + verification at each stage).
+guards-and-wards | Real Magic | Specific technique: layered defense-in-depth. Novel deliverable (defense layer map + attacker path analysis).
+hallucinatory-terrain | Real Magic | Specific technique: full environment simulation overlay. Novel deliverable (simulated environment + fidelity notes + teardown plan).
+healing-word | Real Magic | Constrains to distance fix: quick remote patch without full hands-on. Novel deliverable (remote fix + monitoring to confirm it held).
+heat-metal | Real Magic | Specific technique: make a tool increasingly painful to use until abandoned. Novel deliverable (progressive friction plan + monitoring for abandonment signal).
+hold-monster | Real Magic | Specific technique: emergency system freeze at scale. Novel deliverable (freeze procedure + state preservation + thaw plan).
+hold-person | Real Magic | Specific technique: administrative process freeze. Novel deliverable (freeze order + scope + thaw conditions).
+identify | Real Magic | Strong first move: explain what a mysterious artifact actually does. Novel deliverable (artifact profile: what it is, what it does, what it connects to).
+illusory-script | Real Magic | Specific technique: audience-gated content. Novel deliverable (message with visibility rules + decay/cleanup logic).
+invisibility | Real Magic | Specific technique: reduce operational noise while maintaining accountability. Novel deliverable (noise audit + suppression plan + accountability log).
+knock | Real Magic | Specific technique: legitimate access recovery. Novel deliverable (unlock path: key rotation, permission request, recovery workflow).
+lesser-restoration | Real Magic | Constrains to clearing a specific stuck state. Novel deliverable (stuck-state diagnosis + specific unblock action).
+light | Real Magic | Concrete tool choreography: identify dark zones → add logging/docs/explanation → verify coverage. Novel deliverable (observability additions to specific dark areas).
+locate-animals-or-plants | Real Magic | Specific technique: map living dependencies/services. Novel deliverable (living-systems inventory + health signals + dependency graph).
+longstrider | Real Magic | Specific technique: path optimization / shortcut finding. Novel deliverable (optimized path + what was cut + tradeoffs).
+mage-hand | Real Magic | Constrains to precision file/record manipulation with minimal blast radius. Novel deliverable (precise operation plan + undo path).
+magic-mouth | Real Magic | Specific technique: bind message to trigger condition. Novel deliverable (trigger-bound message + activation conditions + expiration).
+major-image | Real Magic | Specific technique: interactive simulation/prototype. Novel deliverable (clickable prototype + interaction map + fidelity notes).
+mass-cure-wounds | Real Magic | Specific technique: batch fix across many instances. Novel deliverable (batch remediation plan + verification across all instances).
+mass-suggestion | Real Magic | Specific technique: audience-scale nudge design. Novel deliverable (broadcast message + segmentation + opt-out + manipulation audit).
+mending | Real Magic | Constrains to repair-not-redesign: fix the broken thing as-is. Novel deliverable (repair patch + before/after + structural note).
+message | Real Magic | Constrains to one small signal to the right place. Novel deliverable (single-purpose message + channel selection + confirmation).
+mind-blank | Real Magic | Specific technique: context isolation / information leak prevention. Novel deliverable (isolation boundary + leak audit + compartment rules).
+minor-illusion | Real Magic | Constrains to quick sketch: just real enough to communicate. Novel deliverable (disposable mockup with explicit "not real" label).
+mirage-arcane | Real Magic | Specific technique: production-fidelity simulation. Novel deliverable (indistinguishable-from-real environment + safety markers + teardown).
+mislead | Real Magic | Specific technique: deploy decoy while operating elsewhere. Novel deliverable (honeypot/decoy + real operation plan + monitoring).
+modify-memory | Real Magic | Mode change: refuses to cast. Strong constraint against tampering with records/logs.
+mordenkainen-s-sword | Real Magic | Specific technique: standing single-purpose process. Novel deliverable (persistent process + task scope + dismiss mechanism).
+nondetection | Real Magic | Specific technique: metadata stripping / privacy hardening. Novel deliverable (privacy audit + stripping plan + verification).
+planar-binding | Real Magic | Specific technique: service contract with scope/duration/failure modes. Novel deliverable (binding contract + SLA + escape clauses).
+polymorph | Real Magic | Specific technique: format/schema/protocol transformation. Novel deliverable (transformed artifact + mapping + reversibility note).
+power-word-kill | Real Magic | Mode change: instant termination, no negotiation. Strong constraint (requires explicit authorization chain). Novel deliverable (kill confirmation + blast radius report).
+power-word-stun | Real Magic | Mode change: instant hard pause, state preserved. Novel deliverable (stun report + state snapshot + resume procedure).
+prestidigitation | Real Magic | Constrains scope: if task is bigger than cantrip-scale, must redirect. Novel deliverable (quick result + "this was actually bigger" flag).
+programmed-illusion | Real Magic | Specific technique: conditional/triggered demo. Novel deliverable (dormant illusion + trigger conditions + review schedule).
+project-image | Real Magic | Specific technique: remote presence with authority limits. Novel deliverable (projection + authority boundaries + escalation path).
+raise-dead | Real Magic | Specific technique: partial recovery with documented penalties. Novel deliverable (degraded-mode spec + penalty list + full-restoration timeline).
+regenerate | Real Magic | Specific technique: reconstruct from surrounding context. Novel deliverable (reconstructed component + provenance note + confidence assessment).
+resurrection | Real Magic | Concrete tool choreography: assess remains → find restoration path → verify each component → confirm full operation. Novel deliverable (restoration log + unrecoverable list).
+scrying | Real Magic | Specific technique: live remote observation with staleness indicators. Novel deliverable (live status view + timestamps + state-change alerts).
+seeming | Real Magic | Specific technique: batch presentation-layer change. Novel deliverable (batch re-skin plan + old→new mapping + regression checklist).
+sending | Real Magic | Concrete tool choreography: identify recipient → select channel → format for medium → get approval → dispatch. Novel deliverable (channel-routed message + dispatch confirmation).
+shatter | Real Magic | Specific technique: chaos engineering at resonant frequencies. Novel deliverable (brittleness report + resilience scorecard).
+silence | Real Magic | Concrete tool choreography: identify noise → define filter → apply suppression → provide restore mechanism. Slack integration path.
+silent-image | Real Magic | Constrains to static-only: no interaction. Novel deliverable (design comp with "do not click" framing).
+sleep | Real Magic | Specific technique: graceful process suspension with wake conditions. Novel deliverable (sleep config + wake conditions + state-preservation checklist).
+speak-with-dead | Real Magic | Specific technique: archaeological extraction from dead systems. Novel deliverable (answers from artifacts + evidence vs. inference separation).
+speak-with-plants | Real Magic | Specific technique: read structural/slow signals from codebases. Novel deliverable (structural interpretation + dead wood + natural extension points).
+stinking-cloud | Real Magic | Specific technique: area denial without destruction. Novel deliverable (deterrent mechanism + false-positive monitoring + review schedule).
+suggestion | Real Magic | Specific technique: single-nudge design with manipulation audit. Novel deliverable (CTA/nudge + placement guidance + manipulation audit).
+symbol | Real Magic | Specific technique: policy-as-tag with automatic enforcement. Novel deliverable (named policy symbol + trigger conditions + precedence rules).
+teleport | Real Magic | Concrete tool choreography: define invariants → inventory dependencies → rehearse → execute cutover → validate. Novel deliverable (migration runbook + rollback plan).
+teleportation-circle | Real Magic | Specific technique: permanent reusable pipeline. Novel deliverable (configured pipeline + health check plan + maintenance schedule).
+thunderwave | Real Magic | Constrains to gated dramatic action: requires explicit confirmation + rollback. Concrete tool choreography for device/webhook triggers.
+tongues | Real Magic | Specific technique: semantic translation across unlike systems. Novel deliverable (translated artifact + concept map + lossy edges list).
+true-polymorph | Real Magic | Mode change: irreversible transformation. Constrains with point-of-no-return criteria and mandatory reversible trial first.
+true-strike | Real Magic | Specific technique: preflight validation before decisive action. Novel deliverable (preflight checklist + go/no-go + residual risks).
+unseen-servant | Real Magic | Concrete tool choreography: define mandate → configure cadence → log silently → periodic review. Novel deliverable (background agent + activity log + dismiss mechanism).
+vicious-mockery | Real Magic | Specific technique: sharp adversarial critique ranked by severity. Novel deliverable (ranked weakness list in sharp sentences + one constructive suggestion).
+zone-of-truth | Real Magic | Mode change: activates epistemic discipline. Constrains all claims to require sources or confidence labels. Re-audits prior assertions.
+
+
+=====================================
+SUMMARY
+=====================================
+
+By Tier:
+  Real Magic:        91 (71.1%)
+  Light Scaffolding: 34 (26.6%)
+  No-Op:              3 ( 2.3%)
+
+By Kind within Tier:
+  Real Magic:        7 skills + 84 spells
+  Light Scaffolding: 10 skills + 24 spells
+  No-Op:             3 skills + 0 spells (all 3 No-Ops are skills)
+
+Light Scaffolding spells (24):
+  animal-friendship, bane, calm-emotions, charm-person, clairvoyance,
+  detect-thoughts, disguise-self, enhance-ability, enthrall, fear,
+  find-the-path, foresight, freedom-of-movement, glibness, heroism,
+  hypnotic-pattern, legend-lore, locate-creature, locate-object,
+  otto-s-irresistible-dance, plant-growth, see-invisibility,
+  speak-with-animals, true-seeing
+
+Light Scaffolding skills (10):
+  animal-handling, athletics, history, insight, intimidation,
+  nature, performance, religion, stealth, survival
+
+No-Op skills (3):
+  arcana, perception, persuasion

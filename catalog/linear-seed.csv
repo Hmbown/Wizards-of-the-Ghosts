@@ -103,6 +103,32 @@ Use $athletics to turn this into a durable high-throughput run plan and tell me 
 - The blueprint is reviewed for naming, tier, and provider targets
 - The provider-specific skill output renders cleanly
 - Any safety concerns are called out explicitly"
+Attune (skill),attune,skill,skill-attune,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
+
+- Kind: skill
+- Canonical source: Attune
+- Canonical source URL: https://github.com/hmbown/wizards-of-the-ghosts
+- Reality tier: shipping-now
+- Literalness: metaphorical
+- Provider targets: openai, claude, openclaw, hermes
+
+## Tagline
+
+Bond this spellbook to your workflow so every spell knows your stack, your tools, and your priorities.
+
+## Current Interpretation
+
+In D&D, attunement is how you bond with a magic item so it works specifically for you. The real-world version is workflow profiling: the grimoire interviews you about your stack, your systems, your automation surface, and your priorities — then generates a personalized spell loadout, category weights, and domain vocabulary so routing, optimization, and every subsequent spell invocation is tuned to your actual work instead of generic defaults.
+
+## Default Invocation
+
+Use $attune to configure this spellbook to my workflow — interview me about my stack and generate a personalized spell loadout.
+
+## Initial Done When
+
+- The blueprint is reviewed for naming, tier, and provider targets
+- The provider-specific skill output renders cleanly
+- Any safety concerns are called out explicitly"
 Deception (skill),deception,skill,skill-deception,shipping-now,metaphorical,openai|claude|openclaw|hermes,2,ai|docs|automation,"## Spellbook Entry
 
 - Kind: skill
@@ -1310,15 +1336,15 @@ Forcecage (spell),forcecage,spell,spell-forcecage,prototype,literal,openai|claud
 
 ## Tagline
 
-Contain untrusted code, agents, or operations inside an isolated sandbox with no escape.
+Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.
 
 ## Current Interpretation
 
-Use this spell when you need to run something you do not fully trust — untrusted code, an experimental agent, a destructive operation — inside a containment boundary that prevents it from affecting the outside.
+Use this spell when you need to run untrusted code, an experimental agent, or a destructive operation inside a tested containment boundary, observe it from outside, and define the release condition before anything descends into a looser environment.
 
 ## Default Invocation
 
-Use $forcecage to run this in a contained sandbox and tell me whether it behaved safely before I trust it outside.
+Use $forcecage to run this inside a tested containment boundary, keep the dangerous parts sealed, and tell me the release condition before anything leaves the cage.
 
 ## Initial Done When
 

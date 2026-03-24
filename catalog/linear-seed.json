@@ -85,6 +85,27 @@
       "description": "## Spellbook Entry\n\n- Kind: skill\n- Canonical source: Athletics\n- Canonical source URL: https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game\n- Reality tier: shipping-now\n- Literalness: metaphorical\n- Provider targets: openai, claude, openclaw, hermes\n\n## Tagline\n\nPush a heavy workload through to completion when elegance is optional.\n\n## Current Interpretation\n\nUse this skill when the job is mostly about sustained force: large batches, exhaustive passes, long-running jobs, or load that needs to be carried without dropping it. It is the right metaphor when the answer is more throughput, sturdier batching, and disciplined endurance.\n\n## Default Invocation\n\nUse $athletics to turn this into a durable high-throughput run plan and tell me where it will strain.\n\n## Initial Done When\n\n- The blueprint is reviewed for naming, tier, and provider targets\n- The provider-specific skill output renders cleanly\n- Any safety concerns are called out explicitly"
     },
     {
+      "title": "Attune (skill)",
+      "slug": "attune",
+      "kind": "skill",
+      "canonical_id": "skill-attune",
+      "reality_tier": "shipping-now",
+      "literalness": "metaphorical",
+      "provider_targets": [
+        "openai",
+        "claude",
+        "openclaw",
+        "hermes"
+      ],
+      "priority": 2,
+      "labels": [
+        "ai",
+        "docs",
+        "automation"
+      ],
+      "description": "## Spellbook Entry\n\n- Kind: skill\n- Canonical source: Attune\n- Canonical source URL: https://github.com/hmbown/wizards-of-the-ghosts\n- Reality tier: shipping-now\n- Literalness: metaphorical\n- Provider targets: openai, claude, openclaw, hermes\n\n## Tagline\n\nBond this spellbook to your workflow so every spell knows your stack, your tools, and your priorities.\n\n## Current Interpretation\n\nIn D&D, attunement is how you bond with a magic item so it works specifically for you. The real-world version is workflow profiling: the grimoire interviews you about your stack, your systems, your automation surface, and your priorities — then generates a personalized spell loadout, category weights, and domain vocabulary so routing, optimization, and every subsequent spell invocation is tuned to your actual work instead of generic defaults.\n\n## Default Invocation\n\nUse $attune to configure this spellbook to my workflow — interview me about my stack and generate a personalized spell loadout.\n\n## Initial Done When\n\n- The blueprint is reviewed for naming, tier, and provider targets\n- The provider-specific skill output renders cleanly\n- Any safety concerns are called out explicitly"
+    },
+    {
       "title": "Deception (skill)",
       "slug": "deception",
       "kind": "skill",
@@ -1075,7 +1096,7 @@
         "architecture",
         "security"
       ],
-      "description": "## Spellbook Entry\n\n- Kind: spell\n- Canonical source: Forcecage\n- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells\n- Reality tier: prototype\n- Literalness: literal\n- Provider targets: openai, claude, openclaw, hermes\n\n## Tagline\n\nContain untrusted code, agents, or operations inside an isolated sandbox with no escape.\n\n## Current Interpretation\n\nUse this spell when you need to run something you do not fully trust — untrusted code, an experimental agent, a destructive operation — inside a containment boundary that prevents it from affecting the outside.\n\n## Default Invocation\n\nUse $forcecage to run this in a contained sandbox and tell me whether it behaved safely before I trust it outside.\n\n## Initial Done When\n\n- The blueprint is reviewed for naming, tier, and provider targets\n- The provider-specific skill output renders cleanly\n- Any safety concerns are called out explicitly"
+      "description": "## Spellbook Entry\n\n- Kind: spell\n- Canonical source: Forcecage\n- Canonical source URL: https://www.dndbeyond.com/sources/basic-rules/spells\n- Reality tier: prototype\n- Literalness: literal\n- Provider targets: openai, claude, openclaw, hermes\n\n## Tagline\n\nContain untrusted code, agents, or operations inside a tested cage before anything leaves it.\n\n## Current Interpretation\n\nUse this spell when you need to run untrusted code, an experimental agent, or a destructive operation inside a tested containment boundary, observe it from outside, and define the release condition before anything descends into a looser environment.\n\n## Default Invocation\n\nUse $forcecage to run this inside a tested containment boundary, keep the dangerous parts sealed, and tell me the release condition before anything leaves the cage.\n\n## Initial Done When\n\n- The blueprint is reviewed for naming, tier, and provider targets\n- The provider-specific skill output renders cleanly\n- Any safety concerns are called out explicitly"
     },
     {
       "title": "Foresight (spell)",
