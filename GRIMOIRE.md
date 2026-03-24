@@ -6,8 +6,8 @@
 
 ## At a Glance
 
-- `122` Hermes skills from `127` public canon names
-- `109` spell names and `18` skill names reinterpreted as software-facing agent skills
+- `123` Hermes skills from `128` public canon names
+- `109` spell names and `19` skill names reinterpreted as software-facing agent skills
 - `8` Hermes shelves with repo-facing browse docs and locally generated install docs
 - `5` coercion and memory spells intentionally kept off the public Hermes surface
 
@@ -37,15 +37,16 @@ For the measured artifacts and runbook, open [`catalog/dspy/README.md`](catalog/
 <a id="featured-shelf"></a>
 ## Featured Shelf
 
-1. [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md) `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
-2. [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md) `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
-3. [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
-4. [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md) `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
-5. [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md) `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
-6. [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) `prototype` `literal` - Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.
-7. [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
-8. [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
-9. [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
+1. [Attune](generated/hermes/investigation-and-preparation/attune/SKILL.md) `shipping-now` `metaphorical` - Bond this spellbook to your workflow so every spell knows your stack, your tools, and your priorities.
+2. [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md) `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.
+3. [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md) `shipping-now` `metaphorical` - Explain what a mysterious file, service, workflow, or artifact actually does.
+4. [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
+5. [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md) `shipping-now` `metaphorical` - Follow evidence through a system until the hidden mechanism becomes legible.
+6. [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md) `shipping-now` `hybrid` - Manipulate files, records, and lightweight system state with precision and minimal blast radius.
+7. [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) `prototype` `literal` - Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.
+8. [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md) `shipping-now` `literal` - Set monitors, watches, or trigger conditions that alert when a boundary is crossed.
+9. [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md) `shipping-now` `metaphorical` - Deliver the briefing before the recipient wakes up needing it.
+10. [Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md) `shipping-now` `metaphorical` - Turn a hard crash into a controlled descent.
 
 <a id="browse-paths"></a>
 ## Browse Paths
@@ -54,7 +55,7 @@ For the measured artifacts and runbook, open [`catalog/dspy/README.md`](catalog/
 
 Start here when the repo, workflow, or system is unfamiliar and you need the real shape before you touch it.
 
-- Shelf: [Investigation and Preparation (28)](#investigation-and-preparation)
+- Shelf: [Investigation and Preparation (29)](#investigation-and-preparation)
 - Start with: [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)
 
 ### Change the system without a battleaxe
@@ -120,9 +121,10 @@ Inspection, translation, verification, preflight, and context-loading skills for
 - Start with: [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)
 
 <details>
-<summary>See all 28 skills in this shelf</summary>
+<summary>See all 29 skills in this shelf</summary>
 
 - [Arcana](generated/hermes/investigation-and-preparation/arcana/SKILL.md) `skill` `shipping-now` `metaphorical` - Apply deep technical knowledge to understand how systems work under the hood.
+- [Attune](generated/hermes/investigation-and-preparation/attune/SKILL.md) `skill` `shipping-now` `metaphorical` - Bond this spellbook to your workflow so every spell knows your stack, your tools, and your priorities.
 - [Clairvoyance](generated/hermes/investigation-and-preparation/clairvoyance/SKILL.md) `spell` `shipping-now` `hybrid` - Get a snapshot of a remote system or environment you cannot directly access.
 - [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) `spell` `shipping-now` `metaphorical` - Translate code, jargon, protocol surfaces, or human language into operational meaning.
 - [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md) `spell` `shipping-now` `metaphorical` - Surface hidden AI affordances, agents, automations, and tool hooks before acting.

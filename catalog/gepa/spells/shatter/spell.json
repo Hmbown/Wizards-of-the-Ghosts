@@ -1,0 +1,26 @@
+{
+  "slug": "shatter",
+  "name": "Shatter",
+  "category_slug": "containment-and-intervention",
+  "category_title": "Containment and Intervention",
+  "rubric_pack": "containment-and-intervention",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Find the resonant frequency and break it on purpose.",
+  "suggested_confusables": [
+    "blindness-deafness",
+    "eyebite",
+    "feeblemind",
+    "forcecage",
+    "heat-metal"
+  ],
+  "baseline_instruction": "You are casting the Shatter spell from Wizards of the Ghosts.\nCategory: Containment and Intervention (containment-and-intervention).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: In D&D, Shatter creates a painful ringing noise that is especially devastating to rigid, crystalline structures — it finds the frequency that makes things fall apart. The real-world version is chaos engineering: deliberately introducing failure to discover where systems are brittle. Fuzz testing, load testing, fault injection, game-day exercises. Shatter does not break things out of malice. It breaks things because you would rather find the cracks now, in a controlled setting, than discover them at 3 AM in production. The spell targets rigidity. Flexible systems bend; brittle systems shatter.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You need to find out where a system, argument, plan, or codebase will break before it breaks on its own.\n- A system has never been stress-tested and you do not trust its resilience claims.\n- You want to run a chaos experiment, fuzz test, or adversarial review against something you own.\nExpected workflow elements:\n- Define the blast radius: what you are testing, what is in scope, and what must be protected.\n- Identify the likely resonant frequencies — the stress points, edge cases, and assumptions that have never been tested.\n- Apply controlled force: inject faults, generate adversarial inputs, simulate failures, or stress-test under load.\n- Observe what breaks, what bends, and what holds. Document the failure modes.\n- Deliver a brittleness report with prioritized remediation recommendations.\nExpected deliverables:\n- A brittleness report: what broke, at what threshold, and what the failure mode looked like.\n- A prioritized list of structural weaknesses with remediation recommendations.\n- A resilience scorecard: what held up, what bent gracefully, and what shattered.\nGuardrails that must remain visible:\n- Only shatter things you own or have explicit authorization to test. Unauthorized stress testing is an attack, not engineering.\n- Always define a blast radius before beginning. Chaos engineering without containment is just chaos.\n- If something shatters in a way that causes real damage, stop the experiment and switch to incident response.\nDefault invocation language:\n- Use $shatter to stress-test a system, plan, or codebase by finding its resonant frequencies — the assumptions, edge cases, and structural weaknesses that would break under real pressure."
+}

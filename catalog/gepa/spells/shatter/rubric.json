@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "containment-and-intervention",
+  "category_slug": "containment-and-intervention",
+  "spell_slug": "shatter",
+  "spell_focus": "In D&D, Shatter creates a painful ringing noise that is especially devastating to rigid, crystalline structures — it finds the frequency that makes things fall apart. The real-world version is chaos engineering: deliberately introducing failure to discover where systems are brittle. Fuzz testing, load testing, fault injection, game-day exercises. Shatter does not break things out of malice. It breaks things because you would rather find the cracks now, in a controlled setting, than discover them at 3 AM in production. The spell targets rigidity. Flexible systems bend; brittle systems shatter.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Shatter precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Shatter: ['A brittleness report: what broke, at what threshold, and what the failure mode looked like.', 'A prioritized list of structural weaknesses with remediation recommendations.', 'A resilience scorecard: what held up, what bent gracefully, and what shattered.']",
+    "Default guardrails for Shatter: ['Only shatter things you own or have explicit authorization to test. Unauthorized stress testing is an attack, not engineering.', 'Always define a blast radius before beginning. Chaos engineering without containment is just chaos.', 'If something shatters in a way that causes real damage, stop the experiment and switch to incident response.']"
+  ]
+}

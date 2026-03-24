@@ -829,6 +829,7 @@ const hermesCategoryByArchetype = new Map([
 ]);
 
 const hermesCategoryOverrides = new Map([
+  ["attune", "investigation-and-preparation"],
   ["dancing-lights", "monitoring-and-protection"],
   ["deception", "simulation-and-staging"],
   ["animal-friendship", "actions-access-and-automation"],

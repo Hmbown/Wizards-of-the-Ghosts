@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "foresight",
+  "spell_focus": "Use this skill when you need a bounded forecast with explicit uncertainty, not mystical certainty.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Foresight precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Foresight: ['A recommendation with confidence and assumptions.', 'A short risk matrix.', 'A set of decisive unknowns to resolve next.']",
+    "Default guardrails for Foresight: ['Do not present forecasts as certainty.', 'Do not confuse missing evidence with positive evidence.']"
+  ]
+}

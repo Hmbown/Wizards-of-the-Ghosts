@@ -1,0 +1,53 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "faerie-fire",
+  "spell_focus": "Highlight, annotate, tag, or mark already-identified elements in a document, codebase, dataset, or system so they become impossible to overlook, using selective marking with contextual explanations rather than blanket coverage, without drifting into discovery of unknown things, artifact explanation, causal diagnosis, audience adaptation, or live edits.",
+  "confusable_with": [
+    "detect-magic",
+    "identify",
+    "investigation",
+    "comprehend-languages",
+    "disguise-self",
+    "mage-hand"
+  ],
+  "judge_examples": [
+    "Produces an annotated version of the source material with key findings selectively highlighted and each annotation explaining why the item warrants attention, rather than marking everything or marking without context.",
+    "Stays on highlighting and marking rather than drifting into discovery of hidden capability (Detect Magic), artifact explanation (Identify), root-cause diagnosis (Investigation), language translation (Comprehend Languages), audience rewrite (Disguise Self), or code edits (Mage Hand)."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [
+      {
+        "criterion_id": "faerie-fire-selective-highlighting",
+        "weight": 0.12,
+        "question": "Does the response highlight selectively with contextual annotations explaining why each item warrants attention, rather than marking everything indiscriminately or providing context-free markers?"
+      },
+      {
+        "criterion_id": "faerie-fire-neighbor-separation",
+        "weight": 0.08,
+        "question": "Does the response stay on highlighting and annotation rather than sliding into Detect Magic-style discovery, Identify-style artifact explanation, Investigation-style causal diagnosis, Comprehend Languages-style translation, Disguise Self-style audience adaptation, or Mage Hand-style code edits?"
+      }
+    ],
+    "human_review": {
+      "required": false,
+      "checklist": [
+        "If the highlighting touches PII, HR data, salary information, or other sensitive content, confirm the response handles sensitivity appropriately and does not reproduce or expose protected data unnecessarily."
+      ]
+    }
+  },
+  "notes": [
+    "Faerie Fire makes already-found things impossible to overlook. It does not discover hidden things — that is Detect Magic or See Invisibility.",
+    "Prefer row-level must_include phrases for annotated, highlighted, tagged, summary, and why each item warrants attention when the benchmark needs them explicitly.",
+    "Highlighting everything is the same as highlighting nothing. The spell should be selective and contextual."
+  ]
+}

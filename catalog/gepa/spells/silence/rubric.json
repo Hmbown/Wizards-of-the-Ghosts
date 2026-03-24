@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "monitoring-and-protection",
+  "category_slug": "monitoring-and-protection",
+  "spell_slug": "silence",
+  "spell_focus": "Use this spell when you are drowning in notifications, verbose logs, irrelevant alerts, or context that does not serve the current task.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Silence precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Silence: ['A filter or suppression configuration that reduces noise to signal.', 'Clear documentation of what is silenced and what passes through.', 'A restore mechanism to lift the silence when the focused session ends.']",
+    "Default guardrails for Silence: ['Silence suppresses noise, not signal. Never silence errors, critical alerts, or security warnings.', 'Make the filter criteria explicit so important signals are not accidentally muted.']"
+  ]
+}

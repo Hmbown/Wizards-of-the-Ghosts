@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "monitoring-and-protection",
+  "category_slug": "monitoring-and-protection",
+  "spell_slug": "disguise-self",
+  "spell_focus": "Use this spell when the content is correct but the delivery needs to change — a technical document for executives, formal prose turned casual, developer docs rewritten as user-facing help.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Disguise Self precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Disguise Self: ['The content re-presented for the target audience or medium.', 'A brief note on the presentation changes made.', 'Confirmation that no factual content or critical nuance was altered.']",
+    "Default guardrails for Disguise Self: ['Disguise changes presentation, not substance. Do not alter facts, omit critical information, or misrepresent content.', 'The disguise should serve the audience, not deceive them — adaptation is not spin.']"
+  ]
+}

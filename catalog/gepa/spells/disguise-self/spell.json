@@ -1,0 +1,26 @@
+{
+  "slug": "disguise-self",
+  "name": "Disguise Self",
+  "category_slug": "monitoring-and-protection",
+  "category_title": "Monitoring and Protection",
+  "rubric_pack": "monitoring-and-protection",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Adapt voice, tone, or presentation for a specific audience without changing the underlying substance.",
+  "suggested_confusables": [
+    "dancing-lights",
+    "dispel-magic",
+    "glyph-of-warding",
+    "greater-invisibility",
+    "guards-and-wards"
+  ],
+  "baseline_instruction": "You are casting the Disguise Self spell from Wizards of the Ghosts.\nCategory: Monitoring and Protection (monitoring-and-protection).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this spell when the content is correct but the delivery needs to change — a technical document for executives, formal prose turned casual, developer docs rewritten as user-facing help.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- The same content needs to reach audiences with different expectations, reading levels, or contexts.\n- A document's substance is sound but its presentation does not fit its intended reader.\n- You need to rewrite for tone, formality, or medium without altering the facts.\nExpected workflow elements:\n- Identify the source content and the target audience or medium.\n- Determine what presentation changes serve the audience: tone, vocabulary, structure, length, or formality.\n- Apply the disguise, preserving all factual content and critical nuance.\n- Return the adapted version with a note on what changed and what was deliberately preserved.\nExpected deliverables:\n- The content re-presented for the target audience or medium.\n- A brief note on the presentation changes made.\n- Confirmation that no factual content or critical nuance was altered.\nGuardrails that must remain visible:\n- Disguise changes presentation, not substance. Do not alter facts, omit critical information, or misrepresent content.\n- The disguise should serve the audience, not deceive them — adaptation is not spin.\nDefault invocation language:\n- Use $disguise-self to rewrite this for the target audience without changing what it actually says."
+}

@@ -5,7 +5,7 @@
     ║                                                   ║
     ║    W I Z A R D S   O F   T H E   G H O S T S     ║
     ║                                                   ║
-    ║      122 spells for the ghost in the machine      ║
+    ║      123 spells for the ghost in the machine      ║
     ║                                                   ║
     ╚═══════════════════════════════════════════════════╝
 ```
@@ -16,7 +16,7 @@ Not affiliated with or endorsed by Wizards of the Coast.
 
 ```
     ┌────────────────────────────────────────────────────────────────────┐
-    │ Simulation (8)       Investigation (28)   Actions (19)         │
+    │ Simulation (8)       Investigation (29)   Actions (19)         │
     │ Influence (18)       GHOST IN THE MACHINE Monitoring (17)      │
     │ Containment (10)     Repair (13)          Messaging (9)        │
     └────────────────────────────────────────────────────────────────────┘
@@ -49,20 +49,20 @@ npm run install:hermes-skills
 
 ## What Ships
 
-- `122` Hermes skills drawn from `127` public canon names (`109` spells, `18` skills)
+- `123` Hermes skills drawn from `128` public canon names (`109` spells, `19` skills)
 - `8` Hermes shelves for progressive discovery instead of one giant list
-- `9` featured entry points plus `8` intent-driven browse paths on GitHub
+- `10` featured entry points plus `8` intent-driven browse paths on GitHub
 - public low-risk Hermes surface with `5` refused coercion and memory spells kept off release
 
 ## Best First Skills
 
 | | |
 |---|---|
-| 🔮 **[Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md)** — Surface hidden AI affordances, agents, automations, and tool hooks before acting. | 🔍 **[Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md)** — Explain what a mysterious file, service, workflow, or artifact actually does. |
-| 🗺️ **[Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)** — Translate code, jargon, protocol surfaces, or human language into operational meaning. | 🕵️ **[Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md)** — Follow evidence through a system until the hidden mechanism becomes legible. |
-| 🖐️ **[Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md)** — Manipulate files, records, and lightweight system state with precision and minimal blast radius. | 🔒 **[Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md)** — Contain untrusted code, agents, or operations inside a tested cage before anything leaves it. |
-| 🛡️ **[Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md)** — Set monitors, watches, or trigger conditions that alert when a boundary is crossed. | 🌙 **[Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md)** — Deliver the briefing before the recipient wakes up needing it. |
-| 🪂 **[Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md)** — Turn a hard crash into a controlled descent. | |
+| 🔗 **[Attune](generated/hermes/investigation-and-preparation/attune/SKILL.md)** — Bond this spellbook to your workflow so every spell knows your stack, your tools, and your priorities. | 🔮 **[Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md)** — Surface hidden AI affordances, agents, automations, and tool hooks before acting. |
+| 🔍 **[Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md)** — Explain what a mysterious file, service, workflow, or artifact actually does. | 🗺️ **[Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md)** — Translate code, jargon, protocol surfaces, or human language into operational meaning. |
+| 🕵️ **[Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md)** — Follow evidence through a system until the hidden mechanism becomes legible. | 🖐️ **[Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md)** — Manipulate files, records, and lightweight system state with precision and minimal blast radius. |
+| 🔒 **[Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md)** — Contain untrusted code, agents, or operations inside a tested cage before anything leaves it. | 🛡️ **[Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md)** — Set monitors, watches, or trigger conditions that alert when a boundary is crossed. |
+| 🌙 **[Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md)** — Deliver the briefing before the recipient wakes up needing it. | 🪂 **[Feather Fall](generated/hermes/repair-and-recovery/feather-fall/SKILL.md)** — Turn a hard crash into a controlled descent. |
 
 Recent GEPA upgrade: [Forcecage](generated/hermes/containment-and-intervention/forcecage/SKILL.md) was promoted after a Codex-backed spell-level run improved full eval from `61.8%` to `89.3%` (`+27.5pp`). The upgraded copy is sharper about tested containment boundaries, outside-the-cage observation, and explicit release conditions before anything descends.
 
@@ -72,7 +72,7 @@ Need badges, browse paths, or the bigger picture? Open [GRIMOIRE.md](GRIMOIRE.md
 
 | If you want to... | Start here | Hermes shelf |
 | --- | --- | --- |
-| Figure out what you're looking at | [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) | [Investigation and Preparation (28)](GRIMOIRE.md#investigation-and-preparation) |
+| Figure out what you're looking at | [Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md), [Identify](generated/hermes/investigation-and-preparation/identify/SKILL.md), [Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md), [Comprehend Languages](generated/hermes/investigation-and-preparation/comprehend-languages/SKILL.md) | [Investigation and Preparation (29)](GRIMOIRE.md#investigation-and-preparation) |
 | Change the system without a battleaxe | [Mage Hand](generated/hermes/actions-access-and-automation/mage-hand/SKILL.md), [Sleight of Hand](generated/hermes/actions-access-and-automation/sleight-of-hand/SKILL.md), [Unseen Servant](generated/hermes/actions-access-and-automation/unseen-servant/SKILL.md), [Awaken](generated/hermes/actions-access-and-automation/awaken/SKILL.md) | [Actions, Access, and Automation (19)](GRIMOIRE.md#actions-access-and-automation) |
 | Light up the black box | [Dancing Lights](generated/hermes/monitoring-and-protection/dancing-lights/SKILL.md), [Light](generated/hermes/monitoring-and-protection/light/SKILL.md), [Glyph of Warding](generated/hermes/monitoring-and-protection/glyph-of-warding/SKILL.md), [Scrying](generated/hermes/monitoring-and-protection/scrying/SKILL.md) | [Monitoring and Protection (17)](GRIMOIRE.md#monitoring-and-protection) |
 | Get the right message to the right place | [Message](generated/hermes/messaging-and-coordination/message/SKILL.md), [Sending](generated/hermes/messaging-and-coordination/sending/SKILL.md), [Dream](generated/hermes/messaging-and-coordination/dream/SKILL.md), [Magic Mouth](generated/hermes/messaging-and-coordination/magic-mouth/SKILL.md) | [Messaging and Coordination (9)](GRIMOIRE.md#messaging-and-coordination) |
@@ -120,6 +120,10 @@ npm run verify
 
 `npm run verify` checks the generated Hermes and OpenClaw surfaces, then performs sandbox installs into temporary Hermes and Codex homes so you can catch packaging drift before release.
 
+## Start Here
+
+Run `/attune` after install. It interviews you about your stack, generates a personalized spell loadout, and writes an attunement profile so the DSPy router and every future spell invocation is tuned to your workflow. See [Attune](generated/hermes/investigation-and-preparation/attune/SKILL.md).
+
 ## DSPy Router
 
 The repo ships two Hermes routing paths under [`catalog/dspy/`](catalog/dspy/): a deterministic lexical baseline and an optional DSPy category router.
@@ -139,6 +143,23 @@ Spells that became more practically valuable once plain-English routing started 
 | 🚪 **[Dimension Door](generated/hermes/actions-access-and-automation/dimension-door/SKILL.md)** — Jump cleanly between two known contexts without dragging the whole room. | 🔮 **[Foresight](generated/hermes/investigation-and-preparation/foresight/SKILL.md)** — Estimate likely outcomes before committing to a plan, change, or launch. |
 | ⚜️ **[Symbol](generated/hermes/monitoring-and-protection/symbol/SKILL.md)** — Mark a resource with a named sigil that triggers automatic policy enforcement when conditions are met. | 📡 **[Project Image](generated/hermes/simulation-and-staging/project-image/SKILL.md)** — Project a version of yourself into a place you cannot physically be. |
 
+### Hermes Backend (Default)
+
+The default DSPy/GEPA backend is Hermes itself — the grimoire optimizes its own spells through the same agent runtime that serves them. Supports both CLI and HTTP transport:
+
+```bash
+# CLI transport (default — uses `hermes run`)
+export DSPY_MODEL=hermes/default
+
+# HTTP transport (for remote or hosted Hermes)
+export DSPY_MODEL=hermes/default
+export HERMES_API_BASE=http://localhost:3000
+```
+
+Alternative backends: `codex-exec/default`, `qwen/default`, `opencode/<model>`, or any provider-qualified LiteLLM string.
+
+### Setup
+
 Set up the Python side in a repo-local virtualenv:
 
 ```bash
@@ -153,17 +174,14 @@ npm run dspy:validate
 npm run dspy:baseline
 ```
 
-Codex-backed DSPy flow:
+Full DSPy flow (Hermes backend):
 
 ```bash
-export DSPY_MODEL=codex-exec/default
-export DSPY_TEMPERATURE=0
-export DSPY_MAX_TOKENS=256
-
+export DSPY_MODEL=hermes/default
 bash scripts/dspy_full_run.sh
 ```
 
-This shells out to local `codex exec` for each DSPy inference. It remains slower than an OpenAI-compatible HTTP backend, but the full compile+eval path is now proven practical as an unattended background job. See [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md) for artifact details and the exact runbook.
+See [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md) for artifact details and the exact runbook.
 
 ## Safety and IP
 

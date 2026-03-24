@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wizardsoftheghosts.local/catalog/attunement.schema.json",
+  "title": "Attunement Profile",
+  "description": "A user's personalized spellbook configuration, written by the Attune skill and read by the DSPy router, GEPA optimizer, and individual spell invocations.",
+  "type": "object",
+  "required": [
+    "version",
+    "created_at",
+    "profile",
+    "loadout",
+    "category_weights"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "profile": {
+      "type": "object",
+      "description": "The user's workflow profile collected during attunement.",
+      "required": [
+        "languages",
+        "tools",
+        "concerns"
+      ],
+      "properties": {
+        "languages": {
+          "type": "array",
+          "description": "Programming languages and frameworks the user works with.",
+          "items": { "type": "string" }
+        },
+        "infrastructure": {
+          "type": "array",
+          "description": "Infrastructure, cloud providers, deployment targets.",
+          "items": { "type": "string" }
+        },
+        "tools": {
+          "type": "array",
+          "description": "Daily tools, editors, CI/CD, monitoring, communication platforms.",
+          "items": { "type": "string" }
+        },
+        "concerns": {
+          "type": "array",
+          "description": "What the user automates, monitors, debugs, or wishes was easier.",
+          "items": { "type": "string" }
+        },
+        "domain_vocabulary": {
+          "type": "array",
+          "description": "Domain-specific terms that should bias the DSPy router.",
+          "items": { "type": "string" }
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-form notes from the attunement interview."
+        }
+      },
+      "additionalProperties": false
+    },
+    "category_weights": {
+      "type": "object",
+      "description": "Relative priority weights for each grimoire category (0.0-1.0).",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "loadout": {
+      "type": "object",
+      "required": [
+        "primary",
+        "stretch"
+      ],
+      "properties": {
+        "primary": {
+          "type": "array",
+          "description": "The 10-15 spells most immediately useful for this user.",
+          "items": {
+            "type": "object",
+            "required": ["slug", "reason"],
+            "properties": {
+              "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+              "reason": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "stretch": {
+          "type": "array",
+          "description": "Spells the user might not expect but could find valuable.",
+          "items": {
+            "type": "object",
+            "required": ["slug", "reason"],
+            "properties": {
+              "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+              "reason": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "gepa_candidates": {
+      "type": "array",
+      "description": "Spells worth GEPA-optimizing for this user's domain.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      }
+    }
+  },
+  "additionalProperties": false
+}

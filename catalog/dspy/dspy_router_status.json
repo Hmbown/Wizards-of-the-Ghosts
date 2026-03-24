@@ -1,6 +1,6 @@
 {
-  "status": "ok",
-  "message": "Compiled DSPy category router using a limited train subset.",
+  "status": "backend_unreachable",
+  "message": "OpenCode backend probe failed.",
   "artifact_dir": "catalog/dspy",
   "artifact_paths": {
     "spells_master": "catalog/dspy/spells_master.jsonl",
@@ -32,17 +32,17 @@
     "errors": []
   },
   "dependency": {
-    "python_version": "3.14.2",
+    "python_version": "3.13.12",
     "python_implementation": "CPython",
     "dspy_installed": true,
     "dspy_version": "3.1.3",
-    "codex_lm_available": true,
-    "qwen_lm_available": true
+    "codex_lm_available": false,
+    "qwen_lm_available": false
   },
   "backend": {
     "configured": true,
-    "model": "qwen/default",
-    "backend_type": "qwen",
+    "model": "opencode/gpt-5-nano",
+    "backend_type": "opencode",
     "api_base": null,
     "api_key_configured": false,
     "provider_qualified_model_required": false,
@@ -52,12 +52,12 @@
     },
     "transport_hint": "cli",
     "notes": [
-      "Qwen aliases use dspy.QwenLM and the local qwen CLI in plan mode.",
-      "QwenLM does not honor temperature or max_tokens because the local Qwen CLI path does not expose those controls through this adapter."
+      "OpenCode aliases use the local opencode CLI in run mode with --format json.",
+      "OpenCode does not honor temperature or max_tokens through this adapter."
     ],
     "message": "DSPy LM configuration resolved.",
     "config": {
-      "model": "qwen/default",
+      "model": "opencode/gpt-5-nano",
       "api_base": null,
       "temperature": null,
       "max_tokens": null,
@@ -65,49 +65,15 @@
     },
     "probe": {
       "checked": true,
-      "backend_type": "qwen",
+      "backend_type": "opencode",
       "cli_available": true,
-      "credentials_configured": true,
-      "credential_sources": [
-        "(scrubbed-local-path)",
-        "(scrubbed-local-path)"
-      ],
-      "qwen_home": "(scrubbed-local-path)",
-      "settings_file": "(scrubbed-local-path)",
-      "oauth_file": "(scrubbed-local-path)",
-      "mcp_oauth_file": "(scrubbed-local-path)",
-      "installation_id_file": "(scrubbed-local-path)",
-      "reachable": true,
-      "message": "Qwen backend probe completed successfully.",
-      "transport": "cli",
-      "session_id": null,
-      "resolved_model": "coder-model",
-      "usage": {
-        "prompt_tokens": 37383,
-        "completion_tokens": 35,
-        "total_tokens": 37418
-      },
-      "sample_response": "ready"
+      "reachable": false,
+      "message": "OpenCode backend probe failed.",
+      "error": "Command '['/home/hmbown/.opencode/bin/opencode', 'run', '--format', 'json', '--dir', '/home/hmbown/Projects/wizards-of-the-ghosts', '--model', 'opencode/gpt-5-nano', 'Respond with exactly one word: ready']' timed out after 120 seconds"
     }
   },
   "notes": [
     "The v1 DSPy router targets 8-way Hermes category routing.",
     "The abstain dataset is validation-only in this pass and is not scored by the router."
-  ],
-  "train_limit": 4,
-  "train_rows_available": 208,
-  "train_rows_used": 4,
-  "eval_rows_available": 104,
-  "limited_train_compile": true,
-  "saved_model": "catalog/dspy/dspy_category_router.json",
-  "categories": [
-    "investigation-and-preparation",
-    "actions-access-and-automation",
-    "monitoring-and-protection",
-    "messaging-and-coordination",
-    "repair-and-recovery",
-    "simulation-and-staging",
-    "influence-and-behavior",
-    "containment-and-intervention"
   ]
 }

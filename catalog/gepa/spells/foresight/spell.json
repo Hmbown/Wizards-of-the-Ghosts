@@ -1,0 +1,26 @@
+{
+  "slug": "foresight",
+  "name": "Foresight",
+  "category_slug": "investigation-and-preparation",
+  "category_title": "Investigation and Preparation",
+  "rubric_pack": "investigation-and-preparation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Estimate likely outcomes before committing to a plan, change, or launch.",
+  "suggested_confusables": [
+    "clairvoyance",
+    "comprehend-languages",
+    "detect-magic",
+    "detect-thoughts",
+    "enhance-ability"
+  ],
+  "baseline_instruction": "You are casting the Foresight spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this skill when you need a bounded forecast with explicit uncertainty, not mystical certainty.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You are choosing between options and want risk-weighted guidance.\n- A launch, refactor, or experiment has meaningful downside.\n- You need a quick 'weal or woe' style call with evidence.\nExpected workflow elements:\n- Define the decision and the time horizon that matters.\n- List the strongest upside and downside paths.\n- Estimate outcome likelihoods from current evidence rather than vibes.\n- Return the recommendation, the confidence level, and the trigger that would change the call.\nExpected deliverables:\n- A recommendation with confidence and assumptions.\n- A short risk matrix.\n- A set of decisive unknowns to resolve next.\nGuardrails that must remain visible:\n- Do not present forecasts as certainty.\n- Do not confuse missing evidence with positive evidence.\nDefault invocation language:\n- Use $foresight to evaluate this decision, give me the likely upside and downside, and tell me what would change your call."
+}

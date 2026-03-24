@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Shared helpers for the repo-local DSPy workflow."""
+
 from __future__ import annotations
 
 import json
@@ -15,6 +16,8 @@ from typing import Any
 
 CODEX_MODEL_PREFIXES = ("codex/", "codex-exec/", "codex-mcp/")
 QWEN_MODEL_PREFIXES = ("qwen/",)
+OPENCODE_MODEL_PREFIXES = ("opencode/",)
+HERMES_MODEL_PREFIXES = ("hermes/",)
 
 REQUIRED_DSPY_FILES = {
     "spells_master": "spells_master.jsonl",
@@ -68,6 +71,18 @@ def is_qwen_model(model: str | None) -> bool:
     return model.startswith(QWEN_MODEL_PREFIXES)
 
 
+def is_opencode_model(model: str | None) -> bool:
+    if model is None:
+        return False
+    return model.startswith(OPENCODE_MODEL_PREFIXES)
+
+
+def is_hermes_model(model: str | None) -> bool:
+    if model is None:
+        return False
+    return model.startswith(HERMES_MODEL_PREFIXES)
+
+
 def codex_transport_hint(model: str) -> str:
     if model.startswith("codex-exec/"):
         return "cli"
@@ -98,7 +113,10 @@ def dspy_dir(repo_root: Path) -> Path:
 
 def artifact_paths(repo_root: Path) -> dict[str, Path]:
     base = dspy_dir(repo_root)
-    return {name: base / rel_path for name, rel_path in {**REQUIRED_DSPY_FILES, **STATUS_PATHS}.items()}
+    return {
+        name: base / rel_path
+        for name, rel_path in {**REQUIRED_DSPY_FILES, **STATUS_PATHS}.items()
+    }
 
 
 def load_json(path: Path) -> Any:
@@ -116,12 +134,15 @@ def load_jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def write_json(path: Path, payload: Any) -> None:
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text(
-        "\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + ("\n" if rows else ""),
+        "\n".join(json.dumps(row, ensure_ascii=False) for row in rows)
+        + ("\n" if rows else ""),
         encoding="utf-8",
     )
 
@@ -167,7 +188,9 @@ def validate_workspace(repo_root: Path) -> dict[str, Any]:
             missing.append(rel_path)
             continue
         try:
-            parsed[key] = load_jsonl(path) if path.suffix == ".jsonl" else load_json(path)
+            parsed[key] = (
+                load_jsonl(path) if path.suffix == ".jsonl" else load_json(path)
+            )
         except Exception as exc:  # noqa: BLE001
             errors.append(f"{rel_path}: {exc}")
 
@@ -205,7 +228,9 @@ def validate_workspace(repo_root: Path) -> dict[str, Any]:
         "missing_files": missing,
         "errors": errors,
         "dataset_counts": dataset_counts,
-        "artifact_paths": {key: _relative_path(path, repo_root) for key, path in paths.items()},
+        "artifact_paths": {
+            key: _relative_path(path, repo_root) for key, path in paths.items()
+        },
         "notes": ROUTER_NOTES,
     }
 
@@ -232,7 +257,9 @@ def _arg_or_env(args: Any, attr: str, env_key: str) -> str | None:
     return stripped or None
 
 
-def resolve_lm_config(args: Any | None = None) -> tuple[LMConfig | None, dict[str, Any]]:
+def resolve_lm_config(
+    args: Any | None = None,
+) -> tuple[LMConfig | None, dict[str, Any]]:
     model = _arg_or_env(args, "dspy_model", "DSPY_MODEL")
     api_base = _arg_or_env(args, "dspy_api_base", "DSPY_API_BASE")
     api_key = _arg_or_env(args, "dspy_api_key", "DSPY_API_KEY")
@@ -240,20 +267,44 @@ def resolve_lm_config(args: Any | None = None) -> tuple[LMConfig | None, dict[st
     max_tokens_raw = _arg_or_env(args, "dspy_max_tokens", "DSPY_MAX_TOKENS")
     codex_model = is_codex_model(model)
     qwen_model = is_qwen_model(model)
+    opencode_model = is_opencode_model(model)
+    hermes_model = is_hermes_model(model)
+
+    def _backend_type() -> str:
+        if hermes_model:
+            return "hermes"
+        if codex_model:
+            return "codex"
+        if qwen_model:
+            return "qwen"
+        if opencode_model:
+            return "opencode"
+        return "litellm"
+
+    is_local = codex_model or qwen_model or opencode_model or hermes_model
 
     backend: dict[str, Any] = {
         "configured": False,
         "model": model,
-        "backend_type": "codex" if codex_model else ("qwen" if qwen_model else "litellm"),
+        "backend_type": _backend_type(),
         "api_base": api_base,
         "api_key_configured": bool(api_key),
-        "provider_qualified_model_required": not codex_model and not qwen_model,
+        "provider_qualified_model_required": not is_local,
         "optional_settings": {
             "temperature": temperature_raw,
             "max_tokens": max_tokens_raw,
         },
     }
-    if codex_model and model is not None:
+    if hermes_model and model is not None:
+        from dspy_hermes_lm import hermes_api_base
+
+        backend["transport_hint"] = "http" if hermes_api_base() else "cli"
+        backend["notes"] = [
+            "Hermes is the default backend. The grimoire optimizes its own spells.",
+            "Supports CLI transport (hermes run) and HTTP transport (HERMES_API_BASE).",
+            "Temperature and max_tokens are passed through when using HTTP transport.",
+        ]
+    elif codex_model and model is not None:
         backend["transport_hint"] = codex_transport_hint(model)
         backend["notes"] = [
             "Codex aliases use dspy.CodexLM and the local dspy-codex runtime selection logic.",
@@ -265,11 +316,17 @@ def resolve_lm_config(args: Any | None = None) -> tuple[LMConfig | None, dict[st
             "Qwen aliases use dspy.QwenLM and the local qwen CLI in plan mode.",
             "QwenLM does not honor temperature or max_tokens because the local Qwen CLI path does not expose those controls through this adapter.",
         ]
+    elif opencode_model and model is not None:
+        backend["transport_hint"] = "cli"
+        backend["notes"] = [
+            "OpenCode aliases use the local opencode CLI in run mode with --format json.",
+            "OpenCode does not honor temperature or max_tokens through this adapter.",
+        ]
 
     if not model:
         backend["message"] = (
-            "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string like "
-            "openai/qwen3.5:4b, a Codex alias like codex/default, or a Qwen alias like qwen/default."
+            "DSPY_MODEL is not set. Default: hermes/default. "
+            "Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
         )
         return None, backend
 
@@ -282,13 +339,17 @@ def resolve_lm_config(args: Any | None = None) -> tuple[LMConfig | None, dict[st
     try:
         temperature = float(temperature_raw) if temperature_raw is not None else None
     except ValueError:
-        backend["message"] = f"DSPY_TEMPERATURE must be a float, got {temperature_raw!r}."
+        backend["message"] = (
+            f"DSPY_TEMPERATURE must be a float, got {temperature_raw!r}."
+        )
         return None, backend
 
     try:
         max_tokens = int(max_tokens_raw) if max_tokens_raw is not None else None
     except ValueError:
-        backend["message"] = f"DSPY_MAX_TOKENS must be an integer, got {max_tokens_raw!r}."
+        backend["message"] = (
+            f"DSPY_MAX_TOKENS must be an integer, got {max_tokens_raw!r}."
+        )
         return None, backend
 
     config = LMConfig(
@@ -319,10 +380,23 @@ def _probe_url(api_base: str) -> str:
         path = f"{path}/models"
     elif not path.endswith("/models"):
         path = f"{path}/models"
-    return urllib.parse.urlunparse(parsed._replace(path=path, params="", query="", fragment=""))
+    return urllib.parse.urlunparse(
+        parsed._replace(path=path, params="", query="", fragment="")
+    )
 
 
-def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None = None) -> dict[str, Any]:
+def probe_backend(
+    config: LMConfig, timeout: float = 3.0, repo_root: Path | None = None
+) -> dict[str, Any]:
+    if is_hermes_model(config.model):
+        from dspy_hermes_lm import probe_hermes
+
+        return probe_hermes(
+            model=config.model,
+            repo_root=(repo_root or Path.cwd()).resolve(),
+            timeout=timeout,
+        )
+
     if is_codex_model(config.model):
         codex_client = load_codex_client()
         if codex_client is None:
@@ -349,7 +423,9 @@ def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None
         }
         if runtime.preferred_transport is None:
             probe["reachable"] = False
-            probe["message"] = "No usable Codex transport is configured. Run the dspy-codex doctor first."
+            probe["message"] = (
+                "No usable Codex transport is configured. Run the dspy-codex doctor first."
+            )
             return probe
 
         try:
@@ -434,6 +510,48 @@ def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None
         )
         return probe
 
+    if is_opencode_model(config.model):
+        import shutil
+
+        cli_path = shutil.which("opencode")
+        probe: dict[str, Any] = {
+            "checked": True,
+            "backend_type": "opencode",
+            "cli_available": cli_path is not None,
+        }
+        if cli_path is None:
+            probe["reachable"] = False
+            probe["message"] = "opencode CLI is not installed or not on PATH."
+            return probe
+
+        # Use OpenCode-specific timeout from environment, or default probe timeout
+        from dspy_opencode_lm import opencode_exec_timeout_seconds, run_opencode_exec
+
+        probe_timeout = opencode_exec_timeout_seconds(default=max(int(timeout), 1) * 20)
+        try:
+            text, usage, stderr = run_opencode_exec(
+                prompt="Respond with exactly one word: ready",
+                repo_root=(repo_root or Path.cwd()).resolve(),
+                opencode_model=config.model,
+                timeout_seconds=probe_timeout,
+            )
+        except Exception as exc:  # noqa: BLE001
+            probe["reachable"] = False
+            probe["message"] = "OpenCode backend probe failed."
+            probe["error"] = str(exc)
+            return probe
+
+        probe.update(
+            {
+                "reachable": True,
+                "message": "OpenCode backend probe completed successfully.",
+                "resolved_model": config.model,
+                "usage": usage,
+                "sample_response": text[:120],
+            }
+        )
+        return probe
+
     if not config.api_base:
         return {
             "checked": False,
@@ -442,7 +560,9 @@ def probe_backend(config: LMConfig, timeout: float = 3.0, repo_root: Path | None
         }
 
     probe_url = _probe_url(config.api_base)
-    request = urllib.request.Request(probe_url, headers={"User-Agent": "wizardsoftheghosts-dspy/1.0"})
+    request = urllib.request.Request(
+        probe_url, headers={"User-Agent": "wizardsoftheghosts-dspy/1.0"}
+    )
     if config.api_key:
         request.add_header("Authorization", f"Bearer {config.api_key}")
 
@@ -497,6 +617,24 @@ def instantiate_dspy_lm(dspy: Any, config: LMConfig, repo_root: Path) -> Any:
             isolate_home=False,
         )
 
+    if is_hermes_model(config.model):
+        from dspy_hermes_lm import create_hermes_lm
+
+        return create_hermes_lm(
+            dspy,
+            model=config.model,
+            repo_root=repo_root,
+        )
+
+    if is_opencode_model(config.model):
+        from dspy_opencode_lm import create_opencode_exec_lm
+
+        return create_opencode_exec_lm(
+            dspy,
+            model=config.model,
+            repo_root=repo_root,
+        )
+
     kwargs: dict[str, Any] = {}
     if config.api_base:
         kwargs["api_base"] = config.api_base
@@ -548,7 +686,9 @@ def build_router_status(
         "status": status,
         "message": message,
         "artifact_dir": _relative_path(dspy_dir(repo_root), repo_root),
-        "artifact_paths": {key: _relative_path(path, repo_root) for key, path in paths.items()},
+        "artifact_paths": {
+            key: _relative_path(path, repo_root) for key, path in paths.items()
+        },
         "dataset_counts": validation["dataset_counts"],
         "validation": {
             "ok": validation["ok"],
