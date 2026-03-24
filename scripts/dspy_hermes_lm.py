@@ -132,13 +132,12 @@ def run_hermes_cli(
         timeout_seconds if timeout_seconds is not None else hermes_timeout_seconds()
     )
 
-    cmd = [cli, "run", "--format", "json", "--dir", str(repo_root)]
+    # Hermes CLI uses: hermes chat -q "prompt" -Q (quiet/programmatic mode)
+    cmd = [cli, "chat", "-q", prompt, "-Q"]
     if model:
-        # Strip the hermes/ prefix for the CLI
         bare_model = model.removeprefix(HERMES_MODEL_PREFIX)
         if bare_model and bare_model != "default":
-            cmd.extend(["--model", bare_model])
-    cmd.append(prompt)
+            cmd.extend(["-m", bare_model])
 
     result = subprocess.run(
         cmd,
@@ -152,45 +151,27 @@ def run_hermes_cli(
         message = (
             result.stderr.strip()
             or result.stdout.strip()
-            or f"hermes run exited with code {result.returncode}"
+            or f"hermes chat exited with code {result.returncode}"
         )
         raise RuntimeError(message)
 
-    final_text = ""
-    output_tokens = 0
-    input_tokens = 0
-    total_tokens = 0
-    for line in result.stdout.splitlines():
-        line = line.strip()
-        if not line:
+    # Quiet mode output: response text followed by "session_id: <id>" line
+    lines = result.stdout.strip().splitlines()
+    text_lines: list[str] = []
+    for line in lines:
+        if line.startswith("session_id:"):
             continue
-        try:
-            event = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        event_type = event.get("type")
-        if event_type == "text":
-            part = event.get("part", {})
-            text = str(part.get("text", ""))
-            if text.strip():
-                final_text += text
-        elif event_type == "step_finish":
-            tokens = event.get("part", {}).get("tokens", {})
-            if not tokens:
-                tokens = event.get("tokens", {})
-            output_tokens = int(
-                tokens.get("output", tokens.get("completion_tokens", 0))
-            )
-            input_tokens = int(tokens.get("input", tokens.get("prompt_tokens", 0)))
-            total_tokens = int(tokens.get("total", 0))
+        text_lines.append(line)
 
-    if not final_text.strip():
-        raise RuntimeError("hermes run returned no final text.")
+    final_text = "\n".join(text_lines).strip()
+    if not final_text:
+        raise RuntimeError("hermes chat returned no response text.")
 
+    # Hermes CLI doesn't expose token counts in quiet mode
     usage = {
-        "prompt_tokens": input_tokens,
-        "completion_tokens": output_tokens,
-        "total_tokens": total_tokens if total_tokens else input_tokens + output_tokens,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
     }
     return final_text, usage, result.stderr
 
