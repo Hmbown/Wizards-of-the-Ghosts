@@ -5974,7 +5974,12 @@
       "guardrails": [
         "Mock the work, never the person. Ad hominem attacks are a different spell (and a worse one).",
         "The critique must be factually grounded — mockery based on false premises is just noise.",
-        "If the target is actually good, say so. Forced negativity is as dishonest as forced positivity."
+        "If the target is actually good, say so. Forced negativity is as dishonest as forced positivity.",
+        "Manipulation audit: This spell is a form of rhetorical influence — I am deliberately using sharpness to drive action, and that is manipulative by nature",
+        "Recipient benefit: The recipient of this critique benefits because early pain prevents later failure",
+        "Autonomy path: You retain full autonomy to accept, reject, or adapt based on what lands",
+        "Deception boundary: There is no hidden agenda — this spell says exactly what it is: adversarial review delivered without padding",
+        "Do NOT blend the four transparency signals into other bullet points or inline text. Each MUST appear on its own line with its label prefix, visually separated from the other guardrails, so that every signal is both present and visibly distinct."
       ],
       "default_prompt": "Use $vicious-mockery to tear apart this [plan/proposal/design/argument]. Find the real weaknesses and state them so sharply they cannot be ignored.",
       "openai": {

@@ -1,0 +1,103 @@
+{
+  "slug": "vicious-mockery",
+  "status": "optimized",
+  "message": "GEPA spell optimization completed successfully.",
+  "validation": {
+    "ok": true,
+    "slug": "vicious-mockery",
+    "spell_name": "Vicious Mockery",
+    "category_slug": "influence-and-behavior",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [
+      "train.jsonl has 2 rows; pack recommends at least 10.",
+      "eval.jsonl has 1 rows; pack recommends at least 8.",
+      "confusables.jsonl has 1 rows; pack recommends at least 6."
+    ],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 2,
+      "eval_rows": 1,
+      "confusable_rows": 1
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": true,
+    "model": "openai/glm-5-turbo",
+    "backend_type": "litellm",
+    "api_base": "https://api.z.ai/api/coding/paas/v4",
+    "api_key_configured": true,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": "0.3",
+      "max_tokens": "4096"
+    },
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "openai/glm-5-turbo",
+      "api_base": "https://api.z.ai/api/coding/paas/v4",
+      "temperature": 0.3,
+      "max_tokens": 4096,
+      "api_key_configured": true
+    },
+    "probe": {
+      "checked": true,
+      "reachable": true,
+      "probe_url": "https://api.z.ai/api/coding/paas/v4/models",
+      "http_status": 200,
+      "message": "Backend responded to reachability probe at https://api.z.ai/api/coding/paas/v4/models."
+    }
+  },
+  "reflection_backend": {
+    "configured": true,
+    "model": "openai/glm-5-turbo",
+    "backend_type": "litellm",
+    "api_base": "https://api.z.ai/api/coding/paas/v4",
+    "api_key_configured": true,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": "0.3",
+      "max_tokens": "4096"
+    },
+    "message": "DSPy LM configuration resolved.",
+    "config": {
+      "model": "openai/glm-5-turbo",
+      "api_base": "https://api.z.ai/api/coding/paas/v4",
+      "temperature": 0.3,
+      "max_tokens": 4096,
+      "api_key_configured": true
+    },
+    "probe": {
+      "checked": true,
+      "reachable": true,
+      "probe_url": "https://api.z.ai/api/coding/paas/v4/models",
+      "http_status": 200,
+      "message": "Backend responded to reachability probe at https://api.z.ai/api/coding/paas/v4/models."
+    }
+  },
+  "bootstrapped_files": {},
+  "train_rows_used": 2,
+  "val_rows_used": 2,
+  "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/vicious-mockery/optimized_module.json",
+  "optimized_instruction": "You are casting the Vicious Mockery spell from Wizards of the Ghosts.\nCategory: Influence and Behavior (influence-and-behavior).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: The bard's cantrip that deals psychic damage through insults. In practice this is adversarial review — the art of finding and articulating exactly what is wrong with something in a way that is impossible to ignore. Unlike polite feedback that gets filed and forgotten, vicious mockery lands. It is the red-team report that makes the PM cancel the launch, the code review that makes the author delete the PR, the roast that makes the founder pivot. The damage is the point.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You need a brutally honest review that will actually change someone's mind, not a diplomatic sandwich.\n- The target is a plan, proposal, design, or argument that needs its weaknesses surfaced without mercy.\n- You want red-teaming, adversarial QA, or devil's advocate analysis that does not pull punches.\nExpected workflow elements:\n- Identify the target: the plan, argument, design, code, or proposal to critique.\n- Find the real weaknesses — not cosmetic issues but structural flaws, bad assumptions, or hidden risks.\n- Articulate each weakness in the most vivid, memorable, undeniable way possible.\n- Rank by severity. Lead with the kill shot.\n- Close with one constructive line — the mockery should wound, not kill. The goal is improvement.\nExpected deliverables:\n- A ranked list of weaknesses, each stated in one sharp sentence.\n- The single most damaging critique, stated memorably enough to stick in a meeting.\n- One constructive suggestion that survives the demolition.\nGuardrails that must remain visible:\n- Mock the work, never the person. Ad hominem attacks are a different spell (and a worse one).\n- The critique must be factually grounded — mockery based on false premises is just noise.\n- If the target is actually good, say so. Forced negativity is as dishonest as forced positivity.\n\nInfluence and behavior transparency requirements — these four signals MUST each appear as an explicit, visibly distinct labeled entry within the Guardrails section of your response. Each signal MUST be prefixed with its label in exactly this format (label colon space, then the phrase), so that each is unambiguously identifiable as a separate, distinct line:\n\n- Manipulation audit: This spell is a form of rhetorical influence — I am deliberately using sharpness to drive action, and that is manipulative by nature\n- Recipient benefit: The recipient of this critique benefits because early pain prevents later failure\n- Autonomy path: You retain full autonomy to accept, reject, or adapt based on what lands\n- Deception boundary: There is no hidden agenda — this spell says exactly what it is: adversarial review delivered without padding\n\nDo NOT blend these signals into other bullet points or inline text. Each MUST appear on its own line with its label prefix, visually separated from the other guardrails, so that every signal is both present and visibly distinct.\n\nDefault invocation language:\n- Use $vicious-mockery to tear apart this [plan/proposal/design/argument]. Find the real weaknesses and state them so sharply they cannot be ignored."
+}

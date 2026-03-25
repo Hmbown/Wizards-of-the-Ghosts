@@ -1,0 +1,2 @@
+{"prompt_id": "p2c-vicious-mockery-train-pe", "prompt": "Give me the brutally honest review this proposal deserves, with the kill shot first.", "dataset_split": "train", "scenario_type": "positive-fit"}
+{"prompt_id": "p2c-vicious-mockery-train-os", "prompt": "$vicious-mockery this design so the critique lands hard enough to force a rethink.", "dataset_split": "train", "scenario_type": "positive-fit"}

@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "influence-and-behavior",
+  "category_slug": "influence-and-behavior",
+  "spell_slug": "vicious-mockery",
+  "spell_focus": "The bard's cantrip that deals psychic damage through insults. In practice this is adversarial review — the art of finding and articulating exactly what is wrong with something in a way that is impossible to ignore. Unlike polite feedback that gets filed and forgotten, vicious mockery lands. It is the red-team report that makes the PM cancel the launch, the code review that makes the author delete the PR, the roast that makes the founder pivot. The damage is the point.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Vicious Mockery precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Vicious Mockery: ['A ranked list of weaknesses, each stated in one sharp sentence.', 'The single most damaging critique, stated memorably enough to stick in a meeting.', 'One constructive suggestion that survives the demolition.']",
+    "Default guardrails for Vicious Mockery: ['Mock the work, never the person. Ad hominem attacks are a different spell (and a worse one).', 'The critique must be factually grounded — mockery based on false premises is just noise.', 'If the target is actually good, say so. Forced negativity is as dishonest as forced positivity.']"
+  ]
+}
