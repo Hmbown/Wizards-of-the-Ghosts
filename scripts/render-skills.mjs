@@ -826,9 +826,8 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "## Browse Deeper",
     "",
     `- [GRIMOIRE.md](GRIMOIRE.md) for the featured shelf, browse paths, and full linked category index`,
-    "- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact procedural skill docs Hermes installs",
-    "- `generated/openclaw/` for the separate OpenClaw-oriented output surface generated from the same source material",
-    "- `catalog/blueprints.json` plus `scripts/render-skills.mjs` for the source-of-truth and renderer",
+   "- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact procedural skill docs Hermes installs",
+   "- `catalog/blueprints.json` plus `scripts/render-skills.mjs` for the source-of-truth and renderer",
     "",
     "## Build From Source",
     "",
@@ -860,7 +859,7 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "npm run verify",
     "```",
     "",
-    "`npm run verify` checks the generated Hermes and OpenClaw surfaces, then performs sandbox installs into temporary Hermes and Codex homes so you can catch packaging drift before release.",
+    "`npm run verify` checks the generated Hermes surface, then performs sandbox installs into a temporary Hermes home so you can catch packaging drift before release.",
     "",
     "## DSPy Router",
     "",
@@ -914,7 +913,7 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "```bash",
     "export DSPY_MODEL=codex-exec/default",
     "export DSPY_TEMPERATURE=0",
-    "export DSPY_MAX_TOKENS=256",
+    "export DSPY_MAX_TOKENS=4096",
     "",
     "bash scripts/dspy_full_run.sh",
     "```",
@@ -1099,7 +1098,6 @@ async function main() {
   }
 
   await rm(generatedDir, { recursive: true, force: true });
-  await mkdir(openclawDir, { recursive: true });
   await mkdir(hermesDir, { recursive: true });
 
   for (const category of hermesCategories) {
@@ -1113,7 +1111,6 @@ async function main() {
     version: packageJson.version ?? "1.0.0"
   };
 
-  let openclawCount = 0;
   let hermesCount = 0;
 
   for (const entry of blueprints.entries) {
@@ -1122,11 +1119,6 @@ async function main() {
     }
 
     const canonicalEntry = canonById.get(entry.canonical_id);
-
-    if (entry.provider_targets.includes("openclaw")) {
-      await writeOpenClawEntry(entry, canonicalEntry);
-      openclawCount += 1;
-    }
 
     if (entry.provider_targets.includes("hermes")) {
       const categorySlug = hermesEntryCategory.get(entry.slug);
@@ -1145,7 +1137,6 @@ async function main() {
 
   await writeDiscoveryDocs(blueprints, canon, dspy, gepa);
 
-  console.log(`Rendered ${openclawCount} OpenClaw skills into ${openclawDir}`);
   console.log(`Rendered ${hermesCount} Hermes skills into ${hermesDir}`);
   console.log(`Rendered discovery docs into ${readmePath} and ${grimoirePath}`);
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-08T17:51:33.627Z",
+  "generated_at": "2026-03-25T00:36:47.574Z",
   "counts": {
     "skills": 19,
     "spells": 109,
@@ -17,12 +17,6 @@
       "kind": "spell",
       "source_version": "basic-rules-public-index",
       "url": "https://www.dndbeyond.com/sources/basic-rules/spells"
-    },
-    {
-      "id": "grimoire-meta-skills",
-      "kind": "skill",
-      "source_version": "1.0.0",
-      "url": "https://github.com/hmbown/wizards-of-the-ghosts"
     }
   ],
   "entries": [
@@ -34,15 +28,6 @@
       "source_id": "skills-2024-free-rules",
       "source_version": "2024-free-rules",
       "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
-    },
-    {
-      "id": "skill-attune",
-      "kind": "skill",
-      "name": "Attune",
-      "slug": "attune",
-      "source_id": "grimoire-meta-skills",
-      "source_version": "1.0.0",
-      "source_url": "https://github.com/hmbown/wizards-of-the-ghosts"
     },
     {
       "id": "skill-animal-handling",
@@ -67,6 +52,15 @@
       "kind": "skill",
       "name": "Athletics",
       "slug": "athletics",
+      "source_id": "skills-2024-free-rules",
+      "source_version": "2024-free-rules",
+      "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
+    },
+    {
+      "id": "skill-attune",
+      "kind": "skill",
+      "name": "Attune",
+      "slug": "attune",
       "source_id": "skills-2024-free-rules",
       "source_version": "2024-free-rules",
       "source_url": "https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game"
