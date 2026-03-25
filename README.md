@@ -10,9 +10,15 @@
     ╚═══════════════════════════════════════════════════╝
 ```
 
-Unofficial Hermes Agent skill pack built from fantasy spell and skill names.
+A skill pack that teaches your AI agent 123 real capabilities — named after fantasy spells.
 
-Not affiliated with or endorsed by Wizards of the Coast.
+`Detect Magic` scans a repo for hidden automation hooks. `Investigation` traces a bug through four tools until it finds the hex offset that proves the root cause. `Vicious Mockery` tears apart your README and finds the real bugs your politeness was hiding. `Feather Fall` turns a hard crash into a controlled descent. These are procedural markdown skills that install into [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and become `/slash-commands` your agent actually uses.
+
+They are not executable plugins. They are reasoning modes, investigation checklists, and operating procedures that change how the agent thinks — not what tools it has. The best ones produce output you would not get without them.
+
+The metaphor is the interface. The capabilities are real.
+
+> Not affiliated with or endorsed by Wizards of the Coast. See [LEGAL.md](LEGAL.md).
 
 ```
     ┌────────────────────────────────────────────────────────────────────┐
@@ -21,8 +27,6 @@ Not affiliated with or endorsed by Wizards of the Coast.
     │ Containment (10)     Repair (13)          Messaging (9)        │
     └────────────────────────────────────────────────────────────────────┘
 ```
-
-`wizardsoftheghosts` turns public fifth-edition spell and skill names into a product-shaped Hermes skill pack for investigation, automation, monitoring, messaging, repair, staging, and tightly scoped intervention.
 
 ## Quick Install
 
@@ -38,23 +42,28 @@ Or install into your default Hermes home:
 npm run install:hermes-skills
 ```
 
-## Hermes Expectations
+## How It Works
 
-- Hermes discovers installed skills from `~/.hermes/skills` or `$HERMES_HOME/skills`; `npm run install:hermes-skills` copies the generated docs there.
-- The installable Hermes surface lives in `generated/hermes/`. Those files are procedural markdown with YAML frontmatter, not executable plugins by themselves.
-- Most of this pack is best used as reasoning, investigation, planning, triage, or operating-mode scaffolding inside a normal Hermes session.
-- In practice, skills like `detect-magic`, `mage-hand`, `zone-of-truth`, `feather-fall`, and `unseen-servant` work especially well as direct Hermes prompts.
-- After install, every spell is also available as a `/slash-command` in Claude Code (e.g. `/forcecage`, `/true-seeing`).
-- Some skills mention env vars, APIs, or external systems, but this repo does not currently ship a dedicated Hermes integration layer for Home Assistant, Slack, or other services. Those procedures become real only if your Hermes environment already has the matching tools, credentials, and permissions.
+Skills install into `~/.hermes/skills/`. After install, every spell is a `/slash-command` in Claude Code: `/forcecage`, `/true-seeing`, `/vicious-mockery`.
 
-## What Ships
+The installable surface lives in `generated/hermes/`. Those files are procedural markdown with YAML frontmatter, not executable plugins by themselves. They work as reasoning modes, investigation checklists, and operating procedures inside a normal session. Some skills reference external systems (Home Assistant, Slack) but those only become operational if your environment already has the matching tools and credentials.
 
-- `123` Hermes skills drawn from `128` public canon names (`109` spells, `19` skills)
-- `8` Hermes shelves for progressive discovery instead of one giant list
-- `10` featured entry points plus `8` intent-driven browse paths on GitHub
-- public low-risk Hermes surface with `5` refused coercion and memory spells kept off release
+`123` skills across `8` shelves. `5` coercion spells intentionally refused.
 
-## Best First Skills
+## Field-Tested Favorites
+
+These were chosen by actually casting spells on real targets — not by reading descriptions. The criterion: did the spell make the agent do something it would not have done otherwise?
+
+| Rank | Spell | What happened when we cast it |
+| --- | --- | --- |
+| 1 | **[Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md)** | Traced a display bug through four tools (read_file, sed, grep, xxd) and proved root cause from raw hex bytes. The spell pushed past inference into proof. |
+| 2 | **[Vicious Mockery](generated/hermes/influence-and-behavior/vicious-mockery/SKILL.md)** | Tore apart this README. Found a real redaction bug, dead platform references, and a buried lede about what skills actually are. Overrode the agent's politeness reflex. |
+| 3 | **[Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md)** | Scanned the repo and found a self-referential optimization loop, 123 orphaned files for a dead platform, and dormant ML backends nobody had configured. |
+| 4 | **[Fear](generated/hermes/influence-and-behavior/fear/SKILL.md)** | Ran a pre-mortem on this project. Surfaced failure modes forward-looking analysis missed — including the risk that the D&D naming filters out the engineers who need it most. |
+
+Full write-up with methodology: [FAVORITES.md](FAVORITES.md)
+
+## Best Entry Points
 
 | | |
 |---|---|

@@ -63,7 +63,8 @@ async function validateDocs(packageJson) {
     "## Quick Install",
     "## Verification",
     "npm run verify",
-    "procedural markdown with YAML frontmatter, not executable plugins by themselves"
+    "procedural markdown with YAML frontmatter, not executable plugins by themselves",
+    "## Field-Tested Favorites"
   ], "README.md");
 
   requireAll(grimoire, [
