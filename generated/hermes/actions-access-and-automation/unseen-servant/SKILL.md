@@ -84,7 +84,7 @@ Agent: Here is the plan for your branch cleanup servant:
 
        Script:
          git fetch --prune origin
-         for branch in $(git branch -r --merged origin/main | grep -v 'main\|develop'); do
+         git branch -r --merged origin/main | grep -v 'main\|develop' | sed 's/^[[:space:]]*//' | while IFS= read -r branch; do
            echo "$(date -u +%FT%TZ) Deleting $branch" >> cleanup.log
            git push origin --delete "${branch#origin/}"
          done
