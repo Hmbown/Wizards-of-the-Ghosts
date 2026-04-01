@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "influence-and-behavior",
+  "category_slug": "influence-and-behavior",
+  "spell_slug": "suggestion",
+  "spell_focus": "The bard whispers a reasonable-sounding course of action and the target pursues it as if it were their own idea. In practice this is the craft of the nudge: writing the CTA that gets clicked, the notification that gets read, the microcopy that steers behavior without the user feeling steered. Suggestion is not deception — the planted idea must sound reasonable. If it does not survive the sniff test, the spell fails.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Suggestion precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Suggestion: ['The suggested microcopy, CTA, notification text, or nudge language.', 'Placement and timing guidance — where in the flow this should appear.', 'A brief manipulation audit: why this nudge is legitimate, or a flag if it is not.']",
+    "Default guardrails for Suggestion: ['The suggestion must be something a reasonable person would consider beneficial or at least neutral to themselves.', 'Refuse dark patterns: fake urgency, manufactured scarcity, guilt-based CTAs, or opt-out-by-default traps.', 'If the nudge would not survive disclosure — if users would be angry to learn how it was designed — do not ship it.']"
+  ]
+}

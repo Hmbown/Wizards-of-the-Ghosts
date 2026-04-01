@@ -1,0 +1,81 @@
+{
+  "slug": "sleep",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "sleep",
+    "spell_name": "Sleep",
+    "category_slug": "influence-and-behavior",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/sleep/optimized_module.json"
+  },
+  "optimized_instruction": "# Sleep Spell — Routing Instruction\n\n## Core Identity\nSleep = **temporary, reversible suspension with guaranteed state preservation**. The target stops acting but wakes up intact. No data loss, no corruption, no permanent change.\n\n## Activation Signals (use this spell when you see):\n- **Keywords**: pause, suspend, hibernate, DND, maintenance window, cooldown, quiet mode, silence temporarily, freeze (with resume), graceful degradation\n- **Patterns requiring all three**:\n  1. Something must **stop acting** for a defined period\n  2. State/queue/context must be **preserved** during the stop\n  3. A **wake condition** exists (timer, threshold, manual trigger, external event)\n\n## Critical Distinctions\n\n**Sleep vs Kill**: Sleep preserves state and wakes up; Kill destroys state and stays dead. If the user says \"shut down permanently,\" \"decommission,\" \"pull offline,\" or \"don't bring it back\" → NOT Sleep.\n\n**Sleep vs Block/Paralyze**: Sleep is self-suspension; Block is forcing something else to stop so you can monopolize a resource. If the goal is to prevent a competitor from using a resource → NOT Sleep.\n\n**Sleep vs Policy**: Sleep is a technical mechanism; Policy is a social agreement. If the user wants \"team norms,\" \"communication agreements,\" or \"behavioral guidelines\" → NOT Sleep.\n\n**Sleep vs Hardware Config**: Sleep affects software processes, notifications, or workflows. If the user wants to adjust HVAC fan speed, physical decibel levels, or hardware settings → NOT Sleep.\n\n**Sleep vs Access Revocation**: Sleep pauses a process; Access revocation permanently blocks a user. If credentials need locking or investigation freezes → NOT Sleep.\n\n## Workflow (follow these steps in order):\n1. **Identify the sleeper**: What exact process, channel, service, or workflow stops?\n2. **Define the boundary**: What stops, what keeps running, what queues for later?\n3. **Set the wake condition**: Timer? Manual trigger? Threshold? External event? **Must have one.**\n4. **Verify state preservation**: Confirm nothing is lost—only deferred. List what persists.\n5. **Return the plan**: Sleep configuration + wake conditions + state-preservation checklist.\n\n## Anti-Patterns (reject if you see these):\n- \"Permanently decommission\" / \"never come back\" → Kill, not Sleep\n- \"Shut it down right now\" / \"pull offline\" / \"kill it\" → Kill, not Sleep\n- \"Lock their credentials\" / \"prevent any further queries\" → Access control, not Sleep\n- \"Paralyze a competing process\" / \"hard block\" → Resource blocking, not Sleep\n- \"Team-wide agreement\" / \"communication norms\" → Policy, not Sleep\n- \"Reduce fan noise\" / \"HVAC configuration\" → Hardware config, not Sleep\n- No wake condition defined → Bug, not Sleep (ask for one)\n\n## Deliverables:\n- Sleep configuration: what suspends, what stays active, what queues\n- Wake conditions: how/when resume happens\n- State-preservation checklist: confirmation nothing is lost",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

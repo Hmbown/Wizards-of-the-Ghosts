@@ -1,6 +1,6 @@
 ---
 name: forcecage
-description: "Use this spell when you need to run untrusted code, an experimental agent, or a destructive operation inside a tested containment boundary, observe it from outside, and define the release condition before anything descends into a looser environment."
+description: "Forcecage creates a pre-tested containment boundary around a subject that has not yet run. It is not about stopping, pausing, or muting something already in motion. The cage is built first, self-tested, then the subject enters. The operator watches from outside and decides whether to release."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -32,14 +32,16 @@ Contain untrusted code, agents, or operations inside a tested cage before anythi
 ```
 
 ## What This Skill Does
-Use this spell when you need to run untrusted code, an experimental agent, or a destructive operation inside a tested containment boundary, observe it from outside, and define the release condition before anything descends into a looser environment.
+Forcecage creates a pre-tested containment boundary around a subject that has not yet run. It is not about stopping, pausing, or muting something already in motion. The cage is built first, self-tested, then the subject enters. The operator watches from outside and decides whether to release.
 In this grimoire, Forcecage is treated as a literal spell with a prototype delivery profile.
 Canonical reference input: Forcecage (spell).
 ## When To Use
 
-- You need to execute untrusted or experimental code in a synthetic or replay environment before trusting it anywhere near production.
-- An agent, parser, extension, or refactor tool needs explicit filesystem, network, process, and credential boundaries while it is observed from outside the cage.
-- A destructive or mutating operation should prove itself in containment before any human authorizes a step-down into a less restricted environment.
+- Trigger this spell when the user asks to contain, cage, sandbox, isolate, or box untrusted/experimental/dangerous code, agents, tools, or operations before they run. Look for:
+- Explicit boundary requests: "only inside", "cannot reach", "blocked from", "disposable", "throwaway"
+- Subject types: untrusted code, third-party binaries, experimental agents, red-team samples, vendor scripts, refactor tools
+- Observation intent: "watch what it does", "log denied actions", "see what it reaches for", "observe from outside"
+- Release conditions: "before we trust it", "prove itself first", "step-down after", "authorize descent"
 
 ## Prerequisites
 
@@ -48,25 +50,28 @@ Canonical reference input: Forcecage (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Define the containment boundary: allowed files, network policy, process spawning, credential access, and resource limits.
-3. Build the cage in a synthetic environment or copied workspace, then self-test the bars before introducing the subject.
-4. Run the subject inside the cage and observe it from outside with audit logs, denied-action telemetry, and other operator signals.
-5. Set a release condition, authorization check, and descent mechanism before any step-down into a looser environment.
+2. Define the boundary: List exactly what the subject CAN access (specific files, URLs, namespaces) and what is BLOCKED (network egress, credential stores, process spawning, writes outside a target directory). Default to deny-all.
+3. Build and self-test the cage: Create the containment environment (disposable workspace, copied repo, fake namespace, egress-blocked container). Run probes to confirm blocked surfaces actually block. A cage that hasn't been challenged is not trusted.
+4. Run the subject inside, observe from outside: Execute the subject within the boundary. Collect audit logs of denied actions, attempted escapes, and resource access patterns. The operator stays outside the cage.
+5. Set release condition before descent: Define what must be true for the subject to leave the cage (e.g., zero unauthorized writes, specific test pass, operator sign-off). If the condition is not met, the subject stays cage-only. If met, authorize a single step-down to a less restricted environment.
 6. Stop for explicit confirmation before taking a live action that changes access, triggers an alert, or touches a real system boundary.
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A configured containment boundary with explicit blocked surfaces and operator visibility.
-- An execution report that includes attempted boundary violations, denied actions, and other outside-the-cage observations.
-- A safety assessment that states the release condition and whether the subject should stay cage-only or descend one layer.
+- Containment boundary spec: allowed surfaces, blocked surfaces, resource limits
+- Execution report: attempted violations, denied actions, escape telemetry
+- Safety assessment: release condition stated, recommendation (stay caged vs. descend one layer)
 
 ## Pitfalls / Guardrails
 
 - Call out the glue, permissions, or missing infrastructure before you imply this is fully operational.
-- Test the cage before use; a sandbox that has not been challenged is not yet trusted.
-- Do not assume containment is perfect; keep operator visibility active and treat denied actions as findings.
-- Prefer synthetic environments, copied workspaces, and egress-blocked defaults over exposing real production systems, secrets, or customer data.
+- Do not use for: Freezing/pausing a running workflow → use a halt/interrupt spell
+- Do not use for: Muting a specific stream or endpoint → use a filter/silence spell
+- Do not use for: Editing CI/config to restrict a job → use a policy/config spell
+- Do not use for: Inspecting existing sandbox logs → use an audit/inspect spell
+- Do not use for: Disabling a feature temporarily → use a toggle/disable spell
+- Do not use for: Forcecage is the only spell that combines: (1) pre-run boundary definition, (2) cage self-test, (3) outside observation with violation logging, and (4) explicit release authorization.
 
 ## Verification
 

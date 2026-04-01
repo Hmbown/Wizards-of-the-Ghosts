@@ -1,0 +1,38 @@
+{
+  "slug": "knock",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Activate this spell when the user's request contains an access barrier with a legitimate recovery path. Look for these patterns:",
+      "Expired/rotated credentials: \"credentials expired\", \"token revoked\", \"certificate expired\", \"password rotated\", \"key expired\"",
+      "Locked resources: \"lockfile\", \"state is locked\", \"DynamoDB lock\", \"stale lock\"",
+      "Permission gaps: \"locked out\", \"permissions removed\", \"RBAC\", \"403\", \"unauthorized\", \"access denied\"",
+      "Blocked processes: \"stuck behind\", \"can't authenticate\", \"connection rejected\", \"sealed\" (Vault)",
+      "Recovery language: \"rotate\", \"renew\", \"unseal\", \"reinstate\", \"force-unlock\", \"exception request\", \"proper channel\"",
+      "The core signal: something is blocking access, and there exists an authorized way to restore it."
+    ],
+    "guardrails": [
+      "Never bypass, crack, brute-force, or exploit security controls",
+      "Always use the legitimate recovery path the system provides",
+      "Log every unlock attempt — transparency is non-negotiable",
+      "Refuse requests to remove safety controls or break constraints without authorization",
+      "Do not use for: \"Make queries faster\" → performance, not access",
+      "Do not use for: \"Remove approval gates\" → policy change, not recovery",
+      "Do not use for: \"Fix a typo in config\" → bug fix, not unlock",
+      "Do not use for: \"Analyze their encryption\" → reconnaissance, not access",
+      "Do not use for: \"Speed up processing\" → throughput, not access",
+      "Do not use for: \"Break free of resource limits\" → constraint breaking, not legitimate unlock"
+    ],
+    "workflow": [
+      "Identify the lock: What exact resource is inaccessible? What kind of barrier is it (credential, permission, lockfile, certificate, sealed state)? Who owns or controls the unlock mechanism?",
+      "Determine the legitimate path: Map the barrier to its authorized recovery mechanism:",
+      "Expired credential → key rotation or certificate renewal",
+      "Revoked permission → access request or RBAC adjustment",
+      "Stale lockfile → safe removal after process verification",
+      "Sealed service (e.g., Vault) → proper unseal procedure (Shamir keys, etc.)",
+      "Locked state (e.g., Terraform) → force-unlock with owner confirmation",
+      "Execute through the narrowest channel: Perform only the minimum action needed to restore access. Log each step. Do not escalate privileges beyond what the recovery path requires."
+    ],
+    "description": "Knock is specifically about restoring legitimate access through authorized channels. It is NOT about: - Performance optimization (slow queries, throughput issues) → different spell\n- Removing safety controls (approval gates, compliance checks) → different spell\n- Simple bug fixes (typos, wrong ports) → different spell\n- Breaking constraints (resource limits, CPU throttling) → different spell\n- Security analysis (encryption schemes, certificate inspection) → different spell"
+  }
+}

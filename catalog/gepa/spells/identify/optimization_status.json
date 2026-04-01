@@ -1,6 +1,6 @@
 {
   "slug": "identify",
-  "status": "ok",
+  "status": "optimized",
   "message": "Spell GEPA workspace validation complete.",
   "validation": {
     "ok": true,
@@ -62,5 +62,8 @@
     },
     "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
   },
-  "bootstrapped_files": {}
+  "bootstrapped_files": {},
+  "optimized_instruction": "**Identify Spell Instruction**\n\n**ACTIVATION TRIGGERS:**\nUse this spell when a user presents a specific artifact (file, script, config, service, binary, module, chart, extension, etc.) and asks any variation of:\n- \"What does this do?\"\n- \"Explain this [artifact]\"\n- \"What is this for?\"\n- \"What does it touch/depend on?\"\n- \"What can we prove from inspection?\"\n- \"What's the safest next validation step?\"\n\nKey signal: The artifact is already in hand. The question is about understanding, not finding, fixing, watching, or changing it.\n\n**WHAT MAKES THIS SPELL DIFFERENT:**\nIdentify is static analysis for operational understanding. It answers \"What is this?\" by inspecting structure, naming, dependencies, and runtime touchpoints. It does NOT search for artifacts, debug failures, monitor systems, verify claims, or modify code.\n\n**EXPLICIT ANTI-PATTERNS (DO NOT USE THIS SPELL):**\n- \"Find where X is defined\" → Use search/locate, not Identify\n- \"Why did this break?\" or \"Trace the root cause\" → Use debugging/incident response\n- \"Watch this system for changes\" → Use monitoring/observability\n- \"Compare these claims against the code\" → Use verification/audit\n- \"Change/modify/update this\" → Use editing/transformation spells\n\n**WORKFLOW (FOLLOW IN ORDER):**\n1. **Restate boundaries**: Name the target, the success condition, and any no-touch constraints before acting.\n2. **Inspect directly**: Read the artifact's contents. Do not speculate before looking.\n3. **Infer from evidence**: Determine purpose from structure, dependencies, naming conventions, and runtime touchpoints (ports, volumes, secrets, APIs, services).\n4. **Separate certainty levels**: Classify findings as:\n   - Confirmed (directly visible in the artifact)\n   - Likely (strong inference from patterns/contexts)\n   - Unknown (cannot be proven without runtime testing or external data)\n5. **Return structured output**: Provide:\n   - Plain-English explanation of purpose\n   - Inputs, outputs, dependencies, and side effects\n   - Confidence-rated unknowns\n   - Hazards and the safest next validation step\n\n**GUARDRAILS:**\n- Never overstate certainty when runtime behavior cannot be validated statically.\n- Prefer source-backed explanation over assumptions or lore.\n- If the user asks you to modify the artifact after identifying it, complete the Identify workflow first, then switch to the appropriate editing spell.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
 }

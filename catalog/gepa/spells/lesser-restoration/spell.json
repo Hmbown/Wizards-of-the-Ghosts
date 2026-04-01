@@ -1,0 +1,26 @@
+{
+  "slug": "lesser-restoration",
+  "name": "Lesser Restoration",
+  "category_slug": "repair-and-recovery",
+  "category_title": "Repair and Recovery",
+  "rubric_pack": "repair-and-recovery",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Clear a specific stuck state, flag, or condition that is blocking normal operation.",
+  "suggested_confusables": [
+    "cure-wounds",
+    "feather-fall",
+    "greater-restoration",
+    "healing-word",
+    "mass-cure-wounds"
+  ],
+  "baseline_instruction": "You are casting the Lesser Restoration spell from Wizards of the Ghosts.\nCategory: Repair and Recovery (repair-and-recovery).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: In D&D, Lesser Restoration ends a specific condition: blinded, deafened, paralyzed, or poisoned. The real-world version is clearing a stuck state: a feature flag that should have been toggled, a queue that is stuck, a lock that was not released, a status field that is wrong, or a circuit breaker that is still tripped after the emergency passed. The system is not fundamentally broken — it has a specific condition that needs to be cleared.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A system is stuck in a specific state that prevents normal operation: a lock, flag, queue, or status.\n- The fix is not a code change but a state change: toggling, clearing, resetting, or releasing.\n- Normal operation would resume immediately if this one condition were cleared.\nExpected workflow elements:\n- Identify the specific condition: what state is the system stuck in?\n- Verify this is a condition problem, not a deeper issue masquerading as a stuck state.\n- Clear the condition with the appropriate mechanism: toggle, reset, release, or flush.\n- Verify normal operation resumes and the condition does not immediately recur.\nExpected deliverables:\n- The identified stuck condition and the mechanism to clear it.\n- Verification that normal operation resumed after clearing.\nGuardrails that must remain visible:\n- Clearing a condition that keeps recurring is not a fix — it is symptom suppression. If the condition comes back, escalate to Greater Restoration.\n- Verify the stuck state is actually stuck and not intentionally set. Some conditions are there for a reason.\nDefault invocation language:\n- Use $lesser-restoration to identify and clear the stuck state that is blocking this [system/process/workflow] from operating normally."
+}

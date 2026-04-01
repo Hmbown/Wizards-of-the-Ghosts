@@ -1,0 +1,81 @@
+{
+  "slug": "dimension-door",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "dimension-door",
+    "spell_name": "Dimension Door",
+    "category_slug": "actions-access-and-automation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/dimension-door/optimized_module.json"
+  },
+  "optimized_instruction": "**dimension-door**\n\nActivate when the user needs a FAST, REVERSIBLE context switch between two KNOWN states. Both endpoints must already exist and be familiar. The user is NOT moving permanently — they plan to return.\n\n**TRIGGER SIGNALS:**\n- \"switch between\", \"jump to\", \"toggle\", \"context switch\", \"hop over\"\n- Named endpoints: \"from X to Y\", \"branch A to branch B\", \"staging to prod\"\n- \"come back\", \"get back to\", \"without losing\", \"keep alive\"\n- Temporary investigation: \"quickly check\", \"need to look at\", \"then return\"\n- Parallel sessions: \"both need to stay live\", \"keep both running\"\n\n**ACTIVATE THIS SPELL WHEN:**\n- User names specific source AND destination (branches, environments, accounts, clusters, terminals, workspaces)\n- The switch is temporary and reversible\n- The challenge is preserving state/context, not transforming systems\n- Both endpoints are already set up and known\n\n**NEVER ACTIVATE WHEN:**\n- Migration or permanent relocation (\"migrate\", \"move permanently\", \"relocate\")\n- Building automation/pipelines (\"set up continuous delivery\", \"permanent teleportation circle\")\n- Restoring broken access (\"SSH key expired\", \"can't get in\", \"blocked\")\n- Copying/duplicating data (\"copy database\", \"replicate\", \"200GB transfer\")\n- Structural transformation (\"split monorepo\", \"restructure\")\n- Discovery/exploration (\"what's out there\", \"map the infrastructure\", \"I don't know what exists\")\n\n**WORKFLOW (follow in order):**\n1. LOCK SOURCE STATE: Identify exactly what must be preserved — open files, running processes, env vars, credentials, branch state, terminal history, REPL state.\n2. PACKAGE CONTEXT: Create the minimum viable snapshot — bookmark current location, save env state, note uncommitted changes, record running service PIDs.\n3. EXECUTE SWITCH: Provide the exact commands to move to destination — git checkout, kubectl config use-context, aws configure, tmux switch, etc.\n4. PREPARE REENTRY: Give the reverse commands and state-restoration steps so the user can return to source without confusion.\n5. CALL OUT HIDDEN STATE: Warn about any state left behind that could cause confusion (running servers, uncommitted work, active sessions).\n\n**DELIVERABLES:**\n- Context-switch checklist (what to save before leaving)\n- State inventory (what travels with you)\n- Switch commands (source → destination)\n- Reentry commands (destination → source)\n- Hidden state warnings\n\n**KEY DIFFERENTIATOR:** This spell is about TEMPORARY jumps with guaranteed return. If the user is moving permanently, building pipelines, or exploring unknown territory, this is the wrong spell.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

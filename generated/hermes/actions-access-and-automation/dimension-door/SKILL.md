@@ -25,9 +25,14 @@ In this grimoire, Dimension Door is treated as a metaphorical spell with a shipp
 Canonical reference input: Dimension Door (spell).
 ## When To Use
 
-- You need a fast switch between two familiar branches, environments, accounts, or workspaces.
-- The hard part is carrying the right context, not transforming the system itself.
-- You want a reversible handoff rather than a permanent move.
+- "switch between", "jump to", "toggle", "context switch", "hop over"
+- Named endpoints: "from X to Y", "branch A to branch B", "staging to prod"
+- "come back", "get back to", "without losing", "keep alive"
+- Temporary investigation: "quickly check", "need to look at", "then return"
+- Parallel sessions: "both need to stay live", "keep both running"
+- User names specific source AND destination (branches, environments, accounts, clusters, terminals, workspaces)
+- The switch is temporary and reversible
+- The challenge is preserving state/context, not transforming systems
 
 ## Prerequisites
 
@@ -36,16 +41,20 @@ Canonical reference input: Dimension Door (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Confirm the exact source and destination states, along with what must be carried across.
-3. Package the minimum viable context for the jump: credentials, branch state, env vars, or notes.
-4. Return the switch sequence plus a reentry checklist so you can step back without confusion.
-5. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. LOCK SOURCE STATE: Identify exactly what must be preserved — open files, running processes, env vars, credentials, branch state, terminal history, REPL state.
+3. PACKAGE CONTEXT: Create the minimum viable snapshot — bookmark current location, save env state, note uncommitted changes, record running service PIDs.
+4. EXECUTE SWITCH: Provide the exact commands to move to destination — git checkout, kubectl config use-context, aws configure, tmux switch, etc.
+5. PREPARE REENTRY: Give the reverse commands and state-restoration steps so the user can return to source without confusion.
+6. CALL OUT HIDDEN STATE: Warn about any state left behind that could cause confusion (running servers, uncommitted work, active sessions).
+7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A clean context-switch checklist.
-- A list of state that must travel with you.
-- A reentry note for getting back to the original location.
+- Context-switch checklist (what to save before leaving)
+- State inventory (what travels with you)
+- Switch commands (source → destination)
+- Reentry commands (destination → source)
+- Hidden state warnings
 
 ## Pitfalls / Guardrails
 

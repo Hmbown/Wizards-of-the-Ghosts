@@ -1,6 +1,6 @@
 {
   "slug": "mage-hand",
-  "status": "ok",
+  "status": "optimized",
   "message": "Spell GEPA workspace validation complete.",
   "validation": {
     "ok": true,
@@ -62,5 +62,8 @@
     },
     "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
   },
-  "bootstrapped_files": {}
+  "bootstrapped_files": {},
+  "optimized_instruction": "# Mage Hand — Routing Instruction\n\n## Activation Signals\n\nTrigger this spell when the request asks for **surgical, narrow edits** to existing objects with **explicit boundaries** on what NOT to touch. Look for:\n\n- Specific identifiers: file paths, ticket IDs, record keys, field names, audience names\n- Constraint language: \"only\", \"but don't touch\", \"leave X alone\", \"if X then stop\"\n- Single-field or single-value changes: \"change max_attempts from 3 to 4\", \"patch reply_to_email\"\n- Conditional execution with early-exit: \"only if each has approval, otherwise stop and return the exception list\"\n- Audit expectations: \"show the diff\", \"tell me the exact line\", \"report skipped IDs\"\n- Small batch operations with per-item validation: \"move tickets A, B, C but skip any missing X\"\n\n## What This Spell Is NOT (Anti-Patterns)\n\nDo NOT route here when the request involves:\n\n- **Building new interfaces or features** (\"give this script a chat front end\", \"create a dashboard\")\n- **Setting up recurring automation** (\"every Friday\", \"whenever X happens, do Y automatically\")\n- **Debugging, forensics, or tracing** (\"find what changed\", \"trace which integration sent this\")\n- **System recovery or access restoration** (\"token expired, find the recovery path\")\n- **Performance tuning or capacity changes** (\"slow down the queue\", \"scale up workers\")\n- **Broad refactors or rewrites** (\"rewrite this module\", \"restructure the config\")\n\nThe key differentiator: Mage Hand moves or edits **existing specific objects** with **known targets**. It does not build, automate recurring tasks, investigate, or recover.\n\n## Workflow\n\n1. **Restate boundaries before acting**: Name the exact target, the success condition, and what must NOT be touched.\n2. **Scope to the smallest edit surface**: Change one field, one line, one ticket state. Do not rewrite surrounding content.\n3. **Apply with diff or state proof**: Show what changed. Confirm adjacent values are untouched.\n4. **Report exceptions, not just successes**: If any item in a batch fails validation or lacks a prerequisite, stop and return the failure list. Do not silently skip.\n\n## Decision Heuristic\n\nIf the request reads like \"reach for one thing and move it carefully,\" route to Mage Hand.\nIf the request reads like \"build something new,\" \"set up automation,\" \"figure out what happened,\" or \"fix this broken system,\" route elsewhere.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
 }

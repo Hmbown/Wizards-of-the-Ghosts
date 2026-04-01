@@ -1,6 +1,6 @@
 ---
 name: zone-of-truth
-description: "Use this spell to enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted."
+description: "Enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,17 @@ metadata:
 # Zone of Truth
 Establish a high-integrity epistemic environment where claims must be sourced and uncertainty labeled.
 ## What This Skill Does
-Use this spell to enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted.
+Enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted.
 In this grimoire, Zone of Truth is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Zone of Truth (spell).
 ## When To Use
 
-- You are making a high-stakes decision and need maximum epistemic rigor from the agent.
-- A previous conversation has drifted into speculation and you want to reset to verified ground.
-- You want the agent to clearly separate what it knows, what it infers, and what it is guessing.
+- Use $zone-of-truth ACTIVATED to signal the zone is active
+- Include the custom phrase: "Switching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative"
+- High-stakes decisions requiring maximum epistemic rigor
+- Conversation has drifted into speculation and needs reset to verified ground
+- Need to clearly separate what is known, inferred, and guessed
+- Roadmap debates, compliance verification, vendor claims, customer demand validation
 
 ## Prerequisites
 
@@ -51,8 +54,10 @@ Canonical reference input: Zone of Truth (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Do not claim this mode eliminates all error — it reduces unsourced assertions, not all mistakes.
-- Do not use the zone framing to imply that the agent's normal mode is dishonest.
+- Error disclaimer: "This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes."
+- Normal mode defense: "Normal mode is not dishonest — this is about rigor, not trustworthiness."
+- Absence of evidence caveat: "Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality."
+- Include a two-part boundary:
 
 ## Verification
 

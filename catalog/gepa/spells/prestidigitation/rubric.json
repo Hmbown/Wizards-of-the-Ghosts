@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "actions-access-and-automation",
+  "category_slug": "actions-access-and-automation",
+  "spell_slug": "prestidigitation",
+  "spell_focus": "Use this cantrip for small acts of practical magic: reformat some text, clean a small dataset, generate a quick chart, convert a unit, tidy a file, or produce a one-off artifact.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Prestidigitation precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Prestidigitation: ['The completed small artifact, fix, or transformation.', 'A one-line note on what was done.', 'A flag if the task was actually bigger than it looked.']",
+    "Default guardrails for Prestidigitation: ['Do not let prestidigitation scope-creep into a full project. If the task needs real work, name the right spell instead.', 'Quick does not mean careless - even small tricks should be correct.']"
+  ]
+}

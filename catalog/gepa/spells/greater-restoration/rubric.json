@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "repair-and-recovery",
+  "category_slug": "repair-and-recovery",
+  "spell_slug": "greater-restoration",
+  "spell_focus": "In D&D, Greater Restoration ends charm, petrification, curses, ability score reductions, and hit point maximum reductions — the serious, long-term ailments. The real-world version is deep system recovery: unfucking a database that has been gradually corrupted, restoring a codebase that has accumulated technical debt to the point of dysfunction, or recovering from a long-running misconfiguration that has silently degraded performance.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Greater Restoration precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Greater Restoration: ['A restoration plan: ordered steps to undo accumulated damage.', 'Root-cause identification: what caused the degradation and how to prevent recurrence.', 'A post-restoration health check confirming the system is back to full function.']",
+    "Default guardrails for Greater Restoration: ['Greater Restoration is expensive and disruptive. Verify that Lesser Restoration or Cure Wounds cannot solve the problem first.', 'Do not restore to a previous known-good state without checking whether that state had its own problems. Rolling back is not the same as restoring.']"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "actions-access-and-automation",
+  "category_slug": "actions-access-and-automation",
+  "spell_slug": "longstrider",
+  "spell_focus": "Longstrider is optimization for systems that already work. It focuses on build speed, cache design, parallelization, query tuning, shortcut discovery, and other ways to cover the same ground faster. The spell cares about sustained pace, not flashy one-off benchmarks.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Longstrider precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Longstrider: ['A prioritized optimization plan.', 'A before-and-after measurement strategy.', 'A watchlist for correctness, cost, or cache-invalidation regressions.']",
+    "Default guardrails for Longstrider: ['Do not optimize based on vibes; identify the real bottleneck first.', 'Protect correctness and maintainability instead of chasing speed at any price.']"
+  ]
+}

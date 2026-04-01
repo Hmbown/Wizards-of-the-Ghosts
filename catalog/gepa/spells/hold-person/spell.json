@@ -1,0 +1,26 @@
+{
+  "slug": "hold-person",
+  "name": "Hold Person",
+  "category_slug": "influence-and-behavior",
+  "category_title": "Influence and Behavior",
+  "rubric_pack": "influence-and-behavior",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "prototype",
+  "literalness": "hybrid",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Freeze a process, account, or workflow in place with administrative authority.",
+  "suggested_confusables": [
+    "bane",
+    "bestow-curse",
+    "calm-emotions",
+    "charm-person",
+    "confusion"
+  ],
+  "baseline_instruction": "You are casting the Hold Person spell from Wizards of the Ghosts.\nCategory: Influence and Behavior (influence-and-behavior).\nReality tier: prototype. Literalness: hybrid.\nSpell concept: Hold Person paralyzes a creature in place. The real-world version is administrative lockout: freezing an account, suspending a process, or putting a workflow on hold. Unlike Sleep (which is graceful suspension with state preservation), Hold Person is a hard freeze — nothing moves until explicitly released. This requires legitimate authority.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- An account, process, or workflow needs to be frozen pending investigation or review.\n- You need to design an administrative hold or suspension mechanism with proper authorization.\nExpected workflow elements:\n- Verify authorization: who has the authority to freeze this target, and is this invocation legitimate?\n- Define the freeze scope: what stops, what continues, and what happens to in-flight operations.\n- Set release conditions: who can unfreeze, under what circumstances, and with what audit trail.\n- Deliver the hold plan with authorization chain and release procedures.\nExpected deliverables:\n- A hold specification: what is frozen, by whose authority, and under what conditions.\n- Release procedures: how to unfreeze, who can authorize it, and what audit trail is required.\nGuardrails that must remain visible:\n- Hold requires legitimate administrative authority. This is not a tool for unauthorized denial of service.\n- Always define release conditions. A hold without release criteria is a permanent lockout, which is a different and more dangerous action.\nDefault invocation language:\n- Use $hold-person to design an administrative hold for this [account/process/workflow] with proper authorization and release conditions."
+}

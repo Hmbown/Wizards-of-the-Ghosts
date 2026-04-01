@@ -1,0 +1,81 @@
+{
+  "slug": "polymorph",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "polymorph",
+    "spell_name": "Polymorph",
+    "category_slug": "actions-access-and-automation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/polymorph/optimized_module.json"
+  },
+  "optimized_instruction": "# Polymorph Spell — Routing Instruction\n\n## When to Activate\n\nActivate this spell when the user asks to **convert, transform, or migrate** data, code, or specifications **from one representation format to another** where the source and target have **different structures** and require **real semantic mapping**.\n\n**Trigger signals:**\n- Verbs: \"convert\", \"transform\", \"translate\", \"migrate\" (between formats)\n- Explicit format pairs: \"CSV to JSON\", \"Python to JavaScript\", \"REST to GraphQL\", \"YAML to HCL\", \"Swagger to OpenAPI\", \"Avro to JSON Schema\"\n- Phrases: \"preserve the structure but change the format\", \"map X concepts to Y\", \"flag what doesn't translate\", \"equivalent in [target format]\"\n- Scope indicators: \"150 test files\", \"50 components\", \"entire test suite\" (still this spell if it's format conversion at scale)\n\n## When NOT to Activate (Anti-Patterns)\n\nDo NOT activate this spell for:\n- **Global rename/refactor**: \"rename module X to Y across the codebase\" — same structure, different names\n- **Disguise/wrapper layers**: \"make JSON look like XML without changing backend\" — not actual transformation\n- **Workflow orchestration**: \"chain these scripts into a pipeline\", \"create a DAG\" — about execution order, not representation\n- **Worker pools/parallelism**: \"spawn background workers for each record\" — about concurrency, not format\n- **Full redesign from scratch**: \"rewrite as blockchain-based system\" — new architecture, not mapping\n- **Cloning/duplicating**: \"make staging look like production\" — copying, not transforming\n\n## Core Distinction\n\nThis spell is about **representation change**, not:\n- Naming changes (same structure, different identifiers)\n- Execution changes (same code, different runtime)\n- Architecture changes (new system design)\n- Duplication (same thing, different place)\n\nThe key test: **Can you point to a source artifact and a target artifact where the same information is expressed in structurally different ways?** If yes → Polymorph.\n\n## Workflow\n\n1. **Identify source and target representations** — name both formats explicitly\n2. **Map structural correspondences** — list what maps to what; identify what has no equivalent\n3. **Execute transformation** — convert preserving semantics; flag losses immediately\n4. **Validate and report** — confirm output is well-formed; document preserved, approximated, and lost elements\n\n## Guardrails\n\n- **Always report losses** — never claim lossless conversion when formats differ in expressive power\n- **Flag ambiguous mappings** — when source concept has no clean target equivalent, say so\n- **Validate output format** — the result must be syntactically valid in the target representation",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

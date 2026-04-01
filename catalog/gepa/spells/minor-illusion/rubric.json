@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "simulation-and-staging",
+  "category_slug": "simulation-and-staging",
+  "spell_slug": "minor-illusion",
+  "spell_focus": "In D&D, Minor Illusion is the cantrip every illusionist knows: a small sound or a simple image, lasting one minute, costing nothing. The real-world version is the quick mockup. A placeholder wireframe. A napkin sketch. Lorem ipsum in a layout. A throwaway code snippet that proves a concept. Minor Illusion is not about fidelity — it is about speed. The idea does not need to be good yet. It needs to exist so people can react to something concrete instead of arguing about abstractions.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Minor Illusion precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Minor Illusion: ['A quick, disposable artifact: wireframe, sketch, placeholder, or rough prototype.', 'An explicit label marking it as a sketch, not a finished product.']",
+    "Default guardrails for Minor Illusion: ['Minor Illusion is disposable by design. If you are spending more than a few minutes, you are casting a different spell.', 'Always label sketches as sketches. Unlabeled mockups that look like finished work create false expectations.', 'Do not fall in love with the illusion. Its purpose is to provoke a reaction, not to ship.']"
+  ]
+}

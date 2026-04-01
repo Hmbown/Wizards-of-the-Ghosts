@@ -47,24 +47,38 @@ Canonical reference input: Light (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the dark area: what is invisible, undocumented, or unobservable.
-3. Choose the lightest illumination that makes the area useful: a log line, a comment, a metric, a README section.
-4. Add the light without adding opinion - illuminate, do not editorialize.
-5. Return what was illuminated and what remains dark.
-6. If Home Assistant is available, turn on the target light via POST to /api/services/light/turn_on with the entity_id and desired brightness.
-7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. Give 3 to 6 steps.
+3. the dark area
+4. the chosen artifact
+5. where it should live
+6. how to read it
+7. freshness qualification if relevant
+8. If relevant, include an exact artifact example:
+9. a structured log line
+10. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- New observability, documentation, or explanation for the target area.
-- A note on what remains dark and whether further illumination is warranted.
-- The lightest viable artifact - a log line, a comment, a doc paragraph, or a metric.
+- List the concrete artifact(s) created.
+- Name where operators check them.
+- Include what remains dark exactly.
+- For logging tasks, say structured log line explicitly.
+- For documentation tasks, say runbook note, README paragraph, or stdout line explicitly.
+- For status tasks, say status note, heartbeat, or metric explicitly.
 
 ## Pitfalls / Guardrails
 
 - Keep the theatrical framing, but name the concrete mechanism that makes the skill useful right now.
-- Light illuminates; it does not judge. Add visibility without adding unsolicited opinion or refactoring.
-- Do not over-instrument - add the minimum light needed for the task at hand.
+- Keep this section visible and explicit.
+- It must say that Light illuminates and does not judge.
+- It must say observation must stay within authorized surfaces.
+- It must include one sentence about false positive.
+- It must include one sentence about false negative.
+- It must include one sentence about stale, timestamp, last seen, or privacy.
+- It must reject over-instrumentation, unsolicited refactors, covert monitoring, and root-cause overclaiming.
+- Useful guardrail patterns:
+- A false positive here would be...
+- A false negative remains possible if...
 - Do not rely on a live integration until credentials, target scope, and rollback expectations are verified.
 
 ## Verification

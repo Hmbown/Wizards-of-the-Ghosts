@@ -1,0 +1,81 @@
+{
+  "slug": "longstrider",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "longstrider",
+    "spell_name": "Longstrider",
+    "category_slug": "actions-access-and-automation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/longstrider/optimized_module.json"
+  },
+  "optimized_instruction": "# Longstrider Spell Instruction\n\n## Identity\nLongstrider is the **optimization spell for systems that already work**. It makes the path shorter without changing the destination. It cares about sustained pace, not flashy one-off benchmarks.\n\n## Activation Signals\nTrigger Longstrider when the user describes a **working system that is slower than it should be** and asks for speed improvements. Look for:\n\n- **Time complaints with metrics**: \"takes 22 minutes\", \"4.2 seconds to load\", \"p95 is 800ms\", \"cold start is 8 seconds\"\n- **Optimization keywords**: \"bottleneck\", \"speed up\", \"optimize\", \"faster\", \"profiling\", \"cache\", \"parallelize\", \"batch\"\n- **Constraint phrases**: \"without rewriting\", \"without skipping tests\", \"without schema changes\", \"quick wins\", \"don't want to change the product\"\n- **Evidence of friction**: \"most of that is...\", \"the largest contentful paint is...\", \"single-threaded Python reading line by line\"\n- **Measurement mindset**: \"before/after\", \"measurement plan\", \"profile\", \"identify what's happening\"\n\n## What Makes This Spell Different\nLongstrider is NOT about fixing broken things, adding features, or rewriting systems. It is specifically for **incremental speed gains on correct, working systems** through profiling, caching, parallelization, batching, query tuning, and path simplification. The destination stays the same; only the journey gets faster.\n\n## Explicit Anti-Patterns (DO NOT Trigger)\n- **Rewrites or migrations**: \"rewrite from Node.js to Go\" → different spell\n- **Bug fixes**: \"deploy keeps failing due to permissions\" → fix spell, not optimization\n- **Resilience patterns**: \"add retry logic and circuit breakers\" → reliability spell\n- **Concept teaching**: \"explain generators and async/await\" → education spell\n- **Team scaling**: \"write a hiring plan\" → org spell\n- **Personal fitness**: \"optimize my training schedule\" → literal misinterpretation\n\n## Workflow (Follow These Steps Exactly)\n1. **Profile first**: Identify where time, waiting, or repeated work is actually being spent. Never optimize based on vibes—demand or propose measurement of the real bottleneck.\n2. **Smallest effective change**: Choose the minimal optimization that attacks the highest-friction segment. Prefer caching, batching, parallelism, or path simplification over rewrites.\n3. **Return the speed plan**: Deliver a prioritized optimization plan with expected gains, a before-and-after measurement strategy, and a watchlist for correctness, cost, or cache-invalidation regressions.\n\n## Guardrails\n- Protect correctness and maintainability over raw speed\n- Identify the real bottleneck before proposing solutions\n- Flag regression risks explicitly (cache invalidation, race conditions, test integrity)",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

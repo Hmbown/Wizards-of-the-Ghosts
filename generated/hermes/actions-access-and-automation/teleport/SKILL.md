@@ -1,6 +1,6 @@
 ---
 name: teleport
-description: "Teleport is full-context migration: an application, environment, dataset, or service estate moves from one place to another in a way that tries to feel instantaneous to everyone depending on it. In reality, there is always preparation behind the magic. Data has to stay consistent, dependencies have to reattach, traffic has to cut over, and the old world has to remain recoverable long enough to trust the new one. The spell is powerful because it compresses a terrifying amount of movement into one decisive act. It is dangerous for exactly the same reason."
+description: "Teleport is FULL-CONTEXT migration, not partial transformation. The defining characteristic is that EVERYTHING must move together and keep working: data, dependencies, auth, traffic routing, background jobs, secrets, and human workflows. The old system must remain recoverable until the new one is proven. This spell IS: Database migrations (RDS→Cloud SQL, self-managed→Atlas), cloud provider moves (on-prem→AWS, Heroku→K8s), environment promotions (staging→prod), account/tenant consolidations, platform migrations (Jenkins→GitHub Actions, SendGrid→SES), identity migrations (AD→Azure AD), cluster upgrades with relocation"
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,12 @@ metadata:
 # Teleport
 Move an entire world without leaving its people stranded.
 ## What This Skill Does
-Teleport is full-context migration: an application, environment, dataset, or service estate moves from one place to another in a way that tries to feel instantaneous to everyone depending on it. In reality, there is always preparation behind the magic. Data has to stay consistent, dependencies have to reattach, traffic has to cut over, and the old world has to remain recoverable long enough to trust the new one. The spell is powerful because it compresses a terrifying amount of movement into one decisive act. It is dangerous for exactly the same reason.
+Teleport is FULL-CONTEXT migration, not partial transformation. The defining characteristic is that EVERYTHING must move together and keep working: data, dependencies, auth, traffic routing, background jobs, secrets, and human workflows. The old system must remain recoverable until the new one is proven. This spell IS: Database migrations (RDS→Cloud SQL, self-managed→Atlas), cloud provider moves (on-prem→AWS, Heroku→K8s), environment promotions (staging→prod), account/tenant consolidations, platform migrations (Jenkins→GitHub Actions, SendGrid→SES), identity migrations (AD→Azure AD), cluster upgrades with relocation
 In this grimoire, Teleport is treated as a hybrid spell with a prototype delivery profile.
 Canonical reference input: Teleport (spell).
 ## When To Use
 
-- You are planning a database migration, environment promotion, cloud move, or major system relocation.
-- The core challenge is preserving state, continuity, and user trust across a high-stakes move.
-- A reversible cutover plan matters as much as the destination architecture.
+- Trigger this spell when the user describes moving an ENTIRE system, service, or environment from one place to another while PRESERVING state and continuity. Look for these patterns:
 
 ## Prerequisites
 
@@ -36,23 +34,26 @@ Canonical reference input: Teleport (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Define the source world, destination world, and the invariants that must survive the jump: data integrity, auth, latency, dependencies, and rollback viability.
-3. Inventory every dependency and stateful surface that must travel or reconnect, including background jobs, secrets, DNS, storage, and human operator workflows.
-4. Design the rehearsal, cutover window, rollback path, and validation checks before any live movement begins.
-5. Return the migration plan with sequencing, integrity checks, and explicit failure gates that stop the spell if confidence drops.
+2. Define boundaries: Identify source world, destination world, and the 5 invariants that must survive: data integrity, authentication, latency/SLA, dependency graph, rollback viability. If any invariant is undefined, stop and ask.
+3. Inventory everything: List every stateful surface and dependency that must travel or reconnect: databases, caches, queues, background jobs, secrets, DNS records, storage volumes, CI/CD pipelines, monitoring/alerting, human operator workflows, third-party integrations.
+4. Design the safety net FIRST: Before any movement plan, specify: rehearsal strategy (dry run in staging), cutover window (when, how long, who approves), rollback path (exact steps to reverse), validation checks (how to prove arrival succeeded), and failure gates (conditions that abort the migration mid-flight).
+5. Sequence the move: Order operations to minimize risk. Typically: replicate data → verify consistency → switch read traffic → switch write traffic → decommission old (after observation period). Return a runbook with explicit timestamps, owners, and go/no-go checkpoints.
 6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A migration or cutover runbook.
-- A rollback and recovery plan with decision thresholds.
-- A validation checklist for data, traffic, permissions, and dependent systems after arrival.
+- Always produce: (1) Migration runbook with sequencing, (2) Rollback plan with decision thresholds, (3) Post-arrival validation checklist covering data, traffic, permissions, and dependencies.
 
 ## Pitfalls / Guardrails
 
 - Call out the glue, permissions, or missing infrastructure before you imply this is fully operational.
-- Do not claim this move is safe without rehearsals, backups, and integrity verification.
-- If the request lacks a rollback path or a way to validate arrival, the spell should stop at planning.
+- If the request lacks a rollback path OR a way to validate successful arrival, output ONLY the planning phase. Do not proceed to execution steps. Never claim the move is safe without rehearsals, backups, and integrity verification steps.
+- Do not use for: Simple data copies (one table, one file) → use data extraction spells
+- Do not use for: Format transformations (OpenAPI 2→3, Python→TypeScript) → use translation spells
+- Do not use for: Branch switching or git operations → use version control spells
+- Do not use for: Setting up permanent connections (VPN, tunnels) → use infrastructure spells
+- Do not use for: Multi-environment deployments from same config → use deployment spells
+- Do not use for: Feature toggles or A/B testing → use experimentation spells
 
 ## Verification
 

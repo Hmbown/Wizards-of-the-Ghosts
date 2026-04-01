@@ -1,0 +1,32 @@
+{
+  "slug": "cure-wounds",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Active breakage: crashes, errors, failures, outages, data loss, blocked users",
+      "Urgency markers: \"right now\", \"immediately\", \"production down\", \"losing money\", \"users can't\", \"team blocked\"",
+      "Time-sensitive impact: revenue loss, customer complaints, SLA breach, on-call pages",
+      "Recent-change correlation: \"after the deploy\", \"since the update\", \"broke 10 minutes ago\"",
+      "Minimum-intervention request: \"stop the bleeding\", \"quick fix\", \"get it working\", \"restore function\""
+    ],
+    "guardrails": [
+      "Cure Wounds is triage, not treatment. Always flag whether deeper investigation is needed after the fix.",
+      "Preserve evidence: the minimum fix must not make the underlying problem harder to diagnose.",
+      "If the fix requires significant redesign or architectural change, this is the wrong spell.",
+      "Do not use for: Planned work: migrations, refactors, feature development, schema redesigns",
+      "Do not use for: Long-term degradation: \"slowly getting worse\", \"needs comprehensive plan\", \"technical debt\"",
+      "Do not use for: Presentation/formatting: reformatting logs, cleaning output, improving readability",
+      "Do not use for: Trivial typos: single-character corrections in config (use basic editing, not triage)",
+      "Do not use for: Communication only: \"send a message\", \"notify the team\", \"update status\"",
+      "Do not use for: Feature flag state issues: configuration toggles without active breakage",
+      "Do not use for: Root-cause analysis requests: \"why did this happen\", \"investigate the underlying issue\""
+    ],
+    "workflow": [
+      "Identify the symptom: What exactly is failing? What error, crash, or outage is happening?",
+      "Diagnose the proximate cause: What changed or failed to produce this breakage? Check recent deploys, config changes, or environmental shifts.",
+      "Apply the minimum fix: The smallest change that restores function. Rollback, patch, restart, or reconfigure — whatever stops the bleeding with least risk.",
+      "Verify and document: Confirm the fix works. Note what caused the breakage and whether root-cause analysis is still needed."
+    ],
+    "description": "Cure Wounds is the hotfix spell: immediate triage to stop bleeding and restore function. It is NOT root-cause analysis, refactoring, redesign, or long-term remediation. The goal is the minimum viable fix that stops the damage NOW. Deeper investigation comes after."
+  }
+}

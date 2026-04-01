@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "etherealness",
+  "spell_focus": "Etherealness is read-only ghost mode for systems you need to study without disturbing. It maps to shadow environments, dry runs, read replicas, mirrored traffic, and observational tooling that lets you see behavior without becoming part of it. The promise is visibility with minimal touch, not perfect impossibility of side effects.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Etherealness precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Etherealness: ['A read-only or shadow-observation setup plan.', 'A list of findings you can gather safely before acting.', 'A caveat list for what ghost mode cannot prove.']",
+    "Default guardrails for Etherealness: ['Do not assume mirrored or dry-run environments perfectly predict live writes, latency, or contention.', 'Confirm that the observation path is actually isolated before treating it as consequence-free.']"
+  ]
+}

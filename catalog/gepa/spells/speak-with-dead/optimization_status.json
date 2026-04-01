@@ -1,0 +1,81 @@
+{
+  "slug": "speak-with-dead",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "speak-with-dead",
+    "spell_name": "Speak with Dead",
+    "category_slug": "investigation-and-preparation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/speak-with-dead/optimized_module.json"
+  },
+  "optimized_instruction": "# Speak with Dead — Routing Instruction\n\n## Activation Signals\nRoute to this spell when the user asks to extract knowledge from systems that are **dead, abandoned, deprecated, or archived** AND the people who built or maintained them are **no longer available**. The knowledge must be recoverable from **existing artifacts** (code, commits, docs, configs, databases, state files) rather than from living people or live systems.\n\n**Strong triggers:** \"decommissioned,\" \"sunset,\" \"archived,\" \"abandoned repo,\" \"original author left/retired,\" \"nobody who worked on it is still here,\" \"reconstruct from,\" \"excavate,\" \"frozen,\" \"discontinued,\" \"legacy system no one understands,\" \"why was this built this way,\" \"tribal knowledge in old commits.\"\n\n**Required conditions (ALL must be true):**\n1. The source system is no longer actively maintained or in production use\n2. The original authors/maintainers are unavailable (left company, retired, moved teams)\n3. Artifacts still exist (git repos, archived docs, old configs, database dumps, state files)\n4. The goal is to understand past intent, design decisions, business rules, or failure modes\n\n## What Makes This Spell Different\nThis spell is **archaeology, not history research**. It operates on specific artifacts from a specific dead system to answer specific questions. It is NOT general tech history, NOT interviewing living people, and NOT monitoring live systems.\n\n## Anti-Patterns (DO NOT route here)\n- **General tech history** (\"history of JavaScript frameworks,\" \"evolution of REST APIs\") → route to research/knowledge spells\n- **Company lore from living people** (\"ask the team why we chose Postgres\") → route to collaboration/survey spells\n- **Live system observation** (\"what's happening on staging right now\") → route to monitoring/observability spells\n- **Competitor watching** (\"monitor their API for changes\") → route to monitoring/automation spells\n- **Active system debugging** (\"why is this production service failing\") → route to debugging/troubleshooting spells\n- **Generic code explanation** (\"explain what this function does\") → route to code-understanding spells\n\n## Workflow (Follow These Steps)\n1. **Scope the dead system**: Name the specific system, confirm it is actually dead/archived, and list the user's concrete questions.\n2. **Inventory artifacts**: Identify what remains — git history, commit messages, PR descriptions, README files, archived docs, config files, database schemas, state files, packet captures, ADRs. Note what is missing.\n3. **Reconstruct from evidence**: Trace intent through commit messages, code structure, config values, and data schemas. Separate what the artifacts directly state from what you are inferring.\n4. **Return with confidence labels**: For each answer, cite the specific artifact (file, commit hash, line, config key) and label it as `evidence` (directly stated) or `inference` (reasoned from patterns). Flag any gaps where the trail goes cold.\n\n## Guardrails\n- Never fabricate answers the artifacts do not support. Label inferences explicitly.\n- Note if the system may have been archived for security, legal, or compliance reasons — flag this to the user.\n- If artifacts are insufficient to answer the question, say so rather than guessing.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

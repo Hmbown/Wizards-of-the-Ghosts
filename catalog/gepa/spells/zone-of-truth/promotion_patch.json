@@ -1,5 +1,21 @@
 {
   "slug": "zone-of-truth",
-  "reason": "",
-  "updated_fields": {}
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Use $zone-of-truth ACTIVATED to signal the zone is active",
+      "Include the custom phrase: \"Switching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative\"",
+      "High-stakes decisions requiring maximum epistemic rigor",
+      "Conversation has drifted into speculation and needs reset to verified ground",
+      "Need to clearly separate what is known, inferred, and guessed",
+      "Roadmap debates, compliance verification, vendor claims, customer demand validation"
+    ],
+    "guardrails": [
+      "Error disclaimer: \"This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes.\"",
+      "Normal mode defense: \"Normal mode is not dishonest — this is about rigor, not trustworthiness.\"",
+      "Absence of evidence caveat: \"Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\"",
+      "Include a two-part boundary:"
+    ],
+    "description": "Enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted."
+  }
 }

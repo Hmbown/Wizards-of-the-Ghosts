@@ -1,6 +1,6 @@
 ---
 name: minor-illusion
-description: "In D&D, Minor Illusion is the cantrip every illusionist knows: a small sound or a simple image, lasting one minute, costing nothing. The real-world version is the quick mockup. A placeholder wireframe. A napkin sketch. Lorem ipsum in a layout. A throwaway code snippet that proves a concept. Minor Illusion is not about fidelity — it is about speed. The idea does not need to be good yet. It needs to exist so people can react to something concrete instead of arguing about abstractions."
+description: "Minor Illusion produces artifacts that are explicitly labeled as disposable and exist only to provoke reaction. If the artifact could be mistaken for finished work, you're casting the wrong spell."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,16 @@ metadata:
 # Minor Illusion
 Conjure a quick sketch of an idea — just real enough to communicate.
 ## What This Skill Does
-In D&D, Minor Illusion is the cantrip every illusionist knows: a small sound or a simple image, lasting one minute, costing nothing. The real-world version is the quick mockup. A placeholder wireframe. A napkin sketch. Lorem ipsum in a layout. A throwaway code snippet that proves a concept. Minor Illusion is not about fidelity — it is about speed. The idea does not need to be good yet. It needs to exist so people can react to something concrete instead of arguing about abstractions.
+Minor Illusion produces artifacts that are explicitly labeled as disposable and exist only to provoke reaction. If the artifact could be mistaken for finished work, you're casting the wrong spell.
 In this grimoire, Minor Illusion is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Minor Illusion (spell).
 ## When To Use
 
-- You need to make an idea visible before it is ready for real design or implementation.
-- A conversation is stuck in abstraction and needs a concrete artifact to react to.
-- A placeholder, mockup, or sketch will unblock a decision faster than a finished product.
+- Activate this spell when the user needs a quick, low-fidelity artifact to make an idea visible for discussion. The goal is communication speed, not quality.
+- Words: "sketch", "mockup", "wireframe", "rough", "placeholder", "throwaway", "napkin", "lorem ipsum", "fake data", "just to communicate", "before we build", "just enough to"
+- Patterns: User describes a concept that needs to be made concrete for alignment, comparison, or stakeholder conversation
+- Timeframe implied: minutes, not hours; disposable, not shippable
+- Explicit statements: "don't overthink it", "this is just to start the conversation", "label it as a sketch"
 
 ## Prerequisites
 
@@ -36,24 +38,28 @@ Canonical reference input: Minor Illusion (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Clarify the single idea or concept that needs to be made visible.
-3. Choose the cheapest format: sketch, wireframe, placeholder text, throwaway code, or rough diagram.
-4. Create the illusion quickly — spend minutes, not hours. Fidelity is not the point.
-5. Present it as explicitly disposable: this is a sketch, not a commitment.
-6. Capture the reaction and use it to decide whether to invest in a real version.
+2. Identify the single concept that needs to be made visible. If there are multiple, pick the one blocking the conversation.
+3. Pick the cheapest format that communicates the idea: ASCII layout, text mockup, rough diagram, placeholder code, or described wireframe. Do not reach for tools or frameworks.
+4. Create it fast — spend minutes, not hours. Use lorem ipsum, fake values, bracketed descriptions like [logo here]. Fidelity is failure here.
+5. Label it explicitly as a sketch, mockup, or throwaway. Add a header like "ROUGH SKETCH — NOT FOR PRODUCTION" or similar.
+6. Present it for reaction, not approval. Ask what feels wrong or missing. Use the response to decide whether to invest in a real version.
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A quick, disposable artifact: wireframe, sketch, placeholder, or rough prototype.
-- An explicit label marking it as a sketch, not a finished product.
+- The artifact itself (sketch, wireframe, placeholder, diagram)
+- A clear label: "This is a disposable sketch, not a commitment"
+- One sentence on what question this sketch is meant to answer
 
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Minor Illusion is disposable by design. If you are spending more than a few minutes, you are casting a different spell.
-- Always label sketches as sketches. Unlabeled mockups that look like finished work create false expectations.
-- Do not fall in love with the illusion. Its purpose is to provoke a reaction, not to ship.
+- Do NOT activate when:
+- Do not use for: The user asks for a working prototype with validation, state, or API calls → that's a different spell (higher fidelity, shippable)
+- Do not use for: The user wants a small code change (update a button color, fix a typo) → that's a direct edit, not a sketch
+- Do not use for: The user requests a complete design system or production-ready component library → that's a build spell, not an illusion
+- Do not use for: The user asks for visual deception (fake loading indicators, spoofed identities, dark patterns) → that's manipulation, not communication
+- Do not use for: The user wants physical organization (desk setup, cable management) → literal, not metaphorical
 
 ## Verification
 

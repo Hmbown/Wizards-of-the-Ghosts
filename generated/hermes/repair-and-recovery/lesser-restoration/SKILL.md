@@ -25,9 +25,9 @@ In this grimoire, Lesser Restoration is treated as a metaphorical spell with a s
 Canonical reference input: Lesser Restoration (spell).
 ## When To Use
 
-- A system is stuck in a specific state that prevents normal operation: a lock, flag, queue, or status.
-- The fix is not a code change but a state change: toggling, clearing, resetting, or releasing.
-- Normal operation would resume immediately if this one condition were cleared.
+- Words: stuck, won't reset, not clearing, stale, orphaned, lingering, trapped, hung, frozen, deadlocked
+- Patterns: "X is stuck in Y state", "need to clear/reset/flush/release X", "Z was never released/cleaned up", "flag/toggle/switch won't change"
+- Context: The underlying system works fine; one specific condition is preventing it from proceeding
 
 ## Prerequisites
 
@@ -36,10 +36,10 @@ Canonical reference input: Lesser Restoration (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the specific condition: what state is the system stuck in?
-3. Verify this is a condition problem, not a deeper issue masquerading as a stuck state.
-4. Clear the condition with the appropriate mechanism: toggle, reset, release, or flush.
-5. Verify normal operation resumes and the condition does not immediately recur.
+2. Identify the specific stuck condition: what exact state, flag, lock, or queue is blocking progress?
+3. Verify it's truly stuck (not intentionally set or actively protecting against a real problem)
+4. Clear the condition using the minimal mechanism: toggle off, reset to default, release lock, flush cache, replay queue, remove finalizer
+5. Confirm normal operation resumes and the condition does not immediately recur — if it recurs, the root cause is deeper; escalate to greater-restoration
 6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
@@ -50,8 +50,15 @@ Canonical reference input: Lesser Restoration (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Clearing a condition that keeps recurring is not a fix — it is symptom suppression. If the condition comes back, escalate to Greater Restoration.
-- Verify the stuck state is actually stuck and not intentionally set. Some conditions are there for a reason.
+- Do not use for: Fixing code bugs, syntax errors, or null pointer exceptions → use mending or hotfix patterns
+- Do not use for: Cleaning up widespread data corruption or orphaned records across tables → use greater-restoration
+- Do not use for: Rebuilding or redesigning a system → use rebuild or refactor patterns
+- Do not use for: Debugging unknown root causes → use diagnose or identify patterns
+- Do not use for: Adding missing features or configuration → use create or configure patterns
+- Do not use for: "Fix the bug that causes X to get stuck" → code fix, not state clear
+- Do not use for: "Clean up all the corrupted data" → widespread damage, not single condition
+- Do not use for: "Why is X happening?" → diagnosis needed first
+- Do not use for: "X keeps coming back after I clear it" → symptom suppression; find root cause instead
 
 ## Verification
 

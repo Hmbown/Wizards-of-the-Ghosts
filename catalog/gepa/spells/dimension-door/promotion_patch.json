@@ -1,0 +1,30 @@
+{
+  "slug": "dimension-door",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "\"switch between\", \"jump to\", \"toggle\", \"context switch\", \"hop over\"",
+      "Named endpoints: \"from X to Y\", \"branch A to branch B\", \"staging to prod\"",
+      "\"come back\", \"get back to\", \"without losing\", \"keep alive\"",
+      "Temporary investigation: \"quickly check\", \"need to look at\", \"then return\"",
+      "Parallel sessions: \"both need to stay live\", \"keep both running\"",
+      "User names specific source AND destination (branches, environments, accounts, clusters, terminals, workspaces)",
+      "The switch is temporary and reversible",
+      "The challenge is preserving state/context, not transforming systems"
+    ],
+    "workflow": [
+      "LOCK SOURCE STATE: Identify exactly what must be preserved — open files, running processes, env vars, credentials, branch state, terminal history, REPL state.",
+      "PACKAGE CONTEXT: Create the minimum viable snapshot — bookmark current location, save env state, note uncommitted changes, record running service PIDs.",
+      "EXECUTE SWITCH: Provide the exact commands to move to destination — git checkout, kubectl config use-context, aws configure, tmux switch, etc.",
+      "PREPARE REENTRY: Give the reverse commands and state-restoration steps so the user can return to source without confusion.",
+      "CALL OUT HIDDEN STATE: Warn about any state left behind that could cause confusion (running servers, uncommitted work, active sessions)."
+    ],
+    "deliverables": [
+      "Context-switch checklist (what to save before leaving)",
+      "State inventory (what travels with you)",
+      "Switch commands (source → destination)",
+      "Reentry commands (destination → source)",
+      "Hidden state warnings"
+    ]
+  }
+}

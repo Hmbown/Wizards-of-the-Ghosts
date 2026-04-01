@@ -1,0 +1,81 @@
+{
+  "slug": "greater-restoration",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "greater-restoration",
+    "spell_name": "Greater Restoration",
+    "category_slug": "repair-and-recovery",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/greater-restoration/optimized_module.json"
+  },
+  "optimized_instruction": "# Greater Restoration — Routing Instruction\n\n## When to Activate\nActivate Greater Restoration when the user describes **systemic degradation that accumulated over time** and requires a **comprehensive, multi-step restoration plan** — not a hotfix.\n\n### Trigger Signals (look for 2+ of these):\n- **Time + decay**: \"over N months/years\", \"accumulated\", \"gradually degraded\", \"drift\", \"bloat\", \"sprawl\"\n- **Multiplicity**: multiple related problems listed (inconsistent configs, orphaned resources, stale artifacts)\n- **Scope words**: \"comprehensive\", \"systematic\", \"full audit\", \"restore to health\", \"clean and restore\"\n- **Failure of incremental fixes**: \"no single fix will work\", \"triage is insufficient\", \"band-aids made it worse\"\n- **Domains**: schema drift, tech debt, IaC drift, alert fatigue, bloated images, tangled dependencies, stale flags, decayed docs, corrupted data pipelines\n\n### The Core Pattern:\n> \"Things were fine, but over time many small compromises/oversights/changes accumulated into a system that no longer works as intended, and we need a planned, staged restoration — not a rollback.\"\n\n## When NOT to Activate (Confusables)\n- **Single incident/hotfix**: \"API crashing after deploy\", \"null pointer exception\" → route to Cure Wounds or Lesser Restoration\n- **Simple toggle/reset**: \"circuit breaker tripped\", \"flag stuck enabled\" → Lesser Restoration\n- **Resurrection from backup**: \"deleted account, restore from backup\" → different spell (resurrection/backup-restore)\n- **Migration/relocation**: \"move from Heroku to AWS\" → not restoration, it's relocation\n- **Self-healing/continuous**: \"auto-restart pods, maintain 99.99% uptime\" → ongoing automation, not one-time restoration\n- **Preventive maintenance**: \"add monitoring\", \"set up linting\" → proactive, not restorative\n\n## Workflow (Follow These Steps)\n1. **Scope the degradation**: Inventory all affected subsystems. How many? How interconnected? What does \"healthy\" look like?\n2. **Find the root cause(s)**: What introduced the decay? Is the cause still active (e.g., a broken CI step still running, a misconfig still applied)?\n3. **Design the restoration plan**: Ordered steps with dependencies. What must be fixed first? What can be parallelized? Include verification checkpoints between stages.\n4. **Execute with checkpoints**: Do NOT batch all changes without verification. Each stage must confirm improvement before proceeding.\n5. **Post-restoration health check**: Confirm the system is back to full function. Document what changed and how to prevent recurrence.\n\n## Key Distinction from Lesser Restoration\nLesser Restoration = one thing is wrong, fix it directly (reset a flag, clear a cache, remove a curse).\nGreater Restoration = many things are wrong because they decayed together over time, and fixing one thing without fixing the others will fail.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

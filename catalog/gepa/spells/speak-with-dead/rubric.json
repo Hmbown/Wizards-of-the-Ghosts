@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "investigation-and-preparation",
+  "category_slug": "investigation-and-preparation",
+  "spell_slug": "speak-with-dead",
+  "spell_focus": "Use this spell when the answers you need are buried in dead codebases, sunset APIs, archived documentation, or the tribal knowledge frozen in old commits and departed contributors.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Speak with Dead precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Speak with Dead: [\"Answers to specific questions drawn from the dead system's artifacts.\", \"A reconstruction of the system's original intent and known failure modes.\", 'A clear separation between what the dead system actually recorded and what you are inferring.']",
+    "Default guardrails for Speak with Dead: ['Do not fabricate answers the dead system never contained — clearly label inference versus evidence.', 'Respect that archived systems may have been archived for reasons including security, legal, or deliberate deprecation.']"
+  ]
+}

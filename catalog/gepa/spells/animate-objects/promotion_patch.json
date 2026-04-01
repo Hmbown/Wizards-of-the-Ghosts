@@ -1,0 +1,34 @@
+{
+  "slug": "animate-objects",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Trigger this spell when a user asks to make an existing static artifact self-updating, reactive, or autonomous. Look for:",
+      "\"make it alive\", \"living document\", \"self-updating\", \"auto-refresh\"",
+      "References to existing files: CSV, YAML, JSON, README, config, spreadsheet, dashboard, spec, diagram",
+      "Phrases like \"pulls from [source]\", \"watches for changes\", \"reconciles differences\", \"flags when stale\"",
+      "Desire for ongoing automation attached to a specific existing artifact"
+    ],
+    "guardrails": [
+      "Scope must be explicit: a self-updating spreadsheet does not start sending emails unless approved",
+      "Always provide a documented kill switch or revert path",
+      "No write access to downstream systems without explicit user approval",
+      "Prefer read-only or self-modifying behavior over cross-system actuation",
+      "Do not use for: Training AI on data — \"teach this dataset to understand queries\" → ML/NLP spell",
+      "Do not use for: One-off cleanup scripts — \"run once to fix stale entries\" → simple scripting, no ongoing agency",
+      "Do not use for: Building new tools — \"create a CLI tool\" → software development, not animating existing artifact",
+      "Do not use for: Physical automation — \"robot that moves objects\" → hardware/IoT, out of scope",
+      "Do not use for: Syntax repair — \"fix broken JSON\" → data repair, no autonomy added",
+      "Do not use for: Autonomous agents — \"virtual assistant that makes decisions\" → agent design, not artifact animation"
+    ],
+    "workflow": [
+      "Identify the inert artifact — name the exact file, dataset, or document. Confirm it exists and is currently static.",
+      "Define the trigger — what event, schedule, or change should wake it up? (cron, file watch, API poll, git hook, webhook)",
+      "Specify the autonomous action — what exactly should it do when triggered? Keep scope narrow: update itself, flag discrepancies, regenerate derived output.",
+      "Set boundaries and kill switch — what must it NOT do? How do you revert it to passive state? Document both before implementing.",
+      "Implement minimal agency — attach the simplest trigger + action loop that satisfies the request. Prefer existing tooling (watchexec, cron, GitHub Actions, simple scripts) over custom daemons.",
+      "Verify containment — confirm the artifact only acts within its granted scope and the kill switch works."
+    ],
+    "description": "This spell transforms inert → reactive. It does NOT create new tools, train models, run one-off fixes, or build physical systems. The key pattern: existing artifact + trigger/watcher + bounded autonomy."
+  }
+}

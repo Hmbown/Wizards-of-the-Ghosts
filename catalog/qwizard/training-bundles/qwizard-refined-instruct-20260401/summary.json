@@ -1,0 +1,35 @@
+{
+  "created": "20260401",
+  "source": "spell-native dataset → ChatML instruction/response transform",
+  "total_rows": 1380,
+  "train_rows": 833,
+  "eval_rows": 547,
+  "task_types": {
+    "spell_application": 709,
+    "spell_possibilities": 27,
+    "spell_confusables": 198,
+    "spell_refusal": 30,
+    "spell_select": 416
+  },
+  "source_types": {
+    "gepa_train": 327,
+    "blueprint": 26,
+    "gepa_confusable": 198,
+    "dspy_query": 416,
+    "generated_skill": 123,
+    "synthetic_refusal": 20,
+    "gepa_eval": 270
+  },
+  "categories": {
+    "investigation-and-preparation": 310,
+    "influence-and-behavior": 193,
+    "actions-access-and-automation": 327,
+    "monitoring-and-protection": 151,
+    "simulation-and-staging": 62,
+    "repair-and-recovery": 151,
+    "containment-and-intervention": 97,
+    "messaging-and-coordination": 59
+  },
+  "format": "ChatML with <think> block, Qwen 3.5 compatible",
+  "system_prompt_length": 419
+}

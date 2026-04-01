@@ -1,0 +1,81 @@
+{
+  "slug": "hold-person",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "hold-person",
+    "spell_name": "Hold Person",
+    "category_slug": "influence-and-behavior",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/hold-person/optimized_module.json"
+  },
+  "optimized_instruction": "# Hold Person — Spell Routing Instruction\n\n## When to Activate This Spell\n\nActivate Hold Person when the user needs to **hard-freeze** an account, process, workflow, or system **pending investigation, review, or resolution**, with these conditions:\n\n- Something must stop **immediately** and **completely** — no partial operation\n- The frozen state must be **preserved intact** (not deleted, not terminated)\n- The freeze is **temporary and reversible** — release conditions matter\n- **Administrative authority** is required — someone must be authorized to impose and lift the hold\n- The freeze is **targeted** — specific accounts, pipelines, endpoints, or jobs, not mass org-wide changes\n\n**Trigger signals:** \"freeze access\", \"administrative hold\", \"suspend pending investigation\", \"hard freeze\", \"lock out but preserve\", \"reversible suspension\", \"hold until review\", \"freeze but don't delete\", \"tamper-proof audit\", \"release criteria\", \"who can unfreeze\"\n\n## When NOT to Activate This Spell\n\nDo NOT use Hold Person for:\n\n- **Graceful pause with queuing** (use Sleep): \"pause during maintenance\", \"queue and deliver later\", \"no state lost\"\n- **OS-level process control** (use Stun): \"SIGSTOP/SIGCONT\", \"stun for diagnostic\", \"quick memory check\"\n- **Mass/organization-wide freezes**: \"all 500 users\", \"entire role\", \"every account\"\n- **Permanent termination or deletion**: \"revoke permanently\", \"delete access\", \"shut down for good\"\n- **Simple scheduling delays**: \"run two hours later\", \"shift the cron\", \"delay until upstream is ready\"\n- **Stop restarting without preservation**: \"just stop the restart loop\", \"keep it down until I say\"\n\n## Key Distinction: Hold Person vs Sleep\n\nHold Person = **hard freeze**. Nothing moves. In-flight operations stop. Requires authority. Used for security incidents, fraud, compliance holds, misbehaving systems.\n\nSleep = **graceful suspension**. State is preserved and queued. Operations resume automatically. Used for maintenance windows, temporary pauses, planned downtime.\n\nIf the user says \"queue everything\" or \"deliver when we're done\" → Sleep, not Hold Person.\n\n## Workflow (Follow These Steps)\n\n1. **Verify authority**: Who can impose this hold? Is the requester authorized? Document the authorization chain. If authority is unclear, flag it before proceeding.\n\n2. **Define freeze scope**: What exactly stops? What continues? What happens to in-flight operations? Be specific: which accounts, which pipelines, which endpoints. Preserve all state — nothing is deleted.\n\n3. **Set release conditions**: Who can unfreeze? Under what circumstances? What audit trail is required? What happens if the hold exceeds a time threshold (e.g., auto-escalate after 48 hours)? A hold without release criteria is a permanent lockout — that's a different and more dangerous action.\n\n4. **Deliver the hold plan**: Provide the hold specification (what is frozen, by whose authority, under what conditions) and release procedures (how to unfreeze, who authorizes it, what audit trail is required).\n\n## Deliverables\n\n- Hold specification: frozen scope, authority chain, conditions\n- Release procedures: unfreeze steps, authorization requirements, audit trail\n- Guardrails: never impose without authority, always define release conditions, preserve state",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

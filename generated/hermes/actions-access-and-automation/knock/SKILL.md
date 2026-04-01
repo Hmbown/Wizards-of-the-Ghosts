@@ -1,6 +1,6 @@
 ---
 name: knock
-description: "Use this spell when a locked door - a stuck process, an expired token, a permission gap, or a locked file - stands between you and progress, and you need the legitimate path through."
+description: "Knock is specifically about restoring legitimate access through authorized channels. It is NOT about: - Performance optimization (slow queries, throughput issues) → different spell\n- Removing safety controls (approval gates, compliance checks) → different spell\n- Simple bug fixes (typos, wrong ports) → different spell\n- Breaking constraints (resource limits, CPU throttling) → different spell\n- Security analysis (encryption schemes, certificate inspection) → different spell"
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,22 @@ metadata:
 # Knock
 Bypass access friction through legitimate unlock paths: key rotation, permission requests, and recovery workflows.
 ## What This Skill Does
-Use this spell when a locked door - a stuck process, an expired token, a permission gap, or a locked file - stands between you and progress, and you need the legitimate path through.
+Knock is specifically about restoring legitimate access through authorized channels. It is NOT about: - Performance optimization (slow queries, throughput issues) → different spell
+- Removing safety controls (approval gates, compliance checks) → different spell
+- Simple bug fixes (typos, wrong ports) → different spell
+- Breaking constraints (resource limits, CPU throttling) → different spell
+- Security analysis (encryption schemes, certificate inspection) → different spell
 In this grimoire, Knock is treated as a literal spell with a prototype delivery profile.
 Canonical reference input: Knock (spell).
 ## When To Use
 
-- An expired API key, locked file, or revoked permission is blocking a workflow.
-- You need to request elevated access or rotate credentials through the proper channel.
-- A process is stuck behind an authentication or authorization barrier that has a legitimate resolution.
+- Activate this spell when the user's request contains an access barrier with a legitimate recovery path. Look for these patterns:
+- Expired/rotated credentials: "credentials expired", "token revoked", "certificate expired", "password rotated", "key expired"
+- Locked resources: "lockfile", "state is locked", "DynamoDB lock", "stale lock"
+- Permission gaps: "locked out", "permissions removed", "RBAC", "403", "unauthorized", "access denied"
+- Blocked processes: "stuck behind", "can't authenticate", "connection rejected", "sealed" (Vault)
+- Recovery language: "rotate", "renew", "unseal", "reinstate", "force-unlock", "exception request", "proper channel"
+- The core signal: something is blocking access, and there exists an authorized way to restore it.
 
 ## Prerequisites
 
@@ -36,12 +44,16 @@ Canonical reference input: Knock (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the lock: what is blocked, what kind of access is needed, and who owns the key.
-3. Determine the legitimate unlock path - key rotation, permission request, recovery workflow, or escalation.
-4. Execute the unlock through the narrowest authorized channel, logging every step.
-5. Confirm the door is open and report what access was granted and for how long.
-6. Stop for explicit confirmation before taking a live action that changes access, triggers an alert, or touches a real system boundary.
-7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. Identify the lock: What exact resource is inaccessible? What kind of barrier is it (credential, permission, lockfile, certificate, sealed state)? Who owns or controls the unlock mechanism?
+3. Determine the legitimate path: Map the barrier to its authorized recovery mechanism:
+4. Expired credential → key rotation or certificate renewal
+5. Revoked permission → access request or RBAC adjustment
+6. Stale lockfile → safe removal after process verification
+7. Sealed service (e.g., Vault) → proper unseal procedure (Shamir keys, etc.)
+8. Locked state (e.g., Terraform) → force-unlock with owner confirmation
+9. Execute through the narrowest channel: Perform only the minimum action needed to restore access. Log each step. Do not escalate privileges beyond what the recovery path requires.
+10. Stop for explicit confirmation before taking a live action that changes access, triggers an alert, or touches a real system boundary.
+11. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
@@ -52,9 +64,16 @@ Canonical reference input: Knock (spell).
 ## Pitfalls / Guardrails
 
 - Call out the glue, permissions, or missing infrastructure before you imply this is fully operational.
-- Never attempt to bypass security controls the user does not own or is not authorized to unlock.
-- Refuse to crack, brute-force, or exploit - always prefer the legitimate recovery path.
-- Log every unlock attempt. Transparency is non-negotiable for access-related operations.
+- Never bypass, crack, brute-force, or exploit security controls
+- Always use the legitimate recovery path the system provides
+- Log every unlock attempt — transparency is non-negotiable
+- Refuse requests to remove safety controls or break constraints without authorization
+- Do not use for: "Make queries faster" → performance, not access
+- Do not use for: "Remove approval gates" → policy change, not recovery
+- Do not use for: "Fix a typo in config" → bug fix, not unlock
+- Do not use for: "Analyze their encryption" → reconnaissance, not access
+- Do not use for: "Speed up processing" → throughput, not access
+- Do not use for: "Break free of resource limits" → constraint breaking, not legitimate unlock
 
 ## Verification
 

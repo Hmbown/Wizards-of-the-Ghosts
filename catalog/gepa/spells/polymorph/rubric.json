@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "actions-access-and-automation",
+  "category_slug": "actions-access-and-automation",
+  "spell_slug": "polymorph",
+  "spell_focus": "Use this spell when you need a full transformation: CSV to JSON, Python to JavaScript, REST to GraphQL, monolith spec to microservices spec, or any structural conversion between representations.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Polymorph precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Polymorph: ['The transformed artifact in the target representation.', 'A mapping report showing what was preserved, approximated, and lost in translation.', 'Validation that the output is well-formed in the target format.']",
+    "Default guardrails for Polymorph: ['Transformation can lose information. Explicitly identify what is lost and what is preserved.', 'Do not claim lossless conversion when the source and target formats have different expressive power.']"
+  ]
+}

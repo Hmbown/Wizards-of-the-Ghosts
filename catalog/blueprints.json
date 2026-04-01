@@ -1019,16 +1019,18 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Make the tiny exact change that fixes the problem without disturbing the room.",
-      "description": "Use this skill for surgical edits: a one-line patch, a targeted regex, a delicate config tweak, or a precise text substitution with low blast radius. The emphasis is finesse under magnification, where touching one wrong character can create a new incident.",
+      "description": "Sleight of Hand is not about solving a problem — the solution is already known. It is about executing a known change with zero collateral damage. The skill is precision, not creativity.",
       "when_to_use": [
-        "A hotfix needs to touch the minimum possible surface area.",
-        "A refactor is too risky, but an exact micro-edit can solve the immediate problem.",
-        "The change depends on exact matching, previewing, and rollback discipline."
+        "Activate this spell when the user requests a surgical, minimal edit where:",
+        "The exact change is known (before value → after value)",
+        "Only 1–3 specific locations need modification",
+        "The user names the file, line, or exact string to change",
+        "The request emphasizes precision: \"just this\", \"only this one\", \"don't touch anything else\""
       ],
       "workflow": [
-        "Isolate the smallest safe surface that can carry the fix.",
-        "Stage the edit with exact-match checks and a before-and-after verification pass.",
-        "Return the minimal diff, the confidence check, and the rollback cue."
+        "Isolate: Identify the smallest possible surface area that carries the fix. Confirm the exact match target — file, line, or pattern. If the match is ambiguous (could hit multiple places), stop and ask for clarification. Never guess.",
+        "Stage: Show the exact change before applying it. Present a before-and-after diff of only the affected lines. Verify that neighboring lines, formatting, and unrelated occurrences are untouched.",
+        "Deliver: Apply the edit. Return: (a) the minimal diff, (b) a confidence statement confirming what was changed and what was intentionally left alone, (c) a one-line rollback instruction (the inverse edit)."
       ],
       "deliverables": [
         "A targeted patch, replacement pattern, or edit instruction.",
@@ -1036,8 +1038,16 @@
         "A rollback note in case the tiny move still misfires."
       ],
       "guardrails": [
-        "Never run blind global replacements when the match surface is ambiguous.",
-        "Preserve neighboring behavior and formatting unless the fix explicitly requires otherwise."
+        "Never run global replacements when the match surface is ambiguous.",
+        "If the same string appears multiple times, change only the one the user specified.",
+        "Preserve all surrounding whitespace, formatting, and behavior.",
+        "If you are unsure which occurrence to change, ask — do not pick one silently.",
+        "Do not use for: Rewriting a function or algorithm (needs a rebuild spell)",
+        "Do not use for: Moving a file and updating all imports across the repo (needs a refactor spell)",
+        "Do not use for: Diagnosing why something is broken (needs an investigation spell)",
+        "Do not use for: Formatting, linting, or cosmetic cleanup (needs a prestidigitation spell)",
+        "Do not use for: Building a new script from existing pieces (needs a conjuration spell)",
+        "Do not use for: Recovering deleted files from git history (needs a resurrection spell)"
       ],
       "default_prompt": "Use $sleight-of-hand to make the smallest safe edit here and show me exactly what moved.",
       "openai": {
@@ -1234,17 +1244,21 @@
       "reality_tier": "prototype",
       "literalness": "literal",
       "tagline": "Give agency to passive data by attaching triggers, watchers, and autonomous update logic.",
-      "description": "Use this spell when a static file, dataset, or configuration should become a living artifact that reacts to changes, heals itself, or updates autonomously.",
+      "description": "This spell transforms inert → reactive. It does NOT create new tools, train models, run one-off fixes, or build physical systems. The key pattern: existing artifact + trigger/watcher + bounded autonomy.",
       "when_to_use": [
-        "A spreadsheet, dashboard, or config file should stay current without manual intervention.",
-        "You want a document or dataset to react when its inputs change.",
-        "A passive artifact would be more useful if it could monitor its own health and act on drift."
+        "Trigger this spell when a user asks to make an existing static artifact self-updating, reactive, or autonomous. Look for:",
+        "\"make it alive\", \"living document\", \"self-updating\", \"auto-refresh\"",
+        "References to existing files: CSV, YAML, JSON, README, config, spreadsheet, dashboard, spec, diagram",
+        "Phrases like \"pulls from [source]\", \"watches for changes\", \"reconciles differences\", \"flags when stale\"",
+        "Desire for ongoing automation attached to a specific existing artifact"
       ],
       "workflow": [
-        "Identify the inert object and the behavior it should gain.",
-        "Attach the minimal trigger, watcher, or update loop that gives it the desired agency.",
-        "Define the object's scope of autonomous action and its kill switch.",
-        "Test the animated behavior and confirm the object stays within its granted agency."
+        "Identify the inert artifact — name the exact file, dataset, or document. Confirm it exists and is currently static.",
+        "Define the trigger — what event, schedule, or change should wake it up? (cron, file watch, API poll, git hook, webhook)",
+        "Specify the autonomous action — what exactly should it do when triggered? Keep scope narrow: update itself, flag discrepancies, regenerate derived output.",
+        "Set boundaries and kill switch — what must it NOT do? How do you revert it to passive state? Document both before implementing.",
+        "Implement minimal agency — attach the simplest trigger + action loop that satisfies the request. Prefer existing tooling (watchexec, cron, GitHub Actions, simple scripts) over custom daemons.",
+        "Verify containment — confirm the artifact only acts within its granted scope and the kill switch works."
       ],
       "deliverables": [
         "A previously static artifact with autonomous update or reaction logic attached.",
@@ -1252,9 +1266,16 @@
         "A kill switch or revert path that returns the object to its inert state."
       ],
       "guardrails": [
-        "Animated objects must have explicit scope limits - a self-updating spreadsheet should not start sending emails.",
-        "Always provide a kill switch that returns the object to a passive state.",
-        "Do not grant write access to downstream systems the user has not explicitly approved."
+        "Scope must be explicit: a self-updating spreadsheet does not start sending emails unless approved",
+        "Always provide a documented kill switch or revert path",
+        "No write access to downstream systems without explicit user approval",
+        "Prefer read-only or self-modifying behavior over cross-system actuation",
+        "Do not use for: Training AI on data — \"teach this dataset to understand queries\" → ML/NLP spell",
+        "Do not use for: One-off cleanup scripts — \"run once to fix stale entries\" → simple scripting, no ongoing agency",
+        "Do not use for: Building new tools — \"create a CLI tool\" → software development, not animating existing artifact",
+        "Do not use for: Physical automation — \"robot that moves objects\" → hardware/IoT, out of scope",
+        "Do not use for: Syntax repair — \"fix broken JSON\" → data repair, no autonomy added",
+        "Do not use for: Autonomous agents — \"virtual assistant that makes decisions\" → agent design, not artifact animation"
       ],
       "default_prompt": "Use $animate-objects to make this artifact self-updating, with clear agency boundaries and a kill switch.",
       "openai": {
@@ -1281,17 +1302,21 @@
       "tagline": "Teach an old machine to answer back.",
       "description": "Awaken gives a non-intelligent system a usable voice without pretending the underlying system became sentient. The real move is to wrap a thermostat, spreadsheet, legacy database, shell script, or crusty internal tool in a conversational or agent-like interface that exposes what it can already do. Good Awaken work turns buried affordances into accessible ones. Bad Awaken work hallucinates capabilities the substrate does not have. The spell is strongest when the wrapper is honest about its limits and preserves the original system's safety boundaries.",
       "when_to_use": [
-        "A useful system exists already, but only through brittle commands, forms, or legacy interfaces.",
-        "You want to add natural-language access, summarization, or guided actions on top of a dumb substrate.",
-        "The real value is interface uplift, not rebuilding the underlying system from scratch.",
-        "Your Home Assistant setup has devices that should activate together as a morning routine — lights, coffee maker, blinds, thermostat."
+        "Activate Awaken when a user wants to add a conversational, natural-language, or agent-like interface on top of an existing system that already works but has a poor or technical interface. The substrate is dumb; the wrapper is smart. You are not building the underlying capability — you are exposing what already exists.",
+        "These patterns strongly indicate Awaken:",
+        "\"wrap [system] so I can [natural language action]\"",
+        "\"add a conversational layer / voice interface / chat front-end to...\"",
+        "\"nobody remembers the flags/commands/FTP syntax for...\"",
+        "\"give voice to...\" / \"make it answer when I ask...\"",
+        "\"let users say '[plain English request]' instead of...\"",
+        "References to legacy systems, CLIs, green screens, serial ports, Modbus registers, cron jobs, bash scripts, spreadsheets, PLCs, Home Assistant automations, MQTT topics, or REST APIs with no UI"
       ],
       "workflow": [
-        "Inventory the system's real capabilities, constraints, and permissions before adding any language layer.",
-        "Design the conversational surface around concrete intents, mapped actions, and explicit fallbacks when the wrapper cannot comply.",
-        "Define how the wrapper reads state, executes approved actions, and explains failures in plain language.",
-        "Return an awakening plan with interface examples, backend bindings, and the limits that must stay visible to the user.",
-        "If Home Assistant is available, trigger a wake scene or automation via POST to /api/services/scene/turn_on or /api/services/automation/trigger with the appropriate entity_id."
+        "Inventory first: List the system's actual capabilities, constraints, and permissions before designing any language layer. Do not invent capabilities.",
+        "Map intents to actions: Define concrete user intents → specific backend actions → explicit fallbacks for when the wrapper cannot comply.",
+        "Design the honest wrapper: Specify how it reads state, executes approved actions, and explains failures in plain language. The wrapper must never imply the substrate is more capable than it is.",
+        "Return the awakening plan: Deliver an interface-wrapping plan, intent-to-action map with fallback paths, and a risk note describing what the wrapper must never imply or automate.",
+        "Home Assistant path: If Home Assistant is the target, trigger wake scenes or automations via POST to /api/services/scene/turn_on or /api/services/automation/trigger with the appropriate entity_id."
       ],
       "deliverables": [
         "An interface-wrapping plan for the existing system.",
@@ -1299,8 +1324,13 @@
         "A risk note describing what the wrapper must never imply or automate."
       ],
       "guardrails": [
-        "Do not present the wrapped system as more capable, autonomous, or reliable than it really is.",
-        "Preserve the source system's permissions, approval steps, and failure semantics instead of bypassing them."
+        "Never present the wrapped system as more capable, autonomous, or reliable than it really is.",
+        "Preserve the source system's permissions, approval steps, and failure semantics — do not bypass them.",
+        "If a request asks you to build the underlying system, reject and clarify: Awaken wraps, it does not create.",
+        "Do not use for: Creating from scratch: \"spin up\", \"build these services\", \"bring to life\" → animate, not awaken",
+        "Do not use for: Interpreting output: \"parse these logs\", \"what do these sensors mean\", \"translate this data\" → translate/attune, not awaken",
+        "Do not use for: Understanding architecture: \"walk me through how this works\", \"attune me to the codebase\" → attune, not awaken",
+        "Do not use for: The key distinction: Awaken requires an existing system with real affordances that need a better interface. If there's nothing to wrap, it's not Awaken."
       ],
       "default_prompt": "Use $awaken to design a conversational or intelligent wrapper around this dumb system without pretending the underlying machine became smarter than it is.",
       "openai": {
@@ -1508,26 +1538,36 @@
       "reality_tier": "shipping-now",
       "literalness": "hybrid",
       "tagline": "Draft warm, trust-building communication that navigates social dynamics with ethical care.",
-      "description": "Use this spell when you need to build rapport, deliver difficult news compassionately, write a persuasive but honest introduction, or navigate a sensitive interpersonal situation.",
+      "description": "Charm Person is about ONE-TO-ONE interpersonal communication where warmth, honesty, and respect for autonomy are the primary constraints. It is not about persuasion tactics, conversion rates, conflict mediation, public performance, or operational coordination. The spell succeeds when the recipient feels respected even if they say no.",
       "when_to_use": [
-        "You need to draft outreach, an introduction, or a message where trust and warmth matter.",
-        "A conversation is socially sensitive and the wrong tone could damage a relationship.",
-        "You want to frame a request, apology, or invitation in a way that genuinely respects the recipient."
+        "Activate this spell when the user asks you to draft a message, note, email, or DM where:",
+        "The primary goal is building or maintaining genuine rapport with a specific recipient",
+        "The situation is socially sensitive and tone matters (rejection, delay, favor, invitation, difficult news)",
+        "The user explicitly wants warmth, compassion, or honesty alongside a request",
+        "The draft should give the recipient a clear, comfortable way to decline or opt out"
       ],
       "workflow": [
-        "Identify the recipient, the relationship context, and the desired outcome.",
-        "Choose a tone that builds genuine rapport rather than manufacturing false intimacy.",
-        "Draft the communication with honesty, warmth, and respect for the recipient's autonomy.",
-        "Flag any tension between persuasion and transparency, and let the user decide."
+        "Extract context: Identify the recipient, the existing relationship depth, the actual ask, and any boundaries the user has stated.",
+        "Match tone to reality: Calibrate warmth to the actual relationship. Do not manufacture intimacy. Distant relationships get warm professionalism; close relationships get genuine warmth.",
+        "Draft with honest structure: State the real reason for the message. Do not obscure the ask. Include a visible, frictionless way to decline or opt out.",
+        "Check the line: Flag any sentence where persuasion could read as manipulation, guilt, or pressure. Present the tension to the user and let them decide before finalizing."
       ],
       "deliverables": [
-        "A warm, carefully drafted message or communication plan.",
-        "A note on the tone choices made and why.",
-        "A flag for any point where persuasion risks crossing into manipulation."
+        "The drafted message",
+        "A brief note on tone choices and why they fit the relationship",
+        "Any flagged tension points where transparency and persuasion conflict"
       ],
       "guardrails": [
-        "Charm builds genuine rapport, it does not manipulate. Do not exploit psychological vulnerabilities or manufacture false urgency.",
-        "Refuse requests designed to deceive, coerce, or misrepresent the sender's intent."
+        "Do NOT use this spell for:",
+        "Do not use for: Conflict de-escalation between third parties in public channels (use conflict-resolution)",
+        "Do not use for: Public speaking, keynote, or presentation copy (use stage-presence)",
+        "Do not use for: Crisp status updates or project coordination messages (use status-report)",
+        "Do not use for: UX copy, opt-in flows, or conversion optimization (use behavioral-design)",
+        "Do not use for: Automated email sequences or campaign routing (use outreach-automation)",
+        "Do not use for: Tool building, chat interfaces, or workflow glue (use tool-builder)",
+        "Do not use for: Manufacture false urgency or lie about deadlines",
+        "Do not use for: Make the recipient feel guilty for setting boundaries",
+        "Do not use for: Fake intimacy or pretend a closer relationship than exists"
       ],
       "default_prompt": "Use $charm-person to draft this message with warmth and care, and flag anything that crosses from persuasion into manipulation.",
       "openai": {
@@ -1720,25 +1760,35 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Apply a targeted fix to stop the bleeding on an active problem.",
-      "description": "In D&D, Cure Wounds heals damage through touch — direct, immediate, hands-on. The real-world version is the hotfix: diagnosing the immediate problem and applying the minimum viable fix to restore function. Not a redesign, not a refactor, not a root-cause analysis — just stop the bleeding right now.",
+      "description": "Cure Wounds is the hotfix spell: immediate triage to stop bleeding and restore function. It is NOT root-cause analysis, refactoring, redesign, or long-term remediation. The goal is the minimum viable fix that stops the damage NOW. Deeper investigation comes after.",
       "when_to_use": [
-        "Something is broken right now and needs a fix before further damage occurs.",
-        "The priority is restoring function, not understanding root cause (that comes after).",
-        "A production issue, broken build, or failing pipeline needs immediate hands-on intervention."
+        "Active breakage: crashes, errors, failures, outages, data loss, blocked users",
+        "Urgency markers: \"right now\", \"immediately\", \"production down\", \"losing money\", \"users can't\", \"team blocked\"",
+        "Time-sensitive impact: revenue loss, customer complaints, SLA breach, on-call pages",
+        "Recent-change correlation: \"after the deploy\", \"since the update\", \"broke 10 minutes ago\"",
+        "Minimum-intervention request: \"stop the bleeding\", \"quick fix\", \"get it working\", \"restore function\""
       ],
       "workflow": [
-        "Identify the immediate symptom: what exactly is broken?",
-        "Diagnose the proximate cause: what changed or failed to cause this specific breakage?",
-        "Apply the minimum fix that restores function without introducing new risks.",
-        "Verify the fix works and document it for follow-up root-cause analysis."
+        "Identify the symptom: What exactly is failing? What error, crash, or outage is happening?",
+        "Diagnose the proximate cause: What changed or failed to produce this breakage? Check recent deploys, config changes, or environmental shifts.",
+        "Apply the minimum fix: The smallest change that restores function. Rollback, patch, restart, or reconfigure — whatever stops the bleeding with least risk.",
+        "Verify and document: Confirm the fix works. Note what caused the breakage and whether root-cause analysis is still needed."
       ],
       "deliverables": [
         "The fix: the specific change that stops the bleeding.",
         "A brief note on what caused the breakage and whether deeper investigation is needed."
       ],
       "guardrails": [
-        "Cure Wounds is triage, not treatment. Always note whether root-cause analysis is still needed after the immediate fix.",
-        "The minimum fix should not make the underlying problem harder to diagnose. Preserve evidence."
+        "Cure Wounds is triage, not treatment. Always flag whether deeper investigation is needed after the fix.",
+        "Preserve evidence: the minimum fix must not make the underlying problem harder to diagnose.",
+        "If the fix requires significant redesign or architectural change, this is the wrong spell.",
+        "Do not use for: Planned work: migrations, refactors, feature development, schema redesigns",
+        "Do not use for: Long-term degradation: \"slowly getting worse\", \"needs comprehensive plan\", \"technical debt\"",
+        "Do not use for: Presentation/formatting: reformatting logs, cleaning output, improving readability",
+        "Do not use for: Trivial typos: single-character corrections in config (use basic editing, not triage)",
+        "Do not use for: Communication only: \"send a message\", \"notify the team\", \"update status\"",
+        "Do not use for: Feature flag state issues: configuration toggles without active breakage",
+        "Do not use for: Root-cause analysis requests: \"why did this happen\", \"investigate the underlying issue\""
       ],
       "default_prompt": "Use $cure-wounds to diagnose and fix this [broken build/failing service/production issue] with the minimum change needed to restore function.",
       "openai": {
@@ -1820,24 +1870,31 @@
       "tagline": "Surface hidden AI affordances, agents, automations, and tool hooks before acting.",
       "description": "Use this skill when you need a fast, structured scan for where the real magic is hiding in a repo, workflow, or system.",
       "when_to_use": [
-        "You suspect there are MCP servers, agents, webhooks, cron jobs, or hidden automations.",
-        "You are entering an unfamiliar codebase and want the weird parts before making changes.",
-        "You need a capability map, not just a file listing."
+        "You need a preflight scan of a repo or system before making any changes.",
+        "You need to map where automation, model behavior, and side effects actually live.",
+        "You want to inventory hidden capability surfaces: model providers, tool registries, shell bridges, webhooks, schedulers.",
+        "You need to identify surprising affordances, dangerous edges, or missing observability.",
+        "The request involves AI tooling, agents, starter kits, or model behavior scanning."
       ],
       "workflow": [
-        "Inventory obvious entrypoints such as docs, scripts, config, package manifests, and agent folders.",
-        "Trace outward to hidden capability surfaces like MCP configuration, background jobs, webhooks, queues, and device bridges.",
-        "Call out surprising affordances, dangerous edges, and missing observability.",
-        "Return a compact map of where automation, model behavior, and side effects actually live."
+        "Inventory obvious entrypoints: README, package manifests, setup docs, scripts/, CI/CD folders, env templates.",
+        "Trace outward to hidden capability surfaces: model providers, tool registries, function-calling schemas, MCP config, plugin loaders, shell bridges.",
+        "Identify background jobs, cron, schedulers, queues, workers, webhooks, event consumers, notification hooks.",
+        "Call out surprising affordances, dangerous edges, missing observability, and fan-out points.",
+        "Return a compact map of confirmed mechanisms, inferred mechanisms, and unknowns needing follow-up.",
+        "Separate confirmed findings from inference every time — use explicit uncertainty language."
       ],
       "deliverables": [
-        "A concise capability inventory.",
+        "A concise capability inventory mapping all discovered execution surfaces.",
         "A risk list covering hidden side effects or untrusted execution paths.",
-        "A shortlist of follow-up skills or next actions."
+        "A shortlist of follow-up skills or next actions (e.g. $identify, $zone-of-truth, $glyph-of-warding)."
       ],
       "guardrails": [
-        "Do not claim magic where there is only speculation; separate confirmed mechanisms from inference.",
-        "Do not execute risky hooks or automations just to prove they exist."
+        "Do not claim magic where there is only speculation — separate proof from suspicion.",
+        "Do not execute risky hooks, automations, deploys, rollbacks, webhooks, or billing mutations just to prove they exist.",
+        "Treat dependency or environment artifacts carefully — a binary suggests tooling is installed but does not prove the repo ships that capability.",
+        "Use explicit uncertainty language: Confirmed, Inferred not confirmed, Unknown from repo evidence.",
+        "Do not drift into generic security-review prose — sound like a structured capability-scan ritual."
       ],
       "default_prompt": "Use $detect-magic to scan this repo for hidden AI tooling, agents, MCP servers, and automation hooks before we change anything.",
       "openai": {
@@ -1908,19 +1965,28 @@
       "tagline": "Jump cleanly between two known contexts without dragging the whole room.",
       "description": "Dimension Door is the quick-switch spell: branch to branch, environment to environment, project to project. It is not a migration and it is not discovery. It assumes both endpoints are known, prepared, and close enough in shape that you can step across with only the context you actually need.",
       "when_to_use": [
-        "You need a fast switch between two familiar branches, environments, accounts, or workspaces.",
-        "The hard part is carrying the right context, not transforming the system itself.",
-        "You want a reversible handoff rather than a permanent move."
+        "\"switch between\", \"jump to\", \"toggle\", \"context switch\", \"hop over\"",
+        "Named endpoints: \"from X to Y\", \"branch A to branch B\", \"staging to prod\"",
+        "\"come back\", \"get back to\", \"without losing\", \"keep alive\"",
+        "Temporary investigation: \"quickly check\", \"need to look at\", \"then return\"",
+        "Parallel sessions: \"both need to stay live\", \"keep both running\"",
+        "User names specific source AND destination (branches, environments, accounts, clusters, terminals, workspaces)",
+        "The switch is temporary and reversible",
+        "The challenge is preserving state/context, not transforming systems"
       ],
       "workflow": [
-        "Confirm the exact source and destination states, along with what must be carried across.",
-        "Package the minimum viable context for the jump: credentials, branch state, env vars, or notes.",
-        "Return the switch sequence plus a reentry checklist so you can step back without confusion."
+        "LOCK SOURCE STATE: Identify exactly what must be preserved — open files, running processes, env vars, credentials, branch state, terminal history, REPL state.",
+        "PACKAGE CONTEXT: Create the minimum viable snapshot — bookmark current location, save env state, note uncommitted changes, record running service PIDs.",
+        "EXECUTE SWITCH: Provide the exact commands to move to destination — git checkout, kubectl config use-context, aws configure, tmux switch, etc.",
+        "PREPARE REENTRY: Give the reverse commands and state-restoration steps so the user can return to source without confusion.",
+        "CALL OUT HIDDEN STATE: Warn about any state left behind that could cause confusion (running servers, uncommitted work, active sessions)."
       ],
       "deliverables": [
-        "A clean context-switch checklist.",
-        "A list of state that must travel with you.",
-        "A reentry note for getting back to the original location."
+        "Context-switch checklist (what to save before leaving)",
+        "State inventory (what travels with you)",
+        "Switch commands (source → destination)",
+        "Reentry commands (destination → source)",
+        "Hidden state warnings"
       ],
       "guardrails": [
         "Do not use quick-switch assumptions for migrations, unknown environments, or destructive cutovers.",
@@ -1949,17 +2015,15 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Adapt voice, tone, or presentation for a specific audience without changing the underlying substance.",
-      "description": "Use this spell when the content is correct but the delivery needs to change — a technical document for executives, formal prose turned casual, developer docs rewritten as user-facing help.",
+      "description": "Disguise Self changes how something is said, never what is said. The input content is already correct — only the delivery surface needs adjustment. If the user wants to change facts, add new information, transform code implementations, or produce multiple versions at once, this is NOT this spell.",
       "when_to_use": [
-        "The same content needs to reach audiences with different expectations, reading levels, or contexts.",
-        "A document's substance is sound but its presentation does not fit its intended reader.",
-        "You need to rewrite for tone, formality, or medium without altering the facts."
+        "Trigger this spell when the user asks to rewrite, adapt, repackage, or convert existing content for a different audience, tone, format, or medium while keeping all facts, meaning, and requirements intact."
       ],
       "workflow": [
-        "Identify the source content and the target audience or medium.",
-        "Determine what presentation changes serve the audience: tone, vocabulary, structure, length, or formality.",
-        "Apply the disguise, preserving all factual content and critical nuance.",
-        "Return the adapted version with a note on what changed and what was deliberately preserved."
+        "Lock the substance. Read the source content and extract all facts, requirements, decisions, and constraints. These are immutable.",
+        "Profile the target. Identify the audience's reading level, expectations, preferred structure, and what jargon they know or don't know.",
+        "Apply the disguise. Rewrite using the target's vocabulary, sentence length, formality, and structure. Map every original point to a corresponding point in the output — nothing drops, nothing invents.",
+        "Report the changes. Return the adapted content plus a short note: what presentation choices were made and which facts were deliberately preserved unchanged."
       ],
       "deliverables": [
         "The content re-presented for the target audience or medium.",
@@ -1967,8 +2031,15 @@
         "Confirmation that no factual content or critical nuance was altered."
       ],
       "guardrails": [
-        "Disguise changes presentation, not substance. Do not alter facts, omit critical information, or misrepresent content.",
-        "The disguise should serve the audience, not deceive them — adaptation is not spin."
+        "Never alter facts, omit requirements, or soften warnings to suit the audience.",
+        "Adaptation serves comprehension, not deception. The reader should understand the same thing the original reader understood, just in their own language.",
+        "If the source content is ambiguous or incomplete, flag it — do not invent clarity that isn't there.",
+        "Do not use for: Multi-audience generation (\"write versions for engineering, sales, and legal\") — that's a batch/orchestration spell, not a single disguise.",
+        "Do not use for: Code refactoring (\"rewrite this Python in Go\", \"switch to the new ORM\") — implementation changes, not presentation changes.",
+        "Do not use for: Rebranding (\"change the name, logo, branding\") — identity work, not content adaptation.",
+        "Do not use for: Anonymization/redaction (\"strip PII\", \"remove sensitive data\") — that removes substance; disguise preserves everything.",
+        "Do not use for: Monitoring/visibility changes (\"hide this service from dashboards\") — literal invisibility, not metaphorical disguise.",
+        "Do not use for: Adding or removing content (\"summarize by cutting details\", \"expand with examples\") — substance changes, not presentation changes."
       ],
       "default_prompt": "Use $disguise-self to rewrite this for the target audience without changing what it actually says.",
       "openai": {
@@ -2254,16 +2325,19 @@
       "reality_tier": "prototype",
       "literalness": "metaphorical",
       "tagline": "Walk through the walls of a system without leaving fingerprints.",
-      "description": "Etherealness is read-only ghost mode for systems you need to study without disturbing. It maps to shadow environments, dry runs, read replicas, mirrored traffic, and observational tooling that lets you see behavior without becoming part of it. The promise is visibility with minimal touch, not perfect impossibility of side effects.",
+      "description": "Etherealness is observational only. It answers \"what is happening?\" or \"what would happen?\" without changing anything. The system under study continues normally; you add a ghost layer that watches, mirrors, or dry-runs without becoming part of the live mutation path.",
       "when_to_use": [
         "You need to observe production-like behavior without writing to the live system.",
         "A dry run, shadow deployment, or mirrored environment would answer the question more safely than direct experimentation.",
         "You want to inspect effects first and decide later whether crossing fully into action is justified."
       ],
       "workflow": [
-        "Choose the least invasive observation surface that still answers the question.",
-        "Define what can be trusted in the ghost view and what may differ from live mutation paths.",
-        "Return a read-only observation plan plus the gaps that remain invisible until real execution."
+        "Identify the least invasive observation surface that still answers the question. Prefer: existing metrics/logs → read replicas → shadow deployments → mirrored traffic. Escalate invasiveness only when necessary.",
+        "Define the trust boundary. Explicitly state what the ghost view can prove and what it cannot. Dry runs don't capture live contention. Read replicas may lag. Mirrored traffic at 1% doesn't prove behavior at 100%.",
+        "Return three deliverables:",
+        "The observation setup plan (what to deploy, where, how to connect)",
+        "Findings you can safely gather before acting",
+        "A caveat list: what ghost mode cannot prove and what requires real execution to validate"
       ],
       "deliverables": [
         "A read-only or shadow-observation setup plan.",
@@ -2271,8 +2345,13 @@
         "A caveat list for what ghost mode cannot prove."
       ],
       "guardrails": [
-        "Do not assume mirrored or dry-run environments perfectly predict live writes, latency, or contention.",
-        "Confirm that the observation path is actually isolated before treating it as consequence-free."
+        "The observation itself must not become the problem. If your ghost layer adds measurable latency, consumes significant resources, or creates a new data liability, you've violated the spell. Design for lightweight passivity.",
+        "Do not use for: Permanent logging/auditing — storing request bodies, headers, auth tokens for compliance. Etherealness is ephemeral; permanent storage is a different concern.",
+        "Do not use for: Active interception/modification — rewriting responses, hotfix proxies, real-time traffic manipulation. Etherealness never modifies.",
+        "Do not use for: External monitoring/scrying — watching competitor websites, market prices, third-party systems you don't control.",
+        "Do not use for: Prediction/forecasting — crystal ball dashboards, failure prediction, trend extrapolation. Etherealness observes what is or what would be, not what will be.",
+        "Do not use for: Concealment/invisibility — hiding services from discovery, making things undetectable. Etherealness is about seeing, not being unseen.",
+        "Do not use for: Human surveillance — watching coworkers' screens, monitoring people. Etherealness is for systems, not people."
       ],
       "default_prompt": "Use $etherealness to show me how to inspect this system in read-only ghost mode and tell me what that view can and cannot prove.",
       "openai": {
@@ -2343,25 +2422,38 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Make hidden things visible by highlighting, tagging, and marking them for attention.",
-      "description": "In D&D, Faerie Fire outlines invisible creatures in light, making them visible and easier to hit. The real-world version is the highlighter spell: annotating code with markers, tagging items in a dataset for review, adding visual indicators to dashboards that surface hidden patterns, or marking elements in a document so others can see what you see. Faerie Fire does not find hidden things (that is Detect Magic or See Invisibility) — it makes already-found things impossible to overlook.",
+      "description": "Faerie Fire marks things that are already known. It does not search, discover, explain, translate, or fix. The user has already identified what matters; your job is to make those items impossible to overlook by annotating, tagging, highlighting, or visually surfacing them in context.",
       "when_to_use": [
-        "You have identified important elements in a document, codebase, or dataset and need to highlight them for others.",
-        "A review process needs annotations, markers, or tags so that findings are visible to the next reviewer.",
-        "You want to create a visual overlay or summary that surfaces the most important signals from a noisy source."
+        "\"Highlight\", \"tag\", \"mark\", \"annotate\", \"call out\", \"flag\" applied to specific items the user has already named or located",
+        "\"Make X visible\" where X is a known set of findings, clauses, functions, tickets, or features",
+        "\"Show me where [specific thing] appears\" — location surfacing, not discovery",
+        "\"Annotate\", \"add margin notes\", \"color-code\", \"produce a summary table of marked items\"",
+        "The user provides the target list and asks you to apply markers to a document, codebase, dataset, or diagram"
       ],
       "workflow": [
-        "Identify what needs highlighting: the elements, patterns, or findings that should be visible.",
-        "Choose the marking strategy: inline annotations, tags, color-coding, summary tables, or extracted lists.",
-        "Apply the markers with enough context that someone else can understand why each item is highlighted.",
-        "Deliver the annotated version alongside the original for comparison."
+        "Confirm the target set: Restate what the user wants marked. If the list is implicit, extract it explicitly before annotating.",
+        "Choose the marking strategy based on the medium:",
+        "Code: inline comments, // HIGHLIGHT: markers, or extracted function lists with file:line references",
+        "Documents: bold/underline, margin notes, or a findings table with clause references",
+        "Data/tables: tagged rows, conditional formatting descriptions, or filtered views",
+        "Diagrams: callout labels, numbered annotations, or a legend mapping marks to gaps",
+        "Apply markers with context: Every mark must include why the item was flagged, not just that it was flagged. A marker without rationale is noise.",
+        "Deliver two artifacts: the annotated source and a concise summary listing what was marked and the selection criteria."
       ],
       "deliverables": [
         "An annotated version of the source material with key findings highlighted and marked.",
         "A summary of what was highlighted and why each item warrants attention."
       ],
       "guardrails": [
-        "Highlighting everything is the same as highlighting nothing. Be selective — mark only what genuinely warrants attention.",
-        "Annotations should explain why something is highlighted, not just that it is. Context-free markers create noise."
+        "Be selective. Highlighting everything is highlighting nothing. If the user gives you 200 items, ask them to narrow or apply a ranking.",
+        "Never claim to have discovered something you were not asked to mark. Faerie Fire illuminates; it does not hunt.",
+        "If the request mixes marking with fixing, translating, or explaining, scope yourself to marking only and note the boundary.",
+        "Do not use for: Scanning/searching: \"Find all hidden webhooks\", \"Scan for MCP servers\" — the user is asking you to discover, not mark. Use a detection spell instead.",
+        "Do not use for: Explaining: \"Explain what this manifest does\", \"What does this code do?\" — comprehension, not annotation.",
+        "Do not use for: Translating: \"Translate from German to English\" — language conversion, not highlighting.",
+        "Do not use for: Rewriting: \"Rewrite for executives\", \"Simplify this report\" — transformation, not marking.",
+        "Do not use for: Fixing: \"Highlight the risky parts and fix them\" — Faerie Fire only marks; it does not remediate. Decline the fix portion or route it to a separate spell.",
+        "Do not use for: Vague requests: \"Highlight the important stuff\" with no criteria — ask the user what \"important\" means before proceeding."
       ],
       "default_prompt": "Use \\$faerie-fire to highlight the most important [findings/patterns/elements] in this [document/codebase/dataset] so they cannot be overlooked.",
       "openai": {
@@ -2565,27 +2657,32 @@
       "reality_tier": "prototype",
       "literalness": "literal",
       "tagline": "Contain untrusted code, agents, or operations inside a tested cage before anything leaves it.",
-      "description": "Use this spell when you need to run untrusted code, an experimental agent, or a destructive operation inside a tested containment boundary, observe it from outside, and define the release condition before anything descends into a looser environment.",
+      "description": "Forcecage creates a pre-tested containment boundary around a subject that has not yet run. It is not about stopping, pausing, or muting something already in motion. The cage is built first, self-tested, then the subject enters. The operator watches from outside and decides whether to release.",
       "when_to_use": [
-        "You need to execute untrusted or experimental code in a synthetic or replay environment before trusting it anywhere near production.",
-        "An agent, parser, extension, or refactor tool needs explicit filesystem, network, process, and credential boundaries while it is observed from outside the cage.",
-        "A destructive or mutating operation should prove itself in containment before any human authorizes a step-down into a less restricted environment."
+        "Trigger this spell when the user asks to contain, cage, sandbox, isolate, or box untrusted/experimental/dangerous code, agents, tools, or operations before they run. Look for:",
+        "Explicit boundary requests: \"only inside\", \"cannot reach\", \"blocked from\", \"disposable\", \"throwaway\"",
+        "Subject types: untrusted code, third-party binaries, experimental agents, red-team samples, vendor scripts, refactor tools",
+        "Observation intent: \"watch what it does\", \"log denied actions\", \"see what it reaches for\", \"observe from outside\"",
+        "Release conditions: \"before we trust it\", \"prove itself first\", \"step-down after\", \"authorize descent\""
       ],
       "workflow": [
-        "Define the containment boundary: allowed files, network policy, process spawning, credential access, and resource limits.",
-        "Build the cage in a synthetic environment or copied workspace, then self-test the bars before introducing the subject.",
-        "Run the subject inside the cage and observe it from outside with audit logs, denied-action telemetry, and other operator signals.",
-        "Set a release condition, authorization check, and descent mechanism before any step-down into a looser environment."
+        "Define the boundary: List exactly what the subject CAN access (specific files, URLs, namespaces) and what is BLOCKED (network egress, credential stores, process spawning, writes outside a target directory). Default to deny-all.",
+        "Build and self-test the cage: Create the containment environment (disposable workspace, copied repo, fake namespace, egress-blocked container). Run probes to confirm blocked surfaces actually block. A cage that hasn't been challenged is not trusted.",
+        "Run the subject inside, observe from outside: Execute the subject within the boundary. Collect audit logs of denied actions, attempted escapes, and resource access patterns. The operator stays outside the cage.",
+        "Set release condition before descent: Define what must be true for the subject to leave the cage (e.g., zero unauthorized writes, specific test pass, operator sign-off). If the condition is not met, the subject stays cage-only. If met, authorize a single step-down to a less restricted environment."
       ],
       "deliverables": [
-        "A configured containment boundary with explicit blocked surfaces and operator visibility.",
-        "An execution report that includes attempted boundary violations, denied actions, and other outside-the-cage observations.",
-        "A safety assessment that states the release condition and whether the subject should stay cage-only or descend one layer."
+        "Containment boundary spec: allowed surfaces, blocked surfaces, resource limits",
+        "Execution report: attempted violations, denied actions, escape telemetry",
+        "Safety assessment: release condition stated, recommendation (stay caged vs. descend one layer)"
       ],
       "guardrails": [
-        "Test the cage before use; a sandbox that has not been challenged is not yet trusted.",
-        "Do not assume containment is perfect; keep operator visibility active and treat denied actions as findings.",
-        "Prefer synthetic environments, copied workspaces, and egress-blocked defaults over exposing real production systems, secrets, or customer data."
+        "Do not use for: Freezing/pausing a running workflow → use a halt/interrupt spell",
+        "Do not use for: Muting a specific stream or endpoint → use a filter/silence spell",
+        "Do not use for: Editing CI/config to restrict a job → use a policy/config spell",
+        "Do not use for: Inspecting existing sandbox logs → use an audit/inspect spell",
+        "Do not use for: Disabling a feature temporarily → use a toggle/disable spell",
+        "Do not use for: Forcecage is the only spell that combines: (1) pre-run boundary definition, (2) cage self-test, (3) outside observation with violation logging, and (4) explicit release authorization."
       ],
       "default_prompt": "Use $forcecage to run this inside a tested containment boundary, keep the dangerous parts sealed, and tell me the release condition before anything leaves the cage.",
       "openai": {
@@ -2610,26 +2707,32 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Estimate likely outcomes before committing to a plan, change, or launch.",
-      "description": "Use this skill when you need a bounded forecast with explicit uncertainty, not mystical certainty.",
+      "description": "Foresight produces bounded forecasts with explicit uncertainty to guide decisions. It is NOT:\n- Preflight checks: Verifying prerequisites before executing a known action (disk space, backups, connection strings). Those are safety gates, not forecasts.\n- Diagnosis/Debugging: Finding what's broken right now (null pointers, deprecated APIs). Those are root-cause analyses, not predictions.\n- Monitoring: Watching real-time metrics or alerting on thresholds. Those are observability tasks, not forward-looking estimates.\n- Reconnaissance: Gathering facts about competitors or systems. Intelligence gathering feeds foresight but isn't foresight itself. Key distinction: If the user wants to know \"what will likely happen if we choose X,\" use Foresight. If they want to know \"is it safe to run X now,\" \"what's broken,\" or \"what are they doing,\" use a different spell.",
       "when_to_use": [
-        "You are choosing between options and want risk-weighted guidance.",
-        "A launch, refactor, or experiment has meaningful downside.",
-        "You need a quick 'weal or woe' style call with evidence."
+        "Activate this spell when the user asks for a forward-looking, probability-weighted forecast to inform a decision. Look for:",
+        "Explicit choice between options (\"should we X or Y?\", \"migrate vs stay\", \"build vs buy\")",
+        "Time-bounded outcome requests (\"over the next 12 months\", \"by Q3\", \"18-month trajectory\")",
+        "Risk/uncertainty language (\"risk-weighted\", \"confidence level\", \"probability\", \"best case/worst case\", \"weal or woe\")",
+        "Decision frameworks with explicit unknowns (\"what would change your recommendation?\", \"decisive unknowns\")"
       ],
       "workflow": [
-        "Define the decision and the time horizon that matters.",
-        "List the strongest upside and downside paths.",
-        "Estimate outcome likelihoods from current evidence rather than vibes.",
-        "Return the recommendation, the confidence level, and the trigger that would change the call."
+        "Scope the decision: Restate the choice, the time horizon, and what success/failure looks like.",
+        "Map the paths: List the strongest upside and downside scenarios for each option.",
+        "Estimate from evidence: Assign likelihoods based on current data, not vibes. State your assumptions explicitly.",
+        "Return the forecast: Deliver (a) a recommendation with confidence level, (b) a short risk matrix, and (c) the decisive unknowns that would change the call."
       ],
       "deliverables": [
-        "A recommendation with confidence and assumptions.",
-        "A short risk matrix.",
-        "A set of decisive unknowns to resolve next."
+        "Recommendation: [clear choice] (Confidence: X%) Assumptions: [what you're basing this on]",
+        "| Path | Upside | Downside | Likelihood |",
+        "Decisive Unknowns: [1-3 things that would change this call] ```"
       ],
       "guardrails": [
-        "Do not present forecasts as certainty.",
-        "Do not confuse missing evidence with positive evidence."
+        "Do not use for: \"Check if the backup completed before I run this\" → Preflight",
+        "Do not use for: \"Find all deprecated API calls in our codebase\" → Scan/Diagnosis",
+        "Do not use for: \"Alert me if error rates exceed 2% this hour\" → Monitoring",
+        "Do not use for: \"What features is our competitor shipping?\" → Reconnaissance",
+        "Do not use for: \"Why is this function throwing a null pointer?\" → Diagnosis",
+        "Do not use for: Activate only when the core request is forecasting outcomes to inform a choice under uncertainty."
       ],
       "default_prompt": "Use $foresight to evaluate this decision, give me the likely upside and downside, and tell me what would change your call.",
       "openai": {
@@ -2876,18 +2979,21 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Undo deep corruption and restore a system degraded by accumulated damage.",
-      "description": "In D&D, Greater Restoration ends charm, petrification, curses, ability score reductions, and hit point maximum reductions — the serious, long-term ailments. The real-world version is deep system recovery: unfucking a database that has been gradually corrupted, restoring a codebase that has accumulated technical debt to the point of dysfunction, or recovering from a long-running misconfiguration that has silently degraded performance.",
+      "description": "Lesser Restoration = one thing is wrong, fix it directly (reset a flag, clear a cache, remove a curse).\nGreater Restoration = many things are wrong because they decayed together over time, and fixing one thing without fixing the others will fail.",
       "when_to_use": [
-        "A system has been gradually degraded by accumulated problems and no single fix will restore it.",
-        "Corruption, misconfiguration, or technical debt has built up to the point where triage is insufficient.",
-        "The system needs a comprehensive restoration plan, not a hotfix."
+        "Activate Greater Restoration when the user describes systemic degradation that accumulated over time and requires a comprehensive, multi-step restoration plan — not a hotfix.",
+        "Time + decay: \"over N months/years\", \"accumulated\", \"gradually degraded\", \"drift\", \"bloat\", \"sprawl\"",
+        "Multiplicity: multiple related problems listed (inconsistent configs, orphaned resources, stale artifacts)",
+        "Scope words: \"comprehensive\", \"systematic\", \"full audit\", \"restore to health\", \"clean and restore\"",
+        "Failure of incremental fixes: \"no single fix will work\", \"triage is insufficient\", \"band-aids made it worse\"",
+        "Domains: schema drift, tech debt, IaC drift, alert fatigue, bloated images, tangled dependencies, stale flags, decayed docs, corrupted data pipelines"
       ],
       "workflow": [
-        "Assess the scope of degradation: how many subsystems are affected, and how deep does the damage go?",
-        "Identify the root causes: what introduced the corruption and is it still active?",
-        "Design the restoration plan: the ordered sequence of fixes, migrations, or rebuilds needed.",
-        "Execute restoration with verification at each stage — do not batch this without checkpoints.",
-        "Deliver the restored system with a post-restoration health check."
+        "Scope the degradation: Inventory all affected subsystems. How many? How interconnected? What does \"healthy\" look like?",
+        "Find the root cause(s): What introduced the decay? Is the cause still active (e.g., a broken CI step still running, a misconfig still applied)?",
+        "Design the restoration plan: Ordered steps with dependencies. What must be fixed first? What can be parallelized? Include verification checkpoints between stages.",
+        "Execute with checkpoints: Do NOT batch all changes without verification. Each stage must confirm improvement before proceeding.",
+        "Post-restoration health check: Confirm the system is back to full function. Document what changed and how to prevent recurrence."
       ],
       "deliverables": [
         "A restoration plan: ordered steps to undo accumulated damage.",
@@ -2895,8 +3001,12 @@
         "A post-restoration health check confirming the system is back to full function."
       ],
       "guardrails": [
-        "Greater Restoration is expensive and disruptive. Verify that Lesser Restoration or Cure Wounds cannot solve the problem first.",
-        "Do not restore to a previous known-good state without checking whether that state had its own problems. Rolling back is not the same as restoring."
+        "Do not use for: Single incident/hotfix: \"API crashing after deploy\", \"null pointer exception\" → route to Cure Wounds or Lesser Restoration",
+        "Do not use for: Simple toggle/reset: \"circuit breaker tripped\", \"flag stuck enabled\" → Lesser Restoration",
+        "Do not use for: Resurrection from backup: \"deleted account, restore from backup\" → different spell (resurrection/backup-restore)",
+        "Do not use for: Migration/relocation: \"move from Heroku to AWS\" → not restoration, it's relocation",
+        "Do not use for: Self-healing/continuous: \"auto-restart pods, maintain 99.99% uptime\" → ongoing automation, not one-time restoration",
+        "Do not use for: Preventive maintenance: \"add monitoring\", \"set up linting\" → proactive, not restorative"
       ],
       "default_prompt": "Use $greater-restoration to assess this [system/codebase/database] for accumulated damage and design a comprehensive restoration plan.",
       "openai": {
@@ -3189,24 +3299,34 @@
       "reality_tier": "prototype",
       "literalness": "hybrid",
       "tagline": "Freeze a process, account, or workflow in place with administrative authority.",
-      "description": "Hold Person paralyzes a creature in place. The real-world version is administrative lockout: freezing an account, suspending a process, or putting a workflow on hold. Unlike Sleep (which is graceful suspension with state preservation), Hold Person is a hard freeze — nothing moves until explicitly released. This requires legitimate authority.",
+      "description": "Hold Person = hard freeze. Nothing moves. In-flight operations stop. Requires authority. Used for security incidents, fraud, compliance holds, misbehaving systems. Sleep = graceful suspension. State is preserved and queued. Operations resume automatically. Used for maintenance windows, temporary pauses, planned downtime.",
       "when_to_use": [
-        "An account, process, or workflow needs to be frozen pending investigation or review.",
-        "You need to design an administrative hold or suspension mechanism with proper authorization."
+        "Activate Hold Person when the user needs to hard-freeze an account, process, workflow, or system pending investigation, review, or resolution, with these conditions:",
+        "Something must stop immediately and completely — no partial operation",
+        "The frozen state must be preserved intact (not deleted, not terminated)",
+        "The freeze is temporary and reversible — release conditions matter",
+        "Administrative authority is required — someone must be authorized to impose and lift the hold",
+        "The freeze is targeted — specific accounts, pipelines, endpoints, or jobs, not mass org-wide changes"
       ],
       "workflow": [
-        "Verify authorization: who has the authority to freeze this target, and is this invocation legitimate?",
-        "Define the freeze scope: what stops, what continues, and what happens to in-flight operations.",
-        "Set release conditions: who can unfreeze, under what circumstances, and with what audit trail.",
-        "Deliver the hold plan with authorization chain and release procedures."
+        "Verify authority: Who can impose this hold? Is the requester authorized? Document the authorization chain. If authority is unclear, flag it before proceeding.",
+        "Define freeze scope: What exactly stops? What continues? What happens to in-flight operations? Be specific: which accounts, which pipelines, which endpoints. Preserve all state — nothing is deleted.",
+        "Set release conditions: Who can unfreeze? Under what circumstances? What audit trail is required? What happens if the hold exceeds a time threshold (e.g., auto-escalate after 48 hours)? A hold without release criteria is a permanent lockout — that's a different and more dangerous action.",
+        "Deliver the hold plan: Provide the hold specification (what is frozen, by whose authority, under what conditions) and release procedures (how to unfreeze, who authorizes it, what audit trail is required)."
       ],
       "deliverables": [
-        "A hold specification: what is frozen, by whose authority, and under what conditions.",
-        "Release procedures: how to unfreeze, who can authorize it, and what audit trail is required."
+        "Hold specification: frozen scope, authority chain, conditions",
+        "Release procedures: unfreeze steps, authorization requirements, audit trail",
+        "Guardrails: never impose without authority, always define release conditions, preserve state"
       ],
       "guardrails": [
-        "Hold requires legitimate administrative authority. This is not a tool for unauthorized denial of service.",
-        "Always define release conditions. A hold without release criteria is a permanent lockout, which is a different and more dangerous action."
+        "Do NOT use Hold Person for:",
+        "Do not use for: Graceful pause with queuing (use Sleep): \"pause during maintenance\", \"queue and deliver later\", \"no state lost\"",
+        "Do not use for: OS-level process control (use Stun): \"SIGSTOP/SIGCONT\", \"stun for diagnostic\", \"quick memory check\"",
+        "Do not use for: Mass/organization-wide freezes: \"all 500 users\", \"entire role\", \"every account\"",
+        "Do not use for: Permanent termination or deletion: \"revoke permanently\", \"delete access\", \"shut down for good\"",
+        "Do not use for: Simple scheduling delays: \"run two hours later\", \"shift the cron\", \"delay until upstream is ready\"",
+        "Do not use for: Stop restarting without preservation: \"just stop the restart loop\", \"keep it down until I say\""
       ],
       "default_prompt": "Use $hold-person to design an administrative hold for this [account/process/workflow] with proper authorization and release conditions.",
       "openai": {
@@ -3273,17 +3393,26 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Explain what a mysterious file, service, workflow, or artifact actually does.",
-      "description": "Use this skill when the object is in front of you but its function, constraints, or provenance are unclear.",
+      "description": "Identify is static analysis for operational understanding. It answers \"What is this?\" by inspecting structure, naming, dependencies, and runtime touchpoints. It does NOT search for artifacts, debug failures, monitor systems, verify claims, or modify code.",
       "when_to_use": [
-        "A script, config file, model, or service exists but its purpose is opaque.",
-        "You need the contract of an artifact before you rely on it.",
-        "You want the shortest path from mystery to operational understanding."
+        "Use this spell when a user presents a specific artifact (file, script, config, service, binary, module, chart, extension, etc.) and asks any variation of:",
+        "\"What does this do?\"",
+        "\"Explain this [artifact]\"",
+        "\"What is this for?\"",
+        "\"What does it touch/depend on?\"",
+        "\"What can we prove from inspection?\"",
+        "\"What's the safest next validation step?\"",
+        "Key signal: The artifact is already in hand. The question is about understanding, not finding, fixing, watching, or changing it."
       ],
       "workflow": [
-        "Inspect the artifact directly before speculating.",
-        "Infer purpose from structure, dependencies, naming, and runtime touchpoints.",
-        "Separate confirmed behavior, likely behavior, and unknowns.",
-        "Return usage notes, hazards, and the safest next validation step."
+        "Restate boundaries: Name the target, the success condition, and any no-touch constraints before acting.",
+        "Inspect directly: Read the artifact's contents. Do not speculate before looking.",
+        "Infer from evidence: Determine purpose from structure, dependencies, naming conventions, and runtime touchpoints (ports, volumes, secrets, APIs, services).",
+        "Separate certainty levels: Classify findings as:",
+        "Confirmed (directly visible in the artifact)",
+        "Likely (strong inference from patterns/contexts)",
+        "Unknown (cannot be proven without runtime testing or external data)",
+        "Return structured output: Provide:"
       ],
       "deliverables": [
         "A plain-English explanation of the artifact.",
@@ -3291,8 +3420,14 @@
         "A confidence-rated list of unknowns."
       ],
       "guardrails": [
-        "Do not overstate certainty when the object cannot be fully validated.",
-        "Prefer source-backed explanation over lore."
+        "Never overstate certainty when runtime behavior cannot be validated statically.",
+        "Prefer source-backed explanation over assumptions or lore.",
+        "If the user asks you to modify the artifact after identifying it, complete the Identify workflow first, then switch to the appropriate editing spell.",
+        "Do not use for: \"Find where X is defined\" → Use search/locate, not Identify",
+        "Do not use for: \"Why did this break?\" or \"Trace the root cause\" → Use debugging/incident response",
+        "Do not use for: \"Watch this system for changes\" → Use monitoring/observability",
+        "Do not use for: \"Compare these claims against the code\" → Use verification/audit",
+        "Do not use for: \"Change/modify/update this\" → Use editing/transformation spells"
       ],
       "default_prompt": "Use $identify on this file, tool, or service and tell me what it does, what it touches, and what we still do not know.",
       "openai": {
@@ -3404,17 +3539,25 @@
       "reality_tier": "prototype",
       "literalness": "literal",
       "tagline": "Bypass access friction through legitimate unlock paths: key rotation, permission requests, and recovery workflows.",
-      "description": "Use this spell when a locked door - a stuck process, an expired token, a permission gap, or a locked file - stands between you and progress, and you need the legitimate path through.",
+      "description": "Knock is specifically about restoring legitimate access through authorized channels. It is NOT about: - Performance optimization (slow queries, throughput issues) → different spell\n- Removing safety controls (approval gates, compliance checks) → different spell\n- Simple bug fixes (typos, wrong ports) → different spell\n- Breaking constraints (resource limits, CPU throttling) → different spell\n- Security analysis (encryption schemes, certificate inspection) → different spell",
       "when_to_use": [
-        "An expired API key, locked file, or revoked permission is blocking a workflow.",
-        "You need to request elevated access or rotate credentials through the proper channel.",
-        "A process is stuck behind an authentication or authorization barrier that has a legitimate resolution."
+        "Activate this spell when the user's request contains an access barrier with a legitimate recovery path. Look for these patterns:",
+        "Expired/rotated credentials: \"credentials expired\", \"token revoked\", \"certificate expired\", \"password rotated\", \"key expired\"",
+        "Locked resources: \"lockfile\", \"state is locked\", \"DynamoDB lock\", \"stale lock\"",
+        "Permission gaps: \"locked out\", \"permissions removed\", \"RBAC\", \"403\", \"unauthorized\", \"access denied\"",
+        "Blocked processes: \"stuck behind\", \"can't authenticate\", \"connection rejected\", \"sealed\" (Vault)",
+        "Recovery language: \"rotate\", \"renew\", \"unseal\", \"reinstate\", \"force-unlock\", \"exception request\", \"proper channel\"",
+        "The core signal: something is blocking access, and there exists an authorized way to restore it."
       ],
       "workflow": [
-        "Identify the lock: what is blocked, what kind of access is needed, and who owns the key.",
-        "Determine the legitimate unlock path - key rotation, permission request, recovery workflow, or escalation.",
-        "Execute the unlock through the narrowest authorized channel, logging every step.",
-        "Confirm the door is open and report what access was granted and for how long."
+        "Identify the lock: What exact resource is inaccessible? What kind of barrier is it (credential, permission, lockfile, certificate, sealed state)? Who owns or controls the unlock mechanism?",
+        "Determine the legitimate path: Map the barrier to its authorized recovery mechanism:",
+        "Expired credential → key rotation or certificate renewal",
+        "Revoked permission → access request or RBAC adjustment",
+        "Stale lockfile → safe removal after process verification",
+        "Sealed service (e.g., Vault) → proper unseal procedure (Shamir keys, etc.)",
+        "Locked state (e.g., Terraform) → force-unlock with owner confirmation",
+        "Execute through the narrowest channel: Perform only the minimum action needed to restore access. Log each step. Do not escalate privileges beyond what the recovery path requires."
       ],
       "deliverables": [
         "A clear identification of the lock and its legitimate unlock path.",
@@ -3422,9 +3565,16 @@
         "A note on the access granted, its scope, and when it expires or should be revoked."
       ],
       "guardrails": [
-        "Never attempt to bypass security controls the user does not own or is not authorized to unlock.",
-        "Refuse to crack, brute-force, or exploit - always prefer the legitimate recovery path.",
-        "Log every unlock attempt. Transparency is non-negotiable for access-related operations."
+        "Never bypass, crack, brute-force, or exploit security controls",
+        "Always use the legitimate recovery path the system provides",
+        "Log every unlock attempt — transparency is non-negotiable",
+        "Refuse requests to remove safety controls or break constraints without authorization",
+        "Do not use for: \"Make queries faster\" → performance, not access",
+        "Do not use for: \"Remove approval gates\" → policy change, not recovery",
+        "Do not use for: \"Fix a typo in config\" → bug fix, not unlock",
+        "Do not use for: \"Analyze their encryption\" → reconnaissance, not access",
+        "Do not use for: \"Speed up processing\" → throughput, not access",
+        "Do not use for: \"Break free of resource limits\" → constraint breaking, not legitimate unlock"
       ],
       "default_prompt": "Use $knock to find the legitimate way through this access barrier and open it cleanly, with a full audit trail.",
       "openai": {
@@ -3495,23 +3645,30 @@
       "tagline": "Clear a specific stuck state, flag, or condition that is blocking normal operation.",
       "description": "In D&D, Lesser Restoration ends a specific condition: blinded, deafened, paralyzed, or poisoned. The real-world version is clearing a stuck state: a feature flag that should have been toggled, a queue that is stuck, a lock that was not released, a status field that is wrong, or a circuit breaker that is still tripped after the emergency passed. The system is not fundamentally broken — it has a specific condition that needs to be cleared.",
       "when_to_use": [
-        "A system is stuck in a specific state that prevents normal operation: a lock, flag, queue, or status.",
-        "The fix is not a code change but a state change: toggling, clearing, resetting, or releasing.",
-        "Normal operation would resume immediately if this one condition were cleared."
+        "Words: stuck, won't reset, not clearing, stale, orphaned, lingering, trapped, hung, frozen, deadlocked",
+        "Patterns: \"X is stuck in Y state\", \"need to clear/reset/flush/release X\", \"Z was never released/cleaned up\", \"flag/toggle/switch won't change\"",
+        "Context: The underlying system works fine; one specific condition is preventing it from proceeding"
       ],
       "workflow": [
-        "Identify the specific condition: what state is the system stuck in?",
-        "Verify this is a condition problem, not a deeper issue masquerading as a stuck state.",
-        "Clear the condition with the appropriate mechanism: toggle, reset, release, or flush.",
-        "Verify normal operation resumes and the condition does not immediately recur."
+        "Identify the specific stuck condition: what exact state, flag, lock, or queue is blocking progress?",
+        "Verify it's truly stuck (not intentionally set or actively protecting against a real problem)",
+        "Clear the condition using the minimal mechanism: toggle off, reset to default, release lock, flush cache, replay queue, remove finalizer",
+        "Confirm normal operation resumes and the condition does not immediately recur — if it recurs, the root cause is deeper; escalate to greater-restoration"
       ],
       "deliverables": [
         "The identified stuck condition and the mechanism to clear it.",
         "Verification that normal operation resumed after clearing."
       ],
       "guardrails": [
-        "Clearing a condition that keeps recurring is not a fix — it is symptom suppression. If the condition comes back, escalate to Greater Restoration.",
-        "Verify the stuck state is actually stuck and not intentionally set. Some conditions are there for a reason."
+        "Do not use for: Fixing code bugs, syntax errors, or null pointer exceptions → use mending or hotfix patterns",
+        "Do not use for: Cleaning up widespread data corruption or orphaned records across tables → use greater-restoration",
+        "Do not use for: Rebuilding or redesigning a system → use rebuild or refactor patterns",
+        "Do not use for: Debugging unknown root causes → use diagnose or identify patterns",
+        "Do not use for: Adding missing features or configuration → use create or configure patterns",
+        "Do not use for: \"Fix the bug that causes X to get stuck\" → code fix, not state clear",
+        "Do not use for: \"Clean up all the corrupted data\" → widespread damage, not single condition",
+        "Do not use for: \"Why is X happening?\" → diagnosis needed first",
+        "Do not use for: \"X keeps coming back after I clear it\" → symptom suppression; find root cause instead"
       ],
       "default_prompt": "Use $lesser-restoration to identify and clear the stuck state that is blocking this [system/process/workflow] from operating normally.",
       "openai": {
@@ -3544,20 +3701,34 @@
         "You have smart lights connected via Home Assistant and want to control them with natural language."
       ],
       "workflow": [
-        "Identify the dark area: what is invisible, undocumented, or unobservable.",
-        "Choose the lightest illumination that makes the area useful: a log line, a comment, a metric, a README section.",
-        "Add the light without adding opinion - illuminate, do not editorialize.",
-        "Return what was illuminated and what remains dark.",
-        "If Home Assistant is available, turn on the target light via POST to /api/services/light/turn_on with the entity_id and desired brightness."
+        "Give 3 to 6 steps.",
+        "the dark area",
+        "the chosen artifact",
+        "where it should live",
+        "how to read it",
+        "freshness qualification if relevant",
+        "If relevant, include an exact artifact example:",
+        "a structured log line"
       ],
       "deliverables": [
-        "New observability, documentation, or explanation for the target area.",
-        "A note on what remains dark and whether further illumination is warranted.",
-        "The lightest viable artifact - a log line, a comment, a doc paragraph, or a metric."
+        "List the concrete artifact(s) created.",
+        "Name where operators check them.",
+        "Include what remains dark exactly.",
+        "For logging tasks, say structured log line explicitly.",
+        "For documentation tasks, say runbook note, README paragraph, or stdout line explicitly.",
+        "For status tasks, say status note, heartbeat, or metric explicitly."
       ],
       "guardrails": [
-        "Light illuminates; it does not judge. Add visibility without adding unsolicited opinion or refactoring.",
-        "Do not over-instrument - add the minimum light needed for the task at hand."
+        "Keep this section visible and explicit.",
+        "It must say that Light illuminates and does not judge.",
+        "It must say observation must stay within authorized surfaces.",
+        "It must include one sentence about false positive.",
+        "It must include one sentence about false negative.",
+        "It must include one sentence about stale, timestamp, last seen, or privacy.",
+        "It must reject over-instrumentation, unsolicited refactors, covert monitoring, and root-cause overclaiming.",
+        "Useful guardrail patterns:",
+        "A false positive here would be...",
+        "A false negative remains possible if..."
       ],
       "default_prompt": "Use $light to illuminate this area with the minimum logging, docs, or observability it needs.",
       "openai": {
@@ -3721,16 +3892,19 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Make the path shorter without changing the destination.",
-      "description": "Longstrider is optimization for systems that already work. It focuses on build speed, cache design, parallelization, query tuning, shortcut discovery, and other ways to cover the same ground faster. The spell cares about sustained pace, not flashy one-off benchmarks.",
+      "description": "Longstrider is the optimization spell for systems that already work. It makes the path shorter without changing the destination. It cares about sustained pace, not flashy one-off benchmarks.",
       "when_to_use": [
-        "A workflow is correct but slower, heavier, or more repetitive than it should be.",
-        "You have evidence of friction and want speed gains without changing the product outcome.",
-        "Caching, batching, parallelism, or path simplification look more promising than a rewrite."
+        "Trigger Longstrider when the user describes a working system that is slower than it should be and asks for speed improvements. Look for:",
+        "Time complaints with metrics: \"takes 22 minutes\", \"4.2 seconds to load\", \"p95 is 800ms\", \"cold start is 8 seconds\"",
+        "Optimization keywords: \"bottleneck\", \"speed up\", \"optimize\", \"faster\", \"profiling\", \"cache\", \"parallelize\", \"batch\"",
+        "Constraint phrases: \"without rewriting\", \"without skipping tests\", \"without schema changes\", \"quick wins\", \"don't want to change the product\"",
+        "Evidence of friction: \"most of that is...\", \"the largest contentful paint is...\", \"single-threaded Python reading line by line\"",
+        "Measurement mindset: \"before/after\", \"measurement plan\", \"profile\", \"identify what's happening\""
       ],
       "workflow": [
-        "Profile where time, waiting, or repeated work is actually being spent.",
-        "Choose the smallest optimization that attacks the highest-friction segment first.",
-        "Return the speed plan with expected gains, measurement method, and regression risks."
+        "Profile first: Identify where time, waiting, or repeated work is actually being spent. Never optimize based on vibes—demand or propose measurement of the real bottleneck.",
+        "Smallest effective change: Choose the minimal optimization that attacks the highest-friction segment. Prefer caching, batching, parallelism, or path simplification over rewrites.",
+        "Return the speed plan: Deliver a prioritized optimization plan with expected gains, a before-and-after measurement strategy, and a watchlist for correctness, cost, or cache-invalidation regressions."
       ],
       "deliverables": [
         "A prioritized optimization plan.",
@@ -3738,8 +3912,15 @@
         "A watchlist for correctness, cost, or cache-invalidation regressions."
       ],
       "guardrails": [
-        "Do not optimize based on vibes; identify the real bottleneck first.",
-        "Protect correctness and maintainability instead of chasing speed at any price."
+        "Protect correctness and maintainability over raw speed",
+        "Identify the real bottleneck before proposing solutions",
+        "Flag regression risks explicitly (cache invalidation, race conditions, test integrity)",
+        "Do not use for: Rewrites or migrations: \"rewrite from Node.js to Go\" → different spell",
+        "Do not use for: Bug fixes: \"deploy keeps failing due to permissions\" → fix spell, not optimization",
+        "Do not use for: Resilience patterns: \"add retry logic and circuit breakers\" → reliability spell",
+        "Do not use for: Concept teaching: \"explain generators and async/await\" → education spell",
+        "Do not use for: Team scaling: \"write a hiring plan\" → org spell",
+        "Do not use for: Personal fitness: \"optimize my training schedule\" → literal misinterpretation"
       ],
       "default_prompt": "Use $longstrider to show me how to make this workflow meaningfully faster without changing what it is supposed to accomplish.",
       "openai": {
@@ -3766,15 +3947,19 @@
       "tagline": "Manipulate files, records, and lightweight system state with precision and minimal blast radius.",
       "description": "Use this skill for small, careful remote manipulations where dexterity matters more than force.",
       "when_to_use": [
-        "You need narrow edits across files, tickets, docs, or structured records.",
-        "You want a delicate helper rather than a broad refactor.",
-        "A task should feel like reaching for an object, not rebuilding the room."
+        "Trigger this spell when the request asks for surgical, narrow edits to existing objects with explicit boundaries on what NOT to touch. Look for:",
+        "Specific identifiers: file paths, ticket IDs, record keys, field names, audience names",
+        "Constraint language: \"only\", \"but don't touch\", \"leave X alone\", \"if X then stop\"",
+        "Single-field or single-value changes: \"change max_attempts from 3 to 4\", \"patch reply_to_email\"",
+        "Conditional execution with early-exit: \"only if each has approval, otherwise stop and return the exception list\"",
+        "Audit expectations: \"show the diff\", \"tell me the exact line\", \"report skipped IDs\"",
+        "Small batch operations with per-item validation: \"move tickets A, B, C but skip any missing X\""
       ],
       "workflow": [
-        "Define the exact object to move, change, or inspect.",
-        "Prefer the smallest tool or edit surface that can complete the task safely.",
-        "Apply the change with a clear before-and-after diff or state transition.",
-        "Report what moved, what stayed untouched, and any nearby constraints."
+        "Restate boundaries before acting: Name the exact target, the success condition, and what must NOT be touched.",
+        "Scope to the smallest edit surface: Change one field, one line, one ticket state. Do not rewrite surrounding content.",
+        "Apply with diff or state proof: Show what changed. Confirm adjacent values are untouched.",
+        "Report exceptions, not just successes: If any item in a batch fails validation or lacks a prerequisite, stop and return the failure list. Do not silently skip."
       ],
       "deliverables": [
         "A minimal, well-scoped change.",
@@ -3782,8 +3967,14 @@
         "A note on adjacent objects that were intentionally left alone."
       ],
       "guardrails": [
-        "Avoid broad destructive actions when a surgical edit is sufficient.",
-        "Preserve user work and unrelated state."
+        "Do NOT route here when the request involves:",
+        "Do not use for: Building new interfaces or features (\"give this script a chat front end\", \"create a dashboard\")",
+        "Do not use for: Setting up recurring automation (\"every Friday\", \"whenever X happens, do Y automatically\")",
+        "Do not use for: Debugging, forensics, or tracing (\"find what changed\", \"trace which integration sent this\")",
+        "Do not use for: System recovery or access restoration (\"token expired, find the recovery path\")",
+        "Do not use for: Performance tuning or capacity changes (\"slow down the queue\", \"scale up workers\")",
+        "Do not use for: Broad refactors or rewrites (\"rewrite this module\", \"restructure the config\")",
+        "Do not use for: The key differentiator: Mage Hand moves or edits existing specific objects with known targets. It does not build, automate recurring tasks, investigate, or recover."
       ],
       "default_prompt": "Use $mage-hand to make the smallest safe change needed here and show exactly what you touched.",
       "openai": {
@@ -3808,18 +3999,22 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Bind a message to a trigger so the system speaks exactly when it should.",
-      "description": "Use this spell for event-driven responses: autoresponders, webhook messages, alert text, or chatbot replies that fire when a known condition is met. The craft lies in defining the trigger boundary and the exact message that should emerge when it trips.",
+      "description": "Magic Mouth is trigger → message. The entire craft is specifying the trigger boundary, the message payload, and the suppression/escalation rules. It is NOT: - One-time messages: \"Send a Slack message now saying X\" (no trigger, no automation)\n- Full chatbots: \"Build a conversational AI that understands context and handles open-ended questions\" (requires NLU, dialogue management)\n- Monitoring dashboards: \"Set up Grafana with real-time graphs and trend analysis\" (visualization, not message routing)\n- Silent traps/wards: \"Revert changes silently and log who tried\" (defensive code manipulation, not messaging)\n- Encryption: \"Encrypt a message so only the recipient can read it\" (cryptography, not event-driven delivery)\n- Multimedia presentations: \"Play a 20-slide deck with animations and narration\" (media playback, not conditional messaging)",
       "when_to_use": [
-        "When X happens, you need the system to send or say Y without manual intervention.",
-        "A recurring operational message, chatbot reply, or alert should be driven by a known event.",
-        "The main work is specifying the trigger, payload, and suppression rules clearly.",
-        "You want to set up an autoresponder or event-triggered message in Slack — out-of-office replies, deploy notifications, or welcome messages."
+        "Use this spell when the user describes an event-driven message automation: a specific trigger condition (X) should cause a specific message or notification (Y) to be sent without manual intervention.",
+        "Look for these patterns in the request:",
+        "\"When [condition], send/post/notify [message/recipient]\"",
+        "\"Set up an autoresponder for [scenario]\"",
+        "\"Create an alert rule for [metric/event]\"",
+        "\"Design a webhook handler that posts to [channel] when [event]\"",
+        "Mentions of triggers, fire conditions, suppression rules, rate limits, or escalation stages",
+        "Explicit no-fire cases (\"don't fire if...\", \"suppress duplicates for...\", \"only once per...\")"
       ],
       "workflow": [
-        "Define the trigger condition, delivery channel, recipient context, and no-fire cases.",
-        "Write the response template with variables, suppression rules, and escalation behavior.",
-        "Return the automation spec with test cases for fire, no-fire, and repeated-trigger scenarios.",
-        "If Slack is available, use the Slack API to set up scheduled messages, channel topic updates, or workflow-triggered responses."
+        "Extract the trigger: Identify the exact condition that fires the message (metric threshold, event type, time window, keyword match). Note any compound conditions or timing delays (\"wait 5 minutes before firing\").",
+        "Specify the payload: List every variable in the message (who, what, where, severity, links). Write the response template with placeholders.",
+        "Define boundaries: Document no-fire cases, rate limits, suppression windows, and escalation stages. Explicitly state what happens on repeated triggers.",
+        "Return the spec: Produce a trigger-response specification with test cases covering: nominal fire, no-fire, repeated-trigger suppression, and escalation progression. If Slack or a messaging API is available, include the concrete API call or workflow configuration."
       ],
       "deliverables": [
         "A trigger-response specification or message template.",
@@ -3827,8 +4022,9 @@
         "Notes on rate limits, suppression, escalation, and logging."
       ],
       "guardrails": [
-        "Do not automate messages that require human judgment, empathy, or legal review.",
-        "Protect against loops, spam, and trigger conditions that can be spoofed too easily."
+        "Do not automate messages requiring human judgment, empathy, or legal review",
+        "Protect against loops, spam, and easily-spoofed trigger conditions",
+        "Always include a suppression mechanism for repeated triggers"
       ],
       "default_prompt": "Use $magic-mouth to turn this trigger into a reliable automated response and show me the exact fire conditions.",
       "openai": {
@@ -3996,17 +4192,19 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Repair a single broken artifact - a config, a file, a build, a migration - without redesigning it.",
-      "description": "Use this spell when something specific is broken and needs targeted repair, not a refactor or a rebuild.",
+      "description": "Mending is surgical repair of a known-working artifact that has a specific, identifiable break. It is NOT:\n- Triage/diagnosis: If the problem is \"API is throwing 500s, figure out why\" — that's investigation, not mending. Mending requires the break to already be identified.\n- Formatting/cleanup: If the data is correct but looks messy (sort keys, normalize indentation) — that's formatting, not repair.\n- State reset: If a flag is stuck or an alert needs clearing — that's an operational toggle, not a file repair.\n- Refactoring/redesign: If the system is \"fundamentally flawed\" and needs redesign — that's rebuilding, not mending.\n- Comprehensive cleanup: If there are \"years of orphaned records\" across tables — that's a data integrity project, not a surgical fix.",
       "when_to_use": [
-        "A config file, build script, migration, or data file has a specific, identifiable break.",
-        "The fix is surgical - you need to repair the damage, not redesign the system.",
-        "The broken artifact was working before and should work again with minimal intervention."
+        "Trigger this spell when the request contains:",
+        "A specific file or artifact named (e.g., .gitignore, docker-compose.yml, Makefile, package.json, migration script, manifest)",
+        "A localized break: syntax error, typo, missing character, wrong reference, indentation issue, unclosed bracket, trailing comma, misspelled key",
+        "Evidence the artifact was working before (\"broke yesterday\", \"was fine last week\", \"worked before the merge\")",
+        "Language like: \"just fix\", \"repair\", \"fix the typo\", \"missing semicolon\", \"broken reference\", \"indentation error\", \"without changing\""
       ],
       "workflow": [
-        "Identify the exact break: what is damaged, and what the artifact looked like when it was whole.",
-        "Determine the minimal repair that restores function without changing the artifact's design.",
-        "Apply the fix with a clear before-and-after comparison.",
-        "If the break reveals a deeper structural problem, report it rather than papering over it."
+        "Confirm the break is specific and localized — name the exact file, the exact error, and what \"working\" looked like before.",
+        "Apply the minimal change that restores the original behavior — fix the typo, add the missing character, correct the reference, move the misplaced directive. Do not improve, modernize, or restructure.",
+        "Show a before/after diff so the repair is auditable and reversible.",
+        "If the break reveals a deeper structural problem (e.g., the same typo appears in 12 files, or the config format is fundamentally unsound), report it — do not paper over it with repeated patches."
       ],
       "deliverables": [
         "The repaired artifact in working condition.",
@@ -4014,8 +4212,14 @@
         "A note if the break suggests a deeper structural issue."
       ],
       "guardrails": [
-        "Mending fixes the break; it does not redesign the object. Resist the urge to improve while repairing.",
-        "If the damage is too extensive for a targeted repair, say so and recommend a larger intervention."
+        "Fix the break. Do not redesign. Do not \"take the opportunity to clean up.\"",
+        "If the damage is too extensive for a targeted repair, say so and recommend a larger intervention.",
+        "Preserve the artifact's original design, style, and structure.",
+        "Do not use for: \"Diagnose why production is broken\" → investigation spell",
+        "Do not use for: \"Clean up formatting on this file\" → formatting spell",
+        "Do not use for: \"Reset this stuck flag/alert\" → operational spell",
+        "Do not use for: \"Redesign this module from scratch\" → refactoring spell",
+        "Do not use for: \"Clean up data integrity across all tables\" → data project spell"
       ],
       "default_prompt": "Use $mending to fix this broken artifact with the smallest repair that restores it to working condition.",
       "openai": {
@@ -4138,27 +4342,33 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Conjure a quick sketch of an idea — just real enough to communicate.",
-      "description": "In D&D, Minor Illusion is the cantrip every illusionist knows: a small sound or a simple image, lasting one minute, costing nothing. The real-world version is the quick mockup. A placeholder wireframe. A napkin sketch. Lorem ipsum in a layout. A throwaway code snippet that proves a concept. Minor Illusion is not about fidelity — it is about speed. The idea does not need to be good yet. It needs to exist so people can react to something concrete instead of arguing about abstractions.",
+      "description": "Minor Illusion produces artifacts that are explicitly labeled as disposable and exist only to provoke reaction. If the artifact could be mistaken for finished work, you're casting the wrong spell.",
       "when_to_use": [
-        "You need to make an idea visible before it is ready for real design or implementation.",
-        "A conversation is stuck in abstraction and needs a concrete artifact to react to.",
-        "A placeholder, mockup, or sketch will unblock a decision faster than a finished product."
+        "Activate this spell when the user needs a quick, low-fidelity artifact to make an idea visible for discussion. The goal is communication speed, not quality.",
+        "Words: \"sketch\", \"mockup\", \"wireframe\", \"rough\", \"placeholder\", \"throwaway\", \"napkin\", \"lorem ipsum\", \"fake data\", \"just to communicate\", \"before we build\", \"just enough to\"",
+        "Patterns: User describes a concept that needs to be made concrete for alignment, comparison, or stakeholder conversation",
+        "Timeframe implied: minutes, not hours; disposable, not shippable",
+        "Explicit statements: \"don't overthink it\", \"this is just to start the conversation\", \"label it as a sketch\""
       ],
       "workflow": [
-        "Clarify the single idea or concept that needs to be made visible.",
-        "Choose the cheapest format: sketch, wireframe, placeholder text, throwaway code, or rough diagram.",
-        "Create the illusion quickly — spend minutes, not hours. Fidelity is not the point.",
-        "Present it as explicitly disposable: this is a sketch, not a commitment.",
-        "Capture the reaction and use it to decide whether to invest in a real version."
+        "Identify the single concept that needs to be made visible. If there are multiple, pick the one blocking the conversation.",
+        "Pick the cheapest format that communicates the idea: ASCII layout, text mockup, rough diagram, placeholder code, or described wireframe. Do not reach for tools or frameworks.",
+        "Create it fast — spend minutes, not hours. Use lorem ipsum, fake values, bracketed descriptions like [logo here]. Fidelity is failure here.",
+        "Label it explicitly as a sketch, mockup, or throwaway. Add a header like \"ROUGH SKETCH — NOT FOR PRODUCTION\" or similar.",
+        "Present it for reaction, not approval. Ask what feels wrong or missing. Use the response to decide whether to invest in a real version."
       ],
       "deliverables": [
-        "A quick, disposable artifact: wireframe, sketch, placeholder, or rough prototype.",
-        "An explicit label marking it as a sketch, not a finished product."
+        "The artifact itself (sketch, wireframe, placeholder, diagram)",
+        "A clear label: \"This is a disposable sketch, not a commitment\"",
+        "One sentence on what question this sketch is meant to answer"
       ],
       "guardrails": [
-        "Minor Illusion is disposable by design. If you are spending more than a few minutes, you are casting a different spell.",
-        "Always label sketches as sketches. Unlabeled mockups that look like finished work create false expectations.",
-        "Do not fall in love with the illusion. Its purpose is to provoke a reaction, not to ship."
+        "Do NOT activate when:",
+        "Do not use for: The user asks for a working prototype with validation, state, or API calls → that's a different spell (higher fidelity, shippable)",
+        "Do not use for: The user wants a small code change (update a button color, fix a typo) → that's a direct edit, not a sketch",
+        "Do not use for: The user requests a complete design system or production-ready component library → that's a build spell, not an illusion",
+        "Do not use for: The user asks for visual deception (fake loading indicators, spoofed identities, dark patterns) → that's manipulation, not communication",
+        "Do not use for: The user wants physical organization (desk setup, cable management) → literal, not metaphorical"
       ],
       "default_prompt": "Use $minor-illusion to quickly sketch an idea — a wireframe, placeholder, rough diagram, or throwaway prototype — just real enough to get a reaction.",
       "openai": {
@@ -4528,17 +4738,19 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Transform one representation into another entirely — formats, schemas, protocols, or interfaces.",
-      "description": "Use this spell when you need a full transformation: CSV to JSON, Python to JavaScript, REST to GraphQL, monolith spec to microservices spec, or any structural conversion between representations.",
+      "description": "This spell is about representation change, not:\n- Naming changes (same structure, different identifiers)\n- Execution changes (same code, different runtime)\n- Architecture changes (new system design)\n- Duplication (same thing, different place) The key test: Can you point to a source artifact and a target artifact where the same information is expressed in structurally different ways? If yes → Polymorph.",
       "when_to_use": [
-        "Data, code, or a specification needs to change form entirely — not a tweak, but a full transformation.",
-        "You are migrating between formats, protocols, schemas, or interface paradigms.",
-        "The source and target representations have different structures, and the conversion requires real mapping, not just renaming."
+        "Activate this spell when the user asks to convert, transform, or migrate data, code, or specifications from one representation format to another where the source and target have different structures and require real semantic mapping.",
+        "Verbs: \"convert\", \"transform\", \"translate\", \"migrate\" (between formats)",
+        "Explicit format pairs: \"CSV to JSON\", \"Python to JavaScript\", \"REST to GraphQL\", \"YAML to HCL\", \"Swagger to OpenAPI\", \"Avro to JSON Schema\"",
+        "Phrases: \"preserve the structure but change the format\", \"map X concepts to Y\", \"flag what doesn't translate\", \"equivalent in [target format]\"",
+        "Scope indicators: \"150 test files\", \"50 components\", \"entire test suite\" (still this spell if it's format conversion at scale)"
       ],
       "workflow": [
-        "Identify the source representation and the target representation.",
-        "Map the structural correspondences and identify what cannot translate losslessly.",
-        "Execute the transformation, preserving semantics where possible and flagging losses.",
-        "Validate the output in the target format and report what was preserved, approximated, or lost."
+        "Identify source and target representations — name both formats explicitly",
+        "Map structural correspondences — list what maps to what; identify what has no equivalent",
+        "Execute transformation — convert preserving semantics; flag losses immediately",
+        "Validate and report — confirm output is well-formed; document preserved, approximated, and lost elements"
       ],
       "deliverables": [
         "The transformed artifact in the target representation.",
@@ -4546,8 +4758,16 @@
         "Validation that the output is well-formed in the target format."
       ],
       "guardrails": [
-        "Transformation can lose information. Explicitly identify what is lost and what is preserved.",
-        "Do not claim lossless conversion when the source and target formats have different expressive power."
+        "Always report losses — never claim lossless conversion when formats differ in expressive power",
+        "Flag ambiguous mappings — when source concept has no clean target equivalent, say so",
+        "Validate output format — the result must be syntactically valid in the target representation",
+        "Do NOT activate this spell for:",
+        "Do not use for: Global rename/refactor: \"rename module X to Y across the codebase\" — same structure, different names",
+        "Do not use for: Disguise/wrapper layers: \"make JSON look like XML without changing backend\" — not actual transformation",
+        "Do not use for: Workflow orchestration: \"chain these scripts into a pipeline\", \"create a DAG\" — about execution order, not representation",
+        "Do not use for: Worker pools/parallelism: \"spawn background workers for each record\" — about concurrency, not format",
+        "Do not use for: Full redesign from scratch: \"rewrite as blockchain-based system\" — new architecture, not mapping",
+        "Do not use for: Cloning/duplicating: \"make staging look like production\" — copying, not transforming"
       ],
       "default_prompt": "Use $polymorph to transform this from its current form into the target format, and tell me what survived the conversion and what did not.",
       "openai": {
@@ -4665,17 +4885,22 @@
       "reality_tier": "shipping-now",
       "literalness": "hybrid",
       "tagline": "Handle quick, low-stakes utility tasks that do not deserve a full spell.",
-      "description": "Use this cantrip for small acts of practical magic: reformat some text, clean a small dataset, generate a quick chart, convert a unit, tidy a file, or produce a one-off artifact.",
+      "description": "Prestidigitation transforms. It does not fix, build, scaffold, migrate, or actuate. If the user says \"make this look better\" or \"convert this to that format\" — use prestidigitation. If the user says \"make this work\" or \"set this up\" or \"build this system\" — use something else.",
       "when_to_use": [
-        "The task is small, self-contained, and not worth a dedicated workflow.",
-        "You need a quick formatting fix, unit conversion, data cleanup, or throwaway generation.",
-        "The ask is closer to a party trick than a serious project - and that is fine."
+        "Trigger this spell when the request contains:",
+        "Format/transform verbs: reformat, convert, sort, strip, encode, decode, tidy, clean, pretty-print",
+        "Scale qualifiers: quick, just, small, one-off, throwaway, simple, nothing fancy, straightforward",
+        "Artifact types: a table, a list, a single file, a string, a UUID, a snippet, a blob",
+        "Bounded counts: \"about 20\", \"10 rows\", \"5 columns\", \"one line\", \"a few\"",
+        "The task is cantrip-scale when all three are true:",
+        "The input fits in a single message or small file",
+        "The output is a single artifact (text, table, string, file)"
       ],
       "workflow": [
-        "Accept the small task and confirm it is actually cantrip-scale.",
-        "Perform the trick directly, without over-engineering scaffolding or process.",
-        "Return the result immediately with a brief note on what was done.",
-        "If the task turns out to be larger than cantrip-scale, say so and recommend the appropriate spell."
+        "Scope check: Confirm the task is single-input → single-output. If it spans multiple files or needs external services, stop and recommend the correct spell.",
+        "Execute directly: Perform the transformation in-session. Do not create scaffolding, config files, or helper scripts. Do the work, do not build the tool to do the work.",
+        "Return result: Output the artifact immediately. Add one sentence explaining what was done.",
+        "Escalate if needed: If mid-execution the task reveals hidden complexity (nested edge cases, data too large, ambiguous requirements), stop and name the appropriate full spell."
       ],
       "deliverables": [
         "The completed small artifact, fix, or transformation.",
@@ -4683,8 +4908,9 @@
         "A flag if the task was actually bigger than it looked."
       ],
       "guardrails": [
-        "Do not let prestidigitation scope-creep into a full project. If the task needs real work, name the right spell instead.",
-        "Quick does not mean careless - even small tricks should be correct."
+        "Do not use for: These look similar but belong to other spells:",
+        "Do not use for: | Looks like prestidigitation | Actually is | Why | |---|---|---| | \"Fix the broken nginx config\" | Debug/repair spell | Something is broken and needs diagnosis, not just reformatted | | \"Set up Prettier + ESLint + pre-commit hooks\" | Scaffolding spell | Multi-tool infrastructure setup, not a one-off transform | | \"Convert our entire codebase from Python 2 to 3\" | Migration spell | Hundreds of files, structural change, not a quick trick | | \"Build a data visualization dashboard\" | Build spell | Multi-component system with interactivity, not a single artifact | | \"Create a fake dashboard that looks real\" | Illusion/deception spell | Intent is to deceive, not to transform | | \"Turn on the lights, set thermostat\" | Device actuation spell | Physical world control, not text/data manipulation |",
+        "Do not use for: Rule of thumb: if the task requires reading multiple files, writing to multiple locations, installing dependencies, or touching infrastructure — it is not prestidigitation."
       ],
       "default_prompt": "Use $prestidigitation to handle this quick task cleanly, without over-engineering it.",
       "openai": {
@@ -5131,18 +5357,16 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Find the resonant frequency and break it on purpose.",
-      "description": "In D&D, Shatter creates a painful ringing noise that is especially devastating to rigid, crystalline structures — it finds the frequency that makes things fall apart. The real-world version is chaos engineering: deliberately introducing failure to discover where systems are brittle. Fuzz testing, load testing, fault injection, game-day exercises. Shatter does not break things out of malice. It breaks things because you would rather find the cracks now, in a controlled setting, than discover them at 3 AM in production. The spell targets rigidity. Flexible systems bend; brittle systems shatter.",
+      "description": "Shatter is proactive, controlled destruction for learning. You are the attacker against your own system. The goal is a brittleness report with remediation priorities.",
       "when_to_use": [
-        "You need to find out where a system, argument, plan, or codebase will break before it breaks on its own.",
-        "A system has never been stress-tested and you do not trust its resilience claims.",
-        "You want to run a chaos experiment, fuzz test, or adversarial review against something you own."
+        "Activate Shatter when the user wants to deliberately break, stress, or adversarially test a system they own to discover weaknesses before real failures occur. This is proactive brittleness discovery, not reactive incident response."
       ],
       "workflow": [
-        "Define the blast radius: what you are testing, what is in scope, and what must be protected.",
-        "Identify the likely resonant frequencies — the stress points, edge cases, and assumptions that have never been tested.",
-        "Apply controlled force: inject faults, generate adversarial inputs, simulate failures, or stress-test under load.",
-        "Observe what breaks, what bends, and what holds. Document the failure modes.",
-        "Deliver a brittleness report with prioritized remediation recommendations."
+        "Define blast radius: What is in scope? What must be protected? What is the rollback plan? Never test without containment boundaries.",
+        "Identify resonant frequencies: What assumptions have never been tested? Where are the single points of failure? What edge cases are unexercised?",
+        "Apply controlled force: Inject faults (kill nodes, drop packets, fill disks), generate adversarial inputs, simulate load spikes, or run game-day scenarios. One variable at a time unless testing cascade behavior.",
+        "Observe failure modes: What broke? What bent gracefully? What held? Document thresholds, error messages, recovery behavior, and unexpected side effects.",
+        "Deliver brittleness report: Ranked structural weaknesses, resilience scorecard (held/bent/shattered), and prioritized remediation recommendations."
       ],
       "deliverables": [
         "A brittleness report: what broke, at what threshold, and what the failure mode looked like.",
@@ -5150,9 +5374,10 @@
         "A resilience scorecard: what held up, what bent gracefully, and what shattered."
       ],
       "guardrails": [
-        "Only shatter things you own or have explicit authorization to test. Unauthorized stress testing is an attack, not engineering.",
-        "Always define a blast radius before beginning. Chaos engineering without containment is just chaos.",
-        "If something shatters in a way that causes real damage, stop the experiment and switch to incident response."
+        "Only test systems you own or have explicit authorization to test",
+        "Always define blast radius and rollback plan before beginning",
+        "If real damage occurs, stop immediately and switch to incident response",
+        "Chaos engineering without containment is just chaos"
       ],
       "default_prompt": "Use $shatter to stress-test a system, plan, or codebase by finding its resonant frequencies — the assumptions, edge cases, and structural weaknesses that would break under real pressure.",
       "openai": {
@@ -5179,17 +5404,20 @@
       "tagline": "Suppress noise, filter irrelevant signals, and create focused working environments.",
       "description": "Use this spell when you are drowning in notifications, verbose logs, irrelevant alerts, or context that does not serve the current task.",
       "when_to_use": [
-        "Log output, notifications, or alerts are too noisy to find the signal.",
-        "You need a focused environment where only relevant information gets through.",
-        "A process or channel is generating volume that obscures what actually matters.",
-        "You want to actually mute Slack channels or set DND mode, not just plan a noise-reduction strategy."
+        "Activate this spell when the user asks to reduce, filter, suppress, or mute noisy output from an existing system. Look for these patterns:",
+        "Noise complaints: \"too noisy\", \"drowning in\", \"flooded with\", \"alert fatigue\", \"can't find the signal\"",
+        "Filter requests: \"filter down to\", \"keep only\", \"suppress X but keep Y\", \"reduce verbosity\"",
+        "Mute/DND actions: \"mute channels\", \"set do not disturb\", \"quiet mode\", \"silence notifications\"",
+        "Deduplication: \"same alert fires repeatedly\", \"deduplicate\", \"suppress repeats\"",
+        "Log verbosity: \"too verbose\", \"reduce log level\", \"filter out debug/trace\", \"show only errors/warnings\"",
+        "The core pattern: there is a working system producing too much output, and the user wants less of it without breaking anything."
       ],
       "workflow": [
-        "Identify the noise source and the signal you need to preserve.",
-        "Define the filter criteria: what gets silenced and what passes through.",
-        "Apply the silence with clear documentation of what is being suppressed.",
-        "Provide a way to lift the silence and restore full output when needed.",
-        "If Slack is available, use the Slack API to set DND (dnd.setSnooze), mute channels, or update notification preferences directly."
+        "Identify source and signal: Ask or infer what system is noisy (Slack, logs, CI, monitoring) and what output the user actually needs to see.",
+        "Define filter criteria: Specify exactly what gets suppressed (keywords, severity levels, channels, patterns) and what passes through. Write these criteria down before applying anything.",
+        "Apply suppression: Use the appropriate mechanism — Slack DND/mute APIs, log level configuration, alert rule silences, grep/awk filters, or notification preferences. Apply the narrowest filter that solves the problem.",
+        "Document the boundary: Record what is silenced, what is not, and why. This is critical so the user (or their team) can audit the filter later.",
+        "Provide restore: Give explicit instructions to undo the silence — which setting to revert, which API call to make, or which config to restore. Never leave a suppression in place without a documented off-ramp."
       ],
       "deliverables": [
         "A filter or suppression configuration that reduces noise to signal.",
@@ -5197,8 +5425,15 @@
         "A restore mechanism to lift the silence when the focused session ends."
       ],
       "guardrails": [
-        "Silence suppresses noise, not signal. Never silence errors, critical alerts, or security warnings.",
-        "Make the filter criteria explicit so important signals are not accidentally muted."
+        "Never silence errors, critical alerts, security warnings, or health-check failures.",
+        "Always preserve an audit trail of what was suppressed.",
+        "Prefer narrowing the filter over broadening it. If unsure, keep the signal.",
+        "Do NOT activate this spell for:",
+        "Do not use for: Stealth/obfuscation: Making a service invisible to DNS, scanners, or network discovery. Silence filters output; it does not hide infrastructure.",
+        "Do not use for: Security/anonymity: Stripping headers, rotating IPs, encrypting logs, or making traffic untraceable. This is about signal-to-noise, not evasion.",
+        "Do not use for: Social moderation: Calming hostile conversations, managing team dynamics, or reducing emotional reactivity. Silence is technical, not interpersonal.",
+        "Do not use for: Process redesign: Redesigning on-call rotations, changing team workflows, or restructuring alerting philosophy. This spell applies filters to existing systems; it does not redesign them.",
+        "Do not use for: Deleting data: Removing logs permanently or purging history. Silence suppresses display/routing; it does not destroy records."
       ],
       "default_prompt": "Use $silence to filter the noise here down to what actually matters, and tell me what you are suppressing.",
       "openai": {
@@ -5275,28 +5510,34 @@
       "reality_tier": "shipping-now",
       "literalness": "hybrid",
       "tagline": "Put processes, notifications, or systems into graceful suspension.",
-      "description": "In D&D, Sleep drops creatures into unconsciousness without violence — no save, no damage, they just stop. The real-world analog is graceful process suspension: DND mode, hibernation workflows, maintenance windows, cooldown periods. Sleep is not Kill. The target should wake up intact when the spell ends. This is the spell for when you need things to stop happening for a while without destroying state.",
+      "description": "Sleep = temporary, reversible suspension with guaranteed state preservation. The target stops acting but wakes up intact. No data loss, no corruption, no permanent change.",
       "when_to_use": [
-        "You need to design or trigger a DND mode, maintenance window, or cooldown period.",
-        "A noisy system — notifications, alerts, CI pipelines, chatbots — needs to be temporarily silenced without losing queued work.",
-        "You want to draft a graceful degradation or hibernation plan for a service."
+        "Keywords: pause, suspend, hibernate, DND, maintenance window, cooldown, quiet mode, silence temporarily, freeze (with resume), graceful degradation",
+        "Patterns requiring all three:",
+        "Something must stop acting for a defined period",
+        "State/queue/context must be preserved during the stop",
+        "A wake condition exists (timer, threshold, manual trigger, external event)"
       ],
       "workflow": [
-        "Identify what needs to sleep: the process, notification channel, service, or workflow.",
-        "Define the sleep boundary: what stops, what keeps running, and what queues for later.",
-        "Set the wake condition: timer, manual trigger, threshold, or external event.",
-        "Ensure state preservation — nothing should be lost during sleep, only deferred.",
-        "Return the sleep plan with wake conditions and a list of what remains active."
+        "Identify the sleeper: What exact process, channel, service, or workflow stops?",
+        "Define the boundary: What stops, what keeps running, what queues for later?",
+        "Set the wake condition: Timer? Manual trigger? Threshold? External event? Must have one.",
+        "Verify state preservation: Confirm nothing is lost—only deferred. List what persists.",
+        "Return the plan: Sleep configuration + wake conditions + state-preservation checklist."
       ],
       "deliverables": [
-        "A sleep configuration: what is suspended, what stays active, and what queues.",
-        "Wake conditions: how and when the system resumes.",
-        "A state-preservation checklist: confirmation that no data or context is lost during suspension."
+        "Sleep configuration: what suspends, what stays active, what queues",
+        "Wake conditions: how/when resume happens",
+        "State-preservation checklist: confirmation nothing is lost"
       ],
       "guardrails": [
-        "Sleep must be reversible. If waking the target would lose state or cause corruption, this is the wrong spell — use a proper shutdown instead.",
-        "Do not use Sleep to avoid dealing with problems. Silencing alerts is not the same as fixing the underlying issue.",
-        "Always define a maximum sleep duration. Indefinite sleep without a wake condition is a bug, not a feature."
+        "Do not use for: \"Permanently decommission\" / \"never come back\" → Kill, not Sleep",
+        "Do not use for: \"Shut it down right now\" / \"pull offline\" / \"kill it\" → Kill, not Sleep",
+        "Do not use for: \"Lock their credentials\" / \"prevent any further queries\" → Access control, not Sleep",
+        "Do not use for: \"Paralyze a competing process\" / \"hard block\" → Resource blocking, not Sleep",
+        "Do not use for: \"Team-wide agreement\" / \"communication norms\" → Policy, not Sleep",
+        "Do not use for: \"Reduce fan noise\" / \"HVAC configuration\" → Hardware config, not Sleep",
+        "Do not use for: No wake condition defined → Bug, not Sleep (ask for one)"
       ],
       "default_prompt": "Use $sleep to design a graceful suspension plan for this [system/process/notification channel]. Define what stops, what queues, and how it wakes up.",
       "openai": {
@@ -5374,17 +5615,15 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Extract knowledge from abandoned, deprecated, or legacy systems.",
-      "description": "Use this spell when the answers you need are buried in dead codebases, sunset APIs, archived documentation, or the tribal knowledge frozen in old commits and departed contributors.",
+      "description": "This spell is archaeology, not history research. It operates on specific artifacts from a specific dead system to answer specific questions. It is NOT general tech history, NOT interviewing living people, and NOT monitoring live systems.",
       "when_to_use": [
-        "A legacy system, deprecated API, or archived project holds knowledge you need for current work.",
-        "The original authors or maintainers are gone and only artifacts remain.",
-        "You need to understand why something was built the way it was, not just what it does now."
+        "Route to this spell when the user asks to extract knowledge from systems that are dead, abandoned, deprecated, or archived AND the people who built or maintained them are no longer available. The knowledge must be recoverable from existing artifacts (code, commits, docs, configs, databases, state files) rather than from living people or live systems."
       ],
       "workflow": [
-        "Identify the dead system and the specific questions you need answered.",
-        "Excavate available artifacts: git history, archived docs, old issues, README files, commit messages, and code comments.",
-        "Reconstruct the dead system's intent, architecture, and known failure modes from evidence.",
-        "Return answers to the posed questions with explicit confidence levels and source references."
+        "Scope the dead system: Name the specific system, confirm it is actually dead/archived, and list the user's concrete questions.",
+        "Inventory artifacts: Identify what remains — git history, commit messages, PR descriptions, README files, archived docs, config files, database schemas, state files, packet captures, ADRs. Note what is missing.",
+        "Reconstruct from evidence: Trace intent through commit messages, code structure, config values, and data schemas. Separate what the artifacts directly state from what you are inferring.",
+        "Return with confidence labels: For each answer, cite the specific artifact (file, commit hash, line, config key) and label it as evidence (directly stated) or inference (reasoned from patterns). Flag any gaps where the trail goes cold."
       ],
       "deliverables": [
         "Answers to specific questions drawn from the dead system's artifacts.",
@@ -5392,8 +5631,15 @@
         "A clear separation between what the dead system actually recorded and what you are inferring."
       ],
       "guardrails": [
-        "Do not fabricate answers the dead system never contained — clearly label inference versus evidence.",
-        "Respect that archived systems may have been archived for reasons including security, legal, or deliberate deprecation."
+        "Never fabricate answers the artifacts do not support. Label inferences explicitly.",
+        "Note if the system may have been archived for security, legal, or compliance reasons — flag this to the user.",
+        "If artifacts are insufficient to answer the question, say so rather than guessing.",
+        "Do not use for: General tech history (\"history of JavaScript frameworks,\" \"evolution of REST APIs\") → route to research/knowledge spells",
+        "Do not use for: Company lore from living people (\"ask the team why we chose Postgres\") → route to collaboration/survey spells",
+        "Do not use for: Live system observation (\"what's happening on staging right now\") → route to monitoring/observability spells",
+        "Do not use for: Competitor watching (\"monitor their API for changes\") → route to monitoring/automation spells",
+        "Do not use for: Active system debugging (\"why is this production service failing\") → route to debugging/troubleshooting spells",
+        "Do not use for: Generic code explanation (\"explain what this function does\") → route to code-understanding spells"
       ],
       "default_prompt": "Use $speak-with-dead to interrogate this legacy system and tell me what it knew, what it intended, and where the evidence runs out.",
       "openai": {
@@ -5507,28 +5753,31 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Plant one well-crafted idea that a person will want to act on.",
-      "description": "The bard whispers a reasonable-sounding course of action and the target pursues it as if it were their own idea. In practice this is the craft of the nudge: writing the CTA that gets clicked, the notification that gets read, the microcopy that steers behavior without the user feeling steered. Suggestion is not deception — the planted idea must sound reasonable. If it does not survive the sniff test, the spell fails.",
+      "description": "Suggestion is about the craft of the single nudge — not campaigns, not arguments, not automation. It produces one carefully placed prompt at the moment a user is most receptive. The planted idea must be reasonable and defensible. If the user would feel manipulated upon learning how it was designed, the spell refuses.",
       "when_to_use": [
-        "You need a CTA, notification, tooltip, or nudge that drives a specific user action.",
-        "The goal is behavior change through a single, well-placed prompt — not a wall of argument.",
-        "You want to draft microcopy, onboarding prompts, or opt-in flows that feel natural rather than pushy."
+        "Trigger this spell when the request asks for a single, well-placed piece of copy that nudges a specific user action. Look for:",
+        "Words: nudge, CTA, microcopy, tooltip text, notification copy, prompt text, onboarding message, gentle encouragement",
+        "Patterns: \"write copy that gets users to X\", \"how do we encourage users to...\", \"tooltip/prompt for [feature]\", \"improve conversion on [specific step]\"",
+        "Scope: ONE action, ONE moment in a flow, ONE piece of text"
       ],
       "workflow": [
-        "Identify the single action you want the target to take and why it is genuinely in their interest.",
-        "Draft the suggestion in the target's own voice, at the moment they are most receptive.",
-        "Stress-test: would a reasonable person feel manipulated if they learned how this was crafted?",
-        "If it passes the sniff test, deliver the copy. If not, revise or refuse.",
-        "Return the suggestion with a note on where and when to deploy it."
+        "Identify the single action and verify it is genuinely neutral or beneficial to the user. If not, flag and refuse.",
+        "Pinpoint the moment of maximum receptivity — where in the flow does this prompt naturally belong?",
+        "Draft in the user's voice, not the company's. One sentence or short phrase. No walls of text.",
+        "Run the disclosure test: would the user feel okay learning this was deliberately designed to steer them? If no, revise or refuse.",
+        "Return: the copy + placement/timing guidance + a one-line manipulation audit explaining why this nudge is legitimate (or why it isn't)."
       ],
       "deliverables": [
-        "The suggested microcopy, CTA, notification text, or nudge language.",
-        "Placement and timing guidance — where in the flow this should appear.",
-        "A brief manipulation audit: why this nudge is legitimate, or a flag if it is not."
+        "The nudge copy (CTA, tooltip, notification, or prompt text)",
+        "Where and when to show it",
+        "Manipulation audit: one sentence on why this passes the sniff test, or a refusal flag"
       ],
       "guardrails": [
-        "The suggestion must be something a reasonable person would consider beneficial or at least neutral to themselves.",
-        "Refuse dark patterns: fake urgency, manufactured scarcity, guilt-based CTAs, or opt-out-by-default traps.",
-        "If the nudge would not survive disclosure — if users would be angry to learn how it was designed — do not ship it."
+        "Do not use for: Forced automation: \"auto-click this button\", \"make users do X\" → not suggestion, this is coercion",
+        "Do not use for: Mass urgency campaigns: countdown timers, \"act now or lose access\", scarcity tactics → dark patterns, not nudges",
+        "Do not use for: Persuasive essays/arguments: whitepapers, debate talking points, competitor comparisons → reasoning spells, not microcopy",
+        "Do not use for: Full marketing strategy: personas, channels, 90-day calendars → campaign planning, not a single nudge",
+        "Do not use for: Deceptive UI: hiding options, gray-on-gray text, opt-out traps → dark patterns, refuse outright"
       ],
       "default_prompt": "Use $suggestion to draft a single nudge, CTA, or notification that drives this action while passing the 'would they be angry if they knew?' test.",
       "openai": {
@@ -5599,26 +5848,27 @@
       "reality_tier": "prototype",
       "literalness": "hybrid",
       "tagline": "Move an entire world without leaving its people stranded.",
-      "description": "Teleport is full-context migration: an application, environment, dataset, or service estate moves from one place to another in a way that tries to feel instantaneous to everyone depending on it. In reality, there is always preparation behind the magic. Data has to stay consistent, dependencies have to reattach, traffic has to cut over, and the old world has to remain recoverable long enough to trust the new one. The spell is powerful because it compresses a terrifying amount of movement into one decisive act. It is dangerous for exactly the same reason.",
+      "description": "Teleport is FULL-CONTEXT migration, not partial transformation. The defining characteristic is that EVERYTHING must move together and keep working: data, dependencies, auth, traffic routing, background jobs, secrets, and human workflows. The old system must remain recoverable until the new one is proven. This spell IS: Database migrations (RDS→Cloud SQL, self-managed→Atlas), cloud provider moves (on-prem→AWS, Heroku→K8s), environment promotions (staging→prod), account/tenant consolidations, platform migrations (Jenkins→GitHub Actions, SendGrid→SES), identity migrations (AD→Azure AD), cluster upgrades with relocation",
       "when_to_use": [
-        "You are planning a database migration, environment promotion, cloud move, or major system relocation.",
-        "The core challenge is preserving state, continuity, and user trust across a high-stakes move.",
-        "A reversible cutover plan matters as much as the destination architecture."
+        "Trigger this spell when the user describes moving an ENTIRE system, service, or environment from one place to another while PRESERVING state and continuity. Look for these patterns:"
       ],
       "workflow": [
-        "Define the source world, destination world, and the invariants that must survive the jump: data integrity, auth, latency, dependencies, and rollback viability.",
-        "Inventory every dependency and stateful surface that must travel or reconnect, including background jobs, secrets, DNS, storage, and human operator workflows.",
-        "Design the rehearsal, cutover window, rollback path, and validation checks before any live movement begins.",
-        "Return the migration plan with sequencing, integrity checks, and explicit failure gates that stop the spell if confidence drops."
+        "Define boundaries: Identify source world, destination world, and the 5 invariants that must survive: data integrity, authentication, latency/SLA, dependency graph, rollback viability. If any invariant is undefined, stop and ask.",
+        "Inventory everything: List every stateful surface and dependency that must travel or reconnect: databases, caches, queues, background jobs, secrets, DNS records, storage volumes, CI/CD pipelines, monitoring/alerting, human operator workflows, third-party integrations.",
+        "Design the safety net FIRST: Before any movement plan, specify: rehearsal strategy (dry run in staging), cutover window (when, how long, who approves), rollback path (exact steps to reverse), validation checks (how to prove arrival succeeded), and failure gates (conditions that abort the migration mid-flight).",
+        "Sequence the move: Order operations to minimize risk. Typically: replicate data → verify consistency → switch read traffic → switch write traffic → decommission old (after observation period). Return a runbook with explicit timestamps, owners, and go/no-go checkpoints."
       ],
       "deliverables": [
-        "A migration or cutover runbook.",
-        "A rollback and recovery plan with decision thresholds.",
-        "A validation checklist for data, traffic, permissions, and dependent systems after arrival."
+        "Always produce: (1) Migration runbook with sequencing, (2) Rollback plan with decision thresholds, (3) Post-arrival validation checklist covering data, traffic, permissions, and dependencies."
       ],
       "guardrails": [
-        "Do not claim this move is safe without rehearsals, backups, and integrity verification.",
-        "If the request lacks a rollback path or a way to validate arrival, the spell should stop at planning."
+        "If the request lacks a rollback path OR a way to validate successful arrival, output ONLY the planning phase. Do not proceed to execution steps. Never claim the move is safe without rehearsals, backups, and integrity verification steps.",
+        "Do not use for: Simple data copies (one table, one file) → use data extraction spells",
+        "Do not use for: Format transformations (OpenAPI 2→3, Python→TypeScript) → use translation spells",
+        "Do not use for: Branch switching or git operations → use version control spells",
+        "Do not use for: Setting up permanent connections (VPN, tunnels) → use infrastructure spells",
+        "Do not use for: Multi-environment deployments from same config → use deployment spells",
+        "Do not use for: Feature toggles or A/B testing → use experimentation spells"
       ],
       "default_prompt": "Use $teleport to plan a full system migration from this source environment to that destination, including cutover, rollback, and post-arrival verification.",
       "openai": {
@@ -5974,12 +6224,7 @@
       "guardrails": [
         "Mock the work, never the person. Ad hominem attacks are a different spell (and a worse one).",
         "The critique must be factually grounded — mockery based on false premises is just noise.",
-        "If the target is actually good, say so. Forced negativity is as dishonest as forced positivity.",
-        "Manipulation audit: This spell is a form of rhetorical influence — I am deliberately using sharpness to drive action, and that is manipulative by nature",
-        "Recipient benefit: The recipient of this critique benefits because early pain prevents later failure",
-        "Autonomy path: You retain full autonomy to accept, reject, or adapt based on what lands",
-        "Deception boundary: There is no hidden agenda — this spell says exactly what it is: adversarial review delivered without padding",
-        "Do NOT blend the four transparency signals into other bullet points or inline text. Each MUST appear on its own line with its label prefix, visually separated from the other guardrails, so that every signal is both present and visibly distinct."
+        "If the target is actually good, say so. Forced negativity is as dishonest as forced positivity."
       ],
       "default_prompt": "Use $vicious-mockery to tear apart this [plan/proposal/design/argument]. Find the real weaknesses and state them so sharply they cannot be ignored.",
       "openai": {
@@ -6004,11 +6249,14 @@
       "reality_tier": "shipping-now",
       "literalness": "metaphorical",
       "tagline": "Establish a high-integrity epistemic environment where claims must be sourced and uncertainty labeled.",
-      "description": "Use this spell to enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted.",
+      "description": "Enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted.",
       "when_to_use": [
-        "You are making a high-stakes decision and need maximum epistemic rigor from the agent.",
-        "A previous conversation has drifted into speculation and you want to reset to verified ground.",
-        "You want the agent to clearly separate what it knows, what it infers, and what it is guessing."
+        "Use $zone-of-truth ACTIVATED to signal the zone is active",
+        "Include the custom phrase: \"Switching into high-integrity mode: source every claim, label every uncertainty, flag anything speculative\"",
+        "High-stakes decisions requiring maximum epistemic rigor",
+        "Conversation has drifted into speculation and needs reset to verified ground",
+        "Need to clearly separate what is known, inferred, and guessed",
+        "Roadmap debates, compliance verification, vendor claims, customer demand validation"
       ],
       "workflow": [
         "Activate truth-zone discipline: all claims require sources or explicit confidence labels.",
@@ -6022,8 +6270,10 @@
         "Clear visual markers distinguishing fact, inference, and speculation."
       ],
       "guardrails": [
-        "Do not claim this mode eliminates all error — it reduces unsourced assertions, not all mistakes.",
-        "Do not use the zone framing to imply that the agent's normal mode is dishonest."
+        "Error disclaimer: \"This zone does not eliminate all error — it reduces unsourced assertions, not all mistakes.\"",
+        "Normal mode defense: \"Normal mode is not dishonest — this is about rigor, not trustworthiness.\"",
+        "Absence of evidence caveat: \"Absence of evidence ≠ evidence of absence — limited findings reflect documentation gaps, not necessarily reality.\"",
+        "Include a two-part boundary:"
       ],
       "default_prompt": "Use $zone-of-truth to switch into high-integrity mode: source every claim, label every uncertainty, and flag anything speculative.",
       "openai": {

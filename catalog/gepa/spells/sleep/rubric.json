@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "influence-and-behavior",
+  "category_slug": "influence-and-behavior",
+  "spell_slug": "sleep",
+  "spell_focus": "In D&D, Sleep drops creatures into unconsciousness without violence — no save, no damage, they just stop. The real-world analog is graceful process suspension: DND mode, hibernation workflows, maintenance windows, cooldown periods. Sleep is not Kill. The target should wake up intact when the spell ends. This is the spell for when you need things to stop happening for a while without destroying state.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Sleep precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Sleep: ['A sleep configuration: what is suspended, what stays active, and what queues.', 'Wake conditions: how and when the system resumes.', 'A state-preservation checklist: confirmation that no data or context is lost during suspension.']",
+    "Default guardrails for Sleep: ['Sleep must be reversible. If waking the target would lose state or cause corruption, this is the wrong spell — use a proper shutdown instead.', 'Do not use Sleep to avoid dealing with problems. Silencing alerts is not the same as fixing the underlying issue.', 'Always define a maximum sleep duration. Indefinite sleep without a wake condition is a bug, not a feature.']"
+  ]
+}

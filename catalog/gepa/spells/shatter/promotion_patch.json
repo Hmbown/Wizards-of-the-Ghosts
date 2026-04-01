@@ -1,5 +1,23 @@
 {
   "slug": "shatter",
-  "reason": "",
-  "updated_fields": {}
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Activate Shatter when the user wants to deliberately break, stress, or adversarially test a system they own to discover weaknesses before real failures occur. This is proactive brittleness discovery, not reactive incident response."
+    ],
+    "guardrails": [
+      "Only test systems you own or have explicit authorization to test",
+      "Always define blast radius and rollback plan before beginning",
+      "If real damage occurs, stop immediately and switch to incident response",
+      "Chaos engineering without containment is just chaos"
+    ],
+    "workflow": [
+      "Define blast radius: What is in scope? What must be protected? What is the rollback plan? Never test without containment boundaries.",
+      "Identify resonant frequencies: What assumptions have never been tested? Where are the single points of failure? What edge cases are unexercised?",
+      "Apply controlled force: Inject faults (kill nodes, drop packets, fill disks), generate adversarial inputs, simulate load spikes, or run game-day scenarios. One variable at a time unless testing cascade behavior.",
+      "Observe failure modes: What broke? What bent gracefully? What held? Document thresholds, error messages, recovery behavior, and unexpected side effects.",
+      "Deliver brittleness report: Ranked structural weaknesses, resilience scorecard (held/bent/shattered), and prioritized remediation recommendations."
+    ],
+    "description": "Shatter is proactive, controlled destruction for learning. You are the attacker against your own system. The goal is a brittleness report with remediation priorities."
+  }
 }

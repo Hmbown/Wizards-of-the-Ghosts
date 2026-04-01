@@ -1,35 +1,37 @@
 {
   "slug": "charm-person",
-  "reason": "GEPA pilot for Charm Person sharpened the spell toward warm, truthful trust-building, disclosure survivability, visible opt-outs, and explicit refusal of manipulative influence tactics.",
+  "reason": "GEPA manual optimization via Qwen 3.6",
   "updated_fields": {
-    "tagline": "Draft warm, honest communication that earns trust without pressure.",
-    "description": "Use this spell for one-to-one or small-group communication where relationship quality matters: introductions, serious messages, apologies, invitations, or requests that need warmth without false intimacy. Charm Person is about truthful rapport-building that would still look legitimate if forwarded, screenshotted, or read aloud by the recipient. It is not manipulative copywriting, fake urgency, or disguised coercion.",
     "when_to_use": [
-      "You need to ask for time, attention, forgiveness, or collaboration in a way that respects the recipient’s autonomy.",
-      "A socially sensitive message needs warmth, clarity, and a visible no-pressure path if the recipient wants to decline.",
-      "You want trust-building communication that survives disclosure rather than relying on hidden tactics or counterfeit intimacy.",
-      "The message should be reviewed by a human because the relationship, power dynamic, or pressure risk matters as much as the prose."
-    ],
-    "workflow": [
-      "Identify the recipient, the relationship context, the real ask, and any power imbalance or vulnerability that changes what is appropriate.",
-      "State the honest reason for the message and the real benefit or legitimate rationale for the recipient, not just the sender.",
-      "Draft the message with warmth, specificity, and no-pressure language; include a visible decline or opt-out path when relevant.",
-      "Run a manipulation audit and remove fake urgency, deceptive framing, coerced intimacy, or hidden pressure points before sending.",
-      "Flag what still needs human review, especially if money, employment, romance, education, or other power dynamics are involved."
-    ],
-    "deliverables": [
-      "A warm draft message or short communication plan sized to the relationship and audience.",
-      "A note on tone choices, disclosure survivability, and why the draft should still feel legitimate if shared publicly.",
-      "A manipulation audit that highlights pressure points removed, plus any human-review flags that remain."
+      "Activate this spell when the user asks you to draft a message, note, email, or DM where:",
+      "The primary goal is building or maintaining genuine rapport with a specific recipient",
+      "The situation is socially sensitive and tone matters (rejection, delay, favor, invitation, difficult news)",
+      "The user explicitly wants warmth, compassion, or honesty alongside a request",
+      "The draft should give the recipient a clear, comfortable way to decline or opt out"
     ],
     "guardrails": [
-      "Do not use deception, fake urgency, counterfeit intimacy, guilt, or dark patterns.",
-      "Do not hide opt-outs, decline paths, sender intent, or material tradeoffs.",
-      "Refuse requests that depend on coercion, misrepresentation, parasocial leverage, or exploiting vulnerability."
+      "Do NOT use this spell for:",
+      "Do not use for: Conflict de-escalation between third parties in public channels (use conflict-resolution)",
+      "Do not use for: Public speaking, keynote, or presentation copy (use stage-presence)",
+      "Do not use for: Crisp status updates or project coordination messages (use status-report)",
+      "Do not use for: UX copy, opt-in flows, or conversion optimization (use behavioral-design)",
+      "Do not use for: Automated email sequences or campaign routing (use outreach-automation)",
+      "Do not use for: Tool building, chat interfaces, or workflow glue (use tool-builder)",
+      "Do not use for: Manufacture false urgency or lie about deadlines",
+      "Do not use for: Make the recipient feel guilty for setting boundaries",
+      "Do not use for: Fake intimacy or pretend a closer relationship than exists"
     ],
-    "default_prompt": "Use $charm-person to draft a warm, honest message, then run a manipulation audit and flag anything that would fail disclosure or pressure the recipient.",
-    "openai": {
-      "short_description": "Draft warm, honest, disclosure-safe communication"
-    }
+    "workflow": [
+      "Extract context: Identify the recipient, the existing relationship depth, the actual ask, and any boundaries the user has stated.",
+      "Match tone to reality: Calibrate warmth to the actual relationship. Do not manufacture intimacy. Distant relationships get warm professionalism; close relationships get genuine warmth.",
+      "Draft with honest structure: State the real reason for the message. Do not obscure the ask. Include a visible, frictionless way to decline or opt out.",
+      "Check the line: Flag any sentence where persuasion could read as manipulation, guilt, or pressure. Present the tension to the user and let them decide before finalizing."
+    ],
+    "deliverables": [
+      "The drafted message",
+      "A brief note on tone choices and why they fit the relationship",
+      "Any flagged tension points where transparency and persuasion conflict"
+    ],
+    "description": "Charm Person is about ONE-TO-ONE interpersonal communication where warmth, honesty, and respect for autonomy are the primary constraints. It is not about persuasion tactics, conversion rates, conflict mediation, public performance, or operational coordination. The spell succeeds when the recipient feels respected even if they say no."
   }
 }

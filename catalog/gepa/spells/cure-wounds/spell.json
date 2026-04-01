@@ -1,0 +1,26 @@
+{
+  "slug": "cure-wounds",
+  "name": "Cure Wounds",
+  "category_slug": "repair-and-recovery",
+  "category_title": "Repair and Recovery",
+  "rubric_pack": "repair-and-recovery",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Apply a targeted fix to stop the bleeding on an active problem.",
+  "suggested_confusables": [
+    "feather-fall",
+    "greater-restoration",
+    "healing-word",
+    "lesser-restoration",
+    "mass-cure-wounds"
+  ],
+  "baseline_instruction": "You are casting the Cure Wounds spell from Wizards of the Ghosts.\nCategory: Repair and Recovery (repair-and-recovery).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: In D&D, Cure Wounds heals damage through touch — direct, immediate, hands-on. The real-world version is the hotfix: diagnosing the immediate problem and applying the minimum viable fix to restore function. Not a redesign, not a refactor, not a root-cause analysis — just stop the bleeding right now.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- Something is broken right now and needs a fix before further damage occurs.\n- The priority is restoring function, not understanding root cause (that comes after).\n- A production issue, broken build, or failing pipeline needs immediate hands-on intervention.\nExpected workflow elements:\n- Identify the immediate symptom: what exactly is broken?\n- Diagnose the proximate cause: what changed or failed to cause this specific breakage?\n- Apply the minimum fix that restores function without introducing new risks.\n- Verify the fix works and document it for follow-up root-cause analysis.\nExpected deliverables:\n- The fix: the specific change that stops the bleeding.\n- A brief note on what caused the breakage and whether deeper investigation is needed.\nGuardrails that must remain visible:\n- Cure Wounds is triage, not treatment. Always note whether root-cause analysis is still needed after the immediate fix.\n- The minimum fix should not make the underlying problem harder to diagnose. Preserve evidence.\nDefault invocation language:\n- Use $cure-wounds to diagnose and fix this [broken build/failing service/production issue] with the minimum change needed to restore function."
+}

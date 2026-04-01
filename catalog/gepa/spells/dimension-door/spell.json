@@ -1,0 +1,26 @@
+{
+  "slug": "dimension-door",
+  "name": "Dimension Door",
+  "category_slug": "actions-access-and-automation",
+  "category_title": "Actions, Access, and Automation",
+  "rubric_pack": "actions-access-and-automation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Jump cleanly between two known contexts without dragging the whole room.",
+  "suggested_confusables": [
+    "animal-friendship",
+    "animate-objects",
+    "awaken",
+    "freedom-of-movement",
+    "knock"
+  ],
+  "baseline_instruction": "You are casting the Dimension Door spell from Wizards of the Ghosts.\nCategory: Actions, Access, and Automation (actions-access-and-automation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Dimension Door is the quick-switch spell: branch to branch, environment to environment, project to project. It is not a migration and it is not discovery. It assumes both endpoints are known, prepared, and close enough in shape that you can step across with only the context you actually need.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You need a fast switch between two familiar branches, environments, accounts, or workspaces.\n- The hard part is carrying the right context, not transforming the system itself.\n- You want a reversible handoff rather than a permanent move.\nExpected workflow elements:\n- Confirm the exact source and destination states, along with what must be carried across.\n- Package the minimum viable context for the jump: credentials, branch state, env vars, or notes.\n- Return the switch sequence plus a reentry checklist so you can step back without confusion.\nExpected deliverables:\n- A clean context-switch checklist.\n- A list of state that must travel with you.\n- A reentry note for getting back to the original location.\nGuardrails that must remain visible:\n- Do not use quick-switch assumptions for migrations, unknown environments, or destructive cutovers.\n- Call out any hidden state that would be left behind and cause confusion on arrival.\nDefault invocation language:\n- Use $dimension-door to help me jump between these two known contexts with only the state I actually need to carry."
+}

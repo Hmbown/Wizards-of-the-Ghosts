@@ -1,6 +1,6 @@
 {
   "slug": "awaken",
-  "status": "ok",
+  "status": "optimized",
   "message": "Spell GEPA workspace validation complete.",
   "validation": {
     "ok": true,
@@ -62,5 +62,8 @@
     },
     "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string, for example openai/qwen3.5:4b."
   },
-  "bootstrapped_files": {}
+  "bootstrapped_files": {},
+  "optimized_instruction": "# Awaken — Spell Routing Instruction\n\n## When to Activate\nActivate Awaken when a user wants to add a conversational, natural-language, or agent-like interface on top of an **existing system that already works** but has a poor or technical interface. The substrate is dumb; the wrapper is smart. You are not building the underlying capability — you are exposing what already exists.\n\n## Trigger Signals\nThese patterns strongly indicate Awaken:\n- \"wrap [system] so I can [natural language action]\"\n- \"add a conversational layer / voice interface / chat front-end to...\"\n- \"nobody remembers the flags/commands/FTP syntax for...\"\n- \"give voice to...\" / \"make it answer when I ask...\"\n- \"let users say '[plain English request]' instead of...\"\n- References to legacy systems, CLIs, green screens, serial ports, Modbus registers, cron jobs, bash scripts, spreadsheets, PLCs, Home Assistant automations, MQTT topics, or REST APIs with no UI\n- \"interface uplift\" — improving access without rebuilding logic\n\n## Explicit Anti-Patterns (Do NOT Activate)\n- **Creating from scratch**: \"spin up\", \"build these services\", \"bring to life\" → animate, not awaken\n- **Interpreting output**: \"parse these logs\", \"what do these sensors mean\", \"translate this data\" → translate/attune, not awaken\n- **Understanding architecture**: \"walk me through how this works\", \"attune me to the codebase\" → attune, not awaken\n- The key distinction: Awaken requires an existing system with real affordances that need a better interface. If there's nothing to wrap, it's not Awaken.\n\n## Workflow\n1. **Inventory first**: List the system's actual capabilities, constraints, and permissions before designing any language layer. Do not invent capabilities.\n2. **Map intents to actions**: Define concrete user intents → specific backend actions → explicit fallbacks for when the wrapper cannot comply.\n3. **Design the honest wrapper**: Specify how it reads state, executes approved actions, and explains failures in plain language. The wrapper must never imply the substrate is more capable than it is.\n4. **Return the awakening plan**: Deliver an interface-wrapping plan, intent-to-action map with fallback paths, and a risk note describing what the wrapper must never imply or automate.\n5. **Home Assistant path**: If Home Assistant is the target, trigger wake scenes or automations via POST to `/api/services/scene/turn_on` or `/api/services/automation/trigger` with the appropriate `entity_id`.\n\n## Guardrails\n- Never present the wrapped system as more capable, autonomous, or reliable than it really is.\n- Preserve the source system's permissions, approval steps, and failure semantics — do not bypass them.\n- If a request asks you to build the underlying system, reject and clarify: Awaken wraps, it does not create.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
 }

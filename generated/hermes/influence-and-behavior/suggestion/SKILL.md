@@ -1,6 +1,6 @@
 ---
 name: suggestion
-description: "The bard whispers a reasonable-sounding course of action and the target pursues it as if it were their own idea. In practice this is the craft of the nudge: writing the CTA that gets clicked, the notification that gets read, the microcopy that steers behavior without the user feeling steered. Suggestion is not deception — the planted idea must sound reasonable. If it does not survive the sniff test, the spell fails."
+description: "Suggestion is about the craft of the single nudge — not campaigns, not arguments, not automation. It produces one carefully placed prompt at the moment a user is most receptive. The planted idea must be reasonable and defensible. If the user would feel manipulated upon learning how it was designed, the spell refuses."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,15 @@ metadata:
 # Suggestion
 Plant one well-crafted idea that a person will want to act on.
 ## What This Skill Does
-The bard whispers a reasonable-sounding course of action and the target pursues it as if it were their own idea. In practice this is the craft of the nudge: writing the CTA that gets clicked, the notification that gets read, the microcopy that steers behavior without the user feeling steered. Suggestion is not deception — the planted idea must sound reasonable. If it does not survive the sniff test, the spell fails.
+Suggestion is about the craft of the single nudge — not campaigns, not arguments, not automation. It produces one carefully placed prompt at the moment a user is most receptive. The planted idea must be reasonable and defensible. If the user would feel manipulated upon learning how it was designed, the spell refuses.
 In this grimoire, Suggestion is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Suggestion (spell).
 ## When To Use
 
-- You need a CTA, notification, tooltip, or nudge that drives a specific user action.
-- The goal is behavior change through a single, well-placed prompt — not a wall of argument.
-- You want to draft microcopy, onboarding prompts, or opt-in flows that feel natural rather than pushy.
+- Trigger this spell when the request asks for a single, well-placed piece of copy that nudges a specific user action. Look for:
+- Words: nudge, CTA, microcopy, tooltip text, notification copy, prompt text, onboarding message, gentle encouragement
+- Patterns: "write copy that gets users to X", "how do we encourage users to...", "tooltip/prompt for [feature]", "improve conversion on [specific step]"
+- Scope: ONE action, ONE moment in a flow, ONE piece of text
 
 ## Prerequisites
 
@@ -36,25 +37,27 @@ Canonical reference input: Suggestion (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the single action you want the target to take and why it is genuinely in their interest.
-3. Draft the suggestion in the target's own voice, at the moment they are most receptive.
-4. Stress-test: would a reasonable person feel manipulated if they learned how this was crafted?
-5. If it passes the sniff test, deliver the copy. If not, revise or refuse.
-6. Return the suggestion with a note on where and when to deploy it.
+2. Identify the single action and verify it is genuinely neutral or beneficial to the user. If not, flag and refuse.
+3. Pinpoint the moment of maximum receptivity — where in the flow does this prompt naturally belong?
+4. Draft in the user's voice, not the company's. One sentence or short phrase. No walls of text.
+5. Run the disclosure test: would the user feel okay learning this was deliberately designed to steer them? If no, revise or refuse.
+6. Return: the copy + placement/timing guidance + a one-line manipulation audit explaining why this nudge is legitimate (or why it isn't).
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- The suggested microcopy, CTA, notification text, or nudge language.
-- Placement and timing guidance — where in the flow this should appear.
-- A brief manipulation audit: why this nudge is legitimate, or a flag if it is not.
+- The nudge copy (CTA, tooltip, notification, or prompt text)
+- Where and when to show it
+- Manipulation audit: one sentence on why this passes the sniff test, or a refusal flag
 
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- The suggestion must be something a reasonable person would consider beneficial or at least neutral to themselves.
-- Refuse dark patterns: fake urgency, manufactured scarcity, guilt-based CTAs, or opt-out-by-default traps.
-- If the nudge would not survive disclosure — if users would be angry to learn how it was designed — do not ship it.
+- Do not use for: Forced automation: "auto-click this button", "make users do X" → not suggestion, this is coercion
+- Do not use for: Mass urgency campaigns: countdown timers, "act now or lose access", scarcity tactics → dark patterns, not nudges
+- Do not use for: Persuasive essays/arguments: whitepapers, debate talking points, competitor comparisons → reasoning spells, not microcopy
+- Do not use for: Full marketing strategy: personas, channels, 90-day calendars → campaign planning, not a single nudge
+- Do not use for: Deceptive UI: hiding options, gray-on-gray text, opt-out traps → dark patterns, refuse outright
 
 ## Verification
 

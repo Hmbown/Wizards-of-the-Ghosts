@@ -1,5 +1,33 @@
 {
   "slug": "detect-magic",
-  "reason": "",
-  "updated_fields": {}
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "You need a preflight scan of a repo or system before making any changes.",
+      "You need to map where automation, model behavior, and side effects actually live.",
+      "You want to inventory hidden capability surfaces: model providers, tool registries, shell bridges, webhooks, schedulers.",
+      "You need to identify surprising affordances, dangerous edges, or missing observability.",
+      "The request involves AI tooling, agents, starter kits, or model behavior scanning."
+    ],
+    "workflow": [
+      "Inventory obvious entrypoints: README, package manifests, setup docs, scripts/, CI/CD folders, env templates.",
+      "Trace outward to hidden capability surfaces: model providers, tool registries, function-calling schemas, MCP config, plugin loaders, shell bridges.",
+      "Identify background jobs, cron, schedulers, queues, workers, webhooks, event consumers, notification hooks.",
+      "Call out surprising affordances, dangerous edges, missing observability, and fan-out points.",
+      "Return a compact map of confirmed mechanisms, inferred mechanisms, and unknowns needing follow-up.",
+      "Separate confirmed findings from inference every time — use explicit uncertainty language."
+    ],
+    "deliverables": [
+      "A concise capability inventory mapping all discovered execution surfaces.",
+      "A risk list covering hidden side effects or untrusted execution paths.",
+      "A shortlist of follow-up skills or next actions (e.g. $identify, $zone-of-truth, $glyph-of-warding)."
+    ],
+    "guardrails": [
+      "Do not claim magic where there is only speculation — separate proof from suspicion.",
+      "Do not execute risky hooks, automations, deploys, rollbacks, webhooks, or billing mutations just to prove they exist.",
+      "Treat dependency or environment artifacts carefully — a binary suggests tooling is installed but does not prove the repo ships that capability.",
+      "Use explicit uncertainty language: Confirmed, Inferred not confirmed, Unknown from repo evidence.",
+      "Do not drift into generic security-review prose — sound like a structured capability-scan ritual."
+    ]
+  }
 }

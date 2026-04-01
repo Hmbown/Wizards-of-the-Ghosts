@@ -1,33 +1,36 @@
 {
   "slug": "light",
-  "reason": "GEPA pilot for Light sharpened the spell toward minimal instrumentation, ambient visibility, and explicit boundaries against surveillance, root-cause certainty, and live remediation.",
+  "reason": "GEPA manual optimization via Qwen 3.6",
   "updated_fields": {
-    "tagline": "Cast the smallest useful glow over a dark part of a system.",
-    "description": "Use this cantrip when a system, process, or codebase has a blind spot that needs just enough illumination to become legible: a log line, a request id, a last-seen note, a README paragraph, or a tiny metric. Light does not detect hidden things, prove root cause, or trigger live remediation. It adds the smallest honest signal that helps a human orient and then stops.",
-    "when_to_use": [
-      "A workflow is silent and needs one small observation point before deeper debugging or alerting work begins.",
-      "A script, runbook, or code path is opaque because one missing comment, stdout line, or doc paragraph leaves operators guessing.",
-      "A service needs a lightweight last-seen note, request identifier, or metric so humans can tell whether it is alive.",
-      "You want ambient observability or explanation without building a full dashboard, surveillance system, or paging rule."
+    "guardrails": [
+      "Keep this section visible and explicit.",
+      "It must say that Light illuminates and does not judge.",
+      "It must say observation must stay within authorized surfaces.",
+      "It must include one sentence about false positive.",
+      "It must include one sentence about false negative.",
+      "It must include one sentence about stale, timestamp, last seen, or privacy.",
+      "It must reject over-instrumentation, unsolicited refactors, covert monitoring, and root-cause overclaiming.",
+      "Useful guardrail patterns:",
+      "A false positive here would be...",
+      "A false negative remains possible if..."
     ],
     "workflow": [
-      "Name the blind spot and who needs it illuminated.",
-      "Choose the lightest viable artifact: log line, comment, last-seen timestamp, request id, metric, or short doc note.",
-      "Make the signal legible, freshness-qualified where needed, and explicit about what it does not prove.",
-      "Return the artifact, where it should live, and what remains dark."
+      "Give 3 to 6 steps.",
+      "the dark area",
+      "the chosen artifact",
+      "where it should live",
+      "how to read it",
+      "freshness qualification if relevant",
+      "If relevant, include an exact artifact example:",
+      "a structured log line"
     ],
     "deliverables": [
-      "A concrete minimal visibility artifact sized to the blind spot.",
-      "A short note on how to read it, how fresh it is, and who should use it.",
-      "A note on what remains dark and which neighboring spell fits if the user really needs discovery, highlighting, alerting, or remediation."
-    ],
-    "guardrails": [
-      "Do not drift into intrusive surveillance, root-cause certainty, or live remediation.",
-      "Do not over-instrument; add only the minimum light needed and keep authorization, freshness, and ownership explicit."
-    ],
-    "default_prompt": "Use $light to add the smallest honest log, metric, note, or indicator that makes this dark area of the system legible.",
-    "openai": {
-      "short_description": "Add minimal observability to a blind spot"
-    }
+      "List the concrete artifact(s) created.",
+      "Name where operators check them.",
+      "Include what remains dark exactly.",
+      "For logging tasks, say structured log line explicitly.",
+      "For documentation tasks, say runbook note, README paragraph, or stdout line explicitly.",
+      "For status tasks, say status note, heartbeat, or metric explicitly."
+    ]
   }
 }

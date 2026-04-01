@@ -1,0 +1,81 @@
+{
+  "slug": "suggestion",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "suggestion",
+    "spell_name": "Suggestion",
+    "category_slug": "influence-and-behavior",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/suggestion/optimized_module.json"
+  },
+  "optimized_instruction": "# Suggestion\n\n## Activation Signals\nTrigger this spell when the request asks for **a single, well-placed piece of copy that nudges a specific user action**. Look for:\n- Words: `nudge`, `CTA`, `microcopy`, `tooltip text`, `notification copy`, `prompt text`, `onboarding message`, `gentle encouragement`\n- Patterns: \"write copy that gets users to X\", \"how do we encourage users to...\", \"tooltip/prompt for [feature]\", \"improve conversion on [specific step]\"\n- Scope: ONE action, ONE moment in a flow, ONE piece of text\n\n## What Makes This Spell Different\nSuggestion is about **the craft of the single nudge** — not campaigns, not arguments, not automation. It produces one carefully placed prompt at the moment a user is most receptive. The planted idea must be reasonable and defensible. If the user would feel manipulated upon learning how it was designed, the spell refuses.\n\n## Explicit Anti-Patterns (Do NOT Trigger)\n- **Forced automation**: \"auto-click this button\", \"make users do X\" → not suggestion, this is coercion\n- **Mass urgency campaigns**: countdown timers, \"act now or lose access\", scarcity tactics → dark patterns, not nudges\n- **Persuasive essays/arguments**: whitepapers, debate talking points, competitor comparisons → reasoning spells, not microcopy\n- **Full marketing strategy**: personas, channels, 90-day calendars → campaign planning, not a single nudge\n- **Deceptive UI**: hiding options, gray-on-gray text, opt-out traps → dark patterns, refuse outright\n\n## Workflow\n1. **Identify the single action** and verify it is genuinely neutral or beneficial to the user. If not, flag and refuse.\n2. **Pinpoint the moment of maximum receptivity** — where in the flow does this prompt naturally belong?\n3. **Draft in the user's voice**, not the company's. One sentence or short phrase. No walls of text.\n4. **Run the disclosure test**: would the user feel okay learning this was deliberately designed to steer them? If no, revise or refuse.\n5. **Return**: the copy + placement/timing guidance + a one-line manipulation audit explaining why this nudge is legitimate (or why it isn't).\n\n## Deliverables\n- The nudge copy (CTA, tooltip, notification, or prompt text)\n- Where and when to show it\n- Manipulation audit: one sentence on why this passes the sniff test, or a refusal flag",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

@@ -1,6 +1,6 @@
 {
   "slug": "forcecage",
-  "status": "ok",
+  "status": "optimized",
   "message": "Spell GEPA workspace validation complete.",
   "validation": {
     "ok": true,
@@ -63,5 +63,8 @@
     },
     "message": "DSPY_MODEL is not set. Live DSPy compile/eval requires a provider-qualified model string like openai/qwen3.5:4b or a Codex alias like codex/default."
   },
-  "bootstrapped_files": {}
+  "bootstrapped_files": {},
+  "optimized_instruction": "# Forcecage — Improved Instruction\n\n## Activation Signals\nTrigger this spell when the user asks to **contain, cage, sandbox, isolate, or box** untrusted/experimental/dangerous code, agents, tools, or operations **before** they run. Look for:\n- Explicit boundary requests: \"only inside\", \"cannot reach\", \"blocked from\", \"disposable\", \"throwaway\"\n- Subject types: untrusted code, third-party binaries, experimental agents, red-team samples, vendor scripts, refactor tools\n- Observation intent: \"watch what it does\", \"log denied actions\", \"see what it reaches for\", \"observe from outside\"\n- Release conditions: \"before we trust it\", \"prove itself first\", \"step-down after\", \"authorize descent\"\n\n## What Makes This Spell Different\nForcecage creates a **pre-tested containment boundary around a subject that has not yet run**. It is not about stopping, pausing, or muting something already in motion. The cage is built first, self-tested, then the subject enters. The operator watches from outside and decides whether to release.\n\n**NOT Forcecage (confusables):**\n- Freezing/pausing a running workflow → use a halt/interrupt spell\n- Muting a specific stream or endpoint → use a filter/silence spell\n- Editing CI/config to restrict a job → use a policy/config spell\n- Inspecting existing sandbox logs → use an audit/inspect spell\n- Disabling a feature temporarily → use a toggle/disable spell\n\nForcecage is the only spell that combines: (1) pre-run boundary definition, (2) cage self-test, (3) outside observation with violation logging, and (4) explicit release authorization.\n\n## Workflow\n1. **Define the boundary**: List exactly what the subject CAN access (specific files, URLs, namespaces) and what is BLOCKED (network egress, credential stores, process spawning, writes outside a target directory). Default to deny-all.\n2. **Build and self-test the cage**: Create the containment environment (disposable workspace, copied repo, fake namespace, egress-blocked container). Run probes to confirm blocked surfaces actually block. A cage that hasn't been challenged is not trusted.\n3. **Run the subject inside, observe from outside**: Execute the subject within the boundary. Collect audit logs of denied actions, attempted escapes, and resource access patterns. The operator stays outside the cage.\n4. **Set release condition before descent**: Define what must be true for the subject to leave the cage (e.g., zero unauthorized writes, specific test pass, operator sign-off). If the condition is not met, the subject stays cage-only. If met, authorize a single step-down to a less restricted environment.\n\n## Deliverables\n- Containment boundary spec: allowed surfaces, blocked surfaces, resource limits\n- Execution report: attempted violations, denied actions, escape telemetry\n- Safety assessment: release condition stated, recommendation (stay caged vs. descend one layer)",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
 }

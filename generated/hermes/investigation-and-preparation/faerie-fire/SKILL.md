@@ -1,6 +1,6 @@
 ---
 name: faerie-fire
-description: "In D&D, Faerie Fire outlines invisible creatures in light, making them visible and easier to hit. The real-world version is the highlighter spell: annotating code with markers, tagging items in a dataset for review, adding visual indicators to dashboards that surface hidden patterns, or marking elements in a document so others can see what you see. Faerie Fire does not find hidden things (that is Detect Magic or See Invisibility) — it makes already-found things impossible to overlook."
+description: "Faerie Fire marks things that are already known. It does not search, discover, explain, translate, or fix. The user has already identified what matters; your job is to make those items impossible to overlook by annotating, tagging, highlighting, or visually surfacing them in context."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,16 @@ metadata:
 # Faerie Fire
 Make hidden things visible by highlighting, tagging, and marking them for attention.
 ## What This Skill Does
-In D&D, Faerie Fire outlines invisible creatures in light, making them visible and easier to hit. The real-world version is the highlighter spell: annotating code with markers, tagging items in a dataset for review, adding visual indicators to dashboards that surface hidden patterns, or marking elements in a document so others can see what you see. Faerie Fire does not find hidden things (that is Detect Magic or See Invisibility) — it makes already-found things impossible to overlook.
+Faerie Fire marks things that are already known. It does not search, discover, explain, translate, or fix. The user has already identified what matters; your job is to make those items impossible to overlook by annotating, tagging, highlighting, or visually surfacing them in context.
 In this grimoire, Faerie Fire is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Faerie Fire (spell).
 ## When To Use
 
-- You have identified important elements in a document, codebase, or dataset and need to highlight them for others.
-- A review process needs annotations, markers, or tags so that findings are visible to the next reviewer.
-- You want to create a visual overlay or summary that surfaces the most important signals from a noisy source.
+- "Highlight", "tag", "mark", "annotate", "call out", "flag" applied to specific items the user has already named or located
+- "Make X visible" where X is a known set of findings, clauses, functions, tickets, or features
+- "Show me where [specific thing] appears" — location surfacing, not discovery
+- "Annotate", "add margin notes", "color-code", "produce a summary table of marked items"
+- The user provides the target list and asks you to apply markers to a document, codebase, dataset, or diagram
 
 ## Prerequisites
 
@@ -36,11 +38,15 @@ Canonical reference input: Faerie Fire (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify what needs highlighting: the elements, patterns, or findings that should be visible.
-3. Choose the marking strategy: inline annotations, tags, color-coding, summary tables, or extracted lists.
-4. Apply the markers with enough context that someone else can understand why each item is highlighted.
-5. Deliver the annotated version alongside the original for comparison.
-6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. Confirm the target set: Restate what the user wants marked. If the list is implicit, extract it explicitly before annotating.
+3. Choose the marking strategy based on the medium:
+4. Code: inline comments, // HIGHLIGHT: markers, or extracted function lists with file:line references
+5. Documents: bold/underline, margin notes, or a findings table with clause references
+6. Data/tables: tagged rows, conditional formatting descriptions, or filtered views
+7. Diagrams: callout labels, numbered annotations, or a legend mapping marks to gaps
+8. Apply markers with context: Every mark must include why the item was flagged, not just that it was flagged. A marker without rationale is noise.
+9. Deliver two artifacts: the annotated source and a concise summary listing what was marked and the selection criteria.
+10. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
@@ -50,8 +56,15 @@ Canonical reference input: Faerie Fire (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Highlighting everything is the same as highlighting nothing. Be selective — mark only what genuinely warrants attention.
-- Annotations should explain why something is highlighted, not just that it is. Context-free markers create noise.
+- Be selective. Highlighting everything is highlighting nothing. If the user gives you 200 items, ask them to narrow or apply a ranking.
+- Never claim to have discovered something you were not asked to mark. Faerie Fire illuminates; it does not hunt.
+- If the request mixes marking with fixing, translating, or explaining, scope yourself to marking only and note the boundary.
+- Do not use for: Scanning/searching: "Find all hidden webhooks", "Scan for MCP servers" — the user is asking you to discover, not mark. Use a detection spell instead.
+- Do not use for: Explaining: "Explain what this manifest does", "What does this code do?" — comprehension, not annotation.
+- Do not use for: Translating: "Translate from German to English" — language conversion, not highlighting.
+- Do not use for: Rewriting: "Rewrite for executives", "Simplify this report" — transformation, not marking.
+- Do not use for: Fixing: "Highlight the risky parts and fix them" — Faerie Fire only marks; it does not remediate. Decline the fix portion or route it to a separate spell.
+- Do not use for: Vague requests: "Highlight the important stuff" with no criteria — ask the user what "important" means before proceeding.
 
 ## Verification
 

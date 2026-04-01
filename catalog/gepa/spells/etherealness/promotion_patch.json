@@ -1,0 +1,24 @@
+{
+  "slug": "etherealness",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "guardrails": [
+      "The observation itself must not become the problem. If your ghost layer adds measurable latency, consumes significant resources, or creates a new data liability, you've violated the spell. Design for lightweight passivity.",
+      "Do not use for: Permanent logging/auditing — storing request bodies, headers, auth tokens for compliance. Etherealness is ephemeral; permanent storage is a different concern.",
+      "Do not use for: Active interception/modification — rewriting responses, hotfix proxies, real-time traffic manipulation. Etherealness never modifies.",
+      "Do not use for: External monitoring/scrying — watching competitor websites, market prices, third-party systems you don't control.",
+      "Do not use for: Prediction/forecasting — crystal ball dashboards, failure prediction, trend extrapolation. Etherealness observes what is or what would be, not what will be.",
+      "Do not use for: Concealment/invisibility — hiding services from discovery, making things undetectable. Etherealness is about seeing, not being unseen.",
+      "Do not use for: Human surveillance — watching coworkers' screens, monitoring people. Etherealness is for systems, not people."
+    ],
+    "workflow": [
+      "Identify the least invasive observation surface that still answers the question. Prefer: existing metrics/logs → read replicas → shadow deployments → mirrored traffic. Escalate invasiveness only when necessary.",
+      "Define the trust boundary. Explicitly state what the ghost view can prove and what it cannot. Dry runs don't capture live contention. Read replicas may lag. Mirrored traffic at 1% doesn't prove behavior at 100%.",
+      "Return three deliverables:",
+      "The observation setup plan (what to deploy, where, how to connect)",
+      "Findings you can safely gather before acting",
+      "A caveat list: what ghost mode cannot prove and what requires real execution to validate"
+    ],
+    "description": "Etherealness is observational only. It answers \"what is happening?\" or \"what would happen?\" without changing anything. The system under study continues normally; you add a ghost layer that watches, mirrors, or dry-runs without becoming part of the live mutation path."
+  }
+}

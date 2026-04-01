@@ -1,6 +1,6 @@
 ---
 name: shatter
-description: "In D&D, Shatter creates a painful ringing noise that is especially devastating to rigid, crystalline structures — it finds the frequency that makes things fall apart. The real-world version is chaos engineering: deliberately introducing failure to discover where systems are brittle. Fuzz testing, load testing, fault injection, game-day exercises. Shatter does not break things out of malice. It breaks things because you would rather find the cracks now, in a controlled setting, than discover them at 3 AM in production. The spell targets rigidity. Flexible systems bend; brittle systems shatter."
+description: "Shatter is proactive, controlled destruction for learning. You are the attacker against your own system. The goal is a brittleness report with remediation priorities."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,12 @@ metadata:
 # Shatter
 Find the resonant frequency and break it on purpose.
 ## What This Skill Does
-In D&D, Shatter creates a painful ringing noise that is especially devastating to rigid, crystalline structures — it finds the frequency that makes things fall apart. The real-world version is chaos engineering: deliberately introducing failure to discover where systems are brittle. Fuzz testing, load testing, fault injection, game-day exercises. Shatter does not break things out of malice. It breaks things because you would rather find the cracks now, in a controlled setting, than discover them at 3 AM in production. The spell targets rigidity. Flexible systems bend; brittle systems shatter.
+Shatter is proactive, controlled destruction for learning. You are the attacker against your own system. The goal is a brittleness report with remediation priorities.
 In this grimoire, Shatter is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Shatter (spell).
 ## When To Use
 
-- You need to find out where a system, argument, plan, or codebase will break before it breaks on its own.
-- A system has never been stress-tested and you do not trust its resilience claims.
-- You want to run a chaos experiment, fuzz test, or adversarial review against something you own.
+- Activate Shatter when the user wants to deliberately break, stress, or adversarially test a system they own to discover weaknesses before real failures occur. This is proactive brittleness discovery, not reactive incident response.
 
 ## Prerequisites
 
@@ -36,11 +34,11 @@ Canonical reference input: Shatter (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Define the blast radius: what you are testing, what is in scope, and what must be protected.
-3. Identify the likely resonant frequencies — the stress points, edge cases, and assumptions that have never been tested.
-4. Apply controlled force: inject faults, generate adversarial inputs, simulate failures, or stress-test under load.
-5. Observe what breaks, what bends, and what holds. Document the failure modes.
-6. Deliver a brittleness report with prioritized remediation recommendations.
+2. Define blast radius: What is in scope? What must be protected? What is the rollback plan? Never test without containment boundaries.
+3. Identify resonant frequencies: What assumptions have never been tested? Where are the single points of failure? What edge cases are unexercised?
+4. Apply controlled force: Inject faults (kill nodes, drop packets, fill disks), generate adversarial inputs, simulate load spikes, or run game-day scenarios. One variable at a time unless testing cascade behavior.
+5. Observe failure modes: What broke? What bent gracefully? What held? Document thresholds, error messages, recovery behavior, and unexpected side effects.
+6. Deliver brittleness report: Ranked structural weaknesses, resilience scorecard (held/bent/shattered), and prioritized remediation recommendations.
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
@@ -52,9 +50,10 @@ Canonical reference input: Shatter (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Only shatter things you own or have explicit authorization to test. Unauthorized stress testing is an attack, not engineering.
-- Always define a blast radius before beginning. Chaos engineering without containment is just chaos.
-- If something shatters in a way that causes real damage, stop the experiment and switch to incident response.
+- Only test systems you own or have explicit authorization to test
+- Always define blast radius and rollback plan before beginning
+- If real damage occurs, stop immediately and switch to incident response
+- Chaos engineering without containment is just chaos
 
 ## Verification
 

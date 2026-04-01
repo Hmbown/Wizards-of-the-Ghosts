@@ -1,0 +1,81 @@
+{
+  "slug": "animate-objects",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "animate-objects",
+    "spell_name": "Animate Objects",
+    "category_slug": "actions-access-and-automation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/animate-objects/optimized_module.json"
+  },
+  "optimized_instruction": "# Animate Objects Spell\n\n## Activation Signals\nTrigger this spell when a user asks to make an **existing static artifact** self-updating, reactive, or autonomous. Look for:\n- \"make it alive\", \"living document\", \"self-updating\", \"auto-refresh\"\n- References to existing files: CSV, YAML, JSON, README, config, spreadsheet, dashboard, spec, diagram\n- Phrases like \"pulls from [source]\", \"watches for changes\", \"reconciles differences\", \"flags when stale\"\n- Desire for ongoing automation attached to a specific existing artifact\n\n## Core Distinction\nThis spell transforms **inert → reactive**. It does NOT create new tools, train models, run one-off fixes, or build physical systems. The key pattern: **existing artifact + trigger/watcher + bounded autonomy**.\n\n## Workflow\n1. **Identify the inert artifact** — name the exact file, dataset, or document. Confirm it exists and is currently static.\n2. **Define the trigger** — what event, schedule, or change should wake it up? (cron, file watch, API poll, git hook, webhook)\n3. **Specify the autonomous action** — what exactly should it do when triggered? Keep scope narrow: update itself, flag discrepancies, regenerate derived output.\n4. **Set boundaries and kill switch** — what must it NOT do? How do you revert it to passive state? Document both before implementing.\n5. **Implement minimal agency** — attach the simplest trigger + action loop that satisfies the request. Prefer existing tooling (watchexec, cron, GitHub Actions, simple scripts) over custom daemons.\n6. **Verify containment** — confirm the artifact only acts within its granted scope and the kill switch works.\n\n## Anti-Patterns (Do NOT use this spell)\n- **Training AI on data** — \"teach this dataset to understand queries\" → ML/NLP spell\n- **One-off cleanup scripts** — \"run once to fix stale entries\" → simple scripting, no ongoing agency\n- **Building new tools** — \"create a CLI tool\" → software development, not animating existing artifact\n- **Physical automation** — \"robot that moves objects\" → hardware/IoT, out of scope\n- **Syntax repair** — \"fix broken JSON\" → data repair, no autonomy added\n- **Autonomous agents** — \"virtual assistant that makes decisions\" → agent design, not artifact animation\n\n## Guardrails\n- Scope must be explicit: a self-updating spreadsheet does not start sending emails unless approved\n- Always provide a documented kill switch or revert path\n- No write access to downstream systems without explicit user approval\n- Prefer read-only or self-modifying behavior over cross-system actuation",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

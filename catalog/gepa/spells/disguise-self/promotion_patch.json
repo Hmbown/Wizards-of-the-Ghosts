@@ -1,5 +1,27 @@
 {
   "slug": "disguise-self",
-  "reason": "",
-  "updated_fields": {}
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Trigger this spell when the user asks to rewrite, adapt, repackage, or convert existing content for a different audience, tone, format, or medium while keeping all facts, meaning, and requirements intact."
+    ],
+    "guardrails": [
+      "Never alter facts, omit requirements, or soften warnings to suit the audience.",
+      "Adaptation serves comprehension, not deception. The reader should understand the same thing the original reader understood, just in their own language.",
+      "If the source content is ambiguous or incomplete, flag it — do not invent clarity that isn't there.",
+      "Do not use for: Multi-audience generation (\"write versions for engineering, sales, and legal\") — that's a batch/orchestration spell, not a single disguise.",
+      "Do not use for: Code refactoring (\"rewrite this Python in Go\", \"switch to the new ORM\") — implementation changes, not presentation changes.",
+      "Do not use for: Rebranding (\"change the name, logo, branding\") — identity work, not content adaptation.",
+      "Do not use for: Anonymization/redaction (\"strip PII\", \"remove sensitive data\") — that removes substance; disguise preserves everything.",
+      "Do not use for: Monitoring/visibility changes (\"hide this service from dashboards\") — literal invisibility, not metaphorical disguise.",
+      "Do not use for: Adding or removing content (\"summarize by cutting details\", \"expand with examples\") — substance changes, not presentation changes."
+    ],
+    "workflow": [
+      "Lock the substance. Read the source content and extract all facts, requirements, decisions, and constraints. These are immutable.",
+      "Profile the target. Identify the audience's reading level, expectations, preferred structure, and what jargon they know or don't know.",
+      "Apply the disguise. Rewrite using the target's vocabulary, sentence length, formality, and structure. Map every original point to a corresponding point in the output — nothing drops, nothing invents.",
+      "Report the changes. Return the adapted content plus a short note: what presentation choices were made and which facts were deliberately preserved unchanged."
+    ],
+    "description": "Disguise Self changes how something is said, never what is said. The input content is already correct — only the delivery surface needs adjustment. If the user wants to change facts, add new information, transform code implementations, or produce multiple versions at once, this is NOT this spell."
+  }
 }

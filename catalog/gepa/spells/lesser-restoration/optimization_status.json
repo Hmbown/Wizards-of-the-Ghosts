@@ -1,0 +1,81 @@
+{
+  "slug": "lesser-restoration",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "lesser-restoration",
+    "spell_name": "Lesser Restoration",
+    "category_slug": "repair-and-recovery",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/lesser-restoration/optimized_module.json"
+  },
+  "optimized_instruction": "# Lesser Restoration\n\n**Activate when:** A system is healthy but stuck in a specific condition that blocks normal operation. The fix is a state change (toggle, reset, release, flush, clear), not a code change.\n\n**Trigger signals:**\n- Words: stuck, won't reset, not clearing, stale, orphaned, lingering, trapped, hung, frozen, deadlocked\n- Patterns: \"X is stuck in Y state\", \"need to clear/reset/flush/release X\", \"Z was never released/cleaned up\", \"flag/toggle/switch won't change\"\n- Context: The underlying system works fine; one specific condition is preventing it from proceeding\n\n**This spell IS:**\n- Clearing a stale distributed lock so another worker can acquire it\n- Resetting a tripped circuit breaker after the downstream service recovered\n- Flushing a bad cache entry with incorrect values\n- Clearing a stuck status field (e.g., `status='processing'` from a crashed job)\n- Releasing a stuck queue (DLQ replay, stuck consumer group, pending PVC)\n- Toggling a forgotten flag (maintenance mode, feature flag, event notification)\n- Removing a blocking finalizer or approval gate\n\n**This spell is NOT:**\n- Fixing code bugs, syntax errors, or null pointer exceptions → use `mending` or `hotfix` patterns\n- Cleaning up widespread data corruption or orphaned records across tables → use `greater-restoration`\n- Rebuilding or redesigning a system → use `rebuild` or `refactor` patterns\n- Debugging unknown root causes → use `diagnose` or `identify` patterns\n- Adding missing features or configuration → use `create` or `configure` patterns\n\n**Key distinction:** If the problem is \"something is broken and needs fixing,\" this is NOT the spell. If the problem is \"something is fine but stuck and needs releasing,\" this IS the spell. The system knows what to do — it just can't proceed because of one blocking condition.\n\n**Workflow:**\n1. Identify the specific stuck condition: what exact state, flag, lock, or queue is blocking progress?\n2. Verify it's truly stuck (not intentionally set or actively protecting against a real problem)\n3. Clear the condition using the minimal mechanism: toggle off, reset to default, release lock, flush cache, replay queue, remove finalizer\n4. Confirm normal operation resumes and the condition does not immediately recur — if it recurs, the root cause is deeper; escalate to `greater-restoration`\n\n**Anti-patterns to reject:**\n- \"Fix the bug that causes X to get stuck\" → code fix, not state clear\n- \"Clean up all the corrupted data\" → widespread damage, not single condition\n- \"Why is X happening?\" → diagnosis needed first\n- \"X keeps coming back after I clear it\" → symptom suppression; find root cause instead",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

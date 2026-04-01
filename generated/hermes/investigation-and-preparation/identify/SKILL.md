@@ -1,6 +1,6 @@
 ---
 name: identify
-description: "Use this skill when the object is in front of you but its function, constraints, or provenance are unclear."
+description: "Identify is static analysis for operational understanding. It answers \"What is this?\" by inspecting structure, naming, dependencies, and runtime touchpoints. It does NOT search for artifacts, debug failures, monitor systems, verify claims, or modify code."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,19 @@ metadata:
 # Identify
 Explain what a mysterious file, service, workflow, or artifact actually does.
 ## What This Skill Does
-Use this skill when the object is in front of you but its function, constraints, or provenance are unclear.
+Identify is static analysis for operational understanding. It answers "What is this?" by inspecting structure, naming, dependencies, and runtime touchpoints. It does NOT search for artifacts, debug failures, monitor systems, verify claims, or modify code.
 In this grimoire, Identify is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Identify (spell).
 ## When To Use
 
-- A script, config file, model, or service exists but its purpose is opaque.
-- You need the contract of an artifact before you rely on it.
-- You want the shortest path from mystery to operational understanding.
+- Use this spell when a user presents a specific artifact (file, script, config, service, binary, module, chart, extension, etc.) and asks any variation of:
+- "What does this do?"
+- "Explain this [artifact]"
+- "What is this for?"
+- "What does it touch/depend on?"
+- "What can we prove from inspection?"
+- "What's the safest next validation step?"
+- Key signal: The artifact is already in hand. The question is about understanding, not finding, fixing, watching, or changing it.
 
 ## Prerequisites
 
@@ -36,11 +41,15 @@ Canonical reference input: Identify (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Inspect the artifact directly before speculating.
-3. Infer purpose from structure, dependencies, naming, and runtime touchpoints.
-4. Separate confirmed behavior, likely behavior, and unknowns.
-5. Return usage notes, hazards, and the safest next validation step.
-6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. Restate boundaries: Name the target, the success condition, and any no-touch constraints before acting.
+3. Inspect directly: Read the artifact's contents. Do not speculate before looking.
+4. Infer from evidence: Determine purpose from structure, dependencies, naming conventions, and runtime touchpoints (ports, volumes, secrets, APIs, services).
+5. Separate certainty levels: Classify findings as:
+6. Confirmed (directly visible in the artifact)
+7. Likely (strong inference from patterns/contexts)
+8. Unknown (cannot be proven without runtime testing or external data)
+9. Return structured output: Provide:
+10. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
@@ -51,8 +60,14 @@ Canonical reference input: Identify (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Do not overstate certainty when the object cannot be fully validated.
-- Prefer source-backed explanation over lore.
+- Never overstate certainty when runtime behavior cannot be validated statically.
+- Prefer source-backed explanation over assumptions or lore.
+- If the user asks you to modify the artifact after identifying it, complete the Identify workflow first, then switch to the appropriate editing spell.
+- Do not use for: "Find where X is defined" → Use search/locate, not Identify
+- Do not use for: "Why did this break?" or "Trace the root cause" → Use debugging/incident response
+- Do not use for: "Watch this system for changes" → Use monitoring/observability
+- Do not use for: "Compare these claims against the code" → Use verification/audit
+- Do not use for: "Change/modify/update this" → Use editing/transformation spells
 
 ## Verification
 

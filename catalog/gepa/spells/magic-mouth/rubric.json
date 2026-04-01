@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "messaging-and-coordination",
+  "category_slug": "messaging-and-coordination",
+  "spell_slug": "magic-mouth",
+  "spell_focus": "Use this spell for event-driven responses: autoresponders, webhook messages, alert text, or chatbot replies that fire when a known condition is met. The craft lies in defining the trigger boundary and the exact message that should emerge when it trips.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Magic Mouth precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Magic Mouth: ['A trigger-response specification or message template.', 'Example payloads covering nominal and edge-case inputs.', 'Notes on rate limits, suppression, escalation, and logging.']",
+    "Default guardrails for Magic Mouth: ['Do not automate messages that require human judgment, empathy, or legal review.', 'Protect against loops, spam, and trigger conditions that can be spoofed too easily.']"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "sleep",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Keywords: pause, suspend, hibernate, DND, maintenance window, cooldown, quiet mode, silence temporarily, freeze (with resume), graceful degradation",
+      "Patterns requiring all three:",
+      "Something must stop acting for a defined period",
+      "State/queue/context must be preserved during the stop",
+      "A wake condition exists (timer, threshold, manual trigger, external event)"
+    ],
+    "guardrails": [
+      "Do not use for: \"Permanently decommission\" / \"never come back\" → Kill, not Sleep",
+      "Do not use for: \"Shut it down right now\" / \"pull offline\" / \"kill it\" → Kill, not Sleep",
+      "Do not use for: \"Lock their credentials\" / \"prevent any further queries\" → Access control, not Sleep",
+      "Do not use for: \"Paralyze a competing process\" / \"hard block\" → Resource blocking, not Sleep",
+      "Do not use for: \"Team-wide agreement\" / \"communication norms\" → Policy, not Sleep",
+      "Do not use for: \"Reduce fan noise\" / \"HVAC configuration\" → Hardware config, not Sleep",
+      "Do not use for: No wake condition defined → Bug, not Sleep (ask for one)"
+    ],
+    "workflow": [
+      "Identify the sleeper: What exact process, channel, service, or workflow stops?",
+      "Define the boundary: What stops, what keeps running, what queues for later?",
+      "Set the wake condition: Timer? Manual trigger? Threshold? External event? Must have one.",
+      "Verify state preservation: Confirm nothing is lost—only deferred. List what persists.",
+      "Return the plan: Sleep configuration + wake conditions + state-preservation checklist."
+    ],
+    "deliverables": [
+      "Sleep configuration: what suspends, what stays active, what queues",
+      "Wake conditions: how/when resume happens",
+      "State-preservation checklist: confirmation nothing is lost"
+    ],
+    "description": "Sleep = temporary, reversible suspension with guaranteed state preservation. The target stops acting but wakes up intact. No data loss, no corruption, no permanent change."
+  }
+}

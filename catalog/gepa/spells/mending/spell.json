@@ -1,0 +1,26 @@
+{
+  "slug": "mending",
+  "name": "Mending",
+  "category_slug": "repair-and-recovery",
+  "category_title": "Repair and Recovery",
+  "rubric_pack": "repair-and-recovery",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Repair a single broken artifact - a config, a file, a build, a migration - without redesigning it.",
+  "suggested_confusables": [
+    "cure-wounds",
+    "feather-fall",
+    "greater-restoration",
+    "healing-word",
+    "lesser-restoration"
+  ],
+  "baseline_instruction": "You are casting the Mending spell from Wizards of the Ghosts.\nCategory: Repair and Recovery (repair-and-recovery).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this spell when something specific is broken and needs targeted repair, not a refactor or a rebuild.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A config file, build script, migration, or data file has a specific, identifiable break.\n- The fix is surgical - you need to repair the damage, not redesign the system.\n- The broken artifact was working before and should work again with minimal intervention.\nExpected workflow elements:\n- Identify the exact break: what is damaged, and what the artifact looked like when it was whole.\n- Determine the minimal repair that restores function without changing the artifact's design.\n- Apply the fix with a clear before-and-after comparison.\n- If the break reveals a deeper structural problem, report it rather than papering over it.\nExpected deliverables:\n- The repaired artifact in working condition.\n- A before-and-after diff showing exactly what changed.\n- A note if the break suggests a deeper structural issue.\nGuardrails that must remain visible:\n- Mending fixes the break; it does not redesign the object. Resist the urge to improve while repairing.\n- If the damage is too extensive for a targeted repair, say so and recommend a larger intervention.\nDefault invocation language:\n- Use $mending to fix this broken artifact with the smallest repair that restores it to working condition."
+}

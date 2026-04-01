@@ -1,6 +1,6 @@
 ---
 name: prestidigitation
-description: "Use this cantrip for small acts of practical magic: reformat some text, clean a small dataset, generate a quick chart, convert a unit, tidy a file, or produce a one-off artifact."
+description: "Prestidigitation transforms. It does not fix, build, scaffold, migrate, or actuate. If the user says \"make this look better\" or \"convert this to that format\" — use prestidigitation. If the user says \"make this work\" or \"set this up\" or \"build this system\" — use something else."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,19 @@ metadata:
 # Prestidigitation
 Handle quick, low-stakes utility tasks that do not deserve a full spell.
 ## What This Skill Does
-Use this cantrip for small acts of practical magic: reformat some text, clean a small dataset, generate a quick chart, convert a unit, tidy a file, or produce a one-off artifact.
+Prestidigitation transforms. It does not fix, build, scaffold, migrate, or actuate. If the user says "make this look better" or "convert this to that format" — use prestidigitation. If the user says "make this work" or "set this up" or "build this system" — use something else.
 In this grimoire, Prestidigitation is treated as a hybrid spell with a shipping-now delivery profile.
 Canonical reference input: Prestidigitation (spell).
 ## When To Use
 
-- The task is small, self-contained, and not worth a dedicated workflow.
-- You need a quick formatting fix, unit conversion, data cleanup, or throwaway generation.
-- The ask is closer to a party trick than a serious project - and that is fine.
+- Trigger this spell when the request contains:
+- Format/transform verbs: reformat, convert, sort, strip, encode, decode, tidy, clean, pretty-print
+- Scale qualifiers: quick, just, small, one-off, throwaway, simple, nothing fancy, straightforward
+- Artifact types: a table, a list, a single file, a string, a UUID, a snippet, a blob
+- Bounded counts: "about 20", "10 rows", "5 columns", "one line", "a few"
+- The task is cantrip-scale when all three are true:
+- The input fits in a single message or small file
+- The output is a single artifact (text, table, string, file)
 
 ## Prerequisites
 
@@ -36,10 +41,10 @@ Canonical reference input: Prestidigitation (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Accept the small task and confirm it is actually cantrip-scale.
-3. Perform the trick directly, without over-engineering scaffolding or process.
-4. Return the result immediately with a brief note on what was done.
-5. If the task turns out to be larger than cantrip-scale, say so and recommend the appropriate spell.
+2. Scope check: Confirm the task is single-input → single-output. If it spans multiple files or needs external services, stop and recommend the correct spell.
+3. Execute directly: Perform the transformation in-session. Do not create scaffolding, config files, or helper scripts. Do the work, do not build the tool to do the work.
+4. Return result: Output the artifact immediately. Add one sentence explaining what was done.
+5. Escalate if needed: If mid-execution the task reveals hidden complexity (nested edge cases, data too large, ambiguous requirements), stop and name the appropriate full spell.
 6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
@@ -51,8 +56,9 @@ Canonical reference input: Prestidigitation (spell).
 ## Pitfalls / Guardrails
 
 - Keep the theatrical framing, but name the concrete mechanism that makes the skill useful right now.
-- Do not let prestidigitation scope-creep into a full project. If the task needs real work, name the right spell instead.
-- Quick does not mean careless - even small tricks should be correct.
+- Do not use for: These look similar but belong to other spells:
+- Do not use for: | Looks like prestidigitation | Actually is | Why | |---|---|---| | "Fix the broken nginx config" | Debug/repair spell | Something is broken and needs diagnosis, not just reformatted | | "Set up Prettier + ESLint + pre-commit hooks" | Scaffolding spell | Multi-tool infrastructure setup, not a one-off transform | | "Convert our entire codebase from Python 2 to 3" | Migration spell | Hundreds of files, structural change, not a quick trick | | "Build a data visualization dashboard" | Build spell | Multi-component system with interactivity, not a single artifact | | "Create a fake dashboard that looks real" | Illusion/deception spell | Intent is to deceive, not to transform | | "Turn on the lights, set thermostat" | Device actuation spell | Physical world control, not text/data manipulation |
+- Do not use for: Rule of thumb: if the task requires reading multiple files, writing to multiple locations, installing dependencies, or touching infrastructure — it is not prestidigitation.
 
 ## Verification
 

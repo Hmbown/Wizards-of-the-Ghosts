@@ -1,6 +1,6 @@
 ---
 name: etherealness
-description: "Etherealness is read-only ghost mode for systems you need to study without disturbing. It maps to shadow environments, dry runs, read replicas, mirrored traffic, and observational tooling that lets you see behavior without becoming part of it. The promise is visibility with minimal touch, not perfect impossibility of side effects."
+description: "Etherealness is observational only. It answers \"what is happening?\" or \"what would happen?\" without changing anything. The system under study continues normally; you add a ghost layer that watches, mirrors, or dry-runs without becoming part of the live mutation path."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,7 +20,7 @@ metadata:
 # Etherealness
 Walk through the walls of a system without leaving fingerprints.
 ## What This Skill Does
-Etherealness is read-only ghost mode for systems you need to study without disturbing. It maps to shadow environments, dry runs, read replicas, mirrored traffic, and observational tooling that lets you see behavior without becoming part of it. The promise is visibility with minimal touch, not perfect impossibility of side effects.
+Etherealness is observational only. It answers "what is happening?" or "what would happen?" without changing anything. The system under study continues normally; you add a ghost layer that watches, mirrors, or dry-runs without becoming part of the live mutation path.
 In this grimoire, Etherealness is treated as a metaphorical spell with a prototype delivery profile.
 Canonical reference input: Etherealness (spell).
 ## When To Use
@@ -36,10 +36,13 @@ Canonical reference input: Etherealness (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Choose the least invasive observation surface that still answers the question.
-3. Define what can be trusted in the ghost view and what may differ from live mutation paths.
-4. Return a read-only observation plan plus the gaps that remain invisible until real execution.
-5. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. Identify the least invasive observation surface that still answers the question. Prefer: existing metrics/logs → read replicas → shadow deployments → mirrored traffic. Escalate invasiveness only when necessary.
+3. Define the trust boundary. Explicitly state what the ghost view can prove and what it cannot. Dry runs don't capture live contention. Read replicas may lag. Mirrored traffic at 1% doesn't prove behavior at 100%.
+4. Return three deliverables:
+5. The observation setup plan (what to deploy, where, how to connect)
+6. Findings you can safely gather before acting
+7. A caveat list: what ghost mode cannot prove and what requires real execution to validate
+8. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
@@ -50,8 +53,13 @@ Canonical reference input: Etherealness (spell).
 ## Pitfalls / Guardrails
 
 - Call out the glue, permissions, or missing infrastructure before you imply this is fully operational.
-- Do not assume mirrored or dry-run environments perfectly predict live writes, latency, or contention.
-- Confirm that the observation path is actually isolated before treating it as consequence-free.
+- The observation itself must not become the problem. If your ghost layer adds measurable latency, consumes significant resources, or creates a new data liability, you've violated the spell. Design for lightweight passivity.
+- Do not use for: Permanent logging/auditing — storing request bodies, headers, auth tokens for compliance. Etherealness is ephemeral; permanent storage is a different concern.
+- Do not use for: Active interception/modification — rewriting responses, hotfix proxies, real-time traffic manipulation. Etherealness never modifies.
+- Do not use for: External monitoring/scrying — watching competitor websites, market prices, third-party systems you don't control.
+- Do not use for: Prediction/forecasting — crystal ball dashboards, failure prediction, trend extrapolation. Etherealness observes what is or what would be, not what will be.
+- Do not use for: Concealment/invisibility — hiding services from discovery, making things undetectable. Etherealness is about seeing, not being unseen.
+- Do not use for: Human surveillance — watching coworkers' screens, monitoring people. Etherealness is for systems, not people.
 
 ## Verification
 

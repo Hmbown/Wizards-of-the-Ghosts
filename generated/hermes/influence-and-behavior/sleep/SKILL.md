@@ -1,6 +1,6 @@
 ---
 name: sleep
-description: "In D&D, Sleep drops creatures into unconsciousness without violence — no save, no damage, they just stop. The real-world analog is graceful process suspension: DND mode, hibernation workflows, maintenance windows, cooldown periods. Sleep is not Kill. The target should wake up intact when the spell ends. This is the spell for when you need things to stop happening for a while without destroying state."
+description: "Sleep = temporary, reversible suspension with guaranteed state preservation. The target stops acting but wakes up intact. No data loss, no corruption, no permanent change."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -22,14 +22,16 @@ metadata:
 # Sleep
 Put processes, notifications, or systems into graceful suspension.
 ## What This Skill Does
-In D&D, Sleep drops creatures into unconsciousness without violence — no save, no damage, they just stop. The real-world analog is graceful process suspension: DND mode, hibernation workflows, maintenance windows, cooldown periods. Sleep is not Kill. The target should wake up intact when the spell ends. This is the spell for when you need things to stop happening for a while without destroying state.
+Sleep = temporary, reversible suspension with guaranteed state preservation. The target stops acting but wakes up intact. No data loss, no corruption, no permanent change.
 In this grimoire, Sleep is treated as a hybrid spell with a shipping-now delivery profile.
 Canonical reference input: Sleep (spell).
 ## When To Use
 
-- You need to design or trigger a DND mode, maintenance window, or cooldown period.
-- A noisy system — notifications, alerts, CI pipelines, chatbots — needs to be temporarily silenced without losing queued work.
-- You want to draft a graceful degradation or hibernation plan for a service.
+- Keywords: pause, suspend, hibernate, DND, maintenance window, cooldown, quiet mode, silence temporarily, freeze (with resume), graceful degradation
+- Patterns requiring all three:
+- Something must stop acting for a defined period
+- State/queue/context must be preserved during the stop
+- A wake condition exists (timer, threshold, manual trigger, external event)
 
 ## Prerequisites
 
@@ -46,25 +48,29 @@ Canonical reference input: Sleep (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify what needs to sleep: the process, notification channel, service, or workflow.
-3. Define the sleep boundary: what stops, what keeps running, and what queues for later.
-4. Set the wake condition: timer, manual trigger, threshold, or external event.
-5. Ensure state preservation — nothing should be lost during sleep, only deferred.
-6. Return the sleep plan with wake conditions and a list of what remains active.
+2. Identify the sleeper: What exact process, channel, service, or workflow stops?
+3. Define the boundary: What stops, what keeps running, what queues for later?
+4. Set the wake condition: Timer? Manual trigger? Threshold? External event? Must have one.
+5. Verify state preservation: Confirm nothing is lost—only deferred. List what persists.
+6. Return the plan: Sleep configuration + wake conditions + state-preservation checklist.
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A sleep configuration: what is suspended, what stays active, and what queues.
-- Wake conditions: how and when the system resumes.
-- A state-preservation checklist: confirmation that no data or context is lost during suspension.
+- Sleep configuration: what suspends, what stays active, what queues
+- Wake conditions: how/when resume happens
+- State-preservation checklist: confirmation nothing is lost
 
 ## Pitfalls / Guardrails
 
 - Keep the theatrical framing, but name the concrete mechanism that makes the skill useful right now.
-- Sleep must be reversible. If waking the target would lose state or cause corruption, this is the wrong spell — use a proper shutdown instead.
-- Do not use Sleep to avoid dealing with problems. Silencing alerts is not the same as fixing the underlying issue.
-- Always define a maximum sleep duration. Indefinite sleep without a wake condition is a bug, not a feature.
+- Do not use for: "Permanently decommission" / "never come back" → Kill, not Sleep
+- Do not use for: "Shut it down right now" / "pull offline" / "kill it" → Kill, not Sleep
+- Do not use for: "Lock their credentials" / "prevent any further queries" → Access control, not Sleep
+- Do not use for: "Paralyze a competing process" / "hard block" → Resource blocking, not Sleep
+- Do not use for: "Team-wide agreement" / "communication norms" → Policy, not Sleep
+- Do not use for: "Reduce fan noise" / "HVAC configuration" → Hardware config, not Sleep
+- Do not use for: No wake condition defined → Bug, not Sleep (ask for one)
 - Do not rely on a live integration until credentials, target scope, and rollback expectations are verified.
 
 ## Verification

@@ -1,0 +1,34 @@
+{
+  "slug": "minor-illusion",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Activate this spell when the user needs a quick, low-fidelity artifact to make an idea visible for discussion. The goal is communication speed, not quality.",
+      "Words: \"sketch\", \"mockup\", \"wireframe\", \"rough\", \"placeholder\", \"throwaway\", \"napkin\", \"lorem ipsum\", \"fake data\", \"just to communicate\", \"before we build\", \"just enough to\"",
+      "Patterns: User describes a concept that needs to be made concrete for alignment, comparison, or stakeholder conversation",
+      "Timeframe implied: minutes, not hours; disposable, not shippable",
+      "Explicit statements: \"don't overthink it\", \"this is just to start the conversation\", \"label it as a sketch\""
+    ],
+    "guardrails": [
+      "Do NOT activate when:",
+      "Do not use for: The user asks for a working prototype with validation, state, or API calls → that's a different spell (higher fidelity, shippable)",
+      "Do not use for: The user wants a small code change (update a button color, fix a typo) → that's a direct edit, not a sketch",
+      "Do not use for: The user requests a complete design system or production-ready component library → that's a build spell, not an illusion",
+      "Do not use for: The user asks for visual deception (fake loading indicators, spoofed identities, dark patterns) → that's manipulation, not communication",
+      "Do not use for: The user wants physical organization (desk setup, cable management) → literal, not metaphorical"
+    ],
+    "workflow": [
+      "Identify the single concept that needs to be made visible. If there are multiple, pick the one blocking the conversation.",
+      "Pick the cheapest format that communicates the idea: ASCII layout, text mockup, rough diagram, placeholder code, or described wireframe. Do not reach for tools or frameworks.",
+      "Create it fast — spend minutes, not hours. Use lorem ipsum, fake values, bracketed descriptions like [logo here]. Fidelity is failure here.",
+      "Label it explicitly as a sketch, mockup, or throwaway. Add a header like \"ROUGH SKETCH — NOT FOR PRODUCTION\" or similar.",
+      "Present it for reaction, not approval. Ask what feels wrong or missing. Use the response to decide whether to invest in a real version."
+    ],
+    "deliverables": [
+      "The artifact itself (sketch, wireframe, placeholder, diagram)",
+      "A clear label: \"This is a disposable sketch, not a commitment\"",
+      "One sentence on what question this sketch is meant to answer"
+    ],
+    "description": "Minor Illusion produces artifacts that are explicitly labeled as disposable and exist only to provoke reaction. If the artifact could be mistaken for finished work, you're casting the wrong spell."
+  }
+}

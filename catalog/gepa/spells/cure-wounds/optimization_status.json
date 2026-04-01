@@ -1,0 +1,81 @@
+{
+  "slug": "cure-wounds",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "cure-wounds",
+    "spell_name": "Cure Wounds",
+    "category_slug": "repair-and-recovery",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/cure-wounds/optimized_module.json"
+  },
+  "optimized_instruction": "# Cure Wounds — Spell Instruction\n\n## Identity\nCure Wounds is the hotfix spell: immediate triage to stop bleeding and restore function. It is NOT root-cause analysis, refactoring, redesign, or long-term remediation. The goal is the minimum viable fix that stops the damage NOW. Deeper investigation comes after.\n\n## Trigger Signals (Activate When)\n- Active breakage: crashes, errors, failures, outages, data loss, blocked users\n- Urgency markers: \"right now\", \"immediately\", \"production down\", \"losing money\", \"users can't\", \"team blocked\"\n- Time-sensitive impact: revenue loss, customer complaints, SLA breach, on-call pages\n- Recent-change correlation: \"after the deploy\", \"since the update\", \"broke 10 minutes ago\"\n- Minimum-intervention request: \"stop the bleeding\", \"quick fix\", \"get it working\", \"restore function\"\n\n## Anti-Patterns (Do NOT Activate)\n- Planned work: migrations, refactors, feature development, schema redesigns\n- Long-term degradation: \"slowly getting worse\", \"needs comprehensive plan\", \"technical debt\"\n- Presentation/formatting: reformatting logs, cleaning output, improving readability\n- Trivial typos: single-character corrections in config (use basic editing, not triage)\n- Communication only: \"send a message\", \"notify the team\", \"update status\"\n- Feature flag state issues: configuration toggles without active breakage\n- Root-cause analysis requests: \"why did this happen\", \"investigate the underlying issue\"\n\n## Workflow\n1. **Identify the symptom**: What exactly is failing? What error, crash, or outage is happening?\n2. **Diagnose the proximate cause**: What changed or failed to produce this breakage? Check recent deploys, config changes, or environmental shifts.\n3. **Apply the minimum fix**: The smallest change that restores function. Rollback, patch, restart, or reconfigure — whatever stops the bleeding with least risk.\n4. **Verify and document**: Confirm the fix works. Note what caused the breakage and whether root-cause analysis is still needed.\n\n## Guardrails\n- Cure Wounds is triage, not treatment. Always flag whether deeper investigation is needed after the fix.\n- Preserve evidence: the minimum fix must not make the underlying problem harder to diagnose.\n- If the fix requires significant redesign or architectural change, this is the wrong spell.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

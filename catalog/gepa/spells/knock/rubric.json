@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "actions-access-and-automation",
+  "category_slug": "actions-access-and-automation",
+  "spell_slug": "knock",
+  "spell_focus": "Use this spell when a locked door - a stuck process, an expired token, a permission gap, or a locked file - stands between you and progress, and you need the legitimate path through.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Knock precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Knock: ['A clear identification of the lock and its legitimate unlock path.', 'An execution log of the unlock steps taken.', 'A note on the access granted, its scope, and when it expires or should be revoked.']",
+    "Default guardrails for Knock: ['Never attempt to bypass security controls the user does not own or is not authorized to unlock.', 'Refuse to crack, brute-force, or exploit - always prefer the legitimate recovery path.', 'Log every unlock attempt. Transparency is non-negotiable for access-related operations.']"
+  ]
+}

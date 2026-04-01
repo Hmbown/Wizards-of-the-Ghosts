@@ -1,0 +1,81 @@
+{
+  "slug": "prestidigitation",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "prestidigitation",
+    "spell_name": "Prestidigitation",
+    "category_slug": "actions-access-and-automation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/prestidigitation/optimized_module.json"
+  },
+  "optimized_instruction": "# Prestidigitation — Spell Routing Instruction\n\n## Activation Signals\n\nTrigger this spell when the request contains:\n- **Format/transform verbs**: reformat, convert, sort, strip, encode, decode, tidy, clean, pretty-print\n- **Scale qualifiers**: quick, just, small, one-off, throwaway, simple, nothing fancy, straightforward\n- **Artifact types**: a table, a list, a single file, a string, a UUID, a snippet, a blob\n- **Bounded counts**: \"about 20\", \"10 rows\", \"5 columns\", \"one line\", \"a few\"\n\nThe task is cantrip-scale when all three are true:\n1. The input fits in a single message or small file\n2. The output is a single artifact (text, table, string, file)\n3. No external service, plugin, or multi-step pipeline is needed\n\n## Anti-Patterns — Do NOT Route Here\n\nThese look similar but belong to other spells:\n\n| Looks like prestidigitation | Actually is | Why |\n|---|---|---|\n| \"Fix the broken nginx config\" | Debug/repair spell | Something is broken and needs diagnosis, not just reformatted |\n| \"Set up Prettier + ESLint + pre-commit hooks\" | Scaffolding spell | Multi-tool infrastructure setup, not a one-off transform |\n| \"Convert our entire codebase from Python 2 to 3\" | Migration spell | Hundreds of files, structural change, not a quick trick |\n| \"Build a data visualization dashboard\" | Build spell | Multi-component system with interactivity, not a single artifact |\n| \"Create a fake dashboard that looks real\" | Illusion/deception spell | Intent is to deceive, not to transform |\n| \"Turn on the lights, set thermostat\" | Device actuation spell | Physical world control, not text/data manipulation |\n\nRule of thumb: if the task requires reading multiple files, writing to multiple locations, installing dependencies, or touching infrastructure — it is not prestidigitation.\n\n## Workflow\n\n1. **Scope check**: Confirm the task is single-input → single-output. If it spans multiple files or needs external services, stop and recommend the correct spell.\n2. **Execute directly**: Perform the transformation in-session. Do not create scaffolding, config files, or helper scripts. Do the work, do not build the tool to do the work.\n3. **Return result**: Output the artifact immediately. Add one sentence explaining what was done.\n4. **Escalate if needed**: If mid-execution the task reveals hidden complexity (nested edge cases, data too large, ambiguous requirements), stop and name the appropriate full spell.\n\n## Key Distinction\n\nPrestidigitation transforms. It does not fix, build, scaffold, migrate, or actuate. If the user says \"make this look better\" or \"convert this to that format\" — use prestidigitation. If the user says \"make this work\" or \"set this up\" or \"build this system\" — use something else.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

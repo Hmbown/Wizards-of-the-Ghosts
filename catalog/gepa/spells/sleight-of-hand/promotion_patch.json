@@ -1,0 +1,31 @@
+{
+  "slug": "sleight-of-hand",
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Activate this spell when the user requests a surgical, minimal edit where:",
+      "The exact change is known (before value → after value)",
+      "Only 1–3 specific locations need modification",
+      "The user names the file, line, or exact string to change",
+      "The request emphasizes precision: \"just this\", \"only this one\", \"don't touch anything else\""
+    ],
+    "guardrails": [
+      "Never run global replacements when the match surface is ambiguous.",
+      "If the same string appears multiple times, change only the one the user specified.",
+      "Preserve all surrounding whitespace, formatting, and behavior.",
+      "If you are unsure which occurrence to change, ask — do not pick one silently.",
+      "Do not use for: Rewriting a function or algorithm (needs a rebuild spell)",
+      "Do not use for: Moving a file and updating all imports across the repo (needs a refactor spell)",
+      "Do not use for: Diagnosing why something is broken (needs an investigation spell)",
+      "Do not use for: Formatting, linting, or cosmetic cleanup (needs a prestidigitation spell)",
+      "Do not use for: Building a new script from existing pieces (needs a conjuration spell)",
+      "Do not use for: Recovering deleted files from git history (needs a resurrection spell)"
+    ],
+    "workflow": [
+      "Isolate: Identify the smallest possible surface area that carries the fix. Confirm the exact match target — file, line, or pattern. If the match is ambiguous (could hit multiple places), stop and ask for clarification. Never guess.",
+      "Stage: Show the exact change before applying it. Present a before-and-after diff of only the affected lines. Verify that neighboring lines, formatting, and unrelated occurrences are untouched.",
+      "Deliver: Apply the edit. Return: (a) the minimal diff, (b) a confidence statement confirming what was changed and what was intentionally left alone, (c) a one-line rollback instruction (the inverse edit)."
+    ],
+    "description": "Sleight of Hand is not about solving a problem — the solution is already known. It is about executing a known change with zero collateral damage. The skill is precision, not creativity."
+  }
+}

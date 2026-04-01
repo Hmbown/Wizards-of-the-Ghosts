@@ -1,6 +1,6 @@
 ---
 name: greater-restoration
-description: "In D&D, Greater Restoration ends charm, petrification, curses, ability score reductions, and hit point maximum reductions — the serious, long-term ailments. The real-world version is deep system recovery: unfucking a database that has been gradually corrupted, restoring a codebase that has accumulated technical debt to the point of dysfunction, or recovering from a long-running misconfiguration that has silently degraded performance."
+description: "Lesser Restoration = one thing is wrong, fix it directly (reset a flag, clear a cache, remove a curse).\nGreater Restoration = many things are wrong because they decayed together over time, and fixing one thing without fixing the others will fail."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,18 @@ metadata:
 # Greater Restoration
 Undo deep corruption and restore a system degraded by accumulated damage.
 ## What This Skill Does
-In D&D, Greater Restoration ends charm, petrification, curses, ability score reductions, and hit point maximum reductions — the serious, long-term ailments. The real-world version is deep system recovery: unfucking a database that has been gradually corrupted, restoring a codebase that has accumulated technical debt to the point of dysfunction, or recovering from a long-running misconfiguration that has silently degraded performance.
+Lesser Restoration = one thing is wrong, fix it directly (reset a flag, clear a cache, remove a curse).
+Greater Restoration = many things are wrong because they decayed together over time, and fixing one thing without fixing the others will fail.
 In this grimoire, Greater Restoration is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Greater Restoration (spell).
 ## When To Use
 
-- A system has been gradually degraded by accumulated problems and no single fix will restore it.
-- Corruption, misconfiguration, or technical debt has built up to the point where triage is insufficient.
-- The system needs a comprehensive restoration plan, not a hotfix.
+- Activate Greater Restoration when the user describes systemic degradation that accumulated over time and requires a comprehensive, multi-step restoration plan — not a hotfix.
+- Time + decay: "over N months/years", "accumulated", "gradually degraded", "drift", "bloat", "sprawl"
+- Multiplicity: multiple related problems listed (inconsistent configs, orphaned resources, stale artifacts)
+- Scope words: "comprehensive", "systematic", "full audit", "restore to health", "clean and restore"
+- Failure of incremental fixes: "no single fix will work", "triage is insufficient", "band-aids made it worse"
+- Domains: schema drift, tech debt, IaC drift, alert fatigue, bloated images, tangled dependencies, stale flags, decayed docs, corrupted data pipelines
 
 ## Prerequisites
 
@@ -36,11 +40,11 @@ Canonical reference input: Greater Restoration (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Assess the scope of degradation: how many subsystems are affected, and how deep does the damage go?
-3. Identify the root causes: what introduced the corruption and is it still active?
-4. Design the restoration plan: the ordered sequence of fixes, migrations, or rebuilds needed.
-5. Execute restoration with verification at each stage — do not batch this without checkpoints.
-6. Deliver the restored system with a post-restoration health check.
+2. Scope the degradation: Inventory all affected subsystems. How many? How interconnected? What does "healthy" look like?
+3. Find the root cause(s): What introduced the decay? Is the cause still active (e.g., a broken CI step still running, a misconfig still applied)?
+4. Design the restoration plan: Ordered steps with dependencies. What must be fixed first? What can be parallelized? Include verification checkpoints between stages.
+5. Execute with checkpoints: Do NOT batch all changes without verification. Each stage must confirm improvement before proceeding.
+6. Post-restoration health check: Confirm the system is back to full function. Document what changed and how to prevent recurrence.
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
@@ -52,8 +56,12 @@ Canonical reference input: Greater Restoration (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Greater Restoration is expensive and disruptive. Verify that Lesser Restoration or Cure Wounds cannot solve the problem first.
-- Do not restore to a previous known-good state without checking whether that state had its own problems. Rolling back is not the same as restoring.
+- Do not use for: Single incident/hotfix: "API crashing after deploy", "null pointer exception" → route to Cure Wounds or Lesser Restoration
+- Do not use for: Simple toggle/reset: "circuit breaker tripped", "flag stuck enabled" → Lesser Restoration
+- Do not use for: Resurrection from backup: "deleted account, restore from backup" → different spell (resurrection/backup-restore)
+- Do not use for: Migration/relocation: "move from Heroku to AWS" → not restoration, it's relocation
+- Do not use for: Self-healing/continuous: "auto-restart pods, maintain 99.99% uptime" → ongoing automation, not one-time restoration
+- Do not use for: Preventive maintenance: "add monitoring", "set up linting" → proactive, not restorative
 
 ## Verification
 

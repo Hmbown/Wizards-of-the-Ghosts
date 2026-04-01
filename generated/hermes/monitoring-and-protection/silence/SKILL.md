@@ -27,10 +27,13 @@ In this grimoire, Silence is treated as a metaphorical spell with a shipping-now
 Canonical reference input: Silence (spell).
 ## When To Use
 
-- Log output, notifications, or alerts are too noisy to find the signal.
-- You need a focused environment where only relevant information gets through.
-- A process or channel is generating volume that obscures what actually matters.
-- You want to actually mute Slack channels or set DND mode, not just plan a noise-reduction strategy.
+- Activate this spell when the user asks to reduce, filter, suppress, or mute noisy output from an existing system. Look for these patterns:
+- Noise complaints: "too noisy", "drowning in", "flooded with", "alert fatigue", "can't find the signal"
+- Filter requests: "filter down to", "keep only", "suppress X but keep Y", "reduce verbosity"
+- Mute/DND actions: "mute channels", "set do not disturb", "quiet mode", "silence notifications"
+- Deduplication: "same alert fires repeatedly", "deduplicate", "suppress repeats"
+- Log verbosity: "too verbose", "reduce log level", "filter out debug/trace", "show only errors/warnings"
+- The core pattern: there is a working system producing too much output, and the user wants less of it without breaking anything.
 
 ## Prerequisites
 
@@ -47,11 +50,11 @@ Canonical reference input: Silence (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the noise source and the signal you need to preserve.
-3. Define the filter criteria: what gets silenced and what passes through.
-4. Apply the silence with clear documentation of what is being suppressed.
-5. Provide a way to lift the silence and restore full output when needed.
-6. If Slack is available, use the Slack API to set DND (dnd.setSnooze), mute channels, or update notification preferences directly.
+2. Identify source and signal: Ask or infer what system is noisy (Slack, logs, CI, monitoring) and what output the user actually needs to see.
+3. Define filter criteria: Specify exactly what gets suppressed (keywords, severity levels, channels, patterns) and what passes through. Write these criteria down before applying anything.
+4. Apply suppression: Use the appropriate mechanism — Slack DND/mute APIs, log level configuration, alert rule silences, grep/awk filters, or notification preferences. Apply the narrowest filter that solves the problem.
+5. Document the boundary: Record what is silenced, what is not, and why. This is critical so the user (or their team) can audit the filter later.
+6. Provide restore: Give explicit instructions to undo the silence — which setting to revert, which API call to make, or which config to restore. Never leave a suppression in place without a documented off-ramp.
 7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
@@ -63,8 +66,15 @@ Canonical reference input: Silence (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Silence suppresses noise, not signal. Never silence errors, critical alerts, or security warnings.
-- Make the filter criteria explicit so important signals are not accidentally muted.
+- Never silence errors, critical alerts, security warnings, or health-check failures.
+- Always preserve an audit trail of what was suppressed.
+- Prefer narrowing the filter over broadening it. If unsure, keep the signal.
+- Do NOT activate this spell for:
+- Do not use for: Stealth/obfuscation: Making a service invisible to DNS, scanners, or network discovery. Silence filters output; it does not hide infrastructure.
+- Do not use for: Security/anonymity: Stripping headers, rotating IPs, encrypting logs, or making traffic untraceable. This is about signal-to-noise, not evasion.
+- Do not use for: Social moderation: Calming hostile conversations, managing team dynamics, or reducing emotional reactivity. Silence is technical, not interpersonal.
+- Do not use for: Process redesign: Redesigning on-call rotations, changing team workflows, or restructuring alerting philosophy. This spell applies filters to existing systems; it does not redesign them.
+- Do not use for: Deleting data: Removing logs permanently or purging history. Silence suppresses display/routing; it does not destroy records.
 - Do not rely on a live integration until credentials, target scope, and rollback expectations are verified.
 
 ## Verification

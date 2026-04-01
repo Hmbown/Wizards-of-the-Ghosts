@@ -1,0 +1,81 @@
+{
+  "slug": "mending",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "mending",
+    "spell_name": "Mending",
+    "category_slug": "repair-and-recovery",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/mending/optimized_module.json"
+  },
+  "optimized_instruction": "# Mending\n\n## Activation Signals\n\nTrigger this spell when the request contains:\n- A **specific file or artifact** named (e.g., `.gitignore`, `docker-compose.yml`, `Makefile`, `package.json`, migration script, manifest)\n- A **localized break**: syntax error, typo, missing character, wrong reference, indentation issue, unclosed bracket, trailing comma, misspelled key\n- Evidence the artifact **was working before** (\"broke yesterday\", \"was fine last week\", \"worked before the merge\")\n- Language like: \"just fix\", \"repair\", \"fix the typo\", \"missing semicolon\", \"broken reference\", \"indentation error\", \"without changing\"\n\n## What Makes This Spell Different\n\nMending is **surgical repair of a known-working artifact that has a specific, identifiable break**. It is NOT:\n- **Triage/diagnosis**: If the problem is \"API is throwing 500s, figure out why\" — that's investigation, not mending. Mending requires the break to already be identified.\n- **Formatting/cleanup**: If the data is correct but looks messy (sort keys, normalize indentation) — that's formatting, not repair.\n- **State reset**: If a flag is stuck or an alert needs clearing — that's an operational toggle, not a file repair.\n- **Refactoring/redesign**: If the system is \"fundamentally flawed\" and needs redesign — that's rebuilding, not mending.\n- **Comprehensive cleanup**: If there are \"years of orphaned records\" across tables — that's a data integrity project, not a surgical fix.\n\n## Anti-Patterns (Do NOT use Mending)\n\n- \"Diagnose why production is broken\" → investigation spell\n- \"Clean up formatting on this file\" → formatting spell\n- \"Reset this stuck flag/alert\" → operational spell\n- \"Redesign this module from scratch\" → refactoring spell\n- \"Clean up data integrity across all tables\" → data project spell\n\n## Workflow\n\n1. **Confirm the break is specific and localized** — name the exact file, the exact error, and what \"working\" looked like before.\n2. **Apply the minimal change that restores the original behavior** — fix the typo, add the missing character, correct the reference, move the misplaced directive. Do not improve, modernize, or restructure.\n3. **Show a before/after diff** so the repair is auditable and reversible.\n4. **If the break reveals a deeper structural problem** (e.g., the same typo appears in 12 files, or the config format is fundamentally unsound), report it — do not paper over it with repeated patches.\n\n## Guardrails\n\n- Fix the break. Do not redesign. Do not \"take the opportunity to clean up.\"\n- If the damage is too extensive for a targeted repair, say so and recommend a larger intervention.\n- Preserve the artifact's original design, style, and structure.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

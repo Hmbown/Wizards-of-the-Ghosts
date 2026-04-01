@@ -1,0 +1,26 @@
+{
+  "slug": "etherealness",
+  "name": "Etherealness",
+  "category_slug": "investigation-and-preparation",
+  "category_title": "Investigation and Preparation",
+  "rubric_pack": "investigation-and-preparation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "prototype",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Walk through the walls of a system without leaving fingerprints.",
+  "suggested_confusables": [
+    "clairvoyance",
+    "comprehend-languages",
+    "detect-magic",
+    "detect-thoughts",
+    "enhance-ability"
+  ],
+  "baseline_instruction": "You are casting the Etherealness spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: prototype. Literalness: metaphorical.\nSpell concept: Etherealness is read-only ghost mode for systems you need to study without disturbing. It maps to shadow environments, dry runs, read replicas, mirrored traffic, and observational tooling that lets you see behavior without becoming part of it. The promise is visibility with minimal touch, not perfect impossibility of side effects.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- You need to observe production-like behavior without writing to the live system.\n- A dry run, shadow deployment, or mirrored environment would answer the question more safely than direct experimentation.\n- You want to inspect effects first and decide later whether crossing fully into action is justified.\nExpected workflow elements:\n- Choose the least invasive observation surface that still answers the question.\n- Define what can be trusted in the ghost view and what may differ from live mutation paths.\n- Return a read-only observation plan plus the gaps that remain invisible until real execution.\nExpected deliverables:\n- A read-only or shadow-observation setup plan.\n- A list of findings you can gather safely before acting.\n- A caveat list for what ghost mode cannot prove.\nGuardrails that must remain visible:\n- Do not assume mirrored or dry-run environments perfectly predict live writes, latency, or contention.\n- Confirm that the observation path is actually isolated before treating it as consequence-free.\nDefault invocation language:\n- Use $etherealness to show me how to inspect this system in read-only ghost mode and tell me what that view can and cannot prove."
+}

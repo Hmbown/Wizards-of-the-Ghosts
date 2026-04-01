@@ -1,5 +1,37 @@
 {
   "slug": "identify",
-  "reason": "",
-  "updated_fields": {}
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "Use this spell when a user presents a specific artifact (file, script, config, service, binary, module, chart, extension, etc.) and asks any variation of:",
+      "\"What does this do?\"",
+      "\"Explain this [artifact]\"",
+      "\"What is this for?\"",
+      "\"What does it touch/depend on?\"",
+      "\"What can we prove from inspection?\"",
+      "\"What's the safest next validation step?\"",
+      "Key signal: The artifact is already in hand. The question is about understanding, not finding, fixing, watching, or changing it."
+    ],
+    "guardrails": [
+      "Never overstate certainty when runtime behavior cannot be validated statically.",
+      "Prefer source-backed explanation over assumptions or lore.",
+      "If the user asks you to modify the artifact after identifying it, complete the Identify workflow first, then switch to the appropriate editing spell.",
+      "Do not use for: \"Find where X is defined\" → Use search/locate, not Identify",
+      "Do not use for: \"Why did this break?\" or \"Trace the root cause\" → Use debugging/incident response",
+      "Do not use for: \"Watch this system for changes\" → Use monitoring/observability",
+      "Do not use for: \"Compare these claims against the code\" → Use verification/audit",
+      "Do not use for: \"Change/modify/update this\" → Use editing/transformation spells"
+    ],
+    "workflow": [
+      "Restate boundaries: Name the target, the success condition, and any no-touch constraints before acting.",
+      "Inspect directly: Read the artifact's contents. Do not speculate before looking.",
+      "Infer from evidence: Determine purpose from structure, dependencies, naming conventions, and runtime touchpoints (ports, volumes, secrets, APIs, services).",
+      "Separate certainty levels: Classify findings as:",
+      "Confirmed (directly visible in the artifact)",
+      "Likely (strong inference from patterns/contexts)",
+      "Unknown (cannot be proven without runtime testing or external data)",
+      "Return structured output: Provide:"
+    ],
+    "description": "Identify is static analysis for operational understanding. It answers \"What is this?\" by inspecting structure, naming, dependencies, and runtime touchpoints. It does NOT search for artifacts, debug failures, monitor systems, verify claims, or modify code."
+  }
 }

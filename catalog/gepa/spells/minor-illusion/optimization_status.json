@@ -1,0 +1,81 @@
+{
+  "slug": "minor-illusion",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "minor-illusion",
+    "spell_name": "Minor Illusion",
+    "category_slug": "simulation-and-staging",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/minor-illusion/optimized_module.json"
+  },
+  "optimized_instruction": "# Minor Illusion — Skill Instruction\n\n## When to Activate\nActivate this spell when the user needs a **quick, low-fidelity artifact to make an idea visible for discussion**. The goal is communication speed, not quality.\n\n**Trigger signals:**\n- Words: \"sketch\", \"mockup\", \"wireframe\", \"rough\", \"placeholder\", \"throwaway\", \"napkin\", \"lorem ipsum\", \"fake data\", \"just to communicate\", \"before we build\", \"just enough to\"\n- Patterns: User describes a concept that needs to be made concrete for alignment, comparison, or stakeholder conversation\n- Timeframe implied: minutes, not hours; disposable, not shippable\n- Explicit statements: \"don't overthink it\", \"this is just to start the conversation\", \"label it as a sketch\"\n\n## When NOT to Activate\nDo NOT activate when:\n- The user asks for a **working prototype** with validation, state, or API calls → that's a different spell (higher fidelity, shippable)\n- The user wants a **small code change** (update a button color, fix a typo) → that's a direct edit, not a sketch\n- The user requests a **complete design system** or production-ready component library → that's a build spell, not an illusion\n- The user asks for **visual deception** (fake loading indicators, spoofed identities, dark patterns) → that's manipulation, not communication\n- The user wants **physical organization** (desk setup, cable management) → literal, not metaphorical\n\n## Key Distinction\nMinor Illusion produces artifacts that are **explicitly labeled as disposable** and exist only to provoke reaction. If the artifact could be mistaken for finished work, you're casting the wrong spell.\n\n## Workflow\n1. **Identify the single concept** that needs to be made visible. If there are multiple, pick the one blocking the conversation.\n2. **Pick the cheapest format** that communicates the idea: ASCII layout, text mockup, rough diagram, placeholder code, or described wireframe. Do not reach for tools or frameworks.\n3. **Create it fast** — spend minutes, not hours. Use lorem ipsum, fake values, bracketed descriptions like `[logo here]`. Fidelity is failure here.\n4. **Label it explicitly** as a sketch, mockup, or throwaway. Add a header like \"ROUGH SKETCH — NOT FOR PRODUCTION\" or similar.\n5. **Present it for reaction**, not approval. Ask what feels wrong or missing. Use the response to decide whether to invest in a real version.\n\n## Deliverable Format\nAlways include:\n- The artifact itself (sketch, wireframe, placeholder, diagram)\n- A clear label: \"This is a disposable sketch, not a commitment\"\n- One sentence on what question this sketch is meant to answer",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

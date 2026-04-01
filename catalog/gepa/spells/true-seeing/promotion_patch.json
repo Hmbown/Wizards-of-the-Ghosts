@@ -1,5 +1,26 @@
 {
   "slug": "true-seeing",
-  "reason": "",
-  "updated_fields": {}
+  "reason": "GEPA manual optimization via Qwen 3.6",
+  "updated_fields": {
+    "when_to_use": [
+      "A claim, document, or system description feels too clean and you suspect important details are hidden or glossed over.",
+      "You need to verify what something actually does versus what it says it does.",
+      "Abstraction layers, marketing language, or organizational complexity are obscuring the real state of affairs."
+    ],
+    "workflow": [
+      "Identify the claim, abstraction, or presentation to examine.",
+      "Trace through to primary sources, actual behavior, raw data, or ground-level implementation.",
+      "Compare the surface presentation against the discovered ground truth.",
+      "Return the discrepancies, confirmed truths, and remaining uncertainties."
+    ],
+    "deliverables": [
+      "A ground-truth assessment comparing claims against evidence.",
+      "A list of confirmed facts, identified discrepancies, and unresolvable unknowns.",
+      "A recommendation on which claims to trust and which to investigate further."
+    ],
+    "guardrails": [
+      "Do not present your own interpretation as objective truth — show the evidence chain.",
+      "Acknowledge when ground truth is genuinely unknowable rather than forcing a conclusion."
+    ]
+  }
 }

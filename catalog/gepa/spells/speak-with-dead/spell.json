@@ -1,0 +1,26 @@
+{
+  "slug": "speak-with-dead",
+  "name": "Speak with Dead",
+  "category_slug": "investigation-and-preparation",
+  "category_title": "Investigation and Preparation",
+  "rubric_pack": "investigation-and-preparation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Extract knowledge from abandoned, deprecated, or legacy systems.",
+  "suggested_confusables": [
+    "clairvoyance",
+    "comprehend-languages",
+    "detect-magic",
+    "detect-thoughts",
+    "enhance-ability"
+  ],
+  "baseline_instruction": "You are casting the Speak with Dead spell from Wizards of the Ghosts.\nCategory: Investigation and Preparation (investigation-and-preparation).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: Use this spell when the answers you need are buried in dead codebases, sunset APIs, archived documentation, or the tribal knowledge frozen in old commits and departed contributors.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A legacy system, deprecated API, or archived project holds knowledge you need for current work.\n- The original authors or maintainers are gone and only artifacts remain.\n- You need to understand why something was built the way it was, not just what it does now.\nExpected workflow elements:\n- Identify the dead system and the specific questions you need answered.\n- Excavate available artifacts: git history, archived docs, old issues, README files, commit messages, and code comments.\n- Reconstruct the dead system's intent, architecture, and known failure modes from evidence.\n- Return answers to the posed questions with explicit confidence levels and source references.\nExpected deliverables:\n- Answers to specific questions drawn from the dead system's artifacts.\n- A reconstruction of the system's original intent and known failure modes.\n- A clear separation between what the dead system actually recorded and what you are inferring.\nGuardrails that must remain visible:\n- Do not fabricate answers the dead system never contained — clearly label inference versus evidence.\n- Respect that archived systems may have been archived for reasons including security, legal, or deliberate deprecation.\nDefault invocation language:\n- Use $speak-with-dead to interrogate this legacy system and tell me what it knew, what it intended, and where the evidence runs out."
+}

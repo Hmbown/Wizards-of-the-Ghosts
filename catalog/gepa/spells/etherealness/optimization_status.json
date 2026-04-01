@@ -1,0 +1,81 @@
+{
+  "slug": "etherealness",
+  "status": "optimized",
+  "message": "Bootstrapped spell GEPA workspace.",
+  "validation": {
+    "ok": true,
+    "slug": "etherealness",
+    "spell_name": "Etherealness",
+    "category_slug": "investigation-and-preparation",
+    "missing_files": [],
+    "errors": [],
+    "warnings": [],
+    "artifact_dir": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness",
+    "artifact_paths": {
+      "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/spell.json",
+      "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/train.jsonl",
+      "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/eval.jsonl",
+      "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/confusables.jsonl",
+      "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/rubric.json",
+      "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/promotion_patch.json",
+      "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/optimization_status.json",
+      "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/baseline_eval.json",
+      "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/optimized_eval.json",
+      "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/optimized_module.json"
+    },
+    "dataset_counts": {
+      "train_rows": 0,
+      "eval_rows": 0,
+      "confusable_rows": 0
+    }
+  },
+  "dependency": {
+    "python_version": "3.13.12",
+    "python_implementation": "CPython",
+    "dspy_installed": true,
+    "dspy_version": "3.1.3",
+    "codex_lm_available": false,
+    "qwen_lm_available": false
+  },
+  "task_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "reflection_backend": {
+    "configured": false,
+    "model": null,
+    "backend_type": "litellm",
+    "api_base": null,
+    "api_key_configured": false,
+    "provider_qualified_model_required": true,
+    "optional_settings": {
+      "temperature": null,
+      "max_tokens": null
+    },
+    "message": "DSPY_MODEL is not set. Default: hermes/default. Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+  },
+  "bootstrapped_files": {
+    "spell": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/spell.json",
+    "train": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/train.jsonl",
+    "eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/eval.jsonl",
+    "confusables": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/confusables.jsonl",
+    "rubric": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/rubric.json",
+    "promotion_patch": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/promotion_patch.json",
+    "status": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/optimization_status.json",
+    "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/baseline_eval.json",
+    "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/optimized_eval.json",
+    "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/etherealness/optimized_module.json"
+  },
+  "optimized_instruction": "# Etherealness — Read-Only Ghost Mode\n\n## Core Identity\nEtherealness is **observational only**. It answers \"what is happening?\" or \"what would happen?\" without changing anything. The system under study continues normally; you add a ghost layer that watches, mirrors, or dry-runs without becoming part of the live mutation path.\n\n## Activate When You See These Signals\n**Keywords/patterns:** read-only, shadow, dry run, ghost mode, observe without, without affecting, without disrupting, mirror traffic, passive observation, what would happen, before we commit, audit without, ephemeral observation, map without persisting, replica-based testing\n\n**Intent patterns:**\n- User needs to understand/audit/validate a live system but **cannot disturb it**\n- User wants to test a change **before committing** by running it in parallel/ghost mode\n- User needs to **map or measure** existing behavior (traffic patterns, resource usage, data flows) without adding instrumentation that would change that behavior\n- User asks for a **shadow/dry-run** setup where real inputs produce observable outputs that are discarded or compared, not acted on\n\n## Do NOT Activate For (Confusable Spells)\n- **Permanent logging/auditing** — storing request bodies, headers, auth tokens for compliance. Etherealness is ephemeral; permanent storage is a different concern.\n- **Active interception/modification** — rewriting responses, hotfix proxies, real-time traffic manipulation. Etherealness never modifies.\n- **External monitoring/scrying** — watching competitor websites, market prices, third-party systems you don't control.\n- **Prediction/forecasting** — crystal ball dashboards, failure prediction, trend extrapolation. Etherealness observes what is or what would be, not what will be.\n- **Concealment/invisibility** — hiding services from discovery, making things undetectable. Etherealness is about seeing, not being unseen.\n- **Human surveillance** — watching coworkers' screens, monitoring people. Etherealness is for systems, not people.\n\n## Workflow (Follow These Steps)\n1. **Identify the least invasive observation surface** that still answers the question. Prefer: existing metrics/logs → read replicas → shadow deployments → mirrored traffic. Escalate invasiveness only when necessary.\n2. **Define the trust boundary.** Explicitly state what the ghost view can prove and what it cannot. Dry runs don't capture live contention. Read replicas may lag. Mirrored traffic at 1% doesn't prove behavior at 100%.\n3. **Return three deliverables:**\n   - The observation setup plan (what to deploy, where, how to connect)\n   - Findings you can safely gather before acting\n   - A caveat list: what ghost mode cannot prove and what requires real execution to validate\n\n## Key Constraint\nThe observation itself must not become the problem. If your ghost layer adds measurable latency, consumes significant resources, or creates a new data liability, you've violated the spell. Design for lightweight passivity.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
+}

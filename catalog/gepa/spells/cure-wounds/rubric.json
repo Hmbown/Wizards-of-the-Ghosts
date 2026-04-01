@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "repair-and-recovery",
+  "category_slug": "repair-and-recovery",
+  "spell_slug": "cure-wounds",
+  "spell_focus": "In D&D, Cure Wounds heals damage through touch — direct, immediate, hands-on. The real-world version is the hotfix: diagnosing the immediate problem and applying the minimum viable fix to restore function. Not a redesign, not a refactor, not a root-cause analysis — just stop the bleeding right now.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Cure Wounds precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Cure Wounds: ['The fix: the specific change that stops the bleeding.', 'A brief note on what caused the breakage and whether deeper investigation is needed.']",
+    "Default guardrails for Cure Wounds: ['Cure Wounds is triage, not treatment. Always note whether root-cause analysis is still needed after the immediate fix.', 'The minimum fix should not make the underlying problem harder to diagnose. Preserve evidence.']"
+  ]
+}

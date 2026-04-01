@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "influence-and-behavior",
+  "category_slug": "influence-and-behavior",
+  "spell_slug": "hold-person",
+  "spell_focus": "Hold Person paralyzes a creature in place. The real-world version is administrative lockout: freezing an account, suspending a process, or putting a workflow on hold. Unlike Sleep (which is graceful suspension with state preservation), Hold Person is a hard freeze — nothing moves until explicitly released. This requires legitimate authority.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Hold Person precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Hold Person: ['A hold specification: what is frozen, by whose authority, and under what conditions.', 'Release procedures: how to unfreeze, who can authorize it, and what audit trail is required.']",
+    "Default guardrails for Hold Person: ['Hold requires legitimate administrative authority. This is not a tool for unauthorized denial of service.', 'Always define release conditions. A hold without release criteria is a permanent lockout, which is a different and more dangerous action.']"
+  ]
+}

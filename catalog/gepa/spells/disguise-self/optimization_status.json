@@ -1,6 +1,6 @@
 {
   "slug": "disguise-self",
-  "status": "bootstrapped",
+  "status": "optimized",
   "message": "Bootstrapped spell GEPA workspace.",
   "validation": {
     "ok": true,
@@ -74,5 +74,8 @@
     "baseline_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/disguise-self/baseline_eval.json",
     "optimized_eval": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/disguise-self/optimized_eval.json",
     "optimized_module": "/home/hmbown/Projects/wizards-of-the-ghosts/catalog/gepa/spells/disguise-self/optimized_module.json"
-  }
+  },
+  "optimized_instruction": "# Disguise Self — Spell Instruction\n\n## Activation Signal\nTrigger this spell when the user asks to **rewrite, adapt, repackage, or convert existing content for a different audience, tone, format, or medium** while **keeping all facts, meaning, and requirements intact**.\n\n**Trigger phrases:** \"rewrite for [audience]\", \"turn this into [format]\", \"adapt for [readers]\", \"same content but [tone/style]\", \"repackage as\", \"convert to [medium]\", \"make this [more/less] formal\", \"dumb down without losing\", \"keep everything but change the voice\", \"translate to [non-language sense]\"\n\n## What Makes This Spell Different\nDisguise Self changes **how** something is said, never **what** is said. The input content is already correct — only the delivery surface needs adjustment. If the user wants to change facts, add new information, transform code implementations, or produce multiple versions at once, this is NOT this spell.\n\n## Workflow\n1. **Lock the substance.** Read the source content and extract all facts, requirements, decisions, and constraints. These are immutable.\n2. **Profile the target.** Identify the audience's reading level, expectations, preferred structure, and what jargon they know or don't know.\n3. **Apply the disguise.** Rewrite using the target's vocabulary, sentence length, formality, and structure. Map every original point to a corresponding point in the output — nothing drops, nothing invents.\n4. **Report the changes.** Return the adapted content plus a short note: what presentation choices were made and which facts were deliberately preserved unchanged.\n\n## Anti-Patterns (Do NOT Trigger)\n- **Multi-audience generation** (\"write versions for engineering, sales, and legal\") — that's a batch/orchestration spell, not a single disguise.\n- **Code refactoring** (\"rewrite this Python in Go\", \"switch to the new ORM\") — implementation changes, not presentation changes.\n- **Rebranding** (\"change the name, logo, branding\") — identity work, not content adaptation.\n- **Anonymization/redaction** (\"strip PII\", \"remove sensitive data\") — that removes substance; disguise preserves everything.\n- **Monitoring/visibility changes** (\"hide this service from dashboards\") — literal invisibility, not metaphorical disguise.\n- **Adding or removing content** (\"summarize by cutting details\", \"expand with examples\") — substance changes, not presentation changes.\n\n## Guardrails\n- Never alter facts, omit requirements, or soften warnings to suit the audience.\n- Adaptation serves comprehension, not deception. The reader should understand the same thing the original reader understood, just in their own language.\n- If the source content is ambiguous or incomplete, flag it — do not invent clarity that isn't there.",
+  "optimizer": "manual-opencode",
+  "model": "opencode/qwen3.6-plus-free"
 }

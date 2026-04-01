@@ -1,0 +1,31 @@
+{
+  "rubric_pack": "actions-access-and-automation",
+  "category_slug": "actions-access-and-automation",
+  "spell_slug": "teleport",
+  "spell_focus": "Teleport is full-context migration: an application, environment, dataset, or service estate moves from one place to another in a way that tries to feel instantaneous to everyone depending on it. In reality, there is always preparation behind the magic. Data has to stay consistent, dependencies have to reattach, traffic has to cut over, and the old world has to remain recoverable long enough to trust the new one. The spell is powerful because it compresses a terrifying amount of movement into one decisive act. It is dangerous for exactly the same reason.",
+  "confusable_with": [],
+  "judge_examples": [
+    "Keep Teleport precise, useful, and distinct from neighboring spells.",
+    "Preserve clear deliverables, visible guardrails, and an honest reality boundary."
+  ],
+  "row_overrides": {
+    "required_sections": [
+      "Approach",
+      "Workflow",
+      "Deliverables",
+      "Guardrails",
+      "Reality Boundary"
+    ],
+    "global_must_include": [],
+    "global_must_not_include": [],
+    "deterministic_checks": [],
+    "judge_criteria": [],
+    "human_review": {}
+  },
+  "notes": [
+    "Inherit the category rubric pack by default and add only spell-specific overrides here.",
+    "Use row_overrides.global_must_include and row_overrides.global_must_not_include before inventing a new custom check.",
+    "Default deliverables for Teleport: ['A migration or cutover runbook.', 'A rollback and recovery plan with decision thresholds.', 'A validation checklist for data, traffic, permissions, and dependent systems after arrival.']",
+    "Default guardrails for Teleport: ['Do not claim this move is safe without rehearsals, backups, and integrity verification.', 'If the request lacks a rollback path or a way to validate arrival, the spell should stop at planning.']"
+  ]
+}

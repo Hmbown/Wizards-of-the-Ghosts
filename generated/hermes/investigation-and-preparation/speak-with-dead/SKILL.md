@@ -1,6 +1,6 @@
 ---
 name: speak-with-dead
-description: "Use this spell when the answers you need are buried in dead codebases, sunset APIs, archived documentation, or the tribal knowledge frozen in old commits and departed contributors."
+description: "This spell is archaeology, not history research. It operates on specific artifacts from a specific dead system to answer specific questions. It is NOT general tech history, NOT interviewing living people, and NOT monitoring live systems."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,12 @@ metadata:
 # Speak with Dead
 Extract knowledge from abandoned, deprecated, or legacy systems.
 ## What This Skill Does
-Use this spell when the answers you need are buried in dead codebases, sunset APIs, archived documentation, or the tribal knowledge frozen in old commits and departed contributors.
+This spell is archaeology, not history research. It operates on specific artifacts from a specific dead system to answer specific questions. It is NOT general tech history, NOT interviewing living people, and NOT monitoring live systems.
 In this grimoire, Speak with Dead is treated as a metaphorical spell with a shipping-now delivery profile.
 Canonical reference input: Speak with Dead (spell).
 ## When To Use
 
-- A legacy system, deprecated API, or archived project holds knowledge you need for current work.
-- The original authors or maintainers are gone and only artifacts remain.
-- You need to understand why something was built the way it was, not just what it does now.
+- Route to this spell when the user asks to extract knowledge from systems that are dead, abandoned, deprecated, or archived AND the people who built or maintained them are no longer available. The knowledge must be recoverable from existing artifacts (code, commits, docs, configs, databases, state files) rather than from living people or live systems.
 
 ## Prerequisites
 
@@ -36,10 +34,10 @@ Canonical reference input: Speak with Dead (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the dead system and the specific questions you need answered.
-3. Excavate available artifacts: git history, archived docs, old issues, README files, commit messages, and code comments.
-4. Reconstruct the dead system's intent, architecture, and known failure modes from evidence.
-5. Return answers to the posed questions with explicit confidence levels and source references.
+2. Scope the dead system: Name the specific system, confirm it is actually dead/archived, and list the user's concrete questions.
+3. Inventory artifacts: Identify what remains — git history, commit messages, PR descriptions, README files, archived docs, config files, database schemas, state files, packet captures, ADRs. Note what is missing.
+4. Reconstruct from evidence: Trace intent through commit messages, code structure, config values, and data schemas. Separate what the artifacts directly state from what you are inferring.
+5. Return with confidence labels: For each answer, cite the specific artifact (file, commit hash, line, config key) and label it as evidence (directly stated) or inference (reasoned from patterns). Flag any gaps where the trail goes cold.
 6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
@@ -51,8 +49,15 @@ Canonical reference input: Speak with Dead (spell).
 ## Pitfalls / Guardrails
 
 - Keep the metaphor anchored to a real mechanism instead of drifting into lore.
-- Do not fabricate answers the dead system never contained — clearly label inference versus evidence.
-- Respect that archived systems may have been archived for reasons including security, legal, or deliberate deprecation.
+- Never fabricate answers the artifacts do not support. Label inferences explicitly.
+- Note if the system may have been archived for security, legal, or compliance reasons — flag this to the user.
+- If artifacts are insufficient to answer the question, say so rather than guessing.
+- Do not use for: General tech history ("history of JavaScript frameworks," "evolution of REST APIs") → route to research/knowledge spells
+- Do not use for: Company lore from living people ("ask the team why we chose Postgres") → route to collaboration/survey spells
+- Do not use for: Live system observation ("what's happening on staging right now") → route to monitoring/observability spells
+- Do not use for: Competitor watching ("monitor their API for changes") → route to monitoring/automation spells
+- Do not use for: Active system debugging ("why is this production service failing") → route to debugging/troubleshooting spells
+- Do not use for: Generic code explanation ("explain what this function does") → route to code-understanding spells
 
 ## Verification
 

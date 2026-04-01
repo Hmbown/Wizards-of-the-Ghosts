@@ -1,0 +1,26 @@
+{
+  "slug": "animate-objects",
+  "name": "Animate Objects",
+  "category_slug": "actions-access-and-automation",
+  "category_title": "Actions, Access, and Automation",
+  "rubric_pack": "actions-access-and-automation",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "prototype",
+  "literalness": "literal",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Give agency to passive data by attaching triggers, watchers, and autonomous update logic.",
+  "suggested_confusables": [
+    "animal-friendship",
+    "awaken",
+    "dimension-door",
+    "freedom-of-movement",
+    "knock"
+  ],
+  "baseline_instruction": "You are casting the Animate Objects spell from Wizards of the Ghosts.\nCategory: Actions, Access, and Automation (actions-access-and-automation).\nReality tier: prototype. Literalness: literal.\nSpell concept: Use this spell when a static file, dataset, or configuration should become a living artifact that reacts to changes, heals itself, or updates autonomously.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A spreadsheet, dashboard, or config file should stay current without manual intervention.\n- You want a document or dataset to react when its inputs change.\n- A passive artifact would be more useful if it could monitor its own health and act on drift.\nExpected workflow elements:\n- Identify the inert object and the behavior it should gain.\n- Attach the minimal trigger, watcher, or update loop that gives it the desired agency.\n- Define the object's scope of autonomous action and its kill switch.\n- Test the animated behavior and confirm the object stays within its granted agency.\nExpected deliverables:\n- A previously static artifact with autonomous update or reaction logic attached.\n- A clear definition of the object's granted agency and its boundaries.\n- A kill switch or revert path that returns the object to its inert state.\nGuardrails that must remain visible:\n- Animated objects must have explicit scope limits - a self-updating spreadsheet should not start sending emails.\n- Always provide a kill switch that returns the object to a passive state.\n- Do not grant write access to downstream systems the user has not explicitly approved.\nDefault invocation language:\n- Use $animate-objects to make this artifact self-updating, with clear agency boundaries and a kill switch."
+}

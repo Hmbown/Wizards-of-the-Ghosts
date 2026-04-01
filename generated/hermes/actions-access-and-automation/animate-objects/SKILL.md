@@ -1,6 +1,6 @@
 ---
 name: animate-objects
-description: "Use this spell when a static file, dataset, or configuration should become a living artifact that reacts to changes, heals itself, or updates autonomously."
+description: "This spell transforms inert → reactive. It does NOT create new tools, train models, run one-off fixes, or build physical systems. The key pattern: existing artifact + trigger/watcher + bounded autonomy."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -20,14 +20,16 @@ metadata:
 # Animate Objects
 Give agency to passive data by attaching triggers, watchers, and autonomous update logic.
 ## What This Skill Does
-Use this spell when a static file, dataset, or configuration should become a living artifact that reacts to changes, heals itself, or updates autonomously.
+This spell transforms inert → reactive. It does NOT create new tools, train models, run one-off fixes, or build physical systems. The key pattern: existing artifact + trigger/watcher + bounded autonomy.
 In this grimoire, Animate Objects is treated as a literal spell with a prototype delivery profile.
 Canonical reference input: Animate Objects (spell).
 ## When To Use
 
-- A spreadsheet, dashboard, or config file should stay current without manual intervention.
-- You want a document or dataset to react when its inputs change.
-- A passive artifact would be more useful if it could monitor its own health and act on drift.
+- Trigger this spell when a user asks to make an existing static artifact self-updating, reactive, or autonomous. Look for:
+- "make it alive", "living document", "self-updating", "auto-refresh"
+- References to existing files: CSV, YAML, JSON, README, config, spreadsheet, dashboard, spec, diagram
+- Phrases like "pulls from [source]", "watches for changes", "reconciles differences", "flags when stale"
+- Desire for ongoing automation attached to a specific existing artifact
 
 ## Prerequisites
 
@@ -36,12 +38,14 @@ Canonical reference input: Animate Objects (spell).
 ## Procedure
 
 1. Restate the target, the success condition, and any no-touch boundaries before taking action.
-2. Identify the inert object and the behavior it should gain.
-3. Attach the minimal trigger, watcher, or update loop that gives it the desired agency.
-4. Define the object's scope of autonomous action and its kill switch.
-5. Test the animated behavior and confirm the object stays within its granted agency.
-6. Stop for explicit confirmation before taking a live action that changes access, triggers an alert, or touches a real system boundary.
-7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
+2. Identify the inert artifact — name the exact file, dataset, or document. Confirm it exists and is currently static.
+3. Define the trigger — what event, schedule, or change should wake it up? (cron, file watch, API poll, git hook, webhook)
+4. Specify the autonomous action — what exactly should it do when triggered? Keep scope narrow: update itself, flag discrepancies, regenerate derived output.
+5. Set boundaries and kill switch — what must it NOT do? How do you revert it to passive state? Document both before implementing.
+6. Implement minimal agency — attach the simplest trigger + action loop that satisfies the request. Prefer existing tooling (watchexec, cron, GitHub Actions, simple scripts) over custom daemons.
+7. Verify containment — confirm the artifact only acts within its granted scope and the kill switch works.
+8. Stop for explicit confirmation before taking a live action that changes access, triggers an alert, or touches a real system boundary.
+9. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
@@ -52,9 +56,16 @@ Canonical reference input: Animate Objects (spell).
 ## Pitfalls / Guardrails
 
 - Call out the glue, permissions, or missing infrastructure before you imply this is fully operational.
-- Animated objects must have explicit scope limits - a self-updating spreadsheet should not start sending emails.
-- Always provide a kill switch that returns the object to a passive state.
-- Do not grant write access to downstream systems the user has not explicitly approved.
+- Scope must be explicit: a self-updating spreadsheet does not start sending emails unless approved
+- Always provide a documented kill switch or revert path
+- No write access to downstream systems without explicit user approval
+- Prefer read-only or self-modifying behavior over cross-system actuation
+- Do not use for: Training AI on data — "teach this dataset to understand queries" → ML/NLP spell
+- Do not use for: One-off cleanup scripts — "run once to fix stale entries" → simple scripting, no ongoing agency
+- Do not use for: Building new tools — "create a CLI tool" → software development, not animating existing artifact
+- Do not use for: Physical automation — "robot that moves objects" → hardware/IoT, out of scope
+- Do not use for: Syntax repair — "fix broken JSON" → data repair, no autonomy added
+- Do not use for: Autonomous agents — "virtual assistant that makes decisions" → agent design, not artifact animation
 
 ## Verification
 

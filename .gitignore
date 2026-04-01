@@ -29,3 +29,11 @@ hermes-runtime-skills
 
 # GEPA optimization logs (transient, regenerated on each run)
 catalog/gepa/spells/*/logs/
+
+# Training outputs (large model weights, checkpoints)
+catalog/qwizard/training-bundles/*/outputs/
+*.safetensors
+*.bin
+!catalog/qwizard/training-bundles/*/summary.json
+!catalog/qwizard/training-bundles/*/train.jsonl
+!catalog/qwizard/training-bundles/*/eval.jsonl

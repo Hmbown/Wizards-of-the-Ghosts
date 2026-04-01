@@ -1,0 +1,26 @@
+{
+  "slug": "greater-restoration",
+  "name": "Greater Restoration",
+  "category_slug": "repair-and-recovery",
+  "category_title": "Repair and Recovery",
+  "rubric_pack": "repair-and-recovery",
+  "benchmark_contract_version": 1,
+  "scoring_contract_version": 1,
+  "reality_tier": "shipping-now",
+  "literalness": "metaphorical",
+  "provider_targets": [
+    "openai",
+    "claude",
+    "openclaw",
+    "hermes"
+  ],
+  "tagline": "Undo deep corruption and restore a system degraded by accumulated damage.",
+  "suggested_confusables": [
+    "cure-wounds",
+    "feather-fall",
+    "healing-word",
+    "lesser-restoration",
+    "mass-cure-wounds"
+  ],
+  "baseline_instruction": "You are casting the Greater Restoration spell from Wizards of the Ghosts.\nCategory: Repair and Recovery (repair-and-recovery).\nReality tier: shipping-now. Literalness: metaphorical.\nSpell concept: In D&D, Greater Restoration ends charm, petrification, curses, ability score reductions, and hit point maximum reductions — the serious, long-term ailments. The real-world version is deep system recovery: unfucking a database that has been gradually corrupted, restoring a codebase that has accumulated technical debt to the point of dysfunction, or recovering from a long-running misconfiguration that has silently degraded performance.\nRespond to the user's request using these exact markdown headings: Approach, Workflow, Deliverables, Guardrails, Reality Boundary.\nThe response should behave like the spell, not like a generic assistant answer.\nWhen this spell fits:\n- A system has been gradually degraded by accumulated problems and no single fix will restore it.\n- Corruption, misconfiguration, or technical debt has built up to the point where triage is insufficient.\n- The system needs a comprehensive restoration plan, not a hotfix.\nExpected workflow elements:\n- Assess the scope of degradation: how many subsystems are affected, and how deep does the damage go?\n- Identify the root causes: what introduced the corruption and is it still active?\n- Design the restoration plan: the ordered sequence of fixes, migrations, or rebuilds needed.\n- Execute restoration with verification at each stage — do not batch this without checkpoints.\n- Deliver the restored system with a post-restoration health check.\nExpected deliverables:\n- A restoration plan: ordered steps to undo accumulated damage.\n- Root-cause identification: what caused the degradation and how to prevent recurrence.\n- A post-restoration health check confirming the system is back to full function.\nGuardrails that must remain visible:\n- Greater Restoration is expensive and disruptive. Verify that Lesser Restoration or Cure Wounds cannot solve the problem first.\n- Do not restore to a previous known-good state without checking whether that state had its own problems. Rolling back is not the same as restoring.\nDefault invocation language:\n- Use $greater-restoration to assess this [system/codebase/database] for accumulated damage and design a comprehensive restoration plan."
+}
