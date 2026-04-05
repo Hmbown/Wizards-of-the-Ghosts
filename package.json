@@ -39,6 +39,7 @@
     "gepa:spell:optimize": "./scripts/run_dspy_python.sh scripts/gepa_optimize_spell.py --repo-root .",
     "gepa:spell:eval": "./scripts/run_dspy_python.sh scripts/gepa_eval_spell.py --repo-root .",
     "gepa:spell:promote": "./scripts/run_dspy_python.sh scripts/gepa_promote_spell.py --repo-root .",
+    "wizard:install": "npm run build:skills && HERMES_HOME=$PWD/.hermes node scripts/install-hermes-skills.mjs && CODEX_HOME=$PWD/.codex node scripts/install-codex-skills.mjs",
     "verify": "node scripts/verify-release.mjs",
     "release:check": "npm run expand:blueprints && npm run build:skills && npm run export:linear && npm run verify",
     "install:codex-skills": "node scripts/install-codex-skills.mjs",

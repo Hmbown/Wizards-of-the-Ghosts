@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Full DSPy compile + eval run with Codex CLI backend
-# Run: DSPY_MODEL=codex-exec/default DSPY_TEMPERATURE=0 DSPY_MAX_TOKENS=256 bash scripts/dspy_full_run.sh
+# Full DSPy compile + eval run with a local CLI backend
+# Run: DSPY_MODEL=qwen/default DSPY_TEMPERATURE=0 DSPY_MAX_TOKENS=256 bash scripts/dspy_full_run.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-export DSPY_MODEL="${DSPY_MODEL:-codex-exec/default}"
+export DSPY_MODEL="${DSPY_MODEL:-qwen/default}"
 export DSPY_TEMPERATURE="${DSPY_TEMPERATURE:-0}"
 export DSPY_MAX_TOKENS="${DSPY_MAX_TOKENS:-256}"
 

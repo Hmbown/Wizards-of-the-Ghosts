@@ -53,11 +53,17 @@ def optimize_spell(repo_root: Path, args: argparse.Namespace) -> tuple[dict[str,
     if task_config is not None:
         task_backend = dict(task_backend)
         task_backend["config"] = config_as_dict(task_config)
-        task_backend["probe"] = probe_backend(task_config, repo_root=repo_root)
+        if args.skip_probe:
+            task_backend["probe"] = {"checked": False, "reachable": True, "message": "Probe skipped via --skip-probe."}
+        else:
+            task_backend["probe"] = probe_backend(task_config, repo_root=repo_root)
     if reflection_config is not None:
         reflection_backend = dict(reflection_backend)
         reflection_backend["config"] = config_as_dict(reflection_config)
-        reflection_backend["probe"] = probe_backend(reflection_config, repo_root=repo_root)
+        if args.skip_probe:
+            reflection_backend["probe"] = {"checked": False, "reachable": True, "message": "Probe skipped via --skip-probe."}
+        else:
+            reflection_backend["probe"] = probe_backend(reflection_config, repo_root=repo_root)
 
     status_extra = {"bootstrapped_files": created}
 
@@ -283,12 +289,20 @@ def main() -> int:
     parser.add_argument("--bootstrap-only", action="store_true", help="Create the spell workspace and exit")
     parser.add_argument("--force-bootstrap", action="store_true", help="Overwrite bootstrap artifacts if they exist")
     parser.add_argument("--validate-only", action="store_true", help="Validate the spell workspace and exit")
-    parser.add_argument("--dspy-model", default=None, help="Provider-qualified task model string, e.g. codex-exec/default")
+    parser.add_argument(
+        "--dspy-model",
+        default=None,
+        help="Provider-qualified task model string or local alias, for example hermes/default, qwen/default, opencode/default, copilot/codex-5.3, or openai/<model>",
+    )
     parser.add_argument("--dspy-api-base", default=None, help="Optional API base for the task model")
     parser.add_argument("--dspy-api-key", default=None, help="Optional API key for the task model")
     parser.add_argument("--dspy-temperature", default=None, help="Optional task model temperature override")
     parser.add_argument("--dspy-max-tokens", default=None, help="Optional task model max token override")
-    parser.add_argument("--reflection-model", default=None, help="Optional provider-qualified reflection model string")
+    parser.add_argument(
+        "--reflection-model",
+        default=None,
+        help="Optional reflection model string or local alias, for example hermes/default, qwen/default, opencode/default, copilot/codex-5.3, or openai/<model>",
+    )
     parser.add_argument("--reflection-api-base", default=None, help="Optional API base for the reflection model")
     parser.add_argument("--reflection-api-key", default=None, help="Optional API key for the reflection model")
     parser.add_argument("--reflection-temperature", default=None, help="Optional reflection model temperature override")
@@ -300,6 +314,7 @@ def main() -> int:
     parser.add_argument("--max-full-evals", type=positive_int, default=None, help="Override GEPA full-eval budget")
     parser.add_argument("--max-metric-calls", type=positive_int, default=None, help="Override GEPA metric-call budget")
     parser.add_argument("--seed", type=int, default=0, help="GEPA random seed")
+    parser.add_argument("--skip-probe", action="store_true", help="Skip backend probe (assume reachable)")
     args = parser.parse_args()
 
     repo_root = Path(args.repo_root).resolve()

@@ -1,6 +1,6 @@
 ---
 name: arcana
-description: "Explain how a system, protocol, or technology actually works under the hood — beyond what the documentation says. Use when debugging requires understanding underlying mechanisms, when architecture decisions need deep technical context, or when you need to distinguish documented behavior from actual behavior."
+description: "In D&D, Arcana is knowledge of magic, its traditions, symbols, and mechanisms. The real-world version is deep technical literacy: understanding how software architectures work, what protocols do at the wire level, how APIs behave beyond their documentation, and what the actual mechanisms are behind the abstractions everyone else takes on faith."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -18,77 +18,49 @@ metadata:
       - preflight
 ---
 # Arcana
-
-Explain how a system, protocol, or technology actually works under the hood — beyond what the documentation says.
-
+Apply deep technical knowledge to understand how systems work under the hood.
+## What This Skill Does
+In D&D, Arcana is knowledge of magic, its traditions, symbols, and mechanisms. The real-world version is deep technical literacy: understanding how software architectures work, what protocols do at the wire level, how APIs behave beyond their documentation, and what the actual mechanisms are behind the abstractions everyone else takes on faith.
+In this grimoire, Arcana is treated as a metaphorical skill with a shipping-now delivery profile.
+Canonical reference input: Arcana (skill).
 ## When To Use
 
-- A technical system needs to be understood at a level deeper than its documentation provides (e.g., "why does this API return 429 after only 50 requests when the docs say 100?").
-- You need to explain how something **actually works** — not what it claims to do, but what it does.
-- A debugging or architecture question requires knowledge of underlying mechanisms: wire protocols, memory layout, consensus algorithms, garbage collection behavior.
+- A technical system needs to be understood at a level deeper than its documentation provides.
+- You need to explain how something actually works — not what it claims to do, but what it does.
+- A debugging or architecture question requires knowledge of underlying mechanisms, not just surface APIs.
+
+## Prerequisites
+
+- No extra runtime dependencies beyond Hermes Agent and the normal toolset for this session.
 
 ## Procedure
 
-1. **Identify the target.** Name the specific system, protocol, library, or technology to analyze. State what level of depth is needed (e.g., "how does the connection pool work" vs. "what happens at the TCP level").
-
-2. **Gather evidence.** Use available tools to observe actual behavior:
-   - Read source code if available: `grep -r "retry" src/http/` to find retry logic.
-   - Check runtime behavior: `strace`, `tcpdump`, `curl -v`, or debug logs.
-   - Compare docs vs. reality: read the official docs, then verify claims against code or experiments.
-   - Review changelogs and issues for undocumented behavior changes.
-
-3. **Explain the mechanism.** Provide a layered explanation:
-   - **Surface**: what the docs say it does.
-   - **Mechanism**: how it actually implements that (data structures, algorithms, protocols).
-   - **Edge cases**: where the mechanism diverges from the documented behavior.
-   - **Implications**: what follows from the mechanism that is not obvious from the API surface.
-
-4. **Tag confidence levels.** For each claim, mark it:
-   - **Documented**: stated in official docs or specs.
-   - **Observed**: verified through code reading, testing, or instrumentation.
-   - **Inferred**: logical conclusion from the mechanism, not directly verified.
+1. Restate the target, the success condition, and any no-touch boundaries before taking action.
+2. Identify the system, protocol, or technology to analyze.
+3. Explain the mechanism at the appropriate depth: not the marketing version, but how it actually works.
+4. Surface non-obvious implications, edge cases, or failure modes that follow from the mechanism.
+5. Deliver the explanation with a clear note on what is documented fact vs. observed behavior vs. inference.
+6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A mechanistic explanation of how the system actually works, layered from surface to internals.
-- Non-obvious implications, edge cases, or failure modes that follow from the mechanism.
-- Confidence tags on each claim: documented, observed, or inferred.
+- A mechanistic explanation of how the system actually works under the hood.
+- Non-obvious implications or edge cases that follow from the mechanism.
+- A confidence note: what is documented, what is observed, and what is inferred.
 
 ## Pitfalls / Guardrails
 
-- Do not confuse documentation with behavior. The docs say what it *should* do; arcana reveals what it *does*.
+- Keep the metaphor anchored to a real mechanism instead of drifting into lore.
+- Do not confuse documentation with behavior. The docs say what it should do; arcana reveals what it does.
 - Clearly separate established knowledge from speculation when reasoning about undocumented behavior.
-- Do not over-speculate. If you cannot verify a claim, say so explicitly rather than presenting inference as fact.
-- Stay at the depth the user needs. Not every question requires a kernel-level explanation.
 
-## Example
+## Verification
 
-```
-User: /arcana Why does our Redis cluster occasionally return stale data for
-      about 2 seconds after a write, even though we are using WAIT?
+- Check that the result includes every deliverable promised above.
+- Check that confirmed facts, assumptions, and inferences are visibly separated.
+- Check that the metaphor still maps cleanly to a real operational mechanism.
 
-Agent: Surface: Redis WAIT blocks until N replicas acknowledge the write.
-       The docs imply strong consistency after WAIT returns.
-
-       Mechanism (observed): WAIT only guarantees that replicas received the
-       write in their replication buffer. It does NOT guarantee the replica
-       has applied it to its keyspace. If a client reads from a replica
-       immediately after WAIT returns, the replica may still be processing
-       the replication stream.
-
-       Edge case: under high replication lag (>1s buffer), WAIT returns
-       successfully but reads to replicas see stale data for the duration
-       of the lag. This is documented in a Redis GitHub issue (#8029) but
-       not in the main WAIT docs.
-
-       Implication: if you need read-after-write consistency, either:
-       (a) read from the primary, or
-       (b) use WAIT + a client-side delay equal to observed replication lag.
-
-       Confidence:
-       - WAIT semantics: documented (Redis WAIT spec)
-       - Replication buffer vs. keyspace gap: observed (tested with
-         redis-cli DEBUG SLEEP on replica)
-       - GitHub issue #8029: documented (linked)
-       - Workaround: inferred (not officially recommended)
+## Example Invocation
+```text
+/arcana explain how this [system/protocol/technology] actually works under the hood, beyond what the documentation says
 ```

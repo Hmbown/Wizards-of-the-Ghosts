@@ -18,6 +18,7 @@ CODEX_MODEL_PREFIXES = ("codex/", "codex-exec/", "codex-mcp/")
 QWEN_MODEL_PREFIXES = ("qwen/",)
 OPENCODE_MODEL_PREFIXES = ("opencode/",)
 HERMES_MODEL_PREFIXES = ("hermes/",)
+COPILOT_MODEL_PREFIXES = ("copilot/",)
 
 REQUIRED_DSPY_FILES = {
     "spells_master": "spells_master.jsonl",
@@ -83,6 +84,12 @@ def is_hermes_model(model: str | None) -> bool:
     return model.startswith(HERMES_MODEL_PREFIXES)
 
 
+def is_copilot_model(model: str | None) -> bool:
+    if model is None:
+        return False
+    return model.startswith(COPILOT_MODEL_PREFIXES)
+
+
 def codex_transport_hint(model: str) -> str:
     if model.startswith("codex-exec/"):
         return "cli"
@@ -115,6 +122,14 @@ def load_qwen_client() -> Any | None:
     try:
         import dspy_qwen_lm as qwen_client  # type: ignore
         return qwen_client
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def load_copilot_client() -> Any | None:
+    try:
+        import dspy_copilot_lm as copilot_client  # type: ignore
+        return copilot_client
     except Exception:  # noqa: BLE001
         return None
 
@@ -281,6 +296,7 @@ def resolve_lm_config(
     qwen_model = is_qwen_model(model)
     opencode_model = is_opencode_model(model)
     hermes_model = is_hermes_model(model)
+    copilot_model = is_copilot_model(model)
 
     def _backend_type() -> str:
         if hermes_model:
@@ -291,9 +307,11 @@ def resolve_lm_config(
             return "qwen"
         if opencode_model:
             return "opencode"
+        if copilot_model:
+            return "copilot"
         return "litellm"
 
-    is_local = codex_model or qwen_model or opencode_model or hermes_model
+    is_local = codex_model or qwen_model or opencode_model or hermes_model or copilot_model
 
     backend: dict[str, Any] = {
         "configured": False,
@@ -332,19 +350,27 @@ def resolve_lm_config(
         backend["transport_hint"] = "cli"
         backend["notes"] = [
             "OpenCode aliases use the local opencode CLI in run mode with --format json.",
-            "OpenCode does not honor temperature or max_tokens through this adapter.",
+            "Use opencode/default to honor your local OpenCode default model, or opencode/<provider>/<model> for an explicit provider model.",
+        ]
+    elif copilot_model and model is not None:
+        backend["transport_hint"] = "cli"
+        backend["notes"] = [
+            "Copilot aliases use gh copilot in non-interactive JSON mode.",
+            "Use copilot/default or copilot/codex-5.3 to target the working GitHub Copilot Codex lane.",
         ]
 
     if not model:
         backend["message"] = (
-            "DSPY_MODEL is not set. Default: hermes/default. "
-            "Also accepts codex/default, qwen/default, opencode/<model>, or a provider-qualified string like openai/gpt-4o."
+            "DSPY_MODEL is not set. Live DSPy compile/eval requires an explicit provider-qualified model like "
+            "openai/<model> or a local alias such as hermes/default, codex/default, qwen/default, "
+            "opencode/default, or copilot/codex-5.3."
         )
         return None, backend
 
     if "/" not in model:
         backend["message"] = (
-            "DSPY_MODEL must be provider-qualified like openai/qwen3.5:4b or use a local alias like codex/default or qwen/default."
+            "DSPY_MODEL must be provider-qualified like openai/<model> or use a local alias like "
+            "hermes/default, codex/default, qwen/default, opencode/default, or copilot/codex-5.3."
         )
         return None, backend
 
@@ -564,6 +590,54 @@ def probe_backend(
         )
         return probe
 
+    if is_copilot_model(config.model):
+        copilot_client = load_copilot_client()
+        if copilot_client is None:
+            return {
+                "checked": False,
+                "reachable": None,
+                "backend_type": "copilot",
+                "message": "dspy_copilot_lm adapter is not available.",
+            }
+
+        runtime = copilot_client.inspect_copilot_runtime()
+        probe: dict[str, Any] = {
+            "checked": True,
+            "backend_type": "copilot",
+            "cli_available": runtime.cli_path is not None,
+            "credentials_configured": runtime.credentials_configured,
+            "credential_sources": list(runtime.credential_sources),
+        }
+        if runtime.cli_path is None:
+            probe["reachable"] = False
+            probe["message"] = "gh is not installed or not on PATH."
+            return probe
+
+        try:
+            result = copilot_client.probe_copilot_runtime(
+                repo_root=(repo_root or Path.cwd()).resolve(),
+                model=config.model,
+                timeout_seconds=max(int(timeout), 1) * 20,
+            )
+        except Exception as exc:  # noqa: BLE001
+            probe["reachable"] = False
+            probe["message"] = "Copilot backend probe failed."
+            probe["error"] = str(exc)
+            return probe
+
+        probe.update(
+            {
+                "reachable": True,
+                "message": "Copilot backend probe completed successfully.",
+                "transport": result.transport,
+                "session_id": result.session_id,
+                "resolved_model": result.resolved_model,
+                "usage": result.usage,
+                "sample_response": result.content[:120],
+            }
+        )
+        return probe
+
     if not config.api_base:
         return {
             "checked": False,
@@ -647,6 +721,15 @@ def instantiate_dspy_lm(dspy: Any, config: LMConfig, repo_root: Path) -> Any:
             model=config.model,
             repo_root=repo_root,
         )
+
+    if is_copilot_model(config.model):
+        try:
+            from dspy_copilot_lm import create_copilot_lm
+            return create_copilot_lm(dspy, model=config.model, repo_root=repo_root)
+        except ImportError:
+            raise RuntimeError(
+                "The local dspy_copilot_lm adapter is not available."
+            )
 
     kwargs: dict[str, Any] = {}
     if config.api_base:

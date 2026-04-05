@@ -17,6 +17,17 @@ def is_opencode_exec_model(model: str) -> bool:
     return model.startswith("opencode/")
 
 
+def _normalize_opencode_model(model: str | None) -> str | None:
+    if model is None:
+        return None
+    raw = model.strip()
+    if raw.startswith("opencode/"):
+        raw = raw[len("opencode/") :]
+    if raw in {"", "default", "auto"}:
+        return None
+    return raw
+
+
 def opencode_cli_path() -> str | None:
     return shutil.which("opencode")
 
@@ -151,6 +162,9 @@ def run_opencode_exec(
         if timeout_seconds is not None
         else opencode_exec_timeout_seconds()
     )
+    resolved_model = _normalize_opencode_model(opencode_model) or _normalize_opencode_model(
+        os.environ.get("DSPY_OPENCODE_MODEL")
+    )
 
     cmd = [
         cli,
@@ -160,8 +174,8 @@ def run_opencode_exec(
         "--dir",
         str(repo_root),
     ]
-    if opencode_model:
-        cmd.extend(["--model", opencode_model])
+    if resolved_model:
+        cmd.extend(["-m", resolved_model])
     cmd.append(prompt)
 
     result = subprocess.run(
@@ -171,6 +185,7 @@ def run_opencode_exec(
         text=True,
         timeout=resolved_timeout_seconds,
         check=False,
+        env={**os.environ, "NO_COLOR": "1"},
     )
     if result.returncode != 0:
         message = (

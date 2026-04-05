@@ -1,6 +1,6 @@
 ---
 name: unseen-servant
-description: "Set up a persistent background automation that handles recurring maintenance tasks — dependency updates, stale branch cleanup, inbox triage, log rotation — silently and reliably. Use when routine work keeps piling up and you need a tireless helper that only surfaces when something requires your attention."
+description: "Use this spell when you need a tireless helper that organizes, tidies, triages, and maintains without requiring your constant attention."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -18,79 +18,51 @@ metadata:
       - actuation
 ---
 # Unseen Servant
-
-Set up a persistent background automation that handles recurring maintenance tasks silently and reliably.
-
+Run a persistent background agent that handles mundane, repeating tasks silently.
+## What This Skill Does
+Use this spell when you need a tireless helper that organizes, tidies, triages, and maintains without requiring your constant attention.
+In this grimoire, Unseen Servant is treated as a literal spell with a shipping-now delivery profile.
+Canonical reference input: Unseen Servant (spell).
 ## When To Use
 
-- Routine maintenance keeps piling up: dependency updates, stale branch cleanup, inbox triage, log rotation, cache purging.
-- You want a helper that runs on a schedule or reacts to events, only surfacing when something needs your attention.
-- The work is important but low-priority — it should happen reliably without competing for your focus.
+- Routine maintenance tasks keep piling up: dependency updates, stale branch cleanup, inbox triage, log rotation.
+- You want a helper that runs continuously in the background and only surfaces when something needs your attention.
+- The work is important but low-priority - it should happen reliably without competing for your focus.
+
+## Prerequisites
+
+- No extra runtime dependencies beyond Hermes Agent and the normal toolset for this session.
 
 ## Procedure
 
-1. **Define the mandate.** Specify exactly what the servant handles:
-   - Which tasks (e.g., "close stale GitHub issues older than 90 days", "rotate logs over 100 MB").
-   - Which surfaces (e.g., a specific repo, a Slack channel, a directory).
-   - What is **off-limits** (e.g., "never delete branches with open PRs").
-
-2. **Choose the cadence.** Pick one:
-   - **Scheduled (cron)**: runs at fixed intervals (e.g., daily at 2 AM, weekly on Monday).
-   - **Event-triggered**: runs in response to a webhook, file change, or CI event.
-   - **Continuous**: polls a queue or watch target and acts when items appear.
-
-3. **Set up the automation.** Examples:
-   - **Stale branch cleanup**: `git branch --merged main | grep -v main | xargs git branch -d` in a weekly cron job.
-   - **Dependency updates**: configure Dependabot or Renovate with auto-merge for patch versions.
-   - **Log rotation**: add a logrotate config: `rotate 7, daily, compress, missingok`.
-   - **Inbox triage**: create email filters or Slack workflow that labels/routes messages by keyword.
-
-4. **Add logging.** Every action the servant takes must be recorded:
-   - Write to a log file with timestamps: `echo "$(date -u +%FT%TZ) Deleted branch feature/old-experiment" >> servant.log`.
-   - For GitHub Actions, the workflow run log serves as the audit trail.
-
-5. **Add a kill switch.** Provide a way to stop the servant immediately:
-   - A `PAUSE` file the servant checks before acting: `[[ -f .servant-pause ]] && exit 0`.
-   - A toggle in CI (disable the workflow or cron job).
-   - A Slack command that sets a flag.
-
-6. **Review and adjust.** Check the activity log periodically. Tighten or expand the mandate based on what the servant handled vs. what it missed.
+1. Restate the target, the success condition, and any no-touch boundaries before taking action.
+2. Define the servant's mandate: which tasks, which surfaces, and what scope boundaries.
+3. Configure the cadence - continuous, periodic, or event-triggered.
+4. Let the servant operate silently, logging its actions for later review.
+5. Review the activity log periodically and adjust the mandate or dismiss the servant when done.
+6. Stop for explicit confirmation before taking a live action that changes access, triggers an alert, or touches a real system boundary.
+7. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- A running background automation (cron job, GitHub Action, or event-triggered script) with a documented mandate.
-- An activity log with timestamps showing every action taken.
-- A kill switch or pause mechanism the user can trigger immediately.
+- A running background process or agent loop with a clear task mandate.
+- An activity log of everything the servant touched, with timestamps.
+- A dismiss or pause mechanism so the user stays in control.
 
 ## Pitfalls / Guardrails
 
-- The servant **never expands its own mandate** — it only touches what the user pre-approved.
+- Treat the live action surface as real operational work, not decorative lore.
+- The servant does not expand its own mandate - it only touches what the user pre-approved.
 - All actions must be logged and reviewable. Silent operation does not mean unaccountable operation.
-- **Stop for confirmation** before any action that changes access, triggers an alert, or touches a production boundary.
-- Provide a clear dismiss mechanism — the user must always be able to stop the servant immediately.
+- Provide a clear dismiss mechanism - the user must always be able to stop the servant immediately.
 
-## Example
+## Verification
 
-```
-User: /unseen-servant I keep forgetting to clean up merged branches in our
-      main repo. Set up something that handles this automatically.
+- Check that the result includes every deliverable promised above.
+- Check that confirmed facts, assumptions, and inferences are visibly separated.
+- Check that the exact live target, confirmation gate, and rollback or recovery path are explicit.
 
-Agent: Here is the plan for your branch cleanup servant:
-
-       Mandate: delete local and remote branches that have been merged into
-       main, excluding main, develop, and any branch with an open PR.
-
-       Cadence: weekly, Monday at 6 AM UTC via GitHub Actions.
-
-       Script:
-         git fetch --prune origin
-         git branch -r --merged origin/main | grep -v 'main\|develop' | sed 's/^[[:space:]]*//' | while IFS= read -r branch; do
-           echo "$(date -u +%FT%TZ) Deleting $branch" >> cleanup.log
-           git push origin --delete "${branch#origin/}"
-         done
-
-       Kill switch: add a file named .cleanup-pause to the repo root.
-       The workflow checks for it before running.
-
-       Shall I create the workflow file and test it on a dry run first?
+## Example Invocation
+```text
+/unseen-servant set up a background agent for this recurring task, with a clear mandate, activity log, and kill switch
 ```

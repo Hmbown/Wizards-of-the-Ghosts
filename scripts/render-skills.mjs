@@ -762,54 +762,53 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "",
     renderAsciiBanner(discovery.hermesCount),
     "",
-    "A skill pack that teaches your AI agent 123 real capabilities — named after fantasy spells.",
+    "Unofficial Hermes Agent skill pack built from fantasy spell and skill names.",
     "",
-    "`Detect Magic` scans a repo for hidden automation hooks. `Investigation` traces a bug through four tools until it finds the hex offset that proves the root cause. `Vicious Mockery` tears apart your README and finds the real bugs your politeness was hiding. `Feather Fall` turns a hard crash into a controlled descent. These are procedural markdown skills that install into [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and become `/slash-commands` your agent actually uses.",
-    "",
-    "They are not executable plugins. They are reasoning modes, investigation checklists, and operating procedures that change how the agent thinks — not what tools it has. The best ones produce output you would not get without them.",
-    "",
-    "The metaphor is the interface. The capabilities are real.",
-    "",
-    "> Not affiliated with or endorsed by Wizards of the Coast. See [LEGAL.md](LEGAL.md).",
+    "Not affiliated with or endorsed by Wizards of the Coast.",
     "",
     renderSpellCircle(discovery.hermesSurface.categories),
+    "",
+    "`wizardsoftheghosts` turns public fifth-edition spell and skill names into a product-shaped Hermes skill pack for investigation, automation, monitoring, messaging, repair, staging, and tightly scoped intervention.",
     "",
     "## Quick Install",
     "",
     "```bash",
     "npm run expand:blueprints",
     "npm run build:skills",
-    "HERMES_HOME=$PWD/.hermes npm run install:hermes-skills",
+    "npm run wizard:install",
     "```",
     "",
-    "Or install into your default Hermes home:",
+    "That builds the generated surfaces and mirrors them into workspace-local Hermes and OpenClaw homes for testing.",
+    "",
+    "Or install the Hermes surface into your default Hermes home:",
     "",
     "```bash",
     "npm run install:hermes-skills",
     "```",
     "",
-    "## How It Works",
+    "Or install the OpenClaw surface into a workspace-local Codex/OpenClaw home:",
     "",
-    "Skills install into `~/.hermes/skills/`. After install, every spell is a `/slash-command` in Claude Code: `/forcecage`, `/true-seeing`, `/vicious-mockery`.",
+    "```bash",
+    "CODEX_HOME=$PWD/.codex npm run install:codex-skills",
+    "```",
     "",
-    "The installable surface lives in `generated/hermes/`. Those files are procedural markdown with YAML frontmatter, not executable plugins by themselves. They work as reasoning modes, investigation checklists, and operating procedures inside a normal session. Some skills reference external systems (Home Assistant, Slack) but those only become operational if your environment already has the matching tools and credentials.",
+    "## Hermes Expectations",
     "",
-    `\`${discovery.hermesCount}\` skills across \`${discovery.hermesSurface.categories.length}\` shelves. \`${discovery.refusedCount}\` coercion spells intentionally refused.`,
+    "- Hermes discovers installed skills from `~/.hermes/skills` or `$HERMES_HOME/skills`; `npm run install:hermes-skills` copies the generated docs there.",
+    "- The installable Hermes surface lives in `generated/hermes/`. Those files are procedural markdown with YAML frontmatter, not executable plugins by themselves.",
+    "- Most of this pack is best used as reasoning, investigation, planning, triage, or operating-mode scaffolding inside a normal Hermes session.",
+    "- In practice, skills like `detect-magic`, `mage-hand`, `zone-of-truth`, `feather-fall`, and `unseen-servant` work especially well as direct Hermes prompts.",
+    "- After install, every spell is also available as a `/slash-command` in Claude Code (e.g. `/forcecage`, `/true-seeing`).",
+    "- Some skills mention env vars, APIs, or external systems, but this repo does not currently ship a dedicated Hermes integration layer for Home Assistant, Slack, or other services. Those procedures become real only if your Hermes environment already has the matching tools, credentials, and permissions.",
     "",
-    "## Field-Tested Favorites",
+    "## What Ships",
     "",
-    "These were chosen by actually casting spells on real targets — not by reading descriptions. The criterion: did the spell make the agent do something it would not have done otherwise?",
+    `- \`${discovery.hermesCount}\` Hermes skills drawn from \`${discovery.canonCount}\` public canon names (\`${discovery.spellCount}\` spells, \`${discovery.skillCount}\` skills)`,
+    `- \`${discovery.hermesSurface.categories.length}\` Hermes shelves for progressive discovery instead of one giant list`,
+    `- \`${discovery.featuredEntries.length}\` featured entry points plus \`${discovery.browsePaths.length}\` intent-driven browse paths on GitHub`,
+    `- public low-risk Hermes surface with \`${discovery.refusedCount}\` refused coercion and memory spells kept off release`,
     "",
-    "| Rank | Spell | What happened when we cast it |",
-    "| --- | --- | --- |",
-    "| 1 | **[Investigation](generated/hermes/investigation-and-preparation/investigation/SKILL.md)** | Traced a display bug through four tools (read_file, sed, grep, xxd) and proved root cause from raw hex bytes. The spell pushed past inference into proof. |",
-    "| 2 | **[Vicious Mockery](generated/hermes/influence-and-behavior/vicious-mockery/SKILL.md)** | Tore apart this README. Found a real redaction bug, dead platform references, and a buried lede about what skills actually are. Overrode the agent's politeness reflex. |",
-    "| 3 | **[Detect Magic](generated/hermes/investigation-and-preparation/detect-magic/SKILL.md)** | Scanned the repo and found a self-referential optimization loop, 123 orphaned files for a dead platform, and dormant ML backends nobody had configured. |",
-    "| 4 | **[Fear](generated/hermes/influence-and-behavior/fear/SKILL.md)** | Ran a pre-mortem on this project. Surfaced failure modes forward-looking analysis missed — including the risk that the D&D naming filters out the engineers who need it most. |",
-    "",
-    "Full write-up with methodology: [FAVORITES.md](FAVORITES.md)",
-    "",
-    "## Best Entry Points",
+    "## Best First Skills",
     "",
     renderSpellCards(discovery.featuredEntries, discovery.categoryByEntrySlug),
     "",
@@ -835,8 +834,9 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "## Browse Deeper",
     "",
     `- [GRIMOIRE.md](GRIMOIRE.md) for the featured shelf, browse paths, and full linked category index`,
-   "- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact procedural skill docs Hermes installs",
-   "- `catalog/blueprints.json` plus `scripts/render-skills.mjs` for the source-of-truth and renderer",
+    "- `generated/hermes/<category>/<skill>/SKILL.md` after `npm run build:skills` for the exact procedural skill docs Hermes installs",
+    "- `generated/openclaw/` for the separate OpenClaw-oriented output surface generated from the same source material",
+    "- `catalog/blueprints.json` plus `scripts/render-skills.mjs` for the source-of-truth and renderer",
     "",
     "## Build From Source",
     "",
@@ -868,7 +868,7 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "npm run verify",
     "```",
     "",
-    "`npm run verify` checks the generated Hermes surface, then performs sandbox installs into a temporary Hermes home so you can catch packaging drift before release.",
+    "`npm run verify` checks the generated Hermes and OpenClaw surfaces, then performs sandbox installs into temporary Hermes and Codex homes so you can catch packaging drift before release.",
     "",
     "## DSPy Router",
     "",
@@ -917,17 +917,17 @@ function renderReadme(blueprints, canon, dspy, gepa) {
     "npm run dspy:baseline",
     "```",
     "",
-    "Codex-backed DSPy flow:",
+    "Preferred DSPy flow:",
     "",
     "```bash",
-    "export DSPY_MODEL=codex-exec/default",
+    "export DSPY_MODEL=qwen/default",
     "export DSPY_TEMPERATURE=0",
-    "export DSPY_MAX_TOKENS=4096",
+    "export DSPY_MAX_TOKENS=256",
     "",
     "bash scripts/dspy_full_run.sh",
     "```",
     "",
-    "This shells out to local `codex exec` for each DSPy inference. It remains slower than an OpenAI-compatible HTTP backend, but the full compile+eval path is now proven practical as an unattended background job. See [`catalog/dspy/README.md`](catalog/dspy/README.md) and [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md) for artifact details and the exact runbook.",
+    "Use `qwen/default` to follow your local Qwen configuration, `opencode/default` to follow your OpenCode default model, or `copilot/codex-5.3` to route through GitHub Copilot's working Codex lane. See [`catalog/dspy/README.md`](catalog/dspy/README.md), [`docs/dspy-router-runbook.md`](docs/dspy-router-runbook.md), and [`BECOME-A-WIZARD.md`](BECOME-A-WIZARD.md) for the exact runbooks.",
     "",
     "## Safety and IP",
     "",
@@ -1107,6 +1107,7 @@ async function main() {
   }
 
   await rm(generatedDir, { recursive: true, force: true });
+  await mkdir(openclawDir, { recursive: true });
   await mkdir(hermesDir, { recursive: true });
 
   for (const category of hermesCategories) {
@@ -1120,6 +1121,7 @@ async function main() {
     version: packageJson.version ?? "1.0.0"
   };
 
+  let openclawCount = 0;
   let hermesCount = 0;
 
   for (const entry of blueprints.entries) {
@@ -1128,6 +1130,11 @@ async function main() {
     }
 
     const canonicalEntry = canonById.get(entry.canonical_id);
+
+    if (entry.provider_targets.includes("openclaw")) {
+      await writeOpenClawEntry(entry, canonicalEntry);
+      openclawCount += 1;
+    }
 
     if (entry.provider_targets.includes("hermes")) {
       const categorySlug = hermesEntryCategory.get(entry.slug);
@@ -1146,6 +1153,7 @@ async function main() {
 
   await writeDiscoveryDocs(blueprints, canon, dspy, gepa);
 
+  console.log(`Rendered ${openclawCount} OpenClaw skills into ${openclawDir}`);
   console.log(`Rendered ${hermesCount} Hermes skills into ${hermesDir}`);
   console.log(`Rendered discovery docs into ${readmePath} and ${grimoirePath}`);
 }

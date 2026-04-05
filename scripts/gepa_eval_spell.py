@@ -83,7 +83,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Evaluate baseline and optimized spell behavior on the GEPA benchmark")
     parser.add_argument("--repo-root", default=".", help="Path to the wizardsoftheghosts repo root")
     parser.add_argument("--slug", required=True, help="Spell slug to evaluate")
-    parser.add_argument("--dspy-model", default=None, help="Provider-qualified task model string")
+    parser.add_argument(
+        "--dspy-model",
+        default=None,
+        help="Provider-qualified task model string or local alias, for example hermes/default, qwen/default, opencode/default, copilot/codex-5.3, or openai/<model>",
+    )
     parser.add_argument("--dspy-api-base", default=None, help="Optional API base for the task model")
     parser.add_argument("--dspy-api-key", default=None, help="Optional API key for the task model")
     parser.add_argument("--dspy-temperature", default=None, help="Optional task model temperature override")
@@ -91,6 +95,7 @@ def main() -> int:
     parser.add_argument("--eval-limit", type=positive_int, default=None, help="Optional cap on eval rows")
     parser.add_argument("--confusable-limit", type=positive_int, default=None, help="Optional cap on confusable rows")
     parser.add_argument("--skip-confusables", action="store_true", help="Evaluate only eval.jsonl rows")
+    parser.add_argument("--skip-probe", action="store_true", help="Skip backend probe (assume reachable)")
     args = parser.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
@@ -102,7 +107,10 @@ def main() -> int:
     if config is not None:
         backend = dict(backend)
         backend["config"] = config_as_dict(config)
-        backend["probe"] = probe_backend(config, repo_root=repo_root)
+        if args.skip_probe:
+            backend["probe"] = {"checked": False, "reachable": True, "message": "Probe skipped via --skip-probe."}
+        else:
+            backend["probe"] = probe_backend(config, repo_root=repo_root)
 
     paths = spell_paths(repo_root, slug)
     if not validation["ok"]:

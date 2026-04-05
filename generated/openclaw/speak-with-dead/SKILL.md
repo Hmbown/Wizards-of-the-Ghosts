@@ -1,0 +1,51 @@
+---
+name: speak-with-dead
+description: "This spell is archaeology, not history research. It operates on specific artifacts from a specific dead system to answer specific questions. It is NOT general tech history, NOT interviewing living people, and NOT monitoring live systems."
+user-invocable: true
+---
+
+# Speak with Dead
+
+Extract knowledge from abandoned, deprecated, or legacy systems.
+
+## Overview
+
+Speak with Dead is interpreted here as a metaphorical spell with a shipping-now execution model.
+
+Canonical source: Speak with Dead (spell)
+
+Provider target: OpenClaw
+
+## When To Use
+
+- Route to this spell when the user asks to extract knowledge from systems that are dead, abandoned, deprecated, or archived AND the people who built or maintained them are no longer available. The knowledge must be recoverable from existing artifacts (code, commits, docs, configs, databases, state files) rather than from living people or live systems.
+
+## Workflow
+
+1. Scope the dead system: Name the specific system, confirm it is actually dead/archived, and list the user's concrete questions.
+2. Inventory artifacts: Identify what remains — git history, commit messages, PR descriptions, README files, archived docs, config files, database schemas, state files, packet captures, ADRs. Note what is missing.
+3. Reconstruct from evidence: Trace intent through commit messages, code structure, config values, and data schemas. Separate what the artifacts directly state from what you are inferring.
+4. Return with confidence labels: For each answer, cite the specific artifact (file, commit hash, line, config key) and label it as evidence (directly stated) or inference (reasoned from patterns). Flag any gaps where the trail goes cold.
+
+## Deliverables
+
+- Answers to specific questions drawn from the dead system's artifacts.
+- A reconstruction of the system's original intent and known failure modes.
+- A clear separation between what the dead system actually recorded and what you are inferring.
+
+## Guardrails
+
+- Never fabricate answers the artifacts do not support. Label inferences explicitly.
+- Note if the system may have been archived for security, legal, or compliance reasons — flag this to the user.
+- If artifacts are insufficient to answer the question, say so rather than guessing.
+- Do not use for: General tech history ("history of JavaScript frameworks," "evolution of REST APIs") → route to research/knowledge spells
+- Do not use for: Company lore from living people ("ask the team why we chose Postgres") → route to collaboration/survey spells
+- Do not use for: Live system observation ("what's happening on staging right now") → route to monitoring/observability spells
+- Do not use for: Competitor watching ("monitor their API for changes") → route to monitoring/automation spells
+- Do not use for: Active system debugging ("why is this production service failing") → route to debugging/troubleshooting spells
+- Do not use for: Generic code explanation ("explain what this function does") → route to code-understanding spells
+
+## Default Invocation
+
+Use $speak-with-dead to interrogate this legacy system and tell me what it knew, what it intended, and where the evidence runs out.
+

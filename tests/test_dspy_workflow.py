@@ -68,10 +68,13 @@ def test_resolve_lm_config_requires_provider_prefix(monkeypatch: pytest.MonkeyPa
 @pytest.mark.parametrize(
     ("model", "transport_hint", "backend_type"),
     [
+        ("hermes/default", "cli", "hermes"),
         ("codex/default", "auto", "codex"),
         ("codex-exec/default", "cli", "codex"),
         ("codex-mcp/default", "mcp", "codex"),
         ("qwen/default", "cli", "qwen"),
+        ("opencode/default", "cli", "opencode"),
+        ("copilot/codex-5.3", "cli", "copilot"),
     ],
 )
 def test_resolve_lm_config_accepts_local_aliases(

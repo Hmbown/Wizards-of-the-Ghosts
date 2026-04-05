@@ -365,7 +365,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--repo-root", default=".", help="Path to the wizardsoftheghosts repo root")
     parser.add_argument("--validate-only", action="store_true", help="Validate dataset and backend configuration only")
     parser.add_argument("--baseline-only", action="store_true", help="Build the lexical baseline only")
-    parser.add_argument("--dspy-model", default=None, help="Provider-qualified model string, for example openai/qwen3.5:4b")
+    parser.add_argument(
+        "--dspy-model",
+        default=None,
+        help="Provider-qualified model string or local alias, for example openai/<model>, hermes/default, qwen/default, opencode/default, or copilot/codex-5.3",
+    )
     parser.add_argument("--dspy-api-base", default=None, help="Optional OpenAI-compatible API base URL")
     parser.add_argument("--dspy-api-key", default=None, help="Optional API key passed through to DSPy/LiteLLM")
     parser.add_argument("--dspy-temperature", default=None, help="Optional sampling temperature override")

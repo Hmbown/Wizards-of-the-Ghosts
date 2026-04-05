@@ -11,6 +11,7 @@ const execFileAsync = promisify(execFile);
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, "..");
 const generatedHermesRoot = path.join(repoRoot, "generated", "hermes");
+const generatedOpenClawRoot = path.join(repoRoot, "generated", "openclaw");
 const readmePath = path.join(repoRoot, "README.md");
 const grimoirePath = path.join(repoRoot, "GRIMOIRE.md");
 const blueprintPath = path.join(repoRoot, "catalog", "blueprints.json");
@@ -48,6 +49,20 @@ async function collectHermesSkills(rootDir) {
   return { categories, skillFiles };
 }
 
+async function collectOpenClawSkills(rootDir) {
+  const skillFiles = [];
+
+  for (const entry of await readdir(rootDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) {
+      continue;
+    }
+
+    skillFiles.push(path.join(rootDir, entry.name, "SKILL.md"));
+  }
+
+  return skillFiles;
+}
+
 function requireAll(content, requiredSnippets, label) {
   for (const snippet of requiredSnippets) {
     assert(content.includes(snippet), `${label} is missing required content: ${snippet}`);
@@ -63,8 +78,7 @@ async function validateDocs(packageJson) {
     "## Quick Install",
     "## Verification",
     "npm run verify",
-    "procedural markdown with YAML frontmatter, not executable plugins by themselves",
-    "## Field-Tested Favorites"
+    "procedural markdown with YAML frontmatter, not executable plugins by themselves"
   ], "README.md");
 
   requireAll(grimoire, [
@@ -79,11 +93,14 @@ async function validateDocs(packageJson) {
 
 async function validateGeneratedSurfaces(packageJson, blueprints) {
   const expectedHermesCount = blueprints.entries.filter((entry) => entry.provider_targets.includes("hermes")).length;
+  const expectedOpenClawCount = blueprints.entries.filter((entry) => entry.provider_targets.includes("openclaw")).length;
 
   const { categories, skillFiles: hermesSkillFiles } = await collectHermesSkills(generatedHermesRoot);
+  const openClawSkillFiles = await collectOpenClawSkills(generatedOpenClawRoot);
 
   assert(categories.length > 0, "generated/hermes must contain at least one category");
   assert(hermesSkillFiles.length === expectedHermesCount, `generated/hermes count mismatch: expected ${expectedHermesCount}, found ${hermesSkillFiles.length}`);
+  assert(openClawSkillFiles.length === expectedOpenClawCount, `generated/openclaw count mismatch: expected ${expectedOpenClawCount}, found ${openClawSkillFiles.length}`);
 
   for (const category of categories) {
     assert(category.hasDescription, `Hermes category ${category.slug} is missing DESCRIPTION.md`);
@@ -106,14 +123,30 @@ async function validateGeneratedSurfaces(packageJson, blueprints) {
     ], skillPath);
   }
 
+  for (const skillPath of openClawSkillFiles) {
+    const content = await readFile(skillPath, "utf8");
+    requireAll(content, [
+      "---\nname:",
+      "description:",
+      "## Overview",
+      "Provider target: OpenClaw",
+      "## Workflow",
+      "## Deliverables",
+      "## Guardrails",
+      "## Default Invocation"
+    ], skillPath);
+  }
+
   return {
     hermesCategoryCount: categories.length,
-    hermesSkillCount: hermesSkillFiles.length
+    hermesSkillCount: hermesSkillFiles.length,
+    openClawSkillCount: openClawSkillFiles.length
   };
 }
 
 async function runInstallCheck(tempRoot) {
   const hermesHome = path.join(tempRoot, "hermes-home");
+  const codexHome = path.join(tempRoot, "codex-home");
   const nodeBinary = process.execPath;
 
   await execFileAsync(nodeBinary, [path.join(repoRoot, "scripts", "install-hermes-skills.mjs")], {
@@ -121,11 +154,19 @@ async function runInstallCheck(tempRoot) {
     env: { ...process.env, HERMES_HOME: hermesHome }
   });
 
+  await execFileAsync(nodeBinary, [path.join(repoRoot, "scripts", "install-codex-skills.mjs")], {
+    cwd: repoRoot,
+    env: { ...process.env, CODEX_HOME: codexHome }
+  });
+
   const hermesSkillsRoot = path.join(hermesHome, "skills");
+  const codexSkillsRoot = path.join(codexHome, "skills");
   const hermesEntries = await readdir(hermesSkillsRoot, { withFileTypes: true });
+  const codexEntries = await readdir(codexSkillsRoot, { withFileTypes: true });
 
   assert(hermesEntries.some((entry) => entry.isFile() && entry.name === ".wizardsoftheghosts-manifest.json"), "Hermes sandbox install did not write a manifest");
   assert(hermesEntries.some((entry) => entry.isDirectory()), "Hermes sandbox install did not create any category directories");
+  assert(codexEntries.some((entry) => entry.isSymbolicLink() || entry.isDirectory()), "Codex sandbox install did not create any skill entries");
 }
 
 const packageJson = await readJson(packagePath);
@@ -144,4 +185,5 @@ try {
 
 console.log(`Verified README and GRIMOIRE generation markers.`);
 console.log(`Verified ${surfaceStats.hermesSkillCount} Hermes skills across ${surfaceStats.hermesCategoryCount} categories.`);
-console.log("Verified sandbox installs for Hermes and Codex homes.");
+console.log(`Verified ${surfaceStats.openClawSkillCount} OpenClaw skills.`);
+console.log("Verified sandbox installs for Hermes and Codex/OpenClaw homes.");

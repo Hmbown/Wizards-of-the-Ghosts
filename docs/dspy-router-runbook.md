@@ -43,7 +43,7 @@ No backend is assumed by default. Live DSPy compile/eval requires `DSPY_MODEL`.
 Minimum required setting:
 
 ```bash
-export DSPY_MODEL=openai/qwen3.5:4b
+export DSPY_MODEL=qwen/default
 ```
 
 Optional settings:
@@ -55,17 +55,17 @@ export DSPY_TEMPERATURE=0
 export DSPY_MAX_TOKENS=512
 ```
 
-### Optional local Ollama example
+### Optional OpenAI-compatible HTTP example
 
 This is an example, not the repo default:
 
 ```bash
-export DSPY_MODEL=openai/qwen3.5:4b
+export DSPY_MODEL=openai/<model>
 export DSPY_API_BASE=http://127.0.0.1:11434/v1
 export DSPY_API_KEY=dummy
 ```
 
-The provider prefix stays explicit because DSPy expects LiteLLM-style provider-qualified model strings.
+The provider prefix stays explicit when you use LiteLLM/OpenAI-compatible HTTP transport.
 
 ### Experimental local Codex example
 
@@ -91,6 +91,33 @@ export DSPY_MAX_TOKENS=256
 ```
 
 Those commands leave the dataset artifacts untouched and record the limited scope in `dspy_router_status.json` and `dspy_eval_summary.json`.
+
+### Experimental local Qwen example
+
+```bash
+export DSPY_MODEL=qwen/default
+```
+
+Use `qwen/default` when you want the repo to follow the model already selected
+in your local Qwen CLI configuration.
+
+### Experimental local OpenCode example
+
+```bash
+export DSPY_MODEL=opencode/default
+```
+
+Use `opencode/default` to follow your OpenCode default model, or
+`opencode/<provider>/<model>` if you want an explicit provider model.
+
+### Experimental GitHub Copilot example
+
+```bash
+export DSPY_MODEL=copilot/codex-5.3
+```
+
+This uses `gh copilot` in non-interactive JSON mode and targets the working
+`gpt-5.3-codex` lane.
 
 ## 5. Compile and Evaluate the DSPy Router
 

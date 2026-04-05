@@ -1,6 +1,6 @@
 ---
 name: mage-hand
-description: "Make precise, minimal edits to files, records, configs, or structured data with the smallest possible blast radius. Use when you need a surgical change — renaming a field, patching a single config value, updating one record — without touching anything else."
+description: "Use this skill for small, careful remote manipulations where dexterity matters more than force."
 version: "1.0.0"
 author: "Wizards of the Ghosts"
 license: "CC0-1.0"
@@ -18,73 +18,71 @@ metadata:
       - actuation
 ---
 # Mage Hand
+Manipulate files, records, and lightweight system state with precision and minimal blast radius.
+## Sigil
 
-Make precise, minimal edits to files, records, or system state with the smallest possible blast radius.
+```text
+     __
+  .-'  `-.
+ /  .--.  \\
+|  / /\\ \\ |
+|  | \\/ | |
+ \\  `--'  /
+  `-.__.-'
+```
 
+## What This Skill Does
+Use this skill for small, careful remote manipulations where dexterity matters more than force.
+In this grimoire, Mage Hand is treated as a hybrid spell with a shipping-now delivery profile.
+Canonical reference input: Mage Hand (spell).
 ## When To Use
 
-- You need a narrow, surgical edit: rename a field, patch a config value, update one database record, fix a typo in a doc.
-- A broad refactor would be overkill — you want the smallest change that solves the problem.
-- You want a clear before/after diff and an audit trail of exactly what was touched.
+- Trigger this spell when the request asks for surgical, narrow edits to existing objects with explicit boundaries on what NOT to touch. Look for:
+- Specific identifiers: file paths, ticket IDs, record keys, field names, audience names
+- Constraint language: "only", "but don't touch", "leave X alone", "if X then stop"
+- Single-field or single-value changes: "change max_attempts from 3 to 4", "patch reply_to_email"
+- Conditional execution with early-exit: "only if each has approval, otherwise stop and return the exception list"
+- Audit expectations: "show the diff", "tell me the exact line", "report skipped IDs"
+- Small batch operations with per-item validation: "move tickets A, B, C but skip any missing X"
+
+## Prerequisites
+
+- No extra runtime dependencies beyond Hermes Agent and the normal toolset for this session.
 
 ## Procedure
 
-1. **Identify the target.** Name the exact file, record, config key, or field to change. State the success condition and any no-touch boundaries.
-
-2. **Choose the smallest tool.** Prefer the most precise edit surface available:
-   - Single file edit: `sed`, `jq`, or a targeted find-and-replace.
-   - Config patch: edit the specific key, not the whole file.
-   - Database record: `UPDATE ... WHERE id = X` (never `UPDATE` without a `WHERE`).
-   - API call: `PATCH` a single field, not `PUT` the entire resource.
-
-3. **Show the diff before applying.** Always preview the change:
-   ```bash
-   # Example: rename a JSON field in a config file
-   jq '.oldFieldName as $v | del(.oldFieldName) | .newFieldName = $v' config.json > config.json.tmp
-   diff config.json config.json.tmp
-   ```
-
-4. **Apply the change.** Execute the edit and confirm the result matches the preview.
-
-5. **Report what was touched.** List:
-   - What changed (with before/after values).
-   - What was intentionally left alone (adjacent fields, related files).
-   - Any side effects observed.
+1. Restate the target, the success condition, and any no-touch boundaries before taking action.
+2. Restate boundaries before acting: Name the exact target, the success condition, and what must NOT be touched.
+3. Scope to the smallest edit surface: Change one field, one line, one ticket state. Do not rewrite surrounding content.
+4. Apply with diff or state proof: Show what changed. Confirm adjacent values are untouched.
+5. Report exceptions, not just successes: If any item in a batch fails validation or lacks a prerequisite, stop and return the failure list. Do not silently skip.
+6. Package the result as the deliverables below, with confidence, assumptions, and unresolved risk called out explicitly.
 
 ## Deliverables
 
-- The completed edit with a before/after diff.
-- An audit trail listing every file, record, or resource touched.
+- A minimal, well-scoped change.
+- A short audit trail of touched surfaces.
 - A note on adjacent objects that were intentionally left alone.
 
 ## Pitfalls / Guardrails
 
-- **Never apply broad changes** when a surgical edit is sufficient. If you are tempted to refactor, stop — that is a different skill.
-- **Preserve user work** and unrelated state. If the file has uncommitted changes, warn before editing.
-- **Always preview** before applying. A mage hand that moves the wrong object is worse than no hand at all.
-- **One concern per invocation.** If multiple unrelated edits are needed, handle them as separate mage-hand operations.
+- Keep the theatrical framing, but name the concrete mechanism that makes the skill useful right now.
+- Do NOT route here when the request involves:
+- Do not use for: Building new interfaces or features ("give this script a chat front end", "create a dashboard")
+- Do not use for: Setting up recurring automation ("every Friday", "whenever X happens, do Y automatically")
+- Do not use for: Debugging, forensics, or tracing ("find what changed", "trace which integration sent this")
+- Do not use for: System recovery or access restoration ("token expired, find the recovery path")
+- Do not use for: Performance tuning or capacity changes ("slow down the queue", "scale up workers")
+- Do not use for: Broad refactors or rewrites ("rewrite this module", "restructure the config")
+- Do not use for: The key differentiator: Mage Hand moves or edits existing specific objects with known targets. It does not build, automate recurring tasks, investigate, or recover.
 
-## Example
+## Verification
 
-```
-User: /mage-hand The default timeout in our API config is 30s but it
-      should be 60s. Just change that one value.
+- Check that the result includes every deliverable promised above.
+- Check that confirmed facts, assumptions, and inferences are visibly separated.
+- Check which parts are concrete actions versus framing, so the user can tell what is real now.
 
-Agent: Target: src/config/api.yaml, field `server.timeout`
-       No-touch: all other fields in api.yaml
-
-       Before:
-         server:
-           timeout: 30
-
-       After:
-         server:
-           timeout: 60
-
-       Diff:
-       -  timeout: 30
-       +  timeout: 60
-
-       Applied. No other fields were modified. Adjacent config files
-       (database.yaml, cache.yaml) were not touched.
+## Example Invocation
+```text
+/mage-hand make the smallest safe change needed here and show exactly what you touched
 ```

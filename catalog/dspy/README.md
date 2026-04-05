@@ -66,9 +66,7 @@ These limits are optional. If they are omitted, the scripts preserve the full ex
 Live DSPy compile/eval requires explicit backend configuration:
 
 ```bash
-export DSPY_MODEL=openai/qwen3.5:4b
-export DSPY_API_BASE=http://127.0.0.1:11434/v1
-export DSPY_API_KEY=dummy
+export DSPY_MODEL=qwen/default
 
 npm run dspy:compile
 npm run dspy:eval
@@ -79,7 +77,7 @@ Optional LM settings:
 - `DSPY_TEMPERATURE`
 - `DSPY_MAX_TOKENS`
 
-No backend is assumed by default. `DSPY_MODEL` must be provider-qualified, for example `openai/qwen3.5:4b`.
+No backend is assumed by default. `DSPY_MODEL` can be a provider-qualified model like `openai/<model>` or a local alias such as `qwen/default`, `opencode/default`, `codex-exec/default`, or `copilot/codex-5.3`.
 
 Experimental Codex-backed option:
 
@@ -111,10 +109,53 @@ When `DSPY_MODEL` starts with `qwen/`, DSPy uses the local `qwen` CLI through
 local-agent path similar in spirit to `codex-exec/default`, but it is CLI-only
 in the current implementation and always runs Qwen in plan mode.
 
+Use `qwen/default` when you want the repo to follow your local Qwen CLI
+configuration instead of hardcoding a model identifier. That is the safest lane
+for Qwen 3.6 here.
+
 Practical smoke test:
 
 ```bash
 export DSPY_MODEL=qwen/default
+
+.venv/bin/python scripts/dspy_build_router.py --repo-root . --train-limit 4
+.venv/bin/python scripts/dspy_eval_router.py --repo-root . --dspy-only --eval-limit 8
+```
+
+Experimental OpenCode-backed option:
+
+```bash
+export DSPY_MODEL=opencode/default
+```
+
+When `DSPY_MODEL` starts with `opencode/`, DSPy uses the local `opencode` CLI.
+`opencode/default` follows your local OpenCode default model, while
+`opencode/<provider>/<model>` passes an explicit provider model through to
+`opencode -m`.
+
+Practical smoke test:
+
+```bash
+export DSPY_MODEL=opencode/default
+
+.venv/bin/python scripts/dspy_build_router.py --repo-root . --train-limit 4
+.venv/bin/python scripts/dspy_eval_router.py --repo-root . --dspy-only --eval-limit 8
+```
+
+Experimental GitHub Copilot-backed option:
+
+```bash
+export DSPY_MODEL=copilot/codex-5.3
+```
+
+When `DSPY_MODEL` starts with `copilot/`, DSPy uses `gh copilot` in
+non-interactive JSON mode. The alias `copilot/codex-5.3` resolves to the
+working `gpt-5.3-codex` lane that probes successfully in this environment.
+
+Practical smoke test:
+
+```bash
+export DSPY_MODEL=copilot/codex-5.3
 
 .venv/bin/python scripts/dspy_build_router.py --repo-root . --train-limit 4
 .venv/bin/python scripts/dspy_eval_router.py --repo-root . --dspy-only --eval-limit 8
