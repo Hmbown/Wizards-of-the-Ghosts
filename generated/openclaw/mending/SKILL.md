@@ -2,6 +2,11 @@
 name: mending
 description: "Mending is surgical repair of a known-working artifact that has a specific, identifiable break. It is NOT:\n- Triage/diagnosis: If the problem is \"API is throwing 500s, figure out why\" — that's investigation, not mending. Mending requires the break to already be identified.\n- Formatting/cleanup: If the data is correct but looks messy (sort keys, normalize indentation) — that's formatting, not repair.\n- State reset: If a flag is stuck or an alert needs clearing — that's an operational toggle, not a file repair.\n- Refactoring/redesign: If the system is \"fundamentally flawed\" and needs redesign — that's rebuilding, not mending.\n- Comprehensive cleanup: If there are \"years of orphaned records\" across tables — that's a data integrity project, not a surgical fix."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mending]
 ---
 
 # Mending

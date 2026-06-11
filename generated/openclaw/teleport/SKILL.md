@@ -3,6 +3,11 @@ name: teleport
 description: "Teleport is FULL-CONTEXT migration, not partial transformation. The defining characteristic is that EVERYTHING must move together and keep working: data, dependencies, auth, traffic routing, background jobs, secrets, and human workflows. The old system must remain recoverable until the new one is proven. This spell IS: Database migrations (RDS→Cloud SQL, self-managed→Atlas), cloud provider moves (on-prem→AWS, Heroku→K8s), environment promotions (staging→prod), account/tenant consolidations, platform migrations (Jenkins→GitHub Actions, SendGrid→SES), identity migrations (AD→Azure AD), cluster upgrades with relocation"
 user-invocable: false
 disable-model-invocation: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [teleport]
 ---
 
 # Teleport

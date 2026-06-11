@@ -2,6 +2,11 @@
 name: zone-of-truth
 description: "Enter a mode where every assertion is backed by evidence, confidence is calibrated, speculation is flagged, and hallucination is actively resisted."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [zone-of-truth]
 ---
 
 # Zone of Truth

@@ -2,6 +2,11 @@
 name: power-word-stun
 description: "In D&D, Power Word Stun locks a creature in place — alive but unable to act. The real-world version is SIGSTOP: a hard freeze that preserves state but halts all activity. Account lockouts, emergency process suspension, administrative holds. Unlike Power Word Kill, the target can be unfrozen. The spell is for situations where something must stop right now but destruction is not warranted — you need the process alive for investigation, for later resumption, or because killing it would cause worse problems than freezing it."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [power-word-stun]
 ---
 
 # Power Word Stun

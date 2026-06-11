@@ -2,6 +2,11 @@
 name: silent-image
 description: "In D&D, Silent Image creates a purely visual illusion — no sound, no smell, no substance. It looks real but falls apart if you interact with it. The real-world version is the static design comp: a high-fidelity visual mockup that shows exactly what something will look like but does nothing when you click it. Figma frames without prototyping links, screenshot mockups, rendered previews, static architecture diagrams. Silent Image is faster than Major Image because it skips interactivity. Use it when the only question is what does it look like."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [silent-image]
 ---
 
 # Silent Image

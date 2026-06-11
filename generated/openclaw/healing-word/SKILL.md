@@ -2,6 +2,11 @@
 name: healing-word
 description: "In D&D, Healing Word heals at range with a bonus action — fast, remote, and efficient but less powerful than Cure Wounds. The real-world version is the remote quick fix: a one-liner command, a config change pushed through a dashboard, a quick Slack instruction to the person on-call, or an automated rollback trigger. You do not need to be deep in the system to apply this fix."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [healing-word]
 ---
 
 # Healing Word

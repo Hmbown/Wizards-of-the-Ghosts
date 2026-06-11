@@ -2,6 +2,11 @@
 name: fear
 description: "Fear makes targets run from danger. The real-world version is structured pessimism: pre-mortem analysis, worst-case scenario generation, and risk amplification exercises that counteract the natural optimism bias in planning. Fear is the antidote to \"it'll probably be fine.\""
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [fear]
 ---
 
 # Fear

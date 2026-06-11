@@ -2,6 +2,11 @@
 name: athletics
 description: "Use this skill when the job is mostly about sustained force: large batches, exhaustive passes, long-running jobs, or load that needs to be carried without dropping it. It is the right metaphor when the answer is more throughput, sturdier batching, and disciplined endurance."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [athletics]
 ---
 
 # Athletics

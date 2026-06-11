@@ -2,6 +2,11 @@
 name: mass-suggestion
 description: "Mass Suggestion plants the same idea in many minds simultaneously. The real-world version is broadcast persuasion: campaign announcements, company-wide emails, product launch copy, or public statements designed to move a large group in a specific direction. The scale amplifies both impact and risk."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mass-suggestion]
 ---
 
 # Mass Suggestion

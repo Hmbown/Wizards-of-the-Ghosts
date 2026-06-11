@@ -2,6 +2,11 @@
 name: enhance-ability
 description: "Use this spell to apply a temporary, task-specific boost: priming a reviewer with the right files, warming caches before a demo, or loading domain context before a meeting. It improves the next move by front-loading exactly the capability the moment requires, not by pretending the system is globally smarter."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [enhance-ability]
 ---
 
 # Enhance Ability

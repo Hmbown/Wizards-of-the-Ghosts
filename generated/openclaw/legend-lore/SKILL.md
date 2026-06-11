@@ -2,6 +2,11 @@
 name: legend-lore
 description: "Use this spell when you need everything knowable about a person, company, library, framework, concept, or system — not a quick answer, but a deep dossier."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [legend-lore]
 ---
 
 # Legend Lore

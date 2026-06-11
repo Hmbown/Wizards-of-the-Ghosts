@@ -2,6 +2,11 @@
 name: confusion
 description: "Confusion makes targets act randomly and unpredictably. The real-world version is chaos engineering: injecting controlled randomness, unexpected inputs, and edge cases to discover how systems behave when things go wrong. This is fuzzing, monkey testing, and the art of breaking things on purpose so they do not break by accident."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [confusion]
 ---
 
 # Confusion

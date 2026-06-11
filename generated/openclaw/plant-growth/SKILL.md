@@ -2,6 +2,11 @@
 name: plant-growth
 description: "Plant Growth is for projects that need cultivation more than force: SEO programs, communities, product adoption, content ecosystems, or early-stage platforms. It assumes the system can grow, but only if fed in the right places and at the right pace. The spell favors compounding loops over campaign spikes."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [plant-growth]
 ---
 
 # Plant Growth

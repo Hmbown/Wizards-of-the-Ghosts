@@ -2,6 +2,11 @@
 name: speak-with-plants
 description: "Speak with Plants listens to slow, structural systems: codebases, dependency graphs, file trees, schema histories, and repositories with seasons baked into them. These systems do not bark in alarms; they reveal themselves through branching patterns, accreted layers, and places where nothing has moved in years. The spell helps you hear what the structure has been quietly telling maintainers all along."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [speak-with-plants]
 ---
 
 # Speak with Plants

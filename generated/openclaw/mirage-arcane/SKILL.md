@@ -1,6 +1,11 @@
 ---
 name: mirage-arcane
 description: "In D&D, Mirage Arcane goes beyond Hallucinatory Terrain — the illusory terrain actually has substance. You can walk on illusory bridges, feel illusory walls. The real-world version is the deep simulation: digital twins, high-fidelity synthetic environments, test harnesses so realistic that systems under test cannot distinguish them from production. Mirage Arcane is the most dangerous illusion because its power is in being indistinguishable from reality. That same power makes it the most useful for stress testing, training, and scenario planning — but it requires the strongest labeling discipline."
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mirage-arcane]
 ---
 
 # Mirage Arcane

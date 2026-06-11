@@ -2,6 +2,11 @@
 name: nature
 description: "In D&D, Nature is knowledge of terrain, weather, plants, animals, and the natural world. The real-world version is understanding systems that emerged rather than were designed: markets, social networks, organizational cultures, open-source ecosystems, user behavior patterns, and any complex adaptive system where the whole is more than the sum of the parts."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [nature]
 ---
 
 # Nature

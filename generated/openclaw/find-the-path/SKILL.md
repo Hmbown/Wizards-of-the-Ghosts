@@ -2,6 +2,11 @@
 name: find-the-path
 description: "In D&D, Find the Path reveals the shortest route to a destination, even through mazes and across planes. The real-world version is wayfinding through complexity: navigating a sprawling codebase to find where a change should go, plotting the fastest path through a bureaucratic process, mapping the decision tree to get from current state to desired state, or finding the critical path through a project dependency graph."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [find-the-path]
 ---
 
 # Find the Path

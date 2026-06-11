@@ -2,6 +2,11 @@
 name: mass-cure-wounds
 description: "In D&D, Mass Cure Wounds heals multiple creatures simultaneously. The real-world version is batch triage: the same bug in 50 repos, the same misconfiguration across a fleet, the same broken migration in every tenant database. When the same problem appears everywhere, fixing them one at a time is Cure Wounds. Fixing them all at once is Mass Cure Wounds."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mass-cure-wounds]
 ---
 
 # Mass Cure Wounds

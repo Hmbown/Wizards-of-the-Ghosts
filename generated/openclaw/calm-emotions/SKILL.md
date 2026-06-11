@@ -2,6 +2,11 @@
 name: calm-emotions
 description: "Calm Emotions suppresses strong feelings, ending fear and charm effects. The real-world version is de-escalation: drafting responses that lower the temperature in a heated thread, designing cool-down protocols for conflict situations, or reframing inflammatory language into productive terms. This is the spell for when the conversation has gone off the rails and someone needs to be the adult."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [calm-emotions]
 ---
 
 # Calm Emotions

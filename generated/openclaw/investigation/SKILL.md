@@ -2,6 +2,11 @@
 name: investigation
 description: "Use this skill when a problem has clues, but they need to be connected into a causal explanation."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [investigation]
 ---
 
 # Investigation

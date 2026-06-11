@@ -2,6 +2,11 @@
 name: cure-wounds
 description: "Cure Wounds is the hotfix spell: immediate triage to stop bleeding and restore function. It is NOT root-cause analysis, refactoring, redesign, or long-term remediation. The goal is the minimum viable fix that stops the damage NOW. Deeper investigation comes after."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [cure-wounds]
 ---
 
 # Cure Wounds

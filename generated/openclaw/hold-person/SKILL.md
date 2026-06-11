@@ -2,6 +2,11 @@
 name: hold-person
 description: "Hold Person = hard freeze. Nothing moves. In-flight operations stop. Requires authority. Used for security incidents, fraud, compliance holds, misbehaving systems. Sleep = graceful suspension. State is preserved and queued. Operations resume automatically. Used for maintenance windows, temporary pauses, planned downtime."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [hold-person]
 ---
 
 # Hold Person

@@ -2,6 +2,11 @@
 name: nondetection
 description: "Use this spell when a system, file, or workflow is leaking more information than it should — metadata, tracking parameters, unnecessary data collection, or identifiable fingerprints."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [nondetection]
 ---
 
 # Nondetection

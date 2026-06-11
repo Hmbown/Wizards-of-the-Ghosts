@@ -2,6 +2,11 @@
 name: performance
 description: "Use this skill to turn dry technical material into a polished demo, narrative walkthrough, or audience-aware presentation without dumbing it down. It focuses on pacing, reveal order, and memorable framing so the work lands in the room."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [performance]
 ---
 
 # Performance

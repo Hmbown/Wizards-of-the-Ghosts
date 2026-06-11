@@ -2,6 +2,11 @@
 name: unseen-servant
 description: "Use this spell when you need a tireless helper that organizes, tidies, triages, and maintains without requiring your constant attention."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [unseen-servant]
 ---
 
 # Unseen Servant

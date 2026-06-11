@@ -2,6 +2,11 @@
 name: true-seeing
 description: "Use this spell when the surface presentation is misleading and you need to see what is actually there — beneath the marketing, the abstractions, the outdated docs, or the complexity."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [true-seeing]
 ---
 
 # True Seeing

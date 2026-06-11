@@ -2,6 +2,11 @@
 name: lesser-restoration
 description: "In D&D, Lesser Restoration ends a specific condition: blinded, deafened, paralyzed, or poisoned. The real-world version is clearing a stuck state: a feature flag that should have been toggled, a queue that is stuck, a lock that was not released, a status field that is wrong, or a circuit breaker that is still tripped after the emergency passed. The system is not fundamentally broken — it has a specific condition that needs to be cleared."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [lesser-restoration]
 ---
 
 # Lesser Restoration

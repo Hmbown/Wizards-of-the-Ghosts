@@ -2,6 +2,11 @@
 name: arcana
 description: "In D&D, Arcana is knowledge of magic, its traditions, symbols, and mechanisms. The real-world version is deep technical literacy: understanding how software architectures work, what protocols do at the wire level, how APIs behave beyond their documentation, and what the actual mechanisms are behind the abstractions everyone else takes on faith."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [arcana]
 ---
 
 # Arcana

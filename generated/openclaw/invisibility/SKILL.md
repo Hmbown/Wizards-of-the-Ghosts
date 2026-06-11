@@ -2,6 +2,11 @@
 name: invisibility
 description: "Invisibility is operational quieting: trimming unnecessary logs, reducing exposed surface area, cleaning transient traces, and avoiding needless broadcast. It is not about doing forbidden things unseen. It is about keeping ordinary work from becoming gratuitously loud or overexposed."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [invisibility]
 ---
 
 # Invisibility

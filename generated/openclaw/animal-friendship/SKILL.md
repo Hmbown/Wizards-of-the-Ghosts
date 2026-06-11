@@ -2,6 +2,11 @@
 name: animal-friendship
 description: "Animal Friendship is the first-contact spell for unfamiliar APIs, vendors, and services. It treats integration work as relationship-building: learn the temperament, respect the boundaries, and earn a stable exchange before asking for anything ambitious. The goal is not domination but trustable cooperation."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [animal-friendship]
 ---
 
 # Animal Friendship

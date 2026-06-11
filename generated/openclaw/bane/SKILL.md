@@ -2,6 +2,11 @@
 name: bane
 description: "Bane curses targets, making them worse at everything they try. The real-world version is systematic weakness analysis: finding every crack, bad assumption, and failure mode in a plan, architecture, or argument. Unlike Vicious Mockery (which delivers the critique sharply), Bane is comprehensive and methodical — it maps the full attack surface."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [bane]
 ---
 
 # Bane

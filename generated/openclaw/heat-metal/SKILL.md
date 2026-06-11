@@ -2,6 +2,11 @@
 name: heat-metal
 description: "In D&D, Heat Metal makes a metal object painfully hot — the creature holding it must either endure the pain or drop it. The real-world version is deliberate friction injection: making a deprecated API progressively slower, adding escalating CAPTCHAs to suspicious traffic, increasing the cost of a bad behavior path until the actor self-selects out. Heat Metal does not break the tool. It makes continuing to use it more painful than switching to the alternative. This is the spell behind deprecation-by-discomfort, progressive rate limiting, and sunset friction curves."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [heat-metal]
 ---
 
 # Heat Metal

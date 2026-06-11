@@ -2,6 +2,11 @@
 name: mordenkainen-s-sword
 description: "Use this spell when you need an autonomous tool with a narrow mandate: a daemon, scheduled worker, watcher, or persistent background agent that repeatedly executes one precise task. It is prototype territory because the hard part is lifecycle control, observability, and safe cancellation, not the single action itself."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mordenkainen-s-sword]
 ---
 
 # Mordenkainen’s Sword

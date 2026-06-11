@@ -2,6 +2,11 @@
 name: regenerate
 description: "In D&D, Regenerate regrows lost limbs. The real-world version is reconstruction: rebuilding lost data from backups and surrounding context, regenerating a deleted component from its tests and documentation, or reconstructing a corrupted file from its known structure and partial content. Unlike Resurrection (which brings back a fully dead system from artifacts), Regenerate is for systems that are alive but missing pieces."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [regenerate]
 ---
 
 # Regenerate

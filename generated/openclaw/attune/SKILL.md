@@ -2,6 +2,11 @@
 name: attune
 description: "In D&D, attunement is how you bond with a magic item so it works specifically for you. The real-world version is workflow profiling: the grimoire interviews you about your stack, your systems, your automation surface, and your priorities — then generates a personalized spell loadout, category weights, and domain vocabulary so routing, optimization, and every subsequent spell invocation is tuned to your actual work instead of generic defaults."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [attune]
 ---
 
 # Attune

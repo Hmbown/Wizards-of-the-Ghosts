@@ -2,6 +2,11 @@
 name: suggestion
 description: "Suggestion is about the craft of the single nudge — not campaigns, not arguments, not automation. It produces one carefully placed prompt at the moment a user is most receptive. The planted idea must be reasonable and defensible. If the user would feel manipulated upon learning how it was designed, the spell refuses."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [suggestion]
 ---
 
 # Suggestion

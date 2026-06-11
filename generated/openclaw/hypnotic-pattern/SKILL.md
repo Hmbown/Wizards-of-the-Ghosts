@@ -2,6 +2,11 @@
 name: hypnotic-pattern
 description: "Hypnotic Pattern mesmerizes everyone who looks at it. The real-world version is attention design: loading animations, progress indicators, onboarding flows, and visual patterns that keep users oriented and engaged during a bounded experience. The line between helpful focus and addictive capture is the central design tension."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [hypnotic-pattern]
 ---
 
 # Hypnotic Pattern

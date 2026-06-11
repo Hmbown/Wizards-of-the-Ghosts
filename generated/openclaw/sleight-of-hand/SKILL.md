@@ -2,6 +2,11 @@
 name: sleight-of-hand
 description: "Sleight of Hand is not about solving a problem — the solution is already known. It is about executing a known change with zero collateral damage. The skill is precision, not creativity."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [sleight-of-hand]
 ---
 
 # Sleight of Hand

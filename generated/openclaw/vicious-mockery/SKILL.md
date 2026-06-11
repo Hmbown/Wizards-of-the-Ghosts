@@ -2,6 +2,11 @@
 name: vicious-mockery
 description: "The bard's cantrip that deals psychic damage through insults. In practice this is adversarial review — the art of finding and articulating exactly what is wrong with something in a way that is impossible to ignore. Unlike polite feedback that gets filed and forgotten, vicious mockery lands. It is the red-team report that makes the PM cancel the launch, the code review that makes the author delete the PR, the roast that makes the founder pivot. The damage is the point."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [vicious-mockery]
 ---
 
 # Vicious Mockery

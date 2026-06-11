@@ -2,6 +2,11 @@
 name: thunderwave
 description: "Use this skill for intentionally theatrical or forceful actions, but only behind explicit confirmation and a hard safety boundary."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [thunderwave]
 ---
 
 # Thunderwave

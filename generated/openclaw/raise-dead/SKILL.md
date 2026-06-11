@@ -2,6 +2,11 @@
 name: raise-dead
 description: "In D&D, Raise Dead brings a creature back to life but with penalties: reduced ability scores that recover over time. Unlike Resurrection (full recovery), Raise Dead returns the target in a weakened state. The real-world version is partial recovery: bringing a service back online in degraded mode, recovering a database with known gaps in recent data, or restoring a system from an older backup knowing that some recent state is lost."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [raise-dead]
 ---
 
 # Raise Dead

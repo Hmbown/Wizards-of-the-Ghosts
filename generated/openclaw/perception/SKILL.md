@@ -2,6 +2,11 @@
 name: perception
 description: "In D&D, Perception is the raw ability to notice things: the hidden door, the faint sound, the detail that does not belong. Unlike Investigation (which follows evidence methodically) or Insight (which reads subtext), Perception is about the initial act of noticing. The real-world version is detail-catching: spotting the typo in the contract, the anomaly in the dashboard, the one metric that moved when it should not have, the thing that is present but no one is looking at."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [perception]
 ---
 
 # Perception

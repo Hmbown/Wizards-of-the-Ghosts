@@ -2,6 +2,11 @@
 name: survival
 description: "Use this skill when infrastructure is degraded, tools are missing, quotas are tight, or normal comforts are gone. It prioritizes minimal viable progress, conservation of scarce resources, and practical fallback routes through hostile conditions."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [survival]
 ---
 
 # Survival

@@ -2,6 +2,11 @@
 name: speak-with-animals
 description: "Speak with Animals interprets non-verbal machine signals the way a skilled naturalist reads calls and tracks. It is for telemetry, dashboards, alert streams, sensor output, and odd machine behavior that clearly means something but does not yet mean anything to a human. The spell turns machine noises into operational sense-making."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [speak-with-animals]
 ---
 
 # Speak with Animals

@@ -2,6 +2,11 @@
 name: detect-magic
 description: "Use this skill when you need a fast, structured scan for where the real magic is hiding in a repo, workflow, or system."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [detect-magic]
 ---
 
 # Detect Magic

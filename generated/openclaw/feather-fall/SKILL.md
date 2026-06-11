@@ -2,6 +2,11 @@
 name: feather-fall
 description: "Feather Fall is the spell for bad situations that are already in motion. A deploy is going sideways, a service is thrashing, a queue is backing up, or an integration is failing faster than the humans can think. Instead of pretending you can teleport back to normal instantly, you slow the fall: circuit breakers, degraded modes, load shedding, safe defaults, and graceful shutdown paths. The point is not elegance. The point is buying time without multiplying damage. A good Feather Fall plan makes failure survivable and visible enough to recover from."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [feather-fall]
 ---
 
 # Feather Fall

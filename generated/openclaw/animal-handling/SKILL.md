@@ -2,6 +2,11 @@
 name: animal-handling
 description: "Use this skill when the system is not fully broken but behaves like a skittish animal: flaky CI, fragile legacy services, or moody dependencies. It focuses on coaxing, pacing, and stable handling rather than heroic rewrites."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [animal-handling]
 ---
 
 # Animal Handling

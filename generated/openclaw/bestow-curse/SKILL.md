@@ -2,6 +2,11 @@
 name: bestow-curse
 description: "Bestow Curse saddles a target with a lasting disadvantage. The real-world version is constraint injection: deliberately adding friction, limitations, or handicaps to see how a system, process, or team adapts. This is the skill of resilience testing through artificial adversity — bandwidth throttling, feature removal, resource reduction."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [bestow-curse]
 ---
 
 # Bestow Curse

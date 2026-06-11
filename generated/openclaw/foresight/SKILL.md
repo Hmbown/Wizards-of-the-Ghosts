@@ -2,6 +2,11 @@
 name: foresight
 description: "Foresight produces bounded forecasts with explicit uncertainty to guide decisions. It is NOT:\n- Preflight checks: Verifying prerequisites before executing a known action (disk space, backups, connection strings). Those are safety gates, not forecasts.\n- Diagnosis/Debugging: Finding what's broken right now (null pointers, deprecated APIs). Those are root-cause analyses, not predictions.\n- Monitoring: Watching real-time metrics or alerting on thresholds. Those are observability tasks, not forward-looking estimates.\n- Reconnaissance: Gathering facts about competitors or systems. Intelligence gathering feeds foresight but isn't foresight itself. Key distinction: If the user wants to know \"what will likely happen if we choose X,\" use Foresight. If they want to know \"is it safe to run X now,\" \"what's broken,\" or \"what are they doing,\" use a different spell."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [foresight]
 ---
 
 # Foresight

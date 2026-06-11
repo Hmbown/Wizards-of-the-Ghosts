@@ -2,6 +2,11 @@
 name: longstrider
 description: "Longstrider is the optimization spell for systems that already work. It makes the path shorter without changing the destination. It cares about sustained pace, not flashy one-off benchmarks."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [longstrider]
 ---
 
 # Longstrider

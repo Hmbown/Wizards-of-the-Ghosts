@@ -2,6 +2,11 @@
 name: polymorph
 description: "This spell is about representation change, not:\n- Naming changes (same structure, different identifiers)\n- Execution changes (same code, different runtime)\n- Architecture changes (new system design)\n- Duplication (same thing, different place) The key test: Can you point to a source artifact and a target artifact where the same information is expressed in structurally different ways? If yes → Polymorph."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [polymorph]
 ---
 
 # Polymorph

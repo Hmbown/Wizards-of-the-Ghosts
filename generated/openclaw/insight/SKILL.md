@@ -2,6 +2,11 @@
 name: insight
 description: "In D&D, Insight detects lies and reads true intentions. The real-world version is subtext analysis: figuring out what an email actually means, what a stakeholder's real objection is, what a user's bug report is actually describing, or what the unsaid concern is behind a seemingly simple question. Insight does not read minds — it reads signals that are present but not foregrounded."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [insight]
 ---
 
 # Insight

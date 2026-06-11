@@ -2,6 +2,11 @@
 name: clairvoyance
 description: "In D&D, Clairvoyance lets you place an invisible sensor in a location you know, seeing or hearing through it. Unlike Scrying (which follows a specific target in real time), Clairvoyance is a point-in-time snapshot of a place. The real-world version is remote system inspection: checking the state of a production environment you cannot SSH into, reading the public-facing state of a competitor's deployment, or gathering the current observable state of a system through its exposed interfaces without modifying it."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [clairvoyance]
 ---
 
 # Clairvoyance

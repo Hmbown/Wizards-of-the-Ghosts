@@ -2,6 +2,11 @@
 name: minor-illusion
 description: "Minor Illusion produces artifacts that are explicitly labeled as disposable and exist only to provoke reaction. If the artifact could be mistaken for finished work, you're casting the wrong spell."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [minor-illusion]
 ---
 
 # Minor Illusion

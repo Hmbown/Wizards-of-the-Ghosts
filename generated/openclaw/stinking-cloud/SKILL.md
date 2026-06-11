@@ -2,6 +2,11 @@
 name: stinking-cloud
 description: "In D&D, Stinking Cloud fills an area with nauseating gas — creatures inside are incapacitated but the terrain itself is undamaged. The real-world version is area denial: making a zone, endpoint, or resource unusable to unwanted traffic without permanently destroying or modifying it. Rate limiting, IP-range blocks, honeypots, tarpits, geographic restrictions. Stinking Cloud is defensive — it protects a perimeter by making the area inside it miserable for intruders while leaving the underlying infrastructure intact."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [stinking-cloud]
 ---
 
 # Stinking Cloud

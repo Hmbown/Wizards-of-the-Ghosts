@@ -2,6 +2,11 @@
 name: dimension-door
 description: "Dimension Door is the quick-switch spell: branch to branch, environment to environment, project to project. It is not a migration and it is not discovery. It assumes both endpoints are known, prepared, and close enough in shape that you can step across with only the context you actually need."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [dimension-door]
 ---
 
 # Dimension Door

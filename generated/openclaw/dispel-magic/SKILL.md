@@ -2,6 +2,11 @@
 name: dispel-magic
 description: "Use this spell when you need to cleanly shut down, disable, or remove active AI tooling — the reverse of Detect Magic."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [dispel-magic]
 ---
 
 # Dispel Magic

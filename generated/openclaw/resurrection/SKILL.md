@@ -2,6 +2,11 @@
 name: resurrection
 description: "Use this spell when a system has truly died — crashed, deleted, corrupted beyond repair — and needs to be rebuilt from whatever remains. Distinct from Speak with Dead, which queries dead systems for knowledge; Resurrection actually revives them."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [resurrection]
 ---
 
 # Resurrection

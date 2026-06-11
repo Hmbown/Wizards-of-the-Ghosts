@@ -2,6 +2,11 @@
 name: heroism
 description: "In D&D, Heroism grants temporary hit points and immunity to fear — you do not become stronger, you become harder to stop. The real-world version is the preparation ritual: the pre-presentation pep talk, the pre-launch checklist that calms the team, the structured confidence-building exercise before a difficult conversation. Heroism does not change your abilities. It changes your relationship to the fear of using them."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [heroism]
 ---
 
 # Heroism

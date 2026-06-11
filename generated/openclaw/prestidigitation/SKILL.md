@@ -2,6 +2,11 @@
 name: prestidigitation
 description: "Prestidigitation transforms. It does not fix, build, scaffold, migrate, or actuate. If the user says \"make this look better\" or \"convert this to that format\" — use prestidigitation. If the user says \"make this work\" or \"set this up\" or \"build this system\" — use something else."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [prestidigitation]
 ---
 
 # Prestidigitation

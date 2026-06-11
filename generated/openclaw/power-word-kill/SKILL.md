@@ -2,6 +2,11 @@
 name: power-word-kill
 description: "In D&D, Power Word Kill instantly destroys any creature below a hit-point threshold — no saving throw, no resistance, just death. The real-world version is kill -9: the unconditional termination signal. Emergency circuit breakers. Hard account terminations. The nuclear option that exists because sometimes graceful shutdown is not available and the cost of continuing is worse than the cost of data loss. Power Word Kill is not elegant. It is not kind. It is the thing you reach for when everything else has already failed."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [power-word-kill]
 ---
 
 # Power Word Kill

@@ -1,6 +1,11 @@
 ---
 name: true-polymorph
 description: "In D&D, True Polymorph is the permanent transformation — the target becomes something fundamentally different, and if held long enough, the change is irreversible. Unlike Polymorph (temporary disguise or adaptation), True Polymorph means the old identity is gone. The real-world version is irreversible system transformation: rewriting a service from Python to Rust so thoroughly the Python version cannot be recovered, migrating from SQL to a graph database with no backward-compatible schema, or restructuring an organization so completely that the old org chart is not just outdated but nonsensical. True Polymorph is the point of no return."
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [true-polymorph]
 ---
 
 # True Polymorph

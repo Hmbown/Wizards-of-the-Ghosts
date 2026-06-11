@@ -1,6 +1,11 @@
 ---
 name: intimidation
 description: "Use this skill when a message must sound serious because the situation is serious: security findings, compliance obligations, deadline-backed escalations, or non-optional remediation notices. It is about calibrated force, not bluster; the tone should match the facts and consequences."
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [intimidation]
 ---
 
 # Intimidation

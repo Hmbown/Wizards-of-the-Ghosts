@@ -3,6 +3,11 @@ name: illusory-script
 description: "Illusory Script is for audience-gated or self-expiring content: burn-after-reading notes, scoped links, ephemeral secrets, and documents that should only mean something to the right reader in the right window. The spell is partly social pattern and partly security mechanism. It is useful, but it is not a substitute for mature secrets management or compliance records."
 user-invocable: false
 disable-model-invocation: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [illusory-script]
 ---
 
 # Illusory Script

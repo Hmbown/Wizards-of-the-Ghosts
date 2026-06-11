@@ -2,6 +2,11 @@
 name: locate-object
 description: "In D&D, Locate Object senses the direction to a specific object within range. The real-world version is artifact search: finding that config file you know exists somewhere, locating a document someone mentioned but did not link, tracking down the source of a data value through a pipeline, or finding where a specific resource is defined in a sprawling repository."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [locate-object]
 ---
 
 # Locate Object

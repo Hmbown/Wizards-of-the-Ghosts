@@ -2,6 +2,11 @@
 name: stealth
 description: "Use this skill when the goal is to gather context or make progress quietly without unnecessary noise."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [stealth]
 ---
 
 # Stealth

@@ -2,6 +2,11 @@
 name: locate-creature
 description: "In D&D, Locate Creature points you toward a specific creature within range. The real-world version is entity search: finding a specific person in an organization, locating a running service in a distributed system, tracking down who owns a particular piece of code, or identifying which team is responsible for a specific decision. The target is alive or active — for static artifacts, use Locate Object."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [locate-creature]
 ---
 
 # Locate Creature

@@ -2,6 +2,11 @@
 name: see-invisibility
 description: "In D&D, See Invisibility lets you see creatures and objects that have been made invisible. The real-world version is revealing deliberate obscurity: finding the hidden costs in a pricing page, uncovering the actual terms buried in a EULA, identifying the obfuscated tracking in a codebase, or surfacing the real behavior behind a misleading UI. Unlike Perception (which notices what is overlooked) or True Seeing (which pierces all illusion), See Invisibility specifically targets things that were hidden on purpose."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [see-invisibility]
 ---
 
 # See Invisibility

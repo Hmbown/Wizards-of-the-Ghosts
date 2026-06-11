@@ -2,6 +2,11 @@
 name: shatter
 description: "Shatter is proactive, controlled destruction for learning. You are the attacker against your own system. The goal is a brittleness report with remediation priorities."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [shatter]
 ---
 
 # Shatter

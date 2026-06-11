@@ -2,6 +2,11 @@
 name: comprehend-languages
 description: "Use this skill when the words are legible but the meaning is trapped inside an unfamiliar dialect, format, or community."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [comprehend-languages]
 ---
 
 # Comprehend Languages

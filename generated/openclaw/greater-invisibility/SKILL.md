@@ -2,6 +2,11 @@
 name: greater-invisibility
 description: "Greater Invisibility covers live work performed with reduced observability: silent deploys, zero-downtime migrations, background reindexing, and backfills that avoid user-facing turbulence. The distinction from ordinary Invisibility is that action continues while the footprint stays deliberately subdued. That makes it useful and easy to misuse, so the operator view has to remain explicit even when the audience view stays calm."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [greater-invisibility]
 ---
 
 # Greater Invisibility

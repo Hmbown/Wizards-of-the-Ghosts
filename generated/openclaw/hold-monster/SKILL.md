@@ -2,6 +2,11 @@
 name: hold-monster
 description: "Hold Monster is Hold Person scaled to larger targets. The real-world version is the emergency circuit breaker: halting an entire service, freezing a deployment pipeline, or stopping a runaway process at the infrastructure level. This is the big red button — it stops everything, and it should only be pressed when the alternative is worse."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [hold-monster]
 ---
 
 # Hold Monster

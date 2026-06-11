@@ -2,6 +2,11 @@
 name: medicine
 description: "Use this skill for live system triage: interpreting logs as symptoms, prioritizing immediate stabilization, and applying treatments for known failure modes. It is about keeping the patient alive first and only then planning deeper corrective care."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [medicine]
 ---
 
 # Medicine

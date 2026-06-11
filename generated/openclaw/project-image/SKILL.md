@@ -1,6 +1,11 @@
 ---
 name: project-image
 description: "In D&D, Project Image creates an illusory copy of yourself at a distant location — you can see through its eyes, speak through its mouth, and cast spells through it. The real-world version is remote presence: avatars, recorded video stand-ins, bot representations, asynchronous video messages. Project Image is the spell for being in two places at once — attending a meeting via avatar while working on something else, leaving a recorded presence in a channel, or deploying an automated representative that speaks with your voice and authority within defined limits."
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [project-image]
 ---
 
 # Project Image

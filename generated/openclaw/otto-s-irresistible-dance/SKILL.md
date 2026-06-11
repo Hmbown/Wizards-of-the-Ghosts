@@ -2,6 +2,11 @@
 name: otto-s-irresistible-dance
 description: "Otto's Irresistible Dance forces a creature to dance uncontrollably. The real-world version is compulsive engagement: designing something so compelling that people cannot stop interacting with it. This is virality mechanics, \"just one more\" loops, and the craft of making content or products that command attention beyond what the user intended to give. The ethical tension is inherent — irresistible engagement is a feature when bounded and a dark pattern when not."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [otto-s-irresistible-dance]
 ---
 
 # Otto’s Irresistible Dance

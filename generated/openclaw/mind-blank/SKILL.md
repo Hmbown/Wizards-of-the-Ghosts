@@ -2,6 +2,11 @@
 name: mind-blank
 description: "Use this spell when sensitive information must not cross boundaries — between agent sessions, between tasks, between tenants, or between domains with different trust levels."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mind-blank]
 ---
 
 # Mind Blank

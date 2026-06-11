@@ -2,6 +2,11 @@
 name: glibness
 description: "Glibness makes everything you say sound utterly convincing. The real-world version is rhetorical polish: taking a position and presenting it with maximum confidence, fluency, and persuasive structure. This is the skill of the trial lawyer, the pitch artist, the keynote speaker who makes mediocre ideas sound inevitable."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [glibness]
 ---
 
 # Glibness

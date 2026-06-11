@@ -3,6 +3,11 @@ name: mislead
 description: "Mislead is defensive deception: honeypots, canary tokens, decoy endpoints, fake datasets, and other convincing false presences that reveal who is snooping. The goal is not to trick legitimate users for sport. The goal is to create an instrumented fake that attracts unauthorized curiosity while the real system remains elsewhere. This makes the spell powerful and ethically sharp-edged. It needs explicit boundaries, isolation, and a clear monitoring objective before it should be deployed."
 user-invocable: false
 disable-model-invocation: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mislead]
 ---
 
 # Mislead

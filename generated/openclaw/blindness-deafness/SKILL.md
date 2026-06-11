@@ -1,6 +1,11 @@
 ---
 name: blindness-deafness
 description: "In D&D, Blindness/Deafness selectively removes one sense — the target can still act but loses critical awareness. The real-world version is selective channel muting: blocking a process from seeing certain inputs (input filtering, API response redaction), deafening it to specific signals (suppressing webhooks, ignoring certain event streams), or cutting telemetry so a system operates without awareness of a specific data source. Unlike containment (forcecage) which restricts everything, Blindness/Deafness surgically removes one information channel while leaving the rest intact."
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [blindness-deafness]
 ---
 
 # Blindness/Deafness

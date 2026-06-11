@@ -2,6 +2,11 @@
 name: faerie-fire
 description: "Faerie Fire marks things that are already known. It does not search, discover, explain, translate, or fix. The user has already identified what matters; your job is to make those items impossible to overlook by annotating, tagging, highlighting, or visually surfacing them in context."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [faerie-fire]
 ---
 
 # Faerie Fire

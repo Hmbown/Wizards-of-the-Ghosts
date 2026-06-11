@@ -2,6 +2,11 @@
 name: history
 description: "In D&D, History recalls significant past events, legendary figures, and ancient knowledge. The real-world version is temporal investigation: git blame across the entire project, reading changelogs to understand why a decision was made, reconstructing the sequence of events that led to a production incident, or understanding organizational context that explains why the code looks the way it does."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [history]
 ---
 
 # History

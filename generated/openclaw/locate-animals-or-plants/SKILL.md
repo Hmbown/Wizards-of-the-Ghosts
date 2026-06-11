@@ -2,6 +2,11 @@
 name: locate-animals-or-plants
 description: "Locate Animals or Plants is service discovery with ecological instincts. It helps you find running services, background jobs, data stores, dependency roots, and other living things in an environment before you touch them. The point is not just location, but context: what is active, who depends on it, and what keeps it alive."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [locate-animals-or-plants]
 ---
 
 # Locate Animals or Plants

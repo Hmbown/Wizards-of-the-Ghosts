@@ -2,6 +2,11 @@
 name: greater-restoration
 description: "Lesser Restoration = one thing is wrong, fix it directly (reset a flag, clear a cache, remove a curse).\nGreater Restoration = many things are wrong because they decayed together over time, and fixing one thing without fixing the others will fail."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [greater-restoration]
 ---
 
 # Greater Restoration

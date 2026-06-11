@@ -2,6 +2,11 @@
 name: planar-binding
 description: "Use this spell when you need to summon a powerful external entity - a third-party API, a cloud service, another agent - and lock it into serving your workflow under explicit terms."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [planar-binding]
 ---
 
 # Planar Binding

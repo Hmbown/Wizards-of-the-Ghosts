@@ -2,6 +2,11 @@
 name: teleportation-circle
 description: "Use this spell when you need a permanent, reliable portal between two environments — a CI/CD pipeline, a standing data sync, a repeatable deployment, or a migration path you will use more than once."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [teleportation-circle]
 ---
 
 # Teleportation Circle

@@ -2,6 +2,11 @@
 name: symbol
 description: "In D&D, Symbol inscribes a powerful glyph with a predefined effect — death, fear, sleep, stunning — that triggers when conditions are met. Unlike Glyph of Warding (which protects a specific place or object), Symbol marks a conceptual boundary with a named policy. The real-world version is semantic policy tagging: marking a database column as PII so access triggers audit logging, tagging a deployment as HIPAA-scoped so changes require compliance review, or labeling an API endpoint as rate-limited-aggressive so traffic spikes trigger automatic throttling. The symbol is the policy, and the policy enforces itself."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [symbol]
 ---
 
 # Symbol

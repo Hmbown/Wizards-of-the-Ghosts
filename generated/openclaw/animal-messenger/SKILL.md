@@ -2,6 +2,11 @@
 name: animal-messenger
 description: "Animal Messenger is for delivery paths that are asynchronous, delayed, or a little scruffy. It fits webhook queues, batch email, pub/sub topics, and other channels where you launch the payload and trust the route more than the timing. The real craft is designing for eventual arrival without panic."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [animal-messenger]
 ---
 
 # Animal Messenger

@@ -2,6 +2,11 @@
 name: true-strike
 description: "Use this spell for preflight certainty: dry runs, validation checks, dependency verification, and rehearsals that make the next deploy, query, or command much more likely to succeed. It trades a little time up front for fewer blind swings and fewer expensive misses."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [true-strike]
 ---
 
 # True Strike

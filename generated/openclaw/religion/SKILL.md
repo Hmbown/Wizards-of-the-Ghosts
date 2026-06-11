@@ -2,6 +2,11 @@
 name: religion
 description: "In D&D, Religion is knowledge of deities, rites, prayers, and holy symbols. The real-world version is understanding belief systems: organizational cultures, team values, community norms, ideological frameworks, and the unstated axioms that a group treats as sacred. Religion explains why people in a group behave the way they do when the behavior does not follow from rational incentives alone."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [religion]
 ---
 
 # Religion

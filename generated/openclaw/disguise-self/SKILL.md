@@ -2,6 +2,11 @@
 name: disguise-self
 description: "Disguise Self changes how something is said, never what is said. The input content is already correct — only the delivery surface needs adjustment. If the user wants to change facts, add new information, transform code implementations, or produce multiple versions at once, this is NOT this spell."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [disguise-self]
 ---
 
 # Disguise Self

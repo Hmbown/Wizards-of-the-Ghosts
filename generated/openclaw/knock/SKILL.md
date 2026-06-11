@@ -2,6 +2,11 @@
 name: knock
 description: "Knock is specifically about restoring legitimate access through authorized channels. It is NOT about: - Performance optimization (slow queries, throughput issues) → different spell\n- Removing safety controls (approval gates, compliance checks) → different spell\n- Simple bug fixes (typos, wrong ports) → different spell\n- Breaking constraints (resource limits, CPU throttling) → different spell\n- Security analysis (encryption schemes, certificate inspection) → different spell"
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [knock]
 ---
 
 # Knock

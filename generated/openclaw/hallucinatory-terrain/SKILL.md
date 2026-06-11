@@ -2,6 +2,11 @@
 name: hallucinatory-terrain
 description: "In D&D, Hallucinatory Terrain makes natural terrain look like a different kind of terrain — a field appears as a forest, a hill appears as a valley. The underlying terrain is unchanged; only the perception shifts. The real-world version is environment staging: test environments styled to look like production, sandbox databases seeded with realistic data, training simulations that overlay a learning scenario onto real infrastructure. Hallucinatory Terrain does not change the real system. It changes how the system appears so you can test, train, or demo safely."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [hallucinatory-terrain]
 ---
 
 # Hallucinatory Terrain

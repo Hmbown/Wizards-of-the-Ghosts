@@ -2,6 +2,11 @@
 name: charm-person
 description: "Charm Person is about ONE-TO-ONE interpersonal communication where warmth, honesty, and respect for autonomy are the primary constraints. It is not about persuasion tactics, conversion rates, conflict mediation, public performance, or operational coordination. The spell succeeds when the recipient feels respected even if they say no."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [charm-person]
 ---
 
 # Charm Person

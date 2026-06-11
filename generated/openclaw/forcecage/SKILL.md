@@ -2,6 +2,11 @@
 name: forcecage
 description: "Forcecage creates a pre-tested containment boundary around a subject that has not yet run. It is not about stopping, pausing, or muting something already in motion. The cage is built first, self-tested, then the subject enters. The operator watches from outside and decides whether to release."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [forcecage]
 ---
 
 # Forcecage

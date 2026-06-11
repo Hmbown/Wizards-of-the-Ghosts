@@ -2,6 +2,11 @@
 name: guards-and-wards
 description: "In D&D, Guards and Wards fills an area with layered minor defenses — fog, locked doors, illusory walls, confusion effects — that individually are trivial but collectively make navigation exhausting. The real-world version is defense in depth through volume: honeypots mixed with real services, rotating credentials alongside decoy credentials, overlapping rate limiters and CAPTCHAs and behavioral analysis and IP reputation checks. No single ward stops a determined attacker. The maze does."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [guards-and-wards]
 ---
 
 # Guards and Wards

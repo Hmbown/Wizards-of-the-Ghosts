@@ -1,6 +1,11 @@
 ---
 name: deception
 description: "Use this skill to generate believable synthetic artifacts for testing, demos, adversarial exercises, or rehearsal environments. The goal is plausibility under inspection by software and operators, not manipulation of real users or fabrication of evidence."
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [deception]
 ---
 
 # Deception

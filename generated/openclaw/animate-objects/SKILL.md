@@ -2,6 +2,11 @@
 name: animate-objects
 description: "This spell transforms inert → reactive. It does NOT create new tools, train models, run one-off fixes, or build physical systems. The key pattern: existing artifact + trigger/watcher + bounded autonomy."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [animate-objects]
 ---
 
 # Animate Objects

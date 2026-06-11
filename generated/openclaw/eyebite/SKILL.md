@@ -2,6 +2,11 @@
 name: eyebite
 description: "In D&D, Eyebite lets you focus on one creature per turn and inflict sleep, panic, or sickness through sustained eye contact. The real-world version is targeted capability reduction: focused analysis that identifies and disables specific functions of a system, service, or adversary. Feature flagging a dangerous capability off. Selectively throttling a misbehaving API consumer. Disabling specific attack vectors during an incident. Eyebite requires sustained focus on a single target — it is not a broadcast weapon."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [eyebite]
 ---
 
 # Eyebite

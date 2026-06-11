@@ -2,6 +2,11 @@
 name: speak-with-dead
 description: "This spell is archaeology, not history research. It operates on specific artifacts from a specific dead system to answer specific questions. It is NOT general tech history, NOT interviewing living people, and NOT monitoring live systems."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [speak-with-dead]
 ---
 
 # Speak with Dead

@@ -2,6 +2,11 @@
 name: feeblemind
 description: "In D&D, Feeblemind crushes a creature's Intelligence and Charisma to near-zero — leaving them alive but barely functional. The real-world version is deliberate capability reduction: putting a system into safe mode, stripping an overpowered tool down to basic functions, reducing attack surface by removing features. Feeblemind is not punishment — it is the recognition that sometimes a system at full capability is more dangerous than a system at reduced capability. Restricted shells, read-only modes, feature-stripped emergency interfaces."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [feeblemind]
 ---
 
 # Feeblemind

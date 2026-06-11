@@ -2,6 +2,11 @@
 name: identify
 description: "Identify is static analysis for operational understanding. It answers \"What is this?\" by inspecting structure, naming, dependencies, and runtime touchpoints. It does NOT search for artifacts, debug failures, monitor systems, verify claims, or modify code."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [identify]
 ---
 
 # Identify

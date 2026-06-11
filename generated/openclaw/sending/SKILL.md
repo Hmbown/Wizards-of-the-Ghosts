@@ -11,6 +11,11 @@ metadata:
         - curl
     primaryEnv: SLACK_TOKEN
     emoji: "📨"
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [sending]
 ---
 
 # Sending

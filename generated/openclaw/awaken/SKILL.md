@@ -12,6 +12,11 @@ metadata:
         - curl
     primaryEnv: HA_TOKEN
     emoji: "🌅"
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [awaken]
 ---
 
 # Awaken

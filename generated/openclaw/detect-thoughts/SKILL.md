@@ -2,6 +2,11 @@
 name: detect-thoughts
 description: "In D&D, Detect Thoughts lets you read surface thoughts and probe deeper. The real-world version is intent analysis: figuring out what someone is trying to accomplish based on what they said, how they said it, and what they chose not to say. This is the analytical complement to Insight (which reads subtext intuitively) — Detect Thoughts is more structured and systematic."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [detect-thoughts]
 ---
 
 # Detect Thoughts

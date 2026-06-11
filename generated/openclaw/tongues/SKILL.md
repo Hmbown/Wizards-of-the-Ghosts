@@ -2,6 +2,11 @@
 name: tongues
 description: "Tongues is universal translation across languages, formats, and protocols. It can mean English to Spanish, JSON to XML, REST to GraphQL, Python to JavaScript, or one team's business vocabulary to another team's schema. The spell is not just about swapping tokens. It is about preserving meaning while crossing into a different representation. Good Tongues work makes both sides feel native. Bad Tongues work creates a smooth-looking mistranslation that fails at the edges."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [tongues]
 ---
 
 # Tongues

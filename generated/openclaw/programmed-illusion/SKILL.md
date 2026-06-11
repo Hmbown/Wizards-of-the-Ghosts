@@ -2,6 +2,11 @@
 name: programmed-illusion
 description: "In D&D, Programmed Illusion creates an illusion that lies dormant until a specific trigger condition is met, then plays out its scene automatically. The real-world version is the conditional demo, automated preview, or triggered walkthrough: onboarding flows that appear when a user first visits, contextual tooltips that activate on hover, preview environments that spin up on pull request, automated scenario presentations that play when specific data conditions are detected. Programmed Illusion is the illusion that does not need a wizard present to cast it."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [programmed-illusion]
 ---
 
 # Programmed Illusion

@@ -2,6 +2,11 @@
 name: acrobatics
 description: "Use this skill when the work is a choreography problem: brittle sequencing, async handoffs, or constrained flows that must stay upright end to end. It shines on API dances, dependency ordering, and recovery logic where grace matters more than brute force."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [acrobatics]
 ---
 
 # Acrobatics

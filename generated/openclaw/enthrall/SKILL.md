@@ -2,6 +2,11 @@
 name: enthrall
 description: "Enthrall makes an audience hang on every word. The real-world version is structural engagement: opening hooks that stop the scroll, narrative arcs that sustain attention, and pacing that makes people stay until the end. This is presentation design, content structure, and the craft of making something worth finishing."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [enthrall]
 ---
 
 # Enthrall

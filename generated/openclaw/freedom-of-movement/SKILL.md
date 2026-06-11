@@ -2,6 +2,11 @@
 name: freedom-of-movement
 description: "Freedom of Movement is for processes that should be moving but are caught in glue: locked files, blocked ports, circular dependencies, wedged jobs, or permissions that almost work. The skill is about diagnosing the restraint, then removing or routing around it without tearing the whole system apart. It favors unblocking over brute force."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [freedom-of-movement]
 ---
 
 # Freedom of Movement

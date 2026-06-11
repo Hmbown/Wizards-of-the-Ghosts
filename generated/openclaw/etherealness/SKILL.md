@@ -2,6 +2,11 @@
 name: etherealness
 description: "Etherealness is observational only. It answers \"what is happening?\" or \"what would happen?\" without changing anything. The system under study continues normally; you add a ghost layer that watches, mirrors, or dry-runs without becoming part of the live mutation path."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [etherealness]
 ---
 
 # Etherealness

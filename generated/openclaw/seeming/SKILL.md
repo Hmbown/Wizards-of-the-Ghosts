@@ -2,6 +2,11 @@
 name: seeming
 description: "Seeming is coordinated appearance change at scale: mass theming, batch rebranding, global copy tone shifts, and UI-wide presentation updates. The underlying structures stay the same. The spell is about coherent surface transformation, not structural reinvention."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [seeming]
 ---
 
 # Seeming

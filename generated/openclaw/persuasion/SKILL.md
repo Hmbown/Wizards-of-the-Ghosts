@@ -2,6 +2,11 @@
 name: persuasion
 description: "Use this skill when the problem is not information scarcity but alignment, framing, or buy-in."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [persuasion]
 ---
 
 # Persuasion

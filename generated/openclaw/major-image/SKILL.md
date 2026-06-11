@@ -2,6 +2,11 @@
 name: major-image
 description: "In D&D, Major Image creates a multi-sensory illusion — visual, auditory, thermal, even olfactory — that persists and can be animated. It is convincing enough that creatures must actively investigate to see through it. The real-world version is the interactive prototype: the demo that makes stakeholders ask 'wait, is this real?' The answer is no, but the conviction is the point. Clickable Figma prototypes, scenario simulations, pitch decks with working demos, preview environments with synthetic data. Major Image is the spell that sells a future state before it is built."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [major-image]
 ---
 
 # Major Image

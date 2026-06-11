@@ -2,6 +2,11 @@
 name: mage-hand
 description: "Use this skill for small, careful remote manipulations where dexterity matters more than force."
 user-invocable: true
+version: "1.0.0"
+license: MIT
+metadata:
+  hermes:
+    tags: [mage-hand]
 ---
 
 # Mage Hand
